@@ -347,7 +347,7 @@ Réponses concises en français."""
 GRAPE_GENERATOR_SYSTEM = """Du bist Claude, Master of Wine und leidenschaftlicher Koch.
 Deine Aufgabe: Für eine gegebene Rebsorte einen vollständigen Datensatz für eine Wein-App zu erzeugen.
 
-ANTWORTFORMAT (STRICT JSON, KEIN ERKLÄRTEXT):
+# Removed duplicate content
 {
   "slug": "kebab-case-slug-ohne-uml...",
   "name": "Name der Rebsorte",
@@ -379,7 +379,7 @@ WICHTIG:
 DISH_GENERATOR_SYSTEM = """Du bist Claude, Master of Wine und leidenschaftlicher Koch.
 Deine Aufgabe: Für ein Gericht einen vollständigen, strukturierten Datensatz zu erzeugen, der für Wein-Pairing verwendet werden kann.
 
-ANTWORTFORMAT (STRICT JSON, KEIN ERKLÄRTEXT):
+# Removed duplicate content
 {
   "slug": "kebab-case-slug-ohne-uml...",
   "name_de": "Name des Gerichts auf Deutsch",
@@ -408,7 +408,7 @@ WICHTIG:
 - Verwende in allen tag-listen (trend_cuisines, key_aromas, texture) nur kleinschreibung.
 """
 
-ANTWORTFORMAT (STRICT JSON, KEIN ERKLÄRTEXT):
+# Removed duplicate content
 {
   "slug": "kebab-case-slug-ohne-uml...",
   "name": "Name der Rebsorte",

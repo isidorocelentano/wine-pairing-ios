@@ -275,13 +275,14 @@ const PairingSeoPage = () => {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       )}
-      <div className="container mx-auto max-w-3xl space-y-6">
-        <header className="space-y-3">
+      <div className="container mx-auto max-w-3xl space-y-8">
+        {/* Hero */}
+        <header className="space-y-3 text-center md:text-left">
           <p className="text-accent font-accent text-xs tracking-widest uppercase">Wine Pairing Insight</p>
           <h1 className="text-2xl md:text-3xl font-semibold tracking-tight">
             {tpl.page.title[lang] || tpl.page.title.de}
           </h1>
-          <p className="text-sm md:text-base text-muted-foreground">
+          <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto md:mx-0">
             {tpl.page.description[lang] || tpl.page.description.de}
           </p>
         </header>

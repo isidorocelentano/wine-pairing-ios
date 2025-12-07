@@ -452,12 +452,12 @@ WICHTIG:
                     grape=data.get('grape') if data.get('grape') else None,
                     notes=data.get('notes') if data.get('notes') else None
                 )
-            except (json.JSONDecodeError, ValueError) as parse_error:
+            except (json.JSONDecodeError, ValueError, KeyError, TypeError) as parse_error:
                 logger.warning(f"JSON parse error: {parse_error}, response: {response[:200]}")
                 return LabelScanResponse(
                     name="Nicht erkannt",
                     type="rot",
-                    notes=f"Konnte Etikett nicht vollständig analysieren: {response[:150]}"
+                    notes=f"Konnte Etikett nicht vollständig analysieren: {str(parse_error)[:100]}"
                 )
         else:
             return LabelScanResponse(

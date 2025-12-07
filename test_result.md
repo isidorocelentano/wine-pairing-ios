@@ -183,7 +183,7 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Admin Grapes Page"
+    - "Admin Dishes Page"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"

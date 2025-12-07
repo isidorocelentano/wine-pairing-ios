@@ -202,7 +202,7 @@ const translations = {
     pairing_sparkling: 'Sparkling Wine',
     pairing_sweet: 'Sweet Wine',
     pairing_button: 'Get Recommendation',
-    pairing_loading: 'Sommelier is thinking...',
+    pairing_loading: 'Claude analyzing... (approx. 5-10 sec)',
     pairing_result_title: 'Sommelier Recommendation',
     pairing_result_for: 'for',
     pairing_cellar_matches: 'Matching wines from your cellar:',

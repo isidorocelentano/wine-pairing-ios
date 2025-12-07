@@ -3,7 +3,7 @@ import "@/App.css";
 import { BrowserRouter, Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import { Toaster, toast } from 'sonner';
-import { Wine, Utensils, MessageCircle, Home, Camera, Upload, X, Send, Loader2, Plus, Trash2, Star, Mic, MicOff, Globe, BookOpen, Users, Grape } from 'lucide-react';
+import { Wine, Utensils, MessageCircle, Home, Camera, Upload, X, Send, Loader2, Plus, Trash2, Star, Mic, MicOff, Globe, BookOpen, Users, Grape, Moon, Sun } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";

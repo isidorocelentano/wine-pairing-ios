@@ -442,10 +442,11 @@ const WineDatabasePage = () => {
                         >
                           <Plus className="h-4 w-4" />
                         </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
               </div>
 
               {/* Load More Button */}

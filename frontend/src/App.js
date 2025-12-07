@@ -77,6 +77,7 @@ const Navigation = () => {
     { path: '/pairing', icon: Utensils, labelKey: 'nav_pairing' },
     { path: '/cellar', icon: Wine, labelKey: 'nav_cellar' },
     { path: '/chat', icon: MessageCircle, labelKey: 'nav_sommelier' },
+    { path: '/blog', icon: BookOpen, labelKey: 'nav_blog' },
   ];
 
   return (

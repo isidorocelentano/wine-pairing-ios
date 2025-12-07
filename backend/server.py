@@ -475,6 +475,114 @@ async def get_favorites():
     favorite_wines = await db.wines.find({"is_favorite": True}, {"_id": 0}).to_list(100)
     return {"wines": favorite_wines}
 
+# ===================== COMMUNITY FEED ENDPOINTS =====================
+
+@api_router.get("/feed", response_model=List[FeedPost])
+async def get_feed_posts(limit: int = 50, skip: int = 0):
+    """Get all feed posts, newest first"""
+    posts = await db.feed_posts.find({}, {"_id": 0}).sort("created_at", -1).skip(skip).to_list(limit)
+    for post in posts:
+        if isinstance(post.get('created_at'), str):
+            post['created_at'] = datetime.fromisoformat(post['created_at'])
+        # Parse comments
+        if 'comments' in post:
+            for comment in post['comments']:
+                if isinstance(comment.get('created_at'), str):
+                    comment['created_at'] = datetime.fromisoformat(comment['created_at'])
+    return posts
+
+@api_router.get("/feed/{post_id}", response_model=FeedPost)
+async def get_feed_post(post_id: str):
+    """Get a specific feed post"""
+    post = await db.feed_posts.find_one({"id": post_id}, {"_id": 0})
+    if not post:
+        raise HTTPException(status_code=404, detail="Post nicht gefunden")
+    if isinstance(post.get('created_at'), str):
+        post['created_at'] = datetime.fromisoformat(post['created_at'])
+    return post
+
+@api_router.post("/feed", response_model=FeedPost)
+async def create_feed_post(post_data: FeedPostCreate):
+    """Create a new feed post"""
+    post = FeedPost(**post_data.model_dump())
+    doc = post.model_dump()
+    doc['created_at'] = doc['created_at'].isoformat()
+    doc['likes'] = []
+    doc['comments'] = []
+    await db.feed_posts.insert_one(doc)
+    return post
+
+@api_router.post("/feed/{post_id}/like")
+async def toggle_like(post_id: str, author_id: str):
+    """Toggle like on a feed post"""
+    post = await db.feed_posts.find_one({"id": post_id}, {"_id": 0})
+    if not post:
+        raise HTTPException(status_code=404, detail="Post nicht gefunden")
+    
+    likes = post.get('likes', [])
+    if author_id in likes:
+        likes.remove(author_id)
+        action = "unliked"
+    else:
+        likes.append(author_id)
+        action = "liked"
+    
+    await db.feed_posts.update_one({"id": post_id}, {"$set": {"likes": likes}})
+    return {"action": action, "likes_count": len(likes)}
+
+@api_router.post("/feed/{post_id}/comment")
+async def add_comment(post_id: str, comment_data: FeedCommentCreate):
+    """Add a comment to a feed post"""
+    post = await db.feed_posts.find_one({"id": post_id}, {"_id": 0})
+    if not post:
+        raise HTTPException(status_code=404, detail="Post nicht gefunden")
+    
+    comment = FeedComment(
+        author_name=comment_data.author_name,
+        content=comment_data.content
+    )
+    comment_doc = comment.model_dump()
+    comment_doc['created_at'] = comment_doc['created_at'].isoformat()
+    
+    await db.feed_posts.update_one(
+        {"id": post_id},
+        {"$push": {"comments": comment_doc}}
+    )
+    return {"message": "Kommentar hinzugefügt", "comment": comment_doc}
+
+@api_router.delete("/feed/{post_id}")
+async def delete_feed_post(post_id: str, author_id: str):
+    """Delete a feed post (only by author)"""
+    post = await db.feed_posts.find_one({"id": post_id}, {"_id": 0})
+    if not post:
+        raise HTTPException(status_code=404, detail="Post nicht gefunden")
+    if post.get('author_id') != author_id:
+        raise HTTPException(status_code=403, detail="Nur der Autor kann diesen Post löschen")
+    
+    await db.feed_posts.delete_one({"id": post_id})
+    return {"message": "Post gelöscht"}
+
+@api_router.get("/feed-stats")
+async def get_feed_stats():
+    """Get feed statistics"""
+    total_posts = await db.feed_posts.count_documents({})
+    total_users = len(await db.feed_posts.distinct("author_id"))
+    
+    # Top rated pairings
+    pipeline = [
+        {"$match": {"rating": {"$gte": 4}}},
+        {"$sort": {"created_at": -1}},
+        {"$limit": 5},
+        {"$project": {"_id": 0, "dish": 1, "wine_name": 1, "rating": 1, "author_name": 1}}
+    ]
+    top_pairings = await db.feed_posts.aggregate(pipeline).to_list(5)
+    
+    return {
+        "total_posts": total_posts,
+        "total_users": total_users,
+        "top_pairings": top_pairings
+    }
+
 # ===================== BLOG ENDPOINTS =====================
 
 @api_router.get("/blog", response_model=List[BlogPost])

@@ -1,14 +1,16 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 
 export const useVoiceInput = (onResult, language = 'de') => {
   const [isListening, setIsListening] = useState(false);
-  const [isSupported, setIsSupported] = useState(false);
   const recognitionRef = useRef(null);
+  
+  // Check for browser support once
+  const isSupported = useMemo(() => {
+    return !!(window.SpeechRecognition || window.webkitSpeechRecognition);
+  }, []);
 
   useEffect(() => {
-    // Check for browser support
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    setIsSupported(!!SpeechRecognition);
 
     if (SpeechRecognition) {
       recognitionRef.current = new SpeechRecognition();
@@ -21,8 +23,7 @@ export const useVoiceInput = (onResult, language = 'de') => {
         setIsListening(false);
       };
 
-      recognitionRef.current.onerror = (event) => {
-        console.error('Speech recognition error:', event.error);
+      recognitionRef.current.onerror = () => {
         setIsListening(false);
       };
 
@@ -40,12 +41,7 @@ export const useVoiceInput = (onResult, language = 'de') => {
 
   useEffect(() => {
     if (recognitionRef.current) {
-      // Map language codes to speech recognition language codes
-      const langMap = {
-        de: 'de-DE',
-        en: 'en-US',
-        fr: 'fr-FR'
-      };
+      const langMap = { de: 'de-DE', en: 'en-US', fr: 'fr-FR' };
       recognitionRef.current.lang = langMap[language] || 'de-DE';
     }
   }, [language]);
@@ -56,7 +52,7 @@ export const useVoiceInput = (onResult, language = 'de') => {
         recognitionRef.current.start();
         setIsListening(true);
       } catch (error) {
-        console.error('Failed to start speech recognition:', error);
+        // Handle error silently
       }
     }
   }, [isListening]);

@@ -72,6 +72,26 @@ class WineUpdate(BaseModel):
     image_base64: Optional[str] = None
     is_favorite: Optional[bool] = None
 
+# ===================== WINE DATABASE MODELS =====================
+class WineDatabaseEntry(BaseModel):
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    name: str
+    winery: str
+    country: str
+    region: str
+    appellation: Optional[str] = None
+    grape_variety: str  # Primary grape
+    wine_color: str  # weiss, rose, rot, suesswein, schaumwein
+    year: Optional[int] = None
+    description: str  # Emotional description
+    tasting_notes: Optional[str] = None
+    food_pairings: List[str] = []
+    alcohol_content: Optional[float] = None
+    price_category: Optional[str] = None  # budget, mid-range, premium, luxury
+    image_url: Optional[str] = None
+    rating: Optional[float] = None
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
 class PairingRequest(BaseModel):
     dish: str
     use_cellar: bool = False

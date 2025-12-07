@@ -19,6 +19,15 @@ const BlogPage = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const fetchCategories = useCallback(async () => {
+    try {
+      const response = await axios.get(`${API}/blog-categories`);
+      setCategories(response.data);
+    } catch (error) {
+      console.error('Error fetching categories:', error);
+    }
+  }, []);
+
   const fetchPosts = useCallback(async () => {
     try {
       const params = selectedCategory ? `?category=${selectedCategory}` : '';
@@ -31,14 +40,10 @@ const BlogPage = () => {
     }
   }, [selectedCategory]);
 
-  const fetchCategories = async () => {
-    try {
-      const response = await axios.get(`${API}/blog-categories`);
-      setCategories(response.data);
-    } catch (error) {
-      console.error('Error fetching categories:', error);
-    }
-  };
+  useEffect(() => {
+    fetchPosts();
+    fetchCategories();
+  }, [fetchPosts, fetchCategories]);
 
   const getLocalizedTitle = (post) => {
     if (language === 'en' && post.title_en) return post.title_en;

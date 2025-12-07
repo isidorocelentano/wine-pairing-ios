@@ -1301,6 +1301,133 @@ async def seed_wine_database(count: int = 2000):
     # For now, return the base wines count
     return {"message": f"{inserted_count} Weine wurden erstellt (Basis-Set). Weitere {count - inserted_count} werden nach und nach generiert."}
 
+
+@api_router.post("/generate-wines")
+async def generate_additional_wines(batch_size: int = 50):
+    """Generate additional wines using AI"""
+    try:
+        current_count = await db.wine_database.count_documents({})
+        logger.info(f"Current wine count: {current_count}, generating {batch_size} more...")
+        
+        # Wine generation templates for variety
+        regions_templates = [
+            {"country": "Frankreich", "region": "Bordeaux", "grapes": ["Cabernet Sauvignon", "Merlot", "Cabernet Franc"], "color": "rot"},
+            {"country": "Frankreich", "region": "Burgund", "grapes": ["Pinot Noir", "Chardonnay"], "color": "rot"},
+            {"country": "Frankreich", "region": "Rhône", "grapes": ["Syrah", "Grenache", "Mourvèdre"], "color": "rot"},
+            {"country": "Frankreich", "region": "Loire", "grapes": ["Sauvignon Blanc", "Chenin Blanc"], "color": "weiss"},
+            {"country": "Frankreich", "region": "Elsass", "grapes": ["Riesling", "Gewürztraminer", "Pinot Gris"], "color": "weiss"},
+            {"country": "Italien", "region": "Toskana", "grapes": ["Sangiovese", "Cabernet Sauvignon"], "color": "rot"},
+            {"country": "Italien", "region": "Piemont", "grapes": ["Nebbiolo", "Barbera", "Dolcetto"], "color": "rot"},
+            {"country": "Italien", "region": "Venetien", "grapes": ["Corvina", "Garganega"], "color": "rot"},
+            {"country": "Spanien", "region": "Rioja", "grapes": ["Tempranillo", "Garnacha"], "color": "rot"},
+            {"country": "Spanien", "region": "Ribera del Duero", "grapes": ["Tempranillo"], "color": "rot"},
+            {"country": "Spanien", "region": "Priorat", "grapes": ["Garnacha", "Cariñena"], "color": "rot"},
+            {"country": "Deutschland", "region": "Mosel", "grapes": ["Riesling"], "color": "weiss"},
+            {"country": "Deutschland", "region": "Rheingau", "grapes": ["Riesling"], "color": "weiss"},
+            {"country": "Deutschland", "region": "Pfalz", "grapes": ["Riesling", "Pinot Noir"], "color": "weiss"},
+            {"country": "Österreich", "region": "Wachau", "grapes": ["Grüner Veltliner", "Riesling"], "color": "weiss"},
+            {"country": "USA", "region": "Kalifornien", "grapes": ["Cabernet Sauvignon", "Chardonnay", "Pinot Noir"], "color": "rot"},
+            {"country": "USA", "region": "Oregon", "grapes": ["Pinot Noir"], "color": "rot"},
+            {"country": "Australien", "region": "Barossa Valley", "grapes": ["Shiraz"], "color": "rot"},
+            {"country": "Neuseeland", "region": "Marlborough", "grapes": ["Sauvignon Blanc"], "color": "weiss"},
+            {"country": "Argentinien", "region": "Mendoza", "grapes": ["Malbec"], "color": "rot"},
+            {"country": "Chile", "region": "Maipo Valley", "grapes": ["Cabernet Sauvignon", "Carmenère"], "color": "rot"},
+            {"country": "Südafrika", "region": "Stellenbosch", "grapes": ["Pinotage", "Cabernet Sauvignon"], "color": "rot"},
+            {"country": "Portugal", "region": "Douro", "grapes": ["Touriga Nacional", "Tinta Roriz"], "color": "rot"},
+        ]
+        
+        price_categories = ["budget", "mid-range", "premium", "luxury"]
+        
+        wines_generated = []
+        
+        # Generate wines in batches
+        for i in range(0, batch_size, 5):
+            # Select random region template
+            import random
+            template = random.choice(regions_templates)
+            grape = random.choice(template["grapes"])
+            price_cat = random.choice(price_categories)
+            year = random.randint(2015, 2022)
+            
+            # Use GPT-5.1 to generate wine details
+            chat = LlmChat(
+                api_key=EMERGENT_LLM_KEY,
+                session_id=str(uuid.uuid4()),
+                system_message="Du bist ein Weinexperte. Generiere realistische Wein-Informationen im JSON-Format."
+            ).with_model("openai", "gpt-5.1")
+            
+            prompt = f"""Generiere 5 realistische Weine aus {template['region']}, {template['country']} mit folgenden Eigenschaften:
+- Rebsorte: {grape}
+- Weinfarbe: {template['color']}
+- Preiskategorie: {price_cat}
+- Jahrgang: {year}
+
+Für jeden Wein generiere:
+1. Einen authentischen Weinnamen (z.B. "Château...", "Domaine...", "Estate...")
+2. Einen realistischen Weingut-Namen
+3. Eine emotionale, poetische Beschreibung (2-3 Sätze auf Deutsch)
+4. 4-6 Food Pairings
+5. Appellations-Name (wenn zutreffend)
+
+Antwort NUR als JSON-Array:
+[
+  {{
+    "name": "Weinname",
+    "winery": "Weingut Name",
+    "appellation": "Appellation Name",
+    "description": "Emotionale Beschreibung...",
+    "food_pairings": ["Pairing 1", "Pairing 2", ...]
+  }},
+  ...
+]"""
+            
+            user_message = UserMessage(text=prompt)
+            response = await chat.send_message(user_message)
+            
+            # Parse JSON response
+            try:
+                json_match = re.search(r'\[.*\]', response, re.DOTALL)
+                if json_match:
+                    wines_data = json.loads(json_match.group())
+                    
+                    for wine_data in wines_data[:5]:  # Ensure max 5
+                        wine_entry = WineDatabaseEntry(
+                            name=wine_data.get('name', f'Wein {current_count + len(wines_generated) + 1}'),
+                            winery=wine_data.get('winery', 'Unbekannt'),
+                            country=template['country'],
+                            region=template['region'],
+                            appellation=wine_data.get('appellation'),
+                            grape_variety=grape,
+                            wine_color=template['color'],
+                            year=year,
+                            description=wine_data.get('description', 'Ein bemerkenswerter Wein.'),
+                            food_pairings=wine_data.get('food_pairings', []),
+                            price_category=price_cat,
+                            alcohol_content=round(random.uniform(11.5, 15.0), 1),
+                            image_url="/placeholder-wine.png",
+                            rating=round(random.uniform(3.5, 5.0), 1)
+                        )
+                        wines_generated.append(wine_entry.model_dump())
+            except Exception as e:
+                logger.warning(f"Failed to parse AI wine generation: {e}")
+                continue
+        
+        # Insert generated wines
+        if wines_generated:
+            for wine_data in wines_generated:
+                wine_data['created_at'] = wine_data['created_at'].isoformat()
+                await db.wine_database.insert_one(wine_data)
+        
+        new_count = await db.wine_database.count_documents({})
+        logger.info(f"Generated {len(wines_generated)} wines. Total count: {new_count}")
+        
+        return {"message": f"{len(wines_generated)} Weine generiert. Gesamt: {new_count}"}
+        
+    except Exception as e:
+        logger.error(f"Wine generation error: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Fehler bei der Wein-Generierung: {str(e)}")
+
+
 # ===================== BLOG ENDPOINTS =====================
 
 @api_router.get("/blog", response_model=List[BlogPost])

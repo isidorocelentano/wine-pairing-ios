@@ -1097,32 +1097,130 @@ async def get_wine_database(
     skip: int = 0,
     limit: int = 50
 ):
-    """Get wines from the database with filters"""
-    query = {}
+    """Get wines from the database with filters and weighted full-text search"""
     
+    # If search is provided, use weighted search with prioritization
     if search:
-        query["$or"] = [
-            {"name": {"$regex": search, "$options": "i"}},
-            {"winery": {"$regex": search, "$options": "i"}},
-            {"grape_variety": {"$regex": search, "$options": "i"}},
-            {"description": {"$regex": search, "$options": "i"}}
-        ]
+        search_term = search.strip()
+        
+        # Prioritized search: name > appellation > region > country
+        # First, find exact or partial matches in name (highest priority)
+        name_query = {
+            "$or": [
+                {"name": {"$regex": f"^{search_term}", "$options": "i"}},  # Starts with
+                {"name": {"$regex": search_term, "$options": "i"}}  # Contains
+            ]
+        }
+        
+        # Then appellation
+        appellation_query = {"appellation": {"$regex": search_term, "$options": "i"}}
+        
+        # Then region
+        region_query = {"region": {"$regex": search_term, "$options": "i"}}
+        
+        # Then country
+        country_query = {"country": {"$regex": search_term, "$options": "i"}}
+        
+        # Also search in winery and grape variety
+        winery_query = {"winery": {"$regex": search_term, "$options": "i"}}
+        grape_query = {"grape_variety": {"$regex": search_term, "$options": "i"}}
+        
+        # Combine with additional filters
+        filter_conditions = []
+        if country:
+            filter_conditions.append({"country": country})
+        if region:
+            filter_conditions.append({"region": region})
+        if appellation:
+            filter_conditions.append({"appellation": appellation})
+        if grape_variety:
+            filter_conditions.append({"grape_variety": grape_variety})
+        if wine_color:
+            filter_conditions.append({"wine_color": wine_color})
+        if price_category:
+            filter_conditions.append({"price_category": price_category})
+        
+        # Fetch results with priority order
+        wines = []
+        seen_ids = set()
+        
+        # 1. Name matches (highest priority)
+        if len(wines) < limit:
+            query = name_query.copy()
+            if filter_conditions:
+                query = {"$and": [name_query, {"$and": filter_conditions}]}
+            name_wines = await db.wine_database.find(query, {"_id": 0}).limit(limit).to_list(limit)
+            for w in name_wines:
+                if w['id'] not in seen_ids:
+                    wines.append(w)
+                    seen_ids.add(w['id'])
+        
+        # 2. Appellation matches
+        if len(wines) < limit:
+            query = appellation_query.copy()
+            if filter_conditions:
+                query = {"$and": [appellation_query, {"$and": filter_conditions}]}
+            app_wines = await db.wine_database.find(query, {"_id": 0}).limit(limit - len(wines)).to_list(limit - len(wines))
+            for w in app_wines:
+                if w['id'] not in seen_ids:
+                    wines.append(w)
+                    seen_ids.add(w['id'])
+        
+        # 3. Region matches
+        if len(wines) < limit:
+            query = region_query.copy()
+            if filter_conditions:
+                query = {"$and": [region_query, {"$and": filter_conditions}]}
+            region_wines = await db.wine_database.find(query, {"_id": 0}).limit(limit - len(wines)).to_list(limit - len(wines))
+            for w in region_wines:
+                if w['id'] not in seen_ids:
+                    wines.append(w)
+                    seen_ids.add(w['id'])
+        
+        # 4. Country matches
+        if len(wines) < limit:
+            query = country_query.copy()
+            if filter_conditions:
+                query = {"$and": [country_query, {"$and": filter_conditions}]}
+            country_wines = await db.wine_database.find(query, {"_id": 0}).limit(limit - len(wines)).to_list(limit - len(wines))
+            for w in country_wines:
+                if w['id'] not in seen_ids:
+                    wines.append(w)
+                    seen_ids.add(w['id'])
+        
+        # 5. Winery and grape matches (lowest priority)
+        if len(wines) < limit:
+            query = {"$or": [winery_query, grape_query]}
+            if filter_conditions:
+                query = {"$and": [query, {"$and": filter_conditions}]}
+            other_wines = await db.wine_database.find(query, {"_id": 0}).limit(limit - len(wines)).to_list(limit - len(wines))
+            for w in other_wines:
+                if w['id'] not in seen_ids:
+                    wines.append(w)
+                    seen_ids.add(w['id'])
+        
+        # Apply skip/limit
+        wines = wines[skip:skip + limit]
+        
+    else:
+        # No search term - use simple filter query
+        query = {}
+        if country:
+            query["country"] = country
+        if region:
+            query["region"] = region
+        if appellation:
+            query["appellation"] = appellation
+        if grape_variety:
+            query["grape_variety"] = grape_variety
+        if wine_color:
+            query["wine_color"] = wine_color
+        if price_category:
+            query["price_category"] = price_category
+        
+        wines = await db.wine_database.find(query, {"_id": 0}).skip(skip).limit(limit).to_list(limit)
     
-    if country:
-        query["country"] = country
-    if region:
-        query["region"] = region
-    if appellation:
-        query["appellation"] = appellation
-    if grape_variety:
-        query["grape_variety"] = grape_variety
-    if wine_color:
-        query["wine_color"] = wine_color
-    if price_category:
-        query["price_category"] = price_category
-    
-    wines = await db.wine_database.find(query, {"_id": 0}).skip(skip).limit(limit).to_list(limit)
-    
+    # Convert datetime strings
     for wine in wines:
         if isinstance(wine.get('created_at'), str):
             wine['created_at'] = datetime.fromisoformat(wine['created_at'])

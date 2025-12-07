@@ -420,6 +420,15 @@ WICHTIG:
         user_message = UserMessage(text=prompt, file_contents=[image_content])
         response = await chat.send_message(user_message)
         
+        # Check if response is None or empty
+        if not response or not response.strip():
+            logger.warning("Label scan: Received empty or None response from AI")
+            return LabelScanResponse(
+                name="Nicht erkannt",
+                type="rot",
+                notes="Keine Antwort vom Sommelier - Bitte versuchen Sie es erneut"
+            )
+        
         # Extract JSON from response - try multiple patterns
         json_match = re.search(r'\{[^{}]*\}', response, re.DOTALL)
         

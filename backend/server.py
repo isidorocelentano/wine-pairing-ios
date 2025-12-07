@@ -78,6 +78,8 @@ class WineDatabaseEntry(BaseModel):
     name: str
     winery: str
     country: str
+import os
+
     region: str
     appellation: Optional[str] = None
     grape_variety: str  # Primary grape

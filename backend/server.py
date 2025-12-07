@@ -408,33 +408,6 @@ WICHTIG:
 - Verwende in allen tag-listen (trend_cuisines, key_aromas, texture) nur kleinschreibung.
 """
 
-# Removed duplicate content
-{
-  "slug": "kebab-case-slug-ohne-uml...",
-  "name": "Name der Rebsorte",
-  "type": "rot" oder "weiss",
-  "description": "Poetische deutsche Beschreibung (3-5 Sätze)",
-  "description_en": "Poetic English description (3-5 sentences)",
-  "description_fr": "Description poétique en français (3-5 phrases)",
-  "synonyms": ["Synonym 1", "Synonym 2"],
-  "body": "leicht" oder "mittel" oder "vollmundig",
-  "acidity": "niedrig" oder "mittel" oder "hoch",
-  "tannin": "niedrig" oder "mittel" oder "hoch",
-  "aging": "Kurze Beschreibung des typischen Ausbaus (z.B. Edelstahl, Holzfass, Barrique)",
-  "primary_aromas": ["3-6 kurze deutsche aroma-tags in kleinschreibung"],
-  "tertiary_aromas": ["3-6 kurze deutsche aroma-tags in kleinschreibung"],
-  "perfect_pairings": ["3-6 kurze deutsche speisen-tags in kleinschreibung"],
-  "perfect_pairings_en": ["3-6 short english food pairing tags"],
-  "perfect_pairings_fr": ["3-6 étiquettes d'accords mets-vins en français"],
-  "main_regions": ["3-6 wichtigste anbaugebiete"]
-}
-
-WICHTIG:
-- Verwende GENAU diese Feldnamen.
-- Verwende bei body/acidity/tannin NUR die angegebenen Skalenwerte.
-- Gib KEINEN zusätzlichen Text außer dem JSON zurück.
-- Verwende in den deutschen Tag-Listen (primary_aromas, tertiary_aromas, perfect_pairings) nur kleinschreibung.
-"""
 
 
 def get_sommelier_system(language: str = "de") -> str:

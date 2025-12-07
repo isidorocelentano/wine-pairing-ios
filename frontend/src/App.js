@@ -268,7 +268,13 @@ const PairingPage = () => {
   const { t, language } = useLanguage();
   const [dish, setDish] = useState('');
   const [useCellar, setUseCellar] = useState(false);
-  const [wineTypeFilter, setWineTypeFilter] = useState('');
+  const [wineTypeFilter, setWineTypeFilter] = useState('all');
+  const [dishCountryFilter, setDishCountryFilter] = useState('');
+  const [dishTrendFilter, setDishTrendFilter] = useState('');
+  const [dishBestsellerFilter, setDishBestsellerFilter] = useState('');
+  const [dishes, setDishes] = useState([]);
+  const [filteredDishSuggestions, setFilteredDishSuggestions] = useState([]);
+  const [selectedDishId, setSelectedDishId] = useState(null);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
   const [history, setHistory] = useState([]);

@@ -115,6 +115,25 @@ const translations = {
     chat_placeholder: 'Fragen Sie den Sommelier...',
     chat_voice_hint: 'Tippen Sie auf das Mikrofon, um zu sprechen',
     
+    // Grapes
+    grapes_tagline: 'Rebsorten-Lexikon',
+    grapes_title: 'Die Welt der Rebsorten',
+    grapes_description: 'Entdecken Sie die Seele jeder Traube – poetisch beschrieben, mit perfekten Speisen-Pairings.',
+    grapes_all: 'Alle',
+    grapes_white: 'Weißwein',
+    grapes_red: 'Rotwein',
+    grapes_empty: 'Keine Rebsorten gefunden',
+    grapes_back: 'Zurück zu allen Rebsorten',
+    grapes_synonyms: 'Auch bekannt als',
+    grapes_body: 'Körper',
+    grapes_acidity: 'Säure',
+    grapes_tannin: 'Tannin',
+    grapes_aging: 'Ausbau',
+    grapes_primary_aromas: 'Primäraromen',
+    grapes_tertiary_aromas: 'Tertiäraromen',
+    grapes_perfect_pairings: 'Perfekt zu',
+    grapes_main_regions: 'Hauptanbaugebiete',
+    
     // Blog
     blog_tagline: 'Wein-Wissen',
     blog_title: 'Der Sommelier Blog',

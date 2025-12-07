@@ -146,6 +146,7 @@ const translations = {
     nav_cellar: 'Cellar',
     nav_sommelier: 'Sommelier',
     nav_blog: 'Blog',
+    nav_feed: 'Community',
     hero_tagline: 'The Discovery of Pure Enjoyment',
     hero_title: 'Your Virtual Sommelier',
     hero_description: 'The only recommendation that sells nothing but your perfect moment. Discover the harmony of wine and food – independent, honest, delightful.',

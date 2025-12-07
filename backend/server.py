@@ -94,6 +94,7 @@ class ChatRequest(BaseModel):
     message: str
     session_id: Optional[str] = None
     image_base64: Optional[str] = None
+    language: str = "de"  # de, en, fr
 
 class ChatResponse(BaseModel):
     response: str

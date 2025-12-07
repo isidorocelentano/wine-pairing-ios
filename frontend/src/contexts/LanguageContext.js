@@ -51,6 +51,7 @@ const translations = {
     pairing_cellar_matches: 'Passende Weine aus Ihrem Keller:',
     pairing_history: 'Letzte Empfehlungen',
     pairing_voice_hint: 'Tippen Sie auf das Mikrofon, um Ihr Gericht zu diktieren',
+    pairing_more_details: 'Mehr Details anzeigen',
     
     // Feed Page
     feed_tagline: 'Genuss-Community',
@@ -208,6 +209,7 @@ const translations = {
     pairing_cellar_matches: 'Matching wines from your cellar:',
     pairing_history: 'Recent Recommendations',
     pairing_voice_hint: 'Tap the microphone to dictate your dish',
+    pairing_more_details: 'Show more details',
     cellar_tagline: 'My Wine Cellar',
     cellar_title: 'Your Treasure Chamber',
     cellar_filter_all: 'All Wines',

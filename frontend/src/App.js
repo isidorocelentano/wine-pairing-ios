@@ -540,7 +540,7 @@ const PairingPage = () => {
                                   {hasDetails && (
                                     <details className="mt-1 group-open:mt-2">
                                       <summary className="text-xs text-primary/80 hover:text-primary font-medium flex items-center gap-1 cursor-pointer list-none">
-                                        <span>{'Mehr Details anzeigen'}</span>
+                                        <span>{t('pairing_more_details')}</span>
                                       </summary>
                                       <p className="mt-2 text-xs text-muted-foreground leading-relaxed whitespace-pre-line">
                                         {long}

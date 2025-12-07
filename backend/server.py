@@ -460,10 +460,11 @@ WICHTIG:
                     notes=f"Konnte Etikett nicht vollständig analysieren: {str(parse_error)[:100]}"
                 )
         else:
+            logger.warning(f"Label scan: No JSON found in response: {response[:200]}")
             return LabelScanResponse(
                 name="Nicht erkannt",
                 type="rot",
-                notes=response[:200] if response else "Keine Antwort vom Sommelier"
+                notes=f"Konnte keine strukturierten Daten extrahieren. Antwort: {response[:150]}"
             )
             
     except Exception as e:

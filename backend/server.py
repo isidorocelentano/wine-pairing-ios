@@ -779,6 +779,88 @@ async def delete_feed_post(post_id: str, author_id: str):
     post = await db.feed_posts.find_one({"id": post_id}, {"_id": 0})
     if not post:
         raise HTTPException(status_code=404, detail="Post nicht gefunden")
+
+@api_router.post("/admin/grapes/generate", response_model=GrapeVariety)
+async def generate_grape_variety(request: GrapeGenerationRequest):
+    """Generate a new grape variety entry via LLM in a normalized structure.
+
+    Hinweis: Interner Admin-Endpoint, keine Authentifizierung hier im Prototyp.
+    """
+    try:
+        chat = LlmChat(
+            api_key=EMERGENT_LLM_KEY,
+            session_id=str(uuid.uuid4()),
+            system_message=GRAPE_GENERATOR_SYSTEM
+        ).with_model("openai", "gpt-5.1")
+
+        # Prompt für die zu generierende Rebsorte
+        base_prompt = f"Erzeuge einen vollständigen Rebsorten-Datensatz für die Rebsorte '{request.name}'."
+        if request.grape_type:
+            base_prompt += f" Die Rebsorte ist ein {request.grape_type}-wein."
+        if request.style_hint:
+            base_prompt += f" Stil-Hinweis: {request.style_hint}."
+
+        user_message = UserMessage(text=base_prompt)
+        raw_response = await chat.send_message(user_message)
+
+        if not raw_response or not raw_response.strip():
+            raise HTTPException(status_code=500, detail="Leere Antwort vom LLM bei der Rebsorten-Generierung")
+
+        # JSON aus Antwort extrahieren
+        json_match = re.search(r"\{[\s\S]*\}", raw_response)
+        if not json_match:
+            raise HTTPException(status_code=500, detail="Konnte keine JSON-Struktur aus der LLM-Antwort extrahieren")
+
+        data = json.loads(json_match.group())
+
+        # Fallbacks & Normalisierung
+        slug = data.get("slug") or re.sub(r"[^a-z0-9-]", "", data.get("name", request.name).lower().replace(" ", "-"))
+        grape_type = data.get("type") or (request.grape_type or "weiss")
+        if grape_type not in ["rot", "weiss"]:
+            grape_type = "weiss"
+
+        def ensure_list(value):
+            if not value:
+                return []
+            if isinstance(value, list):
+                return value
+            return [str(value)]
+
+        grape_payload = {
+            "slug": slug,
+            "name": data.get("name", request.name),
+            "type": grape_type,
+            "description": data.get("description", ""),
+            "description_en": data.get("description_en"),
+            "description_fr": data.get("description_fr"),
+            "synonyms": ensure_list(data.get("synonyms")),
+            "body": data.get("body", "mittel"),
+            "acidity": data.get("acidity", "mittel"),
+            "tannin": data.get("tannin", "mittel" if grape_type == "rot" else "niedrig"),
+            "aging": data.get("aging", ""),
+            "primary_aromas": ensure_list(data.get("primary_aromas")),
+            "tertiary_aromas": ensure_list(data.get("tertiary_aromas")),
+            "perfect_pairings": ensure_list(data.get("perfect_pairings")),
+            "perfect_pairings_en": ensure_list(data.get("perfect_pairings_en")),
+            "perfect_pairings_fr": ensure_list(data.get("perfect_pairings_fr")),
+            "main_regions": ensure_list(data.get("main_regions")),
+            "image_url": None,
+        }
+
+        grape = GrapeVariety(**grape_payload)
+        doc = grape.model_dump()
+        doc["created_at"] = doc["created_at"].isoformat()
+        await db.grape_varieties.insert_one(doc)
+
+        return grape
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error generating grape variety: {e}")
+        raise HTTPException(status_code=500, detail="Fehler bei der Rebsorten-Generierung")
+
+
     if post.get('author_id') != author_id:
         raise HTTPException(status_code=403, detail="Nur der Autor kann diesen Post löschen")
     

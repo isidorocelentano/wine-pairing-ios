@@ -101,3 +101,51 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+
+user_problem_statement: "Wine Pairing App - Label Scanner robustness improvement"
+
+backend:
+  - task: "Label Scanner API - Robustness Enhancement"
+    implemented: true
+    working: "NA"
+    file: "/app/backend/server.py"
+    stuck_count: 1
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: false
+        agent: "testing"
+        comment: "Previous testing showed fragile error handling - API failed on certain inputs"
+      - working: "NA"
+        agent: "main"
+        comment: "Enhanced error handling: Added None/empty response check, improved JSON parsing with more exception types (KeyError, TypeError), better logging for debugging. Testing required."
+
+frontend:
+  - task: "Grape Variety Database"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/pages/GrapesPage.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Verified desktop/mobile views, language switching (DE/EN/FR), and filters (all/white/red). All working correctly."
+
+metadata:
+  created_by: "main_agent"
+  version: "1.0"
+  test_sequence: 1
+  run_ui: false
+
+test_plan:
+  current_focus:
+    - "Label Scanner API - Robustness Enhancement"
+  stuck_tasks: []
+  test_all: false
+  test_priority: "high_first"
+
+agent_communication:
+  - agent: "main"
+    message: "Improved label scanner error handling: 1) Added check for None/empty AI response, 2) Enhanced JSON parsing error handling with more exception types, 3) Added logging for debugging. Please test the /api/scan-label endpoint with various scenarios: valid wine label images, invalid images, edge cases."

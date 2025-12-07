@@ -284,10 +284,12 @@ STRUCTURE DE VOTRE RÉPONSE:
 1. **🍷 RECOMMANDATION PRINCIPALE** (Introduction de 1-2 phrases sur le plat)
    - Le MEILLEUR type de vin pour ce plat
    - 2-3 vins spécifiques avec justification brève
+   - IMPORTANT: Écrivez toujours les noms de vin en **gras** (ex: **Château Margaux**)
 
 2. **Options Alternatives:**
    - Autres types de vin appropriés (Blanc/Rouge/Rosé/Mousseux/Doux)
    - 1-2 suggestions par type
+   - IMPORTANT: Noms de vin toujours en **gras**
 
 Réponses concises en français."""
 

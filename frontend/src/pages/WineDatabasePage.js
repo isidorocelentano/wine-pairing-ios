@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { Wine, Search, Filter, ChevronDown, Heart, Plus, Loader2, X } from 'lucide-react';
+import { Wine, Search, Filter, ChevronDown, Heart, Plus, Loader2, X, Bookmark } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';

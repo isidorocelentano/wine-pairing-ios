@@ -1162,11 +1162,6 @@ async def list_dishes(country: Optional[str] = None, bestseller_category: Option
     for d in dishes:
         if isinstance(d.get("created_at"), str):
             d["created_at"] = datetime.fromisoformat(d["created_at"])
-    return dishes
-        raise HTTPException(status_code=403, detail="Nur der Autor kann diesen Post löschen")
-    
-    await db.feed_posts.delete_one({"id": post_id})
-    return {"message": "Post gelöscht"}
 
 @api_router.get("/feed-stats")
 async def get_feed_stats():

@@ -262,7 +262,7 @@ const WineDatabasePage = () => {
                         <SelectValue placeholder="Alle Farben" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="">Alle Farben</SelectItem>
+                        <SelectItem value="all">Alle Farben</SelectItem>
                         <SelectItem value="rot">Rotwein</SelectItem>
                         <SelectItem value="weiss">Weißwein</SelectItem>
                         <SelectItem value="rose">Roséwein</SelectItem>

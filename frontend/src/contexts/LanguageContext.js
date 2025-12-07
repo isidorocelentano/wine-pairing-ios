@@ -6,7 +6,7 @@ const translations = {
     nav_home: 'Home',
     nav_pairing: 'Pairing',
     nav_cellar: 'Keller',
-    nav_sommelier: 'Sommelier',
+    nav_sommelier: 'Claude',
     nav_blog: 'Blog',
     nav_feed: 'Community',
     nav_grapes: 'Rebsorten',
@@ -14,8 +14,8 @@ const translations = {
     
     // Home Page
     hero_tagline: 'Die Entdeckung des reinen Genusses',
-    hero_title: 'Ihr virtueller Sommelier',
-    hero_description: 'Die einzige Empfehlung, die nichts verkauft, außer Ihrem perfekten Moment. Entdecken Sie die Harmonie von Wein und Speise – unabhängig, ehrlich, genussvoll.',
+    hero_title: 'Claude – Ihr Master Sommelier',
+    hero_description: 'Master of Wine und leidenschaftlicher Koch. Die einzige Empfehlung, die nichts verkauft, außer Ihrem perfekten Moment. Entdecken Sie die Harmonie von Wein und Speise – unabhängig, ehrlich, genussvoll.',
     cta_pairing: 'Wein-Pairing starten',
     cta_cellar: 'Mein Weinkeller',
     philosophy_tagline: 'Unsere Philosophie',

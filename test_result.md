@@ -155,7 +155,7 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Label Scanner API - Robustness Enhancement"
+    - "Updated Pairing Page Card Structure"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"

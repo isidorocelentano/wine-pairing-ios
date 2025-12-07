@@ -235,6 +235,32 @@ const HomePage = () => {
   );
 };
 
+// Helper to split wine description into compact summary and detailed part
+const splitDescription = (description) => {
+  if (!description) {
+    return { short: '', long: '' };
+  }
+
+  const text = description.trim();
+
+  if (text.length <= 160) {
+    return { short: text, long: '' };
+  }
+
+  const periodIndex = text.indexOf('.');
+
+  if (periodIndex > 0 && periodIndex < 160) {
+    const short = text.slice(0, periodIndex + 1).trim();
+    const long = text.slice(periodIndex + 1).trim();
+    return { short, long };
+  }
+
+  const short = `${text.slice(0, 140).trim()}…`;
+  const long = text.slice(140).trim();
+
+  return { short, long };
+};
+
 // ===================== WINE PAIRING PAGE =====================
 const PairingPage = () => {
   const { t, language } = useLanguage();

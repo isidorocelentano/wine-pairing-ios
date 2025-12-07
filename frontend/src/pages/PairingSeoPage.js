@@ -205,7 +205,7 @@ export const PAIRING_TEMPLATES = {
       reviewBody: {
         de: 'Die frische Säure und die mittleren Tanine des Chianti schneiden durch das Fett der Bolognese und balancieren die Süße der Tomatensauce. Die Noten von roter Kirsche und Kräutern verbinden sich harmonisch mit dem Ragù und lassen das Gericht klarer und lebendiger wirken.',
         en: 'The fresh acidity and medium tannins of the Chianti cut through the richness of the Bolognese and balance the sweetness of the tomato sauce. Red cherry and herbal notes echo the ragù and make the dish feel brighter and more defined.',
-        fr: 'L'acidité fraîche et les tanins moyens du Chianti tranchent dans la richesse de la bolognaise et équilibrent la douceur de la sauce tomate. Les notes de cerise rouge et d'herbes se marient au ragù et rendent le plat plus vif et plus net.'
+        fr: 'L\'acidite fraiche et les tanins moyens du Chianti tranchent dans la richesse de la bolognaise et equilibrent la douceur de la sauce tomate. Les notes de cerise rouge et d\'herbes se marient au ragu et rendent le plat plus vif et plus net.'
       }
     },
     page: {

@@ -3,7 +3,7 @@ import "@/App.css";
 import { BrowserRouter, Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import { Toaster, toast } from 'sonner';
-import { Wine, Utensils, MessageCircle, Home, Camera, Upload, X, Send, Loader2, Plus, Trash2, Star, Mic, MicOff, Globe, BookOpen, Users } from 'lucide-react';
+import { Wine, Utensils, MessageCircle, Home, Camera, Upload, X, Send, Loader2, Plus, Trash2, Star, Mic, MicOff, Globe, BookOpen, Users, Grape } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -18,6 +18,7 @@ import { SEO } from "@/components/SEO";
 import BlogPage from "@/pages/BlogPage";
 import BlogPostPage from "@/pages/BlogPostPage";
 import FeedPage from "@/pages/FeedPage";
+import { GrapesPage, GrapeDetailPage } from "@/pages/GrapesPage";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;

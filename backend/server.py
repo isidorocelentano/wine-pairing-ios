@@ -30,7 +30,6 @@ app = FastAPI(title="Wine Pairing API", version="1.0.0")
 
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
-import os
 
 
 # Configure logging

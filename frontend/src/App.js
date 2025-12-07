@@ -401,11 +401,7 @@ const CellarPage = () => {
   const fileInputRef = useRef(null);
   const scanInputRef = useRef(null);
 
-  useEffect(() => {
-    fetchWines();
-  }, [filter]);
-
-  const fetchWines = async () => {
+  const fetchWines = useCallback(async () => {
     try {
       const params = filter !== 'all' ? `?type_filter=${filter}` : '';
       const response = await axios.get(`${API}/wines${params}`);
@@ -415,7 +411,11 @@ const CellarPage = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [filter, t]);
+
+  useEffect(() => {
+    fetchWines();
+  }, [fetchWines]);
 
   const handleImageUpload = (e, isScan = false) => {
     const file = e.target.files?.[0];

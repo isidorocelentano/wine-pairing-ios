@@ -387,7 +387,8 @@ const PairingPage = () => {
         dish: dish,
         use_cellar: useCellar,
         wine_type_filter: wineTypeFilter || null,
-        language: language
+        language: language,
+        dish_id: selectedDishId
       });
       setResult(response.data);
       fetchHistory();

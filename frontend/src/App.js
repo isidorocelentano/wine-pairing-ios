@@ -398,15 +398,126 @@ const PairingPage = () => {
               </div>
             </CardHeader>
             <CardContent>
-              <div className="prose prose-sm max-w-none dark:prose-invert text-foreground/90 leading-relaxed whitespace-pre-wrap text-sm md:text-base
-                [&>h1]:text-xl [&>h1]:font-extrabold [&>h1]:mb-4 [&>h1]:text-primary
-                [&>h2]:text-base [&>h2]:font-bold [&>h2]:mt-6 [&>h2]:mb-3 [&>h2]:text-foreground
-                [&>hr]:my-4 [&>hr]:opacity-50
-                [&_strong]:font-bold [&_strong]:text-foreground [&_strong]:text-base
-                [&>ul>li]:my-2 [&>ul>li>strong]:text-primary [&>ul>li>strong]:font-bold
-                [&>ol>li]:my-2 [&>ol>li>strong]:text-primary [&>ol>li>strong]:font-bold">
-                {result.recommendation}
-              </div>
+              {(() => {
+                // Parse recommendation text into structured wine cards
+                const lines = result.recommendation.split('\n');
+                const sections = [];
+                let currentSection = null;
+                let currentIntro = '';
+                let wines = [];
+                
+                lines.forEach((line, idx) => {
+                  const trimmedLine = line.trim();
+                  
+                  // Main heading
+                  if (trimmedLine.match(/^1\.\s*\*\*.*HAUPTEMPFEHLUNG/i)) {
+                    if (currentSection) {
+                      currentSection.wines = wines;
+                      sections.push(currentSection);
+                    }
+                    currentSection = { title: '🍷 Hauptempfehlung', type: 'main', intro: '', wines: [] };
+                    wines = [];
+                    currentIntro = '';
+                  }
+                  // Alternative Options heading
+                  else if (trimmedLine.match(/^2\.\s*\*\*.*Alternative/i)) {
+                    if (currentSection) {
+                      currentSection.intro = currentIntro;
+                      currentSection.wines = wines;
+                      sections.push(currentSection);
+                    }
+                    currentSection = { title: '🔄 Alternative Optionen', type: 'alternatives', intro: '', wines: [] };
+                    wines = [];
+                    currentIntro = '';
+                  }
+                  // Sub-heading (wine categories)
+                  else if (trimmedLine.match(/^\*\*.*wein/i) || trimmedLine.match(/^-\s*\*\*.*wein/i)) {
+                    // Extract category name
+                    const categoryMatch = trimmedLine.match(/\*\*([^*]+)\*\*/);
+                    if (categoryMatch) {
+                      currentIntro = categoryMatch[1];
+                    }
+                  }
+                  // Wine recommendation (starts with - or *)
+                  else if (trimmedLine.match(/^[-*]\s+\*\*(.+?)\*\*/)) {
+                    const wineMatch = trimmedLine.match(/^[-*]\s+\*\*(.+?)\*\*\s*[-–—]\s*(.+)/);
+                    if (wineMatch) {
+                      wines.push({
+                        name: wineMatch[1].trim(),
+                        description: wineMatch[2].trim(),
+                        category: currentIntro
+                      });
+                    }
+                  }
+                  // Introduction text (not a wine, not a heading)
+                  else if (trimmedLine && !trimmedLine.match(/^[-*#]/) && !trimmedLine.match(/^---/) && currentSection && wines.length === 0) {
+                    currentIntro += (currentIntro ? ' ' : '') + trimmedLine;
+                  }
+                });
+                
+                // Add last section
+                if (currentSection) {
+                  currentSection.intro = currentIntro;
+                  currentSection.wines = wines;
+                  sections.push(currentSection);
+                }
+                
+                // Render wine cards
+                return (
+                  <div className="space-y-6">
+                    {sections.map((section, sectionIdx) => (
+                      <div key={sectionIdx}>
+                        {/* Section Title */}
+                        <h3 className="text-xl font-extrabold mb-3 text-primary flex items-center gap-2">
+                          {section.title}
+                        </h3>
+                        
+                        {/* Introduction */}
+                        {section.intro && (
+                          <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                            {section.intro}
+                          </p>
+                        )}
+                        
+                        {/* Wine Cards */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                          {section.wines.map((wine, wineIdx) => (
+                            <Card 
+                              key={wineIdx}
+                              className="border-2 border-border hover:border-primary hover:shadow-lg transition-all cursor-pointer group"
+                            >
+                              <CardContent className="p-4">
+                                {/* Wine Name - PROMINENT */}
+                                <h4 className="font-bold text-base md:text-lg text-primary group-hover:text-primary/80 mb-2 line-clamp-2">
+                                  {wine.name}
+                                </h4>
+                                
+                                {/* Category Badge */}
+                                {wine.category && (
+                                  <Badge variant="secondary" className="mb-2 text-xs">
+                                    {wine.category}
+                                  </Badge>
+                                )}
+                                
+                                {/* Description */}
+                                <p className="text-sm text-muted-foreground leading-relaxed">
+                                  {wine.description}
+                                </p>
+                              </CardContent>
+                            </Card>
+                          ))}
+                        </div>
+                        
+                        {/* Divider between sections */}
+                        {sectionIdx < sections.length - 1 && (
+                          <hr className="my-6 opacity-50" />
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                );
+              })()}
+              </CardContent>
               {result.cellar_matches && result.cellar_matches.length > 0 && (
                 <div className="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-border/50">
                   <p className="text-sm font-medium mb-3">{t('pairing_cellar_matches')}</p>

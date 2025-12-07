@@ -97,6 +97,7 @@ class PairingRequest(BaseModel):
     use_cellar: bool = False
     wine_type_filter: Optional[str] = None
     language: str = "de"  # de, en, fr
+    dish_id: Optional[str] = None  # optional structured dish from DB
 
 class PairingResponse(BaseModel):
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))

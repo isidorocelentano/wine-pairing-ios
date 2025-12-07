@@ -101,12 +101,12 @@ const WineDatabasePage = () => {
 
   const clearFilters = () => {
     setFilters({
-      country: '',
-      region: '',
-      appellation: '',
-      grape_variety: '',
-      wine_color: '',
-      price_category: ''
+      country: 'all',
+      region: 'all',
+      appellation: 'all',
+      grape_variety: 'all',
+      wine_color: 'all',
+      price_category: 'all'
     });
     setSearchQuery('');
   };

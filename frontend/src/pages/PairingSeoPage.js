@@ -259,7 +259,7 @@ export const PAIRING_TEMPLATES = {
       reviewBody: {
         de: 'Die lebendige Saure des Chianti harmoniert mit der Tomatensauce und verhindert, dass die Pizza schwer wirkt. Die rote Frucht erganzt die Suße der Tomate, wahrend die Krauternoten an frisches Basilikum erinnern und so eine aromatische Brucke schlagen.',
         en: 'The lively acidity of the Chianti matches the tomato sauce and keeps the pizza from feeling heavy. Red fruit complements the sweetness of the tomato while herbal notes recall fresh basil, building an aromatic bridge.',
-        fr: 'L'acidite vive du Chianti s'accorde avec la sauce tomate et empeche la pizza de paraitre lourde. Les fruits rouges completent la douceur de la tomate, tandis que les notes herbacees evoquent le basilic frais et creent un pont aromatique.'
+        fr: 'L\'acidite vive du Chianti s\'accorde avec la sauce tomate et empeche la pizza de paraitre lourde. Les fruits rouges completent la douceur de la tomate, tandis que les notes herbacees evoquent le basilic frais et creent un pont aromatique.'
       }
     },
     page: {

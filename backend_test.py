@@ -215,7 +215,7 @@ class WinePairingAPITester:
             self.log_test("Chat History", False, str(response))
         return success
 
-    def test_label_scan(self):
+    def test_label_scan_basic(self):
         """Test wine label scanning with a simple test image"""
         # Create a simple test image (1x1 pixel PNG in base64)
         test_image_base64 = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
@@ -226,11 +226,157 @@ class WinePairingAPITester:
         
         success, response = self.make_request('POST', 'scan-label', data=scan_data, expected_status=200)
         if success:
+            # Validate response structure matches LabelScanResponse model
+            required_fields = ['name', 'type']
+            optional_fields = ['region', 'year', 'grape', 'notes']
+            
+            missing_fields = [field for field in required_fields if field not in response]
+            if missing_fields:
+                self.log_test("Label Scanner (Basic)", False, f"Missing required fields: {missing_fields}")
+                return False
+            
+            # Validate wine type is one of the allowed values
+            valid_types = ['rot', 'weiss', 'rose', 'schaumwein']
+            wine_type = response.get('type')
+            if wine_type not in valid_types:
+                self.log_test("Label Scanner (Basic)", False, f"Invalid wine type: {wine_type}, expected one of {valid_types}")
+                return False
+            
+            wine_name = response.get('name', 'Unknown')
+            self.log_test("Label Scanner (Basic)", True, f"Detected: {wine_name} ({wine_type})")
+        else:
+            self.log_test("Label Scanner (Basic)", False, str(response))
+        return success
+
+    def test_label_scan_empty_image(self):
+        """Test label scanner with empty image data"""
+        scan_data = {
+            "image_base64": ""
+        }
+        
+        success, response = self.make_request('POST', 'scan-label', data=scan_data, expected_status=200)
+        if success:
+            # Should handle empty image gracefully
             wine_name = response.get('name', 'Unknown')
             wine_type = response.get('type', 'Unknown')
-            self.log_test("Label Scanner", True, f"Detected: {wine_name} ({wine_type})")
+            self.log_test("Label Scanner (Empty Image)", True, f"Handled empty image: {wine_name} ({wine_type})")
         else:
-            self.log_test("Label Scanner", False, str(response))
+            self.log_test("Label Scanner (Empty Image)", False, str(response))
+        return success
+
+    def test_label_scan_invalid_base64(self):
+        """Test label scanner with invalid base64 data"""
+        scan_data = {
+            "image_base64": "invalid_base64_data_here"
+        }
+        
+        success, response = self.make_request('POST', 'scan-label', data=scan_data, expected_status=200)
+        if success:
+            # Should handle invalid base64 gracefully
+            wine_name = response.get('name', 'Unknown')
+            wine_type = response.get('type', 'Unknown')
+            self.log_test("Label Scanner (Invalid Base64)", True, f"Handled invalid base64: {wine_name} ({wine_type})")
+        else:
+            self.log_test("Label Scanner (Invalid Base64)", False, str(response))
+        return success
+
+    def test_label_scan_missing_field(self):
+        """Test label scanner with missing image_base64 field"""
+        scan_data = {}
+        
+        success, response = self.make_request('POST', 'scan-label', data=scan_data, expected_status=422)
+        if success:
+            self.log_test("Label Scanner (Missing Field)", True, "Correctly rejected missing image_base64 field")
+        else:
+            # If it doesn't return 422, check if it handles it gracefully
+            if response.get('status_code') == 200:
+                self.log_test("Label Scanner (Missing Field)", True, "Handled missing field gracefully")
+                return True
+            else:
+                self.log_test("Label Scanner (Missing Field)", False, str(response))
+        return success
+
+    def test_label_scan_wine_bottle_image(self):
+        """Test label scanner with a more realistic wine bottle image"""
+        # This is a small JPEG image encoded in base64 (wine bottle silhouette)
+        wine_bottle_base64 = "/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwA/wA=="
+        
+        scan_data = {
+            "image_base64": wine_bottle_base64
+        }
+        
+        success, response = self.make_request('POST', 'scan-label', data=scan_data, expected_status=200)
+        if success:
+            wine_name = response.get('name', 'Unknown')
+            wine_type = response.get('type', 'Unknown')
+            
+            # Validate response structure
+            required_fields = ['name', 'type']
+            missing_fields = [field for field in required_fields if field not in response]
+            if missing_fields:
+                self.log_test("Label Scanner (Wine Bottle)", False, f"Missing required fields: {missing_fields}")
+                return False
+            
+            # Check if year is properly handled (should be int or null)
+            year = response.get('year')
+            if year is not None and not isinstance(year, int):
+                self.log_test("Label Scanner (Wine Bottle)", False, f"Year should be int or null, got: {type(year)}")
+                return False
+            
+            self.log_test("Label Scanner (Wine Bottle)", True, f"Processed wine bottle image: {wine_name} ({wine_type})")
+        else:
+            self.log_test("Label Scanner (Wine Bottle)", False, str(response))
+        return success
+
+    def test_label_scan_response_structure(self):
+        """Test that label scanner response matches expected LabelScanResponse model"""
+        test_image_base64 = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
+        
+        scan_data = {
+            "image_base64": test_image_base64
+        }
+        
+        success, response = self.make_request('POST', 'scan-label', data=scan_data, expected_status=200)
+        if success:
+            # Validate complete response structure
+            expected_structure = {
+                'name': str,
+                'type': str,
+                'region': (str, type(None)),
+                'year': (int, type(None)),
+                'grape': (str, type(None)),
+                'notes': (str, type(None))
+            }
+            
+            validation_errors = []
+            for field, expected_type in expected_structure.items():
+                if field not in response:
+                    validation_errors.append(f"Missing field: {field}")
+                    continue
+                
+                value = response[field]
+                if isinstance(expected_type, tuple):
+                    # Field can be multiple types (e.g., str or None)
+                    if not any(isinstance(value, t) for t in expected_type):
+                        validation_errors.append(f"Field {field} has wrong type: expected {expected_type}, got {type(value)}")
+                else:
+                    # Field must be specific type
+                    if not isinstance(value, expected_type):
+                        validation_errors.append(f"Field {field} has wrong type: expected {expected_type}, got {type(value)}")
+            
+            # Validate wine type values
+            valid_types = ['rot', 'weiss', 'rose', 'schaumwein']
+            wine_type = response.get('type')
+            if wine_type not in valid_types:
+                validation_errors.append(f"Invalid wine type: {wine_type}, expected one of {valid_types}")
+            
+            if validation_errors:
+                self.log_test("Label Scanner (Response Structure)", False, "; ".join(validation_errors))
+                return False
+            else:
+                self.log_test("Label Scanner (Response Structure)", True, "Response structure matches LabelScanResponse model")
+        else:
+            self.log_test("Label Scanner (Response Structure)", False, str(response))
         return success
 
     def test_get_favorites(self):

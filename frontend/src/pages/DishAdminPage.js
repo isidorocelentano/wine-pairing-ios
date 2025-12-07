@@ -297,6 +297,35 @@ const DishAdminPage = () => {
                       <div className="text-[10px] text-muted-foreground mt-1 truncate">
                         {(dish.trend_cuisines || []).join(', ')}
                       </div>
+
+                      {/* Expandable technical details */}
+                      <details className="mt-2 text-[11px] text-muted-foreground">
+                        <summary className="cursor-pointer list-none text-primary/80 hover:text-primary font-medium flex items-center gap-1">
+                          {t('admin_dishes_more_details')}
+                        </summary>
+                        <div className="mt-2 space-y-1">
+                          <p>
+                            <span className="font-semibold">{t('admin_dishes_labels_protein')}:</span>{' '}
+                            {dish.protein || '-'}
+                          </p>
+                          <p>
+                            <span className="font-semibold">{t('admin_dishes_labels_method')}:</span>{' '}
+                            {dish.cooking_method || '-'}
+                          </p>
+                          <p>
+                            <span className="font-semibold">{t('admin_dishes_labels_sauce')}:</span>{' '}
+                            {dish.sauce_base || '-'}
+                          </p>
+                          <p>
+                            <span className="font-semibold">{t('admin_dishes_labels_aromas')}:</span>{' '}
+                            {(dish.key_aromas || []).join(', ') || '-'}
+                          </p>
+                          <p>
+                            <span className="font-semibold">{t('admin_dishes_labels_texture')}:</span>{' '}
+                            {(dish.texture || []).join(', ') || '-'}
+                          </p>
+                        </div>
+                      </details>
                     </CardContent>
                   </Card>
                 ))}

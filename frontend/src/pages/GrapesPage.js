@@ -60,6 +60,17 @@ export const GrapesPage = () => {
             </p>
           </header>
 
+          {/* Optional Admin Link */}
+          <div className="flex justify-end mb-4">
+            <button
+              type="button"
+              onClick={() => navigate('/admin/grapes')}
+              className="text-xs text-muted-foreground hover:text-primary underline-offset-2 hover:underline"
+            >
+              {t('admin_grapes_title')}
+            </button>
+          </div>
+
           {/* Filter Tabs */}
           <Tabs value={filter} onValueChange={setFilter} className="mb-8">
             <TabsList className="grid w-full max-w-md mx-auto grid-cols-3">

@@ -276,6 +276,9 @@ async def get_pairing_history():
 @api_router.post("/scan-label", response_model=LabelScanResponse)
 async def scan_wine_label(request: LabelScanRequest):
     """Scan a wine label image and extract information"""
+    import json
+    import re
+    
     try:
         chat = LlmChat(
             api_key=EMERGENT_LLM_KEY,
@@ -295,32 +298,49 @@ async def scan_wine_label(request: LabelScanRequest):
   "notes": "Kurze Beschreibung"
 }
 
-Wenn eine Information nicht erkennbar ist, setze null."""
+WICHTIG: 
+- "name" MUSS ein String sein (wenn nicht erkennbar: "Unbekannter Wein")
+- "type" MUSS einer von: rot, weiss, rose, schaumwein sein (wenn nicht erkennbar: "rot")
+- Andere Felder können null sein"""
         
         user_message = UserMessage(text=prompt, file_contents=[image_content])
         response = await chat.send_message(user_message)
         
-        # Parse JSON from response
-        import json
-        import re
-        
-        # Extract JSON from response
+        # Extract JSON from response - try multiple patterns
         json_match = re.search(r'\{[^{}]*\}', response, re.DOTALL)
+        
         if json_match:
-            data = json.loads(json_match.group())
-            return LabelScanResponse(
-                name=data.get('name', 'Unbekannter Wein'),
-                type=data.get('type', 'rot'),
-                region=data.get('region'),
-                year=data.get('year'),
-                grape=data.get('grape'),
-                notes=data.get('notes')
-            )
+            try:
+                data = json.loads(json_match.group())
+                # Ensure required fields have valid defaults
+                name = data.get('name') or 'Unbekannter Wein'
+                wine_type = data.get('type') or 'rot'
+                
+                # Validate wine type
+                valid_types = ['rot', 'weiss', 'rose', 'schaumwein']
+                if wine_type.lower() not in valid_types:
+                    wine_type = 'rot'
+                
+                return LabelScanResponse(
+                    name=str(name),
+                    type=wine_type.lower(),
+                    region=data.get('region') if data.get('region') else None,
+                    year=int(data['year']) if data.get('year') and str(data['year']).isdigit() else None,
+                    grape=data.get('grape') if data.get('grape') else None,
+                    notes=data.get('notes') if data.get('notes') else None
+                )
+            except (json.JSONDecodeError, ValueError) as parse_error:
+                logger.warning(f"JSON parse error: {parse_error}, response: {response[:200]}")
+                return LabelScanResponse(
+                    name="Nicht erkannt",
+                    type="rot",
+                    notes=f"Konnte Etikett nicht vollständig analysieren: {response[:150]}"
+                )
         else:
             return LabelScanResponse(
                 name="Nicht erkannt",
                 type="rot",
-                notes=response[:200]
+                notes=response[:200] if response else "Keine Antwort vom Sommelier"
             )
             
     except Exception as e:

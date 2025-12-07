@@ -269,10 +269,12 @@ STRUCTURE YOUR RESPONSE:
 1. **🍷 TOP RECOMMENDATION** (1-2 sentence introduction to the dish)
    - The BEST wine type for this dish
    - 2-3 specific wines with brief reasoning
+   - IMPORTANT: Always write wine names in **bold** (e.g., **Château Margaux**)
 
 2. **Alternative Options:**
    - Other suitable wine types (White/Red/Rosé/Sparkling/Sweet)
    - 1-2 suggestions per type
+   - IMPORTANT: Wine names always in **bold**
 
 Keep responses concise in English."""
 

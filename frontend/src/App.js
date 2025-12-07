@@ -249,7 +249,8 @@ const PairingPage = () => {
       const response = await axios.post(`${API}/pairing`, {
         dish: dish,
         use_cellar: useCellar,
-        wine_type_filter: wineTypeFilter || null
+        wine_type_filter: wineTypeFilter || null,
+        language: language
       });
       setResult(response.data);
       fetchHistory();

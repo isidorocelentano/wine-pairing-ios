@@ -166,7 +166,7 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Updated Pairing Page Card Structure"
+    - "Admin Grapes Page"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"

@@ -1954,7 +1954,7 @@ async def seed_wine_database(count: int = 2000):
         wine_entry = WineDatabaseEntry(
             **base_wine,
             description=f"Ein außergewöhnlicher Wein aus {base_wine['region']}, der die Essenz von {base_wine['grape_variety']} perfekt einfängt.",
-            tasting_notes=f"Aromen von dunklen Früchten, elegant und komplex",
+            tasting_notes="Aromen von dunklen Früchten, elegant und komplex",
             food_pairings=["Gegrilltes Fleisch", "Käse", "Wildgerichte"],
             alcohol_content=13.5,
             image_url="/placeholder-wine.png",

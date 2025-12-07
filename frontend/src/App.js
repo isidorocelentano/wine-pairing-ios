@@ -704,7 +704,16 @@ const PairingPage = () => {
             <h3 className="text-base md:text-lg font-medium mb-3 md:mb-4">{t('pairing_history')}</h3>
             <div className="space-y-3">
               {history.map((item) => (
-                <Card key={item.id} className="bg-secondary/30 border-border/30 hover:bg-secondary/50 transition-colors cursor-pointer" data-testid="history-item">
+                <Card
+                  key={item.id}
+                  className="bg-secondary/30 border-border/30 hover:bg-secondary/50 transition-colors cursor-pointer"
+                  data-testid="history-item"
+                  onClick={() => {
+                    // Beim Klick letzte Empfehlung wieder anzeigen
+                    setDish(item.dish);
+                    setResult({ dish: item.dish, recommendation: item.recommendation });
+                  }}
+                >
                   <CardContent className="p-3 md:p-4">
                     <p className="font-medium text-sm md:text-base">{item.dish}</p>
                     <p className="text-xs md:text-sm text-muted-foreground line-clamp-2 mt-1">

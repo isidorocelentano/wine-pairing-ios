@@ -176,11 +176,11 @@ frontend:
         comment: "COMPREHENSIVE TESTING COMPLETED: ✅ Basic loading & functionality working - page loads without JS errors, data-testid='dish-admin-page' present, admin dishes grid displays 39 existing dishes correctly. ✅ Seed-Batch Button functional - data-testid='seed-dishes-btn' found, shows correct toast notification 'Seed-Batch gestartet'. CRITICAL FIX: Fixed missing return statement in /api/dishes endpoint that was causing 500 errors. ✅ Individual dish generation working - form fields accept input (name, country, trend, category), generate button shows loading state 'Claude generiert...', 'Zuletzt generiertes Gericht' section appears with technical details. ✅ I18n fully functional - language switching between DE/EN/FR works perfectly, all admin texts translate correctly ('Gerichte verwalten' -> 'Manage Dishes' -> 'Gérer les Plats'). ✅ Dark mode working - toggle functions correctly, cards remain readable in both modes. ✅ Admin links navigation working - both 'Rebsorten verwalten' and 'Gerichte verwalten' links functional from grapes page, navigation to correct admin pages confirmed. All specified requirements met successfully."
   - task: "Updated Pairing Page with Dish Integration"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/frontend/src/App.js"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "user"
@@ -188,6 +188,9 @@ frontend:
       - working: "NA"
         agent: "testing"
         comment: "CRITICAL BUG FIXED: Fixed syntax error in pairing page where dish suggestions rendering code was misplaced inside handlePairing function instead of JSX. Moved suggestions rendering to correct location after textarea with proper data-testid attributes. Ready for comprehensive testing."
+      - working: true
+        agent: "testing"
+        comment: "COMPREHENSIVE TESTING COMPLETED: ✅ All 5 test objectives successfully verified. 1) Loading & Basic Functionality: Page loads without JS errors, all required elements present (dish textarea, wine type select, filter fields for country/trend/bestseller, get recommendation button). 2) Dish Auto-Complete & Filter: Auto-complete working perfectly - typing 'Burger' shows 3 suggestions, 'Pad Thai' shows 1 suggestion, clicking suggestions populates text field correctly. Filter functionality verified - trend filter (thai), bestseller filter (burger), and combined filters (USA + burger) all working. 3) Pairing Request with Structured Dish: dish_id correctly sent in API request when suggestion selected, pairing results display with proper card structure (🍷 Hauptempfehlung, 🔄 Alternative Optionen). 4) Regression Test: Free text input works correctly with dish_id=null in request, maintains backward compatibility. 5) I18n & Dark Mode: Language switching (DE/EN/FR) working perfectly with proper filter label translations, dark mode toggle functional with readable UI elements. Minor: Suggestions remain visible after selection (cosmetic issue only). All core functionality working as specified."
 
 metadata:
   created_by: "main_agent"

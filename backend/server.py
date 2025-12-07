@@ -612,6 +612,39 @@ async def get_pairing_history():
             p['created_at'] = datetime.fromisoformat(p['created_at'])
     return pairings
 
+
+# ===================== SITEMAP (PAIRINGS) =====================
+
+PAIRING_SITEMAP_ITEMS = [
+    {"slug": "lammkoteletts-mit-rosmarin-cabernet-sauvignon", "status": "LIVE", "category": "meat"},
+    {"slug": "rinderfilet-mit-kraeuterbutter-und-pommes-bordeaux", "status": "LIVE", "category": "meat"},
+    {"slug": "lachsfilet-mit-kraeutersauce-chardonnay", "status": "LIVE", "category": "fish"},
+]
+
+
+@api_router.get("/sitemap-pairings.xml")
+async def sitemap_pairings():
+    """Simple sitemap for SEO pairing pages (currently using LIVE hardcoded items).
+
+    Später kann dies aus einer Datenbank-Tabelle generiert werden.
+    """
+    base_url = os.environ.get("FRONTEND_BASE_URL", "https://wine-pairing.online").rstrip("/")
+    live_items = [item for item in PAIRING_SITEMAP_ITEMS if item.get("status") == "LIVE"]
+
+    urls = []
+    for item in live_items:
+        loc = f"{base_url}/pairing/{item['slug']}"
+        urls.append(f"  <url>\n    <loc>{loc}</loc>\n    <changefreq>weekly</changefreq>\n    <priority>0.8</priority>\n  </url>")
+
+    xml = """<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+{urls}
+</urlset>
+""".format(urls="\n".join(urls))
+
+    return Response(content=xml, media_type="application/xml")
+
+
 # ===================== LABEL SCANNER =====================
 
 @api_router.post("/scan-label", response_model=LabelScanResponse)

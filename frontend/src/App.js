@@ -13,6 +13,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, Dialog
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { LanguageProvider, useLanguage } from "@/contexts/LanguageContext";
+import { DarkModeProvider, useDarkMode } from "@/contexts/DarkModeContext";
 import { useVoiceInput } from "@/hooks/useVoiceInput";
 import { SEO } from "@/components/SEO";
 import BlogPage from "@/pages/BlogPage";

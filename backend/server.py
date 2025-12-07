@@ -594,9 +594,7 @@ async def sommelier_chat(request: ChatRequest):
         chat = LlmChat(
             api_key=EMERGENT_LLM_KEY,
             session_id=session_id,
-            system_message=system_message,
-            max_tokens=400,  # Limit response length
-            temperature=0.7
+            system_message=system_message
         ).with_model("openai", "gpt-5.1")
         
         # Prepare message with optional image

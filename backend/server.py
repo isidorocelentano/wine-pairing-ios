@@ -148,6 +148,44 @@ class BlogPostCreate(BaseModel):
     tags: List[str] = []
     author: str = "Sommelier Team"
 
+# ===================== FEED MODELS =====================
+
+class FeedComment(BaseModel):
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    author_name: str
+    content: str
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+class FeedPost(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    author_name: str
+    author_id: str  # Simple device/session based ID
+    dish: str
+    wine_name: str
+    wine_type: str  # rot, weiss, rose, schaumwein
+    rating: int = Field(ge=1, le=5)  # 1-5 stars
+    experience: str  # User's description of the pairing experience
+    image_base64: Optional[str] = None
+    likes: List[str] = []  # List of user IDs who liked
+    comments: List[FeedComment] = []
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+class FeedPostCreate(BaseModel):
+    author_name: str
+    author_id: str
+    dish: str
+    wine_name: str
+    wine_type: str
+    rating: int = Field(ge=1, le=5)
+    experience: str
+    image_base64: Optional[str] = None
+
+class FeedCommentCreate(BaseModel):
+    author_name: str
+    author_id: str
+    content: str
+
 # ===================== SOMMELIER SYSTEM MESSAGE =====================
 
 SOMMELIER_SYSTEM = """Du bist der Virtuelle Sommelier von wine-pairing.online – ein Experte mit 30 Jahren Erfahrung in der Kunst der Wein-Speisen-Harmonie.

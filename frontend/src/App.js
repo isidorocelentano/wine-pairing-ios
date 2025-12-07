@@ -168,6 +168,15 @@ const HomePage = () => {
                 <Wine className="mr-2 h-4 w-4" />
                 {t('cta_cellar')}
               </Button>
+              <Button
+                variant="outline"
+                onClick={() => navigate('/blog')}
+                className="rounded-full px-6 md:px-8 py-5 md:py-6 text-sm font-medium tracking-wide border-primary/30 hover:bg-primary/5"
+                data-testid="cta-blog"
+              >
+                <BookOpen className="mr-2 h-4 w-4" />
+                Blog
+              </Button>
             </div>
           </div>
         </div>

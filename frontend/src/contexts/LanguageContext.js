@@ -108,13 +108,13 @@ const translations = {
     cellar_save: 'Wein speichern',
     
     // Chat Page
-    chat_title: 'Ihr Sommelier',
-    chat_subtitle: '30 Jahre Erfahrung, keine Verkaufsabsicht – nur ehrliche Beratung.',
-    chat_empty: 'Stellen Sie mir eine Frage über Wein...',
+    chat_title: 'Claude – Ihr Sommelier',
+    chat_subtitle: 'Master of Wine & leidenschaftlicher Koch – keine Verkaufsabsicht, nur ehrliche Beratung.',
+    chat_empty: 'Stellen Sie Claude eine Frage über Wein...',
     chat_suggestion1: 'Welcher Wein zu Pasta?',
     chat_suggestion2: 'Rotwein oder Weißwein?',
-    chat_suggestion3: 'Was ist ein Terroir?',
-    chat_placeholder: 'Fragen Sie den Sommelier...',
+    chat_suggestion3: 'Was macht einen großen Wein aus?',
+    chat_placeholder: 'Fragen Sie Claude...',
     chat_voice_hint: 'Tippen Sie auf das Mikrofon, um zu sprechen',
     
     // Grapes

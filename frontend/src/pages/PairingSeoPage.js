@@ -367,7 +367,7 @@ export const PAIRING_TEMPLATES = {
       reviewBody: {
         de: 'Die klare Saure und die Zitrusnoten des Rieslings reinigen den Gaumen zwischen Reis, Fisch und Sojasauce, ohne die feinen Aromen des Sushi zu uberdecken. Die Mineralitat unterstreicht die Frische des Fisches und halt das Pairing leicht und prazise.',
         en: 'The crisp acidity and citrus notes of the Riesling cleanse the palate between rice, fish and soy sauce without overwhelming the delicate sushi aromas. Its minerality underscores the freshness of the fish and keeps the pairing light and precise.',
-        fr: 'L'acidite vive et les notes d'agrumes du Riesling nettoient le palais entre le riz, le poisson et la sauce soja sans ecraser les aromes delicats du sushi. Sa mineralite souligne la fraicheur du poisson et maintient l'accord leger et precis.'
+        fr: 'L\'acidite vive et les notes d\'agrumes du Riesling nettoient le palais entre le riz, le poisson et la sauce soja sans ecraser les aromes delicats du sushi. Sa mineralite souligne la fraicheur du poisson et maintient l\'accord leger et precis.'
       }
     },
     page: {

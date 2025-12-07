@@ -197,7 +197,7 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Admin Dishes Page"
+    - "Updated Pairing Page with Dish Integration"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"

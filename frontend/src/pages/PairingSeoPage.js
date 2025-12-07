@@ -4,7 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { SEO } from '@/components/SEO';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-const PAIRING_TEMPLATES = {
+export const PAIRING_TEMPLATES = {
   'lammkoteletts-mit-rosmarin-cabernet-sauvignon': {
     recipeId: 'https://wine-pairing.online/recipe/lammkoteletts-mit-rosmarin',
     wineId: 'https://wine-pairing.online/wine/2018-cabernet-sauvignon-reserve',

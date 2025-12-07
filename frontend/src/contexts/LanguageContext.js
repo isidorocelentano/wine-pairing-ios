@@ -208,6 +208,7 @@ const translations = {
     admin_dishes_labels_intensity: 'Intensität',
     admin_dishes_labels_spice: 'Schärfe',
     admin_dishes_labels_fat: 'Fettgehalt',
+    admin_dishes_more_details: 'Mehr Details anzeigen',
     
     // Blog
     blog_tagline: 'Wein-Wissen',
@@ -397,6 +398,7 @@ const translations = {
     admin_dishes_labels_intensity: 'Intensity',
     admin_dishes_labels_spice: 'Spice level',
     admin_dishes_labels_fat: 'Fat level',
+    admin_dishes_more_details: 'Show more details',
     // Feed
     feed_tagline: 'Wine Community',
     feed_title: 'Pairing Experiences',
@@ -615,6 +617,7 @@ const translations = {
     admin_dishes_labels_intensity: 'Intensité',
     admin_dishes_labels_spice: 'Piquant',
     admin_dishes_labels_fat: 'Teneur en gras',
+    admin_dishes_more_details: 'Afficher plus de détails',
     // Feed
     feed_tagline: 'Communauté du Vin',
     feed_title: 'Expériences d\'Accords',

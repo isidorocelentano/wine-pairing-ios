@@ -54,12 +54,12 @@ const WineDatabasePage = () => {
       const params = new URLSearchParams();
       
       if (searchQuery) params.append('search', searchQuery);
-      if (filters.country) params.append('country', filters.country);
-      if (filters.region) params.append('region', filters.region);
-      if (filters.appellation) params.append('appellation', filters.appellation);
-      if (filters.grape_variety) params.append('grape_variety', filters.grape_variety);
-      if (filters.wine_color) params.append('wine_color', filters.wine_color);
-      if (filters.price_category) params.append('price_category', filters.price_category);
+      if (filters.country && filters.country !== 'all') params.append('country', filters.country);
+      if (filters.region && filters.region !== 'all') params.append('region', filters.region);
+      if (filters.appellation && filters.appellation !== 'all') params.append('appellation', filters.appellation);
+      if (filters.grape_variety && filters.grape_variety !== 'all') params.append('grape_variety', filters.grape_variety);
+      if (filters.wine_color && filters.wine_color !== 'all') params.append('wine_color', filters.wine_color);
+      if (filters.price_category && filters.price_category !== 'all') params.append('price_category', filters.price_category);
       
       const currentPage = reset ? 0 : page;
       params.append('skip', currentPage * 50);

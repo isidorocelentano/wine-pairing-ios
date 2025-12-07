@@ -446,6 +446,34 @@ const PairingPage = () => {
               </Select>
             </div>
 
+            {/* Dish Filters */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+              <div>
+                <label className="text-xs font-medium mb-1 block">{t('pairing_filter_country')}</label>
+                <Input
+                  value={dishCountryFilter}
+                  onChange={(e) => setDishCountryFilter(e.target.value)}
+                  placeholder="italien, thailand, usa..."
+                />
+              </div>
+              <div>
+                <label className="text-xs font-medium mb-1 block">{t('pairing_filter_trend')}</label>
+                <Input
+                  value={dishTrendFilter}
+                  onChange={(e) => setDishTrendFilter(e.target.value)}
+                  placeholder="thai, streetfood, fine_dining..."
+                />
+              </div>
+              <div>
+                <label className="text-xs font-medium mb-1 block">{t('pairing_filter_bestseller')}</label>
+                <Input
+                  value={dishBestsellerFilter}
+                  onChange={(e) => setDishBestsellerFilter(e.target.value)}
+                  placeholder="burger, pasta, steak, fisch..."
+                />
+              </div>
+            </div>
+
             {/* Cellar Option */}
             <div>
               <label className="flex items-center gap-3 cursor-pointer">

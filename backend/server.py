@@ -186,6 +186,44 @@ class FeedCommentCreate(BaseModel):
     author_id: str
     content: str
 
+# ===================== GRAPE VARIETY MODELS =====================
+
+class GrapeVariety(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    slug: str
+    name: str
+    type: str  # rot, weiss
+    
+    # Poetic descriptions (multilingual)
+    description: str
+    description_en: Optional[str] = None
+    description_fr: Optional[str] = None
+    
+    # Characteristics
+    synonyms: List[str] = []
+    body: str  # leicht, mittel, vollmundig
+    acidity: str  # niedrig, mittel, hoch
+    tannin: str  # niedrig, mittel, hoch
+    aging: str  # Holz, Edelstahl, etc.
+    
+    # Aromas
+    primary_aromas: List[str] = []
+    tertiary_aromas: List[str] = []
+    
+    # Food pairings
+    perfect_pairings: List[str] = []
+    perfect_pairings_en: List[str] = []
+    perfect_pairings_fr: List[str] = []
+    
+    # Regions
+    main_regions: List[str] = []
+    
+    # Image
+    image_url: Optional[str] = None
+    
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
 # ===================== SOMMELIER SYSTEM MESSAGE =====================
 
 SOMMELIER_SYSTEM = """Du bist der Virtuelle Sommelier von wine-pairing.online – ein Experte mit 30 Jahren Erfahrung in der Kunst der Wein-Speisen-Harmonie.

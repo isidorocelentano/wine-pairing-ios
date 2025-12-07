@@ -246,6 +246,14 @@ class GrapeVariety(BaseModel):
     
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
+class GrapeGenerationRequest(BaseModel):
+    """Request model to generate a new grape variety via LLM"""
+    name: str
+    grape_type: Optional[str] = None  # "rot" oder "weiss" – wenn None, vom Modell ableiten
+    style_hint: Optional[str] = None  # z.B. "klassisch, trocken, hochwertige Qualitätsweine"
+
+
+
 # ===================== SOMMELIER SYSTEM MESSAGE =====================
 
 SOMMELIER_SYSTEM_DE = """Du bist Claude, Master of Wine und leidenschaftlicher Koch. Empfehle Weine unabhängig, ehrlich und kompetent.
@@ -284,6 +292,40 @@ STRUCTURE DE VOTRE RÉPONSE:
 1. **🍷 RECOMMANDATION PRINCIPALE** (Introduction de 1-2 phrases sur le plat)
    - Le MEILLEUR type de vin pour ce plat
    - 2-3 vins spécifiques avec justification brève
+
+# System prompt for structured grape variety generation
+GRAPE_GENERATOR_SYSTEM = """Du bist Claude, Master of Wine und leidenschaftlicher Koch.
+Deine Aufgabe: Für eine gegebene Rebsorte einen vollständigen Datensatz für eine Wein-App zu erzeugen.
+
+ANTWORTFORMAT (STRICT JSON, KEIN ERKLÄRTEXT):
+{
+  "slug": "kebab-case-slug-ohne-uml...",
+  "name": "Name der Rebsorte",
+  "type": "rot" oder "weiss",
+  "description": "Poetische deutsche Beschreibung (3-5 Sätze)",
+  "description_en": "Poetic English description (3-5 sentences)",
+  "description_fr": "Description poétique en français (3-5 phrases)",
+  "synonyms": ["Synonym 1", "Synonym 2"],
+  "body": "leicht" oder "mittel" oder "vollmundig",
+  "acidity": "niedrig" oder "mittel" oder "hoch",
+  "tannin": "niedrig" oder "mittel" oder "hoch",
+  "aging": "Kurze Beschreibung des typischen Ausbaus (z.B. Edelstahl, Holzfass, Barrique)",
+  "primary_aromas": ["3-6 kurze deutsche Aroma-Tags in Kleinschreibung"],
+  "tertiary_aromas": ["3-6 kurze deutsche Aroma-Tags in Kleinschreibung"],
+  "perfect_pairings": ["3-6 kurze deutsche Speisen-Tags in Kleinschreibung"],
+  "perfect_pairings_en": ["3-6 short English food pairing tags"],
+  "perfect_pairings_fr": ["3-6 étiquettes d'accords mets-vins en français"],
+  "main_regions": ["3-6 wichtigste Anbaugebiete"]
+}
+
+WICHTIG:
+- Verwende GENAU diese Feldnamen.
+- Verwende bei body/acidity/tannin NUR die angegebenen Skalenwerte.
+- Gib KEINEN zusätzlichen Text außer dem JSON zurück.
+- Verwende in den deutschen Tag-Listen (primary_aromas, tertiary_aromas, perfect_pairings) nur Kleinschreibung.
+"""
+
+
    - IMPORTANT: Écrivez toujours les noms de vin en **gras** (ex: **Château Margaux**)
 
 2. **Options Alternatives:**

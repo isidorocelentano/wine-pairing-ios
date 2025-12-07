@@ -1,0 +1,141 @@
+{
+  "identity": {
+    "name": "E1: The Anti-AI Designer",
+    "mission": "Create a wine pairing experience that feels like a personal sommelier's private cellar—intimate, sophisticated, and unhurried.",
+    "core_values": [
+      "Fusion over Imitation: Mix Swiss precision with Italian warmth.",
+      "Emotion First: Every interaction should feel like the first sip of a good vintage.",
+      "Content is King: The wine bottle and the food plate are the heroes.",
+      "Negative Space: Luxury is the absence of clutter."
+    ]
+  },
+  "typography": {
+    "fonts": {
+      "heading": {
+        "family": "Playfair Display, serif",
+        "weights": ["400", "600", "700"],
+        "usage": "All H1-H3 headings. Use italic variants for emphasis."
+      },
+      "body": {
+        "family": "Manrope, sans-serif",
+        "weights": ["300", "400", "500"],
+        "usage": "Paragraphs, UI labels, data tables."
+      },
+      "accent": {
+        "family": "Cormorant Garamond, serif",
+        "weights": ["400", "500"],
+        "usage": "Quotes, tasting notes, 'Sommelier's Choice' badges."
+      }
+    },
+    "rules": [
+      "Never use Inter for headings.",
+      "Headings > 32px must use tracking-tight.",
+      "Overlines must be uppercase + tracking-widest (0.2em)."
+    ]
+  },
+  "colors": {
+    "palette_name": "The Modern Cellar",
+    "light_mode": {
+      "background": "#F9F8F6",
+      "foreground": "#2D2A26",
+      "primary": "#722F37",
+      "secondary": "#E5DACE",
+      "accent": "#C5A059",
+      "muted": "#F2EFE9",
+      "border": "#E6E1D6"
+    },
+    "dark_mode": {
+      "background": "#0F0E0E",
+      "foreground": "#EAE6E1",
+      "primary": "#9B3E48",
+      "secondary": "#2A2624",
+      "accent": "#D4AF37",
+      "muted": "#1C1A18",
+      "border": "#332F2C"
+    },
+    "usage": {
+      "primary": "Call-to-action buttons, active states, key highlights.",
+      "secondary": "Backgrounds for cards, sidebars, secondary buttons.",
+      "accent": "Gold touches for ratings, premium badges, selection borders."
+    }
+  },
+  "spacing": {
+    "scale": ["p-1", "p-2", "p-4", "p-6", "p-8", "p-12", "p-16", "p-24", "p-32"],
+    "philosophy": "Generous. Use 2-3x more whitespace than standard SaaS apps.",
+    "rules": [
+      "Containers with borders must have internal padding (p-6 or p-8).",
+      "Section gaps should be large (py-20 or py-32)."
+    ]
+  },
+  "layout": {
+    "grid_systems": {
+      "tetris": {
+        "description": "Asymmetric grid for marketing/discovery.",
+        "classes": "grid grid-cols-1 md:grid-cols-12 gap-8",
+        "items": [
+          "Hero: col-span-full md:col-span-8 row-span-2",
+          "Detail: col-span-4 row-span-1",
+          "Vertical: col-span-4 row-span-2"
+        ]
+      },
+      "bento": {
+        "description": "Dense grid for the 'My Cellar' view.",
+        "classes": "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6",
+        "rules": "Use h-full on children to ensure equal height."
+      }
+    },
+    "alignment": {
+      "mobile": "Single column, left-aligned text.",
+      "desktop": "Asymmetric balance. Avoid perfect centering."
+    }
+  },
+  "components": {
+    "buttons": {
+      "style": "Sharp edges or full pill. No default rounded-md.",
+      "classes": "rounded-full px-8 py-6 text-sm font-medium tracking-wide transition-all duration-300 hover:scale-105 active:scale-95"
+    },
+    "cards": {
+      "style": "Minimalist. Either flat with border or glassmorphism.",
+      "classes": "bg-card/50 backdrop-blur-md border border-border/50 shadow-sm hover:shadow-md transition-all duration-300"
+    },
+    "inputs": {
+      "style": "Underlined or minimal box.",
+      "classes": "bg-transparent border-b border-input focus:border-primary focus:ring-0 rounded-none px-0 py-4"
+    },
+    "navigation": {
+      "style": "Floating glass dock or minimal top bar.",
+      "classes": "fixed bottom-8 left-1/2 -translate-x-1/2 bg-background/80 backdrop-blur-xl border border-white/10 rounded-full px-8 py-4 shadow-2xl z-50"
+    }
+  },
+  "assets": {
+    "images": {
+      "hero_wine_pour": "https://images.unsplash.com/photo-1666475877071-1cc8b7c33f3a?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "vineyard_landscape": "https://images.unsplash.com/photo-1760681552499-eeecfa20d110?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "gourmet_food": "https://images.unsplash.com/photo-1755811248279-1ab13b7d4384?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "wine_glass_detail": "https://images.unsplash.com/photo-1650906175964-8c7e8c01a6f8?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "cellar_texture": "https://images.unsplash.com/photo-1760681543363-0cd6f4ad8675?crop=entropy&cs=srgb&fm=jpg&q=85"
+    },
+    "icons": {
+      "library": "lucide-react",
+      "style": "Stroke width 1.5px (thin and elegant)."
+    }
+  },
+  "motion": {
+    "philosophy": "Fluid and organic. Like wine swirling in a glass.",
+    "transitions": "transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]",
+    "micro_interactions": {
+      "hover": "Slight lift (-translate-y-1) and shadow bloom.",
+      "click": "Scale down (0.98)."
+    },
+    "page_load": "Staggered fade-in up."
+  },
+  "universal_guidelines": [
+    "Do not use gradients for text.",
+    "Avoid 'Inter' font for headings.",
+    "Use 'sonner' for toasts.",
+    "All interactive elements must have data-testid.",
+    "Dark mode should not be pure black (#000000), use tinted charcoal (#0F0E0E).",
+    "Images must be high quality and treated with a subtle overlay if text is over them."
+  ],
+  "instructions_to_main_agent": "You are building a high-end, conscious wine pairing app. The user wants 'Elegant & minimalist'. Do not build a generic e-commerce site. Focus on the 'Sommelier' aspect—guidance, storytelling, and discovery. Use the provided image URLs for the prototype. Implement the 'Tetris' grid for the landing page and 'Bento' grid for the cellar. Use the defined color palette strictly."
+}

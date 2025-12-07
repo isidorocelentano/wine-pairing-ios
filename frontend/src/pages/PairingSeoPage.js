@@ -217,7 +217,7 @@ export const PAIRING_TEMPLATES = {
       description: {
         de: 'Warum ein klassischer Chianti der ideale Partner für Spaghetti Bolognese ist – mit Fokus auf Säure, Tannin und Umami.',
         en: 'Why a classic Chianti is the ideal partner for spaghetti bolognese – focusing on acidity, tannins and umami.',
-        fr: 'Pourquoi un Chianti classique est le partenaire idéal des spaghetti bolognaise – avec un accent sur l'acidité, les tanins et l'umami.'
+        fr: 'Pourquoi un Chianti classique est le partenaire ideal des spaghetti bolognaise - avec un accent sur l\'acidite, les tanins et l\'umami.'
       }
     }
   },

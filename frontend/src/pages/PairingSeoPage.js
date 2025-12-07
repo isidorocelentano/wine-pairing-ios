@@ -316,6 +316,9 @@ const PairingSeoPage = () => {
                 Preis (Platzhalter): ca. {tpl.price} EUR
               </p>
             </CardContent>
+          </Card>
+        </div>
+
         <Card className="bg-card/50 border-border/60">
           <CardHeader>
             <CardTitle className="text-base md:text-lg">Wenn dieser Wein nicht verfügbar ist…</CardTitle>

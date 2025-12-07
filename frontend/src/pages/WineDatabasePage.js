@@ -280,7 +280,7 @@ const WineDatabasePage = () => {
                         <SelectValue placeholder="Alle Preise" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="">Alle Preise</SelectItem>
+                        <SelectItem value="all">Alle Preise</SelectItem>
                         <SelectItem value="budget">Budget</SelectItem>
                         <SelectItem value="mid-range">Mittelklasse</SelectItem>
                         <SelectItem value="premium">Premium</SelectItem>

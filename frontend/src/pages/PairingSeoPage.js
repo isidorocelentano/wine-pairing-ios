@@ -415,7 +415,7 @@ export const PAIRING_TEMPLATES = {
       description: {
         de: 'Ein halbtrockener Riesling mit saftiger Frucht, prasenter Saure und einem Hauch Restsuße - perfekt zu Scharfe und Kokos.',
         en: 'An off-dry Riesling with juicy fruit, vivid acidity and a touch of residual sweetness - perfect with spice and coconut.',
-        fr: 'Un Riesling demi-sec aux fruits juteux, a l'acidite marquee et a une pointe de sucres residuels - parfait avec les epices et la noix de coco.'
+        fr: 'Un Riesling demi-sec aux fruits juteux, a l\'acidite marquee et a une pointe de sucres residuels - parfait avec les epices et la noix de coco.'
       },
       brand: 'Asia Pairing Selection',
       reviewBody: {

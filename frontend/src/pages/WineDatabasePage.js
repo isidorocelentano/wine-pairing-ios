@@ -36,6 +36,8 @@ const WineDatabasePage = () => {
   const [selectedWine, setSelectedWine] = useState(null);
   const [page, setPage] = useState(0);
   const [hasMore, setHasMore] = useState(true);
+  const [favorites, setFavorites] = useState(new Set());
+  const [wishlist, setWishlist] = useState(new Set());
 
   // Fetch available filter options
   const fetchFilterOptions = useCallback(async () => {

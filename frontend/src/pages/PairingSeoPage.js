@@ -433,7 +433,7 @@ export const PAIRING_TEMPLATES = {
       description: {
         de: 'Warum ein halbtrockener Riesling die Scharfe und Cremigkeit von grunem Thai-Curry ideal balanciert.',
         en: 'Why an off-dry Riesling ideally balances the heat and creaminess of green Thai curry.',
-        fr: 'Pourquoi un Riesling demi-sec equilibre idealement le piquant et l'onctuosite du curry vert thai.'
+        fr: 'Pourquoi un Riesling demi-sec equilibre idealement le piquant et l\'onctuosite du curry vert thai.'
       }
     }
   }

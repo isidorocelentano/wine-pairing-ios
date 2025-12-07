@@ -121,6 +121,8 @@ export const PAIRING_TEMPLATES = {
     imageWine: 'https://wine-pairing.online/images/wines/chardonnay-reserve-burgund.jpg',
     price: '19.90',
     offerUrl: 'https://wine-pairing.online/kaufen/chardonnay-reserve-burgund',
+  },
+  // TODO: Add more pairings (Spaghetti Bolognese, Pizza, Burger, Sushi, Thai Curry) here
     recipe: {
       name: {
         de: 'Lachsfilet mit Kräutersauce',

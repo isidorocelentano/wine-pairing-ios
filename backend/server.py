@@ -788,6 +788,86 @@ async def get_grape_variety(slug: str):
     if isinstance(grape.get('created_at'), str):
         grape['created_at'] = datetime.fromisoformat(grape['created_at'])
     return grape
+@api_router.post("/admin/grapes/normalize")
+async def normalize_grape_varieties():
+    """Normalize grape variety fields for search/filter usage.
+
+    - body/acidity/tannin -> one of: leicht/mittel/vollmundig bzw. niedrig/mittel/hoch
+    - aroma- und pairing-Listen werden bereinigt und vereinheitlicht
+    """
+    grapes = await db.grape_varieties.find({}, {"_id": 0}).to_list(1000)
+    normalized_count = 0
+
+    def normalize_scale(value: Optional[str], scale: str) -> Optional[str]:
+        if not value:
+            return None
+        v = value.lower()
+        if scale == "body":
+            if "voll" in v:
+                return "vollmundig"
+            if "leicht" in v and "mittel" in v:
+                return "mittel"
+            if "leicht" in v:
+                return "leicht"
+            if "mittel" in v:
+                return "mittel"
+            return v
+        # acidity or tannin
+        if "hoch" in v:
+            return "hoch"
+        if "niedrig" in v and "mittel" in v:
+            return "mittel"
+        if "niedrig" in v:
+            return "niedrig"
+        if "mittel" in v:
+            return "mittel"
+        return v
+
+    def normalize_string_list(values: Optional[list], lower: bool = True) -> list:
+        if not values:
+            return []
+        seen = set()
+        result = []
+        for item in values:
+            if not isinstance(item, str):
+                continue
+            s = item.strip()
+            if lower:
+                s = s.lower()
+            if not s:
+                continue
+            if s not in seen:
+                seen.add(s)
+                result.append(s)
+        return result
+
+    for grape in grapes:
+        update: dict = {}
+
+        # Normalize body/acidity/tannin scales
+        body = normalize_scale(grape.get("body"), "body")
+        acidity = normalize_scale(grape.get("acidity"), "acidity")
+        tannin = normalize_scale(grape.get("tannin"), "tannin") if grape.get("type") == "rot" else grape.get("tannin")
+
+        if body is not None:
+            update["body"] = body
+        if acidity is not None:
+            update["acidity"] = acidity
+        if tannin is not None:
+            update["tannin"] = tannin
+
+        # Normalize aroma and pairing lists (lowercased tags for Suche)
+        update["primary_aromas"] = normalize_string_list(grape.get("primary_aromas"), lower=True)
+        update["tertiary_aromas"] = normalize_string_list(grape.get("tertiary_aromas"), lower=True)
+        update["perfect_pairings"] = normalize_string_list(grape.get("perfect_pairings"), lower=True)
+
+        if update:
+            await db.grape_varieties.update_one({"id": grape["id"]}, {"$set": update})
+            normalized_count += 1
+
+    return {"normalized": normalized_count}
+
+
 
 @api_router.post("/seed-grapes")
 async def seed_grape_varieties():

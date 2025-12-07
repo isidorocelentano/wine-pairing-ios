@@ -253,7 +253,7 @@ export const PAIRING_TEMPLATES = {
       description: {
         de: 'Ein frischer, fruchtbetonter Chianti mit roter Frucht, Kräutern und lebendiger Säure, der Tomate und Käse elegant begleitet.',
         en: 'A fresh, fruit-forward Chianti with red fruit, herbs and lively acidity that elegantly accompanies tomato and cheese.',
-        fr: 'Un Chianti frais et fruité, aux notes de fruits rouges, d'herbes et à l'acidité vive, qui accompagne élégamment tomate et fromage.'
+        fr: 'Un Chianti frais et fruite, aux notes de fruits rouges, d\'herbes et a l\'acidite vive, qui accompagne elegamment tomate et fromage.'
       },
       brand: 'Casa Collinare',
       reviewBody: {

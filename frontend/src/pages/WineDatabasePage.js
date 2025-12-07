@@ -353,33 +353,60 @@ const WineDatabasePage = () => {
             </Card>
           ) : (
             <>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
-                {wines.map((wine) => (
-                  <Card 
-                    key={wine.id} 
-                    className="bg-card/50 backdrop-blur-sm border-border/50 hover-lift cursor-pointer overflow-hidden group"
-                    onClick={() => setSelectedWine(wine)}
-                  >
-                    {/* Wine Image Placeholder */}
-                    <div className="aspect-[3/4] bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center relative overflow-hidden">
-                      <Wine className="h-20 w-20 text-primary/20" strokeWidth={1} />
-                      <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <Badge className={getWineColorBadge(wine.wine_color)}>
-                          {wine.wine_color}
-                        </Badge>
-                      </div>
-                    </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                {wines.map((wine) => {
+                  // Check if wine has a real image (not placeholder)
+                  const hasRealImage = wine.image_url && wine.image_url !== '/placeholder-wine.png';
+                  
+                  return (
+                    <Card 
+                      key={wine.id} 
+                      className="bg-card/50 backdrop-blur-sm border-border/50 hover-lift cursor-pointer overflow-hidden group"
+                      onClick={() => setSelectedWine(wine)}
+                    >
+                      <CardContent className="p-5">
+                        {/* Wine Color Badge & Region */}
+                        <div className="flex items-start justify-between mb-3">
+                          <Badge className={getWineColorBadge(wine.wine_color)}>
+                            {wine.wine_color}
+                          </Badge>
+                          {wine.year && (
+                            <span className="text-xs font-medium text-muted-foreground">{wine.year}</span>
+                          )}
+                        </div>
 
-                    <CardContent className="p-4">
-                      <h3 className="font-semibold mb-1 line-clamp-1">{wine.name}</h3>
-                      <p className="text-sm text-muted-foreground mb-2">{wine.winery}</p>
-                      <p className="text-xs text-muted-foreground mb-3">
-                        {wine.grape_variety} • {wine.country}
-                      </p>
-                      <p className="text-sm text-muted-foreground line-clamp-2 mb-3 font-accent italic">
-                        {wine.description}
-                      </p>
+                        {/* Wine Name & Winery */}
+                        <h3 className="font-bold text-lg mb-1 line-clamp-2 leading-tight">{wine.name}</h3>
+                        <p className="text-sm text-muted-foreground mb-3">{wine.winery}</p>
+                        
+                        {/* Location Info */}
+                        <div className="flex items-center gap-2 mb-3 text-xs text-muted-foreground">
+                          <Wine className="h-3 w-3" />
+                          <span className="line-clamp-1">
+                            {wine.grape_variety}
+                          </span>
+                        </div>
+                        
+                        <div className="text-xs text-muted-foreground mb-3">
+                          📍 {wine.appellation || wine.region}, {wine.country}
+                        </div>
+                        
+                        {/* Description */}
+                        <p className="text-sm text-muted-foreground line-clamp-3 mb-4 font-accent italic leading-relaxed">
+                          {wine.description}
+                        </p>
+                        
+                        {/* Price Category */}
+                        {wine.price_category && (
+                          <div className="mb-4">
+                            <span className="text-xs px-2 py-1 rounded-full bg-secondary text-secondary-foreground">
+                              {wine.price_category === 'budget' && '€'}
+                              {wine.price_category === 'mid-range' && '€€'}
+                              {wine.price_category === 'premium' && '€€€'}
+                              {wine.price_category === 'luxury' && '€€€€'}
+                            </span>
+                          </div>
+                        )}
                       
                       <div className="flex gap-2">
                         <Button

@@ -19,12 +19,7 @@ const BlogPage = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetchPosts();
-    fetchCategories();
-  }, [selectedCategory]);
-
-  const fetchPosts = async () => {
+  const fetchPosts = useCallback(async () => {
     try {
       const params = selectedCategory ? `?category=${selectedCategory}` : '';
       const response = await axios.get(`${API}/blog${params}`);

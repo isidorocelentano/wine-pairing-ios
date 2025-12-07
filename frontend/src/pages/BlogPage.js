@@ -29,7 +29,7 @@ const BlogPage = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [selectedCategory]);
 
   const fetchCategories = async () => {
     try {

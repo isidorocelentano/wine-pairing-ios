@@ -22,6 +22,7 @@ import FeedPage from "@/pages/FeedPage";
 import { GrapesPage, GrapeDetailPage } from "@/pages/GrapesPage";
 import WineDatabasePage from "@/pages/WineDatabasePage";
 import GrapeAdminPage from "@/pages/GrapeAdminPage";
+import DishAdminPage from "@/pages/DishAdminPage";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;

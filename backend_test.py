@@ -427,8 +427,13 @@ class WinePairingAPITester:
         self.test_sommelier_chat()
         self.test_chat_history()
         
-        # Label scanning
-        self.test_label_scan()
+        # Label scanning - comprehensive tests for robustness improvements
+        self.test_label_scan_basic()
+        self.test_label_scan_empty_image()
+        self.test_label_scan_invalid_base64()
+        self.test_label_scan_missing_field()
+        self.test_label_scan_wine_bottle_image()
+        self.test_label_scan_response_structure()
         
         # Favorites
         self.test_get_favorites()

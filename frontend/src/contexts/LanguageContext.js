@@ -559,6 +559,9 @@ const translations = {
     grapes_tertiary_aromas: 'Arômes Tertiaires',
     grapes_perfect_pairings: 'Parfait avec',
     grapes_main_regions: 'Régions Principales',
+    pairing_filter_country: 'Pays',
+    pairing_filter_trend: 'Cuisine tendance',
+    pairing_filter_bestseller: 'Catégorie best-seller',
 
     // Admin Grapes
     admin_grapes_tagline: 'Atelier Sommelier Interne',

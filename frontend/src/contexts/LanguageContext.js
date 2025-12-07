@@ -315,6 +315,7 @@ const translations = {
     nav_blog: 'Blog',
     nav_feed: 'Communauté',
     nav_grapes: 'Cépages',
+    nav_wine_database: 'Vins DB',
     hero_tagline: 'La Découverte du Pur Plaisir',
     hero_title: 'Votre Sommelier Virtuel',
     hero_description: 'La seule recommandation qui ne vend rien, sauf votre moment parfait. Découvrez l\'harmonie du vin et des mets – indépendant, honnête, délicieux.',

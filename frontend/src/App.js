@@ -95,6 +95,7 @@ const Navigation = () => {
     { path: '/grapes', icon: Grape, labelKey: 'nav_grapes' },
     { path: '/wine-database', icon: BookOpen, labelKey: 'nav_wine_database' },
     { path: '/cellar', icon: Wine, labelKey: 'nav_cellar' },
+    { path: '/blog', icon: BookOpen, labelKey: 'nav_blog' },
     { path: '/feed', icon: Users, labelKey: 'nav_feed' },
     { path: '/chat', icon: MessageCircle, labelKey: 'nav_sommelier' },
   ];

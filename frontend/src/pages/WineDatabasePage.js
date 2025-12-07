@@ -24,12 +24,12 @@ const WineDatabasePage = () => {
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [filters, setFilters] = useState({
-    country: '',
-    region: '',
-    appellation: '',
-    grape_variety: '',
-    wine_color: '',
-    price_category: ''
+    country: 'all',
+    region: 'all',
+    appellation: 'all',
+    grape_variety: 'all',
+    wine_color: 'all',
+    price_category: 'all'
   });
   const [availableFilters, setAvailableFilters] = useState({});
   const [showFilters, setShowFilters] = useState(false);

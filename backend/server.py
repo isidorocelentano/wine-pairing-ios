@@ -494,8 +494,27 @@ WICHTIG:
             )
             
     except Exception as e:
+        error_message = str(e).lower()
         logger.error(f"Label scan error: {str(e)}")
-        raise HTTPException(status_code=500, detail=f"Fehler beim Scannen: {str(e)}")
+        
+        # Handle specific LLM API errors more gracefully
+        if "invalid base64" in error_message or "unsupported image" in error_message:
+            logger.warning(f"Label scan: LLM rejected image format: {str(e)}")
+            return LabelScanResponse(
+                name="Bildformat nicht unterstützt",
+                type="rot",
+                notes="Das Bildformat wird nicht unterstützt - bitte verwenden Sie JPG, PNG oder ein anderes gängiges Format"
+            )
+        elif "badrequest" in error_message or "400" in error_message:
+            logger.warning(f"Label scan: Bad request to LLM: {str(e)}")
+            return LabelScanResponse(
+                name="Anfrage fehlerhaft",
+                type="rot",
+                notes="Fehler bei der Bildanalyse - bitte versuchen Sie es mit einem anderen Bild"
+            )
+        else:
+            # For other errors, still return 500 but with more user-friendly message
+            raise HTTPException(status_code=500, detail="Fehler beim Scannen des Weinetiketts - bitte versuchen Sie es später erneut")
 
 # ===================== SOMMELIER CHAT =====================
 

@@ -146,6 +146,17 @@ frontend:
       - working: true
         agent: "testing"
         comment: "COMPREHENSIVE TESTING COMPLETED: ✅ New card-based pairing results structure working perfectly. Card container with data-testid='pairing-result' appears after form submission. ✅ Emoji headings present (🍷 Hauptempfehlung, 🔄 Alternative Optionen). ✅ Wine cards display prominently with wine names in larger, bold text. ✅ Responsive grid layout (1 column mobile, 2 columns desktop). ✅ Details accordion with <details> elements working - German 'Mehr Details anzeigen' text correct. ✅ Dark mode compatibility - cards remain readable with proper contrast. ✅ Navigation regression passed - all 8 dock items functional. Minor: Language switching dropdown interaction could be improved but core functionality works. All specified requirements met."
+  - task: "Admin Grapes Page"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/pages/GrapeAdminPage.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "user"
+        comment: "User requested testing of new Admin page for grape varieties at /admin/grapes. Testing required for: 1) Basic loading & navigation, 2) Normalization button functionality, 3) Claude generator for new grape varieties, 4) I18n & Dark Mode, 5) Regression test from grapes overview page."
 
 metadata:
   created_by: "main_agent"

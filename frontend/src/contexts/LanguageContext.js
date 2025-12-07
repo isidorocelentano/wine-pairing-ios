@@ -138,6 +138,9 @@ const translations = {
     grapes_tertiary_aromas: 'Tertiäraromen',
     grapes_perfect_pairings: 'Perfekt zu',
     grapes_main_regions: 'Hauptanbaugebiete',
+    pairing_filter_country: 'Land',
+    pairing_filter_trend: 'Trendküche',
+    pairing_filter_bestseller: 'Bestseller-Kategorie',
 
     // Admin Grapes
     admin_grapes_tagline: 'Interne Sommelier-Werkbank',

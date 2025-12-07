@@ -214,7 +214,7 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Updated Pairing Page with Dish Integration"
+    - "SEO Pairing Pages"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"

@@ -316,6 +316,34 @@ const PairingSeoPage = () => {
                 Preis (Platzhalter): ca. {tpl.price} EUR
               </p>
             </CardContent>
+        <Card className="bg-card/50 border-border/60">
+          <CardHeader>
+            <CardTitle className="text-base md:text-lg">Wenn dieser Wein nicht verfügbar ist…</CardTitle>
+          </CardHeader>
+          <CardContent className="text-sm md:text-base text-muted-foreground space-y-2">
+            <p>
+              {lang === 'de' && (
+                'Kein exakt passender Wein im Regal? Greife zu einem vergleichbaren Stil: gleiche Farbe, ähnlicher Körper und eine ähnlich frische Säure bzw. Tanninstruktur. So bleibt die Balance zwischen Gericht und Glas erhalten.'
+              )}
+              {lang === 'en' && (
+                'If this exact wine is not available, reach for a similar style: same colour, comparable body and a similar level of acidity or tannin. This keeps the balance between dish and glass intact.'
+              )}
+              {lang === 'fr' && (
+                "Si ce vin précis n'est pas disponible, choisissez un style proche : même couleur, corps comparable et niveau d'acidité ou de tanin similaire. L'équilibre entre le plat et le verre reste ainsi préservé."
+              )}
+            </p>
+          </CardContent>
+        </Card>
+
+        <div className="flex justify-center md:justify-start pt-2">
+          <a
+            href="/pairing"
+            className="inline-flex items-center px-4 py-2 rounded-full text-xs md:text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+          >
+            Zur interaktiven Pairing-Seite
+          </a>
+        </div>
+
           </Card>
         </div>
 

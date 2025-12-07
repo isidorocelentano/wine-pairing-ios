@@ -135,6 +135,48 @@ const WineDatabasePage = () => {
     }
   };
 
+  const toggleFavorite = async (wine) => {
+    try {
+      if (favorites.has(wine.id)) {
+        await axios.delete(`${API}/favorites/${wine.id}`);
+        setFavorites(prev => {
+          const newSet = new Set(prev);
+          newSet.delete(wine.id);
+          return newSet;
+        });
+        toast.success('Aus Favoriten entfernt');
+      } else {
+        await axios.post(`${API}/favorites/${wine.id}?is_wishlist=false`);
+        setFavorites(prev => new Set(prev).add(wine.id));
+        toast.success('Zu Favoriten hinzugefügt!');
+      }
+    } catch (error) {
+      console.error('Error toggling favorite:', error);
+      toast.error('Fehler');
+    }
+  };
+
+  const toggleWishlist = async (wine) => {
+    try {
+      if (wishlist.has(wine.id)) {
+        await axios.delete(`${API}/favorites/${wine.id}`);
+        setWishlist(prev => {
+          const newSet = new Set(prev);
+          newSet.delete(wine.id);
+          return newSet;
+        });
+        toast.success('Aus Merkliste entfernt');
+      } else {
+        await axios.post(`${API}/favorites/${wine.id}?is_wishlist=true`);
+        setWishlist(prev => new Set(prev).add(wine.id));
+        toast.success('Zur Merkliste hinzugefügt!');
+      }
+    } catch (error) {
+      console.error('Error toggling wishlist:', error);
+      toast.error('Fehler');
+    }
+  };
+
   const getWineColorBadge = (color) => {
     const colorMap = {
       'rot': 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200',

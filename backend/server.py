@@ -1542,6 +1542,97 @@ Antwort NUR als JSON-Array:
         raise HTTPException(status_code=500, detail=f"Fehler bei der Wein-Generierung: {str(e)}")
 
 
+
+# ===================== WINE FAVORITES ENDPOINTS =====================
+
+class FavoriteWine(BaseModel):
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    wine_id: str
+    wine_name: str
+    winery: str
+    wine_color: str
+    country: str
+    region: str
+    image_url: Optional[str] = None
+    is_wishlist: bool = False  # False = favorite, True = wishlist
+    notes: Optional[str] = None
+    added_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+@api_router.get("/favorites")
+async def get_favorites(wishlist_only: bool = False):
+    """Get user's favorite wines or wishlist"""
+    query = {}
+    if wishlist_only:
+        query["is_wishlist"] = True
+    else:
+        query["is_wishlist"] = False
+    
+    favorites = await db.wine_favorites.find(query, {"_id": 0}).sort("added_at", -1).to_list(1000)
+    
+    for fav in favorites:
+        if isinstance(fav.get('added_at'), str):
+            fav['added_at'] = datetime.fromisoformat(fav['added_at'])
+    
+    return favorites
+
+@api_router.post("/favorites/{wine_id}")
+async def add_to_favorites(wine_id: str, is_wishlist: bool = False):
+    """Add a wine to favorites or wishlist"""
+    # Get wine details from database
+    wine = await db.wine_database.find_one({"id": wine_id}, {"_id": 0})
+    if not wine:
+        raise HTTPException(status_code=404, detail="Wein nicht gefunden")
+    
+    # Check if already in favorites/wishlist
+    existing = await db.wine_favorites.find_one({"wine_id": wine_id})
+    if existing:
+        # Update is_wishlist status if different
+        if existing.get('is_wishlist') != is_wishlist:
+            await db.wine_favorites.update_one(
+                {"wine_id": wine_id},
+                {"$set": {"is_wishlist": is_wishlist}}
+            )
+            return {"message": f"Wein zu {'Merkliste' if is_wishlist else 'Favoriten'} verschoben"}
+        raise HTTPException(status_code=400, detail="Wein bereits in der Liste")
+    
+    # Create favorite entry
+    favorite = FavoriteWine(
+        wine_id=wine_id,
+        wine_name=wine['name'],
+        winery=wine['winery'],
+        wine_color=wine['wine_color'],
+        country=wine['country'],
+        region=wine['region'],
+        image_url=wine.get('image_url'),
+        is_wishlist=is_wishlist
+    )
+    
+    fav_dict = favorite.model_dump()
+    fav_dict['added_at'] = fav_dict['added_at'].isoformat()
+    await db.wine_favorites.insert_one(fav_dict)
+    
+    return {"message": f"Wein zu {'Merkliste' if is_wishlist else 'Favoriten'} hinzugefügt"}
+
+@api_router.delete("/favorites/{wine_id}")
+async def remove_from_favorites(wine_id: str):
+    """Remove a wine from favorites/wishlist"""
+    result = await db.wine_favorites.delete_one({"wine_id": wine_id})
+    if result.deleted_count == 0:
+        raise HTTPException(status_code=404, detail="Wein nicht in Favoriten")
+    
+    return {"message": "Wein aus Favoriten entfernt"}
+
+@api_router.get("/favorites/check/{wine_id}")
+async def check_favorite_status(wine_id: str):
+    """Check if a wine is in favorites or wishlist"""
+    favorite = await db.wine_favorites.find_one({"wine_id": wine_id}, {"_id": 0})
+    if favorite:
+        return {
+            "is_favorite": not favorite.get('is_wishlist', False),
+            "is_wishlist": favorite.get('is_wishlist', False)
+        }
+    return {"is_favorite": False, "is_wishlist": False}
+
 # ===================== BLOG ENDPOINTS =====================
 
 @api_router.get("/blog", response_model=List[BlogPost])

@@ -324,7 +324,28 @@ const PairingPage = () => {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4">
+            {/* Wine Type Preference */}
+            <div className="space-y-3">
+              <label className="text-sm font-medium block">
+                {t('pairing_wine_preference')}
+              </label>
+              <Select value={wineTypeFilter || 'all'} onValueChange={setWineTypeFilter}>
+                <SelectTrigger className="w-full" data-testid="wine-type-filter">
+                  <SelectValue placeholder={t('pairing_all_types')} />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">{t('pairing_all_types')}</SelectItem>
+                  <SelectItem value="weiss">{t('pairing_white')}</SelectItem>
+                  <SelectItem value="rot">{t('pairing_red')}</SelectItem>
+                  <SelectItem value="rose">{t('pairing_rose')}</SelectItem>
+                  <SelectItem value="schaumwein">{t('pairing_sparkling')}</SelectItem>
+                  <SelectItem value="suesswein">{t('pairing_sweet')}</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* Cellar Option */}
+            <div>
               <label className="flex items-center gap-3 cursor-pointer">
                 <input
                   type="checkbox"
@@ -335,21 +356,6 @@ const PairingPage = () => {
                 />
                 <span className="text-sm">{t('pairing_use_cellar')}</span>
               </label>
-
-              {useCellar && (
-                <Select value={wineTypeFilter} onValueChange={setWineTypeFilter}>
-                  <SelectTrigger className="w-full sm:w-[180px]" data-testid="wine-type-filter">
-                    <SelectValue placeholder={t('pairing_all_types')} />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">{t('pairing_all_types')}</SelectItem>
-                    <SelectItem value="rot">{t('pairing_red')}</SelectItem>
-                    <SelectItem value="weiss">{t('pairing_white')}</SelectItem>
-                    <SelectItem value="rose">{t('pairing_rose')}</SelectItem>
-                    <SelectItem value="schaumwein">{t('pairing_sparkling')}</SelectItem>
-                  </SelectContent>
-                </Select>
-              )}
             </div>
 
             <Button

@@ -199,7 +199,7 @@ export const PAIRING_TEMPLATES = {
       description: {
         de: 'Ein Sangiovese-basierter Chianti Classico mit roter Kirsche, Kräutern, frischer Säure und mittlerem Tannin – klassischer Pasta-Begleiter.',
         en: 'A Sangiovese-based Chianti Classico with red cherry, herbs, fresh acidity and medium tannins – a classic pasta companion.',
-        fr: 'Un Chianti Classico à base de Sangiovese, aux notes de cerise rouge, d'herbes, à l'acidité fraîche et aux tanins moyens – un accompagnement classique pour les pâtes.'
+        fr: 'Un Chianti Classico a base de Sangiovese, aux notes de cerise rouge, d\'herbes, a l\'acidite fraiche et aux tanins moyens - un accompagnement classique pour les pates.'
       },
       brand: 'Cantina Esempio',
       reviewBody: {

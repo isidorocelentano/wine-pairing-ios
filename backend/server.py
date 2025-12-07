@@ -595,10 +595,13 @@ async def sommelier_chat(request: ChatRequest):
     try:
         session_id = request.session_id or str(uuid.uuid4())
         
+        # Get language-specific system message
+        system_message = get_sommelier_system(request.language)
+        
         chat = LlmChat(
             api_key=EMERGENT_LLM_KEY,
             session_id=session_id,
-            system_message=SOMMELIER_SYSTEM
+            system_message=system_message
         ).with_model("openai", "gpt-5.1")
         
         # Prepare message with optional image

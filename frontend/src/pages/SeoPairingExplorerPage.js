@@ -4,10 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { SEO } from '@/components/SEO';
-import PairingSeoPageExport from '@/pages/PairingSeoPage';
-
-// Reuse the templates from PairingSeoPage via named export
-const { PAIRING_TEMPLATES } = PairingSeoPageExport;
+import { PAIRING_TEMPLATES } from '@/pages/PairingSeoPage';
 
 const SeoPairingExplorerPage = () => {
   const { t, language } = useLanguage();

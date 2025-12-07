@@ -828,6 +828,7 @@ function App() {
               <Route path="/pairing" element={<><PairingPage /><Navigation /></>} />
               <Route path="/grapes" element={<><GrapesPage /><Navigation /></>} />
               <Route path="/grapes/:slug" element={<><GrapeDetailPage /><Navigation /></>} />
+              <Route path="/wine-database" element={<><WineDatabasePage /><Navigation /></>} />
               <Route path="/cellar" element={<><CellarPage /><Navigation /></>} />
               <Route path="/feed" element={<><FeedPage /><Navigation /></>} />
               <Route path="/chat" element={<><ChatPage /><Navigation /></>} />

@@ -1,34 +1,107 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Wine Pairing App Styles */
+
+/* Navigation dock */
+.nav-dock {
+  background: hsl(var(--background) / 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid hsl(var(--border) / 0.5);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+/* Wine card hover */
+.wine-card {
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.wine-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -12px rgba(114, 47, 55, 0.2);
 }
 
-.App-link {
-    color: #61dafb;
+/* Chat bubble styles */
+.chat-bubble-user {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border-radius: 20px 20px 4px 20px;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.chat-bubble-assistant {
+  background: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+  border-radius: 20px 20px 20px 4px;
+}
+
+/* Hero section */
+.hero-gradient {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--background)) 0%,
+    hsl(var(--secondary) / 0.5) 100%
+  );
+}
+
+/* Gold accent text */
+.text-gold {
+  color: hsl(var(--accent));
+}
+
+/* Wine type badges */
+.badge-rot {
+  background: hsl(355 44% 32% / 0.15);
+  color: hsl(355 44% 32%);
+}
+
+.badge-weiss {
+  background: hsl(48 60% 50% / 0.15);
+  color: hsl(48 40% 35%);
+}
+
+.badge-rose {
+  background: hsl(340 50% 70% / 0.2);
+  color: hsl(340 40% 45%);
+}
+
+.badge-schaumwein {
+  background: hsl(200 30% 70% / 0.15);
+  color: hsl(200 30% 40%);
+}
+
+/* Image upload zone */
+.upload-zone {
+  border: 2px dashed hsl(var(--border));
+  transition: all 0.3s ease;
+}
+
+.upload-zone:hover,
+.upload-zone.dragging {
+  border-color: hsl(var(--primary));
+  background: hsl(var(--primary) / 0.05);
+}
+
+/* Pairing result card */
+.pairing-card {
+  background: linear-gradient(
+    145deg,
+    hsl(var(--card)) 0%,
+    hsl(var(--secondary) / 0.3) 100%
+  );
+}
+
+/* Loading pulse */
+.loading-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Sommelier avatar */
+.sommelier-avatar {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
 }

@@ -230,7 +230,7 @@ const WineDatabasePage = () => {
                         <SelectValue placeholder="Alle Regionen" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="">Alle Regionen</SelectItem>
+                        <SelectItem value="all">Alle Regionen</SelectItem>
                         {availableFilters.regions?.map(region => (
                           <SelectItem key={region} value={region}>{region}</SelectItem>
                         ))}

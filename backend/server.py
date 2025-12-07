@@ -1103,27 +1103,55 @@ async def get_wine_database(
     if search:
         search_term = search.strip()
         
+        # Normalize search term to handle accents (é -> e, à -> a, etc.)
+        # This allows "Chateau" to match "Château"
+        import unicodedata
+        normalized_search = ''.join(
+            c for c in unicodedata.normalize('NFD', search_term)
+            if unicodedata.category(c) != 'Mn'
+        )
+        
+        # Create regex pattern that matches both with and without accents
+        # e.g., "chateau" matches both "chateau" and "château"
+        def create_accent_insensitive_pattern(term):
+            # Map common accent variations
+            replacements = {
+                'e': '[eéèêë]',
+                'a': '[aàâä]',
+                'i': '[iîï]',
+                'o': '[oôö]',
+                'u': '[uùûü]',
+                'c': '[cç]',
+                'n': '[nñ]'
+            }
+            pattern = ''
+            for char in term.lower():
+                pattern += replacements.get(char, char)
+            return pattern
+        
+        accent_pattern = create_accent_insensitive_pattern(normalized_search)
+        
         # Prioritized search: name > appellation > region > country
         # First, find exact or partial matches in name (highest priority)
         name_query = {
             "$or": [
-                {"name": {"$regex": f"^{search_term}", "$options": "i"}},  # Starts with
-                {"name": {"$regex": search_term, "$options": "i"}}  # Contains
+                {"name": {"$regex": f"^{accent_pattern}", "$options": "i"}},  # Starts with
+                {"name": {"$regex": accent_pattern, "$options": "i"}}  # Contains
             ]
         }
         
         # Then appellation
-        appellation_query = {"appellation": {"$regex": search_term, "$options": "i"}}
+        appellation_query = {"appellation": {"$regex": accent_pattern, "$options": "i"}}
         
         # Then region
-        region_query = {"region": {"$regex": search_term, "$options": "i"}}
+        region_query = {"region": {"$regex": accent_pattern, "$options": "i"}}
         
         # Then country
-        country_query = {"country": {"$regex": search_term, "$options": "i"}}
+        country_query = {"country": {"$regex": accent_pattern, "$options": "i"}}
         
         # Also search in winery and grape variety
-        winery_query = {"winery": {"$regex": search_term, "$options": "i"}}
-        grape_query = {"grape_variety": {"$regex": search_term, "$options": "i"}}
+        winery_query = {"winery": {"$regex": accent_pattern, "$options": "i"}}
+        grape_query = {"grape_variety": {"$regex": accent_pattern, "$options": "i"}}
         
         # Combine with additional filters
         filter_conditions = []

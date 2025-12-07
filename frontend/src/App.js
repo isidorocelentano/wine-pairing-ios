@@ -803,10 +803,12 @@ function App() {
         <BrowserRouter>
           <LanguageSelector />
           <Routes>
-            <Route path="/" element={<><HomePage /><Navigation /></>} />
+            <Route path="/" element={<><SEO /><HomePage /><Navigation /></>} />
             <Route path="/pairing" element={<><PairingPage /><Navigation /></>} />
             <Route path="/cellar" element={<><CellarPage /><Navigation /></>} />
             <Route path="/chat" element={<><ChatPage /><Navigation /></>} />
+            <Route path="/blog" element={<><BlogPage /><Navigation /></>} />
+            <Route path="/blog/:slug" element={<><BlogPostPage /><Navigation /></>} />
           </Routes>
         </BrowserRouter>
       </div>

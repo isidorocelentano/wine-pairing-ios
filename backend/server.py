@@ -1161,11 +1161,6 @@ async def list_dishes(country: Optional[str] = None, bestseller_category: Option
     dishes = await db.dishes.find(query, {"_id": 0}).sort("name_de", 1).to_list(500)
     for d in dishes:
         if isinstance(d.get("created_at"), str):
-            d["created_at"] = datetime.fromisoformat(d["created_at"])
-    return dishes
-
-
-
 
     if post.get('author_id') != author_id:
         raise HTTPException(status_code=403, detail="Nur der Autor kann diesen Post löschen")

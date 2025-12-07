@@ -7,6 +7,7 @@ const translations = {
     nav_pairing: 'Pairing',
     nav_cellar: 'Keller',
     nav_sommelier: 'Sommelier',
+    nav_blog: 'Blog',
     
     // Home Page
     hero_tagline: 'Die Entdeckung des reinen Genusses',
@@ -79,6 +80,20 @@ const translations = {
     chat_placeholder: 'Fragen Sie den Sommelier...',
     chat_voice_hint: 'Tippen Sie auf das Mikrofon, um zu sprechen',
     
+    // Blog
+    blog_tagline: 'Wein-Wissen',
+    blog_title: 'Der Sommelier Blog',
+    blog_description: 'Tipps, Wissen und Geschichten rund um die Welt des Weins.',
+    blog_read_more: 'Weiterlesen',
+    blog_all: 'Alle Artikel',
+    blog_cat_tipps: 'Tipps',
+    blog_cat_wissen: 'Wissen',
+    blog_cat_pairings: 'Pairings',
+    blog_cat_regionen: 'Regionen',
+    blog_back: 'Zurück zum Blog',
+    blog_share: 'Teilen',
+    blog_related: 'Ähnliche Artikel',
+    
     // Common
     error_dish_required: 'Bitte geben Sie ein Gericht ein',
     error_wine_name: 'Bitte geben Sie einen Weinnamen ein',
@@ -91,13 +106,11 @@ const translations = {
     voice_not_supported: 'Spracherkennung wird in Ihrem Browser nicht unterstützt'
   },
   en: {
-    // Navigation
     nav_home: 'Home',
     nav_pairing: 'Pairing',
     nav_cellar: 'Cellar',
     nav_sommelier: 'Sommelier',
-    
-    // Home Page
+    nav_blog: 'Blog',
     hero_tagline: 'The Discovery of Pure Enjoyment',
     hero_title: 'Your Virtual Sommelier',
     hero_description: 'The only recommendation that sells nothing but your perfect moment. Discover the harmony of wine and food – independent, honest, delightful.',
@@ -114,8 +127,6 @@ const translations = {
     feature_scanner_desc: 'Photograph your wine labels and let AI capture all important information.',
     feature_sommelier_title: 'Personal Sommelier',
     feature_sommelier_desc: 'Ask our virtual sommelier anything about wine – personal and without sales pressure.',
-    
-    // Pairing Page
     pairing_tagline: 'Wine Pairing',
     pairing_title: 'What would you like to eat?',
     pairing_description: 'Describe your dish and our virtual sommelier will recommend the perfect wine.',
@@ -134,8 +145,6 @@ const translations = {
     pairing_cellar_matches: 'Matching wines from your cellar:',
     pairing_history: 'Recent Recommendations',
     pairing_voice_hint: 'Tap the microphone to dictate your dish',
-    
-    // Cellar Page
     cellar_tagline: 'My Wine Cellar',
     cellar_title: 'Your Treasure Chamber',
     cellar_filter_all: 'All Wines',
@@ -157,8 +166,6 @@ const translations = {
     cellar_notes: 'Notes',
     cellar_upload_image: 'Upload image (optional)',
     cellar_save: 'Save Wine',
-    
-    // Chat Page
     chat_title: 'Your Sommelier',
     chat_subtitle: '30 years of experience, no sales agenda – just honest advice.',
     chat_empty: 'Ask me a question about wine...',
@@ -167,8 +174,18 @@ const translations = {
     chat_suggestion3: 'What is terroir?',
     chat_placeholder: 'Ask the sommelier...',
     chat_voice_hint: 'Tap the microphone to speak',
-    
-    // Common
+    blog_tagline: 'Wine Knowledge',
+    blog_title: 'The Sommelier Blog',
+    blog_description: 'Tips, knowledge and stories from the world of wine.',
+    blog_read_more: 'Read more',
+    blog_all: 'All Articles',
+    blog_cat_tipps: 'Tips',
+    blog_cat_wissen: 'Knowledge',
+    blog_cat_pairings: 'Pairings',
+    blog_cat_regionen: 'Regions',
+    blog_back: 'Back to Blog',
+    blog_share: 'Share',
+    blog_related: 'Related Articles',
     error_dish_required: 'Please enter a dish',
     error_wine_name: 'Please enter a wine name',
     error_general: 'An error occurred',
@@ -180,13 +197,11 @@ const translations = {
     voice_not_supported: 'Voice recognition is not supported in your browser'
   },
   fr: {
-    // Navigation
     nav_home: 'Accueil',
     nav_pairing: 'Accords',
     nav_cellar: 'Cave',
     nav_sommelier: 'Sommelier',
-    
-    // Home Page
+    nav_blog: 'Blog',
     hero_tagline: 'La Découverte du Pur Plaisir',
     hero_title: 'Votre Sommelier Virtuel',
     hero_description: 'La seule recommandation qui ne vend rien, sauf votre moment parfait. Découvrez l\'harmonie du vin et des mets – indépendant, honnête, délicieux.',
@@ -203,8 +218,6 @@ const translations = {
     feature_scanner_desc: 'Photographiez vos étiquettes de vin et laissez l\'IA capturer toutes les informations importantes.',
     feature_sommelier_title: 'Sommelier Personnel',
     feature_sommelier_desc: 'Demandez à notre sommelier virtuel tout sur le vin – personnel et sans pression commerciale.',
-    
-    // Pairing Page
     pairing_tagline: 'Accord Mets-Vin',
     pairing_title: 'Que voulez-vous manger?',
     pairing_description: 'Décrivez votre plat et notre sommelier virtuel recommandera le vin parfait.',
@@ -223,8 +236,6 @@ const translations = {
     pairing_cellar_matches: 'Vins correspondants de votre cave:',
     pairing_history: 'Recommandations Récentes',
     pairing_voice_hint: 'Appuyez sur le microphone pour dicter votre plat',
-    
-    // Cellar Page
     cellar_tagline: 'Ma Cave à Vin',
     cellar_title: 'Votre Trésor',
     cellar_filter_all: 'Tous les Vins',
@@ -246,8 +257,6 @@ const translations = {
     cellar_notes: 'Notes',
     cellar_upload_image: 'Télécharger une image (optionnel)',
     cellar_save: 'Enregistrer le Vin',
-    
-    // Chat Page
     chat_title: 'Votre Sommelier',
     chat_subtitle: '30 ans d\'expérience, pas d\'objectif de vente – juste des conseils honnêtes.',
     chat_empty: 'Posez-moi une question sur le vin...',
@@ -256,8 +265,18 @@ const translations = {
     chat_suggestion3: 'Qu\'est-ce que le terroir?',
     chat_placeholder: 'Demandez au sommelier...',
     chat_voice_hint: 'Appuyez sur le microphone pour parler',
-    
-    // Common
+    blog_tagline: 'Savoir Vinicole',
+    blog_title: 'Le Blog du Sommelier',
+    blog_description: 'Conseils, connaissances et histoires du monde du vin.',
+    blog_read_more: 'Lire la suite',
+    blog_all: 'Tous les Articles',
+    blog_cat_tipps: 'Conseils',
+    blog_cat_wissen: 'Savoir',
+    blog_cat_pairings: 'Accords',
+    blog_cat_regionen: 'Régions',
+    blog_back: 'Retour au Blog',
+    blog_share: 'Partager',
+    blog_related: 'Articles similaires',
     error_dish_required: 'Veuillez entrer un plat',
     error_wine_name: 'Veuillez entrer un nom de vin',
     error_general: 'Une erreur s\'est produite',
@@ -286,6 +305,7 @@ export const LanguageProvider = ({ children }) => {
 
   useEffect(() => {
     localStorage.setItem('wine-app-language', language);
+    document.documentElement.lang = language;
   }, [language]);
 
   const t = (key) => {

@@ -11,6 +11,8 @@ import uuid
 from datetime import datetime, timezone
 import base64
 from emergentintegrations.llm.chat import LlmChat, UserMessage, ImageContent
+import json
+import re
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -106,6 +108,45 @@ class LabelScanResponse(BaseModel):
     year: Optional[int] = None
     grape: Optional[str] = None
     notes: Optional[str] = None
+
+# ===================== BLOG MODELS =====================
+
+class BlogPost(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    slug: str
+    title: str
+    title_en: Optional[str] = None
+    title_fr: Optional[str] = None
+    excerpt: str
+    excerpt_en: Optional[str] = None
+    excerpt_fr: Optional[str] = None
+    content: str
+    content_en: Optional[str] = None
+    content_fr: Optional[str] = None
+    image_url: Optional[str] = None
+    category: str  # tipps, wissen, pairings, regionen
+    tags: List[str] = []
+    author: str = "Sommelier Team"
+    published: bool = True
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    updated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+class BlogPostCreate(BaseModel):
+    slug: str
+    title: str
+    title_en: Optional[str] = None
+    title_fr: Optional[str] = None
+    excerpt: str
+    excerpt_en: Optional[str] = None
+    excerpt_fr: Optional[str] = None
+    content: str
+    content_en: Optional[str] = None
+    content_fr: Optional[str] = None
+    image_url: Optional[str] = None
+    category: str
+    tags: List[str] = []
+    author: str = "Sommelier Team"
 
 # ===================== SOMMELIER SYSTEM MESSAGE =====================
 
@@ -276,9 +317,6 @@ async def get_pairing_history():
 @api_router.post("/scan-label", response_model=LabelScanResponse)
 async def scan_wine_label(request: LabelScanRequest):
     """Scan a wine label image and extract information"""
-    import json
-    import re
-    
     try:
         chat = LlmChat(
             api_key=EMERGENT_LLM_KEY,
@@ -398,6 +436,298 @@ async def get_favorites():
     """Get all favorite wines and pairings"""
     favorite_wines = await db.wines.find({"is_favorite": True}, {"_id": 0}).to_list(100)
     return {"wines": favorite_wines}
+
+# ===================== BLOG ENDPOINTS =====================
+
+@api_router.get("/blog", response_model=List[BlogPost])
+async def get_blog_posts(category: Optional[str] = None, limit: int = 20):
+    """Get all published blog posts"""
+    query = {"published": True}
+    if category:
+        query["category"] = category
+    
+    posts = await db.blog_posts.find(query, {"_id": 0}).sort("created_at", -1).to_list(limit)
+    for post in posts:
+        if isinstance(post.get('created_at'), str):
+            post['created_at'] = datetime.fromisoformat(post['created_at'])
+        if isinstance(post.get('updated_at'), str):
+            post['updated_at'] = datetime.fromisoformat(post['updated_at'])
+    return posts
+
+@api_router.get("/blog/{slug}", response_model=BlogPost)
+async def get_blog_post(slug: str):
+    """Get a specific blog post by slug"""
+    post = await db.blog_posts.find_one({"slug": slug, "published": True}, {"_id": 0})
+    if not post:
+        raise HTTPException(status_code=404, detail="Artikel nicht gefunden")
+    if isinstance(post.get('created_at'), str):
+        post['created_at'] = datetime.fromisoformat(post['created_at'])
+    if isinstance(post.get('updated_at'), str):
+        post['updated_at'] = datetime.fromisoformat(post['updated_at'])
+    return post
+
+@api_router.post("/blog", response_model=BlogPost)
+async def create_blog_post(post_data: BlogPostCreate):
+    """Create a new blog post"""
+    # Check if slug exists
+    existing = await db.blog_posts.find_one({"slug": post_data.slug})
+    if existing:
+        raise HTTPException(status_code=400, detail="Slug bereits vorhanden")
+    
+    post = BlogPost(**post_data.model_dump(), published=True)
+    doc = post.model_dump()
+    doc['created_at'] = doc['created_at'].isoformat()
+    doc['updated_at'] = doc['updated_at'].isoformat()
+    await db.blog_posts.insert_one(doc)
+    return post
+
+@api_router.get("/blog-categories")
+async def get_blog_categories():
+    """Get all blog categories with counts"""
+    pipeline = [
+        {"$match": {"published": True}},
+        {"$group": {"_id": "$category", "count": {"$sum": 1}}},
+        {"$sort": {"count": -1}}
+    ]
+    categories = await db.blog_posts.aggregate(pipeline).to_list(100)
+    return [{"category": c["_id"], "count": c["count"]} for c in categories]
+
+# ===================== SEO SITEMAP =====================
+
+@api_router.get("/sitemap")
+async def get_sitemap():
+    """Generate sitemap data for SEO"""
+    base_url = "https://wine-pairing.online"
+    
+    # Static pages
+    pages = [
+        {"url": f"{base_url}/", "priority": 1.0, "changefreq": "weekly"},
+        {"url": f"{base_url}/pairing", "priority": 0.9, "changefreq": "weekly"},
+        {"url": f"{base_url}/cellar", "priority": 0.8, "changefreq": "daily"},
+        {"url": f"{base_url}/chat", "priority": 0.8, "changefreq": "weekly"},
+        {"url": f"{base_url}/blog", "priority": 0.9, "changefreq": "daily"},
+    ]
+    
+    # Blog posts
+    posts = await db.blog_posts.find({"published": True}, {"slug": 1, "updated_at": 1, "_id": 0}).to_list(1000)
+    for post in posts:
+        pages.append({
+            "url": f"{base_url}/blog/{post['slug']}",
+            "priority": 0.7,
+            "changefreq": "monthly",
+            "lastmod": post.get('updated_at', '')
+        })
+    
+    return {"pages": pages}
+
+# ===================== SEED BLOG DATA =====================
+
+@api_router.post("/seed-blog")
+async def seed_blog_posts():
+    """Seed initial blog posts for demonstration"""
+    posts = [
+        {
+            "slug": "perfekte-weintemperatur",
+            "title": "Die perfekte Weintemperatur – Der unterschätzte Genussfaktor",
+            "title_en": "The Perfect Wine Temperature – The Underrated Pleasure Factor",
+            "title_fr": "La température parfaite du vin – Le facteur plaisir sous-estimé",
+            "excerpt": "Warum die richtige Temperatur über Genuss oder Enttäuschung entscheidet und wie Sie jeden Wein optimal servieren.",
+            "excerpt_en": "Why the right temperature determines enjoyment or disappointment and how to serve every wine perfectly.",
+            "excerpt_fr": "Pourquoi la bonne température détermine le plaisir ou la déception et comment servir chaque vin parfaitement.",
+            "content": """## Die Wissenschaft hinter der Weintemperatur
+
+Die Temperatur beeinflusst maßgeblich, wie wir Aromen wahrnehmen. Ein zu kalter Rotwein verschließt sich, seine Tannine wirken hart und die Frucht bleibt verborgen. Ein zu warmer Weißwein verliert seine Frische und wirkt plump.
+
+### Die goldenen Regeln:
+
+**Rotweine (16-18°C)**
+- Leichte Rotweine wie Beaujolais: 14-16°C
+- Mittelkräftige wie Pinot Noir: 15-17°C
+- Kräftige wie Barolo oder Bordeaux: 17-18°C
+
+**Weißweine (8-12°C)**
+- Leichte, frische Weine: 8-10°C
+- Gehaltvolle Weißweine mit Holz: 10-12°C
+- Champagner & Schaumweine: 6-8°C
+
+### Der Praxis-Tipp
+
+Nehmen Sie Rotwein 30 Minuten vor dem Servieren aus dem Keller. Weißwein sollte etwa 20 Minuten vor dem Genuss aus dem Kühlschrank – nicht eiskalt, sondern mit spürbarer Kühle.""",
+            "content_en": """## The Science Behind Wine Temperature
+
+Temperature significantly influences how we perceive aromas. A too-cold red wine closes up, its tannins seem harsh, and the fruit remains hidden. A too-warm white wine loses its freshness and appears clumsy.
+
+### The Golden Rules:
+
+**Red Wines (16-18°C)**
+- Light reds like Beaujolais: 14-16°C
+- Medium-bodied like Pinot Noir: 15-17°C
+- Full-bodied like Barolo or Bordeaux: 17-18°C
+
+**White Wines (8-12°C)**
+- Light, fresh wines: 8-10°C
+- Full-bodied whites with oak: 10-12°C
+- Champagne & sparkling: 6-8°C
+
+### Practical Tip
+
+Take red wine out of the cellar 30 minutes before serving. White wine should come out of the fridge about 20 minutes before – not ice cold, but with noticeable coolness.""",
+            "image_url": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800",
+            "category": "tipps",
+            "tags": ["Temperatur", "Servieren", "Grundlagen"]
+        },
+        {
+            "slug": "rotwein-zu-fisch",
+            "title": "Rotwein zu Fisch? Warum alte Regeln nicht mehr gelten",
+            "title_en": "Red Wine with Fish? Why Old Rules No Longer Apply",
+            "title_fr": "Vin rouge avec du poisson? Pourquoi les anciennes règles ne s'appliquent plus",
+            "excerpt": "Die Wein-Dogmen der Vergangenheit brechen auf. Entdecken Sie, welche Rotweine erstaunlich gut zu Fisch passen.",
+            "excerpt_en": "The wine dogmas of the past are breaking down. Discover which red wines pair surprisingly well with fish.",
+            "excerpt_fr": "Les dogmes vinicoles du passé s'effondrent. Découvrez quels vins rouges s'accordent étonnamment bien avec le poisson.",
+            "content": """## Das Ende eines Mythos
+
+„Weißwein zu Fisch, Rotwein zu Fleisch" – diese Regel hat Generationen von Weintrinkern geprägt. Doch die moderne Sommelierkunst hat erkannt: Es kommt auf die Zubereitung an, nicht nur auf das Hauptprodukt.
+
+### Wann Rotwein zu Fisch funktioniert:
+
+**1. Gegrillter oder gebratener Fisch**
+Die Röstaromen vertragen sich wunderbar mit einem leichten Pinot Noir oder einem kühlen Gamay.
+
+**2. Fisch in Rotwein-Sauce**
+Logisch: Wenn Rotwein im Gericht ist, sollte er auch im Glas sein.
+
+**3. Thunfisch und Lachs**
+Diese fetteren Fische mit ihrem kräftigen Eigengeschmack harmonieren mit leichten, fruchtigen Rotweinen.
+
+### Die Faustregel
+
+Je mehr Umami und Röstaromen im Gericht, desto eher funktioniert ein leichter Rotwein. Meiden Sie tanninreiche Weine – die Gerbstoffe können mit Fischölen metallisch schmecken.""",
+            "image_url": "https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?w=800",
+            "category": "pairings",
+            "tags": ["Fisch", "Rotwein", "Pairing", "Mythen"]
+        },
+        {
+            "slug": "weinregion-burgund",
+            "title": "Burgund verstehen: Eine Reise durch Frankreichs Herzstück",
+            "title_en": "Understanding Burgundy: A Journey Through France's Heartland",
+            "title_fr": "Comprendre la Bourgogne: Un voyage au cœur de la France",
+            "excerpt": "Von Chablis bis Beaujolais – wie Sie die komplexe Welt burgundischer Weine entschlüsseln.",
+            "excerpt_en": "From Chablis to Beaujolais – how to decode the complex world of Burgundy wines.",
+            "excerpt_fr": "De Chablis au Beaujolais – comment décoder le monde complexe des vins de Bourgogne.",
+            "content": """## Warum Burgund so besonders ist
+
+Keine andere Weinregion der Welt hat die Idee des Terroirs so perfektioniert wie Burgund. Hier zählt jeder Meter Boden, jede Hangneigung, jedes Mikroklima.
+
+### Die Hierarchie verstehen:
+
+**Grand Cru** (2% der Produktion)
+Die Spitze: 33 Lagen für Rotwein, 8 für Weißwein. Namen wie Romanée-Conti oder Montrachet.
+
+**Premier Cru** (10% der Produktion)
+Exzellente Einzellagen, oft mit bestem Preis-Leistungs-Verhältnis.
+
+**Village** (35% der Produktion)
+Weine aus benannten Gemeinden: Gevrey-Chambertin, Meursault, Pommard.
+
+**Bourgogne** (53% der Produktion)
+Regionale Weine – der Einstieg in die burgundische Welt.
+
+### Mein Geheimtipp
+
+Suchen Sie nach Premier Crus aus weniger bekannten Dörfern wie Savigny-lès-Beaune oder Saint-Romain. Hier finden Sie großartige Qualität zu vernünftigen Preisen.""",
+            "image_url": "https://images.unsplash.com/photo-1560493676-04071c5f467b?w=800",
+            "category": "regionen",
+            "tags": ["Burgund", "Frankreich", "Pinot Noir", "Chardonnay"]
+        },
+        {
+            "slug": "dekantieren-wann-warum",
+            "title": "Dekantieren: Wann es Sinn macht und wann nicht",
+            "title_en": "Decanting: When It Makes Sense and When It Doesn't",
+            "title_fr": "Décanter: Quand c'est utile et quand ça ne l'est pas",
+            "excerpt": "Nicht jeder Wein braucht eine Karaffe. Lernen Sie, welche Weine vom Dekantieren profitieren.",
+            "excerpt_en": "Not every wine needs a decanter. Learn which wines benefit from decanting.",
+            "excerpt_fr": "Tous les vins n'ont pas besoin d'une carafe. Apprenez quels vins bénéficient de la décantation.",
+            "content": """## Die Kunst des Dekantierens
+
+Dekantieren hat zwei Funktionen: Belüftung und Trennung vom Depot. Doch nicht jeder Wein braucht beides – oder überhaupt eines davon.
+
+### Wann Sie dekantieren sollten:
+
+**Junge, tanninreiche Rotweine**
+- Bordeaux unter 10 Jahren: 1-2 Stunden
+- Barolo, Barbaresco: 2-3 Stunden
+- Cabernet Sauvignon aus Übersee: 1-2 Stunden
+
+**Alte Weine mit Depot**
+Vorsichtig umfüllen, Depot im Flaschenhals stoppen. Aber: nicht zu lange atmen lassen – alte Weine sind empfindlich!
+
+### Wann Sie NICHT dekantieren sollten:
+
+- **Leichte Rotweine** wie Beaujolais oder Valpolicella
+- **Alte, fragile Weine** über 20 Jahre
+- **Die meisten Weißweine** (Ausnahme: sehr junge, hochwertige Burgunder)
+- **Schaumweine** – niemals!
+
+### Die Alternative
+
+Kein Dekanter zur Hand? Schwenken Sie den Wein kräftig im Glas. Das beschleunigt die Belüftung erstaunlich effektiv.""",
+            "image_url": "https://images.unsplash.com/photo-1569919659476-f0852f9f8ede?w=800",
+            "category": "wissen",
+            "tags": ["Dekantieren", "Karaffe", "Servieren", "Tipps"]
+        },
+        {
+            "slug": "wein-lagerung-zuhause",
+            "title": "Wein richtig lagern: So bauen Sie Ihren Heimkeller auf",
+            "title_en": "Storing Wine Properly: How to Build Your Home Cellar",
+            "title_fr": "Bien conserver le vin: Comment aménager votre cave à domicile",
+            "excerpt": "Die wichtigsten Regeln für die Weinlagerung zu Hause – auch ohne echten Weinkeller.",
+            "excerpt_en": "The most important rules for storing wine at home – even without a real wine cellar.",
+            "excerpt_fr": "Les règles les plus importantes pour conserver le vin à la maison – même sans vraie cave.",
+            "content": """## Die vier Feinde des Weins
+
+**1. Licht**
+UV-Strahlen zerstören Aromen. Dunkle Flaschen schützen besser, aber Dunkelheit ist immer am besten.
+
+**2. Temperaturschwankungen**
+Konstante 12-14°C sind ideal. Schwankungen sind schlimmer als eine etwas zu hohe Durchschnittstemperatur.
+
+**3. Erschütterungen**
+Vibrationen stören die Reifung. Nicht neben der Waschmaschine lagern!
+
+**4. Trockene Luft**
+Korken können austrocknen. Idealfeuchte: 70%.
+
+### Praktische Lösungen:
+
+**Für Einsteiger:**
+Ein temperierter Kleiderschrank in einem kühlen Raum reicht für Weine, die Sie innerhalb eines Jahres trinken.
+
+**Für Ambitionierte:**
+Ein Weintemperierschrank (ab 300€) hält konstante Temperatur und Luftfeuchtigkeit.
+
+**Für Sammler:**
+Ein echter Keller mit Klimatisierung ist die Königsklasse.
+
+### Mein Tipp
+
+Lagern Sie Flaschen liegend, damit der Korken feucht bleibt. Schraubverschluss? Stehend ist auch okay.""",
+            "image_url": "https://images.unsplash.com/photo-1560493676-04071c5f467b?w=800",
+            "category": "tipps",
+            "tags": ["Lagerung", "Weinkeller", "Aufbewahrung", "Grundlagen"]
+        }
+    ]
+    
+    # Clear existing and insert new
+    await db.blog_posts.delete_many({})
+    
+    for post_data in posts:
+        post = BlogPost(**post_data, published=True, author="Sommelier Team")
+        doc = post.model_dump()
+        doc['created_at'] = doc['created_at'].isoformat()
+        doc['updated_at'] = doc['updated_at'].isoformat()
+        await db.blog_posts.insert_one(doc)
+    
+    return {"message": f"{len(posts)} Blog-Artikel wurden erstellt"}
 
 # Include the router
 app.include_router(api_router)

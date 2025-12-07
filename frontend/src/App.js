@@ -694,7 +694,8 @@ const ChatPage = () => {
       const response = await axios.post(`${API}/chat`, {
         message: input || 'Was siehst du auf diesem Bild?',
         session_id: sessionId,
-        image_base64: imageBase64
+        image_base64: imageBase64,
+        language: language
       });
 
       setSessionId(response.data.session_id);

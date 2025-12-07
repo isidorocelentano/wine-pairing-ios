@@ -712,6 +712,84 @@ const CellarPage = () => {
             ))}
           </div>
         )}
+
+        {/* Edit Wine Dialog */}
+        {editingWine && (
+          <Dialog open={showEditDialog} onOpenChange={setShowEditDialog}>
+            <DialogContent className="mx-4 max-w-md">
+              <DialogHeader>
+                <DialogTitle>Wein bearbeiten</DialogTitle>
+                <DialogDescription>Aktualisieren Sie die Informationen zu Ihrem Wein</DialogDescription>
+              </DialogHeader>
+              <div className="space-y-4 pt-4">
+                <div>
+                  <label className="text-sm font-medium mb-2 block">Name</label>
+                  <Input
+                    value={editingWine.name}
+                    onChange={(e) => setEditingWine({ ...editingWine, name: e.target.value })}
+                    placeholder="Weinname"
+                  />
+                </div>
+                <div>
+                  <label className="text-sm font-medium mb-2 block">Typ</label>
+                  <Select value={editingWine.type} onValueChange={(v) => setEditingWine({ ...editingWine, type: v })}>
+                    <SelectTrigger>
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="rot">{t('pairing_red')}</SelectItem>
+                      <SelectItem value="weiss">{t('pairing_white')}</SelectItem>
+                      <SelectItem value="rose">{t('pairing_rose')}</SelectItem>
+                      <SelectItem value="schaumwein">{t('pairing_sparkling')}</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div>
+                  <label className="text-sm font-medium mb-2 block">Region</label>
+                  <Input
+                    value={editingWine.region}
+                    onChange={(e) => setEditingWine({ ...editingWine, region: e.target.value })}
+                    placeholder="z.B. Bordeaux"
+                  />
+                </div>
+                <div>
+                  <label className="text-sm font-medium mb-2 block">Jahrgang</label>
+                  <Input
+                    type="number"
+                    value={editingWine.year}
+                    onChange={(e) => setEditingWine({ ...editingWine, year: e.target.value })}
+                    placeholder="z.B. 2018"
+                  />
+                </div>
+                <div>
+                  <label className="text-sm font-medium mb-2 block">Rebsorte</label>
+                  <Input
+                    value={editingWine.grape}
+                    onChange={(e) => setEditingWine({ ...editingWine, grape: e.target.value })}
+                    placeholder="z.B. Cabernet Sauvignon"
+                  />
+                </div>
+                <div>
+                  <label className="text-sm font-medium mb-2 block">Notizen</label>
+                  <Textarea
+                    value={editingWine.notes}
+                    onChange={(e) => setEditingWine({ ...editingWine, notes: e.target.value })}
+                    placeholder="Ihre Notizen..."
+                    rows={3}
+                  />
+                </div>
+                <div className="flex gap-3 pt-4">
+                  <Button onClick={handleUpdateWine} className="flex-1">
+                    Speichern
+                  </Button>
+                  <Button variant="outline" onClick={() => setShowEditDialog(false)} className="flex-1">
+                    Abbrechen
+                  </Button>
+                </div>
+              </div>
+            </DialogContent>
+          </Dialog>
+        )}
       </div>
     </div>
   );

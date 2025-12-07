@@ -347,7 +347,7 @@ Réponses concises en français."""
 GRAPE_GENERATOR_SYSTEM = """Du bist Claude, Master of Wine und leidenschaftlicher Koch.
 Deine Aufgabe: Für eine gegebene Rebsorte einen vollständigen Datensatz für eine Wein-App zu erzeugen.
 
-# Removed duplicate content
+ANTWORTFORMAT (STRICT JSON, KEIN ERKLÄRTEXT):
 {
   "slug": "kebab-case-slug-ohne-uml...",
   "name": "Name der Rebsorte",

@@ -174,6 +174,20 @@ frontend:
       - working: true
         agent: "testing"
         comment: "COMPREHENSIVE TESTING COMPLETED: ✅ Basic loading & functionality working - page loads without JS errors, data-testid='dish-admin-page' present, admin dishes grid displays 39 existing dishes correctly. ✅ Seed-Batch Button functional - data-testid='seed-dishes-btn' found, shows correct toast notification 'Seed-Batch gestartet'. CRITICAL FIX: Fixed missing return statement in /api/dishes endpoint that was causing 500 errors. ✅ Individual dish generation working - form fields accept input (name, country, trend, category), generate button shows loading state 'Claude generiert...', 'Zuletzt generiertes Gericht' section appears with technical details. ✅ I18n fully functional - language switching between DE/EN/FR works perfectly, all admin texts translate correctly ('Gerichte verwalten' -> 'Manage Dishes' -> 'Gérer les Plats'). ✅ Dark mode working - toggle functions correctly, cards remain readable in both modes. ✅ Admin links navigation working - both 'Rebsorten verwalten' and 'Gerichte verwalten' links functional from grapes page, navigation to correct admin pages confirmed. All specified requirements met successfully."
+  - task: "Updated Pairing Page with Dish Integration"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/App.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "user"
+        comment: "User requested comprehensive testing of updated pairing page with new dish integration. Testing required for: 1) Loading & basic functionality - page loads without JS errors, textarea for dish, wine type select, new filter fields (country, trend cuisine, bestseller category) and 'Get recommendation' button visible, 2) Dish auto-complete & filter - typing typical dishes should show suggestions, clicking suggestions should populate text field, filter fields should work correctly, 3) Pairing request with structured dish - select dish from suggestions, check dish_id is sent in request, verify card structure works, 4) Regression: behavior without selection - verify pairing works without dish_id, 5) I18n & Dark Mode functionality."
+      - working: "NA"
+        agent: "testing"
+        comment: "CRITICAL BUG FIXED: Fixed syntax error in pairing page where dish suggestions rendering code was misplaced inside handlePairing function instead of JSX. Moved suggestions rendering to correct location after textarea with proper data-testid attributes. Ready for comprehensive testing."
 
 metadata:
   created_by: "main_agent"

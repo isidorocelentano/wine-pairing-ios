@@ -367,7 +367,9 @@ async def get_wine_pairing(request: PairingRequest):
         chat = LlmChat(
             api_key=EMERGENT_LLM_KEY,
             session_id=str(uuid.uuid4()),
-            system_message=system_message
+            system_message=system_message,
+            max_tokens=500,  # Limit response length for faster generation
+            temperature=0.7   # Slight randomness for variety
         ).with_model("openai", "gpt-5.1")
         
         # Get cellar wines if requested

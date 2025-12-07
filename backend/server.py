@@ -621,6 +621,330 @@ async def get_feed_stats():
         "top_pairings": top_pairings
     }
 
+# ===================== GRAPE VARIETY ENDPOINTS =====================
+
+@api_router.get("/grapes", response_model=List[GrapeVariety])
+async def get_grape_varieties(type_filter: Optional[str] = None):
+    """Get all grape varieties"""
+    query = {}
+    if type_filter and type_filter != 'all':
+        query["type"] = type_filter
+    
+    grapes = await db.grape_varieties.find(query, {"_id": 0}).sort("name", 1).to_list(100)
+    for grape in grapes:
+        if isinstance(grape.get('created_at'), str):
+            grape['created_at'] = datetime.fromisoformat(grape['created_at'])
+    return grapes
+
+@api_router.get("/grapes/{slug}", response_model=GrapeVariety)
+async def get_grape_variety(slug: str):
+    """Get a specific grape variety by slug"""
+    grape = await db.grape_varieties.find_one({"slug": slug}, {"_id": 0})
+    if not grape:
+        raise HTTPException(status_code=404, detail="Rebsorte nicht gefunden")
+    if isinstance(grape.get('created_at'), str):
+        grape['created_at'] = datetime.fromisoformat(grape['created_at'])
+    return grape
+
+@api_router.post("/seed-grapes")
+async def seed_grape_varieties():
+    """Seed grape variety database with famous varieties"""
+    grapes = [
+        # WHITE WINES
+        {
+            "slug": "chardonnay",
+            "name": "Chardonnay",
+            "type": "weiss",
+            "description": "Flüssiger Sonnenaufgang im Glas, golden schimmernd, der die Seele umarmt. In der Nase reife Pfirsiche, cremige Vanille, geröstete Haselnüsse und mineralische Kalksteinfrische. Am Gaumen buttrige Opulenz wie Seide, lebendige Säure mit Zitrone und grünem Apfel – ein Tanz von Fülle und Eleganz, der in langem, vibrierendem Finale nach mehr verlangt. Für den Kenner ein Chamäleon: burgundisch straff oder kalifornisch üppig, stets Spiegel von Winzerhand und Natur.",
+            "description_en": "Liquid sunrise in a glass, golden shimmer embracing the soul. On the nose: ripe peaches, creamy vanilla, roasted hazelnuts, and mineral limestone freshness. On the palate: buttery opulence like silk, lively acidity with lemon and green apple – a dance of richness and elegance that demands more in its long, vibrating finish. For the connoisseur, a chameleon: Burgundian taut or Californian lush, always a mirror of winemaker's hand and nature.",
+            "description_fr": "Lever de soleil liquide dans le verre, chatoiement doré qui embrasse l'âme. Au nez: pêches mûres, vanille crémeuse, noisettes grillées et fraîcheur minérale de calcaire. En bouche: opulence beurrée comme de la soie, acidité vive avec citron et pomme verte – une danse de richesse et d'élégance qui en redemande dans sa longue finale vibrante.",
+            "synonyms": ["Morillon", "Beaunois"],
+            "body": "mittel bis vollmundig",
+            "acidity": "mittel bis hoch",
+            "tannin": "niedrig",
+            "aging": "Holz oder Edelstahl, trocken",
+            "primary_aromas": ["Apfel", "Zitrone", "Pfirsich", "Melone"],
+            "tertiary_aromas": ["Butter", "Vanille", "Toast", "Haselnuss"],
+            "perfect_pairings": ["Gegrillter Hummer in Zitronenbutter", "Perlhuhn mit Trüffelrisotto", "Reifer Comté"],
+            "perfect_pairings_en": ["Grilled lobster in lemon butter", "Guinea fowl with truffle risotto", "Aged Comté cheese"],
+            "perfect_pairings_fr": ["Homard grillé au beurre citronné", "Pintade au risotto à la truffe", "Comté affiné"],
+            "main_regions": ["Burgund", "Champagne", "Kalifornien", "Australien"],
+            "image_url": "https://images.unsplash.com/photo-1566995541428-f2246c17cda1?w=800"
+        },
+        {
+            "slug": "riesling",
+            "name": "Riesling",
+            "type": "weiss",
+            "description": "Die Königin der weißen Reben – kristallklar wie ein Gebirgsbach, elektrisierend und lebendig. Ein Feuerwerk aus grünem Apfel, Limette, weißem Pfirsich und dem unverwechselbaren Hauch von Petrol, der Kennerherzen höher schlagen lässt. Am Gaumen eine Symphonie aus messerscharfer Säure und zarter Süße, perfekt balanciert wie ein Seiltänzer über den Weinbergen der Mosel. Vom knochentrocken bis edelsüß – Riesling ist der Beweis, dass wahre Eleganz zeitlos ist.",
+            "description_en": "The queen of white grapes – crystal clear like a mountain stream, electrifying and alive. A firework of green apple, lime, white peach, and that unmistakable hint of petrol that makes connoisseurs' hearts beat faster. On the palate, a symphony of razor-sharp acidity and delicate sweetness, perfectly balanced like a tightrope walker above the Moselle vineyards. From bone dry to noble sweet – Riesling proves that true elegance is timeless.",
+            "description_fr": "La reine des cépages blancs – cristallin comme un ruisseau de montagne, électrisant et vivant. Un feu d'artifice de pomme verte, citron vert, pêche blanche et cette touche incomparable de pétrole qui fait battre le cœur des connaisseurs. En bouche, une symphonie d'acidité tranchante et de douceur délicate, parfaitement équilibrée.",
+            "synonyms": ["Rheinriesling", "Weißer Riesling"],
+            "body": "leicht bis mittel",
+            "acidity": "hoch",
+            "tannin": "niedrig",
+            "aging": "Edelstahl, trocken bis edelsüß",
+            "primary_aromas": ["Grüner Apfel", "Limette", "Pfirsich", "Aprikose"],
+            "tertiary_aromas": ["Petrol", "Honig", "Ingwer", "Mandel"],
+            "perfect_pairings": ["Gebratene Forelle mit Mandelbutter", "Schweineschnitzel mit Spargel", "Thai-Curry mit Garnelen"],
+            "perfect_pairings_en": ["Pan-fried trout with almond butter", "Pork schnitzel with asparagus", "Thai curry with shrimp"],
+            "perfect_pairings_fr": ["Truite poêlée au beurre d'amandes", "Escalope de porc aux asperges", "Curry thaï aux crevettes"],
+            "main_regions": ["Mosel", "Rheingau", "Elsass", "Clare Valley"],
+            "image_url": "https://images.unsplash.com/photo-1558001373-7b93ee48ffa0?w=800"
+        },
+        {
+            "slug": "sauvignon-blanc",
+            "name": "Sauvignon Blanc",
+            "type": "weiss",
+            "description": "Ein Weckruf für die Sinne – frisch wie der erste Frühlingsmorgen, wild wie ungezähmte Natur. Stachelbeere, frisch gemähtes Gras, Holunderblüte und ein Hauch von Feuerstein explodieren im Glas. Am Gaumen knackig und präzise, mit einer Säure, die wie ein Blitz durch den Körper fährt. Neuseeland macht ihn exotisch mit Passionsfrucht, die Loire adelt ihn mit mineralischer Tiefe. Sauvignon Blanc ist der Espresso unter den Weißweinen – kompromisslos wach machend.",
+            "description_en": "A wake-up call for the senses – fresh as the first spring morning, wild as untamed nature. Gooseberry, freshly cut grass, elderflower, and a hint of flint explode in the glass. On the palate: crisp and precise, with acidity that strikes like lightning through the body. New Zealand makes it exotic with passion fruit, the Loire ennobles it with mineral depth. Sauvignon Blanc is the espresso of white wines – uncompromisingly awakening.",
+            "description_fr": "Un réveil pour les sens – frais comme le premier matin de printemps, sauvage comme la nature indomptée. Groseille à maquereau, herbe fraîchement coupée, fleur de sureau et une touche de silex explosent dans le verre. En bouche: croquant et précis, avec une acidité qui frappe comme l'éclair.",
+            "synonyms": ["Fumé Blanc", "Blanc Fumé"],
+            "body": "leicht bis mittel",
+            "acidity": "hoch",
+            "tannin": "niedrig",
+            "aging": "Edelstahl, trocken",
+            "primary_aromas": ["Stachelbeere", "Gras", "Holunderblüte", "Limette"],
+            "tertiary_aromas": ["Feuerstein", "Passionsfrucht", "Grapefruit"],
+            "perfect_pairings": ["Ziegenkäse-Salat mit Walnüssen", "Austern auf Eis", "Gegrillter Wolfsbarsch mit Kräutern"],
+            "perfect_pairings_en": ["Goat cheese salad with walnuts", "Oysters on ice", "Grilled sea bass with herbs"],
+            "perfect_pairings_fr": ["Salade de chèvre aux noix", "Huîtres sur glace", "Bar grillé aux herbes"],
+            "main_regions": ["Loire", "Neuseeland", "Bordeaux", "Chile"],
+            "image_url": "https://images.unsplash.com/photo-1474722883778-792e7990302f?w=800"
+        },
+        {
+            "slug": "gruener-veltliner",
+            "name": "Grüner Veltliner",
+            "type": "weiss",
+            "description": "Österreichs flüssiges Gold – pfeffrig-würzig wie ein Gewürzhändler auf dem Naschmarkt, mit dem unverwechselbaren weißen Pfeffer, der Gaumenkribbeln garantiert. Grüner Apfel, Birne, weiße Kräuter und ein Hauch von Tabak vereinen sich zu einem Wein, der bodenständig und sophisticated zugleich ist. Am Gaumen cremig mit spritziger Säure, perfekt zu Wiens kulinarischen Schätzen. Das Wiener Schnitzel hat keinen besseren Freund.",
+            "description_en": "Austria's liquid gold – peppery-spicy like a spice merchant at the Naschmarkt, with the unmistakable white pepper that guarantees tingling on the palate. Green apple, pear, white herbs, and a hint of tobacco unite in a wine that is down-to-earth and sophisticated at once. On the palate: creamy with zesty acidity, perfect with Vienna's culinary treasures. Wiener Schnitzel has no better friend.",
+            "description_fr": "L'or liquide d'Autriche – poivré et épicé comme un marchand d'épices au Naschmarkt, avec ce poivre blanc incomparable qui garantit des picotements au palais. Pomme verte, poire, herbes blanches et une touche de tabac s'unissent dans un vin à la fois terre-à-terre et sophistiqué.",
+            "synonyms": ["Weißgipfler", "Grüner Muskateller (falsch)"],
+            "body": "leicht bis mittel",
+            "acidity": "mittel bis hoch",
+            "tannin": "niedrig",
+            "aging": "Edelstahl oder großes Holz, trocken",
+            "primary_aromas": ["Grüner Apfel", "Birne", "Weißer Pfeffer", "Kräuter"],
+            "tertiary_aromas": ["Honig", "Tabak", "Nuss"],
+            "perfect_pairings": ["Wiener Schnitzel mit Kartoffelsalat", "Spargel mit Sauce Hollandaise", "Gebackener Karpfen"],
+            "perfect_pairings_en": ["Wiener Schnitzel with potato salad", "Asparagus with Hollandaise sauce", "Breaded carp"],
+            "perfect_pairings_fr": ["Schnitzel viennois avec salade de pommes de terre", "Asperges sauce hollandaise", "Carpe panée"],
+            "main_regions": ["Wachau", "Weinviertel", "Kamptal", "Kremstal"],
+            "image_url": "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=800"
+        },
+        {
+            "slug": "gewuerztraminer",
+            "name": "Gewürztraminer",
+            "type": "weiss",
+            "description": "Der Parfümeur unter den Rebsorten – betörend wie ein orientalischer Basar, golden wie Bernstein im Sonnenuntergang. Litschi, Rosenblätter, Muskatnuss und kandierter Ingwer umschmeicheln die Nase wie ein seidener Schleier. Am Gaumen üppig und exotisch, mit zarter Restsüße und cremiger Textur. Ein Wein für Mutige, die sich in ein aromatisches Abenteuer stürzen wollen. Perfekter Begleiter zur asiatischen Küche oder zum Käseplateau.",
+            "description_en": "The perfumer among grape varieties – intoxicating like an oriental bazaar, golden like amber at sunset. Lychee, rose petals, nutmeg, and candied ginger caress the nose like a silk veil. On the palate: opulent and exotic, with delicate residual sweetness and creamy texture. A wine for the bold who want to dive into an aromatic adventure. Perfect companion for Asian cuisine or cheese platter.",
+            "description_fr": "Le parfumeur parmi les cépages – enivrant comme un bazar oriental, doré comme l'ambre au coucher du soleil. Litchi, pétales de rose, muscade et gingembre confit caressent le nez comme un voile de soie. En bouche: opulent et exotique, avec une délicate sucrosité résiduelle.",
+            "synonyms": ["Traminer", "Savagnin Rosé"],
+            "body": "mittel bis vollmundig",
+            "acidity": "niedrig bis mittel",
+            "tannin": "niedrig",
+            "aging": "Edelstahl oder Holz, trocken bis lieblich",
+            "primary_aromas": ["Litschi", "Rose", "Mango", "Orangenschale"],
+            "tertiary_aromas": ["Muskatnuss", "Ingwer", "Honig", "Zimt"],
+            "perfect_pairings": ["Ente à l'Orange", "Thai-Curry mit Kokosmilch", "Münsterkäse", "Foie Gras"],
+            "perfect_pairings_en": ["Duck à l'Orange", "Thai curry with coconut milk", "Munster cheese", "Foie Gras"],
+            "perfect_pairings_fr": ["Canard à l'orange", "Curry thaï au lait de coco", "Munster", "Foie Gras"],
+            "main_regions": ["Elsass", "Südtirol", "Deutschland", "Neuseeland"],
+            "image_url": "https://images.unsplash.com/photo-1507434965515-61970f2bd7c6?w=800"
+        },
+        {
+            "slug": "pinot-grigio",
+            "name": "Pinot Grigio / Pinot Gris",
+            "type": "weiss",
+            "description": "Der Verwandlungskünstler – in Italien knackig-frisch wie ein Sommertag am Gardasee, im Elsass cremig-komplex wie ein herbstlicher Nebel über den Vogesen. Zitrone, grüne Birne, Mandel und weiße Blüten tanzen elegant im Glas. Unkompliziert und doch raffiniert, wie ein gut sitzender Leinenanzug an einem warmen Abend. Der perfekte Aperitivo-Wein, der aber auch zum Essen glänzt.",
+            "description_en": "The transformation artist – in Italy crisp and fresh like a summer day at Lake Garda, in Alsace creamy and complex like autumn fog over the Vosges. Lemon, green pear, almond, and white blossoms dance elegantly in the glass. Uncomplicated yet refined, like a well-fitting linen suit on a warm evening. The perfect aperitivo wine that also shines with food.",
+            "description_fr": "L'artiste de la transformation – en Italie frais et croquant comme un jour d'été au lac de Garde, en Alsace crémeux et complexe comme un brouillard d'automne sur les Vosges. Citron, poire verte, amande et fleurs blanches dansent élégamment dans le verre.",
+            "synonyms": ["Grauburgunder", "Ruländer"],
+            "body": "leicht bis mittel",
+            "acidity": "mittel",
+            "tannin": "niedrig",
+            "aging": "Edelstahl, trocken",
+            "primary_aromas": ["Zitrone", "Birne", "Apfel", "Mandel"],
+            "tertiary_aromas": ["Honig", "Brioche", "Nuss"],
+            "perfect_pairings": ["Carpaccio vom Lachs", "Risotto mit Meeresfrüchten", "Vitello Tonnato"],
+            "perfect_pairings_en": ["Salmon carpaccio", "Seafood risotto", "Vitello Tonnato"],
+            "perfect_pairings_fr": ["Carpaccio de saumon", "Risotto aux fruits de mer", "Vitello Tonnato"],
+            "main_regions": ["Norditalien", "Elsass", "Oregon", "Deutschland"],
+            "image_url": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800"
+        },
+        # RED WINES
+        {
+            "slug": "pinot-noir",
+            "name": "Pinot Noir",
+            "type": "rot",
+            "description": "Die Diva unter den roten Reben – kapriziös, anspruchsvoll, aber in perfekter Form unvergleichlich. Burgunderrot wie ein Sonnenuntergang über den Côte d'Or, mit Aromen von frischen Kirschen, Erdbeeren, Rosenblättern und feuchtem Waldboden. Am Gaumen samtweich mit seidigen Tanninen, einer vibrierenden Säure und einem Finale, das Geschichten erzählt. Pinot Noir verlangt Hingabe – vom Winzer wie vom Genießer. Der Lohn: purer, unvergesslicher Trinkgenuss.",
+            "description_en": "The diva among red grapes – capricious, demanding, but incomparable in perfect form. Burgundy red like a sunset over the Côte d'Or, with aromas of fresh cherries, strawberries, rose petals, and damp forest floor. On the palate: velvet soft with silky tannins, vibrant acidity, and a finish that tells stories. Pinot Noir demands devotion – from winemaker and connoisseur alike. The reward: pure, unforgettable drinking pleasure.",
+            "description_fr": "La diva des cépages rouges – capricieuse, exigeante, mais incomparable dans sa forme parfaite. Rouge bourgogne comme un coucher de soleil sur la Côte d'Or, avec des arômes de cerises fraîches, fraises, pétales de rose et sous-bois humide. En bouche: doux comme du velours avec des tanins soyeux.",
+            "synonyms": ["Spätburgunder", "Blauburgunder", "Pinot Nero"],
+            "body": "leicht bis mittel",
+            "acidity": "mittel bis hoch",
+            "tannin": "niedrig bis mittel",
+            "aging": "Holz, trocken",
+            "primary_aromas": ["Kirsche", "Erdbeere", "Himbeere", "Rose"],
+            "tertiary_aromas": ["Waldboden", "Pilze", "Leder", "Gewürze"],
+            "perfect_pairings": ["Coq au Vin", "Ente mit Kirschsauce", "Lachs mit Pinot-Noir-Reduktion", "Brie de Meaux"],
+            "perfect_pairings_en": ["Coq au Vin", "Duck with cherry sauce", "Salmon with Pinot Noir reduction", "Brie de Meaux"],
+            "perfect_pairings_fr": ["Coq au Vin", "Canard sauce cerises", "Saumon à la réduction de Pinot Noir", "Brie de Meaux"],
+            "main_regions": ["Burgund", "Oregon", "Neuseeland", "Deutschland"],
+            "image_url": "https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?w=800"
+        },
+        {
+            "slug": "cabernet-sauvignon",
+            "name": "Cabernet Sauvignon",
+            "type": "rot",
+            "description": "Der König der roten Rebsorten – majestätisch, kraftvoll, unsterblich. Tiefes Rubinrot, fast undurchdringlich, wie das Versprechen auf etwas Großes. Schwarze Johannisbeere, Zedernholz, dunkle Schokolade und der unverwechselbare Duft von Bleistiftspitze. Am Gaumen strukturiert und muskulös, mit Tanninen wie Samt und Stahl zugleich. Cabernet braucht Zeit – wie alle großen Persönlichkeiten. Mit Reife offenbart er Tabak, Leder und eine fast meditative Tiefe.",
+            "description_en": "The king of red grape varieties – majestic, powerful, immortal. Deep ruby red, almost impenetrable, like a promise of something great. Blackcurrant, cedarwood, dark chocolate, and the unmistakable scent of pencil shavings. On the palate: structured and muscular, with tannins like velvet and steel at once. Cabernet needs time – like all great personalities. With age, it reveals tobacco, leather, and an almost meditative depth.",
+            "description_fr": "Le roi des cépages rouges – majestueux, puissant, immortel. Rouge rubis profond, presque impénétrable, comme la promesse de quelque chose de grand. Cassis, bois de cèdre, chocolat noir et le parfum incomparable de copeaux de crayon. En bouche: structuré et musclé, avec des tanins velours et acier à la fois.",
+            "synonyms": ["Bouchet", "Petit Cabernet"],
+            "body": "vollmundig",
+            "acidity": "mittel bis hoch",
+            "tannin": "hoch",
+            "aging": "Holz (Barrique), trocken",
+            "primary_aromas": ["Schwarze Johannisbeere", "Pflaume", "Kirsche", "Paprika"],
+            "tertiary_aromas": ["Zedernholz", "Tabak", "Leder", "Schokolade", "Bleistift"],
+            "perfect_pairings": ["T-Bone Steak vom Grill", "Lammkarree mit Rosmarin", "Entrecôte Café de Paris", "Gereifter Cheddar"],
+            "perfect_pairings_en": ["Grilled T-bone steak", "Rack of lamb with rosemary", "Entrecôte Café de Paris", "Aged Cheddar"],
+            "perfect_pairings_fr": ["T-bone steak grillé", "Carré d'agneau au romarin", "Entrecôte Café de Paris", "Cheddar affiné"],
+            "main_regions": ["Bordeaux", "Napa Valley", "Chile", "Australien"],
+            "image_url": "https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=800"
+        },
+        {
+            "slug": "merlot",
+            "name": "Merlot",
+            "type": "rot",
+            "description": "Der sanfte Riese – zugänglich wie ein alter Freund, tiefgründig wie ein gutes Gespräch bei Kerzenlicht. Dunkle Pflaumen, reife Kirschen, Schokolade und ein Hauch von Kräutern malen ein Bild von Eleganz ohne Anstrengung. Am Gaumen geschmeidig und rund, mit weichen Tanninen, die wie eine warme Umarmung wirken. Merlot ist Balsam für die Seele – unkompliziert genug für jeden Tag, komplex genug für besondere Momente. Der Wein, der niemanden ausschließt.",
+            "description_en": "The gentle giant – approachable like an old friend, profound like a good conversation by candlelight. Dark plums, ripe cherries, chocolate, and a hint of herbs paint a picture of effortless elegance. On the palate: supple and round, with soft tannins that feel like a warm embrace. Merlot is balm for the soul – uncomplicated enough for everyday, complex enough for special moments. The wine that excludes no one.",
+            "description_fr": "Le gentil géant – accessible comme un vieil ami, profond comme une bonne conversation à la lueur des bougies. Prunes sombres, cerises mûres, chocolat et une touche d'herbes peignent une image d'élégance sans effort. En bouche: souple et rond, avec des tanins doux comme une étreinte chaleureuse.",
+            "synonyms": ["Merlot Noir", "Vitraille"],
+            "body": "mittel bis vollmundig",
+            "acidity": "mittel",
+            "tannin": "mittel",
+            "aging": "Holz, trocken",
+            "primary_aromas": ["Pflaume", "Kirsche", "Brombeere", "Veilchen"],
+            "tertiary_aromas": ["Schokolade", "Kaffee", "Vanille", "Leder"],
+            "perfect_pairings": ["Rinderbraten mit Rotweinjus", "Pilzrisotto mit Trüffel", "Hartkäse wie Pecorino", "Pasta Bolognese"],
+            "perfect_pairings_en": ["Beef roast with red wine jus", "Mushroom risotto with truffle", "Hard cheese like Pecorino", "Pasta Bolognese"],
+            "perfect_pairings_fr": ["Rôti de bœuf au jus de vin rouge", "Risotto aux champignons et truffe", "Fromage à pâte dure comme Pecorino", "Pâtes Bolognaise"],
+            "main_regions": ["Bordeaux (Pomerol)", "Toskana", "Chile", "Kalifornien"],
+            "image_url": "https://images.unsplash.com/photo-1547595628-c61a29f496f0?w=800"
+        },
+        {
+            "slug": "syrah",
+            "name": "Syrah / Shiraz",
+            "type": "rot",
+            "description": "Der Rebell – dunkel, geheimnisvoll und mit einer Intensität, die unter die Haut geht. Brombeere, Veilchen, schwarzer Pfeffer und rauchige Speckwürze vereinen sich zu einem Wein von dramatischer Schönheit. In der Rhône elegant und würzig, in Australien als Shiraz kraftvoll und üppig. Am Gaumen konzentriert mit festen Tanninen und einem Finale, das nach Rauch und Wildheit schmeckt. Für alle, die Wein wollen, der Geschichten von fernen Ländern erzählt.",
+            "description_en": "The rebel – dark, mysterious, and with an intensity that gets under your skin. Blackberry, violet, black pepper, and smoky bacon spice unite in a wine of dramatic beauty. In the Rhône elegant and spicy, in Australia as Shiraz powerful and opulent. On the palate: concentrated with firm tannins and a finish that tastes of smoke and wilderness. For those who want wine that tells stories of distant lands.",
+            "description_fr": "Le rebelle – sombre, mystérieux et avec une intensité qui prend aux tripes. Mûre, violette, poivre noir et épices fumées de lard s'unissent dans un vin d'une beauté dramatique. Dans le Rhône élégant et épicé, en Australie comme Shiraz puissant et opulent.",
+            "synonyms": ["Shiraz", "Hermitage", "Sérine"],
+            "body": "vollmundig",
+            "acidity": "mittel",
+            "tannin": "mittel bis hoch",
+            "aging": "Holz (Barrique), trocken",
+            "primary_aromas": ["Brombeere", "Schwarze Kirsche", "Pflaume", "Veilchen"],
+            "tertiary_aromas": ["Schwarzer Pfeffer", "Speck", "Rauch", "Leder", "Schokolade"],
+            "perfect_pairings": ["Gegrilltes Lamm mit Kräuterkruste", "Wild mit Brombeersauce", "BBQ Ribs", "Roquefort"],
+            "perfect_pairings_en": ["Grilled lamb with herb crust", "Game with blackberry sauce", "BBQ ribs", "Roquefort"],
+            "perfect_pairings_fr": ["Agneau grillé en croûte d'herbes", "Gibier sauce aux mûres", "Côtes de porc BBQ", "Roquefort"],
+            "main_regions": ["Rhône", "Australien (Barossa)", "Kalifornien", "Chile"],
+            "image_url": "https://images.unsplash.com/photo-1568213816046-0ee1c42bd559?w=800"
+        },
+        {
+            "slug": "tempranillo",
+            "name": "Tempranillo",
+            "type": "rot",
+            "description": "Die Seele Spaniens – stolz wie ein Flamenco-Tänzer, warm wie die kastilische Sonne. Kirsche, Leder, Tabak und getrocknete Feigen vereinen sich mit einer erdigen Würze, die nach spanischer Erde schmeckt. Am Gaumen elegant und mittelschwer, mit geschliffenen Tanninen und einer Balance, die Jahrzehnte überdauert. Von Rioja bis Ribera del Duero – Tempranillo ist der rote Faden, der durch Spaniens große Weingeschichte webt.",
+            "description_en": "The soul of Spain – proud as a flamenco dancer, warm as the Castilian sun. Cherry, leather, tobacco, and dried figs unite with an earthy spice that tastes of Spanish soil. On the palate: elegant and medium-bodied, with polished tannins and a balance that lasts decades. From Rioja to Ribera del Duero – Tempranillo is the red thread woven through Spain's great wine history.",
+            "description_fr": "L'âme de l'Espagne – fière comme un danseur de flamenco, chaude comme le soleil castillan. Cerise, cuir, tabac et figues séchées s'unissent à une épice terreuse qui a le goût de la terre espagnole. En bouche: élégant et moyennement corsé, avec des tanins polis et un équilibre qui dure des décennies.",
+            "synonyms": ["Tinto Fino", "Tinta de Toro", "Cencibel", "Aragonez"],
+            "body": "mittel bis vollmundig",
+            "acidity": "mittel",
+            "tannin": "mittel",
+            "aging": "Holz (amerikanisch oder französisch), trocken",
+            "primary_aromas": ["Kirsche", "Pflaume", "Tomate", "Feige"],
+            "tertiary_aromas": ["Leder", "Tabak", "Vanille", "Kokos", "Dill"],
+            "perfect_pairings": ["Tapas mit Jamón Ibérico", "Lamm-Eintopf mit Chorizo", "Gegrilltes Spanferkel", "Manchego"],
+            "perfect_pairings_en": ["Tapas with Jamón Ibérico", "Lamb stew with Chorizo", "Grilled suckling pig", "Manchego"],
+            "perfect_pairings_fr": ["Tapas au Jambon Ibérique", "Ragoût d'agneau au Chorizo", "Cochon de lait grillé", "Manchego"],
+            "main_regions": ["Rioja", "Ribera del Duero", "Toro", "Portugal (Alentejo)"],
+            "image_url": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=800"
+        },
+        {
+            "slug": "sangiovese",
+            "name": "Sangiovese",
+            "type": "rot",
+            "description": "Das Herz der Toskana – lebhaft wie ein italienischer Sonntag, rustikal wie eine Trattoria in den Hügeln von Chianti. Sauerkirsche, getrocknete Tomaten, Oregano und ein Hauch von Veilchen malen ein Bild von dolce vita. Am Gaumen saftig mit präsenter Säure und körnigen Tanninen, die nach Essen schreien. Sangiovese ist gemacht für den Tisch – für Pasta, Pizza, und lange Abende mit Freunden. Salute!",
+            "description_en": "The heart of Tuscany – lively as an Italian Sunday, rustic as a trattoria in the Chianti hills. Sour cherry, dried tomatoes, oregano, and a hint of violet paint a picture of dolce vita. On the palate: juicy with present acidity and grainy tannins that cry out for food. Sangiovese is made for the table – for pasta, pizza, and long evenings with friends. Salute!",
+            "description_fr": "Le cœur de la Toscane – vif comme un dimanche italien, rustique comme une trattoria dans les collines du Chianti. Griotte, tomates séchées, origan et une touche de violette peignent une image de dolce vita. En bouche: juteux avec une acidité présente et des tanins granuleux qui crient pour de la nourriture.",
+            "synonyms": ["Brunello", "Prugnolo Gentile", "Morellino"],
+            "body": "mittel bis vollmundig",
+            "acidity": "hoch",
+            "tannin": "mittel bis hoch",
+            "aging": "Holz (großes oder kleines Fass), trocken",
+            "primary_aromas": ["Sauerkirsche", "Erdbeere", "Pflaume", "Veilchen"],
+            "tertiary_aromas": ["Tomate", "Leder", "Tabak", "Espresso", "Kräuter"],
+            "perfect_pairings": ["Bistecca alla Fiorentina", "Pasta al Ragù", "Pizza Margherita", "Pecorino Toscano"],
+            "perfect_pairings_en": ["Bistecca alla Fiorentina", "Pasta al Ragù", "Pizza Margherita", "Pecorino Toscano"],
+            "perfect_pairings_fr": ["Bistecca alla Fiorentina", "Pâtes au Ragù", "Pizza Margherita", "Pecorino Toscano"],
+            "main_regions": ["Chianti", "Brunello di Montalcino", "Vino Nobile di Montepulciano", "Romagna"],
+            "image_url": "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=800"
+        },
+        {
+            "slug": "nebbiolo",
+            "name": "Nebbiolo",
+            "type": "rot",
+            "description": "Der Aristokrat des Piemonts – trügerisch hell, aber mit einer Kraft, die Könige und Päpste in die Knie zwang. Ziegelrot wie die Dächer Albas, mit betörenden Aromen von Rosen, Teer, Kirschen und Gewürzen. Am Gaumen eine Explosion aus Säure und Tanninen – herausfordernd, fordernd, belohnend. Barolo und Barbaresco sind seine Kronen. Nebbiolo braucht Geduld: Mit 20 Jahren Reife offenbart er Trüffel, Herbstlaub und transzendente Tiefe.",
+            "description_en": "The aristocrat of Piedmont – deceptively pale, but with a power that brought kings and popes to their knees. Brick red like the roofs of Alba, with intoxicating aromas of roses, tar, cherries, and spices. On the palate: an explosion of acidity and tannins – challenging, demanding, rewarding. Barolo and Barbaresco are its crowns. Nebbiolo needs patience: at 20 years of age, it reveals truffle, autumn leaves, and transcendent depth.",
+            "description_fr": "L'aristocrate du Piémont – trompeusement pâle, mais avec une puissance qui a mis rois et papes à genoux. Rouge brique comme les toits d'Alba, avec des arômes enivrants de roses, goudron, cerises et épices. En bouche: une explosion d'acidité et de tanins – exigeant, défiant, gratifiant.",
+            "synonyms": ["Spanna", "Chiavennasca", "Picotener"],
+            "body": "vollmundig",
+            "acidity": "hoch",
+            "tannin": "hoch",
+            "aging": "Holz (große Fässer), trocken",
+            "primary_aromas": ["Rose", "Kirsche", "Himbeere", "Veilchen"],
+            "tertiary_aromas": ["Teer", "Trüffel", "Leder", "Tabak", "Herbstlaub"],
+            "perfect_pairings": ["Brasato al Barolo", "Tajarin mit weißen Trüffeln", "Wild-Ragout", "Gereifter Parmigiano"],
+            "perfect_pairings_en": ["Brasato al Barolo", "Tajarin with white truffles", "Game ragout", "Aged Parmigiano"],
+            "perfect_pairings_fr": ["Brasato al Barolo", "Tajarin aux truffes blanches", "Ragoût de gibier", "Parmigiano affiné"],
+            "main_regions": ["Barolo", "Barbaresco", "Langhe", "Valtellina"],
+            "image_url": "https://images.unsplash.com/photo-1474722883778-792e7990302f?w=800"
+        },
+        {
+            "slug": "malbec",
+            "name": "Malbec",
+            "type": "rot",
+            "description": "Der argentinische Traum – einst in Frankreich verschmäht, in den Anden zur Weltklasse gereift. Tiefviolett wie der Nachthimmel über Mendoza, mit üppigen Aromen von Brombeere, schwarzer Pflaume, Veilchen und süßen Gewürzen. Am Gaumen samtig und vollmundig, mit weichen Tanninen und einer saftigen Frucht, die nach mehr verlangt. Malbec ist der Wein für Steakliebhaber – geboren fürs Grillen unter freiem Himmel.",
+            "description_en": "The Argentine dream – once scorned in France, matured to world class in the Andes. Deep violet like the night sky over Mendoza, with opulent aromas of blackberry, dark plum, violet, and sweet spices. On the palate: velvety and full-bodied, with soft tannins and a juicy fruit that demands more. Malbec is the wine for steak lovers – born for grilling under the open sky.",
+            "description_fr": "Le rêve argentin – autrefois dédaigné en France, mûri vers l'excellence mondiale dans les Andes. Violet profond comme le ciel nocturne au-dessus de Mendoza, avec des arômes opulents de mûre, prune noire, violette et épices douces. En bouche: velouté et corsé, avec des tanins souples.",
+            "synonyms": ["Côt", "Auxerrois", "Pressac"],
+            "body": "vollmundig",
+            "acidity": "mittel",
+            "tannin": "mittel",
+            "aging": "Holz, trocken",
+            "primary_aromas": ["Brombeere", "Schwarze Pflaume", "Kirsche", "Veilchen"],
+            "tertiary_aromas": ["Vanille", "Kakao", "Tabak", "Mokka", "Leder"],
+            "perfect_pairings": ["Argentinisches Asado", "Ribeye Steak", "Empanadas", "Blauschimmelkäse"],
+            "perfect_pairings_en": ["Argentine Asado", "Ribeye steak", "Empanadas", "Blue cheese"],
+            "perfect_pairings_fr": ["Asado argentin", "Steak Ribeye", "Empanadas", "Fromage bleu"],
+            "main_regions": ["Mendoza", "Cahors", "Chile", "Kalifornien"],
+            "image_url": "https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?w=800"
+        }
+    ]
+    
+    # Clear existing and insert new
+    await db.grape_varieties.delete_many({})
+    
+    for grape_data in grapes:
+        grape = GrapeVariety(**grape_data)
+        doc = grape.model_dump()
+        doc['created_at'] = doc['created_at'].isoformat()
+        await db.grape_varieties.insert_one(doc)
+    
+    return {"message": f"{len(grapes)} Rebsorten wurden erstellt"}
+
 # ===================== BLOG ENDPOINTS =====================
 
 @api_router.get("/blog", response_model=List[BlogPost])

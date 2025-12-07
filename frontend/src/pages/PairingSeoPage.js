@@ -313,7 +313,7 @@ export const PAIRING_TEMPLATES = {
       reviewBody: {
         de: 'Die weichen Tanine und die reife Frucht des Merlot passen perfekt zum saftigen Rindfleisch und dem geschmolzenen Kase. Die leichte Suße des Burgers wird aufgefangen, ohne dass der Wein bitter wirkt, und die Frucht bringt Frische in das reichhaltige Streetfood-Profil.',
         en: 'The soft tannins and ripe fruit of the Merlot match the juicy beef and melted cheese perfectly. The slight sweetness of the burger is balanced without making the wine taste bitter, while the fruit adds freshness to the rich street food profile.',
-        fr: 'Les tanins souples et les fruits murs du Merlot s'accordent parfaitement avec le boeuf juteux et le fromage fondu. La legere douceur du burger est equilibree sans que le vin ne paraisse amer, et le fruit apporte de la fraicheur au profil riche de ce street food.'
+        fr: 'Les tanins souples et les fruits murs du Merlot s\'accordent parfaitement avec le boeuf juteux et le fromage fondu. La legere douceur du burger est equilibree sans que le vin ne paraisse amer, et le fruit apporte de la fraicheur au profil riche de ce street food.'
       }
     },
     page: {

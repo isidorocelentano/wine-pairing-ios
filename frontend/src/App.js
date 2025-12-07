@@ -341,7 +341,7 @@ const PairingPage = () => {
                 </div>
                 <div>
                   <CardTitle className="text-base md:text-lg">{t('pairing_result_title')}</CardTitle>
-                  <CardDescription>{t('pairing_result_for')} „{result.dish}"</CardDescription>
+                  <CardDescription>{t('pairing_result_for')} &bdquo;{result.dish}&ldquo;</CardDescription>
                 </div>
               </div>
             </CardHeader>

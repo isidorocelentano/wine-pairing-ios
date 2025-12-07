@@ -254,10 +254,12 @@ STRUKTUR DEINER ANTWORT:
 1. **🍷 HAUPTEMPFEHLUNG** (1-2 Sätze Einleitung zum Gericht)
    - Der BESTE Weintyp für dieses Gericht
    - 2-3 konkrete Weine mit kurzer Begründung
+   - WICHTIG: Weinnamen immer in **fett** schreiben (z.B. **Château Margaux**)
 
 2. **Alternative Optionen:**
    - Andere passende Weintypen (Weißwein/Rotwein/Rosé/Schaumwein/Süßwein)
    - Je 1-2 Vorschläge pro Typ
+   - WICHTIG: Weinnamen immer in **fett**
 
 Antworte prägnant auf Deutsch."""
 

@@ -144,7 +144,7 @@ const WineDatabasePage = () => {
     return colorMap[color] || 'bg-gray-100 text-gray-800';
   };
 
-  const activeFilterCount = Object.values(filters).filter(v => v).length;
+  const activeFilterCount = Object.values(filters).filter(v => v && v !== 'all').length;
 
   return (
     <>

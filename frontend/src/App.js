@@ -507,31 +507,50 @@ const PairingPage = () => {
                         
                         {/* Wine Cards */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                          {section.wines.map((wine, wineIdx) => (
-                            <Card 
-                              key={wineIdx}
-                              className="border-2 border-border hover:border-primary hover:shadow-lg transition-all cursor-pointer group"
-                            >
-                              <CardContent className="p-4">
-                                {/* Wine Name - PROMINENT */}
-                                <h4 className="font-bold text-base md:text-lg text-primary group-hover:text-primary/80 mb-2 line-clamp-2">
-                                  {wine.name}
-                                </h4>
-                                
-                                {/* Category Badge */}
-                                {wine.category && (
-                                  <Badge variant="secondary" className="mb-2 text-xs">
-                                    {wine.category}
-                                  </Badge>
-                                )}
-                                
-                                {/* Description */}
-                                <p className="text-sm text-muted-foreground leading-relaxed">
-                                  {wine.description}
-                                </p>
-                              </CardContent>
-                            </Card>
-                          ))}
+                          {section.wines.map((wine, wineIdx) => {
+                            const { short, long } = splitDescription(wine.description);
+                            const hasDetails = Boolean(long);
+
+                            return (
+                              <Card
+                                key={wineIdx}
+                                className="border-2 border-border hover:border-primary hover:shadow-lg transition-all cursor-pointer group"
+                              >
+                                <CardContent className="p-4 flex flex-col gap-2">
+                                  {/* Wine Name - PROMINENT */}
+                                  <h4 className="font-semibold text-base md:text-lg text-primary group-hover:text-primary/80 line-clamp-2">
+                                    {wine.name}
+                                  </h4>
+
+                                  {/* Category Badge */}
+                                  {wine.category && (
+                                    <Badge variant="secondary" className="text-xs self-start">
+                                      {wine.category}
+                                    </Badge>
+                                  )}
+
+                                  {/* Compact one-line summary */}
+                                  {short && (
+                                    <p className="text-sm text-muted-foreground leading-snug line-clamp-2">
+                                      {short}
+                                    </p>
+                                  )}
+
+                                  {/* Expandable details */}
+                                  {hasDetails && (
+                                    <details className="mt-1 group-open:mt-2">
+                                      <summary className="text-xs text-primary/80 hover:text-primary font-medium flex items-center gap-1 cursor-pointer list-none">
+                                        <span>{'Mehr Details anzeigen'}</span>
+                                      </summary>
+                                      <p className="mt-2 text-xs text-muted-foreground leading-relaxed whitespace-pre-line">
+                                        {long}
+                                      </p>
+                                    </details>
+                                  )}
+                                </CardContent>
+                              </Card>
+                            );
+                          })}
                         </div>
                         
                         {/* Divider between sections */}

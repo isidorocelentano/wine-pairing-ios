@@ -299,10 +299,26 @@ const PairingPage = () => {
                   value={dish}
                   onChange={(e) => setDish(e.target.value)}
                   placeholder={t('pairing_placeholder')}
-                  className="min-h-[80px] md:min-h-[100px] resize-none pr-14"
+                  className="min-h-[80px] md:min-h-[100px] resize-none pr-24"
                   data-testid="dish-input"
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                      e.preventDefault();
+                      handlePairing();
+                    }
+                  }}
                 />
-                <div className="absolute right-2 bottom-2">
+                <div className="absolute right-2 bottom-2 flex gap-2">
+                  <Button
+                    size="icon"
+                    variant="ghost"
+                    onClick={handlePairing}
+                    disabled={!dish.trim() || loading}
+                    className="rounded-full h-9 w-9"
+                    data-testid="search-button"
+                  >
+                    <Search className="h-5 w-5" />
+                  </Button>
                   <VoiceInputButton onResult={handleVoiceResult} />
                 </div>
               </div>

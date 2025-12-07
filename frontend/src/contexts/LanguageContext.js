@@ -350,7 +350,7 @@ const translations = {
     pairing_sparkling: 'Vin Mousseux',
     pairing_sweet: 'Vin Doux',
     pairing_button: 'Obtenir une Recommandation',
-    pairing_loading: 'Le sommelier réfléchit...',
+    pairing_loading: 'Claude analyse... (env. 5-10 sec)',
     pairing_result_title: 'Recommandation du Sommelier',
     pairing_result_for: 'pour',
     pairing_cellar_matches: 'Vins correspondants de votre cave:',

@@ -246,7 +246,7 @@ const WineDatabasePage = () => {
                         <SelectValue placeholder="Alle Rebsorten" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="">Alle Rebsorten</SelectItem>
+                        <SelectItem value="all">Alle Rebsorten</SelectItem>
                         {availableFilters.grape_varieties?.map(grape => (
                           <SelectItem key={grape} value={grape}>{grape}</SelectItem>
                         ))}

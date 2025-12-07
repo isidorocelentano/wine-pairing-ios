@@ -1159,54 +1159,6 @@ async def list_dishes(country: Optional[str] = None, bestseller_category: Option
     return dishes
 
 
-        data = json.loads(json_match.group())
-
-        # Fallbacks & Normalisierung
-        slug = data.get("slug") or re.sub(r"[^a-z0-9-]", "", data.get("name", request.name).lower().replace(" ", "-"))
-        grape_type = data.get("type") or (request.grape_type or "weiss")
-        if grape_type not in ["rot", "weiss"]:
-            grape_type = "weiss"
-
-        def ensure_list(value):
-            if not value:
-                return []
-            if isinstance(value, list):
-                return value
-            return [str(value)]
-
-        grape_payload = {
-            "slug": slug,
-            "name": data.get("name", request.name),
-            "type": grape_type,
-            "description": data.get("description", ""),
-            "description_en": data.get("description_en"),
-            "description_fr": data.get("description_fr"),
-            "synonyms": ensure_list(data.get("synonyms")),
-            "body": data.get("body", "mittel"),
-            "acidity": data.get("acidity", "mittel"),
-            "tannin": data.get("tannin", "mittel" if grape_type == "rot" else "niedrig"),
-            "aging": data.get("aging", ""),
-            "primary_aromas": ensure_list(data.get("primary_aromas")),
-            "tertiary_aromas": ensure_list(data.get("tertiary_aromas")),
-            "perfect_pairings": ensure_list(data.get("perfect_pairings")),
-            "perfect_pairings_en": ensure_list(data.get("perfect_pairings_en")),
-            "perfect_pairings_fr": ensure_list(data.get("perfect_pairings_fr")),
-            "main_regions": ensure_list(data.get("main_regions")),
-            "image_url": None,
-        }
-
-        grape = GrapeVariety(**grape_payload)
-        doc = grape.model_dump()
-        doc["created_at"] = doc["created_at"].isoformat()
-        await db.grape_varieties.insert_one(doc)
-
-        return grape
-
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error generating grape variety: {e}")
-        raise HTTPException(status_code=500, detail="Fehler bei der Rebsorten-Generierung")
 
 
     if post.get('author_id') != author_id:

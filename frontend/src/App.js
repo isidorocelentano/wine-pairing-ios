@@ -278,6 +278,64 @@ const PairingPage = () => {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
   const [history, setHistory] = useState([]);
+  useEffect(() => {
+    const fetchDishes = async () => {
+      try {
+        const response = await axios.get(`${API}/dishes`);
+        setDishes(response.data || []);
+      } catch (error) {
+        console.error('Error loading dishes for pairing:', error);
+      }
+    };
+    fetchDishes();
+  }, []);
+
+  // Update dish suggestions based on input and filters
+  useEffect(() => {
+    if (!dish.trim() && !dishCountryFilter && !dishTrendFilter && !dishBestsellerFilter) {
+      setFilteredDishSuggestions([]);
+      setSelectedDishId(null);
+      return;
+    }
+    const needle = dish.toLowerCase();
+    const filtered = dishes.filter((d) => {
+      // Text match on names
+      const matchesText =
+        !needle ||
+        (d.name_de || '').toLowerCase().includes(needle) ||
+        (d.name_en || '').toLowerCase().includes(needle) ||
+        (d.name_fr || '').toLowerCase().includes(needle);
+
+      if (!matchesText) return false;
+
+      if (dishCountryFilter && (d.country || '').toLowerCase() !== dishCountryFilter.toLowerCase()) {
+        return false;
+      }
+      if (
+        dishTrendFilter &&
+        !(d.trend_cuisines || []).some((t) => t.toLowerCase() === dishTrendFilter.toLowerCase())
+      ) {
+        return false;
+      }
+      if (
+        dishBestsellerFilter &&
+        (d.bestseller_category || '').toLowerCase() !== dishBestsellerFilter.toLowerCase()
+      ) {
+        return false;
+      }
+
+      return true;
+    });
+
+    setFilteredDishSuggestions(filtered.slice(0, 6));
+    // Do not auto-select; user must click suggestion
+  }, [dish, dishCountryFilter, dishTrendFilter, dishBestsellerFilter, dishes]);
+
+  const handleSelectDishSuggestion = (suggestion) => {
+    setDish(suggestion.name_de || suggestion.name_en || suggestion.name_fr || '');
+    setSelectedDishId(suggestion.id);
+  };
+
 
   const handleVoiceResult = useCallback((transcript) => {
     setDish(prev => prev + (prev ? ' ' : '') + transcript);

@@ -10,6 +10,7 @@ const translations = {
     nav_blog: 'Blog',
     nav_feed: 'Community',
     nav_grapes: 'Rebsorten',
+    nav_wine_database: 'Wein-DB',
     
     // Home Page
     hero_tagline: 'Die Entdeckung des reinen Genusses',

@@ -854,6 +854,12 @@ async def delete_feed_post(post_id: str, author_id: str):
     post = await db.feed_posts.find_one({"id": post_id}, {"_id": 0})
     if not post:
         raise HTTPException(status_code=404, detail="Post nicht gefunden")
+    
+    if post.get('author_id') != author_id:
+        raise HTTPException(status_code=403, detail="Nur der Autor kann diesen Post löschen")
+    
+    await db.feed_posts.delete_one({"id": post_id})
+    return {"message": "Post gelöscht"}
 
 @api_router.post("/admin/grapes/generate", response_model=GrapeVariety)
 async def generate_grape_variety(request: GrapeGenerationRequest):

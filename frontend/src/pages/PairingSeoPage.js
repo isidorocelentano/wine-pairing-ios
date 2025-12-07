@@ -361,7 +361,7 @@ export const PAIRING_TEMPLATES = {
       description: {
         de: 'Ein trockener Riesling mit zitrischer Frucht, gruner Apfel und klarer Saure - prazise und mineralisch.',
         en: 'A dry Riesling with citrus fruit, green apple and crisp acidity - precise and mineral.',
-        fr: 'Un Riesling sec aux notes d'agrumes, de pomme verte et a l'acidite vive - precis et mineral.'
+        fr: 'Un Riesling sec aux notes d\'agrumes, de pomme verte et a l\'acidite vive - precis et mineral.'
       },
       brand: 'Mosel Selection',
       reviewBody: {

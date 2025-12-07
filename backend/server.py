@@ -368,10 +368,13 @@ async def toggle_favorite(wine_id: str):
 async def get_wine_pairing(request: PairingRequest):
     """Get AI-powered wine pairing recommendation"""
     try:
+        # Get language-specific system message
+        system_message = get_sommelier_system(request.language)
+        
         chat = LlmChat(
             api_key=EMERGENT_LLM_KEY,
             session_id=str(uuid.uuid4()),
-            system_message=SOMMELIER_SYSTEM
+            system_message=system_message
         ).with_model("openai", "gpt-5.1")
         
         # Get cellar wines if requested
@@ -385,19 +388,43 @@ async def get_wine_pairing(request: PairingRequest):
             
             wines = await db.wines.find(query, {"_id": 0, "image_base64": 0}).to_list(100)
             if wines:
-                cellar_context = "\n\nDer Kunde hat folgende Weine im Keller:\n"
+                # Translate cellar context based on language
+                if request.language == "en":
+                    cellar_context = "\n\nThe customer has the following wines in the cellar:\n"
+                elif request.language == "fr":
+                    cellar_context = "\n\nLe client a les vins suivants dans sa cave:\n"
+                else:
+                    cellar_context = "\n\nDer Kunde hat folgende Weine im Keller:\n"
+                
                 for w in wines:
                     cellar_context += f"- {w['name']} ({w['type']})"
                     if w.get('region'):
-                        cellar_context += f" aus {w['region']}"
+                        if request.language == "en":
+                            cellar_context += f" from {w['region']}"
+                        elif request.language == "fr":
+                            cellar_context += f" de {w['region']}"
+                        else:
+                            cellar_context += f" aus {w['region']}"
                     if w.get('year'):
                         cellar_context += f", {w['year']}"
                     if w.get('grape'):
                         cellar_context += f", {w['grape']}"
                     cellar_context += "\n"
-                cellar_context += "\nBitte empfehle zuerst passende Weine aus dem Keller des Kunden, dann allgemeine Empfehlungen."
+                
+                if request.language == "en":
+                    cellar_context += "\nPlease recommend suitable wines from the customer's cellar first, then general recommendations."
+                elif request.language == "fr":
+                    cellar_context += "\nVeuillez d'abord recommander des vins appropriés de la cave du client, puis des recommandations générales."
+                else:
+                    cellar_context += "\nBitte empfehle zuerst passende Weine aus dem Keller des Kunden, dann allgemeine Empfehlungen."
         
-        prompt = f"Ich möchte {request.dish} essen. Welchen Wein empfiehlst du dazu?{cellar_context}"
+        # Translate main prompt based on language
+        if request.language == "en":
+            prompt = f"I would like to eat {request.dish}. Which wine do you recommend?{cellar_context}"
+        elif request.language == "fr":
+            prompt = f"Je voudrais manger {request.dish}. Quel vin recommandez-vous?{cellar_context}"
+        else:
+            prompt = f"Ich möchte {request.dish} essen. Welchen Wein empfiehlst du dazu?{cellar_context}"
         
         user_message = UserMessage(text=prompt)
         response = await chat.send_message(user_message)

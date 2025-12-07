@@ -398,7 +398,13 @@ const PairingPage = () => {
               </div>
             </CardHeader>
             <CardContent>
-              <div className="prose prose-sm max-w-none dark:prose-invert text-foreground/90 leading-relaxed whitespace-pre-wrap text-sm md:text-base [&>h1]:text-xl [&>h1]:font-bold [&>h1]:mb-4 [&>h2]:text-base [&>h2]:font-semibold [&>h2]:mt-6 [&>h2]:mb-3 [&>hr]:my-4 [&>hr]:opacity-50">
+              <div className="prose prose-sm max-w-none dark:prose-invert text-foreground/90 leading-relaxed whitespace-pre-wrap text-sm md:text-base
+                [&>h1]:text-xl [&>h1]:font-extrabold [&>h1]:mb-4 [&>h1]:text-primary
+                [&>h2]:text-base [&>h2]:font-bold [&>h2]:mt-6 [&>h2]:mb-3 [&>h2]:text-foreground
+                [&>hr]:my-4 [&>hr]:opacity-50
+                [&_strong]:font-bold [&_strong]:text-foreground [&_strong]:text-base
+                [&>ul>li]:my-2 [&>ul>li>strong]:text-primary [&>ul>li>strong]:font-bold
+                [&>ol>li]:my-2 [&>ol>li>strong]:text-primary [&>ol>li>strong]:font-bold">
                 {result.recommendation}
               </div>
               {result.cellar_matches && result.cellar_matches.length > 0 && (

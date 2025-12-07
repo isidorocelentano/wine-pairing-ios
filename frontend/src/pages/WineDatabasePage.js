@@ -381,18 +381,41 @@ const WineDatabasePage = () => {
                         {wine.description}
                       </p>
                       
-                      <Button
-                        size="sm"
-                        variant="outline"
-                        className="w-full"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          addToCellar(wine);
-                        }}
-                      >
-                        <Plus className="h-4 w-4 mr-2" />
-                        Zum Keller
-                      </Button>
+                      <div className="flex gap-2">
+                        <Button
+                          size="sm"
+                          variant={favorites.has(wine.id) ? "default" : "outline"}
+                          className="flex-1"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            toggleFavorite(wine);
+                          }}
+                        >
+                          <Heart className={`h-4 w-4 ${favorites.has(wine.id) ? 'fill-current' : ''}`} />
+                        </Button>
+                        <Button
+                          size="sm"
+                          variant={wishlist.has(wine.id) ? "default" : "outline"}
+                          className="flex-1"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            toggleWishlist(wine);
+                          }}
+                        >
+                          <Bookmark className={`h-4 w-4 ${wishlist.has(wine.id) ? 'fill-current' : ''}`} />
+                        </Button>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="flex-1"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            addToCellar(wine);
+                          }}
+                        >
+                          <Plus className="h-4 w-4" />
+                        </Button>
+                      </div>
                     </CardContent>
                   </Card>
                 ))}

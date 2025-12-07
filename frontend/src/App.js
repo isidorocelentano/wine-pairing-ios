@@ -517,9 +517,10 @@ const PairingPage = () => {
                   </div>
                 );
               })()}
-              </CardContent>
+              
+              {/* Cellar Matches */}
               {result.cellar_matches && result.cellar_matches.length > 0 && (
-                <div className="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-border/50">
+                <div className="mt-6 pt-6 border-t border-border/50">
                   <p className="text-sm font-medium mb-3">{t('pairing_cellar_matches')}</p>
                   <div className="flex flex-wrap gap-2">
                     {result.cellar_matches.map((wine) => (

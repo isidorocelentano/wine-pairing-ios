@@ -513,6 +513,38 @@ const CellarPage = () => {
     }
   };
 
+  const handleEditWine = (wine) => {
+    setEditingWine({
+      id: wine.id,
+      name: wine.name,
+      type: wine.type,
+      region: wine.region || '',
+      year: wine.year || '',
+      grape: wine.grape || '',
+      notes: wine.notes || ''
+    });
+    setShowEditDialog(true);
+  };
+
+  const handleUpdateWine = async () => {
+    try {
+      await axios.put(`${API}/wines/${editingWine.id}`, {
+        name: editingWine.name,
+        type: editingWine.type,
+        region: editingWine.region || null,
+        year: editingWine.year ? parseInt(editingWine.year) : null,
+        grape: editingWine.grape || null,
+        notes: editingWine.notes || null
+      });
+      toast.success('Wein erfolgreich aktualisiert!');
+      setShowEditDialog(false);
+      setEditingWine(null);
+      fetchWines();
+    } catch (error) {
+      toast.error(t('error_general'));
+    }
+  };
+
   const getWineTypeBadgeClass = (type) => {
     const classes = { rot: 'badge-rot', weiss: 'badge-weiss', rose: 'badge-rose', schaumwein: 'badge-schaumwein' };
     return classes[type] || 'bg-secondary';

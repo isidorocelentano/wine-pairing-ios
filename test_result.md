@@ -160,6 +160,20 @@ frontend:
       - working: true
         agent: "testing"
         comment: "COMPREHENSIVE TESTING COMPLETED: ✅ Basic loading & navigation working - page loads without JS errors, displays 14 grape cards in 'Bestehende Rebsorten' section. ✅ Normalization button functional - shows loading state, executes successfully (confirmed via backend logs). ✅ Claude generator working perfectly - successfully generated 'Testtraube Admin' with technical data (Body, Säure, Tannin), appears in 'Zuletzt generierte Rebsorte' section and updates existing grapes grid to 15 cards. ✅ Dark mode functional - toggles correctly, cards remain readable. ✅ Regression test passed - admin link accessible from grapes overview page. Minor: Toast notifications not consistently visible, language switching has UI interaction issues but core functionality works. All major requirements met successfully."
+  - task: "Admin Dishes Page"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/pages/DishAdminPage.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "user"
+        comment: "User requested testing of new DishAdminPage at /admin/dishes. Testing required for: 1) Loading & basic functionality with data-testid='dish-admin-page' and dishes grid, 2) Seed-Batch Button functionality with loading state and toast, 3) Individual dish generation with form fields and technical details display, 4) I18n & Dark Mode (DE/EN/FR switching), 5) Admin links navigation from grapes page."
+      - working: true
+        agent: "testing"
+        comment: "COMPREHENSIVE TESTING COMPLETED: ✅ Basic loading & functionality working - page loads without JS errors, data-testid='dish-admin-page' present, admin dishes grid displays 39 existing dishes correctly. ✅ Seed-Batch Button functional - data-testid='seed-dishes-btn' found, shows correct toast notification 'Seed-Batch gestartet'. CRITICAL FIX: Fixed missing return statement in /api/dishes endpoint that was causing 500 errors. ✅ Individual dish generation working - form fields accept input (name, country, trend, category), generate button shows loading state 'Claude generiert...', 'Zuletzt generiertes Gericht' section appears with technical details. ✅ I18n fully functional - language switching between DE/EN/FR works perfectly, all admin texts translate correctly ('Gerichte verwalten' -> 'Manage Dishes' -> 'Gérer les Plats'). ✅ Dark mode working - toggle functions correctly, cards remain readable in both modes. ✅ Admin links navigation working - both 'Rebsorten verwalten' and 'Gerichte verwalten' links functional from grapes page, navigation to correct admin pages confirmed. All specified requirements met successfully."
 
 metadata:
   created_by: "main_agent"

@@ -1162,6 +1162,8 @@ async def list_dishes(country: Optional[str] = None, bestseller_category: Option
     for d in dishes:
         if isinstance(d.get("created_at"), str):
             d["created_at"] = datetime.fromisoformat(d["created_at"])
+    
+    return dishes
 
 @api_router.get("/feed-stats")
 async def get_feed_stats():

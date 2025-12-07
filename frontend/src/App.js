@@ -425,6 +425,27 @@ const PairingPage = () => {
                   <VoiceInputButton onResult={handleVoiceResult} />
                 </div>
               </div>
+              
+              {/* Dish Suggestions */}
+              {filteredDishSuggestions.length > 0 && (
+                <div className="mt-2 bg-background border border-border/60 rounded-lg shadow-lg max-h-56 overflow-y-auto text-sm" data-testid="dish-suggestions">
+                  {filteredDishSuggestions.map((suggestion) => (
+                    <button
+                      key={suggestion.id}
+                      type="button"
+                      onClick={() => handleSelectDishSuggestion(suggestion)}
+                      className="w-full text-left px-3 py-2 hover:bg-accent/40 flex flex-col"
+                      data-testid="dish-suggestion-item"
+                    >
+                      <span className="font-medium">{suggestion.name_de || suggestion.name_en || suggestion.name_fr}</span>
+                      <span className="text-xs text-muted-foreground flex gap-2">
+                        {suggestion.country && <span>{suggestion.country}</span>}
+                        {suggestion.bestseller_category && <span>· {suggestion.bestseller_category}</span>}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Wine Type Preference */}

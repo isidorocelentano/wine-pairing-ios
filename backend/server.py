@@ -394,6 +394,32 @@ async def get_pairing_history():
 async def scan_wine_label(request: LabelScanRequest):
     """Scan a wine label image and extract information"""
     try:
+        # Validate base64 image data first
+        if not request.image_base64 or not request.image_base64.strip():
+            logger.warning("Label scan: Empty image_base64 provided")
+            return LabelScanResponse(
+                name="Kein Bild",
+                type="rot",
+                notes="Kein Bild zum Analysieren bereitgestellt"
+            )
+        
+        # Basic base64 validation
+        try:
+            # Remove data URL prefix if present
+            image_data = request.image_base64
+            if image_data.startswith('data:'):
+                image_data = image_data.split(',', 1)[1] if ',' in image_data else image_data
+            
+            # Try to decode base64 to validate format
+            base64.b64decode(image_data, validate=True)
+        except Exception as validation_error:
+            logger.warning(f"Label scan: Invalid base64 format: {validation_error}")
+            return LabelScanResponse(
+                name="Ungültiges Bild",
+                type="rot",
+                notes="Bildformat nicht erkannt - bitte verwenden Sie ein gültiges Bild"
+            )
+        
         chat = LlmChat(
             api_key=EMERGENT_LLM_KEY,
             session_id=str(uuid.uuid4()),

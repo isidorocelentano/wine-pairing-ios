@@ -416,6 +416,8 @@ const CellarPage = () => {
   const [filter, setFilter] = useState('all');
   const [showAddDialog, setShowAddDialog] = useState(false);
   const [showScanDialog, setShowScanDialog] = useState(false);
+  const [showEditDialog, setShowEditDialog] = useState(false);
+  const [editingWine, setEditingWine] = useState(null);
   const [newWine, setNewWine] = useState({ name: '', type: 'rot', region: '', year: '', grape: '', notes: '', image_base64: '' });
   const [scanning, setScanning] = useState(false);
   const fileInputRef = useRef(null);

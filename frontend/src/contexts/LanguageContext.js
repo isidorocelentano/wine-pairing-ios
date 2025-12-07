@@ -9,6 +9,7 @@ const translations = {
     nav_sommelier: 'Sommelier',
     nav_blog: 'Blog',
     nav_feed: 'Community',
+    nav_grapes: 'Rebsorten',
     
     // Home Page
     hero_tagline: 'Die Entdeckung des reinen Genusses',

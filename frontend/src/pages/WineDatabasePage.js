@@ -504,15 +504,33 @@ const WineDatabasePage = () => {
               )}
 
               {/* Action Buttons */}
-              <div className="flex gap-3 pt-4">
-                <Button className="flex-1" onClick={() => {
+              <div className="space-y-3 pt-4">
+                <div className="flex gap-2">
+                  <Button 
+                    variant={favorites.has(selectedWine.id) ? "default" : "outline"}
+                    className="flex-1"
+                    onClick={() => toggleFavorite(selectedWine)}
+                  >
+                    <Heart className={`h-4 w-4 mr-2 ${favorites.has(selectedWine.id) ? 'fill-current' : ''}`} />
+                    {favorites.has(selectedWine.id) ? 'Favorit' : 'Zu Favoriten'}
+                  </Button>
+                  <Button 
+                    variant={wishlist.has(selectedWine.id) ? "default" : "outline"}
+                    className="flex-1"
+                    onClick={() => toggleWishlist(selectedWine)}
+                  >
+                    <Bookmark className={`h-4 w-4 mr-2 ${wishlist.has(selectedWine.id) ? 'fill-current' : ''}`} />
+                    {wishlist.has(selectedWine.id) ? 'Gemerkt' : 'Merken'}
+                  </Button>
+                </div>
+                <Button className="w-full" onClick={() => {
                   addToCellar(selectedWine);
                   setSelectedWine(null);
                 }}>
                   <Plus className="h-4 w-4 mr-2" />
                   Zum Keller hinzufügen
                 </Button>
-                <Button variant="outline" onClick={() => setSelectedWine(null)}>
+                <Button variant="outline" className="w-full" onClick={() => setSelectedWine(null)}>
                   Schließen
                 </Button>
               </div>

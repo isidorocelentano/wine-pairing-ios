@@ -246,6 +246,48 @@ class GrapeVariety(BaseModel):
     
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
+
+# ===================== DISH MODELS =====================
+
+class Dish(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    slug: str
+
+    # Multilingual names
+    name_de: str
+    name_en: Optional[str] = None
+    name_fr: Optional[str] = None
+
+    # Classification
+    country: Optional[str] = None
+    region: Optional[str] = None
+    trend_cuisines: List[str] = []
+    bestseller_category: Optional[str] = None  # burger, pasta, steak, fisch, etc.
+
+    # Technical matrix for pairing
+    protein: Optional[str] = None
+    intensity: Optional[str] = None  # leicht, mittel, kräftig
+    cooking_method: Optional[str] = None
+    sauce_base: Optional[str] = None
+    fat_level: Optional[str] = None  # niedrig, mittel, hoch
+    acid_level: Optional[str] = None  # niedrig, mittel, hoch
+    sweetness_level: Optional[str] = None  # trocken, leicht_süß, süß
+    spice_level: Optional[str] = None  # keine, leicht, mittel, dominant
+    key_aromas: List[str] = []
+    texture: List[str] = []
+
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+
+class DishGenerationRequest(BaseModel):
+    """Request model to generate a new structured dish entry via LLM"""
+    base_name: str
+    country_hint: Optional[str] = None
+    trend_hint: Optional[str] = None
+    bestseller_category: Optional[str] = None
+
+
 class GrapeGenerationRequest(BaseModel):
     """Request model to generate a new grape variety via LLM"""
     name: str

@@ -58,16 +58,29 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Manrope', sans-serif;
+    -webkit-tap-highlight-color: transparent;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
   }
 }
 
+/* Hide Emergent Watermark */
+[class*="emergent"],
+[data-emergent],
+a[href*="emergent"],
+div[style*="emergent"],
+iframe[src*="emergent"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -81,6 +94,17 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--primary) / 0.5);
+}
+
+/* Mobile-optimized touch targets */
+@media (max-width: 768px) {
+  button, a, input, select, textarea {
+    min-height: 44px;
+  }
+  
+  .nav-dock {
+    padding: 0.5rem 1rem;
+  }
 }
 
 /* Smooth transitions */
@@ -158,3 +182,20 @@
 .animate-delay-200 { animation-delay: 0.2s; }
 .animate-delay-300 { animation-delay: 0.3s; }
 .animate-delay-400 { animation-delay: 0.4s; }
+
+/* Voice input pulse animation */
+@keyframes voicePulse {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4); }
+  50% { box-shadow: 0 0 0 10px hsl(var(--primary) / 0); }
+}
+
+.voice-active {
+  animation: voicePulse 1.5s infinite;
+}
+
+/* Safe area padding for mobile notches */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .nav-dock {
+    padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
+  }
+}

@@ -1,0 +1,308 @@
+import React, { createContext, useContext, useState, useEffect } from 'react';
+
+const translations = {
+  de: {
+    // Navigation
+    nav_home: 'Home',
+    nav_pairing: 'Pairing',
+    nav_cellar: 'Keller',
+    nav_sommelier: 'Sommelier',
+    
+    // Home Page
+    hero_tagline: 'Die Entdeckung des reinen Genusses',
+    hero_title: 'Ihr virtueller Sommelier',
+    hero_description: 'Die einzige Empfehlung, die nichts verkauft, außer Ihrem perfekten Moment. Entdecken Sie die Harmonie von Wein und Speise – unabhängig, ehrlich, genussvoll.',
+    cta_pairing: 'Wein-Pairing starten',
+    cta_cellar: 'Mein Weinkeller',
+    philosophy_tagline: 'Unsere Philosophie',
+    philosophy_title: 'Aus Frustration geboren',
+    philosophy_text1: 'Die Welt des Weins ist von Experten-Gatekeeping und verkaufsgetriebener Komplexität überladen. Die meisten Wein-Apps zwingen Sie, entweder wie ein Sommelier zu sprechen oder wie ein Kunde zu kaufen.',
+    philosophy_text2: 'Wir bringen die Logik des Sommeliers in Ihre Küche – basierend auf 30 Jahren Expertise und der systemischen Analyse von Säure, Bitterkeit und Süße. Menschlich im Kern, präzise in der Ausführung.',
+    philosophy_quote: '„Planen Sie nicht um den Wein herum. Beginnen Sie mit dem Essen."',
+    feature_pairing_title: 'Intelligentes Pairing',
+    feature_pairing_desc: 'Geben Sie Ihr Gericht ein und erhalten Sie die perfekte Weinempfehlung – aus Ihrem Keller oder allgemein.',
+    feature_scanner_title: 'Etiketten-Scanner',
+    feature_scanner_desc: 'Fotografieren Sie Ihre Weinetiketten und lassen Sie die KI alle wichtigen Informationen erfassen.',
+    feature_sommelier_title: 'Persönlicher Sommelier',
+    feature_sommelier_desc: 'Fragen Sie unseren virtuellen Sommelier alles rund um Wein – persönlich und ohne Verkaufsdruck.',
+    
+    // Pairing Page
+    pairing_tagline: 'Wein-Pairing',
+    pairing_title: 'Was möchten Sie essen?',
+    pairing_description: 'Beschreiben Sie Ihr Gericht und unser virtueller Sommelier empfiehlt den perfekten Wein.',
+    pairing_label: 'Ihr Gericht',
+    pairing_placeholder: 'z.B. Gegrilltes Rinderfilet mit Rosmarin-Kartoffeln und Rotwein-Jus...',
+    pairing_use_cellar: 'Aus meinem Keller empfehlen',
+    pairing_all_types: 'Alle Weinarten',
+    pairing_red: 'Rotwein',
+    pairing_white: 'Weißwein',
+    pairing_rose: 'Rosé',
+    pairing_sparkling: 'Schaumwein',
+    pairing_button: 'Empfehlung erhalten',
+    pairing_loading: 'Sommelier denkt nach...',
+    pairing_result_title: 'Sommelier-Empfehlung',
+    pairing_result_for: 'für',
+    pairing_cellar_matches: 'Passende Weine aus Ihrem Keller:',
+    pairing_history: 'Letzte Empfehlungen',
+    pairing_voice_hint: 'Tippen Sie auf das Mikrofon, um Ihr Gericht zu diktieren',
+    
+    // Cellar Page
+    cellar_tagline: 'Mein Weinkeller',
+    cellar_title: 'Ihre Schatzkammer',
+    cellar_filter_all: 'Alle Weine',
+    cellar_scan: 'Etikett scannen',
+    cellar_add: 'Wein hinzufügen',
+    cellar_empty_title: 'Ihr Keller ist noch leer',
+    cellar_empty_desc: 'Fügen Sie Ihren ersten Wein hinzu oder scannen Sie ein Etikett.',
+    cellar_empty_button: 'Ersten Wein hinzufügen',
+    cellar_scan_title: 'Weinetikett scannen',
+    cellar_scan_desc: 'Fotografieren Sie das Etikett, um den Wein automatisch zu erfassen.',
+    cellar_scan_prompt: 'Klicken Sie hier, um ein Foto aufzunehmen',
+    cellar_scanning: 'Analysiere Etikett...',
+    cellar_add_title: 'Neuen Wein hinzufügen',
+    cellar_add_desc: 'Fügen Sie einen Wein zu Ihrem Keller hinzu.',
+    cellar_wine_name: 'Weinname *',
+    cellar_region: 'Region',
+    cellar_year: 'Jahrgang',
+    cellar_grape: 'Rebsorte',
+    cellar_notes: 'Notizen',
+    cellar_upload_image: 'Bild hochladen (optional)',
+    cellar_save: 'Wein speichern',
+    
+    // Chat Page
+    chat_title: 'Ihr Sommelier',
+    chat_subtitle: '30 Jahre Erfahrung, keine Verkaufsabsicht – nur ehrliche Beratung.',
+    chat_empty: 'Stellen Sie mir eine Frage über Wein...',
+    chat_suggestion1: 'Welcher Wein zu Pasta?',
+    chat_suggestion2: 'Rotwein oder Weißwein?',
+    chat_suggestion3: 'Was ist ein Terroir?',
+    chat_placeholder: 'Fragen Sie den Sommelier...',
+    chat_voice_hint: 'Tippen Sie auf das Mikrofon, um zu sprechen',
+    
+    // Common
+    error_dish_required: 'Bitte geben Sie ein Gericht ein',
+    error_wine_name: 'Bitte geben Sie einen Weinnamen ein',
+    error_general: 'Ein Fehler ist aufgetreten',
+    success_wine_added: 'Wein hinzugefügt!',
+    success_wine_deleted: 'Wein gelöscht',
+    success_label_scanned: 'Etikett erfolgreich gescannt!',
+    success_recommendation: 'Empfehlung erhalten!',
+    listening: 'Ich höre zu...',
+    voice_not_supported: 'Spracherkennung wird in Ihrem Browser nicht unterstützt'
+  },
+  en: {
+    // Navigation
+    nav_home: 'Home',
+    nav_pairing: 'Pairing',
+    nav_cellar: 'Cellar',
+    nav_sommelier: 'Sommelier',
+    
+    // Home Page
+    hero_tagline: 'The Discovery of Pure Enjoyment',
+    hero_title: 'Your Virtual Sommelier',
+    hero_description: 'The only recommendation that sells nothing but your perfect moment. Discover the harmony of wine and food – independent, honest, delightful.',
+    cta_pairing: 'Start Wine Pairing',
+    cta_cellar: 'My Wine Cellar',
+    philosophy_tagline: 'Our Philosophy',
+    philosophy_title: 'Born from Frustration',
+    philosophy_text1: 'The world of wine is overloaded with expert gatekeeping and sales-driven complexity. Most wine apps force you to either speak like a sommelier or buy like a customer.',
+    philosophy_text2: 'We bring the sommelier\'s logic to your kitchen – based on 30 years of expertise and systematic analysis of acidity, bitterness, and sweetness. Human at the core, precise in execution.',
+    philosophy_quote: '"Don\'t plan around the wine. Start with the food."',
+    feature_pairing_title: 'Smart Pairing',
+    feature_pairing_desc: 'Enter your dish and receive the perfect wine recommendation – from your cellar or in general.',
+    feature_scanner_title: 'Label Scanner',
+    feature_scanner_desc: 'Photograph your wine labels and let AI capture all important information.',
+    feature_sommelier_title: 'Personal Sommelier',
+    feature_sommelier_desc: 'Ask our virtual sommelier anything about wine – personal and without sales pressure.',
+    
+    // Pairing Page
+    pairing_tagline: 'Wine Pairing',
+    pairing_title: 'What would you like to eat?',
+    pairing_description: 'Describe your dish and our virtual sommelier will recommend the perfect wine.',
+    pairing_label: 'Your Dish',
+    pairing_placeholder: 'e.g. Grilled beef fillet with rosemary potatoes and red wine jus...',
+    pairing_use_cellar: 'Recommend from my cellar',
+    pairing_all_types: 'All wine types',
+    pairing_red: 'Red Wine',
+    pairing_white: 'White Wine',
+    pairing_rose: 'Rosé',
+    pairing_sparkling: 'Sparkling Wine',
+    pairing_button: 'Get Recommendation',
+    pairing_loading: 'Sommelier is thinking...',
+    pairing_result_title: 'Sommelier Recommendation',
+    pairing_result_for: 'for',
+    pairing_cellar_matches: 'Matching wines from your cellar:',
+    pairing_history: 'Recent Recommendations',
+    pairing_voice_hint: 'Tap the microphone to dictate your dish',
+    
+    // Cellar Page
+    cellar_tagline: 'My Wine Cellar',
+    cellar_title: 'Your Treasure Chamber',
+    cellar_filter_all: 'All Wines',
+    cellar_scan: 'Scan Label',
+    cellar_add: 'Add Wine',
+    cellar_empty_title: 'Your cellar is still empty',
+    cellar_empty_desc: 'Add your first wine or scan a label.',
+    cellar_empty_button: 'Add First Wine',
+    cellar_scan_title: 'Scan Wine Label',
+    cellar_scan_desc: 'Photograph the label to automatically capture the wine.',
+    cellar_scan_prompt: 'Click here to take a photo',
+    cellar_scanning: 'Analyzing label...',
+    cellar_add_title: 'Add New Wine',
+    cellar_add_desc: 'Add a wine to your cellar.',
+    cellar_wine_name: 'Wine Name *',
+    cellar_region: 'Region',
+    cellar_year: 'Vintage',
+    cellar_grape: 'Grape Variety',
+    cellar_notes: 'Notes',
+    cellar_upload_image: 'Upload image (optional)',
+    cellar_save: 'Save Wine',
+    
+    // Chat Page
+    chat_title: 'Your Sommelier',
+    chat_subtitle: '30 years of experience, no sales agenda – just honest advice.',
+    chat_empty: 'Ask me a question about wine...',
+    chat_suggestion1: 'Which wine with pasta?',
+    chat_suggestion2: 'Red or white wine?',
+    chat_suggestion3: 'What is terroir?',
+    chat_placeholder: 'Ask the sommelier...',
+    chat_voice_hint: 'Tap the microphone to speak',
+    
+    // Common
+    error_dish_required: 'Please enter a dish',
+    error_wine_name: 'Please enter a wine name',
+    error_general: 'An error occurred',
+    success_wine_added: 'Wine added!',
+    success_wine_deleted: 'Wine deleted',
+    success_label_scanned: 'Label scanned successfully!',
+    success_recommendation: 'Recommendation received!',
+    listening: 'Listening...',
+    voice_not_supported: 'Voice recognition is not supported in your browser'
+  },
+  fr: {
+    // Navigation
+    nav_home: 'Accueil',
+    nav_pairing: 'Accords',
+    nav_cellar: 'Cave',
+    nav_sommelier: 'Sommelier',
+    
+    // Home Page
+    hero_tagline: 'La Découverte du Pur Plaisir',
+    hero_title: 'Votre Sommelier Virtuel',
+    hero_description: 'La seule recommandation qui ne vend rien, sauf votre moment parfait. Découvrez l\'harmonie du vin et des mets – indépendant, honnête, délicieux.',
+    cta_pairing: 'Commencer l\'accord',
+    cta_cellar: 'Ma Cave à Vin',
+    philosophy_tagline: 'Notre Philosophie',
+    philosophy_title: 'Né de la Frustration',
+    philosophy_text1: 'Le monde du vin est surchargé de gardiens experts et de complexité commerciale. La plupart des applications de vin vous obligent à parler comme un sommelier ou à acheter comme un client.',
+    philosophy_text2: 'Nous apportons la logique du sommelier dans votre cuisine – basée sur 30 ans d\'expertise et l\'analyse systématique de l\'acidité, de l\'amertume et de la douceur. Humain au cœur, précis dans l\'exécution.',
+    philosophy_quote: '«Ne planifiez pas autour du vin. Commencez par le plat.»',
+    feature_pairing_title: 'Accord Intelligent',
+    feature_pairing_desc: 'Entrez votre plat et recevez la recommandation de vin parfaite – de votre cave ou en général.',
+    feature_scanner_title: 'Scanner d\'Étiquette',
+    feature_scanner_desc: 'Photographiez vos étiquettes de vin et laissez l\'IA capturer toutes les informations importantes.',
+    feature_sommelier_title: 'Sommelier Personnel',
+    feature_sommelier_desc: 'Demandez à notre sommelier virtuel tout sur le vin – personnel et sans pression commerciale.',
+    
+    // Pairing Page
+    pairing_tagline: 'Accord Mets-Vin',
+    pairing_title: 'Que voulez-vous manger?',
+    pairing_description: 'Décrivez votre plat et notre sommelier virtuel recommandera le vin parfait.',
+    pairing_label: 'Votre Plat',
+    pairing_placeholder: 'ex. Filet de bœuf grillé aux pommes de terre romarin et jus de vin rouge...',
+    pairing_use_cellar: 'Recommander de ma cave',
+    pairing_all_types: 'Tous les types de vin',
+    pairing_red: 'Vin Rouge',
+    pairing_white: 'Vin Blanc',
+    pairing_rose: 'Rosé',
+    pairing_sparkling: 'Vin Mousseux',
+    pairing_button: 'Obtenir une Recommandation',
+    pairing_loading: 'Le sommelier réfléchit...',
+    pairing_result_title: 'Recommandation du Sommelier',
+    pairing_result_for: 'pour',
+    pairing_cellar_matches: 'Vins correspondants de votre cave:',
+    pairing_history: 'Recommandations Récentes',
+    pairing_voice_hint: 'Appuyez sur le microphone pour dicter votre plat',
+    
+    // Cellar Page
+    cellar_tagline: 'Ma Cave à Vin',
+    cellar_title: 'Votre Trésor',
+    cellar_filter_all: 'Tous les Vins',
+    cellar_scan: 'Scanner l\'Étiquette',
+    cellar_add: 'Ajouter un Vin',
+    cellar_empty_title: 'Votre cave est encore vide',
+    cellar_empty_desc: 'Ajoutez votre premier vin ou scannez une étiquette.',
+    cellar_empty_button: 'Ajouter le Premier Vin',
+    cellar_scan_title: 'Scanner l\'Étiquette',
+    cellar_scan_desc: 'Photographiez l\'étiquette pour capturer automatiquement le vin.',
+    cellar_scan_prompt: 'Cliquez ici pour prendre une photo',
+    cellar_scanning: 'Analyse de l\'étiquette...',
+    cellar_add_title: 'Ajouter un Nouveau Vin',
+    cellar_add_desc: 'Ajoutez un vin à votre cave.',
+    cellar_wine_name: 'Nom du Vin *',
+    cellar_region: 'Région',
+    cellar_year: 'Millésime',
+    cellar_grape: 'Cépage',
+    cellar_notes: 'Notes',
+    cellar_upload_image: 'Télécharger une image (optionnel)',
+    cellar_save: 'Enregistrer le Vin',
+    
+    // Chat Page
+    chat_title: 'Votre Sommelier',
+    chat_subtitle: '30 ans d\'expérience, pas d\'objectif de vente – juste des conseils honnêtes.',
+    chat_empty: 'Posez-moi une question sur le vin...',
+    chat_suggestion1: 'Quel vin avec des pâtes?',
+    chat_suggestion2: 'Vin rouge ou blanc?',
+    chat_suggestion3: 'Qu\'est-ce que le terroir?',
+    chat_placeholder: 'Demandez au sommelier...',
+    chat_voice_hint: 'Appuyez sur le microphone pour parler',
+    
+    // Common
+    error_dish_required: 'Veuillez entrer un plat',
+    error_wine_name: 'Veuillez entrer un nom de vin',
+    error_general: 'Une erreur s\'est produite',
+    success_wine_added: 'Vin ajouté!',
+    success_wine_deleted: 'Vin supprimé',
+    success_label_scanned: 'Étiquette scannée avec succès!',
+    success_recommendation: 'Recommandation reçue!',
+    listening: 'J\'écoute...',
+    voice_not_supported: 'La reconnaissance vocale n\'est pas prise en charge par votre navigateur'
+  }
+};
+
+const languageNames = {
+  de: 'Deutsch',
+  en: 'English',
+  fr: 'Français'
+};
+
+const LanguageContext = createContext();
+
+export const LanguageProvider = ({ children }) => {
+  const [language, setLanguage] = useState(() => {
+    const saved = localStorage.getItem('wine-app-language');
+    return saved || 'de';
+  });
+
+  useEffect(() => {
+    localStorage.setItem('wine-app-language', language);
+  }, [language]);
+
+  const t = (key) => {
+    return translations[language]?.[key] || translations['de'][key] || key;
+  };
+
+  return (
+    <LanguageContext.Provider value={{ language, setLanguage, t, languageNames, languages: Object.keys(translations) }}>
+      {children}
+    </LanguageContext.Provider>
+  );
+};
+
+export const useLanguage = () => {
+  const context = useContext(LanguageContext);
+  if (!context) {
+    throw new Error('useLanguage must be used within a LanguageProvider');
+  }
+  return context;
+};

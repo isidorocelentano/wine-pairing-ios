@@ -166,6 +166,276 @@ export const PAIRING_TEMPLATES = {
         fr: 'Pourquoi un Chardonnay crémeux de Bourgogne est le partenaire idéal du filet de saumon à la sauce aux herbes – expliqué d’un point de vue sensoriel.'
       }
     }
+  },
+  'spaghetti-bolognese-chianti': {
+    recipeId: 'https://wine-pairing.online/recipe/spaghetti-bolognese',
+    wineId: 'https://wine-pairing.online/wine/chianti-classico',
+    url: 'https://wine-pairing.online/pairing/spaghetti-bolognese-chianti',
+    imageRecipe: 'https://wine-pairing.online/images/recipes/spaghetti-bolognese.jpg',
+    imageWine: 'https://wine-pairing.online/images/wines/chianti-classico.jpg',
+    price: '17.90',
+    offerUrl: 'https://wine-pairing.online/kaufen/chianti-classico',
+    recipe: {
+      name: {
+        de: 'Spaghetti Bolognese',
+        en: 'Spaghetti Bolognese',
+        fr: 'Spaghetti bolognaise'
+      },
+      description: {
+        de: 'Klassische Spaghetti mit langsam geschmorter Rinderhack-Tomatensauce, viel Umami, Kräutern und einer leichten Süße aus der Reduktion.',
+        en: 'Classic spaghetti with slowly braised beef and tomato ragù, rich in umami, herbs and a touch of sweetness from reduction.',
+        fr: 'Spaghetti classiques avec un ragù de boeuf et de tomate mijoté longuement, riche en umami, en herbes et en légère douceur de réduction.'
+      },
+      keywords: ['Spaghetti Bolognese', 'Pasta', 'Ragù', 'Hauptgericht'],
+      category: 'Hauptgericht',
+      cuisine: 'Italienisch'
+    },
+    wine: {
+      name: {
+        de: 'Chianti Classico',
+        en: 'Chianti Classico',
+        fr: 'Chianti Classico'
+      },
+      description: {
+        de: 'Ein Sangiovese-basierter Chianti Classico mit roter Kirsche, Kräutern, frischer Säure und mittlerem Tannin – klassischer Pasta-Begleiter.',
+        en: 'A Sangiovese-based Chianti Classico with red cherry, herbs, fresh acidity and medium tannins – a classic pasta companion.',
+        fr: 'Un Chianti Classico à base de Sangiovese, aux notes de cerise rouge, d'herbes, à l'acidité fraîche et aux tanins moyens – un accompagnement classique pour les pâtes.'
+      },
+      brand: 'Cantina Esempio',
+      reviewBody: {
+        de: 'Die frische Säure und die mittleren Tanine des Chianti schneiden durch das Fett der Bolognese und balancieren die Süße der Tomatensauce. Die Noten von roter Kirsche und Kräutern verbinden sich harmonisch mit dem Ragù und lassen das Gericht klarer und lebendiger wirken.',
+        en: 'The fresh acidity and medium tannins of the Chianti cut through the richness of the Bolognese and balance the sweetness of the tomato sauce. Red cherry and herbal notes echo the ragù and make the dish feel brighter and more defined.',
+        fr: 'L'acidité fraîche et les tanins moyens du Chianti tranchent dans la richesse de la bolognaise et équilibrent la douceur de la sauce tomate. Les notes de cerise rouge et d'herbes se marient au ragù et rendent le plat plus vif et plus net.'
+      }
+    },
+    page: {
+      title: {
+        de: 'Perfektes Wein-Pairing: Spaghetti Bolognese & Chianti',
+        en: 'Perfect Wine Pairing: Spaghetti Bolognese & Chianti',
+        fr: 'Accord mets-vin parfait : Spaghetti bolognaise & Chianti'
+      },
+      description: {
+        de: 'Warum ein klassischer Chianti der ideale Partner für Spaghetti Bolognese ist – mit Fokus auf Säure, Tannin und Umami.',
+        en: 'Why a classic Chianti is the ideal partner for spaghetti bolognese – focusing on acidity, tannins and umami.',
+        fr: 'Pourquoi un Chianti classique est le partenaire idéal des spaghetti bolognaise – avec un accent sur l'acidité, les tanins et l'umami.'
+      }
+    }
+  },
+  'pizza-margherita-chianti': {
+    recipeId: 'https://wine-pairing.online/recipe/pizza-margherita',
+    wineId: 'https://wine-pairing.online/wine/chianti-collinare',
+    url: 'https://wine-pairing.online/pairing/pizza-margherita-chianti',
+    imageRecipe: 'https://wine-pairing.online/images/recipes/pizza-margherita.jpg',
+    imageWine: 'https://wine-pairing.online/images/wines/chianti-collinare.jpg',
+    price: '14.90',
+    offerUrl: 'https://wine-pairing.online/kaufen/chianti-collinare',
+    recipe: {
+      name: {
+        de: 'Pizza Margherita',
+        en: 'Pizza Margherita',
+        fr: 'Pizza Margherita'
+      },
+      description: {
+        de: 'Dünner Pizzaboden mit fruchtiger Tomatensauce, Mozzarella und frischem Basilikum – schlicht, aber aromatisch und saftig.',
+        en: 'Thin pizza base with fruity tomato sauce, mozzarella and fresh basil – simple, yet aromatic and juicy.',
+        fr: 'Pâte à pizza fine avec sauce tomate fruitée, mozzarella et basilic frais – simple, mais aromatique et juteuse.'
+      },
+      keywords: ['Pizza', 'Margherita', 'Tomate', 'Mozzarella'],
+      category: 'Hauptgericht',
+      cuisine: 'Italienisch'
+    },
+    wine: {
+      name: {
+        de: 'Chianti Collinare',
+        en: 'Chianti Collinare',
+        fr: 'Chianti Collinare'
+      },
+      description: {
+        de: 'Ein frischer, fruchtbetonter Chianti mit roter Frucht, Kräutern und lebendiger Säure, der Tomate und Käse elegant begleitet.',
+        en: 'A fresh, fruit-forward Chianti with red fruit, herbs and lively acidity that elegantly accompanies tomato and cheese.',
+        fr: 'Un Chianti frais et fruité, aux notes de fruits rouges, d'herbes et à l'acidité vive, qui accompagne élégamment tomate et fromage.'
+      },
+      brand: 'Casa Collinare',
+      reviewBody: {
+        de: 'Die lebendige Säure des Chianti harmoniert mit der Tomatensauce und verhindert, dass die Pizza schwer wirkt. Die rote Frucht ergänzt die Süße der Tomate, während die Kräuternoten an frisches Basilikum erinnern und so eine aromatische Brücke schlagen.',
+        en: 'The lively acidity of the Chianti matches the tomato sauce and keeps the pizza from feeling heavy. Red fruit complements the sweetness of the tomato while herbal notes recall fresh basil, building an aromatic bridge.',
+        fr: 'L'acidité vive du Chianti s'accorde avec la sauce tomate et empêche la pizza de paraître lourde. Les fruits rouges complètent la douceur de la tomate, tandis que les notes herbacées évoquent le basilic frais et créent un pont aromatique.'
+      }
+    },
+    page: {
+      title: {
+        de: 'Perfektes Wein-Pairing: Pizza Margherita & Chianti',
+        en: 'Perfect Wine Pairing: Pizza Margherita & Chianti',
+        fr: 'Accord mets-vin parfait : Pizza Margherita & Chianti'
+      },
+      description: {
+        de: 'Warum ein frischer Chianti die Tomate-Mozzarella-Kombination der Pizza Margherita perfekt aufnimmt.',
+        en: 'Why a fresh Chianti perfectly supports the tomato and mozzarella combination of pizza Margherita.',
+        fr: 'Pourquoi un Chianti frais accompagne parfaitement la combinaison tomate-mozzarella de la pizza Margherita.'
+      }
+    }
+  },
+  'cheeseburger-merlot': {
+    recipeId: 'https://wine-pairing.online/recipe/cheeseburger',
+    wineId: 'https://wine-pairing.online/wine/merlot-reserve',
+    url: 'https://wine-pairing.online/pairing/cheeseburger-merlot',
+    imageRecipe: 'https://wine-pairing.online/images/recipes/cheeseburger.jpg',
+    imageWine: 'https://wine-pairing.online/images/wines/merlot-reserve.jpg',
+    price: '18.50',
+    offerUrl: 'https://wine-pairing.online/kaufen/merlot-reserve',
+    recipe: {
+      name: {
+        de: 'Cheeseburger',
+        en: 'Cheeseburger',
+        fr: 'Cheeseburger'
+      },
+      description: {
+        de: 'Saftiges Rindfleisch-Patty im Brötchen mit geschmolzenem Käse, Gurken, Zwiebeln und Sauce – herzhaft, leicht süßlich und sehr umami.',
+        en: 'Juicy beef patty in a bun with melted cheese, pickles, onions and sauce – hearty, slightly sweet and very umami.',
+        fr: 'Steak haché de boeuf juteux dans un bun avec fromage fondu, cornichons, oignons et sauce – gourmand, légèrement sucré et très umami.'
+      },
+      keywords: ['Burger', 'Cheeseburger', 'Streetfood'],
+      category: 'Hauptgericht',
+      cuisine: 'American / Streetfood'
+    },
+    wine: {
+      name: {
+        de: 'Merlot Réserve',
+        en: 'Merlot Reserve',
+        fr: 'Merlot Réserve'
+      },
+      description: {
+        de: 'Ein weicher, fruchtbetonter Merlot mit reifer Pflaume, Beeren und sanften Taninen – ideal für unkomplizierte Fleischgerichte.',
+        en: 'A soft, fruit-forward Merlot with ripe plum, berry notes and gentle tannins – ideal for easy-going meat dishes.',
+        fr: 'Un Merlot souple et fruité, aux notes de prune mûre et de baies, aux tanins doux – idéal pour des plats de viande décontractés.'
+      },
+      brand: 'Estate Reserve',
+      reviewBody: {
+        de: 'Die weichen Tanine und die reife Frucht des Merlot passen perfekt zum saftigen Rindfleisch und dem geschmolzenen Käse. Die leichte Süße des Burgers wird aufgefangen, ohne dass der Wein bitter wirkt, und die Frucht bringt Frische in das reichhaltige Streetfood-Profil.',
+        en: 'The soft tannins and ripe fruit of the Merlot match the juicy beef and melted cheese perfectly. The slight sweetness of the burger is balanced without making the wine taste bitter, while the fruit adds freshness to the rich street food profile.',
+        fr: 'Les tanins souples et les fruits mûrs du Merlot s'accordent parfaitement avec le boeuf juteux et le fromage fondu. La légère douceur du burger est équilibrée sans que le vin ne paraisse amer, et le fruit apporte de la fraîcheur au profil riche de ce street food.'
+      }
+    },
+    page: {
+      title: {
+        de: 'Perfektes Wein-Pairing: Cheeseburger & Merlot',
+        en: 'Perfect Wine Pairing: Cheeseburger & Merlot',
+        fr: 'Accord mets-vin parfait : Cheeseburger & Merlot'
+      },
+      description: {
+        de: 'Warum ein weicher, fruchtiger Merlot den Cheeseburger angenehm abrundet, ohne ihn zu erschlagen.',
+        en: 'Why a soft, fruity Merlot rounds off a cheeseburger pleasantly without overpowering it.',
+        fr: 'Pourquoi un Merlot souple et fruité accompagne agréablement le cheeseburger sans le dominer.'
+      }
+    }
+  },
+  'sushi-mix-riesling': {
+    recipeId: 'https://wine-pairing.online/recipe/sushi-mix',
+    wineId: 'https://wine-pairing.online/wine/riesling-trocken',
+    url: 'https://wine-pairing.online/pairing/sushi-mix-riesling',
+    imageRecipe: 'https://wine-pairing.online/images/recipes/sushi-mix.jpg',
+    imageWine: 'https://wine-pairing.online/images/wines/riesling-trocken.jpg',
+    price: '16.50',
+    offerUrl: 'https://wine-pairing.online/kaufen/riesling-trocken',
+    recipe: {
+      name: {
+        de: 'Sushi Mix',
+        en: 'Sushi Mix',
+        fr: 'Assortiment de sushi'
+      },
+      description: {
+        de: 'Gemischte Sushi-Auswahl mit Nigiri und Maki – zarter Fisch, gekochter Reis, etwas Sojasauce und Wasabi.',
+        en: 'Mixed sushi selection with nigiri and maki – delicate fish, cooked rice, a touch of soy sauce and wasabi.',
+        fr: 'Assortiment de sushi avec nigiri et maki – poisson délicat, riz cuit, un peu de sauce soja et de wasabi.'
+      },
+      keywords: ['Sushi', 'Fisch', 'japanisch'],
+      category: 'Hauptgericht',
+      cuisine: 'Japanisch'
+    },
+    wine: {
+      name: {
+        de: 'Riesling trocken',
+        en: 'Riesling dry',
+        fr: 'Riesling sec'
+      },
+      description: {
+        de: 'Ein trockener Riesling mit zitrischer Frucht, grüner Apfel und klarer Säure – präzise und mineralisch.',
+        en: 'A dry Riesling with citrus fruit, green apple and crisp acidity – precise and mineral.',
+        fr: 'Un Riesling sec aux notes d'agrumes, de pomme verte et à l'acidité vive – précis et minéral.'
+      },
+      brand: 'Mosel Selection',
+      reviewBody: {
+        de: 'Die klare Säure und die Zitrusnoten des Rieslings reinigen den Gaumen zwischen Reis, Fisch und Sojasauce, ohne die feinen Aromen des Sushi zu überdecken. Die Mineralität unterstreicht die Frische des Fisches und hält das Pairing leicht und präzise.',
+        en: 'The crisp acidity and citrus notes of the Riesling cleanse the palate between rice, fish and soy sauce without overwhelming the delicate sushi aromas. Its minerality underscores the freshness of the fish and keeps the pairing light and precise.',
+        fr: 'L'acidité vive et les notes d'agrumes du Riesling nettoient le palais entre le riz, le poisson et la sauce soja sans écraser les arômes délicats du sushi. Sa minéralité souligne la fraîcheur du poisson et maintient l'accord léger et précis.'
+      }
+    },
+    page: {
+      title: {
+        de: 'Perfektes Wein-Pairing: Sushi Mix & Riesling trocken',
+        en: 'Perfect Wine Pairing: Sushi Mix & Dry Riesling',
+        fr: 'Accord mets-vin parfait : Assortiment de sushi & Riesling sec'
+      },
+      description: {
+        de: 'Warum ein trockener Riesling die feine Aromatik von Sushi unterstreicht, statt sie zu überdecken.',
+        en: 'Why a dry Riesling enhances the fine aromatics of sushi instead of overpowering them.',
+        fr: 'Pourquoi un Riesling sec souligne la finesse aromatique du sushi plutôt que de la masquer.'
+      }
+    }
+  },
+  'gruenes-thai-curry-riesling-halbtrocken': {
+    recipeId: 'https://wine-pairing.online/recipe/gruenes-thai-curry-mit-huhn',
+    wineId: 'https://wine-pairing.online/wine/riesling-halbtrocken',
+    url: 'https://wine-pairing.online/pairing/gruenes-thai-curry-riesling-halbtrocken',
+    imageRecipe: 'https://wine-pairing.online/images/recipes/gruenes-thai-curry.jpg',
+    imageWine: 'https://wine-pairing.online/images/wines/riesling-halbtrocken.jpg',
+    price: '15.90',
+    offerUrl: 'https://wine-pairing.online/kaufen/riesling-halbtrocken',
+    recipe: {
+      name: {
+        de: 'Grünes Thai-Curry mit Huhn',
+        en: 'Green Thai Curry with Chicken',
+        fr: 'Curry vert thaï au poulet'
+      },
+      description: {
+        de: 'Cremiges grünes Thai-Curry mit Kokosmilch, Huhn, Gemüse und frischen Kräutern – aromatisch, pikant und leicht süßlich.',
+        en: 'Creamy green Thai curry with coconut milk, chicken, vegetables and fresh herbs – aromatic, spicy and slightly sweet.',
+        fr: 'Curry vert thaï crémeux au lait de coco, poulet, légumes et herbes fraîches – aromatique, relevé et légèrement sucré.'
+      },
+      keywords: ['Thai Curry', 'Huhn', 'asiatisch', 'scharf'],
+      category: 'Hauptgericht',
+      cuisine: 'Thai'
+    },
+    wine: {
+      name: {
+        de: 'Riesling halbtrocken',
+        en: 'Riesling off-dry',
+        fr: 'Riesling demi-sec'
+      },
+      description: {
+        de: 'Ein halbtrockener Riesling mit saftiger Frucht, präsenter Säure und einem Hauch Restsüße – perfekt zu Schärfe und Kokos.',
+        en: 'An off-dry Riesling with juicy fruit, vivid acidity and a touch of residual sweetness – perfect with spice and coconut.',
+        fr: 'Un Riesling demi-sec aux fruits juteux, à l'acidité marquée et à une pointe de sucres résiduels – parfait avec les épices et la noix de coco.'
+      },
+      brand: 'Asia Pairing Selection',
+      reviewBody: {
+        de: 'Die leichte Restsüße des halbtrockenen Rieslings mildert die Schärfe des grünen Currys, während die Säure die Cremigkeit der Kokosmilch auflockert. Die Fruchtigkeit greift die Kräuter- und Limettennoten der Thai-Küche auf und sorgt für ein spannungsreiches, aber harmonisches Pairing.',
+        en: 'The slight residual sweetness of the off-dry Riesling softens the heat of the green curry while its acidity lifts the creaminess of the coconut milk. The fruit character picks up the herbal and lime notes of Thai cuisine, creating a vibrant yet harmonious pairing.',
+        fr: 'La légère sucrosité résiduelle du Riesling demi-sec adoucit le piquant du curry vert tandis que son acidité allège l'onctuosité du lait de coco. Le fruit rejoint les notes d'herbes et de citron vert de la cuisine thaïe et crée un accord à la fois vif et harmonieux.'
+      }
+    },
+    page: {
+      title: {
+        de: 'Perfektes Wein-Pairing: Grünes Thai-Curry & Riesling halbtrocken',
+        en: 'Perfect Wine Pairing: Green Thai Curry & Off-dry Riesling',
+        fr: 'Accord mets-vin parfait : Curry vert thaï & Riesling demi-sec'
+      },
+      description: {
+        de: 'Warum ein halbtrockener Riesling die Schärfe und Cremigkeit von grünem Thai-Curry ideal balanciert.',
+        en: 'Why an off-dry Riesling ideally balances the heat and creaminess of green Thai curry.',
+        fr: 'Pourquoi un Riesling demi-sec équilibre idéalement le piquant et l'onctuosité du curry vert thaï.'
+      }
+    }
   }
 };
 

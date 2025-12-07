@@ -550,13 +550,32 @@ async def get_wine_pairing(request: PairingRequest):
                 else:
                     cellar_context += "\nBitte empfehle zuerst passende Weine aus dem Keller des Kunden, dann allgemeine Empfehlungen."
         
+        # Optional: include structured dish information if provided
+        dish_context = ""
+        if request.dish_id:
+            dish = await db.dishes.find_one({"id": request.dish_id}, {"_id": 0})
+            if dish:
+                # Build a compact, language-agnostic technical summary for Claude
+                dish_context = "\n\nTECHNISCHE GERICHTSANALYSE (für internes Pairing, nicht direkt auf der Karte ausgeben):\n"
+                dish_context += f"- Land: {dish.get('country') or '-'}, Region: {dish.get('region') or '-'}\n"
+                dish_context += f"- Trendküche: {', '.join(dish.get('trend_cuisines', [])) or '-'}\n"
+                dish_context += f"- Bestseller-Kategorie: {dish.get('bestseller_category') or '-'}\n"
+                dish_context += f"- Protein: {dish.get('protein') or '-'}\n"
+                dish_context += f"- Intensität: {dish.get('intensity') or '-'}\n"
+                dish_context += f"- Garmethode: {dish.get('cooking_method') or '-'}\n"
+                dish_context += f"- Saucenbasis: {dish.get('sauce_base') or '-'}\n"
+                dish_context += f"- Fettgehalt: {dish.get('fat_level') or '-'}, Säure: {dish.get('acid_level') or '-'}, Süße: {dish.get('sweetness_level') or '-'}\n"
+                dish_context += f"- Schärfe: {dish.get('spice_level') or '-'}\n"
+                dish_context += f"- Aromen: {', '.join(dish.get('key_aromas', [])) or '-'}\n"
+                dish_context += f"- Textur: {', '.join(dish.get('texture', [])) or '-'}\n"
+
         # Translate main prompt based on language
         if request.language == "en":
-            prompt = f"I would like to eat {request.dish}. Which wine do you recommend?{cellar_context}"
+            prompt = f"I would like to eat {request.dish}. Which wine do you recommend?{cellar_context}{dish_context}"
         elif request.language == "fr":
-            prompt = f"Je voudrais manger {request.dish}. Quel vin recommandez-vous?{cellar_context}"
+            prompt = f"Je voudrais manger {request.dish}. Quel vin recommandez-vous?{cellar_context}{dish_context}"
         else:
-            prompt = f"Ich möchte {request.dish} essen. Welchen Wein empfiehlst du dazu?{cellar_context}"
+            prompt = f"Ich möchte {request.dish} essen. Welchen Wein empfiehlst du dazu?{cellar_context}{dish_context}"
         
         user_message = UserMessage(text=prompt)
         response = await chat.send_message(user_message)

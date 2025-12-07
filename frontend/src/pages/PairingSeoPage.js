@@ -346,6 +346,15 @@ const PairingSeoPage = () => {
             {tpl.wine.reviewBody[lang] || tpl.wine.reviewBody.de}
           </CardContent>
         </Card>
+
+        <div className="flex justify-center md:justify-start pt-2">
+          <a
+            href="/pairing"
+            className="inline-flex items-center px-4 py-2 rounded-full text-xs md:text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+          >
+            Zur interaktiven Pairing-Seite
+          </a>
+        </div>
       </div>
     </div>
   );

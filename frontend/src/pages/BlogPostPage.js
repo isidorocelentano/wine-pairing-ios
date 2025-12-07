@@ -19,11 +19,7 @@ const BlogPostPage = () => {
   const [relatedPosts, setRelatedPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetchPost();
-  }, [slug]);
-
-  const fetchPost = async () => {
+  const fetchPost = useCallback(async () => {
     try {
       const response = await axios.get(`${API}/blog/${slug}`);
       setPost(response.data);
@@ -37,7 +33,11 @@ const BlogPostPage = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [slug, navigate]);
+
+  useEffect(() => {
+    fetchPost();
+  }, [fetchPost]);
 
   const getLocalizedTitle = (p) => {
     if (language === 'en' && p.title_en) return p.title_en;

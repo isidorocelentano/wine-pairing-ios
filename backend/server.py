@@ -822,11 +822,8 @@ async def get_chat_history(session_id: str):
 
 # ===================== FAVORITES =====================
 
-@api_router.get("/favorites")
-async def get_favorites():
-    """Get all favorite wines and pairings"""
-    favorite_wines = await db.wines.find({"is_favorite": True}, {"_id": 0}).to_list(100)
-    return {"wines": favorite_wines}
+# Hinweis: Die ursprüngliche Favorites-Route wurde durch die neue
+# /favorites-Implementierung (wine_favorites) weiter unten ersetzt.
 
 # ===================== COMMUNITY FEED ENDPOINTS =====================
 

@@ -45,7 +45,7 @@ const translations = {
     pairing_sparkling: 'Schaumwein',
     pairing_sweet: 'Süßwein',
     pairing_button: 'Empfehlung erhalten',
-    pairing_loading: 'Sommelier denkt nach...',
+    pairing_loading: 'Claude analysiert... (ca. 5-10 Sek.)',
     pairing_result_title: 'Sommelier-Empfehlung',
     pairing_result_for: 'für',
     pairing_cellar_matches: 'Passende Weine aus Ihrem Keller:',

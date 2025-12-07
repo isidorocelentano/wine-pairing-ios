@@ -918,6 +918,230 @@ async def generate_grape_variety(request: GrapeGenerationRequest):
         if not json_match:
             raise HTTPException(status_code=500, detail="Konnte keine JSON-Struktur aus der LLM-Antwort extrahieren")
 
+
+# ===================== DISH HELPERS & ENDPOINTS =====================
+
+async def _ensure_dish_indexes():
+    """Create helpful indexes for dishes collection (idempotent)."""
+    try:
+        await db.dishes.create_index("slug", unique=True)
+        await db.dishes.create_index([("country", 1), ("bestseller_category", 1)])
+        await db.dishes.create_index("trend_cuisines")
+    except Exception as e:
+        logger.warning(f"Could not create dish indexes: {e}")
+
+
+def _normalize_tag_list(values: Optional[list]) -> list:
+    if not values:
+        return []
+    seen = set()
+    result = []
+    for v in values:
+        if not isinstance(v, str):
+            continue
+        s = v.strip().lower()
+        if not s:
+            continue
+        if s not in seen:
+            seen.add(s)
+            result.append(s)
+    return result
+
+
+def _normalize_scale(value: Optional[str], allowed: List[str]) -> Optional[str]:
+    if not value:
+        return None
+    v = value.strip().lower()
+    for a in allowed:
+        if a in v:
+            return a
+    return v if v in allowed else None
+
+
+async def _generate_dish_from_seed(seed: dict) -> Optional[Dish]:
+    chat = LlmChat(
+        api_key=EMERGENT_LLM_KEY,
+        session_id=str(uuid.uuid4()),
+        system_message=DISH_GENERATOR_SYSTEM
+    ).with_model("openai", "gpt-5.1")
+
+    base_name = seed.get("base_name")
+    country_hint = seed.get("country_hint")
+    trend_hint = seed.get("trend_hint")
+    bestseller_category = seed.get("bestseller_category")
+
+    prompt = f"Erzeuge einen strukturierten Datensatz für das Gericht '{base_name}'."
+    if country_hint:
+        prompt += f" Land: {country_hint}."
+    if trend_hint:
+        prompt += f" Trend-Küche: {trend_hint}."
+    if bestseller_category:
+        prompt += f" Bestseller-Kategorie: {bestseller_category}."
+
+    user_message = UserMessage(text=prompt)
+    raw_response = await chat.send_message(user_message)
+
+    if not raw_response or not raw_response.strip():
+        logger.warning(f"Empty LLM response for dish seed {base_name}")
+        return None
+
+    json_match = re.search(r"\{[\s\S]*\}", raw_response)
+    if not json_match:
+        logger.warning(f"No JSON found in LLM response for dish seed {base_name}: {raw_response[:200]}")
+        return None
+
+    data = json.loads(json_match.group())
+
+    # Normalize fields
+    slug = data.get("slug") or re.sub(r"[^a-z0-9-]", "", data.get("name_de", base_name).lower().replace(" ", "-"))
+
+    trend_cuisines = _normalize_tag_list(data.get("trend_cuisines"))
+    key_aromas = _normalize_tag_list(data.get("key_aromas"))
+    texture = _normalize_tag_list(data.get("texture"))
+
+    intensity = _normalize_scale(data.get("intensity"), ["leicht", "mittel", "kräftig"])
+    fat_level = _normalize_scale(data.get("fat_level"), ["niedrig", "mittel", "hoch"])
+    acid_level = _normalize_scale(data.get("acid_level"), ["niedrig", "mittel", "hoch"])
+    sweetness_level = _normalize_scale(data.get("sweetness_level"), ["trocken", "leicht_süß", "süß"])
+    spice_level = _normalize_scale(data.get("spice_level"), ["keine", "leicht", "mittel", "dominant"])
+
+    dish_payload = {
+        "slug": slug,
+        "name_de": data.get("name_de", base_name),
+        "name_en": data.get("name_en"),
+        "name_fr": data.get("name_fr"),
+        "country": (data.get("country") or seed.get("country_hint")).lower() if data.get("country") or seed.get("country_hint") else None,
+        "region": data.get("region"),
+        "trend_cuisines": trend_cuisines,
+        "bestseller_category": data.get("bestseller_category") or seed.get("bestseller_category"),
+        "protein": data.get("protein"),
+        "intensity": intensity,
+        "cooking_method": data.get("cooking_method"),
+        "sauce_base": data.get("sauce_base"),
+        "fat_level": fat_level,
+        "acid_level": acid_level,
+        "sweetness_level": sweetness_level,
+        "spice_level": spice_level,
+        "key_aromas": key_aromas,
+        "texture": texture,
+    }
+
+    dish = Dish(**dish_payload)
+    doc = dish.model_dump()
+    doc["created_at"] = doc["created_at"].isoformat()
+    await db.dishes.insert_one(doc)
+    return dish
+
+
+INITIAL_DISH_SEEDS = [
+    # Bestseller international
+    {"base_name": "Cheeseburger", "country_hint": "usa", "trend_hint": "streetfood", "bestseller_category": "burger"},
+    {"base_name": "Classic Burger", "country_hint": "usa", "trend_hint": "streetfood", "bestseller_category": "burger"},
+    {"base_name": "Pizza Margherita", "country_hint": "italien", "trend_hint": "pizzeria", "bestseller_category": "pizza"},
+    {"base_name": "Pizza Salami", "country_hint": "italien", "trend_hint": "pizzeria", "bestseller_category": "pizza"},
+    {"base_name": "Spaghetti Bolognese", "country_hint": "italien", "trend_hint": "trattoria", "bestseller_category": "pasta"},
+    {"base_name": "Spaghetti Carbonara", "country_hint": "italien", "trend_hint": "trattoria", "bestseller_category": "pasta"},
+    {"base_name": "Rinderfilet mit Rotwein-Jus", "country_hint": "frankreich", "trend_hint": "fine_dining", "bestseller_category": "steak"},
+    {"base_name": "Ribeye Steak vom Grill", "country_hint": "usa", "trend_hint": "bbq", "bestseller_category": "steak"},
+    {"base_name": "Lachsfilet mit Zitronen-Butter-Sauce", "country_hint": "international", "trend_hint": "brasserie", "bestseller_category": "fisch"},
+    {"base_name": "Fish and Chips", "country_hint": "uk", "trend_hint": "streetfood", "bestseller_category": "fisch"},
+    {"base_name": "Caesar Salad mit Huhn", "country_hint": "usa", "trend_hint": "bistro", "bestseller_category": "salat"},
+    {"base_name": "Sushi Mix", "country_hint": "japan", "trend_hint": "sushi", "bestseller_category": "sushi"},
+    {"base_name": "Ramen mit Schweinebauch", "country_hint": "japan", "trend_hint": "nudelsuppe", "bestseller_category": "nudelsuppe"},
+    {"base_name": "Pad Thai mit Garnelen", "country_hint": "thailand", "trend_hint": "thai", "bestseller_category": "nudelgericht"},
+    {"base_name": "Grünes Thai-Curry mit Huhn", "country_hint": "thailand", "trend_hint": "thai", "bestseller_category": "curry"},
+    {"base_name": "Indisches Butter Chicken", "country_hint": "indien", "trend_hint": "indisch", "bestseller_category": "curry"},
+    {"base_name": "Tacos al Pastor", "country_hint": "mexiko", "trend_hint": "streetfood", "bestseller_category": "taco"},
+    {"base_name": "Falafel Bowl", "country_hint": "orient", "trend_hint": "bowl", "bestseller_category": "bowl"},
+    {"base_name": "Vegane Buddha Bowl", "country_hint": "international", "trend_hint": "bowl", "bestseller_category": "bowl"},
+    {"base_name": "Pizza Prosciutto e Funghi", "country_hint": "italien", "trend_hint": "pizzeria", "bestseller_category": "pizza"},
+    # Länderfokus Europa
+    {"base_name": "Coq au Vin", "country_hint": "frankreich", "trend_hint": "klassisch", "bestseller_category": "geflügel"},
+    {"base_name": "Boeuf Bourguignon", "country_hint": "frankreich", "trend_hint": "klassisch", "bestseller_category": "schmorgericht"},
+    {"base_name": "Paella mit Meeresfrüchten", "country_hint": "spanien", "trend_hint": "mediterran", "bestseller_category": "reisgericht"},
+    {"base_name": "Tapas-Auswahl", "country_hint": "spanien", "trend_hint": "sharing", "bestseller_category": "tapas"},
+    {"base_name": "Schweinsbraten mit Knödeln", "country_hint": "deutschland", "trend_hint": "hausmannskost", "bestseller_category": "schmorgericht"},
+    {"base_name": "Wiener Schnitzel mit Kartoffelsalat", "country_hint": "österreich", "trend_hint": "klassisch", "bestseller_category": "schnitzel"},
+    {"base_name": "Moussaka", "country_hint": "griechenland", "trend_hint": "mediterran", "bestseller_category": "auflauf"},
+    # Asien & Trendküchen
+    {"base_name": "Pho Bo", "country_hint": "vietnam", "trend_hint": "streetfood", "bestseller_category": "nudelsuppe"},
+    {"base_name": "Koreanisches Bibimbap", "country_hint": "korea", "trend_hint": "bowl", "bestseller_category": "bowl"},
+    {"base_name": "Mapo Tofu", "country_hint": "china", "trend_hint": "scharf", "bestseller_category": "veggie"},
+    {"base_name": "Kung Pao Chicken", "country_hint": "china", "trend_hint": "asiatisch", "bestseller_category": "geflügel"},
+    # USA & Amerika
+    {"base_name": "BBQ Ribs", "country_hint": "usa", "trend_hint": "bbq", "bestseller_category": "fleisch"},
+    {"base_name": "Mac and Cheese", "country_hint": "usa", "trend_hint": "comfort_food", "bestseller_category": "beilage"},
+    {"base_name": "Argentinisches Asado", "country_hint": "argentinien", "trend_hint": "bbq", "bestseller_category": "fleisch"},
+    {"base_name": "Ceviche", "country_hint": "peru", "trend_hint": "seafood", "bestseller_category": "fisch"},
+    # Vegetarisch/Vegan
+    {"base_name": "Gemüse-Lasagne", "country_hint": "italien", "trend_hint": "vegetarisch", "bestseller_category": "auflauf"},
+    {"base_name": "Kichererbsen-Curry", "country_hint": "indien", "trend_hint": "vegan", "bestseller_category": "curry"},
+    {"base_name": "Gegrilltes Gemüse mit Halloumi", "country_hint": "griechenland", "trend_hint": "vegetarisch", "bestseller_category": "gemüse"},
+]
+
+
+@api_router.post("/admin/dishes/generate", response_model=Dish)
+async def generate_dish(request: DishGenerationRequest):
+    """Generate a single structured dish entry via LLM."""
+    seed = {
+        "base_name": request.base_name,
+        "country_hint": request.country_hint,
+        "trend_hint": request.trend_hint,
+        "bestseller_category": request.bestseller_category,
+    }
+    await _ensure_dish_indexes()
+    dish = await _generate_dish_from_seed(seed)
+    if not dish:
+        raise HTTPException(status_code=500, detail="Gericht konnte nicht generiert werden")
+    return dish
+
+
+async def _run_dish_seed_batch():
+    await _ensure_dish_indexes()
+    created = 0
+    for seed in INITIAL_DISH_SEEDS:
+        try:
+            # Skip if slug already exists
+            slug_candidate = re.sub(r"[^a-z0-9-]", "", seed["base_name"].lower().replace(" ", "-"))
+            exists = await db.dishes.find_one({"slug": slug_candidate})
+            if exists:
+                continue
+            dish = await _generate_dish_from_seed(seed)
+            if dish:
+                created += 1
+        except Exception as e:
+            logger.warning(f"Error seeding dish {seed.get('base_name')}: {e}")
+    logger.info(f"Dish seed batch completed, created {created} dishes")
+
+
+@api_router.post("/admin/dishes/seed-batch")
+async def seed_dishes(background_tasks: BackgroundTasks):
+    """Trigger background seeding of a larger set of structured dishes.
+
+    Läuft im Hintergrund, die HTTP-Antwort kommt sofort zurück.
+    """
+    background_tasks.add_task(_run_dish_seed_batch)
+    return {"status": "started", "count": len(INITIAL_DISH_SEEDS)}
+
+
+@api_router.get("/dishes", response_model=List[Dish])
+async def list_dishes(country: Optional[str] = None, bestseller_category: Optional[str] = None, trend: Optional[str] = None):
+    """Simple listing endpoint – später für UI & Suche nutzbar."""
+    query: dict = {}
+    if country:
+        query["country"] = country.lower()
+    if bestseller_category:
+        query["bestseller_category"] = bestseller_category
+    if trend:
+        query["trend_cuisines"] = trend.lower()
+
+    dishes = await db.dishes.find(query, {"_id": 0}).sort("name_de", 1).to_list(500)
+    for d in dishes:
+        if isinstance(d.get("created_at"), str):
+            d["created_at"] = datetime.fromisoformat(d["created_at"])
+    return dishes
+
+
         data = json.loads(json_match.group())
 
         # Fallbacks & Normalisierung

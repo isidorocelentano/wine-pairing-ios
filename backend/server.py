@@ -292,6 +292,14 @@ STRUCTURE DE VOTRE RÉPONSE:
 1. **🍷 RECOMMANDATION PRINCIPALE** (Introduction de 1-2 phrases sur le plat)
    - Le MEILLEUR type de vin pour ce plat
    - 2-3 vins spécifiques avec justification brève
+   - IMPORTANT: Écrivez toujours les noms de vin en **gras** (ex: **Château Margaux**)
+
+2. **Options Alternatives:**
+   - Autres types de vin appropriés (Blanc/Rouge/Rosé/Mousseux/Doux)
+   - 1-2 suggestions par type
+   - IMPORTANT: Noms de vin toujours en **gras**
+
+Réponses concises en français."""
 
 # System prompt for structured grape variety generation
 GRAPE_GENERATOR_SYSTEM = """Du bist Claude, Master of Wine und leidenschaftlicher Koch.
@@ -310,30 +318,21 @@ ANTWORTFORMAT (STRICT JSON, KEIN ERKLÄRTEXT):
   "acidity": "niedrig" oder "mittel" oder "hoch",
   "tannin": "niedrig" oder "mittel" oder "hoch",
   "aging": "Kurze Beschreibung des typischen Ausbaus (z.B. Edelstahl, Holzfass, Barrique)",
-  "primary_aromas": ["3-6 kurze deutsche Aroma-Tags in Kleinschreibung"],
-  "tertiary_aromas": ["3-6 kurze deutsche Aroma-Tags in Kleinschreibung"],
-  "perfect_pairings": ["3-6 kurze deutsche Speisen-Tags in Kleinschreibung"],
-  "perfect_pairings_en": ["3-6 short English food pairing tags"],
+  "primary_aromas": ["3-6 kurze deutsche aroma-tags in kleinschreibung"],
+  "tertiary_aromas": ["3-6 kurze deutsche aroma-tags in kleinschreibung"],
+  "perfect_pairings": ["3-6 kurze deutsche speisen-tags in kleinschreibung"],
+  "perfect_pairings_en": ["3-6 short english food pairing tags"],
   "perfect_pairings_fr": ["3-6 étiquettes d'accords mets-vins en français"],
-  "main_regions": ["3-6 wichtigste Anbaugebiete"]
+  "main_regions": ["3-6 wichtigste anbaugebiete"]
 }
 
 WICHTIG:
 - Verwende GENAU diese Feldnamen.
 - Verwende bei body/acidity/tannin NUR die angegebenen Skalenwerte.
 - Gib KEINEN zusätzlichen Text außer dem JSON zurück.
-- Verwende in den deutschen Tag-Listen (primary_aromas, tertiary_aromas, perfect_pairings) nur Kleinschreibung.
+- Verwende in den deutschen Tag-Listen (primary_aromas, tertiary_aromas, perfect_pairings) nur kleinschreibung.
 """
 
-
-   - IMPORTANT: Écrivez toujours les noms de vin en **gras** (ex: **Château Margaux**)
-
-2. **Options Alternatives:**
-   - Autres types de vin appropriés (Blanc/Rouge/Rosé/Mousseux/Doux)
-   - 1-2 suggestions par type
-   - IMPORTANT: Noms de vin toujours en **gras**
-
-Réponses concises en français."""
 
 def get_sommelier_system(language: str = "de") -> str:
     """Get the appropriate system message based on language"""

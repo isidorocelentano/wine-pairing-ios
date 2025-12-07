@@ -60,14 +60,21 @@ export const GrapesPage = () => {
             </p>
           </header>
 
-          {/* Optional Admin Link */}
-          <div className="flex justify-end mb-4">
+          {/* Optional Admin Links */}
+          <div className="flex justify-end mb-4 gap-4 text-xs text-muted-foreground">
             <button
               type="button"
               onClick={() => navigate('/admin/grapes')}
-              className="text-xs text-muted-foreground hover:text-primary underline-offset-2 hover:underline"
+              className="hover:text-primary underline-offset-2 hover:underline"
             >
               {t('admin_grapes_title')}
+            </button>
+            <button
+              type="button"
+              onClick={() => navigate('/admin/dishes')}
+              className="hover:text-primary underline-offset-2 hover:underline"
+            >
+              {t('admin_dishes_title')}
             </button>
           </div>
 

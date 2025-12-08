@@ -437,13 +437,15 @@ async def root():
     return {"message": "Wine Pairing API - Ihr virtueller Sommelier"}
 
 @api_router.get("/wines", response_model=List[Wine])
-async def get_wines(type_filter: Optional[str] = None, favorites_only: bool = False):
+async def get_wines(type_filter: Optional[str] = None, favorites_only: bool = False, in_stock_only: bool = False):
     """Get all wines from the cellar"""
     query = {}
     if type_filter:
         query["type"] = type_filter
     if favorites_only:
         query["is_favorite"] = True
+    if in_stock_only:
+        query["quantity"] = {"$gt": 0}
     
     wines = await db.wines.find(query, {"_id": 0}).to_list(1000)
     for wine in wines:

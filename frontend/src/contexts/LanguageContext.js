@@ -350,6 +350,7 @@ const translations = {
     cellar_region: 'Region',
     cellar_year: 'Vintage',
     cellar_grape: 'Grape Variety',
+    cellar_quantity: 'Number of bottles in cellar',
     cellar_notes: 'Notes',
     cellar_upload_image: 'Upload image (optional)',
     cellar_save: 'Save Wine',

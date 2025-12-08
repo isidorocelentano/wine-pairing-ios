@@ -927,6 +927,7 @@ const CellarPage = () => {
   const [wines, setWines] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('all');
+  const [inStockOnly, setInStockOnly] = useState(false);
   const [showAddDialog, setShowAddDialog] = useState(false);
   const [showScanDialog, setShowScanDialog] = useState(false);
   const [showEditDialog, setShowEditDialog] = useState(false);

@@ -1089,6 +1089,16 @@ const CellarPage = () => {
             <p className="text-accent font-accent text-sm tracking-widest uppercase mb-2">{t('cellar_tagline')}</p>
             <h1 className="text-2xl md:text-4xl font-semibold tracking-tight">{t('cellar_title')}</h1>
           </div>
+            <label className="inline-flex items-center gap-2 text-xs md:text-sm text-muted-foreground">
+              <input
+                type="checkbox"
+                checked={inStockOnly}
+                onChange={(e) => setInStockOnly(e.target.checked)}
+                className="w-4 h-4 rounded border-border text-primary focus:ring-primary"
+              />
+              <span>{t('cellar_filter_in_stock')}</span>
+            </label>
+
           <div className="flex flex-wrap gap-2 md:gap-3 items-center">
             <Select value={filter} onValueChange={setFilter}>
               <SelectTrigger className="w-[140px] md:w-[160px]" data-testid="cellar-filter">

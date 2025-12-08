@@ -1380,28 +1380,19 @@ const ChatPage = () => {
               />
             </div>
           </div>
+          <div className="mt-3 md:mt-4 p-3 md:p-4 rounded-xl bg-muted/40 border border-border/40 text-left">
+            <h2 className="text-sm md:text-base font-semibold mb-1">{t('claude_bio_title')}</h2>
+            <p className="text-[11px] md:text-sm text-muted-foreground leading-snug">
+              {t('claude_bio_text1')}
+            </p>
+            <p className="hidden md:block text-[11px] md:text-sm text-muted-foreground leading-snug mt-1">
+              {t('claude_bio_text2')}
+            </p>
+          </div>
         </header>
 
         <Card className="flex-1 bg-card/50 backdrop-blur-sm border-border/50 flex flex-col overflow-hidden">
           <ScrollArea className="flex-1 p-3 md:p-6">
-            {/* Über Claude Box */}
-            <div className="mb-4 md:mb-6 p-3 md:p-4 rounded-xl bg-muted/40 border border-border/40 flex gap-3 md:gap-4 items-start">
-              <img
-                src="https://customer-assets.emergentagent.com/job_e57eae36-225b-4e20-a944-048ef9749606/artifacts/w9w52bm4_CLAUDE%20SOMMELIER%2001%20%284%29.png"
-                alt="Claude, virtueller Sommelier"
-                className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover border border-border/60 shadow-sm flex-shrink-0"
-              />
-              <div className="text-left space-y-1">
-                <h2 className="text-sm md:text-base font-semibold">{t('claude_bio_title')}</h2>
-                <p className="text-[11px] md:text-sm text-muted-foreground leading-snug">
-                  {t('claude_bio_text1')}
-                </p>
-                <p className="hidden md:block text-[11px] md:text-sm text-muted-foreground leading-snug">
-                  {t('claude_bio_text2')}
-                </p>
-              </div>
-            </div>
-
             {messages.length === 0 ? (
               <div className="h-full flex flex-col items-center justify-center text-center py-8 md:py-12">
                 <Wine className="h-10 md:h-12 w-10 md:w-12 text-muted-foreground/30 mb-4" strokeWidth={1} />

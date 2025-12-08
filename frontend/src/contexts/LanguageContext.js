@@ -130,6 +130,8 @@ const translations = {
     cellar_grape: 'Rebsorte',
     cellar_quantity: 'Anzahl Flaschen im Keller',
     cellar_notes: 'Notizen',
+    cellar_filter_in_stock: 'Nur Weine mit Bestand anzeigen',
+    cellar_scan_hint: 'Claude hat dieses Etikett für Sie ausgelesen. Bitte prüfen und ergänzen Sie die Angaben vor dem Speichern.',
     cellar_upload_image: 'Bild hochladen (optional)',
     cellar_save: 'Wein speichern',
     
@@ -594,6 +596,8 @@ const translations = {
     cellar_grape: 'Cépage',
     cellar_quantity: 'Nombre de bouteilles en cave',
     cellar_notes: 'Notes',
+    cellar_filter_in_stock: 'Afficher uniquement les vins en stock',
+    cellar_scan_hint: 'Claude a analysé cette étiquette pour vous. Veuillez vérifier et compléter les informations avant d’enregistrer.',
     cellar_upload_image: 'Télécharger une image (optionnel)',
     cellar_save: 'Enregistrer le Vin',
     chat_title: 'Claude – Votre Sommelier',

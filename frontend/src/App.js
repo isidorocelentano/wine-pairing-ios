@@ -573,16 +573,6 @@ const PairingPage = () => {
               </CardContent>
             </Card>
 
-
-                  <SelectItem value="weiss">{t('pairing_white')}</SelectItem>
-                  <SelectItem value="rot">{t('pairing_red')}</SelectItem>
-                  <SelectItem value="rose">{t('pairing_rose')}</SelectItem>
-                  <SelectItem value="schaumwein">{t('pairing_sparkling')}</SelectItem>
-                  <SelectItem value="suesswein">{t('pairing_sweet')}</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
             {/* Dish Filters */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
               <div>

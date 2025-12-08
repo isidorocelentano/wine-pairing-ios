@@ -972,11 +972,13 @@ const CellarPage = () => {
     setScanning(true);
     try {
       const response = await axios.post(`${API}/scan-label`, { image_base64: imageBase64 });
-      setNewWine({
+      setNewWine((prev) => ({
+        ...prev,
         ...response.data,
         year: response.data.year?.toString() || '',
-        image_base64: imageBase64
-      });
+        image_base64: imageBase64,
+        quantity: typeof prev.quantity === 'number' ? prev.quantity : 1,
+      }));
       setShowScanDialog(false);
       setShowAddDialog(true);
       toast.success(t('success_label_scanned'));

@@ -672,6 +672,16 @@ class WinePairingAPITester:
         self.test_wine_pairing_with_cellar()
         self.test_pairing_history()
         
+        # Profi-Modus 4D Pairing Tests (New Feature)
+        print("\n🎯 Testing Profi-Modus 4D Pairing Features...")
+        self.test_pairing_basic_flow_no_4d()
+        self.test_pairing_profi_modus_4d_values()
+        self.test_pairing_partial_4d_values()
+        self.test_pairing_4d_with_dish_id()
+        self.test_pairing_invalid_4d_values()
+        self.test_pairing_null_4d_values()
+        self.test_pairing_history_serialization()
+        
         # Sommelier chat
         self.test_sommelier_chat()
         self.test_chat_history()

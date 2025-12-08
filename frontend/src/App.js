@@ -824,7 +824,12 @@ const PairingPage = () => {
                   onClick={() => {
                     // Beim Klick letzte Empfehlung wieder anzeigen
                     setDish(item.dish);
-                    setResult({ dish: item.dish, recommendation: item.recommendation });
+                    setResult({
+                      dish: item.dish,
+                      recommendation: item.recommendation,
+                      why_explanation: item.why_explanation || null,
+                      cellar_matches: item.cellar_matches || [],
+                    });
                   }}
                 >
                   <CardContent className="p-3 md:p-4">

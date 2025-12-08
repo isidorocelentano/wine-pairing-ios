@@ -1149,6 +1149,10 @@ const CellarPage = () => {
                 <Button className="rounded-full text-sm" data-testid="add-wine-btn">
                   <Plus className="mr-2 h-4 w-4" /><span className="hidden sm:inline">{t('cellar_add')}</span><span className="sm:hidden">+</span>
                 </Button>
+                  <p className="text-[11px] text-muted-foreground leading-snug border-l-2 border-accent pl-2">
+                    {t('cellar_scan_hint')}
+                  </p>
+
               </DialogTrigger>
               <DialogContent className="mx-4 max-w-md max-h-[90vh] overflow-y-auto">
                 <DialogHeader>

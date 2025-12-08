@@ -119,16 +119,11 @@ const Navigation = () => {
             }`}
           >
             {item.isClaude ? (
-              <div className="relative flex items-center justify-center">
-                <span className="absolute -left-4 hidden md:inline-flex w-7 h-7 rounded-full border border-border/50 bg-background overflow-hidden shadow-sm">
-                  <img
-                    src="https://customer-assets.emergentagent.com/job_e57eae36-225b-4e20-a944-048ef9749606/artifacts/w9w52bm4_CLAUDE%20SOMMELIER%2001%20%284%29.png"
-                    alt="Claude Avatar"
-                    className="w-full h-full object-cover"
-                  />
-                </span>
-                <item.icon className="w-5 h-5 ml-0 md:ml-4" strokeWidth={1.5} />
-              </div>
+              <img
+                src="https://customer-assets.emergentagent.com/job_e57eae36-225b-4e20-a944-048ef9749606/artifacts/w9w52bm4_CLAUDE%20SOMMELIER%2001%20%284%29.png"
+                alt="Claude Avatar"
+                className="w-6 h-6 rounded-full border border-border/60 object-cover shadow-sm"
+              />
             ) : (
               <item.icon className="w-5 h-5" strokeWidth={1.5} />
             )}

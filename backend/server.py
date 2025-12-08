@@ -607,7 +607,20 @@ async def get_wine_pairing(request: PairingRequest):
         
         user_message = UserMessage(text=prompt)
         response = await chat.send_message(user_message)
-        
+
+        # Extract WHY explanation section if present
+        why_explanation = None
+        if isinstance(response, str) and "WHY_SECTION_START" in response and "WHY_SECTION_END" in response:
+            try:
+                start = response.index("WHY_SECTION_START") + len("WHY_SECTION_START")
+                end = response.index("WHY_SECTION_END", start)
+                why_explanation = response[start:end].strip()
+                # Remove markers and explanation from main recommendation text
+                response = (response[:response.index("WHY_SECTION_START")].strip() + "\n\n" + response[end + len("WHY_SECTION_END"):].strip()).strip()
+            except Exception:
+                # Fallback: keep full response as recommendation
+                why_explanation = None
+
         # Find matching wines from cellar
         if request.use_cellar and wines:
             cellar_matches = [{"id": w["id"], "name": w["name"], "type": w["type"]} for w in wines[:5]]
@@ -615,6 +628,7 @@ async def get_wine_pairing(request: PairingRequest):
         pairing = PairingResponse(
             dish=request.dish,
             recommendation=response,
+            why_explanation=why_explanation,
             cellar_matches=cellar_matches
         )
         

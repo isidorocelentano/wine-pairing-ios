@@ -659,6 +659,11 @@ PAIRING_SITEMAP_ITEMS = [
     {"slug": "lammkoteletts-mit-rosmarin-cabernet-sauvignon", "status": "LIVE", "category": "meat"},
     {"slug": "rinderfilet-mit-kraeuterbutter-und-pommes-bordeaux", "status": "LIVE", "category": "meat"},
     {"slug": "lachsfilet-mit-kraeutersauce-chardonnay", "status": "LIVE", "category": "fish"},
+    {"slug": "spaghetti-bolognese-chianti", "status": "LIVE", "category": "pasta"},
+    {"slug": "pizza-margherita-chianti", "status": "LIVE", "category": "pizza"},
+    {"slug": "pad-thai-riesling", "status": "LIVE", "category": "asian"},
+    {"slug": "sushi-sashimi-riesling", "status": "LIVE", "category": "asian"},
+    {"slug": "tandoori-chicken-riesling", "status": "LIVE", "category": "asian"},
 ]
 
 

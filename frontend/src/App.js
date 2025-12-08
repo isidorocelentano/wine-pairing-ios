@@ -595,7 +595,8 @@ const PairingPage = () => {
                   ))}
                 </div>
               </CardContent>
-            </Card>
+              </Card>
+            </details>
 
             {/* Dish Filters */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3">

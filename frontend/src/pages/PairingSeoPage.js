@@ -149,9 +149,9 @@ export const PAIRING_TEMPLATES = {
       },
       brand: 'Domaine Exemple',
       reviewBody: {
-        de: 'Die frische, aber gut eingebundene Saure dieses Chardonnays hebt den fettreichen Lachs an, wahrend die cremige Textur und die buttrig-nussigen Noten die Krauter-Sahnesauce spiegeln. Zitrusanklange verbinden sich mit den Zitronennoten der Sauce und halten das Gericht in Balance.',
-        en: 'The fresh yet well-integrated acidity of this Chardonnay lifts the rich salmon, while its creamy texture and buttery, nutty notes mirror the herb cream sauce. Citrus aromas pick up the lemon accents in the dish and keep everything in balance.',
-        fr: 'L’acidite fraiche mais integree de ce Chardonnay soutient le gras du saumon, tandis que sa texture cremeuse et ses notes beurrees et noisettees refletent la sauce aux herbes. Les aromes d’agrumes prolongent le citron du plat et assurent une belle harmonie.'
+        de: 'Die frische, aber gut eingebundene Saure dieses Chardonnays bringt Leichtigkeit in die Reichhaltigkeit von Lachs und Krauter-Sahnesauce. Seine buttrig-nussigen Noten greifen die cremige Sauce auf, wahrend die Zitrusfrische eine feine Aromabrucke zu den Zitronennoten im Gericht bildet.',
+        en: 'The fresh yet well-integrated acidity of this Chardonnay lightens the richness of salmon and herb cream sauce. Its buttery, nutty tones mirror the creamy sauce while the citrus lift creates an aromatic bridge to the lemon accents in the dish.',
+        fr: "L'acidite fraiche mais integree de ce Chardonnay apporte de la legerete a la richesse du saumon et de la sauce creme aux herbes. Ses notes beurreess et noisettees refletent la sauce, tandis que la fraicheur d'agrumes cree un pont aromatique avec le citron du plat."
       }
     },
     page: {

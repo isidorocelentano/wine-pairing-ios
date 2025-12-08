@@ -939,8 +939,15 @@ const CellarPage = () => {
 
   const fetchWines = useCallback(async () => {
     try {
-      const params = filter !== 'all' ? `?type_filter=${filter}` : '';
-      const response = await axios.get(`${API}/wines${params}`);
+      const params = [];
+      if (filter !== 'all') {
+        params.push(`type_filter=${filter}`);
+      }
+      if (inStockOnly) {
+        params.push('in_stock_only=true');
+      }
+      const query = params.length ? `?${params.join('&')}` : '';
+      const response = await axios.get(`${API}/wines${query}`);
       setWines(response.data);
     } catch (error) {
       toast.error(t('error_general'));

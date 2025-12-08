@@ -1035,7 +1035,8 @@ const CellarPage = () => {
       region: wine.region || '',
       year: wine.year || '',
       grape: wine.grape || '',
-      notes: wine.notes || ''
+      notes: wine.notes || '',
+      quantity: typeof wine.quantity === 'number' ? wine.quantity : 1,
     });
     setShowEditDialog(true);
   };

@@ -1211,6 +1211,10 @@ const CellarPage = () => {
                   <h3 className="font-medium text-sm md:text-lg leading-tight mb-1 line-clamp-2">{wine.name}</h3>
                   <div className="text-xs md:text-sm text-muted-foreground space-y-0.5">
                     {wine.region && <p className="line-clamp-1">{wine.region}</p>}
+                    {typeof wine.quantity === 'number' && wine.quantity > 0 && (
+                      <p className="text-[11px] md:text-xs text-muted-foreground">{wine.quantity}x im Keller</p>
+                    )}
+
                     <div className="flex gap-2">
                       {wine.year && <span>{wine.year}</span>}
                       {wine.grape && <span className="hidden md:inline">• {wine.grape}</span>}

@@ -342,6 +342,46 @@ const PairingPage = () => {
   const handleSelectDishSuggestion = (suggestion) => {
     setDish(suggestion.name_de || suggestion.name_en || suggestion.name_fr || '');
     setSelectedDishId(suggestion.id);
+
+    // Map structured dish matrix to 0-10 scale for 4D Profi-Modus
+    const mapLevel = (value, mapping) => {
+      if (!value) return null;
+      const v = String(value).toLowerCase();
+      if (mapping[v] !== undefined) return mapping[v];
+      return null;
+    };
+
+    // Reichhaltigkeit aus Fettgehalt/Intensität ableiten
+    const fatLevel = mapLevel(suggestion.fat_level, { niedrig: 2, mittel: 5, hoch: 8 });
+    const intensityLevel = mapLevel(suggestion.intensity, { leicht: 3, mittel: 6, kräftig: 8 });
+    const richnessValue = Math.round(
+      [fatLevel, intensityLevel]
+        .filter((v) => typeof v === 'number')
+        .reduce((sum, v, _, arr) => sum + v / arr.length, 0) || 5
+    );
+
+    // Frische aus Säure ableiten
+    const freshnessValue = mapLevel(suggestion.acid_level, { niedrig: 2, mittel: 5, hoch: 8 }) ?? 5;
+
+    // Süße aus sweetness_level ableiten
+    const sweetnessValue = mapLevel(suggestion.sweetness_level, {
+      trocken: 2,
+      leicht_süß: 6,
+      süß: 9,
+    }) ?? 3;
+
+    // Würze aus spice_level ableiten
+    const spiceValue = mapLevel(suggestion.spice_level, {
+      keine: 1,
+      leicht: 3,
+      mittel: 6,
+      dominant: 9,
+    }) ?? 2;
+
+    setRichness(richnessValue);
+    setFreshness(freshnessValue);
+    setSweetness(sweetnessValue);
+    setSpice(spiceValue);
   };
 
 

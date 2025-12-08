@@ -203,9 +203,9 @@ export const PAIRING_TEMPLATES = {
       },
       brand: 'Cantina Esempio',
       reviewBody: {
-        de: 'Die frische Saure und die mittleren Tanine des Chianti schneiden durch das Fett der Bolognese und balancieren die Suße der Tomatensauce. Die Noten von roter Kirsche und Krautern verbinden sich harmonisch mit dem Ragu und lassen das Gericht klarer und lebendiger wirken.',
-        en: 'The fresh acidity and medium tannins of the Chianti cut through the richness of the Bolognese and balance the sweetness of the tomato sauce. Red cherry and herbal notes echo the ragu and make the dish feel brighter and more defined.',
-        fr: 'L\'acidite fraiche et les tanins moyens du Chianti tranchent dans la richesse de la bolognaise et equilibrent la douceur de la sauce tomate. Les notes de cerise rouge et d\'herbes se marient au ragu et rendent le plat plus vif et plus net.'
+        de: 'Die Frische und die mittleren Tanine des Chianti bringen Klarheit in die Reichhaltigkeit der Bolognese und halten die Kombination aus Fleisch und Tomate leichtfußig. Rote Kirschfrucht und Krauter greifen die sußliche Tomatensauce und das Ragu aromatisch auf – diese Brucke lasst Wein und Pasta wie ein abgestimmtes Ganzes wirken.',
+        en: 'The freshness and medium tannins of the Chianti bring clarity to the richness of the Bolognese and keep the combination of meat and tomato feeling light. Red cherry fruit and herbs pick up the sweet tomato sauce and ragù aromatically – this bridge makes wine and pasta feel like a tuned whole.',
+        fr: "La fraicheur et les tanins moyens du Chianti apportent de la clarte a la richesse de la bolognaise et gardent l'ensemble viande-tomate leger. Les notes de cerise rouge et d'herbes reprennent la sauce tomate sucree et le ragù sur le plan aromatique – ce pont donne l'impression d'un ensemble vin-pates parfaitement accorde."
       }
     },
     page: {

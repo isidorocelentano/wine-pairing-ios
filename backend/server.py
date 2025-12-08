@@ -51,6 +51,7 @@ class Wine(BaseModel):
     grape: Optional[str] = None
     notes: Optional[str] = None
     image_base64: Optional[str] = None
+    quantity: int = 1
     is_favorite: bool = False
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
@@ -62,6 +63,7 @@ class WineCreate(BaseModel):
     grape: Optional[str] = None
     notes: Optional[str] = None
     image_base64: Optional[str] = None
+    quantity: Optional[int] = 1
 
 class WineUpdate(BaseModel):
     name: Optional[str] = None
@@ -72,6 +74,7 @@ class WineUpdate(BaseModel):
     notes: Optional[str] = None
     image_base64: Optional[str] = None
     is_favorite: Optional[bool] = None
+    quantity: Optional[int] = None
 
 # ===================== WINE DATABASE MODELS =====================
 class WineDatabaseEntry(BaseModel):

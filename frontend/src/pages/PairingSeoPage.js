@@ -257,9 +257,9 @@ export const PAIRING_TEMPLATES = {
       },
       brand: 'Casa Collinare',
       reviewBody: {
-        de: 'Die lebendige Saure des Chianti harmoniert mit der Tomatensauce und verhindert, dass die Pizza schwer wirkt. Die rote Frucht erganzt die Suße der Tomate, wahrend die Krauternoten an frisches Basilikum erinnern und so eine aromatische Brucke schlagen.',
-        en: 'The lively acidity of the Chianti matches the tomato sauce and keeps the pizza from feeling heavy. Red fruit complements the sweetness of the tomato while herbal notes recall fresh basil, building an aromatic bridge.',
-        fr: 'L\'acidite vive du Chianti s\'accorde avec la sauce tomate et empeche la pizza de paraitre lourde. Les fruits rouges completent la douceur de la tomate, tandis que les notes herbacees evoquent le basilic frais et creent un pont aromatique.'
+        de: 'Die lebendige Saure des Chianti bringt Frische in die Reichhaltigkeit von geschmolzenem Mozzarella und Olivenol und halt die Pizza Margherita leicht. Die rote Frucht unterstreicht die sußliche Tomate, wahrend die Krauternoten wie eine Aromabrucke direkt zum frischen Basilikum fuhren.',
+        en: 'The lively acidity of the Chianti adds freshness to the richness of melted mozzarella and olive oil, keeping the Margherita pizza light. Red fruit supports the sweet tomato while herbal notes build an aromatic bridge straight to the fresh basil.',
+        fr: "L'acidite vive du Chianti apporte de la fraicheur a la richesse de la mozzarella fondue et de l'huile d'olive et garde la pizza Margherita legere. Les fruits rouges soulignent la tomate sucree, tandis que les notes herbacees creent un pont aromatique vers le basilic frais."
       }
     },
     page: {

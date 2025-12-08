@@ -30,6 +30,12 @@ const translations = {
     feature_sommelier_title: 'Persönlicher Sommelier',
     feature_sommelier_desc: 'Fragen Sie unseren virtuellen Sommelier alles rund um Wein – persönlich und ohne Verkaufsdruck.',
     
+    // Claude Persona
+    claude_intro_short: 'Über 20 Jahre Erfahrung in Spitzenrestaurants – jetzt in Ihrer Küche, ganz ohne Verkaufsdruck.',
+    claude_bio_title: 'Claude – Ihr virtueller Sommelier',
+    claude_bio_text1: 'Claude hat über zwei Jahrzehnte in internationalen Sternerestaurants gearbeitet – zuerst am Herd, später als Sommelier. Er liebt es, Gerichte nicht nur technisch, sondern auch emotional zu verstehen.',
+    claude_bio_text2: 'Seine Spezialität ist es, Säure, Süße, Bitterkeit und Textur so zu übersetzen, dass Wein und Speise wie aus einer Hand wirken. Statt Verkaufsdruck setzt er auf klare, ehrliche Empfehlungen – so, als würde er direkt an Ihrem Tisch stehen.',
+    
     // Pairing Page
     pairing_tagline: 'Wein-Pairing',
     pairing_title: 'Was möchten Sie essen?',

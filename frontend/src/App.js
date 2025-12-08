@@ -279,6 +279,12 @@ const PairingPage = () => {
   const [selectedDishId, setSelectedDishId] = useState(null);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
+  // Profi-Modus 4D Werte
+  const [richness, setRichness] = useState(null);
+  const [freshness, setFreshness] = useState(null);
+  const [sweetness, setSweetness] = useState(null);
+  const [spice, setSpice] = useState(null);
+
   const [history, setHistory] = useState([]);
   useEffect(() => {
     const fetchDishes = async () => {

@@ -1049,7 +1049,8 @@ const CellarPage = () => {
         region: editingWine.region || null,
         year: editingWine.year ? parseInt(editingWine.year) : null,
         grape: editingWine.grape || null,
-        notes: editingWine.notes || null
+        notes: editingWine.notes || null,
+        quantity: typeof editingWine.quantity === 'number' ? editingWine.quantity : parseInt(editingWine.quantity || '1', 10),
       });
       toast.success('Wein erfolgreich aktualisiert!');
       setShowEditDialog(false);

@@ -110,6 +110,7 @@ class PairingResponse(BaseModel):
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
     dish: str
     recommendation: str
+    why_explanation: Optional[str] = None
     cellar_matches: Optional[List[dict]] = None
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 

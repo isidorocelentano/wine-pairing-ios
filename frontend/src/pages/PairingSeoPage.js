@@ -419,9 +419,9 @@ export const PAIRING_TEMPLATES = {
       },
       brand: 'Asia Pairing Selection',
       reviewBody: {
-        de: 'Die leichte Restsuße des halbtrockenen Rieslings mildert die Scharfe des grunen Currys, wahrend die Saure die Cremigkeit der Kokosmilch auflockert. Die Fruchtigkeit greift die Krauter- und Limettennoten der Thai-Kuche auf und sorgt fur ein spannungsreiches, aber harmonisches Pairing.',
-        en: 'The slight residual sweetness of the off-dry Riesling softens the heat of the green curry while its acidity lifts the creaminess of the coconut milk. The fruit character picks up the herbal and lime notes of Thai cuisine, creating a vibrant yet harmonious pairing.',
-        fr: 'La legere sucrosite residuelle du Riesling demi-sec adoucit le piquant du curry vert tandis que son acidite allege l\'onctuosite du lait de coco. Le fruit rejoint les notes d\'herbes et de citron vert de la cuisine thaie et cree un accord a la fois vif et harmonieux.'
+        de: 'Die leichte Restsuße des halbtrockenen Rieslings fangt die Würze und Scharfe des grunen Currys sanft auf, wahrend die präsente Saure die Reichhaltigkeit der Kokosmilch aufbricht. Seine exotische Frucht greift die Kräuter- und Limettennoten der Thai-Kuche auf – diese Brucke halt das Pairing lebendig, ohne den Gaumen zu uberfordern.',
+        en: 'The slight residual sweetness of the off-dry Riesling gently cushions the spice and heat of the green curry, while its vivid acidity breaks up the richness of the coconut milk. Its exotic fruit picks up the herb and lime notes of Thai cuisine – this bridge keeps the pairing vibrant without tiring the palate.',
+        fr: "La legere sucrosite residuelle du Riesling demi-sec adoucit en douceur le piquant du curry vert, tandis que son acidite marquee casse la richesse du lait de coco. Ses notes de fruits exotiques rejoignent les herbes et le citron vert de la cuisine thailandaise – ce pont maintient l'accord vivant sans fatiguer le palais."
       }
     },
     page: {

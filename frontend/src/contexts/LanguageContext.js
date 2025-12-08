@@ -286,6 +286,12 @@ const translations = {
     feature_sommelier_title: 'Personal Sommelier',
     feature_sommelier_desc: 'Ask our virtual sommelier anything about wine – personal and without sales pressure.',
     
+    // Manifest
+    manifesto_title: 'Our Manifesto – Wine as Culture & Conscious Enjoyment',
+    manifesto_point1: 'Wine is more than a drink – it is experience, joy and a piece of culture.',
+    manifesto_point2: 'We see wine primarily as the ideal partner at the table, completing dishes and lifting flavours.',
+    manifesto_point3: 'We stand for mindful, conscious enjoyment: quality over quantity and pleasure instead of dogma.',
+    
     // Claude persona
     claude_intro_short: 'Over 20 years of experience in top restaurants – now in your kitchen, with zero sales agenda.',
     claude_bio_title: 'Claude – Your Virtual Sommelier',
@@ -524,6 +530,12 @@ const translations = {
     feature_scanner_desc: 'Photographiez vos étiquettes de vin et laissez l\'IA capturer toutes les informations importantes.',
     feature_sommelier_title: 'Sommelier Personnel',
     feature_sommelier_desc: 'Demandez à notre sommelier virtuel tout sur le vin – personnel et sans pression commerciale.',
+    
+    // Manifeste
+    manifesto_title: 'Notre manifeste – Le vin comme culture & plaisir conscient',
+    manifesto_point1: 'Le vin est plus qu\'une boisson – c\'est une expérience, de la joie de vivre et une part de culture.',
+    manifesto_point2: 'Nous voyons le vin surtout comme le compagnon idéal du repas, qui sublime les plats et leurs arômes.',
+    manifesto_point3: 'Nous défendons un plaisir réfléchi et conscient : la qualité avant la quantité et le plaisir plutôt que le dogme.',
     
     // Persona de Claude
     claude_intro_short: 'Plus de 20 ans d’expérience en haute gastronomie – maintenant dans votre cuisine, sans aucune intention de vente.',

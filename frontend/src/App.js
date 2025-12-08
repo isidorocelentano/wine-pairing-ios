@@ -154,6 +154,16 @@ const HomePage = () => {
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
               {t('hero_description')}
             </p>
+            <div className="flex items-center gap-4 pt-2">
+              <img
+                src="https://customer-assets.emergentagent.com/job_e57eae36-225b-4e20-a944-048ef9749606/artifacts/w9w52bm4_CLAUDE%20SOMMELIER%2001%20%284%29.png"
+                alt="Claude, virtueller Sommelier"
+                className="w-16 h-16 rounded-full shadow-md border border-border/60 object-cover"
+              />
+              <p className="text-sm md:text-base text-muted-foreground leading-snug">
+                {t('claude_intro_short')}
+              </p>
+            </div>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 md:pt-4">
               <Button
                 onClick={() => navigate('/pairing')}

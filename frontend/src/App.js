@@ -228,6 +228,21 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+      {/* Manifest Section */}
+      <section className="py-12 md:py-16 px-4 md:px-12 lg:px-24">
+        <div className="container mx-auto max-w-4xl">
+          <div className="opacity-0 animate-fade-in-up animate-delay-200" style={{ animationFillMode: 'forwards' }}>
+            <p className="text-accent font-accent text-sm tracking-widest uppercase mb-2">{t('manifesto_title')}</p>
+            <ul className="space-y-2 text-sm md:text-base text-muted-foreground list-disc pl-5">
+              <li>{t('manifesto_point1')}</li>
+              <li>{t('manifesto_point2')}</li>
+              <li>{t('manifesto_point3')}</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+
 
       {/* Features Grid */}
       <section className="py-12 md:py-16 px-4 md:px-12 lg:px-24 bg-secondary/30">

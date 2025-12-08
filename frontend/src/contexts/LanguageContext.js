@@ -52,6 +52,16 @@ const translations = {
     pairing_history: 'Letzte Empfehlungen',
     pairing_voice_hint: 'Tippen Sie auf das Mikrofon, um Ihr Gericht zu diktieren',
     pairing_more_details: 'Mehr Details anzeigen',
+    pairing_pro_mode_title: 'Profi-Modus – Gaumen-Übersetzer',
+    pairing_pro_mode_subtitle: 'Feinjustieren Sie, wie Ihr Gericht schmeckt – Claude übersetzt diese 4 Dimensionen in die passende Weinlogik.',
+    pairing_dim_richness: 'Reichhaltigkeit',
+    pairing_dim_freshness: 'Frische',
+    pairing_dim_sweetness: 'Süße',
+    pairing_dim_spice: 'Würze',
+    pairing_dim_hint_low: 'leicht',
+    pairing_dim_hint_high: 'intensiv',
+    pairing_why_title: 'Warum dieses Pairing funktioniert',
+    pairing_why_fallback: 'Claude erklärt hier gleich in einfachen Worten, warum Wein und Gericht auf Ihrem Gaumen zusammenfinden – entlang Reichhaltigkeit, Frische, Süße und Würze.',
     
     // Feed Page
     feed_tagline: 'Genuss-Community',

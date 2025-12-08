@@ -511,7 +511,16 @@ const PairingPage = () => {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">{t('pairing_all_types')}</SelectItem>
-            {/* Profi-Modus 4D Gaumen-Übersetzer */
+                  <SelectItem value="weiss">{t('pairing_white')}</SelectItem>
+                  <SelectItem value="rot">{t('pairing_red')}</SelectItem>
+                  <SelectItem value="rose">{t('pairing_rose')}</SelectItem>
+                  <SelectItem value="schaumwein">{t('pairing_sparkling')}</SelectItem>
+                  <SelectItem value="suesswein">{t('pairing_sweet')}</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* Profi-Modus 4D Gaumen-Übersetzer */}
             <Card className="bg-muted/40 border-dashed border-border/60">
               <CardContent className="p-4 md:p-5 space-y-4">
                 <div className="flex items-start justify-between gap-3">

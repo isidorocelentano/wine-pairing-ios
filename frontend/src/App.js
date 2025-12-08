@@ -1364,12 +1364,27 @@ const ChatPage = () => {
   return (
     <div className="min-h-screen pb-20 md:pb-24 pt-6 md:pt-8 px-4 md:px-12 lg:px-24" data-testid="chat-page">
       <div className="container mx-auto max-w-3xl h-[calc(100vh-140px)] md:h-[calc(100vh-180px)] flex flex-col">
-        <header className="text-center mb-4 md:mb-6">
-          <div className="sommelier-avatar w-12 md:w-16 h-12 md:h-16 rounded-full mx-auto mb-3 md:mb-4 flex items-center justify-center">
-            <MessageCircle className="w-6 md:w-8 h-6 md:h-8 text-white" />
+        <header className="mb-4 md:mb-6">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-6">
+            <div className="text-center md:text-left">
+              <div className="sommelier-avatar w-14 md:w-20 h-14 md:h-20 rounded-full mx-auto md:mx-0 mb-3 md:mb-4 overflow-hidden border border-border/60 shadow-md">
+                <img
+                  src="https://customer-assets.emergentagent.com/job_e57eae36-225b-4e20-a944-048ef9749606/artifacts/w9w52bm4_CLAUDE%20SOMMELIER%2001%20%284%29.png"
+                  alt="Claude, virtueller Sommelier"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h1 className="text-xl md:text-3xl font-semibold tracking-tight">{t('chat_title')}</h1>
+              <p className="text-muted-foreground text-xs md:text-sm mt-1 md:mt-2">{t('chat_subtitle')}</p>
+            </div>
+            <div className="hidden md:block w-40 lg:w-56 rounded-2xl overflow-hidden shadow-xl border border-border/60">
+              <img
+                src="https://customer-assets.emergentagent.com/job_e57eae36-225b-4e20-a944-048ef9749606/artifacts/ulsy1h5x_CLAUDE%20SOMMELIER%2001%20%286%29.png"
+                alt="Claude im Weinkeller"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
-          <h1 className="text-xl md:text-3xl font-semibold tracking-tight">{t('chat_title')}</h1>
-          <p className="text-muted-foreground text-xs md:text-sm mt-1 md:mt-2">{t('chat_subtitle')}</p>
         </header>
 
         <Card className="flex-1 bg-card/50 backdrop-blur-sm border-border/50 flex flex-col overflow-hidden">

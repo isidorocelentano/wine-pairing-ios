@@ -30,6 +30,12 @@ const translations = {
     feature_sommelier_title: 'Persönlicher Sommelier',
     feature_sommelier_desc: 'Fragen Sie unseren virtuellen Sommelier alles rund um Wein – persönlich und ohne Verkaufsdruck.',
     
+    // Manifest
+    manifesto_title: 'Unser Manifest – Wein als Kultur & bewusster Genuss',
+    manifesto_point1: 'Wein ist mehr als ein Getränk – er ist Erlebnis, Lebensfreude und ein Stück Kultur.',
+    manifesto_point2: 'Wir sehen Wein vor allem als idealen Essensbegleiter, der Gerichte vollendet und Aromen hebt.',
+    manifesto_point3: 'Wir stehen für bewussten, achtsamen Genuss: Qualität vor Quantität und Genuss statt Dogma.',
+    
     // Claude Persona
     claude_intro_short: 'Über 20 Jahre Erfahrung in Spitzenrestaurants – jetzt in Ihrer Küche, ganz ohne Verkaufsdruck.',
     claude_bio_title: 'Claude – Ihr virtueller Sommelier',

@@ -95,9 +95,9 @@ export const PAIRING_TEMPLATES = {
       },
       brand: 'Chateau Exemple',
       reviewBody: {
-        de: 'Die Kombination aus saftiger Frucht, frischer Saure und feinkörnigem Tannin dieses Bordeaux schneidet durch die reichhaltige Krauterbutter und das Fett der Pommes, ohne die Zartheit des Filets zu uberdecken. Die Holznoten greifen die Röstaromen des angebratenen Fleisches auf.',
-        en: 'The mix of juicy dark fruit, fresh acidity and fine-grained tannins in this Bordeaux cuts through the rich herb butter and fries while respecting the tenderness of the beef fillet. Subtle oak notes mirror the seared crust of the meat.',
-        fr: "L'alliance de fruits noirs juteux, d'une acidite fraiche et de tanins fins permet a ce Bordeaux de dompter le beurre aux herbes et les frites, tout en preservant la tendrete du filet. Les notes boisees rappellent la croute rotie de la viande."
+        de: 'Die Kombination aus saftiger Frucht, frischer Saure und feinkörnigem Tannin dieses Bordeaux bringt Frische in die Reichhaltigkeit von Filet, Krauterbutter und Pommes. Die Holznoten und dunklen Beerenaromen greifen die Röstaromen der Kruste auf – diese Aromabrucke verbindet Steakhouse-Charakter und Bordeaux im Glas.',
+        en: 'The mix of juicy dark fruit, fresh acidity and fine-grained tannins in this Bordeaux adds freshness to the richness of fillet, herb butter and fries. Oak and dark berry notes pick up the seared crust – this aromatic bridge ties classic steakhouse flavours to Bordeaux in the glass.',
+        fr: "L'alliance de fruits noirs juteux, d'une acidite fraiche et de tanins fins apporte de la fraicheur a la richesse du filet, du beurre aux herbes et des frites. Les notes boisees et de fruits noirs reprennent la croute roti – ce pont aromatique relie les saveurs de steakhouse au Bordeaux dans le verre."
       }
     },
     page: {

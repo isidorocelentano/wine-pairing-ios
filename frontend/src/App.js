@@ -1281,6 +1281,17 @@ const CellarPage = () => {
                     onChange={(e) => setEditingWine({ ...editingWine, year: e.target.value })}
                     placeholder="z.B. 2018"
                   />
+                <div>
+                  <label className="text-sm font-medium mb-2 block">Anzahl Flaschen</label>
+                  <Input
+                    type="number"
+                    min={0}
+                    value={editingWine.quantity}
+                    onChange={(e) => setEditingWine({ ...editingWine, quantity: e.target.value })}
+                    placeholder="z.B. 3"
+                  />
+                </div>
+
                 </div>
                 <div>
                   <label className="text-sm font-medium mb-2 block">Rebsorte</label>

@@ -1089,7 +1089,7 @@ const CellarPage = () => {
             <p className="text-accent font-accent text-sm tracking-widest uppercase mb-2">{t('cellar_tagline')}</p>
             <h1 className="text-2xl md:text-4xl font-semibold tracking-tight">{t('cellar_title')}</h1>
           </div>
-          <div className="flex flex-wrap gap-2 md:gap-3">
+          <div className="flex flex-wrap gap-2 md:gap-3 items-center">
             <Select value={filter} onValueChange={setFilter}>
               <SelectTrigger className="w-[140px] md:w-[160px]" data-testid="cellar-filter">
                 <SelectValue placeholder="Filter" />

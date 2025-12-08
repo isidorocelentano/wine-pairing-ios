@@ -655,6 +655,31 @@ const PairingPage = () => {
               </div>
             </CardHeader>
             <CardContent>
+              {/* Warum dieses Pairing funktioniert – 4D Erklärung */}
+              {result.why_explanation && (
+                <div className="mb-6 p-4 rounded-lg bg-muted/40 border border-border/40">
+                  <h3 className="text-sm md:text-base font-semibold mb-2 flex items-center gap-2">
+                    <span>✨</span>
+                    <span>{t('pairing_why_title')}</span>
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
+                    {result.why_explanation}
+                  </p>
+                </div>
+              )}
+
+              {!result.why_explanation && (
+                <div className="mb-6 p-4 rounded-lg bg-muted/20 border border-dashed border-border/40">
+                  <h3 className="text-xs md:text-sm font-semibold mb-1 flex items-center gap-2">
+                    <span>✨</span>
+                    <span>{t('pairing_why_title')}</span>
+                  </h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    {t('pairing_why_fallback')}
+                  </p>
+                </div>
+              )}
+
               {(() => {
                 // Parse recommendation text into structured wine cards
                 const lines = result.recommendation.split('\n');

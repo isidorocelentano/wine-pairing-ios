@@ -365,9 +365,9 @@ export const PAIRING_TEMPLATES = {
       },
       brand: 'Mosel Selection',
       reviewBody: {
-        de: 'Die klare Saure und die Zitrusnoten des Rieslings reinigen den Gaumen zwischen Reis, Fisch und Sojasauce, ohne die feinen Aromen des Sushi zu uberdecken. Die Mineralitat unterstreicht die Frische des Fisches und halt das Pairing leicht und prazise.',
-        en: 'The crisp acidity and citrus notes of the Riesling cleanse the palate between rice, fish and soy sauce without overwhelming the delicate sushi aromas. Its minerality underscores the freshness of the fish and keeps the pairing light and precise.',
-        fr: 'L\'acidite vive et les notes d\'agrumes du Riesling nettoient le palais entre le riz, le poisson et la sauce soja sans ecraser les aromes delicats du sushi. Sa mineralite souligne la fraicheur du poisson et maintient l\'accord leger et precis.'
+        de: 'Die klare Saure und die Zitrusfrucht des Rieslings bringen Frische in die zarte Reichhaltigkeit von Fisch, Reis und Sojasauce und reinigen den Gaumen zwischen den Bissen. Seine Mineralitat betont die feine Salzigkeit des Meeres – diese Brucke lasst Sushi und Riesling wie eine selbstverstandliche Kombination wirken.',
+        en: 'The crisp acidity and citrus fruit of the Riesling add freshness to the gentle richness of fish, rice and soy sauce and cleanse the palate between bites. Its minerality highlights the subtle salinity of the sea – this bridge makes sushi and Riesling feel like a natural combination.',
+        fr: "L'acidite vive et les notes d'agrumes du Riesling apportent de la fraicheur a la richesse delicate du poisson, du riz et de la sauce soja et nettoient le palais entre chaque bouchee. Sa mineralite souligne la salinite subtile de la mer – ce pont donne l'impression que sushi et Riesling vont de soi."
       }
     },
     page: {

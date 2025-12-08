@@ -521,8 +521,23 @@ const PairingPage = () => {
             </div>
 
             {/* Profi-Modus 4D Gaumen-Übersetzer */}
-            <Card className="bg-muted/40 border-dashed border-border/60">
-              <CardContent className="p-4 md:p-5 space-y-4">
+            <details className="group">
+              <summary className="flex items-center justify-between cursor-pointer select-none mb-2">
+                <div>
+                  <span className="text-xs font-semibold uppercase tracking-wide text-accent">
+                    {t('pairing_pro_mode_title')}
+                  </span>
+                  <p className="text-[11px] md:text-xs text-muted-foreground max-w-xl mt-1">
+                    {t('pairing_pro_mode_subtitle')}
+                  </p>
+                </div>
+                <span className="text-[11px] text-muted-foreground group-open:rotate-180 transition-transform">
+                  ▾
+                </span>
+              </summary>
+
+              <Card className="bg-muted/40 border-dashed border-border/60">
+                <CardContent className="p-4 md:p-5 space-y-4">
                 <div className="flex items-start justify-between gap-3">
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wide text-accent">

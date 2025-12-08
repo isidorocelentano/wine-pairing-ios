@@ -100,6 +100,12 @@ class PairingRequest(BaseModel):
     language: str = "de"  # de, en, fr
     dish_id: Optional[str] = None  # optional structured dish from DB
 
+    # 4D Profi-Modus Werte (0-10 Skala)
+    richness: Optional[int] = None
+    freshness: Optional[int] = None
+    sweetness: Optional[int] = None
+    spice: Optional[int] = None
+
 class PairingResponse(BaseModel):
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
     dish: str

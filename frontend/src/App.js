@@ -511,6 +511,69 @@ const PairingPage = () => {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">{t('pairing_all_types')}</SelectItem>
+            {/* Profi-Modus 4D Gaumen-Übersetzer */
+            <Card className="bg-muted/40 border-dashed border-border/60">
+              <CardContent className="p-4 md:p-5 space-y-4">
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                      {t('pairing_pro_mode_title')}
+                    </p>
+                    <p className="text-xs md:text-sm text-muted-foreground mt-1 max-w-xl">
+                      {t('pairing_pro_mode_subtitle')}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {[{
+                    key: 'richness',
+                    label: t('pairing_dim_richness'),
+                    value: richness,
+                    setter: setRichness,
+                  }, {
+                    key: 'freshness',
+                    label: t('pairing_dim_freshness'),
+                    value: freshness,
+                    setter: setFreshness,
+                  }, {
+                    key: 'sweetness',
+                    label: t('pairing_dim_sweetness'),
+                    value: sweetness,
+                    setter: setSweetness,
+                  }, {
+                    key: 'spice',
+                    label: t('pairing_dim_spice'),
+                    value: spice,
+                    setter: setSpice,
+                  }].map((dim) => (
+                    <div key={dim.key} className="space-y-1">
+                      <div className="flex items-center justify-between text-xs">
+                        <span className="font-medium">{dim.label}</span>
+                        <span className="text-muted-foreground">
+                          {typeof dim.value === 'number' ? dim.value : '–'} / 10
+                        </span>
+                      </div>
+                      <input
+                        type="range"
+                        min="0"
+                        max="10"
+                        step="1"
+                        value={typeof dim.value === 'number' ? dim.value : 5}
+                        onChange={(e) => dim.setter(parseInt(e.target.value, 10))}
+                        className="w-full accent-primary cursor-pointer"
+                      />
+                      <div className="flex justify-between text-[10px] text-muted-foreground uppercase tracking-wide">
+                        <span>{t('pairing_dim_hint_low')}</span>
+                        <span>{t('pairing_dim_hint_high')}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+
                   <SelectItem value="weiss">{t('pairing_white')}</SelectItem>
                   <SelectItem value="rot">{t('pairing_red')}</SelectItem>
                   <SelectItem value="rose">{t('pairing_rose')}</SelectItem>

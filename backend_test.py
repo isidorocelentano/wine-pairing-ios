@@ -379,6 +379,255 @@ class WinePairingAPITester:
             self.log_test("Label Scanner (Response Structure)", False, str(response))
         return success
 
+    def test_pairing_basic_flow_no_4d(self):
+        """Test basic pairing flow without 4D values (Profi-Modus regression)"""
+        pairing_data = {
+            "dish": "Rinderfilet mit Kräuterbutter",
+            "language": "de"
+        }
+        
+        success, response = self.make_request('POST', 'pairing', data=pairing_data, expected_status=200)
+        if success:
+            # Validate response structure
+            required_fields = ['id', 'dish', 'recommendation', 'created_at']
+            missing_fields = [field for field in required_fields if field not in response]
+            
+            if missing_fields:
+                self.log_test("Pairing Basic Flow (No 4D)", False, f"Missing required fields: {missing_fields}")
+                return False
+            
+            # Check that why_explanation is present (can be None or string)
+            if 'why_explanation' not in response:
+                self.log_test("Pairing Basic Flow (No 4D)", False, "Missing why_explanation field")
+                return False
+            
+            # Validate recommendation is not empty
+            recommendation = response.get('recommendation', '')
+            if not recommendation or len(recommendation.strip()) < 10:
+                self.log_test("Pairing Basic Flow (No 4D)", False, f"Recommendation too short or empty: {recommendation[:50]}")
+                return False
+            
+            # Check that no WHY_SECTION markers remain in recommendation
+            if 'WHY_SECTION_START' in recommendation or 'WHY_SECTION_END' in recommendation:
+                self.log_test("Pairing Basic Flow (No 4D)", False, "WHY_SECTION markers found in recommendation text")
+                return False
+            
+            why_explanation = response.get('why_explanation')
+            self.log_test("Pairing Basic Flow (No 4D)", True, 
+                         f"Got recommendation ({len(recommendation)} chars), why_explanation: {'Yes' if why_explanation else 'None'}")
+        else:
+            self.log_test("Pairing Basic Flow (No 4D)", False, str(response))
+        return success
+
+    def test_pairing_profi_modus_4d_values(self):
+        """Test Profi-Modus pairing flow with 4D values"""
+        pairing_data = {
+            "dish": "Rinderfilet mit Kräuterbutter",
+            "language": "de",
+            "richness": 7,
+            "freshness": 4,
+            "sweetness": 2,
+            "spice": 3
+        }
+        
+        success, response = self.make_request('POST', 'pairing', data=pairing_data, expected_status=200)
+        if success:
+            # Validate response structure
+            required_fields = ['id', 'dish', 'recommendation', 'why_explanation', 'created_at']
+            missing_fields = [field for field in required_fields if field not in response]
+            
+            if missing_fields:
+                self.log_test("Pairing Profi-Modus (4D Values)", False, f"Missing required fields: {missing_fields}")
+                return False
+            
+            recommendation = response.get('recommendation', '')
+            why_explanation = response.get('why_explanation', '')
+            
+            # Validate recommendation is not empty
+            if not recommendation or len(recommendation.strip()) < 10:
+                self.log_test("Pairing Profi-Modus (4D Values)", False, f"Recommendation too short or empty: {recommendation[:50]}")
+                return False
+            
+            # Check that why_explanation is a non-empty string when 4D values are provided
+            if not why_explanation or not isinstance(why_explanation, str) or len(why_explanation.strip()) < 10:
+                self.log_test("Pairing Profi-Modus (4D Values)", False, f"why_explanation should be non-empty string, got: {why_explanation}")
+                return False
+            
+            # Check that no WHY_SECTION markers remain in recommendation
+            if 'WHY_SECTION_START' in recommendation or 'WHY_SECTION_END' in recommendation:
+                self.log_test("Pairing Profi-Modus (4D Values)", False, "WHY_SECTION markers found in recommendation text")
+                return False
+            
+            # Check that no WHY_SECTION markers remain in why_explanation
+            if 'WHY_SECTION_START' in why_explanation or 'WHY_SECTION_END' in why_explanation:
+                self.log_test("Pairing Profi-Modus (4D Values)", False, "WHY_SECTION markers found in why_explanation text")
+                return False
+            
+            self.log_test("Pairing Profi-Modus (4D Values)", True, 
+                         f"Got recommendation ({len(recommendation)} chars) and why_explanation ({len(why_explanation)} chars)")
+        else:
+            self.log_test("Pairing Profi-Modus (4D Values)", False, str(response))
+        return success
+
+    def test_pairing_partial_4d_values(self):
+        """Test pairing with only some 4D values set"""
+        pairing_data = {
+            "dish": "Lachsfilet mit Zitronen-Dill-Sauce",
+            "language": "de",
+            "richness": 5,
+            "spice": 1
+            # freshness and sweetness intentionally omitted
+        }
+        
+        success, response = self.make_request('POST', 'pairing', data=pairing_data, expected_status=200)
+        if success:
+            recommendation = response.get('recommendation', '')
+            why_explanation = response.get('why_explanation')
+            
+            # Should work with partial 4D values
+            if not recommendation or len(recommendation.strip()) < 10:
+                self.log_test("Pairing Partial 4D Values", False, f"Recommendation too short or empty: {recommendation[:50]}")
+                return False
+            
+            self.log_test("Pairing Partial 4D Values", True, 
+                         f"Handled partial 4D values, why_explanation: {'Yes' if why_explanation else 'None'}")
+        else:
+            self.log_test("Pairing Partial 4D Values", False, str(response))
+        return success
+
+    def test_pairing_4d_with_dish_id(self):
+        """Test pairing with both 4D values and dish_id (regression test)"""
+        # First, get a dish ID from the dishes endpoint
+        dishes_success, dishes_response = self.make_request('GET', 'dishes', expected_status=200)
+        dish_id = None
+        
+        if dishes_success and isinstance(dishes_response, list) and len(dishes_response) > 0:
+            dish_id = dishes_response[0].get('id')
+        
+        pairing_data = {
+            "dish": "Rinderfilet mit Kräuterbutter",
+            "language": "de",
+            "dish_id": dish_id,  # Can be None if no dishes available
+            "richness": 6,
+            "freshness": 3,
+            "sweetness": 1,
+            "spice": 4
+        }
+        
+        success, response = self.make_request('POST', 'pairing', data=pairing_data, expected_status=200)
+        if success:
+            recommendation = response.get('recommendation', '')
+            why_explanation = response.get('why_explanation')
+            
+            if not recommendation or len(recommendation.strip()) < 10:
+                self.log_test("Pairing 4D + dish_id", False, f"Recommendation too short or empty: {recommendation[:50]}")
+                return False
+            
+            dish_id_status = "with dish_id" if dish_id else "without dish_id"
+            self.log_test("Pairing 4D + dish_id", True, 
+                         f"Combined 4D + dish_id test passed ({dish_id_status}), why_explanation: {'Yes' if why_explanation else 'None'}")
+        else:
+            self.log_test("Pairing 4D + dish_id", False, str(response))
+        return success
+
+    def test_pairing_invalid_4d_values(self):
+        """Test pairing with invalid 4D values (out of range)"""
+        pairing_data = {
+            "dish": "Pasta Carbonara",
+            "language": "de",
+            "richness": 15,  # Invalid: should be 0-10
+            "freshness": -2,  # Invalid: should be 0-10
+            "sweetness": 5,   # Valid
+            "spice": 8        # Valid
+        }
+        
+        success, response = self.make_request('POST', 'pairing', data=pairing_data, expected_status=200)
+        if success:
+            # Should handle invalid values gracefully (backend might accept them or ignore them)
+            recommendation = response.get('recommendation', '')
+            if recommendation and len(recommendation.strip()) >= 10:
+                self.log_test("Pairing Invalid 4D Values", True, "Handled invalid 4D values gracefully")
+            else:
+                self.log_test("Pairing Invalid 4D Values", False, "Failed to handle invalid 4D values")
+        else:
+            # If it returns an error, that's also acceptable behavior
+            if response.get('status_code') in [400, 422]:
+                self.log_test("Pairing Invalid 4D Values", True, "Correctly rejected invalid 4D values")
+                return True
+            else:
+                self.log_test("Pairing Invalid 4D Values", False, str(response))
+        return success
+
+    def test_pairing_null_4d_values(self):
+        """Test pairing with explicitly null 4D values"""
+        pairing_data = {
+            "dish": "Grilled Salmon",
+            "language": "de",
+            "richness": None,
+            "freshness": None,
+            "sweetness": None,
+            "spice": None
+        }
+        
+        success, response = self.make_request('POST', 'pairing', data=pairing_data, expected_status=200)
+        if success:
+            recommendation = response.get('recommendation', '')
+            why_explanation = response.get('why_explanation')
+            
+            if not recommendation or len(recommendation.strip()) < 10:
+                self.log_test("Pairing Null 4D Values", False, f"Recommendation too short or empty: {recommendation[:50]}")
+                return False
+            
+            # With null 4D values, should behave like basic flow
+            self.log_test("Pairing Null 4D Values", True, 
+                         f"Handled null 4D values, why_explanation: {'Yes' if why_explanation else 'None'}")
+        else:
+            self.log_test("Pairing Null 4D Values", False, str(response))
+        return success
+
+    def test_pairing_history_serialization(self):
+        """Test pairing history endpoint for serialization issues (regression)"""
+        success, response = self.make_request('GET', 'pairings', expected_status=200)
+        if success:
+            pairings = response if isinstance(response, list) else []
+            
+            # Check for serialization issues
+            serialization_errors = []
+            for i, pairing in enumerate(pairings):
+                # Check created_at field
+                if 'created_at' not in pairing:
+                    serialization_errors.append(f"Pairing {i}: missing created_at field")
+                    continue
+                
+                created_at = pairing.get('created_at')
+                if not isinstance(created_at, str):
+                    serialization_errors.append(f"Pairing {i}: created_at should be string, got {type(created_at)}")
+                
+                # Check why_explanation field exists (can be None or string)
+                if 'why_explanation' not in pairing:
+                    serialization_errors.append(f"Pairing {i}: missing why_explanation field")
+                else:
+                    why_explanation = pairing.get('why_explanation')
+                    if why_explanation is not None and not isinstance(why_explanation, str):
+                        serialization_errors.append(f"Pairing {i}: why_explanation should be string or None, got {type(why_explanation)}")
+                
+                # Check other required fields
+                required_fields = ['id', 'dish', 'recommendation']
+                for field in required_fields:
+                    if field not in pairing:
+                        serialization_errors.append(f"Pairing {i}: missing {field} field")
+                    elif not isinstance(pairing[field], str):
+                        serialization_errors.append(f"Pairing {i}: {field} should be string, got {type(pairing[field])}")
+            
+            if serialization_errors:
+                self.log_test("Pairing History Serialization", False, "; ".join(serialization_errors[:3]))  # Show first 3 errors
+                return False
+            else:
+                self.log_test("Pairing History Serialization", True, f"All {len(pairings)} pairings properly serialized")
+        else:
+            self.log_test("Pairing History Serialization", False, str(response))
+        return success
+
     def test_get_favorites(self):
         """Test getting favorite wines"""
         success, response = self.make_request('GET', 'favorites', expected_status=200)

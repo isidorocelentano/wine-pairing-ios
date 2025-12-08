@@ -417,7 +417,11 @@ const PairingPage = () => {
         use_cellar: useCellar,
         wine_type_filter: wineTypeFilter || null,
         language: language,
-        dish_id: selectedDishId
+        dish_id: selectedDishId,
+        richness,
+        freshness,
+        sweetness,
+        spice,
       });
       setResult(response.data);
       fetchHistory();

@@ -1001,7 +1001,7 @@ const CellarPage = () => {
       });
       toast.success(t('success_wine_added'));
       setShowAddDialog(false);
-      setNewWine({ name: '', type: 'rot', region: '', year: '', grape: '', notes: '', image_base64: '' });
+      setNewWine({ name: '', type: 'rot', region: '', year: '', grape: '', notes: '', image_base64: '', quantity: 1 });
       fetchWines();
     } catch (error) {
       toast.error(t('error_general'));

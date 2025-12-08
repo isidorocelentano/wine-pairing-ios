@@ -101,7 +101,7 @@ const Navigation = () => {
     { path: '/cellar', icon: Wine, labelKey: 'nav_cellar' },
     { path: '/blog', icon: BookOpen, labelKey: 'nav_blog' },
     { path: '/feed', icon: Users, labelKey: 'nav_feed' },
-    { path: '/chat', icon: MessageCircle, labelKey: 'nav_sommelier' },
+    { path: '/chat', icon: MessageCircle, labelKey: 'nav_sommelier', isClaude: true },
   ];
 
   return (

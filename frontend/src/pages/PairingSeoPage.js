@@ -311,9 +311,9 @@ export const PAIRING_TEMPLATES = {
       },
       brand: 'Estate Reserve',
       reviewBody: {
-        de: 'Die weichen Tanine und die reife Frucht des Merlot passen perfekt zum saftigen Rindfleisch und dem geschmolzenen Kase. Die leichte Suße des Burgers wird aufgefangen, ohne dass der Wein bitter wirkt, und die Frucht bringt Frische in das reichhaltige Streetfood-Profil.',
-        en: 'The soft tannins and ripe fruit of the Merlot match the juicy beef and melted cheese perfectly. The slight sweetness of the burger is balanced without making the wine taste bitter, while the fruit adds freshness to the rich street food profile.',
-        fr: 'Les tanins souples et les fruits murs du Merlot s\'accordent parfaitement avec le boeuf juteux et le fromage fondu. La legere douceur du burger est equilibree sans que le vin ne paraisse amer, et le fruit apporte de la fraicheur au profil riche de ce street food.'
+        de: 'Die weichen Tanine und die reife Frucht des Merlot nehmen der Reichhaltigkeit von Patty, Kase und Sauce die Schwere und lassen den Cheeseburger saftig, aber nicht mastig wirken. Seine Beerenfrucht greift die leichte Suße des Burgers auf – diese unaufdringliche Brucke macht aus Streetfood und Rotwein ein erstaunlich elegantes Pairing.',
+        en: 'The soft tannins and ripe fruit of the Merlot ease the richness of patty, cheese and sauce, keeping the cheeseburger juicy but not heavy. Its berry fruit picks up the burger’s slight sweetness – this unobtrusive bridge turns street food and red wine into a surprisingly elegant pairing.',
+        fr: "Les tanins souples et les fruits murs du Merlot adoucissent la richesse du steak, du fromage et de la sauce et laissent le cheeseburger juteux sans le rendre lourd. Ses notes de baies reprennent la legere douceur du burger – ce pont discret transforme le street food et le vin rouge en un accord etonnamment elegant."
       }
     },
     page: {

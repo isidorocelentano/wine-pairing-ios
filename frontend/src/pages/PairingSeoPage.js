@@ -41,9 +41,9 @@ export const PAIRING_TEMPLATES = {
       },
       brand: 'Beispiel Weingut',
       reviewBody: {
-        de: 'Die festen, aber fein gereiften Tannine dieses Cabernet binden das Fett der Lammkoteletts und sorgen dafur, dass das Gericht nicht schwer wirkt. Die dunkle Frucht und die Noten von Zedernholz spiegeln die Röstaromen und den wurzigen Rosmarin ideal wider.',
-        en: 'The firm yet ripe tannins of this Cabernet bind the fat of the lamb chops, keeping the dish from feeling heavy. Dark fruit and cedar notes echo the roasted flavors and savoury rosemary on the plate.',
-        fr: "Les tanins fermes mais murs de ce Cabernet structurent le gras des cotelettes d'agneau et evitent que le plat ne paraisse lourd. Les aromes de fruits noirs et de cedre repondent parfaitement aux saveurs roties et au romarin."
+        de: 'Die Frische und die festen, aber gereiften Tannine dieses Cabernet bringen Struktur in die Reichhaltigkeit der Lammkoteletts, sodass das Gericht nicht schwer wirkt. Die dunkle Frucht und die Noten von Zedernholz greifen die Röstaromen und den Rosmarin auf – genau diese Aromabrucke lasst Gericht und Wein wie aus einer Kuche wirken.',
+        en: 'The freshness and firm yet ripe tannins of this Cabernet bring structure to the richness of the lamb chops so the dish never feels heavy. Dark fruit and cedar notes pick up the roasted flavours and rosemary – this aromatic bridge makes dish and wine feel as if they came from the same kitchen.',
+        fr: "La fraicheur et les tanins fermes mais murs de ce Cabernet apportent de la structure a la richesse des cotelettes d'agneau, de sorte que le plat ne parait jamais lourd. Les fruits noirs et les notes de cedre reprennent les saveurs rotiess et le romarin – ce pont aromatique donne l'impression que le plat et le vin sortent de la meme cuisine."
       }
     },
     page: {

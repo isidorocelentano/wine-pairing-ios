@@ -128,6 +128,7 @@ const translations = {
     cellar_region: 'Region',
     cellar_year: 'Jahrgang',
     cellar_grape: 'Rebsorte',
+    cellar_quantity: 'Anzahl Flaschen im Keller',
     cellar_notes: 'Notizen',
     cellar_upload_image: 'Bild hochladen (optional)',
     cellar_save: 'Wein speichern',

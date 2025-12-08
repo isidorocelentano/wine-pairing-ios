@@ -53,7 +53,7 @@ const translations = {
     pairing_voice_hint: 'Tippen Sie auf das Mikrofon, um Ihr Gericht zu diktieren',
     pairing_more_details: 'Mehr Details anzeigen',
     pairing_pro_mode_title: 'Profi-Modus – Gaumen-Übersetzer',
-    pairing_pro_mode_subtitle: 'Feinjustieren Sie, wie Ihr Gericht schmeckt – Claude übersetzt diese 4 Dimensionen in die passende Weinlogik.',
+    pairing_pro_mode_subtitle: 'Standard: Claude entscheidet selbst. Hier können Kenner bei Bedarf feinjustieren, wie sich das Gericht auf dem Gaumen anfühlt.',
     pairing_dim_richness: 'Reichhaltigkeit',
     pairing_dim_freshness: 'Frische',
     pairing_dim_sweetness: 'Süße',

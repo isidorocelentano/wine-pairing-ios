@@ -354,6 +354,8 @@ const translations = {
     cellar_grape: 'Grape Variety',
     cellar_quantity: 'Number of bottles in cellar',
     cellar_notes: 'Notes',
+    cellar_filter_in_stock: 'Show only wines in stock',
+    cellar_scan_hint: 'Claude scanned this label for you. Please review and complete the details before saving.',
     cellar_upload_image: 'Upload image (optional)',
     cellar_save: 'Save Wine',
     chat_title: 'Claude – Your Sommelier',

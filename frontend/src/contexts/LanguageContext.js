@@ -592,6 +592,7 @@ const translations = {
     cellar_region: 'Région',
     cellar_year: 'Millésime',
     cellar_grape: 'Cépage',
+    cellar_quantity: 'Nombre de bouteilles en cave',
     cellar_notes: 'Notes',
     cellar_upload_image: 'Télécharger une image (optionnel)',
     cellar_save: 'Enregistrer le Vin',

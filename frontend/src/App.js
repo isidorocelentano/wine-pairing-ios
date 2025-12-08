@@ -954,7 +954,7 @@ const CellarPage = () => {
     } finally {
       setLoading(false);
     }
-  }, [filter, t]);
+  }, [filter, inStockOnly, t]);
 
   useEffect(() => {
     fetchWines();

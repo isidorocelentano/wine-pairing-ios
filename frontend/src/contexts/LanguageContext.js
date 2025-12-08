@@ -279,6 +279,12 @@ const translations = {
     feature_scanner_desc: 'Photograph your wine labels and let AI capture all important information.',
     feature_sommelier_title: 'Personal Sommelier',
     feature_sommelier_desc: 'Ask our virtual sommelier anything about wine – personal and without sales pressure.',
+    
+    // Claude persona
+    claude_intro_short: 'Over 20 years of experience in top restaurants – now in your kitchen, with zero sales agenda.',
+    claude_bio_title: 'Claude – Your Virtual Sommelier',
+    claude_bio_text1: 'Claude has spent more than two decades in international fine dining – first in the kitchen, then as a sommelier. He loves to understand dishes not only technically but also emotionally.',
+    claude_bio_text2: 'His speciality is translating acidity, sweetness, bitterness and texture so that wine and food feel as if they came from the same hand. Instead of selling, he focuses on clear, honest recommendations – as if he were standing right at your table.',
     pairing_tagline: 'Wine Pairing',
     pairing_title: 'What would you like to eat?',
     pairing_description: 'Describe your dish and our virtual sommelier will recommend the perfect wine.',
@@ -512,6 +518,12 @@ const translations = {
     feature_scanner_desc: 'Photographiez vos étiquettes de vin et laissez l\'IA capturer toutes les informations importantes.',
     feature_sommelier_title: 'Sommelier Personnel',
     feature_sommelier_desc: 'Demandez à notre sommelier virtuel tout sur le vin – personnel et sans pression commerciale.',
+    
+    // Persona de Claude
+    claude_intro_short: 'Plus de 20 ans d’expérience en haute gastronomie – maintenant dans votre cuisine, sans aucune intention de vente.',
+    claude_bio_title: 'Claude – Votre Sommelier Virtuel',
+    claude_bio_text1: 'Claude a passé plus de deux décennies dans des restaurants gastronomiques internationaux – d’abord en cuisine, puis comme sommelier. Il aime comprendre les plats non seulement techniquement, mais aussi émotionnellement.',
+    claude_bio_text2: 'Sa spécialité est de traduire acidité, douceur, amertume et texture pour que le vin et le plat donnent l’impression de venir de la même main. Au lieu de vendre, il mise sur des recommandations claires et honnêtes – comme s’il se tenait directement à votre table.',
     pairing_tagline: 'Accord Mets-Vin',
     pairing_title: 'Que voulez-vous manger?',
     pairing_description: 'Décrivez votre plat et notre sommelier virtuel recommandera le vin parfait.',

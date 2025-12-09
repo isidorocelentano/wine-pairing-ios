@@ -257,7 +257,7 @@ metadata:
 
 test_plan:
   current_focus:
-    - "SEO Pairing Pages"
+    - "Public Wines Database Endpoints"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"

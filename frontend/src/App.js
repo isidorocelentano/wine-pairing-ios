@@ -1526,6 +1526,7 @@ function App() {
               <Route path="/grapes" element={<><GrapesPage /><Navigation /></>} />
               <Route path="/grapes/:slug" element={<><GrapeDetailPage /><Navigation /></>} />
               <Route path="/wine-database" element={<><WineDatabasePage /><Navigation /></>} />
+              <Route path="/favorites" element={<><FavoritesPage /><Navigation /></>} />
               <Route path="/cellar" element={<><CellarPage /><Navigation /></>} />
               <Route path="/admin/grapes" element={<><GrapeAdminPage /><Navigation /></>} />
               <Route path="/admin/dishes" element={<><DishAdminPage /><Navigation /></>} />

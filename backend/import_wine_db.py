@@ -213,7 +213,10 @@ def determine_price_category(sheet_name, name):
 
 async def generate_translations(wine_entry):
     """Generate English and French translations for description and pairings."""
-    chat = LlmChat(api_key=EMERGENT_LLM_KEY, provider='openai', model='gpt-5')
+    chat = LlmChat(
+        api_key=EMERGENT_LLM_KEY,
+        session_id=str(uuid.uuid4())
+    )
     
     try:
         # Generate English translation

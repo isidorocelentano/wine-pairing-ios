@@ -73,12 +73,20 @@ def extract_wines_from_excel(file_path):
         if not any(row):
             continue
         
-        wine_name = str(row[0]).strip() if row[0] else ''
-        appellation_status = str(row[1]).strip() if row[1] else ''
-        classification = str(row[2]).strip() if row[2] else ''
-        description_full = str(row[3]).strip() if row[3] else ''
-        grape_variety = str(row[4]).strip() if row[4] else ''
-        food_pairings = str(row[5]).strip() if row[5] else ''
+        # Data is in first column, separated by semicolons
+        if not row[0]:
+            continue
+        
+        parts = str(row[0]).split(';')
+        if len(parts) < 6:
+            continue
+        
+        wine_name = parts[0].strip()
+        appellation_status = parts[1].strip()
+        classification = parts[2].strip()
+        description_full = parts[3].strip()
+        grape_variety = parts[4].strip()
+        food_pairings = parts[5].strip()
         
         if not wine_name or wine_name.lower() in ['wein', 'kategorie', 'none']:
             continue

@@ -291,9 +291,9 @@ Retourne le résultat au format JSON suivant:
 async def import_to_database(wines):
     """Import all wines to MongoDB, replacing existing data."""
     
-    # Delete all existing wines in wines_db collection
-    deleted_count = await db.wines_db.delete_many({})
-    print(f"\n🗑️  Deleted {deleted_count.deleted_count} existing wines from wines_db")
+    # Delete all existing wines in wine_database collection
+    deleted_count = await db.wine_database.delete_many({})
+    print(f"\n🗑️  Deleted {deleted_count.deleted_count} existing wines from wine_database")
     
     # Generate translations and insert wines
     print(f"\n🌍 Generating translations for {len(wines)} wines...")

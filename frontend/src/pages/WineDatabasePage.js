@@ -20,6 +20,20 @@ const WineDatabasePage = () => {
   const { t, language } = useLanguage();
   const navigate = useNavigate();
   
+  // Helper function to get description in current language
+  const getDescription = (wine) => {
+    if (language === 'en') return wine.description_en || wine.description_de || wine.description;
+    if (language === 'fr') return wine.description_fr || wine.description_de || wine.description;
+    return wine.description_de || wine.description;
+  };
+  
+  // Helper function to get food pairings in current language
+  const getFoodPairings = (wine) => {
+    if (language === 'en') return wine.food_pairings_en || wine.food_pairings_de || wine.food_pairings || [];
+    if (language === 'fr') return wine.food_pairings_fr || wine.food_pairings_de || wine.food_pairings || [];
+    return wine.food_pairings_de || wine.food_pairings || [];
+  };
+  
   const [wines, setWines] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');

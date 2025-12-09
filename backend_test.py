@@ -869,6 +869,239 @@ class WinePairingAPITester:
             self.log_test("Public Wines Filters", False, str(response))
         return success
 
+    # ===================== WINE DATABASE FILTER TESTS (IMPORT SCRIPT FIX) =====================
+    
+    def test_public_wines_filters_countries_exact(self):
+        """Test GET /api/public-wines-filters - Verify exactly 12 countries"""
+        success, response = self.make_request('GET', 'public-wines-filters', expected_status=200)
+        if success:
+            countries = response.get('countries', [])
+            expected_countries = [
+                'Argentinien', 'Australien', 'Chile', 'Deutschland', 'Frankreich', 
+                'Italien', 'Portugal', 'Schweiz', 'Spanien', 'USA', 'Ungarn', 'Österreich'
+            ]
+            
+            # Check exact count
+            if len(countries) != 12:
+                self.log_test("Public Wines Filters - Countries Count", False, 
+                             f"Expected exactly 12 countries, got {len(countries)}: {countries}")
+                return False
+            
+            # Check all expected countries are present
+            missing_countries = [c for c in expected_countries if c not in countries]
+            if missing_countries:
+                self.log_test("Public Wines Filters - Countries Content", False, 
+                             f"Missing expected countries: {missing_countries}")
+                return False
+            
+            # Check no unexpected countries
+            unexpected_countries = [c for c in countries if c not in expected_countries]
+            if unexpected_countries:
+                self.log_test("Public Wines Filters - Countries Content", False, 
+                             f"Found unexpected countries: {unexpected_countries}")
+                return False
+            
+            self.log_test("Public Wines Filters - Countries Exact", True, 
+                         f"Found exactly 12 expected countries: {countries}")
+        else:
+            self.log_test("Public Wines Filters - Countries Exact", False, str(response))
+        return success
+
+    def test_public_wines_filters_regions_no_countries(self):
+        """Test GET /api/public-wines-filters - Verify regions list does NOT contain country names"""
+        success, response = self.make_request('GET', 'public-wines-filters', expected_status=200)
+        if success:
+            regions = response.get('regions', [])
+            countries = [
+                'Argentinien', 'Australien', 'Chile', 'Deutschland', 'Frankreich', 
+                'Italien', 'Portugal', 'Schweiz', 'Spanien', 'USA', 'Ungarn', 'Österreich'
+            ]
+            
+            # Check that no country names appear in regions
+            country_names_in_regions = [region for region in regions if region in countries]
+            if country_names_in_regions:
+                self.log_test("Public Wines Filters - Regions No Countries", False, 
+                             f"Found country names in regions list: {country_names_in_regions}")
+                return False
+            
+            # Check expected region count (should be around 60)
+            if len(regions) < 50:
+                self.log_test("Public Wines Filters - Regions Count", False, 
+                             f"Expected ~60 regions, got only {len(regions)}")
+                return False
+            
+            self.log_test("Public Wines Filters - Regions No Countries", True, 
+                         f"Regions list clean - {len(regions)} regions, no country names found")
+        else:
+            self.log_test("Public Wines Filters - Regions No Countries", False, str(response))
+        return success
+
+    def test_public_wines_filters_appellations_no_classifications(self):
+        """Test GET /api/public-wines-filters - Verify appellations do NOT contain classification terms"""
+        success, response = self.make_request('GET', 'public-wines-filters', expected_status=200)
+        if success:
+            appellations = response.get('appellations', [])
+            classification_terms = [
+                'Reserva', 'Crianza', 'Kult-Wein', 'Ikone', 'Gran Reserva', 
+                'Riserva', 'Classico', 'Superiore', 'Spätlese', 'Auslese'
+            ]
+            
+            # Check that no classification terms appear in appellations
+            classifications_in_appellations = []
+            for appellation in appellations:
+                for term in classification_terms:
+                    if term.lower() in appellation.lower():
+                        classifications_in_appellations.append(f"{appellation} (contains '{term}')")
+            
+            if classifications_in_appellations:
+                self.log_test("Public Wines Filters - Appellations No Classifications", False, 
+                             f"Found classification terms in appellations: {classifications_in_appellations[:5]}")
+                return False
+            
+            self.log_test("Public Wines Filters - Appellations No Classifications", True, 
+                         f"Appellations list clean - {len(appellations)} appellations, no classification terms found")
+        else:
+            self.log_test("Public Wines Filters - Appellations No Classifications", False, str(response))
+        return success
+
+    def test_public_wines_germany_regions(self):
+        """Test GET /api/public-wines?country=Deutschland - Verify German wines have proper regions"""
+        success, response = self.make_request('GET', 'public-wines?country=Deutschland', expected_status=200)
+        if success:
+            wines = response if isinstance(response, list) else []
+            
+            if not wines:
+                self.log_test("Public Wines Germany Regions", False, "No German wines found")
+                return False
+            
+            expected_german_regions = ['Mosel', 'Rheinhessen', 'Rheingau', 'Pfalz', 'Baden', 'Württemberg']
+            
+            # Check that German wines don't have "Deutschland" as region
+            wines_with_country_as_region = [wine for wine in wines if wine.get('region') == 'Deutschland']
+            if wines_with_country_as_region:
+                self.log_test("Public Wines Germany Regions", False, 
+                             f"Found {len(wines_with_country_as_region)} German wines with 'Deutschland' as region")
+                return False
+            
+            # Check for expected German regions
+            found_regions = set(wine.get('region') for wine in wines if wine.get('region'))
+            expected_found = [region for region in expected_german_regions if region in found_regions]
+            
+            if not expected_found:
+                self.log_test("Public Wines Germany Regions", False, 
+                             f"No expected German regions found. Found regions: {list(found_regions)[:10]}")
+                return False
+            
+            self.log_test("Public Wines Germany Regions", True, 
+                         f"German wines have proper regions - Found {len(wines)} wines with regions like: {expected_found}")
+        else:
+            self.log_test("Public Wines Germany Regions", False, str(response))
+        return success
+
+    def test_public_wines_germany_appellations_geographic(self):
+        """Test German wines have geographic appellations, not classification terms"""
+        success, response = self.make_request('GET', 'public-wines?country=Deutschland', expected_status=200)
+        if success:
+            wines = response if isinstance(response, list) else []
+            
+            if not wines:
+                self.log_test("Public Wines Germany Appellations", False, "No German wines found")
+                return False
+            
+            classification_terms = ['Kult-Wein', 'Ikone', 'Spätlese', 'Auslese', 'Kabinett']
+            
+            # Check appellations are geographic, not classification terms
+            wines_with_classification_appellations = []
+            for wine in wines:
+                appellation = wine.get('appellation', '')
+                if appellation:
+                    for term in classification_terms:
+                        if term.lower() in appellation.lower():
+                            wines_with_classification_appellations.append(f"{wine.get('name')} - {appellation}")
+            
+            if wines_with_classification_appellations:
+                self.log_test("Public Wines Germany Appellations", False, 
+                             f"Found classification terms in appellations: {wines_with_classification_appellations[:3]}")
+                return False
+            
+            # Count wines with appellations
+            wines_with_appellations = [wine for wine in wines if wine.get('appellation')]
+            
+            self.log_test("Public Wines Germany Appellations", True, 
+                         f"German appellations are geographic - {len(wines_with_appellations)} wines have proper appellations")
+        else:
+            self.log_test("Public Wines Germany Appellations", False, str(response))
+        return success
+
+    def test_public_wines_search_egon_mueller(self):
+        """Test GET /api/public-wines?search=Egon - Verify Egon Müller wines"""
+        success, response = self.make_request('GET', 'public-wines?search=Egon', expected_status=200)
+        if success:
+            wines = response if isinstance(response, list) else []
+            
+            if not wines:
+                self.log_test("Public Wines Search Egon Müller", False, "No wines found for search 'Egon'")
+                return False
+            
+            # Check for Egon Müller wines
+            egon_mueller_wines = [wine for wine in wines if 'egon' in wine.get('name', '').lower() or 'müller' in wine.get('name', '').lower()]
+            
+            if not egon_mueller_wines:
+                self.log_test("Public Wines Search Egon Müller", False, 
+                             f"No Egon Müller wines found in search results. Found: {[w.get('name') for w in wines[:3]]}")
+                return False
+            
+            # Check that Egon Müller wines have region="Mosel" and appellation="Mosel"
+            mosel_wines = []
+            for wine in egon_mueller_wines:
+                region = wine.get('region', '')
+                appellation = wine.get('appellation', '')
+                if 'mosel' in region.lower():
+                    mosel_wines.append(wine)
+                    if 'mosel' not in appellation.lower():
+                        self.log_test("Public Wines Search Egon Müller", False, 
+                                     f"Egon Müller wine has region='{region}' but appellation='{appellation}' (expected Mosel)")
+                        return False
+            
+            if not mosel_wines:
+                self.log_test("Public Wines Search Egon Müller", False, 
+                             f"No Egon Müller wines from Mosel found. Regions: {[w.get('region') for w in egon_mueller_wines]}")
+                return False
+            
+            self.log_test("Public Wines Search Egon Müller", True, 
+                         f"Found {len(mosel_wines)} Egon Müller wines from Mosel with proper appellations")
+        else:
+            self.log_test("Public Wines Search Egon Müller", False, str(response))
+        return success
+
+    def test_public_wines_total_count(self):
+        """Test total wine count - should be approximately 846 wines"""
+        success, response = self.make_request('GET', 'public-wines?limit=1000', expected_status=200)
+        if success:
+            wines = response if isinstance(response, list) else []
+            wine_count = len(wines)
+            
+            # Check if count is approximately 846 (allow some variance)
+            expected_count = 846
+            min_count = 800  # Allow some variance
+            max_count = 900
+            
+            if wine_count < min_count:
+                self.log_test("Public Wines Total Count", False, 
+                             f"Wine count too low: {wine_count}, expected ~{expected_count}")
+                return False
+            
+            if wine_count > max_count:
+                self.log_test("Public Wines Total Count", False, 
+                             f"Wine count too high: {wine_count}, expected ~{expected_count}")
+                return False
+            
+            self.log_test("Public Wines Total Count", True, 
+                         f"Wine count within expected range: {wine_count} wines (expected ~{expected_count})")
+        else:
+            self.log_test("Public Wines Total Count", False, str(response))
+        return success
+
     def test_delete_wine(self):
         """Test deleting a wine"""
         if not self.test_wine_id:

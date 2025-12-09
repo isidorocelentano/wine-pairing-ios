@@ -2752,6 +2752,7 @@ async def get_public_wines_filters(country: Optional[str] = None, region: Option
         "appellations": sorted([a for a in appellations if a and a != 'Unbekannt']),
         "wine_colors": sorted([c for c in colors if c]),
         "price_categories": sorted([p for p in price_categories if p]),
+        "grape_varieties": sorted([g for g in grape_varieties if g and g != 'Unbekannt']),
         "hierarchy": hierarchy
     }
 

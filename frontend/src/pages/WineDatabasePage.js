@@ -67,7 +67,7 @@ const WineDatabasePage = () => {
       params.append('skip', currentPage * 50);
       params.append('limit', 50);
       
-      const response = await axios.get(`${API}/wine-database?${params}`);
+      const response = await axios.get(`${API}/public-wines?${params}`);
       
       if (reset) {
         setWines(response.data);

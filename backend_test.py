@@ -928,6 +928,18 @@ class WinePairingAPITester:
         # Favorites
         self.test_get_favorites()
         
+        # Public Wines Database Tests (New Feature)
+        print("\n🍷 Testing Public Wines Database Endpoints...")
+        self.test_public_wines_list_basic()
+        self.test_public_wines_list_with_limit()
+        self.test_public_wines_list_country_filter()
+        self.test_public_wines_list_wine_color_filter()
+        self.test_public_wines_list_search_filter()
+        self.test_public_wines_list_pagination()
+        self.test_public_wines_detail_valid_id()
+        self.test_public_wines_detail_invalid_id()
+        self.test_public_wines_filters()
+        
         # Cleanup
         self.test_delete_wine()
         

@@ -262,6 +262,17 @@ frontend:
       - working: true
         agent: "testing"
         comment: "COMPREHENSIVE TESTING COMPLETED: ✅ All 5 test objectives successfully verified. 1) Loading & Basic Functionality: Page loads without JS errors, all required elements present (dish textarea, wine type select, filter fields for country/trend/bestseller, get recommendation button). 2) Dish Auto-Complete & Filter: Auto-complete working perfectly - typing 'Burger' shows 3 suggestions, 'Pad Thai' shows 1 suggestion, clicking suggestions populates text field correctly. Filter functionality verified - trend filter (thai), bestseller filter (burger), and combined filters (USA + burger) all working. 3) Pairing Request with Structured Dish: dish_id correctly sent in API request when suggestion selected, pairing results display with proper card structure (🍷 Hauptempfehlung, 🔄 Alternative Optionen). 4) Regression Test: Free text input works correctly with dish_id=null in request, maintains backward compatibility. 5) I18n & Dark Mode: Language switching (DE/EN/FR) working perfectly with proper filter label translations, dark mode toggle functional with readable UI elements. Minor: Suggestions remain visible after selection (cosmetic issue only). All core functionality working as specified."
+  - task: "Favorites/Wishlist Page"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/pages/FavoritesPage.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "user"
+        comment: "User requested testing of new Favorites/Wishlist page at /favorites. Testing required for: 1) Page loads correctly with 'Meine Weine' title and two tabs (Favoriten/Wunschliste), 2) Empty state handling for both tabs, 3) Navigation integration with bottom nav bar, 4) Tab switching functionality, 5) Adding wines to favorites from wine database page and verifying they appear in favorites tab."
 
 metadata:
   created_by: "main_agent"

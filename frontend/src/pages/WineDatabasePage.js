@@ -496,32 +496,32 @@ const WineDatabasePage = () => {
               {/* Wine Details */}
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div>
-                  <p className="text-muted-foreground">Land</p>
-                  <p className="font-medium">{selectedWine.country}</p>
+                  <p className="text-muted-foreground">{t('wine_country')}</p>
+                  <p className="font-medium">{selectedWine.country || t('wine_unknown')}</p>
                 </div>
                 <div>
-                  <p className="text-muted-foreground">Region</p>
-                  <p className="font-medium">{selectedWine.region}</p>
+                  <p className="text-muted-foreground">{t('wine_region')}</p>
+                  <p className="font-medium">{selectedWine.region || t('wine_unknown')}</p>
                 </div>
                 <div>
-                  <p className="text-muted-foreground">Rebsorte</p>
-                  <p className="font-medium">{selectedWine.grape_variety}</p>
+                  <p className="text-muted-foreground">{t('wine_grape')}</p>
+                  <p className="font-medium">{selectedWine.grape_variety || t('wine_unknown')}</p>
                 </div>
                 <div>
-                  <p className="text-muted-foreground">Typ</p>
+                  <p className="text-muted-foreground">{t('wine_type')}</p>
                   <Badge className={getWineColorBadge(selectedWine.wine_color)}>
                     {selectedWine.wine_color}
                   </Badge>
                 </div>
                 {selectedWine.year && (
                   <div>
-                    <p className="text-muted-foreground">Jahrgang</p>
+                    <p className="text-muted-foreground">{t('wine_vintage')}</p>
                     <p className="font-medium">{selectedWine.year}</p>
                   </div>
                 )}
                 {selectedWine.appellation && (
                   <div>
-                    <p className="text-muted-foreground">Appellation</p>
+                    <p className="text-muted-foreground">{t('wine_appellation')}</p>
                     <p className="font-medium">{selectedWine.appellation}</p>
                   </div>
                 )}
@@ -529,7 +529,7 @@ const WineDatabasePage = () => {
 
               {/* Description */}
               <div>
-                <h4 className="font-semibold mb-2">Beschreibung</h4>
+                <h4 className="font-semibold mb-2">{t('wine_description')}</h4>
                 <p className="text-muted-foreground font-accent italic">
                   {getDescription(selectedWine)}
                 </p>
@@ -538,7 +538,7 @@ const WineDatabasePage = () => {
               {/* Food Pairings */}
               {getFoodPairings(selectedWine).length > 0 && (
                 <div>
-                  <h4 className="font-semibold mb-3">Perfekt zu</h4>
+                  <h4 className="font-semibold mb-3">{t('wine_pairings')}</h4>
                   <div className="flex flex-wrap gap-2">
                     {getFoodPairings(selectedWine).map((pairing, idx) => (
                       <Badge key={idx} variant="outline">{pairing}</Badge>

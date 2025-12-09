@@ -107,13 +107,33 @@ def parse_appellation_status(value: str) -> dict:
             
         elif third_is_country and not first_is_country:
             # Format A: Region / Appellation_or_Class / Country
+            # BUT also handle: Classification / Classification / Country (e.g., "Rotwein / VdIT / Spanien")
             country = KNOWN_COUNTRIES.get(third.lower(), third)
-            region = first
             
-            if second_is_class:
+            first_is_class = is_classification(first)
+            
+            if first_is_class and second_is_class:
+                # Both first and second are classifications, no real region
+                classification = f"{first}, {second}"  # Combine classifications
+                region = None
+                appellation = None
+            elif first_is_class:
+                # First is classification, second might be region
+                classification = first
+                if not second_is_class:
+                    region = second
+                    appellation = second
+                else:
+                    classification = f"{first}, {second}"
+                    region = None
+                    appellation = None
+            elif second_is_class:
                 classification = second
+                region = first
                 appellation = first
             else:
+                # Neither is classification, second is appellation
+                region = first
                 appellation = second
                 
         else:

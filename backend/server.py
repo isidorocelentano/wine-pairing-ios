@@ -443,6 +443,7 @@ async def list_wine_database(
     This endpoint returns the raw multilingual wine entries. The frontend is
     responsible for selecting the appropriate language fields.
     """
+    logger.info(f"ENDPOINT CALLED: /wine-database with limit={limit}")
     query: dict = {}
 
     if search:

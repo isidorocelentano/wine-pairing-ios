@@ -316,6 +316,22 @@ const WineDatabasePage = () => {
                     </Select>
                   </div>
 
+                  {/* Appellation Filter */}
+                  <div>
+                    <label className="text-sm font-medium mb-2 block">Appellation</label>
+                    <Select value={filters.appellation} onValueChange={(v) => handleFilterChange('appellation', v)}>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Alle Appellationen" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="all">Alle Appellationen</SelectItem>
+                        {availableFilters.appellations?.map(appellation => (
+                          <SelectItem key={appellation} value={appellation}>{appellation}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+
                   {/* Grape Variety Filter */}
                   <div>
                     <label className="text-sm font-medium mb-2 block">Rebsorte</label>

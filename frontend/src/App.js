@@ -1177,6 +1177,14 @@ const CellarPage = () => {
                     <Input placeholder={t('cellar_quantity')} type="number" min={0} value={newWine.quantity} onChange={(e) => setNewWine({ ...newWine, quantity: e.target.value })} />
                   </div>
                   <Input placeholder={t('cellar_grape')} value={newWine.grape} onChange={(e) => setNewWine({ ...newWine, grape: e.target.value })} />
+                  {newWine.description && (
+                    <div className="bg-secondary/30 p-4 rounded-md border border-border">
+                      <label className="text-sm font-medium mb-2 block">Beschreibung</label>
+                      <p className="text-sm text-muted-foreground font-accent italic leading-relaxed">
+                        {newWine.description}
+                      </p>
+                    </div>
+                  )}
                   <Textarea placeholder={t('cellar_notes')} value={newWine.notes} onChange={(e) => setNewWine({ ...newWine, notes: e.target.value })} />
                   <div className="upload-zone rounded-lg p-4 md:p-6 text-center cursor-pointer" onClick={() => fileInputRef.current?.click()}>
                     {newWine.image_base64 ? (

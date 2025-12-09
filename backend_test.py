@@ -1173,6 +1173,16 @@ class WinePairingAPITester:
         self.test_public_wines_detail_invalid_id()
         self.test_public_wines_filters()
         
+        # Wine Database Filter Tests (Import Script Fix Verification)
+        print("\n🔍 Testing Wine Database Filter Endpoints (Import Script Fix)...")
+        self.test_public_wines_filters_countries_exact()
+        self.test_public_wines_filters_regions_no_countries()
+        self.test_public_wines_filters_appellations_no_classifications()
+        self.test_public_wines_germany_regions()
+        self.test_public_wines_germany_appellations_geographic()
+        self.test_public_wines_search_egon_mueller()
+        self.test_public_wines_total_count()
+        
         # Cleanup
         self.test_delete_wine()
         

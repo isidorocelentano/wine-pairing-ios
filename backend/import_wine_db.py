@@ -246,6 +246,12 @@ Return the result in this JSON format:
             wine_entry['food_pairings_en'] = data_en.get('food_pairings_en', [])
         
         # Generate French translation
+        chat_fr = LlmChat(
+            api_key=EMERGENT_LLM_KEY,
+            session_id=str(uuid.uuid4()),
+            system_message="Tu es un expert en traduction de vins. Traduis les descriptions de vin de l'allemand au français, en préservant le ton émotionnel et poétique."
+        )
+        
         prompt_fr = f"""Traduis cette description émotionnelle de vin en français. Garde le ton poétique et émotionnel:
 
 Description (DE): {wine_entry['description_de']}
@@ -258,7 +264,7 @@ Retourne le résultat au format JSON suivant:
   "food_pairings_fr": ["...", "..."]
 }}"""
         
-        response_fr = await chat.generate_response([UserMessage(content=prompt_fr)])
+        response_fr = await chat_fr.generate_response([UserMessage(content=prompt_fr)])
         
         # Extract JSON from response
         json_match = re.search(r'\{.*\}', response_fr, re.DOTALL)

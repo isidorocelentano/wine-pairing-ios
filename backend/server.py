@@ -466,7 +466,7 @@ async def list_wine_database(
         query["price_category"] = price_category
 
     wines = (
-        await db.wine_database
+        await db.wines_db
         .find(query, {"_id": 0})
         .skip(skip)
         .limit(limit)

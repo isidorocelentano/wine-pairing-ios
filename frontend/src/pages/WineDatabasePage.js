@@ -393,7 +393,7 @@ const WineDatabasePage = () => {
                         
                         {/* Description */}
                         <p className="text-sm text-muted-foreground line-clamp-3 mb-4 font-accent italic leading-relaxed">
-                          {wine.description}
+                          {wine.description_de || wine.description_en || wine.description_fr || wine.description || 'Keine Beschreibung verfügbar'}
                         </p>
                         
                         {/* Price Category */}

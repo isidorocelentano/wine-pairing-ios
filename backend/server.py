@@ -474,7 +474,6 @@ async def list_wine_database(
     )
     return wines
 
-"""
 
 # System prompt for structured dish generation
 DISH_GENERATOR_SYSTEM = """Du bist Claude, Master of Wine und leidenschaftlicher Koch.

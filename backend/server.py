@@ -418,6 +418,8 @@ ANTWORTFORMAT (STRICT JSON, KEIN ERKLÄRTEXT):
   "perfect_pairings_fr": ["3-6 étiquettes d'accords mets-vins en français"],
   "main_regions": ["3-6 wichtigste anbaugebiete"]
 }
+"""
+
 
 # ===================== WINE DATABASE ENDPOINTS =====================
 

@@ -13,7 +13,7 @@ const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
 export default function FavoritesPage() {
-  const { t } = useContext(LanguageContext);
+  const { t } = useLanguage();
   const [favorites, setFavorites] = useState([]);
   const [wishlist, setWishlist] = useState([]);
   const [loading, setLoading] = useState(true);

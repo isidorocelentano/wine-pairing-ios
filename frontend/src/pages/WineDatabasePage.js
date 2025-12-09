@@ -116,7 +116,22 @@ const WineDatabasePage = () => {
   };
 
   const handleFilterChange = (key, value) => {
-    setFilters(prev => ({ ...prev, [key]: value }));
+    setFilters(prev => {
+      const newFilters = { ...prev, [key]: value };
+      
+      // Cascade: if country changes, reset region and appellation
+      if (key === 'country') {
+        newFilters.region = 'all';
+        newFilters.appellation = 'all';
+      }
+      
+      // Cascade: if region changes, reset appellation
+      if (key === 'region') {
+        newFilters.appellation = 'all';
+      }
+      
+      return newFilters;
+    });
   };
 
   const clearFilters = () => {

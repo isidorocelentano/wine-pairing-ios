@@ -472,12 +472,6 @@ async def list_wine_database(
     )
     return wines
 
-
-WICHTIG:
-- Verwende GENAU diese Feldnamen.
-- Verwende bei body/acidity/tannin NUR die angegebenen Skalenwerte.
-- Gib KEINEN zusätzlichen Text außer dem JSON zurück.
-- Verwende in den deutschen Tag-Listen (primary_aromas, tertiary_aromas, perfect_pairings) nur kleinschreibung.
 """
 
 # System prompt for structured dish generation

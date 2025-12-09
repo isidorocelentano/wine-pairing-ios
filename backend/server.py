@@ -2653,7 +2653,6 @@ async def get_public_wines(
     Get wines from the new public_wines collection.
     Clean endpoint without legacy issues.
     """
-    print(f"=== PUBLIC WINES ENDPOINT CALLED: search={search}, limit={limit} ===")
     logger.info(f"PUBLIC WINES ENDPOINT called: search={search}, limit={limit}")
     
     query = {}

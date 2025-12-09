@@ -291,7 +291,7 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Wine Database Descriptions Auto-Save to Cellar"
+    - "Wine Database Updated Dataset Testing"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"

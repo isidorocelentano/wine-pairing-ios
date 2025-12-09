@@ -9,6 +9,10 @@ from emergentintegrations.llm.chat import LlmChat, UserMessage
 import json
 import re
 from datetime import datetime
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv('/app/backend/.env')
 
 # MongoDB connection
 mongo_url = os.environ.get('MONGO_URL', 'mongodb://localhost:27017')

@@ -289,6 +289,22 @@ const translations = {
     nav_feed: 'Community',
     nav_grapes: 'Grapes',
     nav_wine_database: 'Wine DB',
+    
+    // Wine Database Modal Labels
+    wine_country: 'Country',
+    wine_region: 'Region',
+    wine_grape: 'Grape Variety',
+    wine_type: 'Type',
+    wine_vintage: 'Vintage',
+    wine_appellation: 'Appellation',
+    wine_description: 'Description',
+    wine_pairings: 'Perfect with',
+    wine_add_favorites: 'Add to Favorites',
+    wine_add_wishlist: 'Save',
+    wine_add_cellar: 'Add to Cellar',
+    wine_close: 'Close',
+    wine_unknown: 'Unknown',
+    
     hero_tagline: 'The Discovery of Pure Enjoyment',
     hero_title: 'Claude – Your Master Sommelier',
     hero_description: 'Master of Wine and passionate chef. The only recommendation that sells nothing but your perfect moment. Discover the harmony of wine and food – independent, honest, delightful.',

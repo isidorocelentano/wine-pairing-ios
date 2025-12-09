@@ -99,6 +99,7 @@ const Navigation = () => {
     { path: '/pairing', icon: Utensils, labelKey: 'nav_pairing' },
     { path: '/grapes', icon: Grape, labelKey: 'nav_grapes' },
     { path: '/wine-database', icon: BookOpen, labelKey: 'nav_wine_database' },
+    { path: '/favorites', icon: Heart, labelKey: 'nav_favorites' },
     { path: '/cellar', icon: Wine, labelKey: 'nav_cellar' },
     { path: '/blog', icon: BookOpen, labelKey: 'nav_blog' },
     { path: '/feed', icon: Users, labelKey: 'nav_feed' },

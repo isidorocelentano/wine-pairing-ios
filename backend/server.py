@@ -151,7 +151,7 @@ class WineDbImportStatus(BaseModel):
 
 async def _clear_wine_database():
     """Delete all entries from the public wine database (NOT the personal cellar)."""
-    await db.wines_db.delete_many({})
+    await db.wine_database.delete_many({})
 
 
 async def _upsert_wine_entry(payload: dict) -> Optional[WineDatabaseEntry]:
@@ -163,7 +163,7 @@ async def _upsert_wine_entry(payload: dict) -> Optional[WineDatabaseEntry]:
         wine = WineDatabaseEntry(**payload)
         doc = wine.model_dump()
         doc["created_at"] = doc["created_at"].isoformat()
-        await db.wines_db.insert_one(doc)
+        await db.wine_database.insert_one(doc)
         return wine
     except Exception as e:
         logger.warning(f"Failed to upsert wine entry {payload.get('name')}: {e}")
@@ -470,7 +470,7 @@ async def list_wine_database(
         query["price_category"] = price_category
 
     wines = (
-        await db.wines_db
+        await db.wine_database
         .find(query, {"_id": 0})
         .skip(skip)
         .limit(limit)
@@ -1888,7 +1888,7 @@ async def get_wine_database_DISABLED(
             query = name_query.copy()
             if filter_conditions:
                 query = {"$and": [name_query, {"$and": filter_conditions}]}
-            name_wines = await db.wines_db.find(query, {"_id": 0}).limit(limit).to_list(limit)
+            name_wines = await db.wine_database.find(query, {"_id": 0}).limit(limit).to_list(limit)
             for w in name_wines:
                 if w['id'] not in seen_ids:
                     wines.append(w)
@@ -1899,7 +1899,7 @@ async def get_wine_database_DISABLED(
             query = appellation_query.copy()
             if filter_conditions:
                 query = {"$and": [appellation_query, {"$and": filter_conditions}]}
-            app_wines = await db.wines_db.find(query, {"_id": 0}).limit(limit - len(wines)).to_list(limit - len(wines))
+            app_wines = await db.wine_database.find(query, {"_id": 0}).limit(limit - len(wines)).to_list(limit - len(wines))
             for w in app_wines:
                 if w['id'] not in seen_ids:
                     wines.append(w)
@@ -1910,7 +1910,7 @@ async def get_wine_database_DISABLED(
             query = region_query.copy()
             if filter_conditions:
                 query = {"$and": [region_query, {"$and": filter_conditions}]}
-            region_wines = await db.wines_db.find(query, {"_id": 0}).limit(limit - len(wines)).to_list(limit - len(wines))
+            region_wines = await db.wine_database.find(query, {"_id": 0}).limit(limit - len(wines)).to_list(limit - len(wines))
             for w in region_wines:
                 if w['id'] not in seen_ids:
                     wines.append(w)
@@ -1921,7 +1921,7 @@ async def get_wine_database_DISABLED(
             query = country_query.copy()
             if filter_conditions:
                 query = {"$and": [country_query, {"$and": filter_conditions}]}
-            country_wines = await db.wines_db.find(query, {"_id": 0}).limit(limit - len(wines)).to_list(limit - len(wines))
+            country_wines = await db.wine_database.find(query, {"_id": 0}).limit(limit - len(wines)).to_list(limit - len(wines))
             for w in country_wines:
                 if w['id'] not in seen_ids:
                     wines.append(w)
@@ -1932,7 +1932,7 @@ async def get_wine_database_DISABLED(
             query = {"$or": [winery_query, grape_query]}
             if filter_conditions:
                 query = {"$and": [query, {"$and": filter_conditions}]}
-            other_wines = await db.wines_db.find(query, {"_id": 0}).limit(limit - len(wines)).to_list(limit - len(wines))
+            other_wines = await db.wine_database.find(query, {"_id": 0}).limit(limit - len(wines)).to_list(limit - len(wines))
             for w in other_wines:
                 if w['id'] not in seen_ids:
                     wines.append(w)
@@ -1957,7 +1957,7 @@ async def get_wine_database_DISABLED(
         if price_category:
             query["price_category"] = price_category
         
-        wines = await db.wines_db.find(query, {"_id": 0}).skip(skip).limit(limit).to_list(limit)
+        wines = await db.wine_database.find(query, {"_id": 0}).skip(skip).limit(limit).to_list(limit)
     
     # Convert datetime strings
     for wine in wines:
@@ -1969,7 +1969,7 @@ async def get_wine_database_DISABLED(
 @api_router.get("/wine-database/{wine_id}", response_model=WineDatabaseEntry)
 async def get_wine_detail(wine_id: str):
     """Get detailed information about a specific wine"""
-    wine = await db.wines_db.find_one({"id": wine_id}, {"_id": 0})
+    wine = await db.wine_database.find_one({"id": wine_id}, {"_id": 0})
     if not wine:
         raise HTTPException(status_code=404, detail="Wein nicht gefunden")
     
@@ -1987,19 +1987,19 @@ async def autocomplete_wines(query: str, limit: int = 10):
         {"grape_variety": {"$regex": query, "$options": "i"}}
     ]}
     
-    wines = await db.wines_db.find(search_query, {"_id": 0, "id": 1, "name": 1, "winery": 1, "wine_color": 1}).limit(limit).to_list(limit)
+    wines = await db.wine_database.find(search_query, {"_id": 0, "id": 1, "name": 1, "winery": 1, "wine_color": 1}).limit(limit).to_list(limit)
     
     return wines
 
 @api_router.get("/wine-database-filters")
 async def get_wine_filters():
     """Get all available filter options"""
-    countries = await db.wines_db.distinct("country")
-    regions = await db.wines_db.distinct("region")
-    appellations = await db.wines_db.distinct("appellation")
-    grape_varieties = await db.wines_db.distinct("grape_variety")
-    wine_colors = await db.wines_db.distinct("wine_color")
-    price_categories = await db.wines_db.distinct("price_category")
+    countries = await db.wine_database.distinct("country")
+    regions = await db.wine_database.distinct("region")
+    appellations = await db.wine_database.distinct("appellation")
+    grape_varieties = await db.wine_database.distinct("grape_variety")
+    wine_colors = await db.wine_database.distinct("wine_color")
+    price_categories = await db.wine_database.distinct("price_category")
     
     return {
         "countries": sorted([c for c in countries if c]),
@@ -2013,7 +2013,7 @@ async def get_wine_filters():
 @api_router.post("/seed-wine-database")
 async def seed_wine_database(count: int = 2000):
     """Seed the wine database with a mix of real and AI-generated wines"""
-    existing_count = await db.wines_db.count_documents({})
+    existing_count = await db.wine_database.count_documents({})
     if existing_count > 0:
         return {"message": f"Datenbank enthält bereits {existing_count} Weine"}
     
@@ -2117,7 +2117,7 @@ async def seed_wine_database(count: int = 2000):
     # Insert base wines
     for wine_data in wines_to_insert:
         wine_data['created_at'] = wine_data['created_at'].isoformat()
-        await db.wines_db.insert_one(wine_data)
+        await db.wine_database.insert_one(wine_data)
     
     inserted_count = len(wines_to_insert)
     logger.info(f"Inserted {inserted_count} base wines")
@@ -2131,7 +2131,7 @@ async def seed_wine_database(count: int = 2000):
 async def generate_additional_wines(batch_size: int = 50):
     """Generate additional wines using AI"""
     try:
-        current_count = await db.wines_db.count_documents({})
+        current_count = await db.wine_database.count_documents({})
         logger.info(f"Current wine count: {current_count}, generating {batch_size} more...")
         
         # Wine generation templates for variety
@@ -2241,9 +2241,9 @@ Antwort NUR als JSON-Array:
         if wines_generated:
             for wine_data in wines_generated:
                 wine_data['created_at'] = wine_data['created_at'].isoformat()
-                await db.wines_db.insert_one(wine_data)
+                await db.wine_database.insert_one(wine_data)
         
-        new_count = await db.wines_db.count_documents({})
+        new_count = await db.wine_database.count_documents({})
         logger.info(f"Generated {len(wines_generated)} wines. Total count: {new_count}")
         
         return {"message": f"{len(wines_generated)} Weine generiert. Gesamt: {new_count}"}
@@ -2290,7 +2290,7 @@ async def get_favorites(wishlist_only: bool = False):
 async def add_to_favorites(wine_id: str, is_wishlist: bool = False):
     """Add a wine to favorites or wishlist"""
     # Get wine details from database
-    wine = await db.wines_db.find_one({"id": wine_id}, {"_id": 0})
+    wine = await db.wine_database.find_one({"id": wine_id}, {"_id": 0})
     if not wine:
         raise HTTPException(status_code=404, detail="Wein nicht gefunden")
     

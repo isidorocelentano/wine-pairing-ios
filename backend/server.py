@@ -476,6 +476,8 @@ async def list_wine_database(
         .to_list(limit)
     )
     
+    logger.info(f"Wine database query returned {len(wines)} wines")
+    
     # Convert datetime strings to datetime objects for Pydantic validation
     for wine in wines:
         if isinstance(wine.get('created_at'), str):

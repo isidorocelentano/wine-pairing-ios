@@ -2677,7 +2677,6 @@ async def get_public_wines(
     
     wines = await db.public_wines.find(query, {"_id": 0}).skip(skip).limit(limit).to_list(limit)
     
-    print(f"=== QUERY: {query}, Found {len(wines)} wines ===")
     logger.info(f"PUBLIC WINES: Found {len(wines)} wines")
     
     # Convert created_at strings to datetime

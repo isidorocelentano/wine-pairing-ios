@@ -419,6 +419,60 @@ ANTWORTFORMAT (STRICT JSON, KEIN ERKLÄRTEXT):
   "main_regions": ["3-6 wichtigste anbaugebiete"]
 }
 
+# ===================== WINE DATABASE ENDPOINTS =====================
+
+@api_router.get("/wine-database", response_model=List[WineDatabaseEntry])
+async def list_wine_database(
+    search: Optional[str] = None,
+    country: Optional[str] = None,
+    region: Optional[str] = None,
+    appellation: Optional[str] = None,
+    grape_variety: Optional[str] = None,
+    wine_color: Optional[str] = None,
+    price_category: Optional[str] = None,
+    skip: int = 0,
+    limit: int = 50,
+):
+    """List wines from the public wine database with basic filters.
+
+    This endpoint returns the raw multilingual wine entries. The frontend is
+    responsible for selecting the appropriate language fields.
+    """
+    query: dict = {}
+
+    if search:
+        # Simple case-insensitive search in name, winery, region, appellation
+        regex = {"$regex": search, "$options": "i"}
+        query["$or"] = [
+            {"name": regex},
+            {"winery": regex},
+            {"region": regex},
+            {"appellation": regex},
+            {"grape_variety": regex},
+        ]
+    if country:
+        query["country"] = country
+    if region:
+        query["region"] = region
+    if appellation:
+        query["appellation"] = appellation
+    if grape_variety:
+        query["grape_variety"] = grape_variety
+    if wine_color:
+        query["wine_color"] = wine_color
+    if price_category:
+        query["price_category"] = price_category
+
+    wines = (
+        await db.wine_database
+        .find(query, {"_id": 0})
+        .skip(skip)
+        .limit(limit)
+        .to_list(limit)
+    )
+    return wines
+
+
 WICHTIG:
 - Verwende GENAU diese Feldnamen.
 - Verwende bei body/acidity/tannin NUR die angegebenen Skalenwerte.

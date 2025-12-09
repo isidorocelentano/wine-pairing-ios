@@ -309,11 +309,11 @@ async def import_to_database(wines):
         wine_copy['created_at'] = wine_copy['created_at'].isoformat()
         
         # Insert into database
-        await db.wines_db.insert_one(wine_copy)
+        await db.wine_database.insert_one(wine_copy)
         print(f"  💾 Inserted into database")
     
     # Count final wines
-    final_count = await db.wines_db.count_documents({})
+    final_count = await db.wine_database.count_documents({})
     print(f"\n🎉 Import complete! Total wines in database: {final_count}")
 
 

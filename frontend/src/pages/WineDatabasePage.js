@@ -56,7 +56,11 @@ const WineDatabasePage = () => {
   // Fetch available filter options
   const fetchFilterOptions = useCallback(async () => {
     try {
-      const response = await axios.get(`${API}/public-wines-filters`);
+      const params = new URLSearchParams();
+      if (filters.country !== 'all') params.append('country', filters.country);
+      if (filters.region !== 'all') params.append('region', filters.region);
+      
+      const response = await axios.get(`${API}/public-wines-filters?${params}`);
       setAvailableFilters(response.data);
     } catch (error) {
       console.error('Error fetching filters:', error);

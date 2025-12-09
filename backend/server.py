@@ -2701,9 +2701,7 @@ async def get_public_wine_detail(wine_id: str):
     return wine
 
 
-# Include the router
-app.include_router(api_router)
-
+# Add CORS middleware BEFORE including router (critical for proper request handling)
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
@@ -2711,6 +2709,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Include the router AFTER middleware
+app.include_router(api_router)
 
 @app.on_event("shutdown")
 async def shutdown_db_client():

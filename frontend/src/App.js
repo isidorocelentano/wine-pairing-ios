@@ -21,6 +21,7 @@ import BlogPostPage from "@/pages/BlogPostPage";
 import FeedPage from "@/pages/FeedPage";
 import { GrapesPage, GrapeDetailPage } from "@/pages/GrapesPage";
 import WineDatabasePage from "@/pages/WineDatabasePage";
+import FavoritesPage from "@/pages/FavoritesPage";
 import GrapeAdminPage from "@/pages/GrapeAdminPage";
 import DishAdminPage from "@/pages/DishAdminPage";
 import PairingSeoPage from "@/pages/PairingSeoPage";

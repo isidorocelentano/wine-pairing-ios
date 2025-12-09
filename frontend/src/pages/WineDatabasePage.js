@@ -140,7 +140,8 @@ const WineDatabasePage = () => {
         region: wine.region,
         year: wine.year,
         grape: wine.grape_variety,
-        notes: wine.description
+        description: getDescription(wine),  // Use description in current language
+        notes: ''  // Empty notes for user to fill in later
       });
       toast.success('Wein wurde zum Keller hinzugefügt!');
     } catch (error) {

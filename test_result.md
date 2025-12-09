@@ -325,6 +325,17 @@ test_plan:
       - working: true
         agent: "testing"
         comment: "BUG FIXED & COMPREHENSIVE TESTING COMPLETE: Fixed missing description field in handleEditWine function. All test requirements now working perfectly: ✅ Wine descriptions automatically saved when adding from Wine Database to Cellar, ✅ Description appears in edit dialog in separate 'Beschreibung' section BEFORE notes field, ✅ Description is read-only in styled box (bg-secondary/30 with italic font), ✅ Notes field remains separate and editable, ✅ Description content matches original wine description from database, ✅ Proper italic styling applied. Tested with multiple wines (Château Phélan Ségur, Château Haut-Marbuzet) - all working correctly. Fix confirmed: wines added after the fix properly save and display descriptions, while older wines (added before fix) do not have descriptions as expected."
+  - task: "Wine Database Updated Dataset Testing"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/pages/WineDatabasePage.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "COMPREHENSIVE TESTING COMPLETE - NEW LARGER DATASET VERIFIED: ✅ Wine Count Verification: 782 wines loaded (exceeds target of ~732), significantly more than previous dataset. ✅ Multilingual Descriptions: API verification confirms proper multilingual support - German: 'Einladende alpine Frische. Klar, sortentypisch...', English: 'Inviting alpine freshness. Clear, varietally typical...', French: 'Fraîcheur alpine invitante. Clair, typique du cépage...' - descriptions are unique per language, NOT just German text. ✅ Wine Type Diversity: Successfully tested Italian wines (Alois Lageder - Alto Adige), French wines (Château Lafite Rothschild - Pauillac), German wines (Egon Müller - Mosel). ✅ Search Functionality: 'Lageder' (40 results), 'Champagne' (23 results), 'Château' (50 results), 'Cabernet' (50 results) - all working correctly. ✅ Quality Checks: Zero wines showing 'Unbekannt' for critical fields, all tested wines have proper region/appellation data (Alto Adige, Pauillac, Premier Cru). ✅ Description Quality: 5/5 tested wines have rich, emotional descriptions with no placeholder text. ✅ Food Pairings: Properly displayed in wine detail modals. All specified requirements successfully met - the updated wine database with larger dataset is fully operational."
 
 agent_communication:
   - agent: "main"

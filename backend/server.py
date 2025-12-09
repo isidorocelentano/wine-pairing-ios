@@ -2721,6 +2721,7 @@ async def get_public_wines_filters(country: Optional[str] = None, region: Option
     appellations = await db.public_wines.distinct("appellation", query)
     colors = await db.public_wines.distinct("wine_color")
     price_categories = await db.public_wines.distinct("price_category")
+    grape_varieties = await db.public_wines.distinct("grape_variety")
     
     # Build hierarchy map
     hierarchy = {}

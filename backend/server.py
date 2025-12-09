@@ -1340,7 +1340,7 @@ async def seed_dishes(background_tasks: BackgroundTasks):
 
 @api_router.get("/dishes", response_model=List[Dish])
 async def list_dishes(country: Optional[str] = None, bestseller_category: Optional[str] = None, trend: Optional[str] = None):
-    """Simple listing endpoint – später für UI & Suche nutzbar."""
+    """Simple listing endpoint - später für UI & Suche nutzbar."""
     query: dict = {}
     if country:
         query["country"] = country.lower()

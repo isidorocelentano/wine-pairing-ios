@@ -108,14 +108,7 @@ class WineDatabaseEntry(BaseModel):
     price_category: Optional[str] = None  # budget, mid-range, premium, luxury
     image_url: Optional[str] = None
     rating: Optional[float] = None
-    created_at: Union[datetime, str] = Field(default_factory=lambda: datetime.now(timezone.utc))
-    
-    @field_validator('created_at', mode='before')
-    @classmethod
-    def parse_created_at(cls, value):
-        if isinstance(value, str):
-            return datetime.fromisoformat(value)
-        return value
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 class PairingRequest(BaseModel):
     dish: str

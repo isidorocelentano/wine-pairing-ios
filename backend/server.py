@@ -342,7 +342,7 @@ class DishGenerationRequest(BaseModel):
 class GrapeGenerationRequest(BaseModel):
     """Request model to generate a new grape variety via LLM"""
     name: str
-    grape_type: Optional[str] = None  # "rot" oder "weiss" – wenn None, vom Modell ableiten
+    grape_type: Optional[str] = None  # "rot" oder "weiss" - wenn None, vom Modell ableiten
     style_hint: Optional[str] = None  # z.B. "klassisch, trocken, hochwertige Qualitätsweine"
 
 

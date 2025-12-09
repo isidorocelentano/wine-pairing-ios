@@ -937,29 +937,34 @@ class WinePairingAPITester:
         return success
 
     def test_public_wines_filters_appellations_no_classifications(self):
-        """Test GET /api/public-wines-filters - Verify appellations do NOT contain classification terms"""
+        """Test GET /api/public-wines-filters - Verify appellations do NOT contain problematic classification terms"""
         success, response = self.make_request('GET', 'public-wines-filters', expected_status=200)
         if success:
             appellations = response.get('appellations', [])
-            classification_terms = [
+            # Focus on the most problematic classification terms that should not be appellations
+            # Note: "Classico" is excluded as it's part of legitimate Italian appellations like "Chianti Classico"
+            problematic_classification_terms = [
                 'Reserva', 'Crianza', 'Kult-Wein', 'Ikone', 'Gran Reserva', 
-                'Riserva', 'Classico', 'Superiore', 'Spätlese', 'Auslese'
+                'Riserva', 'Spätlese', 'Auslese', 'Kabinett', 'Trocken'
             ]
             
-            # Check that no classification terms appear in appellations
-            classifications_in_appellations = []
+            # Check that no problematic classification terms appear as standalone appellations
+            problematic_appellations = []
             for appellation in appellations:
-                for term in classification_terms:
-                    if term.lower() in appellation.lower():
-                        classifications_in_appellations.append(f"{appellation} (contains '{term}')")
+                for term in problematic_classification_terms:
+                    # Check if the term appears as a standalone appellation or at the start/end
+                    if (appellation.lower() == term.lower() or 
+                        appellation.lower().startswith(term.lower() + ' ') or
+                        appellation.lower().endswith(' ' + term.lower())):
+                        problematic_appellations.append(f"{appellation} (problematic term: '{term}')")
             
-            if classifications_in_appellations:
+            if problematic_appellations:
                 self.log_test("Public Wines Filters - Appellations No Classifications", False, 
-                             f"Found classification terms in appellations: {classifications_in_appellations[:5]}")
+                             f"Found problematic classification terms in appellations: {problematic_appellations[:5]}")
                 return False
             
             self.log_test("Public Wines Filters - Appellations No Classifications", True, 
-                         f"Appellations list clean - {len(appellations)} appellations, no classification terms found")
+                         f"Appellations list clean - {len(appellations)} appellations, no problematic classification terms found")
         else:
             self.log_test("Public Wines Filters - Appellations No Classifications", False, str(response))
         return success

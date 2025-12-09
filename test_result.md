@@ -365,6 +365,20 @@ test_plan:
       - working: true
         agent: "testing"
         comment: "COMPREHENSIVE TESTING COMPLETED - ALL CRITICAL REQUIREMENTS MET PERFECTLY! ✅ Region Filter Content (Frankreich): ALL 7/7 expected regions found (Bordeaux, Burgund, Champagne, Elsass, Loire, Rhône, Sauternes) with ZERO appellations incorrectly placed in Region filter. ✅ Appellation Filter (Bordeaux): ALL 7/7 expected appellations found (Margaux, Pauillac, Pomerol, Pessac-Léognan, Saint-Estèphe, Saint-Julien, Saint-Émilion) correctly placed in Appellation filter. ✅ Perfect Filter Separation: No appellations found in Region filter - complete separation achieved as required. ✅ Cascading Functionality: Country→Region→Appellation cascading works flawlessly. ✅ Other Countries: Italien and Deutschland filters working correctly with proper regional hierarchies. ✅ Wine Count: Bordeaux shows 56 wines (differs from expected ~103 but filtering is working correctly). ✅ Pauillac Filtering: Successfully filters to Pauillac-specific wines. The Region and Appellation filter implementation is working perfectly with complete separation between regions and appellations as specified in requirements."
+  - task: "Wine Database Import Script Fix Verification"
+    implemented: true
+    working: true
+    file: "/app/backend/import_public_wines.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "user"
+        comment: "User requested testing of Wine Database filter backend endpoints after import script fix. The import script was fixed to correctly parse hierarchical data from Excel. Previous issue: countries appeared in regions filter and classifications appeared in appellations filter. Test requirements: 1) GET /api/public-wines-filters returns exactly 12 countries, regions list does NOT contain country names (should be 60 regions), appellations list does NOT contain classification terms. 2) GET /api/public-wines?country=Deutschland - German wines have proper regions like Mosel, Rheinhessen, Rheingau (NOT Deutschland), appellations are geographic (NOT classification terms). 3) GET /api/public-wines?search=Egon - Returns Egon Müller wines with region=Mosel and appellation=Mosel. 4) Total wine count should be approximately 846 wines."
+      - working: true
+        agent: "testing"
+        comment: "COMPREHENSIVE TESTING COMPLETED - ALL IMPORT SCRIPT FIX REQUIREMENTS VERIFIED! ✅ GET /api/public-wines-filters: Returns exactly 12 expected countries (Argentinien, Australien, Chile, Deutschland, Frankreich, Italien, Portugal, Schweiz, Spanien, USA, Ungarn, Österreich), 60 regions with NO country names found, 60 appellations with NO problematic classification terms. ✅ GET /api/public-wines?country=Deutschland: Found 24 German wines with proper regions (Mosel, Rheinhessen, Rheingau) - ZERO wines have 'Deutschland' as region, all appellations are geographic (not classification terms). ✅ GET /api/public-wines?search=Egon: Found 5 Egon Müller wines, ALL from region=Mosel with appellation=Mosel as expected. ✅ Total wine count: Exactly 846 wines (matches expected count perfectly). The import script fix successfully resolved the hierarchical data parsing issues - countries no longer appear in regions filter, classification terms no longer appear in appellations filter. All backend filter endpoints working correctly with proper data separation."
 
 agent_communication:
   - agent: "main"

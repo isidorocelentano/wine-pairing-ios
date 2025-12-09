@@ -517,6 +517,7 @@ const translations = {
     nav_home: 'Accueil',
     nav_pairing: 'Accords',
     nav_cellar: 'Cave',
+    nav_favorites: 'Favoris',
     nav_sommelier: 'Claude',
     nav_blog: 'Blog',
     nav_feed: 'Communauté',

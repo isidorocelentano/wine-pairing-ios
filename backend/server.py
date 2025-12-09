@@ -73,6 +73,7 @@ class WineUpdate(BaseModel):
     region: Optional[str] = None
     year: Optional[int] = None
     grape: Optional[str] = None
+    description: Optional[str] = None
     notes: Optional[str] = None
     image_base64: Optional[str] = None
     is_favorite: Optional[bool] = None

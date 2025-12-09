@@ -42,7 +42,7 @@ const WineDatabasePage = () => {
   // Fetch available filter options
   const fetchFilterOptions = useCallback(async () => {
     try {
-      const response = await axios.get(`${API}/wine-database-filters`);
+      const response = await axios.get(`${API}/public-wines-filters`);
       setAvailableFilters(response.data);
     } catch (error) {
       console.error('Error fetching filters:', error);

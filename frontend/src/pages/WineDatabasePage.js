@@ -556,7 +556,7 @@ const WineDatabasePage = () => {
                     onClick={() => toggleFavorite(selectedWine)}
                   >
                     <Heart className={`h-4 w-4 mr-2 ${favorites.has(selectedWine.id) ? 'fill-current' : ''}`} />
-                    {favorites.has(selectedWine.id) ? 'Favorit' : 'Zu Favoriten'}
+                    {t('wine_add_favorites')}
                   </Button>
                   <Button 
                     variant={wishlist.has(selectedWine.id) ? "default" : "outline"}
@@ -564,7 +564,7 @@ const WineDatabasePage = () => {
                     onClick={() => toggleWishlist(selectedWine)}
                   >
                     <Bookmark className={`h-4 w-4 mr-2 ${wishlist.has(selectedWine.id) ? 'fill-current' : ''}`} />
-                    {wishlist.has(selectedWine.id) ? 'Gemerkt' : 'Merken'}
+                    {t('wine_add_wishlist')}
                   </Button>
                 </div>
                 <Button className="w-full" onClick={() => {
@@ -572,10 +572,10 @@ const WineDatabasePage = () => {
                   setSelectedWine(null);
                 }}>
                   <Plus className="h-4 w-4 mr-2" />
-                  Zum Keller hinzufügen
+                  {t('wine_add_cellar')}
                 </Button>
                 <Button variant="outline" className="w-full" onClick={() => setSelectedWine(null)}>
-                  Schließen
+                  {t('wine_close')}
                 </Button>
               </div>
             </div>

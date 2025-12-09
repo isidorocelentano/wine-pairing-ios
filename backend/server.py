@@ -2701,6 +2701,22 @@ async def get_public_wine_detail(wine_id: str):
     return wine
 
 
+@api_router.get("/public-wines-filters")
+async def get_public_wines_filters():
+    """Get available filter options for public wines"""
+    countries = await db.public_wines.distinct("country")
+    regions = await db.public_wines.distinct("region")
+    colors = await db.public_wines.distinct("wine_color")
+    price_categories = await db.public_wines.distinct("price_category")
+    
+    return {
+        "countries": sorted([c for c in countries if c]),
+        "regions": sorted([r for r in regions if r]),
+        "wine_colors": sorted([c for c in colors if c]),
+        "price_categories": sorted([p for p in price_categories if p])
+    }
+
+
 # Add CORS middleware BEFORE including router (critical for proper request handling)
 app.add_middleware(
     CORSMiddleware,

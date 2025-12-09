@@ -934,7 +934,7 @@ const CellarPage = () => {
   const [showScanDialog, setShowScanDialog] = useState(false);
   const [showEditDialog, setShowEditDialog] = useState(false);
   const [editingWine, setEditingWine] = useState(null);
-  const [newWine, setNewWine] = useState({ name: '', type: 'rot', region: '', year: '', grape: '', notes: '', image_base64: '', quantity: 1 });
+  const [newWine, setNewWine] = useState({ name: '', type: 'rot', region: '', year: '', grape: '', description: '', notes: '', image_base64: '', quantity: 1 });
   const [scanning, setScanning] = useState(false);
   const fileInputRef = useRef(null);
   const scanInputRef = useRef(null);

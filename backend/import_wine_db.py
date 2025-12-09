@@ -213,26 +213,28 @@ def determine_price_category(sheet_name, name):
 
 async def generate_translations(wine_entry):
     """Generate English and French translations for description and pairings."""
-    chat = LlmChat(
-        api_key=EMERGENT_LLM_KEY,
-        session_id=str(uuid.uuid4())
-    )
     
     try:
         # Generate English translation
-        prompt_en = f"""Übersetze die folgende emotionale Weinbeschreibung ins Englische. Behalte den poetischen, emotionalen Ton bei:
+        chat_en = LlmChat(
+            api_key=EMERGENT_LLM_KEY,
+            session_id=str(uuid.uuid4()),
+            system_message="You are an expert wine translator. Translate wine descriptions from German to English, preserving the emotional and poetic tone."
+        )
+        
+        prompt_en = f"""Translate the following emotional wine description to English. Keep the poetic, emotional tone:
 
-Beschreibung (DE): {wine_entry['description_de']}
+Description (DE): {wine_entry['description_de']}
 
 Food Pairings (DE): {', '.join(wine_entry['food_pairings_de']) if wine_entry['food_pairings_de'] else 'None'}
 
-Gib das Ergebnis im folgenden JSON-Format zurück:
+Return the result in this JSON format:
 {{
   "description_en": "...",
   "food_pairings_en": ["...", "..."]
 }}"""
         
-        response_en = await chat.generate_response([UserMessage(content=prompt_en)])
+        response_en = await chat_en.generate_response([UserMessage(content=prompt_en)])
         
         # Extract JSON from response
         import json

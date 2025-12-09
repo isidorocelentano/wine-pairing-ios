@@ -139,6 +139,34 @@ class ChatRequest(BaseModel):
     image_base64: Optional[str] = None
     language: str = "de"  # de, en, fr
 
+# ===================== WINE DATABASE ADMIN SEED =====================
+
+class WineDbImportStatus(BaseModel):
+    imported: int
+    failed: int
+
+
+async def _clear_wine_database():
+    """Delete all entries from the public wine database (NOT the personal cellar)."""
+    await db.wine_database.delete_many({})
+
+
+async def _upsert_wine_entry(payload: dict) -> Optional[WineDatabaseEntry]:
+    """Insert a single WineDatabaseEntry into the wine_database collection.
+
+    Expects payload to already contain multilingual description/food_pairings.
+    """
+    try:
+        wine = WineDatabaseEntry(**payload)
+        doc = wine.model_dump()
+        doc["created_at"] = doc["created_at"].isoformat()
+        await db.wine_database.insert_one(doc)
+        return wine
+    except Exception as e:
+        logger.warning(f"Failed to upsert wine entry {payload.get('name')}: {e}")
+        return None
+
+
 class ChatResponse(BaseModel):
     response: str
     session_id: str

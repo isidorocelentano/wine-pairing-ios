@@ -77,6 +77,9 @@ class WineUpdate(BaseModel):
     quantity: Optional[int] = None
 
 # ===================== WINE DATABASE MODELS =====================
+from pydantic import field_validator
+from typing import Union
+
 class WineDatabaseEntry(BaseModel):
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
     name: str
@@ -105,7 +108,14 @@ class WineDatabaseEntry(BaseModel):
     price_category: Optional[str] = None  # budget, mid-range, premium, luxury
     image_url: Optional[str] = None
     rating: Optional[float] = None
-    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    created_at: Union[datetime, str] = Field(default_factory=lambda: datetime.now(timezone.utc))
+    
+    @field_validator('created_at', mode='before')
+    @classmethod
+    def parse_created_at(cls, value):
+        if isinstance(value, str):
+            return datetime.fromisoformat(value)
+        return value
 
 class PairingRequest(BaseModel):
     dish: str

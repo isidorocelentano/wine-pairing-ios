@@ -482,6 +482,12 @@ async def list_wine_database(
         .limit(limit)
         .to_list(limit)
     )
+    
+    # Convert datetime strings to datetime objects for Pydantic validation
+    for wine in wines:
+        if isinstance(wine.get('created_at'), str):
+            wine['created_at'] = datetime.fromisoformat(wine['created_at'])
+    
     return wines
 
 

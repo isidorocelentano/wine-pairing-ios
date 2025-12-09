@@ -638,6 +638,237 @@ class WinePairingAPITester:
             self.log_test("Get Favorites", False, str(response))
         return success
 
+    # ===================== PUBLIC WINES DATABASE TESTS =====================
+    
+    def test_public_wines_list_basic(self):
+        """Test GET /api/public-wines - basic listing without parameters"""
+        success, response = self.make_request('GET', 'public-wines', expected_status=200)
+        if success:
+            wines = response if isinstance(response, list) else []
+            
+            # Validate response structure
+            if not isinstance(response, list):
+                self.log_test("Public Wines List (Basic)", False, f"Expected list, got {type(response)}")
+                return False
+            
+            # Check if we have wines (should be 232 according to requirements)
+            wine_count = len(wines)
+            if wine_count == 0:
+                self.log_test("Public Wines List (Basic)", False, "No wines found in database")
+                return False
+            
+            # Validate first wine structure if available
+            if wine_count > 0:
+                wine = wines[0]
+                required_fields = ['id', 'name', 'country', 'region', 'grape_variety', 'wine_color', 'description_de']
+                missing_fields = [field for field in required_fields if field not in wine]
+                if missing_fields:
+                    self.log_test("Public Wines List (Basic)", False, f"Missing required fields: {missing_fields}")
+                    return False
+            
+            self.log_test("Public Wines List (Basic)", True, f"Found {wine_count} wines, default limit working")
+        else:
+            self.log_test("Public Wines List (Basic)", False, str(response))
+        return success
+
+    def test_public_wines_list_with_limit(self):
+        """Test GET /api/public-wines with limit parameter"""
+        success, response = self.make_request('GET', 'public-wines?limit=5', expected_status=200)
+        if success:
+            wines = response if isinstance(response, list) else []
+            wine_count = len(wines)
+            
+            if wine_count > 5:
+                self.log_test("Public Wines List (Limit=5)", False, f"Expected max 5 wines, got {wine_count}")
+                return False
+            
+            self.log_test("Public Wines List (Limit=5)", True, f"Limit parameter working, got {wine_count} wines")
+        else:
+            self.log_test("Public Wines List (Limit=5)", False, str(response))
+        return success
+
+    def test_public_wines_list_country_filter(self):
+        """Test GET /api/public-wines with country filter"""
+        success, response = self.make_request('GET', 'public-wines?country=Frankreich', expected_status=200)
+        if success:
+            wines = response if isinstance(response, list) else []
+            
+            # Validate all wines are from France
+            for wine in wines:
+                if wine.get('country') != 'Frankreich':
+                    self.log_test("Public Wines List (Country Filter)", False, 
+                                 f"Found wine from {wine.get('country')}, expected Frankreich")
+                    return False
+            
+            self.log_test("Public Wines List (Country Filter)", True, 
+                         f"Country filter working, found {len(wines)} French wines")
+        else:
+            self.log_test("Public Wines List (Country Filter)", False, str(response))
+        return success
+
+    def test_public_wines_list_wine_color_filter(self):
+        """Test GET /api/public-wines with wine_color filter"""
+        success, response = self.make_request('GET', 'public-wines?wine_color=rot', expected_status=200)
+        if success:
+            wines = response if isinstance(response, list) else []
+            
+            # Validate all wines are red
+            for wine in wines:
+                if wine.get('wine_color') != 'rot':
+                    self.log_test("Public Wines List (Wine Color Filter)", False, 
+                                 f"Found {wine.get('wine_color')} wine, expected rot")
+                    return False
+            
+            self.log_test("Public Wines List (Wine Color Filter)", True, 
+                         f"Wine color filter working, found {len(wines)} red wines")
+        else:
+            self.log_test("Public Wines List (Wine Color Filter)", False, str(response))
+        return success
+
+    def test_public_wines_list_search_filter(self):
+        """Test GET /api/public-wines with search parameter"""
+        success, response = self.make_request('GET', 'public-wines?search=Château', expected_status=200)
+        if success:
+            wines = response if isinstance(response, list) else []
+            
+            # Validate search results contain the search term
+            search_term = "Château"
+            for wine in wines:
+                wine_text = f"{wine.get('name', '')} {wine.get('winery', '')} {wine.get('region', '')} {wine.get('grape_variety', '')}"
+                if search_term.lower() not in wine_text.lower():
+                    self.log_test("Public Wines List (Search Filter)", False, 
+                                 f"Wine '{wine.get('name')}' doesn't contain search term '{search_term}'")
+                    return False
+            
+            self.log_test("Public Wines List (Search Filter)", True, 
+                         f"Search filter working, found {len(wines)} wines matching '{search_term}'")
+        else:
+            self.log_test("Public Wines List (Search Filter)", False, str(response))
+        return success
+
+    def test_public_wines_list_pagination(self):
+        """Test GET /api/public-wines pagination with skip and limit"""
+        # First page
+        success1, response1 = self.make_request('GET', 'public-wines?skip=0&limit=10', expected_status=200)
+        if not success1:
+            self.log_test("Public Wines List (Pagination)", False, f"First page failed: {response1}")
+            return False
+        
+        # Second page
+        success2, response2 = self.make_request('GET', 'public-wines?skip=10&limit=10', expected_status=200)
+        if not success2:
+            self.log_test("Public Wines List (Pagination)", False, f"Second page failed: {response2}")
+            return False
+        
+        wines1 = response1 if isinstance(response1, list) else []
+        wines2 = response2 if isinstance(response2, list) else []
+        
+        # Check that pages are different (assuming we have more than 10 wines)
+        if len(wines1) > 0 and len(wines2) > 0:
+            wine1_ids = {wine.get('id') for wine in wines1}
+            wine2_ids = {wine.get('id') for wine in wines2}
+            
+            if wine1_ids & wine2_ids:  # If there's overlap
+                self.log_test("Public Wines List (Pagination)", False, "Pagination not working - overlapping results")
+                return False
+        
+        self.log_test("Public Wines List (Pagination)", True, 
+                     f"Pagination working - Page 1: {len(wines1)} wines, Page 2: {len(wines2)} wines")
+        return True
+
+    def test_public_wines_detail_valid_id(self):
+        """Test GET /api/public-wines/{wine_id} with valid ID"""
+        # First get a wine ID from the list
+        success, response = self.make_request('GET', 'public-wines?limit=1', expected_status=200)
+        if not success or not response:
+            self.log_test("Public Wines Detail (Valid ID)", False, "Could not get wine ID from list")
+            return False
+        
+        wines = response if isinstance(response, list) else []
+        if not wines:
+            self.log_test("Public Wines Detail (Valid ID)", False, "No wines available for testing")
+            return False
+        
+        wine_id = wines[0].get('id')
+        if not wine_id:
+            self.log_test("Public Wines Detail (Valid ID)", False, "Wine missing ID field")
+            return False
+        
+        # Test getting specific wine
+        success, wine_detail = self.make_request('GET', f'public-wines/{wine_id}', expected_status=200)
+        if success:
+            # Validate response structure
+            required_fields = ['id', 'name', 'country', 'region', 'grape_variety', 'wine_color', 'description_de']
+            missing_fields = [field for field in required_fields if field not in wine_detail]
+            if missing_fields:
+                self.log_test("Public Wines Detail (Valid ID)", False, f"Missing required fields: {missing_fields}")
+                return False
+            
+            # Validate ID matches
+            if wine_detail.get('id') != wine_id:
+                self.log_test("Public Wines Detail (Valid ID)", False, f"ID mismatch: expected {wine_id}, got {wine_detail.get('id')}")
+                return False
+            
+            wine_name = wine_detail.get('name', 'Unknown')
+            self.log_test("Public Wines Detail (Valid ID)", True, f"Retrieved wine details: {wine_name}")
+        else:
+            self.log_test("Public Wines Detail (Valid ID)", False, str(wine_detail))
+        return success
+
+    def test_public_wines_detail_invalid_id(self):
+        """Test GET /api/public-wines/{wine_id} with invalid ID"""
+        invalid_id = "invalid-wine-id-12345"
+        success, response = self.make_request('GET', f'public-wines/{invalid_id}', expected_status=404)
+        if success:
+            self.log_test("Public Wines Detail (Invalid ID)", True, "Correctly returned 404 for invalid ID")
+        else:
+            # Check if it returned 404 status
+            if response.get('status_code') == 404:
+                self.log_test("Public Wines Detail (Invalid ID)", True, "Correctly returned 404 for invalid ID")
+                return True
+            else:
+                self.log_test("Public Wines Detail (Invalid ID)", False, f"Expected 404, got {response.get('status_code')}")
+        return success
+
+    def test_public_wines_filters(self):
+        """Test GET /api/public-wines-filters"""
+        success, response = self.make_request('GET', 'public-wines-filters', expected_status=200)
+        if success:
+            # Validate response structure
+            required_fields = ['countries', 'regions', 'wine_colors', 'price_categories']
+            missing_fields = [field for field in required_fields if field not in response]
+            if missing_fields:
+                self.log_test("Public Wines Filters", False, f"Missing required fields: {missing_fields}")
+                return False
+            
+            # Validate all fields are arrays
+            for field in required_fields:
+                if not isinstance(response[field], list):
+                    self.log_test("Public Wines Filters", False, f"Field {field} should be array, got {type(response[field])}")
+                    return False
+            
+            # Check if arrays are sorted
+            for field in required_fields:
+                arr = response[field]
+                if arr != sorted(arr):
+                    self.log_test("Public Wines Filters", False, f"Field {field} is not sorted")
+                    return False
+            
+            # Validate wine colors contain expected values
+            wine_colors = response['wine_colors']
+            expected_colors = ['rot', 'weiss', 'rose', 'suesswein', 'schaumwein']
+            found_colors = [color for color in expected_colors if color in wine_colors]
+            
+            countries = response['countries']
+            regions = response['regions']
+            price_categories = response['price_categories']
+            
+            self.log_test("Public Wines Filters", True, 
+                         f"Filters working - Countries: {len(countries)}, Regions: {len(regions)}, Colors: {len(wine_colors)}, Prices: {len(price_categories)}")
+        else:
+            self.log_test("Public Wines Filters", False, str(response))
+        return success
+
     def test_delete_wine(self):
         """Test deleting a wine"""
         if not self.test_wine_id:

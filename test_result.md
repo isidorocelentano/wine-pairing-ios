@@ -291,7 +291,7 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Favorites/Wishlist Page"
+    - "Wine Database Descriptions Auto-Save to Cellar"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"

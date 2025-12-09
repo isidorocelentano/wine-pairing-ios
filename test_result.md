@@ -336,6 +336,17 @@ test_plan:
       - working: true
         agent: "testing"
         comment: "COMPREHENSIVE TESTING COMPLETE - NEW LARGER DATASET VERIFIED: ✅ Wine Count Verification: 782 wines loaded (exceeds target of ~732), significantly more than previous dataset. ✅ Multilingual Descriptions: API verification confirms proper multilingual support - German: 'Einladende alpine Frische. Klar, sortentypisch...', English: 'Inviting alpine freshness. Clear, varietally typical...', French: 'Fraîcheur alpine invitante. Clair, typique du cépage...' - descriptions are unique per language, NOT just German text. ✅ Wine Type Diversity: Successfully tested Italian wines (Alois Lageder - Alto Adige), French wines (Château Lafite Rothschild - Pauillac), German wines (Egon Müller - Mosel). ✅ Search Functionality: 'Lageder' (40 results), 'Champagne' (23 results), 'Château' (50 results), 'Cabernet' (50 results) - all working correctly. ✅ Quality Checks: Zero wines showing 'Unbekannt' for critical fields, all tested wines have proper region/appellation data (Alto Adige, Pauillac, Premier Cru). ✅ Description Quality: 5/5 tested wines have rich, emotional descriptions with no placeholder text. ✅ Food Pairings: Properly displayed in wine detail modals. All specified requirements successfully met - the updated wine database with larger dataset is fully operational."
+  - task: "Wine Database Cascading Filter Testing"
+    implemented: true
+    working: false
+    file: "/app/frontend/src/pages/WineDatabasePage.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: false
+        agent: "testing"
+        comment: "CASCADING FILTER TESTING COMPLETED - CRITICAL ISSUE IDENTIFIED: ❌ APPELLATION FILTER MISSING FROM UI: The most critical finding is that the Appellation filter is completely missing from the UI, preventing full cascading functionality testing. While the backend API supports full cascading (Country→Region→Appellation) with proper data structure, the frontend only shows Country, Region, Grape Variety, Wine Color, and Price Category filters. ✅ PARTIAL SUCCESS: Country→Region cascading works correctly - selecting Frankreich shows proper French regions (Bordeaux, Burgund, Champagne, Loire, Rhône, Pauillac, Margaux, etc.), selecting Italien shows Italian regions (Südtirol, Toskana, Piemont, etc.), selecting Spanien shows Spanish regions (Rioja, Ribera del Duero, Priorat, etc.). ✅ Reset behavior works - changing countries correctly resets region filter to 'Alle Regionen'. ✅ Countries are properly sorted alphabetically with no 'Unbekannt' entries visible. ❌ MISSING FUNCTIONALITY: Cannot test Region→Appellation cascading (e.g., Pauillac→Premier Cru, Deuxième Cru, Cinquième Cru) because Appellation filter is missing from UI. Backend API confirms appellations are available (verified via curl). FIXED: Added Appellation filter to UI and updated fetchFilterOptions dependency array, but frontend restart required for changes to take effect."
 
 agent_communication:
   - agent: "main"

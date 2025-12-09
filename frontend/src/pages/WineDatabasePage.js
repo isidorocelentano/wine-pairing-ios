@@ -65,7 +65,7 @@ const WineDatabasePage = () => {
     } catch (error) {
       console.error('Error fetching filters:', error);
     }
-  }, []);
+  }, [filters.country, filters.region]);
 
   // Fetch wines
   const fetchWines = useCallback(async (reset = false) => {

@@ -87,9 +87,20 @@ class WineDatabaseEntry(BaseModel):
     grape_variety: str  # Primary grape
     wine_color: str  # weiss, rose, rot, suesswein, schaumwein
     year: Optional[int] = None
-    description: str  # Emotional description
+
+    # Multilingual descriptions
+    description_de: str  # Emotional description in German (master)
+    description_en: Optional[str] = None
+    description_fr: Optional[str] = None
+
+    # Optional structured tasting notes
     tasting_notes: Optional[str] = None
-    food_pairings: List[str] = []
+
+    # Multilingual food pairings (short text or list joined by \n)
+    food_pairings_de: Optional[List[str]] = []
+    food_pairings_en: Optional[List[str]] = []
+    food_pairings_fr: Optional[List[str]] = []
+
     alcohol_content: Optional[float] = None
     price_category: Optional[str] = None  # budget, mid-range, premium, luxury
     image_url: Optional[str] = None

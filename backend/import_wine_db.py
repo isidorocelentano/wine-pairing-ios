@@ -265,7 +265,8 @@ Retourne le résultat au format JSON suivant:
   "food_pairings_fr": ["...", "..."]
 }}"""
         
-        response_fr = await chat_fr.generate_response([UserMessage(content=prompt_fr)])
+        user_message_fr = UserMessage(text=prompt_fr)
+        response_fr = await chat_fr.send_message(user_message_fr)
         
         # Extract JSON from response
         json_match = re.search(r'\{.*\}', response_fr, re.DOTALL)

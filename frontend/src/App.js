@@ -1326,12 +1326,20 @@ const CellarPage = () => {
                     placeholder="z.B. Cabernet Sauvignon"
                   />
                 </div>
+                {editingWine.description && (
+                  <div className="bg-secondary/30 p-4 rounded-md border border-border">
+                    <label className="text-sm font-medium mb-2 block">Beschreibung</label>
+                    <p className="text-sm text-muted-foreground font-accent italic leading-relaxed">
+                      {editingWine.description}
+                    </p>
+                  </div>
+                )}
                 <div>
                   <label className="text-sm font-medium mb-2 block">Notizen</label>
                   <Textarea
                     value={editingWine.notes}
                     onChange={(e) => setEditingWine({ ...editingWine, notes: e.target.value })}
-                    placeholder="Ihre Notizen..."
+                    placeholder="Ihre persönlichen Notizen..."
                     rows={3}
                   />
                 </div>

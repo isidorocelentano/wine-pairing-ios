@@ -62,7 +62,8 @@ class WineCreate(BaseModel):
     region: Optional[str] = None
     year: Optional[int] = None
     grape: Optional[str] = None
-    notes: Optional[str] = None
+    description: Optional[str] = None  # Wine description from database
+    notes: Optional[str] = None  # Personal user notes
     image_base64: Optional[str] = None
     quantity: Optional[int] = 1
 

@@ -234,7 +234,8 @@ Return the result in this JSON format:
   "food_pairings_en": ["...", "..."]
 }}"""
         
-        response_en = await chat_en.generate_response([UserMessage(content=prompt_en)])
+        user_message_en = UserMessage(text=prompt_en)
+        response_en = await chat_en.send_message(user_message_en)
         
         # Extract JSON from response
         import json

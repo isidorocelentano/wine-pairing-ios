@@ -554,6 +554,23 @@ const translations = {
     nav_feed: 'Communauté',
     nav_grapes: 'Cépages',
     nav_wine_database: 'Vins DB',
+    
+    // Wine Database Modal Labels
+    wine_country: 'Pays',
+    wine_region: 'Région',
+    wine_grape: 'Cépage',
+    wine_type: 'Type',
+    wine_vintage: 'Millésime',
+    wine_appellation: 'Appellation',
+    wine_description: 'Description',
+    wine_pairings: 'Parfait avec',
+    wine_add_favorites: 'Ajouter aux favoris',
+    wine_add_wishlist: 'Enregistrer',
+    wine_add_cellar: 'Ajouter à la cave',
+    wine_close: 'Fermer',
+    wine_unknown: 'Inconnu',
+    
+    // Home Page
     hero_tagline: 'La Découverte du Pur Plaisir',
     hero_title: 'Claude – Votre Sommelier Master',
     hero_description: 'Master of Wine et chef passionné. La seule recommandation qui ne vend rien, sauf votre moment parfait. Découvrez l\'harmonie du vin et des mets – indépendant, honnête, délicieux.',

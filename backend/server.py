@@ -2636,6 +2636,71 @@ Lagern Sie Flaschen liegend, damit der Korken feucht bleibt. Schraubverschluss? 
     
     return {"message": f"{len(posts)} Blog-Artikel wurden erstellt"}
 
+
+# ===================== NEW PUBLIC WINES ENDPOINT (CLEAN) =====================
+
+@api_router.get("/public-wines", response_model=List[WineDatabaseEntry])
+async def get_public_wines(
+    search: Optional[str] = None,
+    country: Optional[str] = None,
+    region: Optional[str] = None,
+    wine_color: Optional[str] = None,
+    price_category: Optional[str] = None,
+    skip: int = 0,
+    limit: int = 50
+):
+    """
+    Get wines from the new public_wines collection.
+    Clean endpoint without legacy issues.
+    """
+    logger.info(f"PUBLIC WINES ENDPOINT called: search={search}, limit={limit}")
+    
+    query = {}
+    
+    if search:
+        regex = {"$regex": search, "$options": "i"}
+        query["$or"] = [
+            {"name": regex},
+            {"winery": regex},
+            {"region": regex},
+            {"grape_variety": regex},
+        ]
+    
+    if country:
+        query["country"] = country
+    if region:
+        query["region"] = region
+    if wine_color:
+        query["wine_color"] = wine_color
+    if price_category:
+        query["price_category"] = price_category
+    
+    wines = await db.public_wines.find(query, {"_id": 0}).skip(skip).limit(limit).to_list(limit)
+    
+    logger.info(f"PUBLIC WINES: Found {len(wines)} wines")
+    
+    # Convert created_at strings to datetime
+    for wine in wines:
+        if isinstance(wine.get('created_at'), str):
+            wine['created_at'] = datetime.fromisoformat(wine['created_at'])
+    
+    return wines
+
+
+@api_router.get("/public-wines/{wine_id}", response_model=WineDatabaseEntry)
+async def get_public_wine_detail(wine_id: str):
+    """Get details of a specific wine from public_wines collection"""
+    wine = await db.public_wines.find_one({"id": wine_id}, {"_id": 0})
+    
+    if not wine:
+        raise HTTPException(status_code=404, detail="Wein nicht gefunden")
+    
+    if isinstance(wine.get('created_at'), str):
+        wine['created_at'] = datetime.fromisoformat(wine['created_at'])
+    
+    return wine
+
+
 # Include the router
 app.include_router(api_router)
 

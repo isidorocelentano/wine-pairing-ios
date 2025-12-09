@@ -291,7 +291,7 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Wine Database Updated Dataset Testing"
+    - "Wine Database Cascading Filter Testing"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"

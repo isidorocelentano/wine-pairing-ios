@@ -148,10 +148,14 @@ async def main():
     
     print(f"📊 Found {stats['total']} wines to process\n")
     
-    # Process each wine
+    # Process each wine with rate limiting
     for idx, wine in enumerate(wines, 1):
         print(f"[{idx}/{stats['total']}] {wine['name']}")
         await translate_wine(wine)
+        
+        # Small delay to avoid rate limits (0.5 seconds between wines)
+        if idx < stats['total']:
+            await asyncio.sleep(0.5)
         
         # Progress update every 10 wines
         if idx % 10 == 0:

@@ -1793,10 +1793,11 @@ async def seed_grape_varieties():
     return {"message": f"{len(grapes)} Rebsorten wurden erstellt"}
 
 
-# ===================== WINE DATABASE ENDPOINTS =====================
+# ===================== WINE DATABASE ENDPOINTS (DUPLICATE - DISABLED) =====================
 
-@api_router.get("/wine-database", response_model=List[WineDatabaseEntry])
-async def get_wine_database(
+# DISABLED DUPLICATE ENDPOINT
+# @api_router.get("/wine-database", response_model=List[WineDatabaseEntry])
+async def get_wine_database_DISABLED(
     search: Optional[str] = None,
     country: Optional[str] = None,
     region: Optional[str] = None,

@@ -2705,18 +2705,53 @@ async def get_public_wine_detail(wine_id: str):
 
 
 @api_router.get("/public-wines-filters")
-async def get_public_wines_filters():
-    """Get available filter options for public wines"""
-    countries = await db.public_wines.distinct("country")
-    regions = await db.public_wines.distinct("region")
+async def get_public_wines_filters(country: Optional[str] = None, region: Optional[str] = None):
+    """Get available filter options for public wines with cascading support"""
+    
+    # Base query
+    query = {}
+    if country and country != 'all':
+        query["country"] = country
+    if region and region != 'all':
+        query["region"] = region
+    
+    # Get all distinct values
+    countries = await db.public_wines.distinct("country", {})
+    regions = await db.public_wines.distinct("region", query if country and country != 'all' else {})
+    appellations = await db.public_wines.distinct("appellation", query)
     colors = await db.public_wines.distinct("wine_color")
     price_categories = await db.public_wines.distinct("price_category")
     
+    # Build hierarchy map
+    hierarchy = {}
+    if not country or country == 'all':
+        # Get all countries with their regions
+        all_wines = await db.public_wines.find({}, {"_id": 0, "country": 1, "region": 1, "appellation": 1}).to_list(10000)
+        for wine in all_wines:
+            c = wine.get('country')
+            r = wine.get('region')
+            a = wine.get('appellation')
+            if c and c != 'Unbekannt':
+                if c not in hierarchy:
+                    hierarchy[c] = {}
+                if r and r != 'Unbekannt':
+                    if r not in hierarchy[c]:
+                        hierarchy[c][r] = set()
+                    if a and a != 'Unbekannt':
+                        hierarchy[c][r].add(a)
+        
+        # Convert sets to sorted lists
+        for c in hierarchy:
+            for r in hierarchy[c]:
+                hierarchy[c][r] = sorted(list(hierarchy[c][r]))
+    
     return {
-        "countries": sorted([c for c in countries if c]),
-        "regions": sorted([r for r in regions if r]),
+        "countries": sorted([c for c in countries if c and c != 'Unbekannt']),
+        "regions": sorted([r for r in regions if r and r != 'Unbekannt']),
+        "appellations": sorted([a for a in appellations if a and a != 'Unbekannt']),
         "wine_colors": sorted([c for c in colors if c]),
-        "price_categories": sorted([p for p in price_categories if p])
+        "price_categories": sorted([p for p in price_categories if p]),
+        "hierarchy": hierarchy
     }
 
 

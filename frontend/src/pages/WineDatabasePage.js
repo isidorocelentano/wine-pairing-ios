@@ -516,15 +516,17 @@ const WineDatabasePage = () => {
               {/* Description */}
               <div>
                 <h4 className="font-semibold mb-2">Beschreibung</h4>
-                <p className="text-muted-foreground font-accent italic">{selectedWine.description}</p>
+                <p className="text-muted-foreground font-accent italic">
+                  {selectedWine.description_de || selectedWine.description_en || selectedWine.description_fr || selectedWine.description || 'Keine Beschreibung verfügbar'}
+                </p>
               </div>
 
               {/* Food Pairings */}
-              {selectedWine.food_pairings?.length > 0 && (
+              {(selectedWine.food_pairings_de?.length > 0 || selectedWine.food_pairings?.length > 0) && (
                 <div>
                   <h4 className="font-semibold mb-3">Perfekt zu</h4>
                   <div className="flex flex-wrap gap-2">
-                    {selectedWine.food_pairings.map((pairing, idx) => (
+                    {(selectedWine.food_pairings_de || selectedWine.food_pairings || []).map((pairing, idx) => (
                       <Badge key={idx} variant="outline">{pairing}</Badge>
                     ))}
                   </div>

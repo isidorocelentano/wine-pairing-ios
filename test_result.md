@@ -291,7 +291,7 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Wine Database Region & Appellation Filter Testing"
+    - "Wine Database Import Script Fix Verification"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"

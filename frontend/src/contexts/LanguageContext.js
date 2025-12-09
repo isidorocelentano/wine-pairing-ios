@@ -13,6 +13,21 @@ const translations = {
     nav_grapes: 'Rebsorten',
     nav_wine_database: 'Wein-DB',
     
+    // Wine Database Modal Labels
+    wine_country: 'Land',
+    wine_region: 'Region',
+    wine_grape: 'Rebsorte',
+    wine_type: 'Typ',
+    wine_vintage: 'Jahrgang',
+    wine_appellation: 'Appellation',
+    wine_description: 'Beschreibung',
+    wine_pairings: 'Perfekt zu',
+    wine_add_favorites: 'Zu Favoriten',
+    wine_add_wishlist: 'Merken',
+    wine_add_cellar: 'Zum Keller hinzufügen',
+    wine_close: 'Schließen',
+    wine_unknown: 'Unbekannt',
+    
     // Home Page
     hero_tagline: 'Die Entdeckung des reinen Genusses',
     hero_title: 'Claude – Ihr Master Sommelier',

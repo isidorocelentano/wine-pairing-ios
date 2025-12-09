@@ -6,6 +6,7 @@ const translations = {
     nav_home: 'Home',
     nav_pairing: 'Pairing',
     nav_cellar: 'Keller',
+    nav_favorites: 'Favoriten',
     nav_sommelier: 'Claude',
     nav_blog: 'Blog',
     nav_feed: 'Community',

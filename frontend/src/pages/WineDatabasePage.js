@@ -541,7 +541,12 @@ const WineDatabasePage = () => {
                   <h4 className="font-semibold mb-3">{t('wine_pairings')}</h4>
                   <div className="flex flex-wrap gap-2">
                     {getFoodPairings(selectedWine).map((pairing, idx) => (
-                      <Badge key={idx} variant="outline">{pairing}</Badge>
+                      <span 
+                        key={idx} 
+                        className="inline-block px-3 py-1.5 text-sm border border-border rounded-md bg-secondary/30 break-words max-w-full"
+                      >
+                        {pairing}
+                      </span>
                     ))}
                   </div>
                 </div>

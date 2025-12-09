@@ -1,0 +1,54 @@
+import React from 'react';
+import { useNavigate, useLocation } from "react-router-dom";
+import { Wine, Utensils, MessageCircle, Home, BookOpen, Users, Grape, Heart } from 'lucide-react';
+import { useLanguage } from "@/contexts/LanguageContext";
+
+const Navigation = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { t } = useLanguage();
+
+  const navItems = [
+    { path: '/', icon: Home, labelKey: 'nav_home' },
+    { path: '/pairing', icon: Utensils, labelKey: 'nav_pairing' },
+    { path: '/grapes', icon: Grape, labelKey: 'nav_grapes' },
+    { path: '/wine-database', icon: BookOpen, labelKey: 'nav_wine_database' },
+    { path: '/favorites', icon: Heart, labelKey: 'nav_favorites' },
+    { path: '/cellar', icon: Wine, labelKey: 'nav_cellar' },
+    { path: '/blog', icon: BookOpen, labelKey: 'nav_blog' },
+    { path: '/feed', icon: Users, labelKey: 'nav_feed' },
+    { path: '/chat', icon: MessageCircle, labelKey: 'nav_sommelier', isClaude: true },
+  ];
+
+  return (
+    <nav className="nav-dock fixed bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 rounded-full px-3 md:px-6 py-2 md:py-3 shadow-2xl z-50" data-testid="main-navigation">
+      <div className="flex items-center gap-1 md:gap-2">
+        {navItems.map((item) => (
+          <button
+            key={item.path}
+            onClick={() => navigate(item.path)}
+            data-testid={`nav-${item.labelKey.split('_')[1]}`}
+            className={`flex items-center gap-1 md:gap-2 px-3 md:px-4 py-2 rounded-full transition-elegant ${
+              location.pathname === item.path
+                ? 'bg-primary text-primary-foreground'
+                : 'hover:bg-secondary'
+            }`}
+          >
+            {item.isClaude ? (
+              <img
+                src="https://customer-assets.emergentagent.com/job_e57eae36-225b-4e20-a944-048ef9749606/artifacts/w9w52bm4_CLAUDE%20SOMMELIER%2001%20%284%29.png"
+                alt="Claude Avatar"
+                className="w-6 h-6 rounded-full border border-border/60 object-cover shadow-sm"
+              />
+            ) : (
+              <item.icon className="w-5 h-5" strokeWidth={1.5} />
+            )}
+            <span className="hidden md:inline text-sm font-medium">{t(item.labelKey)}</span>
+          </button>
+        ))}
+      </div>
+    </nav>
+  );
+};
+
+export default Navigation;

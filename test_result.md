@@ -291,7 +291,7 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Wine Database Import Script Fix Verification"
+    - "Community Feed Multilingual Translation Testing"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"

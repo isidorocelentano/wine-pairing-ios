@@ -146,12 +146,12 @@ const SommelierKompassPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {/* Country Dropdown (redundant but useful) */}
                 <div>
-                  <Select value={selectedCountry} onValueChange={setSelectedCountry}>
+                  <Select value={selectedCountry || "all"} onValueChange={(v) => setSelectedCountry(v === "all" ? "" : v)}>
                     <SelectTrigger>
                       <SelectValue placeholder={t('regional_filter_country')} />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="">{t('regional_filter_all_countries')}</SelectItem>
+                      <SelectItem value="all">{t('regional_filter_all_countries')}</SelectItem>
                       {countries.map((country) => (
                         <SelectItem key={country.country} value={country.country}>
                           {country.country_emoji} {getLocalizedCountry(country)}
@@ -164,15 +164,15 @@ const SommelierKompassPage = () => {
                 {/* Region Dropdown */}
                 <div>
                   <Select
-                    value={selectedRegion}
-                    onValueChange={setSelectedRegion}
+                    value={selectedRegion || "all"}
+                    onValueChange={(v) => setSelectedRegion(v === "all" ? "" : v)}
                     disabled={!selectedCountry}
                   >
                     <SelectTrigger>
                       <SelectValue placeholder={t('regional_filter_region')} />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="">{t('regional_filter_all_regions')}</SelectItem>
+                      <SelectItem value="all">{t('regional_filter_all_regions')}</SelectItem>
                       {regions.map((region) => (
                         <SelectItem key={region.region} value={region.region}>
                           {region.region} ({region.count})

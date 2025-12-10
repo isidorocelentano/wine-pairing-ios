@@ -3003,6 +3003,48 @@ app.add_middleware(
 # Include the router AFTER middleware
 app.include_router(api_router)
 
+@app.on_event("startup")
+async def startup_seed_data():
+    """Seed regional pairings data if collection is empty"""
+    try:
+        count = await db.regional_pairings.count_documents({})
+        if count == 0:
+            print("🌱 Regional pairings collection is empty. Running import scripts...")
+            
+            # Run import scripts sequentially
+            scripts = [
+                "import_regional_pairings.py",
+                "update_regional_pairings.py",
+                "add_translations.py",
+                "translate_all_pairings.py",
+                "improve_wine_recommendations.py",
+                "fix_wine_descriptions.py"
+            ]
+            
+            for script in scripts:
+                script_path = ROOT_DIR / script
+                if script_path.exists():
+                    print(f"  Running {script}...")
+                    result = subprocess.run(
+                        ["python3", str(script_path)],
+                        cwd=str(ROOT_DIR),
+                        capture_output=True,
+                        text=True
+                    )
+                    if result.returncode != 0:
+                        print(f"  ⚠️  {script} had errors (might be OK): {result.stderr[:200]}")
+                    else:
+                        print(f"  ✓ {script} completed")
+            
+            # Verify seeding
+            final_count = await db.regional_pairings.count_documents({})
+            print(f"✅ Seeding complete. Collection now has {final_count} documents")
+        else:
+            print(f"✓ Regional pairings already seeded ({count} documents)")
+    except Exception as e:
+        print(f"⚠️  Error during startup seeding: {e}")
+        # Don't crash the server if seeding fails
+
 @app.on_event("shutdown")
 async def shutdown_db_client():
     client.close()

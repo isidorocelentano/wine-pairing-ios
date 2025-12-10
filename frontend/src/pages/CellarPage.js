@@ -124,6 +124,36 @@ const CellarPage = () => {
     }
   };
 
+  // Quick quantity update (+/- buttons)
+  const handleQuickQuantityChange = async (wineId, delta) => {
+    const wine = wines.find(w => w.id === wineId);
+    if (!wine) return;
+    
+    const newQuantity = Math.max(0, (wine.quantity || 0) + delta);
+    setUpdatingQuantity(wineId);
+    
+    try {
+      await axios.put(`${API}/wines/${wineId}`, {
+        ...wine,
+        quantity: newQuantity,
+      });
+      // Optimistic update
+      setWines(prev => prev.map(w => 
+        w.id === wineId ? { ...w, quantity: newQuantity } : w
+      ));
+      if (delta > 0) {
+        toast.success(`+${delta} Flasche${delta > 1 ? 'n' : ''} hinzugefügt`);
+      } else {
+        toast.success(`${Math.abs(delta)} Flasche${Math.abs(delta) > 1 ? 'n' : ''} entfernt`);
+      }
+    } catch (error) {
+      toast.error(t('error_general'));
+      fetchWines(); // Revert on error
+    } finally {
+      setUpdatingQuantity(null);
+    }
+  };
+
   const handleToggleFavorite = async (wineId) => {
     try {
       await axios.post(`${API}/wines/${wineId}/favorite`);

@@ -1528,6 +1528,92 @@ async def get_feed_stats():
         "top_pairings": top_pairings
     }
 
+# ===================== REGIONAL PAIRINGS ENDPOINTS =====================
+
+@api_router.get("/regional-pairings", response_model=List[RegionalPairing])
+async def get_regional_pairings(
+    country: Optional[str] = None,
+    region: Optional[str] = None,
+    search: Optional[str] = None,
+    limit: int = 50
+):
+    """Get regional wine pairings with filters"""
+    query = {}
+    
+    if country:
+        query["country"] = country
+    if region:
+        query["region"] = region
+    if search:
+        # Search in dish and wine names
+        query["$or"] = [
+            {"dish": {"$regex": search, "$options": "i"}},
+            {"wine_name": {"$regex": search, "$options": "i"}}
+        ]
+    
+    pairings = await db.regional_pairings.find(query, {"_id": 0}).limit(limit).to_list(limit)
+    return pairings
+
+
+@api_router.get("/regional-pairings/countries")
+async def get_countries():
+    """Get list of all countries with pairing counts"""
+    pipeline = [
+        {
+            "$group": {
+                "_id": {
+                    "country": "$country",
+                    "country_en": "$country_en",
+                    "country_fr": "$country_fr",
+                    "country_emoji": "$country_emoji",
+                    "image_url": "$image_url"
+                },
+                "count": {"$sum": 1}
+            }
+        },
+        {
+            "$project": {
+                "_id": 0,
+                "country": "$_id.country",
+                "country_en": "$_id.country_en",
+                "country_fr": "$_id.country_fr",
+                "country_emoji": "$_id.country_emoji",
+                "image_url": "$_id.image_url",
+                "count": 1
+            }
+        },
+        {"$sort": {"count": -1}}
+    ]
+    
+    countries = await db.regional_pairings.aggregate(pipeline).to_list(20)
+    return countries
+
+
+@api_router.get("/regional-pairings/regions")
+async def get_regions(country: str):
+    """Get list of regions for a specific country"""
+    pipeline = [
+        {"$match": {"country": country}},
+        {
+            "$group": {
+                "_id": "$region",
+                "count": {"$sum": 1}
+            }
+        },
+        {
+            "$project": {
+                "_id": 0,
+                "region": "$_id",
+                "count": 1
+            }
+        },
+        {"$sort": {"region": 1}}
+    ]
+    
+    regions = await db.regional_pairings.aggregate(pipeline).to_list(50)
+    return regions
+
+
 # ===================== GRAPE VARIETY ENDPOINTS =====================
 
 @api_router.get("/grapes", response_model=List[GrapeVariety])

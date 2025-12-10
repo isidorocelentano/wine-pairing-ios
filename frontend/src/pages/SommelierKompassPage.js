@@ -109,6 +109,13 @@ const SommelierKompassPage = () => {
     if (language === 'fr') return country.country_fr;
     return country.country;
   };
+  
+  // Get localized text
+  const getLocalizedText = (item, field) => {
+    if (language === 'en' && item[`${field}_en`]) return item[`${field}_en`];
+    if (language === 'fr' && item[`${field}_fr`]) return item[`${field}_fr`];
+    return item[field] || '';
+  };
 
   return (
     <>

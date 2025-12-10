@@ -23,6 +23,9 @@ const SommelierKompassPage = () => {
   const [selectedCountry, setSelectedCountry] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
+  
+  // Country data (intro & image)
+  const [countryData, setCountryData] = useState(null);
 
   // Fetch countries on mount
   useEffect(() => {

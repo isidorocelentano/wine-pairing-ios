@@ -843,6 +843,36 @@ async def get_pairing_history():
             p['created_at'] = datetime.fromisoformat(p['created_at'])
     return pairings
 
+# ===================== CACHE MANAGEMENT =====================
+
+@api_router.get("/cache/status")
+async def get_cache_status():
+    """Get current cache status and statistics"""
+    current_time = time.time()
+    valid_entries = sum(1 for v in PAIRING_CACHE.values() if current_time - v['timestamp'] < CACHE_TTL)
+    expired_entries = len(PAIRING_CACHE) - valid_entries
+    
+    return {
+        "total_entries": len(PAIRING_CACHE),
+        "valid_entries": valid_entries,
+        "expired_entries": expired_entries,
+        "cache_ttl_hours": CACHE_TTL / 3600,
+        "cache_keys": list(PAIRING_CACHE.keys())[:10]  # Show first 10 keys
+    }
+
+@api_router.delete("/cache/clear")
+async def clear_cache():
+    """Clear all cache entries"""
+    count = len(PAIRING_CACHE)
+    PAIRING_CACHE.clear()
+    return {"message": f"Cache cleared. Removed {count} entries."}
+
+@api_router.delete("/cache/expired")
+async def clear_expired_cache():
+    """Clear only expired cache entries"""
+    removed = clear_old_cache_entries()
+    return {"message": f"Removed {removed} expired entries. Remaining: {len(PAIRING_CACHE)}"}
+
 
 # ===================== SITEMAP (PAIRINGS) =====================
 

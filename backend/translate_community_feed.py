@@ -74,8 +74,10 @@ Important:
 """
 
     try:
+        import uuid
         chat = LlmChat(
             api_key=EMERGENT_LLM_KEY,
+            session_id=str(uuid.uuid4()),
             system_message="You are a professional translator specializing in wine and gastronomy. Translate accurately while maintaining the elegant tone."
         ).with_model("openai", "gpt-5.1")
         

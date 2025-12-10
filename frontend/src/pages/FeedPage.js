@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback  useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import axios from 'axios';
 import { Wine, Heart, MessageCircle, Send, Plus, Star, Camera, X, Loader2, Users, TrendingUp, Trash2 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';

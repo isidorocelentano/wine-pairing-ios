@@ -665,8 +665,33 @@ async def toggle_favorite(wine_id: str):
 
 @api_router.post("/pairing", response_model=PairingResponse)
 async def get_wine_pairing(request: PairingRequest):
-    """Get AI-powered wine pairing recommendation"""
+    """Get AI-powered wine pairing recommendation with caching"""
     try:
+        # Check cache first (only for requests without cellar, dish_id, or 4D parameters)
+        # These are "simple" requests that can be cached
+        is_cacheable = (
+            not request.use_cellar and 
+            not request.dish_id and
+            request.richness is None and
+            request.freshness is None and
+            request.sweetness is None and
+            request.spice is None
+        )
+        
+        cache_key = None
+        if is_cacheable:
+            cache_key = get_cache_key(request.dish, request.language, request.wine_type_filter)
+            cached_result = get_cached_pairing(cache_key)
+            if cached_result:
+                # Return cached result immediately
+                return PairingResponse(
+                    dish=request.dish,
+                    recommendation=cached_result['recommendation'],
+                    why_explanation=cached_result.get('why_explanation'),
+                    cellar_matches=None
+                )
+        
+        # No cache hit - make LLM call
         # Get language-specific system message
         system_message = get_sommelier_system(request.language)
         

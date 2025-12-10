@@ -462,7 +462,7 @@ const FeedPage = () => {
                       <p className="font-medium">
                         <span className="text-primary">{post.wine_name}</span>
                         <span className="text-muted-foreground mx-2">+</span>
-                        <span>{getLocalizedContent(post, 'dish', language)}</span>
+                        <span>{getLocalizedContent(post, 'dish')}</span>
                       </p>
                     </div>
                     

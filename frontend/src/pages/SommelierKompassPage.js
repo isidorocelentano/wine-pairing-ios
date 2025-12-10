@@ -49,10 +49,14 @@ const SommelierKompassPage = () => {
 
   const fetchCountries = async () => {
     try {
+      console.log('Fetching countries from:', `${API}/regional-pairings/countries`);
       const response = await axios.get(`${API}/regional-pairings/countries`);
-      setCountries(response.data);
+      console.log('Received countries:', response.data.length);
+      setCountries(response.data || []);
     } catch (error) {
       console.error('Error fetching countries:', error);
+      console.error('Error details:', error.response?.data || error.message);
+      setCountries([]);
     }
   };
 

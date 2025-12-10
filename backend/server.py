@@ -6,13 +6,15 @@ import os
 import logging
 from pathlib import Path
 from pydantic import BaseModel, Field, ConfigDict
-from typing import List, Optional
+from typing import List, Optional, Dict, Any
 import uuid
 from datetime import datetime, timezone
 import base64
 from emergentintegrations.llm.chat import LlmChat, UserMessage, ImageContent
 import json
 import re
+import hashlib
+import time
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -24,6 +26,55 @@ db = client[os.environ.get('DB_NAME', 'wine_pairing_db')]
 
 # LLM API Key
 EMERGENT_LLM_KEY = os.environ.get('EMERGENT_LLM_KEY', '')
+
+# ===================== PAIRING CACHE =====================
+# In-memory cache for wine pairing recommendations
+# Cache TTL: 24 hours (86400 seconds)
+PAIRING_CACHE: Dict[str, Dict[str, Any]] = {}
+CACHE_TTL = 86400  # 24 hours in seconds
+
+def get_cache_key(dish: str, language: str, wine_type_filter: Optional[str] = None) -> str:
+    """Generate a unique cache key for a pairing request"""
+    # Normalize dish name: lowercase, strip whitespace
+    normalized_dish = dish.lower().strip()
+    # Create a unique key based on dish, language, and optional wine type filter
+    key_parts = [normalized_dish, language]
+    if wine_type_filter and wine_type_filter != 'all':
+        key_parts.append(wine_type_filter)
+    key_string = "|".join(key_parts)
+    return hashlib.md5(key_string.encode()).hexdigest()
+
+def get_cached_pairing(cache_key: str) -> Optional[Dict[str, Any]]:
+    """Get a cached pairing if it exists and hasn't expired"""
+    if cache_key in PAIRING_CACHE:
+        cached = PAIRING_CACHE[cache_key]
+        if time.time() - cached['timestamp'] < CACHE_TTL:
+            logging.info(f"Cache HIT for key: {cache_key[:8]}...")
+            return cached['data']
+        else:
+            # Expired, remove from cache
+            del PAIRING_CACHE[cache_key]
+            logging.info(f"Cache EXPIRED for key: {cache_key[:8]}...")
+    return None
+
+def set_cached_pairing(cache_key: str, data: Dict[str, Any]) -> None:
+    """Store a pairing in the cache"""
+    PAIRING_CACHE[cache_key] = {
+        'timestamp': time.time(),
+        'data': data
+    }
+    logging.info(f"Cache SET for key: {cache_key[:8]}... (Total cached: {len(PAIRING_CACHE)})")
+
+def clear_old_cache_entries() -> int:
+    """Remove expired entries from cache"""
+    current_time = time.time()
+    keys_to_remove = [
+        key for key, value in PAIRING_CACHE.items()
+        if current_time - value['timestamp'] >= CACHE_TTL
+    ]
+    for key in keys_to_remove:
+        del PAIRING_CACHE[key]
+    return len(keys_to_remove)
 
 # Create the main app
 app = FastAPI(title="Wine Pairing API", version="1.0.0")

@@ -17,15 +17,15 @@ db = client[os.environ.get('DB_NAME', 'test_database')]
 
 # Country data
 COUNTRY_IMAGES = {
-    "Italien": None,
+    "Italien": "https://customer-assets.emergentagent.com/job_9f296b6c-6dd4-4ccd-a818-3f5ca61a4e15/artifacts/gzi6i1r1_WINE-PAIRING.ONLINE%20SOMMELIER%20CLAUDE%20%20IN%20ITALIEN.png",
     "Frankreich": "https://customer-assets.emergentagent.com/job_9f296b6c-6dd4-4ccd-a818-3f5ca61a4e15/artifacts/2yyo7i5z_WINE-PAIRING.ONLINE%20SOMMELIER%20CLAUDE%20%20IN%20PARIS.png",
     "Spanien": "https://customer-assets.emergentagent.com/job_9f296b6c-6dd4-4ccd-a818-3f5ca61a4e15/artifacts/nq1s1lxe_WINE-PAIRING.ONLINE%20SOMMELIER%20CLAUDE%20%20IN%20SPANIEN.png",
-    "Österreich": None,
+    "Österreich": "https://customer-assets.emergentagent.com/job_9f296b6c-6dd4-4ccd-a818-3f5ca61a4e15/artifacts/p9jyplfk_WINE-PAIRING.ONLINE%20SOMMELIER%20CLAUDE%20%20IN%20AUSTRIA.png",
     "Schweiz": "https://customer-assets.emergentagent.com/job_9f296b6c-6dd4-4ccd-a818-3f5ca61a4e15/artifacts/z46212mx_WINE-PAIRING.ONLINE%20SOMMELIER%20CLAUDE%20%20IN%20DER%20SCHWEIZ.png",
     "Griechenland": "https://customer-assets.emergentagent.com/job_9f296b6c-6dd4-4ccd-a818-3f5ca61a4e15/artifacts/egu4qtad_GRIECHENLAND.png",
-    "Türkei": None,
+    "Türkei": "https://customer-assets.emergentagent.com/job_9f296b6c-6dd4-4ccd-a818-3f5ca61a4e15/artifacts/8fnlvn47_WINE-PAIRING.ONLINE%20SOMMELIER%20CLAUDE%20%20IN%20T%C3%9CRKEI.png",
     "Japan": "https://customer-assets.emergentagent.com/job_9f296b6c-6dd4-4ccd-a818-3f5ca61a4e15/artifacts/3w62amis_JAPAN.png",
-    "Deutschland": None
+    "Deutschland": "https://customer-assets.emergentagent.com/job_9f296b6c-6dd4-4ccd-a818-3f5ca61a4e15/artifacts/udlwr19h_WINE-PAIRING.ONLINE%20SOMMELIER%20CLAUDE%20%20IN%20DEUTSCHLAND.png"
 }
 
 COUNTRY_INTROS = {

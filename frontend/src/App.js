@@ -48,6 +48,7 @@ function App() {
               <Route path="/admin/dishes" element={<><DishAdminPage /><Navigation /></>} />
               <Route path="/seo/pairings" element={<><SeoPairingExplorerPage /><Navigation /></>} />
               <Route path="/feed" element={<><FeedPage /><Navigation /></>} />
+              <Route path="/sommelier-kompass" element={<><SommelierKompassPage /><Navigation /></>} />
               <Route path="/chat" element={<><ChatPage /><Navigation /></>} />
               <Route path="/blog" element={<><BlogPage /><Navigation /></>} />
               <Route path="/blog/:slug" element={<><BlogPostPage /><Navigation /></>} />

@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import axios from "axios";
 import { toast } from 'sonner';
-import { Wine, Camera, Upload, X, Loader2, Plus, Trash2, Star, Edit } from 'lucide-react';
+import { Wine, Camera, Upload, X, Loader2, Plus, Trash2, Star, Edit, Minus } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -26,8 +26,21 @@ const CellarPage = () => {
   const [editingWine, setEditingWine] = useState(null);
   const [newWine, setNewWine] = useState({ name: '', type: 'rot', region: '', year: '', grape: '', description: '', notes: '', image_base64: '', quantity: 1 });
   const [scanning, setScanning] = useState(false);
+  const [updatingQuantity, setUpdatingQuantity] = useState(null); // Track which wine is being updated
   const fileInputRef = useRef(null);
   const scanInputRef = useRef(null);
+
+  // Calculate cellar statistics
+  const cellarStats = useMemo(() => {
+    const totalBottles = wines.reduce((sum, wine) => sum + (wine.quantity || 0), 0);
+    const byType = wines.reduce((acc, wine) => {
+      const type = wine.type || 'other';
+      acc[type] = (acc[type] || 0) + (wine.quantity || 0);
+      return acc;
+    }, {});
+    const uniqueWines = wines.length;
+    return { totalBottles, byType, uniqueWines };
+  }, [wines]);
 
   const fetchWines = useCallback(async () => {
     try {
@@ -47,6 +60,7 @@ const CellarPage = () => {
       setLoading(false);
     }
   }, [filter, inStockOnly, t]);
+
 
   useEffect(() => {
     fetchWines();

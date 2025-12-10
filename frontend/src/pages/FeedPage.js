@@ -469,7 +469,7 @@ const FeedPage = () => {
                     {/* Experience Text */}
                     {(post.experience || post.experience_en || post.experience_fr) && (
                       <p className="text-sm text-foreground/90 leading-relaxed whitespace-pre-line">
-                        {getLocalizedContent(post, 'experience', language)}
+                        {getLocalizedContent(post, 'experience')}
                       </p>
                     )}
                     

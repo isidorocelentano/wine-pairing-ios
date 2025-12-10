@@ -15,7 +15,7 @@ mongo_url = os.environ.get('MONGO_URL')
 client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ.get('DB_NAME', 'test_database')]
 
-# Country data
+# Country data - ALL COUNTRIES NOW HAVE IMAGES!
 COUNTRY_IMAGES = {
     "Italien": "https://customer-assets.emergentagent.com/job_9f296b6c-6dd4-4ccd-a818-3f5ca61a4e15/artifacts/gzi6i1r1_WINE-PAIRING.ONLINE%20SOMMELIER%20CLAUDE%20%20IN%20ITALIEN.png",
     "Frankreich": "https://customer-assets.emergentagent.com/job_9f296b6c-6dd4-4ccd-a818-3f5ca61a4e15/artifacts/2yyo7i5z_WINE-PAIRING.ONLINE%20SOMMELIER%20CLAUDE%20%20IN%20PARIS.png",

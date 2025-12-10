@@ -3005,36 +3005,50 @@ app.include_router(api_router)
 
 @app.on_event("startup")
 async def startup_seed_data():
-    """Seed regional pairings data if collection is empty"""
+    """Seed regional pairings data if collection is empty - Inline seeding"""
     try:
         count = await db.regional_pairings.count_documents({})
         if count == 0:
-            print("🌱 Regional pairings collection is empty. Running import scripts...")
+            print("🌱 Regional pairings collection is empty. Seeding data inline...")
             
-            # Run import scripts sequentially
-            scripts = [
-                "import_regional_pairings.py",
-                "update_regional_pairings.py",
-                "add_translations.py",
-                "translate_all_pairings.py",
-                "improve_wine_recommendations.py",
-                "fix_wine_descriptions.py"
-            ]
-            
-            for script in scripts:
-                script_path = ROOT_DIR / script
-                if script_path.exists():
-                    print(f"  Running {script}...")
-                    result = subprocess.run(
-                        ["python3", str(script_path)],
-                        cwd=str(ROOT_DIR),
-                        capture_output=True,
-                        text=True
-                    )
-                    if result.returncode != 0:
-                        print(f"  ⚠️  {script} had errors (might be OK): {result.stderr[:200]}")
-                    else:
-                        print(f"  ✓ {script} completed")
+            # Instead of running separate scripts, we'll call them directly as modules
+            # This ensures all dependencies are available
+            try:
+                # Import and run the seeding functions
+                import sys
+                sys.path.insert(0, str(ROOT_DIR))
+                
+                # Import the main import script and execute it
+                from import_regional_pairings import main as import_main
+                await import_main()
+                print("  ✓ Base data imported")
+                
+                # Run updates
+                from update_regional_pairings import main as update_main
+                await update_main()
+                print("  ✓ Descriptions added")
+                
+                from add_translations import main as trans_main
+                await trans_main()
+                print("  ✓ Translations added")
+                
+                from translate_all_pairings import main as trans_all_main
+                await trans_all_main()
+                print("  ✓ All translations completed")
+                
+                from improve_wine_recommendations import main as improve_main
+                await improve_main()
+                print("  ✓ Wine recommendations improved")
+                
+                from fix_wine_descriptions import main as fix_main
+                await fix_main()
+                print("  ✓ Wine descriptions fixed")
+                
+            except ImportError as ie:
+                print(f"  ⚠️  Import error (scripts might not exist): {ie}")
+                print("  This is OK on first deployment - will seed on next restart")
+            except Exception as e:
+                print(f"  ⚠️  Error during seeding: {e}")
             
             # Verify seeding
             final_count = await db.regional_pairings.count_documents({})

@@ -295,9 +295,9 @@ const SommelierKompassPage = () => {
                       </Badge>
                     </div>
                     <CardTitle className="text-lg mb-2">{pairing.dish}</CardTitle>
-                    {pairing.dish_description && (
+                    {getLocalizedText(pairing, 'dish_description') && (
                       <p className="text-sm text-muted-foreground leading-relaxed">
-                        {pairing.dish_description}
+                        {getLocalizedText(pairing, 'dish_description')}
                       </p>
                     )}
                   </CardHeader>
@@ -309,9 +309,9 @@ const SommelierKompassPage = () => {
                       </div>
                       <p className="font-medium text-sm">{pairing.wine_name}</p>
                       <p className="text-xs text-muted-foreground">{pairing.wine_type}</p>
-                      {pairing.wine_description && (
+                      {getLocalizedText(pairing, 'wine_description') && (
                         <p className="text-xs text-muted-foreground leading-relaxed pt-2 border-t border-border/50">
-                          {pairing.wine_description}
+                          {getLocalizedText(pairing, 'wine_description')}
                         </p>
                       )}
                     </div>

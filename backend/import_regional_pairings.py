@@ -33,13 +33,26 @@ COUNTRY_DATA = {
     "Deutschland": {"emoji": "🇩🇪", "en": "Germany", "fr": "Allemagne"}
 }
 
-# Images mapping
+# Images mapping (one per country)
 COUNTRY_IMAGES = {
     "Spanien": "https://customer-assets.emergentagent.com/job_9f296b6c-6dd4-4ccd-a818-3f5ca61a4e15/artifacts/nq1s1lxe_WINE-PAIRING.ONLINE%20SOMMELIER%20CLAUDE%20%20IN%20SPANIEN.png",
     "Frankreich": "https://customer-assets.emergentagent.com/job_9f296b6c-6dd4-4ccd-a818-3f5ca61a4e15/artifacts/2yyo7i5z_WINE-PAIRING.ONLINE%20SOMMELIER%20CLAUDE%20%20IN%20PARIS.png",
     "Schweiz": "https://customer-assets.emergentagent.com/job_9f296b6c-6dd4-4ccd-a818-3f5ca61a4e15/artifacts/z46212mx_WINE-PAIRING.ONLINE%20SOMMELIER%20CLAUDE%20%20IN%20DER%20SCHWEIZ.png",
     "Japan": "https://customer-assets.emergentagent.com/job_9f296b6c-6dd4-4ccd-a818-3f5ca61a4e15/artifacts/3w62amis_JAPAN.png",
     "Griechenland": "https://customer-assets.emergentagent.com/job_9f296b6c-6dd4-4ccd-a818-3f5ca61a4e15/artifacts/egu4qtad_GRIECHENLAND.png"
+}
+
+# Country introductions
+COUNTRY_INTROS = {
+    "Italien": "🍝 Aperitivo all'italiana: Die Passion auf dem Teller. Italien ist mehr als Pizza und Pasta – es ist die Geburtsstätte der regionalen Küche, wo jede Stadt, jedes Dorf eine eigene, oft jahrhundertealte Spezialität hütet.",
+    "Frankreich": "🥐 Cuisine Bourgeoise: Die Eleganz der Terroirs. Frankreich ist das unangefochtene Epizentrum der klassischen Küche und der Weinwelt. Hier treffen kulturelle Monumente wie eine Bresse-Poularde auf die größten Weine der Erde.",
+    "Spanien": "💃 Fiesta del Sabor: Sonne, Tapas und intensive Aromen. Spanien ist ein Fest für die Sinne, das auf dem Teller die Hitze der Sonne und die Vielfalt der Regionen vereint.",
+    "Österreich": "🏔️ Alpen-Eleganz: Knusprige Panade und lebendige Säure. Österreich bietet eine einzigartige Mischung aus alpiner Bodenständigkeit und kaiserlicher Eleganz.",
+    "Schweiz": "🧀 Alpine Richesse: Bergkäse, Schmelz und verborgene Schätze. Die Schweiz ist ein Mosaik aus kulinarischen Einflüssen – geprägt von den Bergen, der Herzlichkeit und der Vielfalt ihrer Kulturen.",
+    "Griechenland": "☀️ Ode an die Ägäis: Salzigkeit, Olivenöl und antike Aromen. Griechenland ist die Wiege der mediterranen Diät, eine Küche, die von der Salzigkeit des Meeres, dem duftenden Oregano und dem satten Olivenöl der Sonne lebt.",
+    "Türkei": "🍢 Anatolische Glut: Rauch, Gewürz und die Brücke der Kulturen. Die Türkei ist ein kulinarisches Kraftwerk, das die reichen Aromen des Orients mit der Frische der Ägäis verbindet.",
+    "Japan": "🥢 Umami-Meister: Präzision, Subtilität und die Kunst der Textur. Japan ist ein kulinarisches Universum der Subtilität und Perfektion. Die Küche lebt von der Magie des Umami.",
+    "Deutschland": "🌲 Von der Riesling-Steillage zum Wirtshaus: Würze, Textur und Klarheit. Die deutsche Küche ist ein Fest der regionalen Identitäten."
 }
 
 

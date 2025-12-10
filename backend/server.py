@@ -335,13 +335,19 @@ class RegionalPairing(BaseModel):
     country_fr: str
     country_emoji: str
     country_intro: Optional[str] = None
+    country_intro_en: Optional[str] = None
+    country_intro_fr: Optional[str] = None
     country_image_url: Optional[str] = None
     region: str
     dish: str
     dish_description: Optional[str] = None
+    dish_description_en: Optional[str] = None
+    dish_description_fr: Optional[str] = None
     wine_name: str
     wine_type: str
     wine_description: Optional[str] = None
+    wine_description_en: Optional[str] = None
+    wine_description_fr: Optional[str] = None
 
 # ===================== GRAPE VARIETY MODELS =====================
 

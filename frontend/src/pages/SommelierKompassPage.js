@@ -153,6 +153,26 @@ const SommelierKompassPage = () => {
               ))}
             </div>
           </div>
+          
+          {/* Country Hero - Only shown when country is selected */}
+          {selectedCountry && countryData && (
+            <Card className="mb-6 overflow-hidden border-accent/20">
+              {countryData.image_url && (
+                <div className="h-48 md:h-64 overflow-hidden">
+                  <img
+                    src={countryData.image_url}
+                    alt={selectedCountry}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              )}
+              <CardContent className="p-6">
+                <p className="text-muted-foreground leading-relaxed">
+                  {countryData.intro}
+                </p>
+              </CardContent>
+            </Card>
+          )}
 
           {/* Filters */}
           <Card className="mb-6 bg-card/50 backdrop-blur-sm border-border/50">

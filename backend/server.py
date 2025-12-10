@@ -325,6 +325,21 @@ class FeedCommentCreate(BaseModel):
     author_id: str
     content: str
 
+# ===================== REGIONAL PAIRING MODELS =====================
+
+class RegionalPairing(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    id: str
+    country: str
+    country_en: str
+    country_fr: str
+    country_emoji: str
+    region: str
+    dish: str
+    wine_name: str
+    wine_type: str
+    image_url: Optional[str] = None
+
 # ===================== GRAPE VARIETY MODELS =====================
 
 class GrapeVariety(BaseModel):

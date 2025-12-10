@@ -75,11 +75,14 @@ const SommelierKompassPage = () => {
       if (selectedRegion) params.region = selectedRegion;
       if (searchQuery.trim()) params.search = searchQuery.trim();
 
+      console.log('Fetching pairings with params:', params);
       const response = await axios.get(`${API}/regional-pairings`, { params });
-      setPairings(response.data);
+      console.log('Received pairings:', response.data.length);
+      
+      setPairings(response.data || []);
       
       // Extract country data from first pairing if country is selected
-      if (response.data.length > 0 && selectedCountry) {
+      if (response.data && response.data.length > 0 && selectedCountry) {
         const firstPairing = response.data[0];
         setCountryData({
           intro: firstPairing.country_intro,
@@ -92,6 +95,8 @@ const SommelierKompassPage = () => {
       }
     } catch (error) {
       console.error('Error fetching pairings:', error);
+      console.error('Error details:', error.response?.data || error.message);
+      setPairings([]);
     } finally {
       setLoading(false);
     }

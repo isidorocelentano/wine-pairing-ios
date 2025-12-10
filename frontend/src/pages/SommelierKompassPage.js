@@ -83,6 +83,8 @@ const SommelierKompassPage = () => {
         const firstPairing = response.data[0];
         setCountryData({
           intro: firstPairing.country_intro,
+          intro_en: firstPairing.country_intro_en,
+          intro_fr: firstPairing.country_intro_fr,
           image_url: firstPairing.country_image_url
         });
       } else {

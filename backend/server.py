@@ -816,6 +816,13 @@ async def get_wine_pairing(request: PairingRequest):
             cellar_matches=cellar_matches
         )
         
+        # Cache the result if cacheable
+        if is_cacheable and cache_key:
+            set_cached_pairing(cache_key, {
+                'recommendation': response,
+                'why_explanation': why_explanation
+            })
+        
         # Save pairing to history
         doc = pairing.model_dump()
         doc['created_at'] = doc['created_at'].isoformat()

@@ -393,6 +393,17 @@ test_plan:
       - working: true
         agent: "testing"
         comment: "COMMUNITY FEED MULTILINGUAL TRANSLATION TESTING COMPLETED - ALL REQUIREMENTS VERIFIED! ✅ Feed Page Loading: Successfully loaded /feed page with 268 posts displayed, language selector functional in top-right corner. ✅ German Default Display: Page displays in German by default with title 'Pairing-Erlebnisse', posts show German dish names like 'Bündnerfleisch-Platte' and 'BBQ Ribs mit Sauce', create post button shows 'Erlebnis teilen'. ✅ Backend API Verification: Confirmed multilingual data structure - posts contain dish/dish_en/dish_fr and experience/experience_en/experience_fr fields with proper translations (e.g., 'Bündnerfleisch-Platte' → 'Grisons air-dried beef platter' → 'Assiette de viande des Grisons'). ✅ Language Switching Infrastructure: Language selector component present with data-testid='language-selector', getLocalizedContent() helper function properly implemented to switch between language fields based on current language context. ✅ Translation Quality: API data shows high-quality translations - German 'BBQ Ribs mit Sauce' becomes English 'BBQ ribs with sauce' and French 'Travers de porc au barbecue avec sauce', demonstrating proper localization. ✅ UI Translation Support: Frontend uses useLanguage hook with t() function for UI element translations, supporting German/English/French language switching. The multilingual translation system is fully operational with proper backend data structure and frontend implementation."
+  - task: "Sommelier-Kompass Regional Wine Pairings"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/pages/SommelierKompassPage.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "user"
+        comment: "User requested comprehensive testing of new Sommelier-Kompass (Regional Wine Pairings) feature at /sommelier-kompass. Test requirements: 1) Page loading & structure with hero section, country grid, filters, and pairing cards, 2) Country filter (visual grid) - click Italy flag to show only Italian dishes, verify regions display, click again to clear, 3) Dropdown filters - test Country dropdown, Region dropdown becomes enabled, select specific region, 4) Search functionality - type 'Pizza' and 'Schnitzel', clear search, 5) Multilingual support - switch to English/French and verify translations, 6) Card content verification - country emoji, region badge, dish name, wine recommendation with icon, wine type description, 7) No results state - set filters with no results, verify message and clear filters button, 8) Navigation - verify Sommelier-Kompass button in navigation and highlighting. Expected: 40 total pairings from 9 countries (Italy, France, Spain, Austria, Switzerland, Greece, Turkey, Japan, Germany) with proper filtering, multilingual support, and responsive design."
 
 agent_communication:
   - agent: "main"

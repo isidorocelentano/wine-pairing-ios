@@ -222,19 +222,57 @@ const CellarPage = () => {
     <div className="min-h-screen pb-20 md:pb-24 pt-6 md:pt-8 px-4 md:px-12 lg:px-24" data-testid="cellar-page">
       <div className="container mx-auto">
         <header className="flex flex-col gap-4 mb-6 md:mb-8">
-          <div>
-            <p className="text-accent font-accent text-sm tracking-widest uppercase mb-2">{t('cellar_tagline')}</p>
-            <h1 className="text-2xl md:text-4xl font-semibold tracking-tight">{t('cellar_title')}</h1>
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+            <div>
+              <p className="text-accent font-accent text-sm tracking-widest uppercase mb-2">{t('cellar_tagline')}</p>
+              <h1 className="text-2xl md:text-4xl font-semibold tracking-tight">{t('cellar_title')}</h1>
+            </div>
+            
+            {/* Cellar Statistics Card */}
+            {wines.length > 0 && (
+              <Card className="bg-primary/5 border-primary/20 min-w-[200px]">
+                <CardContent className="p-4">
+                  <div className="text-center">
+                    <div className="flex items-center justify-center gap-2 mb-2">
+                      <Wine className="h-5 w-5 text-primary" />
+                      <span className="text-3xl font-bold text-primary">{cellarStats.totalBottles}</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground font-medium">
+                      {cellarStats.totalBottles === 1 ? 'Flasche' : 'Flaschen'} total
+                    </p>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      {cellarStats.uniqueWines} {cellarStats.uniqueWines === 1 ? 'Wein' : 'verschiedene Weine'}
+                    </p>
+                    {/* Mini breakdown by type */}
+                    <div className="flex flex-wrap justify-center gap-2 mt-3">
+                      {cellarStats.byType.rot > 0 && (
+                        <Badge variant="outline" className="text-xs badge-rot border-0">{cellarStats.byType.rot}x Rot</Badge>
+                      )}
+                      {cellarStats.byType.weiss > 0 && (
+                        <Badge variant="outline" className="text-xs badge-weiss border-0">{cellarStats.byType.weiss}x Weiß</Badge>
+                      )}
+                      {cellarStats.byType.rose > 0 && (
+                        <Badge variant="outline" className="text-xs badge-rose border-0">{cellarStats.byType.rose}x Rosé</Badge>
+                      )}
+                      {cellarStats.byType.schaumwein > 0 && (
+                        <Badge variant="outline" className="text-xs badge-schaumwein border-0">{cellarStats.byType.schaumwein}x Schaum</Badge>
+                      )}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            )}
           </div>
-            <label className="inline-flex items-center gap-2 text-xs md:text-sm text-muted-foreground">
-              <input
-                type="checkbox"
-                checked={inStockOnly}
-                onChange={(e) => setInStockOnly(e.target.checked)}
-                className="w-4 h-4 rounded border-border text-primary focus:ring-primary"
-              />
-              <span>{t('cellar_filter_in_stock')}</span>
-            </label>
+          
+          <label className="inline-flex items-center gap-2 text-xs md:text-sm text-muted-foreground">
+            <input
+              type="checkbox"
+              checked={inStockOnly}
+              onChange={(e) => setInStockOnly(e.target.checked)}
+              className="w-4 h-4 rounded border-border text-primary focus:ring-primary"
+            />
+            <span>{t('cellar_filter_in_stock')}</span>
+          </label>
 
           <div className="flex flex-wrap gap-2 md:gap-3 items-center">
             <Select value={filter} onValueChange={setFilter}>

@@ -54,6 +54,16 @@ const FeedPage = () => {
   const [userId] = useState(getUserId());
   const fileInputRef = useRef(null);
   
+  // Helper to get localized content from a post
+  const getLocalizedContent = useCallback((post, field) => {
+    // Try language-specific field first, fall back to default
+    const langField = `${field}_${language}`;
+    if (language !== 'de' && post[langField]) {
+      return post[langField];
+    }
+    return post[field] || '';
+  }, [language]);
+  
   // New post state
   const [newPost, setNewPost] = useState({
     dish: '',

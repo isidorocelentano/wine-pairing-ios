@@ -296,6 +296,15 @@ class FeedPost(BaseModel):
     wine_type: str  # rot, weiss, rose, schaumwein
     rating: int = Field(ge=1, le=5)  # 1-5 stars
     experience: str  # User's description of the pairing experience
+    # Multilingual fields
+    dish_en: Optional[str] = None
+    dish_fr: Optional[str] = None
+    experience_en: Optional[str] = None
+    experience_fr: Optional[str] = None
+    description_en: Optional[str] = None
+    description_fr: Optional[str] = None
+    location: Optional[str] = None
+    occasion: Optional[str] = None
     image_base64: Optional[str] = None
     likes: List[str] = []  # List of user IDs who liked
     comments: List[FeedComment] = []

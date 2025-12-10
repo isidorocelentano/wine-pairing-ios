@@ -275,33 +275,34 @@ const SommelierKompassPage = () => {
               {pairings.map((pairing) => (
                 <Card
                   key={pairing.id}
-                  className="bg-card/50 backdrop-blur-sm border-border/50 overflow-hidden hover:shadow-lg transition-shadow"
+                  className="bg-card/50 backdrop-blur-sm border-border/50 overflow-hidden hover:shadow-lg transition-shadow flex flex-col"
                 >
-                  {pairing.image_url && (
-                    <div className="h-40 overflow-hidden">
-                      <img
-                        src={pairing.image_url}
-                        alt={pairing.dish}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  )}
                   <CardHeader className="pb-3">
                     <div className="flex items-start justify-between mb-2">
                       <Badge variant="outline" className="text-xs">
                         {pairing.country_emoji} {pairing.region}
                       </Badge>
                     </div>
-                    <CardTitle className="text-lg">{pairing.dish}</CardTitle>
+                    <CardTitle className="text-lg mb-2">{pairing.dish}</CardTitle>
+                    {pairing.dish_description && (
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {pairing.dish_description}
+                      </p>
+                    )}
                   </CardHeader>
-                  <CardContent className="space-y-3">
-                    <div className="bg-secondary/30 rounded-lg p-3">
-                      <div className="flex items-center gap-2 mb-1">
+                  <CardContent className="space-y-3 mt-auto">
+                    <div className="bg-secondary/30 rounded-lg p-3 space-y-2">
+                      <div className="flex items-center gap-2">
                         <Wine className="w-4 h-4 text-accent" />
                         <span className="text-xs font-medium text-accent">{t('regional_wine_pairing')}</span>
                       </div>
                       <p className="font-medium text-sm">{pairing.wine_name}</p>
-                      <p className="text-xs text-muted-foreground mt-1">{pairing.wine_type}</p>
+                      <p className="text-xs text-muted-foreground">{pairing.wine_type}</p>
+                      {pairing.wine_description && (
+                        <p className="text-xs text-muted-foreground leading-relaxed pt-2 border-t border-border/50">
+                          {pairing.wine_description}
+                        </p>
+                      )}
                     </div>
                   </CardContent>
                 </Card>

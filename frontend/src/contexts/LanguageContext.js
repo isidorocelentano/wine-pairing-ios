@@ -125,6 +125,25 @@ const translations = {
     feed_hours_ago: 'Std.',
     feed_days_ago: 'Tage',
     
+    // Regional Pairings / Sommelier-Kompass
+    regional_nav: 'Sommelier-Kompass',
+    regional_tagline: 'Ihr Weltenbummler-Weinbegleiter',
+    regional_title: 'Der Weltenbummler-Weinbegleiter',
+    regional_subtitle: 'Authentische Genussmomente & Wein-Entdeckungen für Reisende',
+    regional_intro: 'Willkommen beim Sommelier-Kompass – Ihrem unverzichtbaren Begleiter auf jeder kulinarischen Entdeckungsreise! Diese Rubrik ist für alle Reisenden geschaffen, die nicht nur essen, sondern das wahre Terroir eines Landes schmecken wollen. Jedes Gericht ist ein Stück Geschichte, eine lokale Seele, die darauf wartet, entdeckt zu werden.',
+    regional_filter_country: 'Land wählen',
+    regional_filter_region: 'Region wählen',
+    regional_filter_search: 'Speise suchen...',
+    regional_filter_all_countries: 'Alle Länder',
+    regional_filter_all_regions: 'Alle Regionen',
+    regional_clear_filters: 'Filter zurücksetzen',
+    regional_dish: 'Speise',
+    regional_wine_pairing: 'Wein-Empfehlung',
+    regional_wine_type: 'Weintyp',
+    regional_results: 'Ergebnisse',
+    regional_no_results: 'Keine Ergebnisse gefunden',
+    regional_no_results_desc: 'Versuchen Sie andere Filter oder Suchbegriffe',
+    
     // Cellar Page
     cellar_tagline: 'Mein Weinkeller',
     cellar_title: 'Ihre Schatzkammer',

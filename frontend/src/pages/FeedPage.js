@@ -462,12 +462,12 @@ const FeedPage = () => {
                       <p className="font-medium">
                         <span className="text-primary">{post.wine_name}</span>
                         <span className="text-muted-foreground mx-2">+</span>
-                        <span>{post.dish}</span>
+                        <span>{getLocalizedContent(post, 'dish', language)}</span>
                       </p>
                     </div>
                     
                     {/* Experience Text */}
-                    {post.experience && (
+                    {(post.experience || post.experience_en || post.experience_fr) && (
                       <p className="text-sm text-foreground/90 leading-relaxed">{post.experience}</p>
                     )}
                     

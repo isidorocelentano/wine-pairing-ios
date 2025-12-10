@@ -129,15 +129,28 @@ const SommelierKompassPage = () => {
 
       <div className="min-h-screen pb-20 md:pb-24 pt-6 md:pt-8 px-4 md:px-12 lg:px-24" data-testid="sommelier-kompass-page">
         <div className="container mx-auto max-w-6xl">
-          {/* Hero Section */}
-          <header className="text-center mb-8 md:mb-12">
-            <p className="text-accent font-accent text-sm tracking-widest uppercase mb-2">{t('regional_tagline')}</p>
-            <h1 className="text-2xl md:text-4xl font-semibold tracking-tight mb-3">{t('regional_title')}</h1>
-            <p className="text-lg md:text-xl text-muted-foreground font-light mb-4">{t('regional_subtitle')}</p>
-            <p className="text-muted-foreground max-w-3xl mx-auto text-sm md:text-base leading-relaxed">
-              {t('regional_intro')}
-            </p>
-          </header>
+          {/* Hero Section with International Image */}
+          <div className="mb-8 md:mb-12">
+            {/* International Hero Image - shown when no country selected */}
+            {!selectedCountry && (
+              <div className="mb-8 rounded-xl overflow-hidden">
+                <img
+                  src="https://customer-assets.emergentagent.com/job_9f296b6c-6dd4-4ccd-a818-3f5ca61a4e15/artifacts/my8kl803_WINE-PAIRING.ONLINE%20SOMMELIER%20CLAUDE%20%20INTERNATIONAL.png"
+                  alt="Sommelier Kompass International"
+                  className="w-full h-48 md:h-72 object-cover"
+                />
+              </div>
+            )}
+            
+            <header className="text-center">
+              <p className="text-accent font-accent text-sm tracking-widest uppercase mb-2">{t('regional_tagline')}</p>
+              <h1 className="text-2xl md:text-4xl font-semibold tracking-tight mb-3">{t('regional_title')}</h1>
+              <p className="text-lg md:text-xl text-muted-foreground font-light mb-4">{t('regional_subtitle')}</p>
+              <p className="text-muted-foreground max-w-3xl mx-auto text-sm md:text-base leading-relaxed">
+                {t('regional_intro')}
+              </p>
+            </header>
+          </div>
 
           {/* Country Grid - Visual Selection */}
           <div className="mb-8">

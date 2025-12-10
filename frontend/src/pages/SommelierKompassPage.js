@@ -177,7 +177,9 @@ const SommelierKompassPage = () => {
               )}
               <CardContent className="p-6">
                 <p className="text-muted-foreground leading-relaxed">
-                  {countryData.intro}
+                  {language === 'en' && countryData.intro_en ? countryData.intro_en :
+                   language === 'fr' && countryData.intro_fr ? countryData.intro_fr :
+                   countryData.intro}
                 </p>
               </CardContent>
             </Card>

@@ -77,6 +77,17 @@ const SommelierKompassPage = () => {
 
       const response = await axios.get(`${API}/regional-pairings`, { params });
       setPairings(response.data);
+      
+      // Extract country data from first pairing if country is selected
+      if (response.data.length > 0 && selectedCountry) {
+        const firstPairing = response.data[0];
+        setCountryData({
+          intro: firstPairing.country_intro,
+          image_url: firstPairing.country_image_url
+        });
+      } else {
+        setCountryData(null);
+      }
     } catch (error) {
       console.error('Error fetching pairings:', error);
     } finally {

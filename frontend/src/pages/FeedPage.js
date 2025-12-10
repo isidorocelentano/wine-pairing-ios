@@ -16,6 +16,16 @@ import { SEO } from '@/components/SEO';
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
+// Helper to get localized content from a post
+const getLocalizedContent = (post, field, language) => {
+  // Try language-specific field first, fall back to default
+  const langField = `${field}_${language}`;
+  if (language !== 'de' && post[langField]) {
+    return post[langField];
+  }
+  return post[field] || '';
+};
+
 // Generate or get user ID from localStorage
 const getUserId = () => {
   let userId = localStorage.getItem('wine-app-user-id');

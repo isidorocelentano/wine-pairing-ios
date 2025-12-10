@@ -25,6 +25,7 @@ import GrapeAdminPage from "@/pages/GrapeAdminPage";
 import DishAdminPage from "@/pages/DishAdminPage";
 import PairingSeoPage from "@/pages/PairingSeoPage";
 import SeoPairingExplorerPage from "@/pages/SeoPairingExplorerPage";
+import SommelierKompassPage from "@/pages/SommelierKompassPage";
 
 function App() {
   return (

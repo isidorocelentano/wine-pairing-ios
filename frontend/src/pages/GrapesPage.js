@@ -53,9 +53,9 @@ export const GrapesPage = () => {
       <div className="min-h-screen pb-24 md:pb-24 pt-4 md:pt-8 px-3 md:px-12 lg:px-24" data-testid="grapes-page">
         <div className="container mx-auto max-w-6xl">
           <header className="text-center mb-6 md:mb-12">
-            <p className="text-accent font-accent text-xs md:text-sm tracking-widest uppercase mb-1 md:mb-2">{t('grapes_tagline')}</p>
-            <h1 className="text-xl md:text-4xl font-semibold tracking-tight mb-2 md:mb-4">{t('grapes_title')}</h1>
-            <p className="text-muted-foreground max-w-xl mx-auto text-xs md:text-base leading-relaxed px-2">
+            <p className="text-accent font-accent text-[10px] md:text-sm tracking-widest uppercase mb-1 md:mb-2">{t('grapes_tagline')}</p>
+            <h1 className="text-lg sm:text-xl md:text-4xl font-semibold tracking-tight mb-2 md:mb-4 px-2">{t('grapes_title')}</h1>
+            <p className="text-muted-foreground max-w-xl mx-auto text-[11px] md:text-base leading-relaxed px-4">
               {t('grapes_description')}
             </p>
           </header>

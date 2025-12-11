@@ -222,6 +222,12 @@ async def get_existing_grapes():
     """Get list of existing grape names to avoid duplicates"""
     grapes = await db.grape_varieties.find({}, {"name": 1, "slug": 1, "_id": 0}).to_list(500)
     existing_names = set(g['name'].lower() for g in grapes)
+    # Auch Varianten ohne Sonderzeichen hinzufügen
+    for g in grapes:
+        name = g['name'].lower()
+        # Varianten hinzufügen
+        existing_names.add(name.replace('ñ', 'n'))
+        existing_names.add(name.replace('·', ''))
     existing_slugs = set(g['slug'] for g in grapes)
     return existing_names, existing_slugs
 

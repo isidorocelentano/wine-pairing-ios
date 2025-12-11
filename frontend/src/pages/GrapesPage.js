@@ -99,7 +99,7 @@ export const GrapesPage = () => {
               </CardContent>
             </Card>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-testid="grapes-grid">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6" data-testid="grapes-grid">
               {grapes.map((grape) => (
                 <Card 
                   key={grape.id} 
@@ -107,49 +107,58 @@ export const GrapesPage = () => {
                   onClick={() => navigate(`/grapes/${grape.slug}`)}
                   data-testid="grape-card"
                 >
-                  {grape.image_url && (
-                    <div className="aspect-[16/10] overflow-hidden relative">
+                  {/* Image section - always show with fallback */}
+                  <div className="aspect-[16/10] overflow-hidden relative bg-secondary/30">
+                    {grape.image_url ? (
                       <img 
                         src={grape.image_url} 
                         alt={grape.name}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                        }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <Badge className={`${grape.type === 'rot' ? 'badge-rot' : 'badge-weiss'} border-0`}>
-                          {grape.type === 'rot' ? t('grapes_red') : t('grapes_white')}
-                        </Badge>
-                        <h3 className="text-xl md:text-2xl font-semibold text-white mt-2 drop-shadow-lg">
-                          {grape.name}
-                        </h3>
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center">
+                        <Grape className="w-12 h-12 text-muted-foreground/30" />
                       </div>
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent" />
+                    <div className="absolute bottom-3 left-3 right-3">
+                      <Badge className={`${grape.type === 'rot' ? 'badge-rot' : 'badge-weiss'} border-0 text-xs`}>
+                        {grape.type === 'rot' ? t('grapes_red') : t('grapes_white')}
+                      </Badge>
+                      <h3 className="text-lg md:text-xl font-semibold text-white mt-1.5 drop-shadow-lg line-clamp-1">
+                        {grape.name}
+                      </h3>
                     </div>
-                  )}
-                  <CardContent className="p-4">
-                    <p className="text-sm text-muted-foreground line-clamp-3 font-accent italic">
-                      {getLocalizedDescription(grape).slice(0, 150)}...
+                  </div>
+                  
+                  <CardContent className="p-3 md:p-4">
+                    <p className="text-xs md:text-sm text-muted-foreground line-clamp-2 font-accent italic">
+                      {getLocalizedDescription(grape).slice(0, 120)}...
                     </p>
                     
-                    {/* Quick characteristics */}
-                    <div className="flex flex-wrap gap-2 mt-4">
-                      <span className="text-xs bg-secondary/50 px-2 py-1 rounded-full">
+                    {/* Quick characteristics - compact for mobile */}
+                    <div className="flex flex-wrap gap-1.5 mt-3">
+                      <span className="text-[10px] md:text-xs bg-secondary/50 px-2 py-0.5 rounded-full">
                         {grape.body}
                       </span>
-                      <span className="text-xs bg-secondary/50 px-2 py-1 rounded-full flex items-center gap-1">
-                        <Droplet className="w-3 h-3" /> {grape.acidity}
+                      <span className="text-[10px] md:text-xs bg-secondary/50 px-2 py-0.5 rounded-full flex items-center gap-0.5">
+                        <Droplet className="w-2.5 h-2.5 md:w-3 md:h-3" /> {grape.acidity}
                       </span>
                       {grape.type === 'rot' && (
-                        <span className="text-xs bg-secondary/50 px-2 py-1 rounded-full flex items-center gap-1">
-                          <Flame className="w-3 h-3" /> {grape.tannin}
+                        <span className="text-[10px] md:text-xs bg-secondary/50 px-2 py-0.5 rounded-full flex items-center gap-0.5">
+                          <Flame className="w-2.5 h-2.5 md:w-3 md:h-3" /> {grape.tannin}
                         </span>
                       )}
                     </div>
                     
-                    {/* Main regions */}
-                    <div className="flex items-center gap-1 mt-3 text-xs text-muted-foreground">
-                      <MapPin className="w-3 h-3" />
-                      <span className="truncate">{grape.main_regions?.slice(0, 3).join(', ')}</span>
+                    {/* Main regions - compact */}
+                    <div className="flex items-center gap-1 mt-2 text-[10px] md:text-xs text-muted-foreground">
+                      <MapPin className="w-2.5 h-2.5 md:w-3 md:h-3 flex-shrink-0" />
+                      <span className="truncate">{grape.main_regions?.slice(0, 2).join(', ')}</span>
                     </div>
                   </CardContent>
                 </Card>

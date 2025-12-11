@@ -1760,7 +1760,7 @@ async def get_grape_varieties(type_filter: Optional[str] = None):
     if type_filter and type_filter != 'all':
         query["type"] = type_filter
     
-    grapes = await db.grape_varieties.find(query, {"_id": 0}).sort("name", 1).to_list(100)
+    grapes = await db.grape_varieties.find(query, {"_id": 0}).sort("name", 1).to_list(500)
     for grape in grapes:
         if isinstance(grape.get('created_at'), str):
             grape['created_at'] = datetime.fromisoformat(grape['created_at'])

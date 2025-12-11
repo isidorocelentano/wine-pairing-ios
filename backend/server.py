@@ -909,7 +909,10 @@ async def clear_expired_cache():
     return {"message": f"Removed {removed} expired entries. Remaining: {len(PAIRING_CACHE)}"}
 
 
-# ===================== SITEMAP (PAIRINGS) =====================
+# ===================== SITEMAP WITH HREFLANG =====================
+
+# Supported languages for hreflang
+SUPPORTED_LANGUAGES = ["de", "en", "fr"]
 
 PAIRING_SITEMAP_ITEMS = [
     {"slug": "lammkoteletts-mit-rosmarin-cabernet-sauvignon", "status": "LIVE", "category": "meat"},
@@ -922,27 +925,143 @@ PAIRING_SITEMAP_ITEMS = [
     {"slug": "tandoori-chicken-riesling", "status": "LIVE", "category": "asian"},
 ]
 
+# Static pages that support multiple languages
+MULTILINGUAL_PAGES = [
+    {"path": "/", "priority": "1.0", "changefreq": "weekly"},
+    {"path": "/pairing", "priority": "0.9", "changefreq": "weekly"},
+    {"path": "/sommelier-kompass", "priority": "0.9", "changefreq": "weekly"},
+    {"path": "/grapes", "priority": "0.8", "changefreq": "monthly"},
+    {"path": "/wine-database", "priority": "0.8", "changefreq": "weekly"},
+    {"path": "/feed", "priority": "0.8", "changefreq": "daily"},
+    {"path": "/blog", "priority": "0.8", "changefreq": "daily"},
+    {"path": "/cellar", "priority": "0.7", "changefreq": "daily"},
+    {"path": "/favorites", "priority": "0.7", "changefreq": "daily"},
+]
+
+
+def generate_hreflang_links(base_url: str, path: str) -> str:
+    """Generate hreflang alternate links for all supported languages"""
+    links = []
+    for lang in SUPPORTED_LANGUAGES:
+        href = f"{base_url}{path}?lang={lang}" if lang != "de" else f"{base_url}{path}"
+        links.append(f'    <xhtml:link rel="alternate" hreflang="{lang}" href="{href}"/>')
+    # Add x-default (points to German as default)
+    links.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{base_url}{path}"/>')
+    return "\n".join(links)
+
+
+@api_router.get("/sitemap.xml")
+async def sitemap_index():
+    """Sitemap index pointing to all sub-sitemaps"""
+    base_url = os.environ.get("FRONTEND_BASE_URL", "https://wine-pairing.online").rstrip("/")
+    api_base = base_url.replace("wine-pairing.online", "wine-pairing.online/api")
+    
+    xml = f"""<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>{api_base}/sitemap-pages.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>{api_base}/sitemap-pairings.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>{api_base}/sitemap-kompass.xml</loc>
+  </sitemap>
+</sitemapindex>
+"""
+    return Response(content=xml, media_type="application/xml")
+
+
+@api_router.get("/sitemap-pages.xml")
+async def sitemap_pages():
+    """Main sitemap for static pages with hreflang support"""
+    base_url = os.environ.get("FRONTEND_BASE_URL", "https://wine-pairing.online").rstrip("/")
+    
+    urls = []
+    for page in MULTILINGUAL_PAGES:
+        hreflang_links = generate_hreflang_links(base_url, page["path"])
+        url_entry = f"""  <url>
+    <loc>{base_url}{page["path"]}</loc>
+{hreflang_links}
+    <changefreq>{page["changefreq"]}</changefreq>
+    <priority>{page["priority"]}</priority>
+  </url>"""
+        urls.append(url_entry)
+
+    xml = f"""<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{chr(10).join(urls)}
+</urlset>
+"""
+    return Response(content=xml, media_type="application/xml")
+
 
 @api_router.get("/sitemap-pairings.xml")
 async def sitemap_pairings():
-    """Simple sitemap for SEO pairing pages (currently using LIVE hardcoded items).
-
-    Später kann dies aus einer Datenbank-Tabelle generiert werden.
-    """
+    """Sitemap for SEO pairing pages with hreflang support"""
     base_url = os.environ.get("FRONTEND_BASE_URL", "https://wine-pairing.online").rstrip("/")
     live_items = [item for item in PAIRING_SITEMAP_ITEMS if item.get("status") == "LIVE"]
 
     urls = []
     for item in live_items:
-        loc = f"{base_url}/pairing/{item['slug']}"
-        urls.append(f"  <url>\n    <loc>{loc}</loc>\n    <changefreq>weekly</changefreq>\n    <priority>0.8</priority>\n  </url>")
+        path = f"/pairing/{item['slug']}"
+        hreflang_links = generate_hreflang_links(base_url, path)
+        url_entry = f"""  <url>
+    <loc>{base_url}{path}</loc>
+{hreflang_links}
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>"""
+        urls.append(url_entry)
 
-    xml = """<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-{urls}
+    xml = f"""<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{chr(10).join(urls)}
 </urlset>
-""".format(urls="\n".join(urls))
+"""
+    return Response(content=xml, media_type="application/xml")
 
+
+@api_router.get("/sitemap-kompass.xml")
+async def sitemap_kompass():
+    """Sitemap for Sommelier-Kompass country pages with hreflang support"""
+    base_url = os.environ.get("FRONTEND_BASE_URL", "https://wine-pairing.online").rstrip("/")
+    
+    # Get all countries from database
+    countries = await db.regional_pairings.distinct("country")
+    
+    urls = []
+    
+    # Main Kompass page
+    path = "/sommelier-kompass"
+    hreflang_links = generate_hreflang_links(base_url, path)
+    urls.append(f"""  <url>
+    <loc>{base_url}{path}</loc>
+{hreflang_links}
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>""")
+    
+    # Country-specific pages (with country filter)
+    for country in countries:
+        country_slug = country.lower().replace("ü", "ue").replace("ö", "oe").replace("ä", "ae")
+        path = f"/sommelier-kompass?country={country}"
+        hreflang_links = generate_hreflang_links(base_url, path)
+        urls.append(f"""  <url>
+    <loc>{base_url}{path}</loc>
+{hreflang_links}
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>""")
+
+    xml = f"""<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{chr(10).join(urls)}
+</urlset>
+"""
     return Response(content=xml, media_type="application/xml")
 
 

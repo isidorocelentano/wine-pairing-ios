@@ -942,8 +942,15 @@ MULTILINGUAL_PAGES = [
 def generate_hreflang_links(base_url: str, path: str) -> str:
     """Generate hreflang alternate links for all supported languages"""
     links = []
+    # Check if path already has query parameters
+    separator = "&" if "?" in path else "?"
+    
     for lang in SUPPORTED_LANGUAGES:
-        href = f"{base_url}{path}?lang={lang}" if lang != "de" else f"{base_url}{path}"
+        if lang == "de":
+            # German is default, no lang parameter needed
+            href = f"{base_url}{path}"
+        else:
+            href = f"{base_url}{path}{separator}lang={lang}"
         links.append(f'    <xhtml:link rel="alternate" hreflang="{lang}" href="{href}"/>')
     # Add x-default (points to German as default)
     links.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{base_url}{path}"/>')

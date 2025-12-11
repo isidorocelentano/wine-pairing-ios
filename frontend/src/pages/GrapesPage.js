@@ -50,7 +50,7 @@ export const GrapesPage = () => {
         url="https://wine-pairing.online/grapes"
       />
       
-      <div className="min-h-screen pb-24 md:pb-24 pt-4 md:pt-8 px-3 md:px-12 lg:px-24" data-testid="grapes-page">
+      <div className="min-h-screen pb-24 md:pb-24 pt-14 md:pt-8 px-3 md:px-12 lg:px-24" data-testid="grapes-page">
         <div className="container mx-auto max-w-6xl">
           <header className="text-center mb-6 md:mb-12">
             <p className="text-accent font-accent text-[10px] md:text-sm tracking-widest uppercase mb-1 md:mb-2">{t('grapes_tagline')}</p>

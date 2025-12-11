@@ -3005,50 +3005,30 @@ app.include_router(api_router)
 
 @app.on_event("startup")
 async def startup_seed_data():
-    """Seed regional pairings data if collection is empty - Inline seeding"""
+    """Seed regional pairings data if collection is empty - loads from JSON file"""
     try:
         count = await db.regional_pairings.count_documents({})
         if count == 0:
-            print("🌱 Regional pairings collection is empty. Seeding data inline...")
+            print("🌱 Regional pairings collection is empty. Seeding from JSON...")
             
-            # Instead of running separate scripts, we'll call them directly as modules
-            # This ensures all dependencies are available
             try:
-                # Import and run the seeding functions
-                import sys
-                sys.path.insert(0, str(ROOT_DIR))
+                # Load data from JSON file
+                data_file = ROOT_DIR / "data" / "regional_pairings.json"
                 
-                # Import the main import script and execute it
-                from import_regional_pairings import main as import_main
-                await import_main()
-                print("  ✓ Base data imported")
-                
-                # Run updates
-                from update_regional_pairings import main as update_main
-                await update_main()
-                print("  ✓ Descriptions added")
-                
-                from add_translations import main as trans_main
-                await trans_main()
-                print("  ✓ Translations added")
-                
-                from translate_all_pairings import main as trans_all_main
-                await trans_all_main()
-                print("  ✓ All translations completed")
-                
-                from improve_wine_recommendations import main as improve_main
-                await improve_main()
-                print("  ✓ Wine recommendations improved")
-                
-                from fix_wine_descriptions import main as fix_main
-                await fix_main()
-                print("  ✓ Wine descriptions fixed")
-                
-            except ImportError as ie:
-                print(f"  ⚠️  Import error (scripts might not exist): {ie}")
-                print("  This is OK on first deployment - will seed on next restart")
+                if data_file.exists():
+                    with open(data_file, 'r', encoding='utf-8') as f:
+                        pairings_data = json.load(f)
+                    
+                    if pairings_data:
+                        await db.regional_pairings.insert_many(pairings_data)
+                        print(f"  ✓ Loaded {len(pairings_data)} pairings from JSON")
+                    else:
+                        print("  ⚠️  JSON file is empty")
+                else:
+                    print(f"  ⚠️  Data file not found: {data_file}")
+                    
             except Exception as e:
-                print(f"  ⚠️  Error during seeding: {e}")
+                print(f"  ⚠️  Error loading data: {e}")
             
             # Verify seeding
             final_count = await db.regional_pairings.count_documents({})

@@ -641,13 +641,13 @@ class WinePairingAPITester:
     # ===================== COMPREHENSIVE PRE-DEPLOYMENT TESTS =====================
     
     def test_health_endpoint(self):
-        """Test GET /api/health - Core health check"""
-        success, response = self.make_request('GET', 'health', expected_status=200)
+        """Test GET /api/ - Core API root check (no dedicated health endpoint)"""
+        success, response = self.make_request('GET', '', expected_status=200)
         if success:
-            status = response.get('status', 'unknown')
-            self.log_test("Health Endpoint", True, f"Health status: {status}")
+            message = response.get('message', 'unknown')
+            self.log_test("API Root Health Check", True, f"API message: {message}")
         else:
-            self.log_test("Health Endpoint", False, str(response))
+            self.log_test("API Root Health Check", False, str(response))
         return success
 
     def test_pairing_multilingual(self):

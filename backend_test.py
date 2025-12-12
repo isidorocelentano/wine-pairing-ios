@@ -812,7 +812,7 @@ class WinePairingAPITester:
 
     def test_feed_posts_list(self):
         """Test GET /api/feed - should return 268 feed posts"""
-        success, response = self.make_request('GET', 'feed', expected_status=200)
+        success, response = self.make_request('GET', 'feed?limit=300', expected_status=200)
         if success:
             posts = response if isinstance(response, list) else []
             expected_count = 268

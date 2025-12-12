@@ -1727,10 +1727,11 @@ async def get_regional_pairings(
     if region:
         query["region"] = region
     if search:
-        # Search in dish and wine names
+        # WICHTIG: Akzent-insensitive Suche verwenden!
+        accent_pattern = create_accent_insensitive_pattern(search)
         query["$or"] = [
-            {"dish": {"$regex": search, "$options": "i"}},
-            {"wine_name": {"$regex": search, "$options": "i"}}
+            {"dish": {"$regex": accent_pattern, "$options": "i"}},
+            {"wine_name": {"$regex": accent_pattern, "$options": "i"}}
         ]
     
     pairings = await db.regional_pairings.find(query, {"_id": 0}).limit(limit).to_list(limit)

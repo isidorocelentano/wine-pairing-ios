@@ -1614,6 +1614,65 @@ class WinePairingAPITester:
             self.log_test("Delete Wine", False, str(response))
         return success
 
+    def run_comprehensive_pre_deployment_tests(self):
+        """Run comprehensive pre-deployment tests as specified in review request"""
+        print(f"🚀 PRE-DEPLOYMENT COMPREHENSIVE BACKEND TEST")
+        print(f"📍 Testing API at: {self.api_url}")
+        print("=" * 80)
+        
+        # 1. Core Health
+        self.test_health_endpoint()
+        
+        # 2. Wine Pairing AI
+        self.test_pairing_multilingual()
+        
+        # 3. Grape Varieties
+        self.test_grape_varieties_list()
+        self.test_grape_variety_detail()
+        
+        # 4. Blog Posts
+        self.test_blog_posts_list()
+        self.test_blog_post_detail()
+        
+        # 5. Regional Pairings (Sommelier-Kompass)
+        self.test_regional_pairings_countries()
+        self.test_regional_pairings_greece()
+        self.test_regional_pairings_italy()
+        
+        # 6. Wine Database
+        self.test_public_wines_list_basic()
+        self.test_public_wines_filters()
+        self.test_public_wines_list_country_filter()
+        
+        # 7. Community Feed
+        self.test_feed_posts_list()
+        
+        # 8. Wine Cellar
+        self.test_get_wines_empty()
+        
+        # 9. Favorites
+        self.test_get_favorites()
+        
+        # 10. Backup Endpoints
+        self.test_backup_list()
+        
+        # 11. Sommelier Chat
+        self.test_sommelier_chat_multilingual()
+        
+        # 12. Sitemap
+        self.test_sitemap_xml()
+        
+        print("=" * 80)
+        print(f"🏁 PRE-DEPLOYMENT Test Results: {self.tests_passed}/{self.tests_run} tests passed")
+        
+        if self.tests_passed == self.tests_run:
+            print("🎉 All pre-deployment tests passed! API is ready for production.")
+            return True
+        else:
+            failed_count = self.tests_run - self.tests_passed
+            print(f"❌ {failed_count} tests failed. Please review and fix issues.")
+            return False
+
     def run_all_tests(self):
         """Run all API tests"""
         print("🍷 Starting Wine Pairing API Tests")

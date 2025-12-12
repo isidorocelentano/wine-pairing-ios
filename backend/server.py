@@ -3131,39 +3131,50 @@ app.include_router(api_router)
 
 @app.on_event("startup")
 async def startup_seed_data():
-    """Seed regional pairings data if collection is empty - loads from JSON file"""
-    try:
-        count = await db.regional_pairings.count_documents({})
-        if count == 0:
-            print("🌱 Regional pairings collection is empty. Seeding from JSON...")
-            
-            try:
-                # Load data from JSON file
-                data_file = ROOT_DIR / "data" / "regional_pairings.json"
+    """Seed all collections from JSON backup files if they are empty"""
+    
+    # Define all collections to restore from JSON backups
+    collections_to_seed = [
+        ("regional_pairings", "regional_pairings.json"),
+        ("grape_varieties", "grape_varieties.json"),
+        ("blog_posts", "blog_posts.json"),
+        ("dishes", "dishes.json"),
+        ("wine_database", "wine_database.json"),
+        ("public_wines", "public_wines.json"),
+        ("feed_posts", "feed_posts.json"),
+    ]
+    
+    print("🚀 Server startup - checking database collections...")
+    
+    for collection_name, json_filename in collections_to_seed:
+        try:
+            count = await db[collection_name].count_documents({})
+            if count == 0:
+                print(f"🌱 {collection_name} is empty. Seeding from JSON...")
                 
-                if data_file.exists():
-                    with open(data_file, 'r', encoding='utf-8') as f:
-                        pairings_data = json.load(f)
+                try:
+                    data_file = ROOT_DIR / "data" / json_filename
                     
-                    if pairings_data:
-                        await db.regional_pairings.insert_many(pairings_data)
-                        print(f"  ✓ Loaded {len(pairings_data)} pairings from JSON")
+                    if data_file.exists():
+                        with open(data_file, 'r', encoding='utf-8') as f:
+                            data = json.load(f)
+                        
+                        if data:
+                            await db[collection_name].insert_many(data)
+                            print(f"  ✓ Loaded {len(data)} documents into {collection_name}")
+                        else:
+                            print(f"  ⚠️  {json_filename} is empty")
                     else:
-                        print("  ⚠️  JSON file is empty")
-                else:
-                    print(f"  ⚠️  Data file not found: {data_file}")
-                    
-            except Exception as e:
-                print(f"  ⚠️  Error loading data: {e}")
-            
-            # Verify seeding
-            final_count = await db.regional_pairings.count_documents({})
-            print(f"✅ Seeding complete. Collection now has {final_count} documents")
-        else:
-            print(f"✓ Regional pairings already seeded ({count} documents)")
-    except Exception as e:
-        print(f"⚠️  Error during startup seeding: {e}")
-        # Don't crash the server if seeding fails
+                        print(f"  ⚠️  Backup file not found: {json_filename}")
+                        
+                except Exception as e:
+                    print(f"  ⚠️  Error loading {collection_name}: {e}")
+            else:
+                print(f"✓ {collection_name}: {count} documents")
+        except Exception as e:
+            print(f"⚠️  Error checking {collection_name}: {e}")
+    
+    print("✅ Startup seeding complete!")
 
 @app.on_event("shutdown")
 async def shutdown_db_client():

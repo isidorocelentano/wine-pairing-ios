@@ -27917,5 +27917,1267 @@
     ],
     "created_at": "2025-12-12T23:38:19.716345+00:00",
     "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "6e5c5c9f-a0d8-4bd1-8a5f-0f986ff140c9",
+    "name": "Bianco di Merlot Kallagora 2023",
+    "winery": "Agriloro",
+    "country": "Schweiz",
+    "region": "Tessin - Arzo",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Ein Weißwein aus roten Trauben – hell wie ein Morgennebel über dem See, mit Pfirsich und Jasmin, der die Seele in zarte, fast erotische Leichtigkeit hüllt.",
+    "description_en": "A white wine from red grapes – bright as morning mist over the lake, with peach and jasmine, wrapping the soul in delicate, almost erotic lightness.",
+    "description_fr": "Un vin blanc de raisins rouges – clair comme la brume matinale sur le lac, avec de la pêche et du jasmin, enveloppant l'âme d'une légèreté délicate, presque érotique.",
+    "food_pairings_de": [
+      "Burrata mit frischen Feigen"
+    ],
+    "food_pairings_en": [
+      "Burrata with fresh figs"
+    ],
+    "food_pairings_fr": [
+      "Burrata aux figues fraîches"
+    ],
+    "created_at": "2025-12-12T23:46:18.053014+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "f9dd238c-306f-4280-8bcd-8e8f9a6a8b3f",
+    "name": "Quattromani 2021",
+    "winery": "Gialdi – Brivio – Tamborini – Zündel",
+    "country": "Schweiz",
+    "region": "Tessin - Mendrisio",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Der heilige Gral des Tessins: vier Meisterhände, ein Wein wie schwarze Seide, Cassis, Tabak und Bergamotte – ein Kuss, der ewig nachhallt.",
+    "description_en": "The holy grail of Ticino: four master hands, a wine like black silk, cassis, tobacco and bergamot – a kiss that echoes forever.",
+    "description_fr": "Le saint Graal du Tessin : quatre mains de maître, un vin comme de la soie noire, cassis, tabac et bergamote – un baiser qui résonne à jamais.",
+    "food_pairings_de": [
+      "Geschmorte Rindsbäckchen",
+      "36 Monate Comté"
+    ],
+    "food_pairings_en": [
+      "Braised beef cheeks",
+      "36-month Comté"
+    ],
+    "food_pairings_fr": [
+      "Joues de bœuf braisées",
+      "Comté 36 mois"
+    ],
+    "created_at": "2025-12-12T23:46:18.054288+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "3bfbb911-6a3a-44af-a2fd-98a26d230dd1",
+    "name": "Sottobosco 2022",
+    "winery": "Brivio",
+    "country": "Schweiz",
+    "region": "Tessin - Mendrisio",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Wild und mystisch, nach feuchtem Waldboden, Trüffel und dunklen Beeren – ein Rot, das die Seele in die magischen Kastanienwälder von Malcantone entführt.",
+    "description_en": "Wild and mystical, of damp forest floor, truffle and dark berries – a red that transports the soul to the magical chestnut forests of Malcantone.",
+    "description_fr": "Sauvage et mystique, de sous-bois humide, truffe et baies sombres – un rouge qui transporte l'âme dans les forêts magiques de châtaigniers du Malcantone.",
+    "food_pairings_de": [
+      "Rehmedaillons mit Steinpilzen"
+    ],
+    "food_pairings_en": [
+      "Venison medallions with porcini"
+    ],
+    "food_pairings_fr": [
+      "Médaillons de chevreuil aux cèpes"
+    ],
+    "created_at": "2025-12-12T23:46:18.055271+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "1f4c1549-802b-4d1b-b7c2-0b5cd9a483b6",
+    "name": "Castello di Morcote Riserva 2020",
+    "winery": "Castello di Morcote",
+    "country": "Schweiz",
+    "region": "Tessin - Morcote",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Wie ein Sonnenuntergang über dem Lago di Lugano in flüssiger Form: samtig, balsamisch, mit Lakritz und Rosen – ein Wein, der weint vor Schönheit.",
+    "description_en": "Like a sunset over Lake Lugano in liquid form: velvety, balsamic, with licorice and roses – a wine that weeps with beauty.",
+    "description_fr": "Comme un coucher de soleil sur le lac de Lugano sous forme liquide : velouté, balsamique, avec de la réglisse et des roses – un vin qui pleure de beauté.",
+    "food_pairings_de": [
+      "Ossobuco alla Ticinese"
+    ],
+    "food_pairings_en": [
+      "Ossobuco Ticinese style"
+    ],
+    "food_pairings_fr": [
+      "Ossobuco à la tessinoise"
+    ],
+    "created_at": "2025-12-12T23:46:18.056269+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "75aa4d17-abe6-4bb0-9b16-9dbaf00712e5",
+    "name": "Trento Riserva 2020",
+    "winery": "Christian Zündel",
+    "country": "Schweiz",
+    "region": "Tessin - Lugano",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Explosiv und doch elegant, schwarze Kirsche, Grafit, Minze – ein Merlot, der das Herz mit südlicher Glut und nördlicher Präzision schlagen lässt.",
+    "description_en": "Explosive yet elegant, black cherry, graphite, mint – a Merlot that makes the heart beat with southern fire and northern precision.",
+    "description_fr": "Explosif mais élégant, cerise noire, graphite, menthe – un Merlot qui fait battre le cœur avec le feu du sud et la précision du nord.",
+    "food_pairings_de": [
+      "Gegrillte Costata di manzo"
+    ],
+    "food_pairings_en": [
+      "Grilled beef rib steak"
+    ],
+    "food_pairings_fr": [
+      "Côte de bœuf grillée"
+    ],
+    "created_at": "2025-12-12T23:46:18.057197+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "e17eb989-21de-4e87-93a3-9ae47cf6cf3e",
+    "name": "Balin 2021",
+    "winery": "Guido Brivio Platinum",
+    "country": "Schweiz",
+    "region": "Tessin - Mendrisio",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Der teuerste und seltenste Merlot der Schweiz – wie flüssiges Rubinviolett, unendlich tief, mit 100 Punkten in manchen Jahren. Ein Mysterium.",
+    "description_en": "The most expensive and rarest Merlot in Switzerland – like liquid ruby violet, infinitely deep, with 100 points in some years. A mystery.",
+    "description_fr": "Le Merlot le plus cher et le plus rare de Suisse – comme du violet rubis liquide, infiniment profond, avec 100 points certaines années. Un mystère.",
+    "food_pairings_de": [
+      "Zu den größten Momenten des Lebens"
+    ],
+    "food_pairings_en": [
+      "For life's greatest moments"
+    ],
+    "food_pairings_fr": [
+      "Pour les plus grands moments de la vie"
+    ],
+    "created_at": "2025-12-12T23:46:18.057991+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "dc03987e-24b3-480e-926d-165c34ab616b",
+    "name": "Ronco di Belmont 2021",
+    "winery": "Matasci",
+    "country": "Schweiz",
+    "region": "Tessin - Tenero",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Klassisch und sinnlich, rote Rosen, Pflaume, ein Merlot, der wie eine Umarmung von Nonna schmeckt.",
+    "description_en": "Classic and sensual, red roses, plum, a Merlot that tastes like a hug from Nonna.",
+    "description_fr": "Classique et sensuel, roses rouges, prune, un Merlot qui a le goût d'un câlin de Nonna.",
+    "food_pairings_de": [
+      "Polenta con brasato"
+    ],
+    "food_pairings_en": [
+      "Polenta with braised meat"
+    ],
+    "food_pairings_fr": [
+      "Polenta au brasato"
+    ],
+    "created_at": "2025-12-12T23:46:18.058761+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "84168566-6774-4e6e-985d-d5092319234b",
+    "name": "Convento 2021",
+    "winery": "Valsangiacomo",
+    "country": "Schweiz",
+    "region": "Tessin - Mendrisio",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Aus 100-jährigen Reben im alten Klostergarten – fast sakral, mit Weihrauch, Schokolade und Amarena.",
+    "description_en": "From 100-year-old vines in the old monastery garden – almost sacred, with incense, chocolate and amarena cherry.",
+    "description_fr": "De vignes centenaires dans l'ancien jardin du monastère – presque sacré, avec de l'encens, du chocolat et de l'amarena.",
+    "food_pairings_de": [
+      "Wildschweinragout"
+    ],
+    "food_pairings_en": [
+      "Wild boar ragout"
+    ],
+    "food_pairings_fr": [
+      "Ragoût de sanglier"
+    ],
+    "created_at": "2025-12-12T23:46:18.059558+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "8d065bc4-4734-43e3-ae44-b0ca60c4fc2a",
+    "name": "Terre Alte Bianco 2022",
+    "winery": "Gialdi",
+    "country": "Schweiz",
+    "region": "Tessin - Mendrisio",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Chardonnay, Merlot Bianco",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Ein rarer Weiß-Assemblage – cremig, mit Ananas und Haselnuss, ein Tropfen, der die Seele streichelt.",
+    "description_en": "A rare white assemblage – creamy, with pineapple and hazelnut, a drop that caresses the soul.",
+    "description_fr": "Un rare assemblage blanc – crémeux, avec de l'ananas et de la noisette, une goutte qui caresse l'âme.",
+    "food_pairings_de": [
+      "Risotto mit Safran und Luganighe"
+    ],
+    "food_pairings_en": [
+      "Risotto with saffron and Luganighe sausage"
+    ],
+    "food_pairings_fr": [
+      "Risotto au safran et Luganighe"
+    ],
+    "created_at": "2025-12-12T23:46:18.060397+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "b9f88f92-4d0d-431a-9b15-1032a4956b0c",
+    "name": "SanZeno Riserva 2019",
+    "winery": "Cantina Kopp von der Crone Visini",
+    "country": "Schweiz",
+    "region": "Tessin - Barbengo",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Feminine Eleganz aus alten Reben – Veilchen, Grafit, eine Merlot-Dame, die das Herz mit Seide und Feuer erobert.",
+    "description_en": "Feminine elegance from old vines – violet, graphite, a Merlot lady who conquers the heart with silk and fire.",
+    "description_fr": "Élégance féminine de vieilles vignes – violette, graphite, une dame Merlot qui conquiert le cœur avec soie et feu.",
+    "food_pairings_de": [
+      "Perlhuhn mit Morcheln"
+    ],
+    "food_pairings_en": [
+      "Guinea fowl with morels"
+    ],
+    "food_pairings_fr": [
+      "Pintade aux morilles"
+    ],
+    "created_at": "2025-12-12T23:46:18.061194+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "e3a46da0-ae8b-4d64-8d3d-a12ebd458ec3",
+    "name": "Il Canto della Terra 2021",
+    "winery": "Delea",
+    "country": "Schweiz",
+    "region": "Tessin - Losone",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Wie ein gregorianischer Choral in Rot – tief, spirituell, mit Schiefer und schwarzen Oliven.",
+    "description_en": "Like a Gregorian chant in red – deep, spiritual, with slate and black olives.",
+    "description_fr": "Comme un chant grégorien en rouge – profond, spirituel, avec de l'ardoise et des olives noires.",
+    "food_pairings_de": [
+      "Geschmolzener Bitto",
+      "Taleggio"
+    ],
+    "food_pairings_en": [
+      "Melted Bitto",
+      "Taleggio"
+    ],
+    "food_pairings_fr": [
+      "Bitto fondu",
+      "Taleggio"
+    ],
+    "created_at": "2025-12-12T23:46:18.061930+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "66f66f64-8af7-4442-b04c-656da72d493b",
+    "name": "Carato Riserva 2020",
+    "winery": "Vinattieri Ticinesi",
+    "country": "Schweiz",
+    "region": "Tessin - Lugano",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Ein monumentaler Merlot, 24 Monate Barrique, Tabak, Leder, Brombeere – ein Wein, der wie ein alter Gentleman spricht.",
+    "description_en": "A monumental Merlot, 24 months barrique, tobacco, leather, blackberry – a wine that speaks like an old gentleman.",
+    "description_fr": "Un Merlot monumental, 24 mois de barrique, tabac, cuir, mûre – un vin qui parle comme un vieux gentleman.",
+    "food_pairings_de": [
+      "Bistecca alla Fiorentina"
+    ],
+    "food_pairings_en": [
+      "Bistecca alla Fiorentina"
+    ],
+    "food_pairings_fr": [
+      "Bistecca alla Fiorentina"
+    ],
+    "created_at": "2025-12-12T23:46:18.062645+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "0a384266-c629-4183-8a80-44c3e20119b2",
+    "name": "Costa del Sole 2023",
+    "winery": "Cantina Pelossi",
+    "country": "Schweiz",
+    "region": "Tessin - Monteggio",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Leichtfüßig und sonnig, ein Merlot für jeden Tag, der trotzdem die Seele tanzen lässt.",
+    "description_en": "Light-footed and sunny, a Merlot for every day that still makes the soul dance.",
+    "description_fr": "Léger et ensoleillé, un Merlot de tous les jours qui fait quand même danser l'âme.",
+    "food_pairings_de": [
+      "Caprese",
+      "Grillgemüse"
+    ],
+    "food_pairings_en": [
+      "Caprese",
+      "Grilled vegetables"
+    ],
+    "food_pairings_fr": [
+      "Caprese",
+      "Légumes grillés"
+    ],
+    "created_at": "2025-12-12T23:46:18.063588+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "d254fddb-999b-400d-98ff-73b751f66a26",
+    "name": "Merlot Selezione d'Ottobre 2022",
+    "winery": "Tamborini",
+    "country": "Schweiz",
+    "region": "Tessin - Lamone",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Spät gelesen, fast amaronig – ein Kuss aus getrockneten Rosen und Schokolade.",
+    "description_en": "Late harvested, almost Amarone-like – a kiss of dried roses and chocolate.",
+    "description_fr": "Vendangé tardivement, presque amaronien – un baiser de roses séchées et de chocolat.",
+    "food_pairings_de": [
+      "Torta di pane",
+      "Gorgonzola dolce"
+    ],
+    "food_pairings_en": [
+      "Bread pudding",
+      "Gorgonzola dolce"
+    ],
+    "food_pairings_fr": [
+      "Gâteau de pain",
+      "Gorgonzola dolce"
+    ],
+    "created_at": "2025-12-12T23:46:18.064836+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "e899065c-bcaf-4ad0-8686-7019684819d1",
+    "name": "Arzo Gran Riserva 2020",
+    "winery": "Agriloro",
+    "country": "Schweiz",
+    "region": "Tessin - Arzo",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Aus dem heißesten Fleck des Tessins – vulkanisch, pfeffrig, mit Graphit und schwarzer Johannisbeere.",
+    "description_en": "From the hottest spot in Ticino – volcanic, peppery, with graphite and blackcurrant.",
+    "description_fr": "Du point le plus chaud du Tessin – volcanique, poivré, avec du graphite et du cassis.",
+    "food_pairings_de": [
+      "Lammcarrée mit Rosmarin"
+    ],
+    "food_pairings_en": [
+      "Rack of lamb with rosemary"
+    ],
+    "food_pairings_fr": [
+      "Carré d'agneau au romarin"
+    ],
+    "created_at": "2025-12-12T23:46:18.065859+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "b74affb1-c568-4edd-950c-e1f1b3cf8216",
+    "name": "Settimo 2021",
+    "winery": "Cantina Settemaggio",
+    "country": "Schweiz",
+    "region": "Tessin - Castel San Pietro",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein Merlot wie Samt auf der Zunge, mit Veilchen und Lakritz – pure Verführung.",
+    "description_en": "A Merlot like velvet on the tongue, with violet and licorice – pure seduction.",
+    "description_fr": "Un Merlot comme du velours sur la langue, avec de la violette et de la réglisse – pure séduction.",
+    "food_pairings_de": [
+      "Risotto al nero mit Tintenfisch"
+    ],
+    "food_pairings_en": [
+      "Black risotto with squid"
+    ],
+    "food_pairings_fr": [
+      "Risotto nero aux calamars"
+    ],
+    "created_at": "2025-12-12T23:46:18.066868+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "514ce26d-dfae-4817-8611-412db3ebf757",
+    "name": "Rosso del Don 2021",
+    "winery": "Cantina Il Cavaliere",
+    "country": "Schweiz",
+    "region": "Tessin - Morbio Inferiore",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Tief, fast schwarz, mit Espresso und Trüffel – ein Wein für Mitternacht und Geheimnisse.",
+    "description_en": "Deep, almost black, with espresso and truffle – a wine for midnight and secrets.",
+    "description_fr": "Profond, presque noir, avec de l'espresso et de la truffe – un vin pour minuit et les secrets.",
+    "food_pairings_de": [
+      "48 Monate Parmigiano"
+    ],
+    "food_pairings_en": [
+      "48-month Parmigiano"
+    ],
+    "food_pairings_fr": [
+      "Parmigiano 48 mois"
+    ],
+    "created_at": "2025-12-12T23:46:18.067817+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "ed8cf3f0-b0b8-49e5-852e-f77b750481cc",
+    "name": "Merlot L'Inizio 2023",
+    "winery": "Huber Vini",
+    "country": "Schweiz",
+    "region": "Tessin - Coldrerio",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Der junge Wilde – frisch, saftig, voller Lebenslust.",
+    "description_en": "The young wild one – fresh, juicy, full of joie de vivre.",
+    "description_fr": "Le jeune sauvage – frais, juteux, plein de joie de vivre.",
+    "food_pairings_de": [
+      "Pizza Margherita aus dem Holzofen"
+    ],
+    "food_pairings_en": [
+      "Wood-fired Pizza Margherita"
+    ],
+    "food_pairings_fr": [
+      "Pizza Margherita au feu de bois"
+    ],
+    "created_at": "2025-12-12T23:46:18.068796+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "64e635ea-82eb-4fe2-bac3-d2b648990127",
+    "name": "Vigna d'Antan 2019",
+    "winery": "Guido Brivio",
+    "country": "Schweiz",
+    "region": "Tessin - Mendrisio",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Aus ungepfropften Urreben – ein archaischer, wilder Merlot, der die Seele in die Zeit vor der Reblaus zurückversetzt.",
+    "description_en": "From ungrafted original vines – an archaic, wild Merlot that transports the soul to the time before phylloxera.",
+    "description_fr": "De vignes originales non greffées – un Merlot archaïque et sauvage qui transporte l'âme à l'époque d'avant le phylloxéra.",
+    "food_pairings_de": [
+      "Brasato al Merlot"
+    ],
+    "food_pairings_en": [
+      "Beef braised in Merlot"
+    ],
+    "food_pairings_fr": [
+      "Brasato au Merlot"
+    ],
+    "created_at": "2025-12-12T23:46:18.069897+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "01ed73ec-23d1-4a5c-9338-7050417fe633",
+    "name": "Chilestro 2021",
+    "winery": "Cantina Chiodi",
+    "country": "Schweiz",
+    "region": "Tessin - Ascona",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Biodynamisch, ungeschminkt, mit Erdbeeren und Kräutern – ein Natur pur.",
+    "description_en": "Biodynamic, unadorned, with strawberries and herbs – pure nature.",
+    "description_fr": "Biodynamique, sans fard, avec des fraises et des herbes – nature pure.",
+    "food_pairings_de": [
+      "Vitello tonnato"
+    ],
+    "food_pairings_en": [
+      "Vitello tonnato"
+    ],
+    "food_pairings_fr": [
+      "Vitello tonnato"
+    ],
+    "created_at": "2025-12-12T23:46:18.071034+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "dff1f0df-8de8-40b9-be39-401239db7567",
+    "name": "Bianco Rovere 2022",
+    "winery": "Gialdi",
+    "country": "Schweiz",
+    "region": "Tessin - Mendrisio",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Eichenveredelter Weißmerlot, wie flüssiges Gold.",
+    "description_en": "Oak-aged white Merlot, like liquid gold.",
+    "description_fr": "Merlot blanc élevé en chêne, comme de l'or liquide.",
+    "food_pairings_de": [
+      "Seezunge"
+    ],
+    "food_pairings_en": [
+      "Sole"
+    ],
+    "food_pairings_fr": [
+      "Sole"
+    ],
+    "created_at": "2025-12-12T23:46:18.072187+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "d4316389-6d00-4d10-8bb1-310b554cd898",
+    "name": "Sinfonia 2021",
+    "winery": "Terreni alla Maggia",
+    "country": "Schweiz",
+    "region": "Tessin - Ascona",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Harmonisches Cuvée, singt im Glas.",
+    "description_en": "Harmonious cuvée that sings in the glass.",
+    "description_fr": "Cuvée harmonieuse qui chante dans le verre.",
+    "food_pairings_de": [
+      "Kaninchen"
+    ],
+    "food_pairings_en": [
+      "Rabbit"
+    ],
+    "food_pairings_fr": [
+      "Lapin"
+    ],
+    "created_at": "2025-12-12T23:46:18.073233+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "d55d22b8-48f5-429e-9a28-5fb608eff257",
+    "name": "Montagna Magica 2020",
+    "winery": "Cantina Monti",
+    "country": "Schweiz",
+    "region": "Tessin - Cademario",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Mystisch, nach Kastanienhonig.",
+    "description_en": "Mystical, of chestnut honey.",
+    "description_fr": "Mystique, de miel de châtaignier.",
+    "food_pairings_de": [
+      "Polenta e funghi"
+    ],
+    "food_pairings_en": [
+      "Polenta with mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Polenta aux champignons"
+    ],
+    "created_at": "2025-12-12T23:46:18.074207+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "a5b33ced-5fcc-4c33-b4dd-478d130313f7",
+    "name": "Merlot La Preziosa 2022",
+    "winery": "Delea",
+    "country": "Schweiz",
+    "region": "Tessin - Losone",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Süßlicher Schmelz, fast erotisch.",
+    "description_en": "Sweet melting sensation, almost erotic.",
+    "description_fr": "Fondu sucré, presque érotique.",
+    "food_pairings_de": [
+      "Tiramisù"
+    ],
+    "food_pairings_en": [
+      "Tiramisù"
+    ],
+    "food_pairings_fr": [
+      "Tiramisù"
+    ],
+    "created_at": "2025-12-12T23:46:18.075262+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "6ec404d6-f222-4994-90db-a666d31777f1",
+    "name": "Barrique Rosso 2021",
+    "winery": "Cantina Sociale Mendrisio",
+    "country": "Schweiz",
+    "region": "Tessin - Mendrisio",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Volkstümlich und doch edel.",
+    "description_en": "Folk-like yet noble.",
+    "description_fr": "Populaire et pourtant noble.",
+    "food_pairings_de": [
+      "Salumi"
+    ],
+    "food_pairings_en": [
+      "Cured meats"
+    ],
+    "food_pairings_fr": [
+      "Charcuterie"
+    ],
+    "created_at": "2025-12-12T23:46:18.076614+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "c16f9bfa-f937-4b6c-8529-f77ead226d61",
+    "name": "Origine 2021",
+    "winery": "Cantina Il Cavaliere",
+    "country": "Schweiz",
+    "region": "Tessin - Morbio Inferiore",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Der pure Anfang, kraftvoll und ehrlich.",
+    "description_en": "The pure beginning, powerful and honest.",
+    "description_fr": "Le pur commencement, puissant et honnête.",
+    "food_pairings_de": [
+      "Ossobuco"
+    ],
+    "food_pairings_en": [
+      "Ossobuco"
+    ],
+    "food_pairings_fr": [
+      "Ossobuco"
+    ],
+    "created_at": "2025-12-12T23:46:18.077518+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "8027cdf8-4034-43c5-b7d2-d71b1ef09f8b",
+    "name": "Merlot Solo 2023",
+    "winery": "Vinattieri Ticinesi",
+    "country": "Schweiz",
+    "region": "Tessin - Lugano",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Einzellage, stolz und allein.",
+    "description_en": "Single vineyard, proud and alone.",
+    "description_fr": "Parcelle unique, fier et seul.",
+    "food_pairings_de": [
+      "Grilladen"
+    ],
+    "food_pairings_en": [
+      "Grilled meats"
+    ],
+    "food_pairings_fr": [
+      "Grillades"
+    ],
+    "created_at": "2025-12-12T23:46:18.078368+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "d82dfc2b-fd94-430e-b973-244029abbd60",
+    "name": "Rosato del Ticino 2024",
+    "winery": "Matasci",
+    "country": "Schweiz",
+    "region": "Tessin - Tenero",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rosé",
+    "price_category": "€€",
+    "description_de": "Sommer in Rosa, nach Himbeeren.",
+    "description_en": "Summer in pink, of raspberries.",
+    "description_fr": "L'été en rose, de framboises.",
+    "food_pairings_de": [
+      "Caprese"
+    ],
+    "food_pairings_en": [
+      "Caprese"
+    ],
+    "food_pairings_fr": [
+      "Caprese"
+    ],
+    "created_at": "2025-12-12T23:46:18.079251+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "5efca192-b255-41a1-a093-79c28a420d01",
+    "name": "Merlot Sassi Grossi 2021",
+    "winery": "Klaus Eneroth",
+    "country": "Schweiz",
+    "region": "Tessin - Ligornetto",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Steinig, mineralisch, großartig.",
+    "description_en": "Stony, mineral, magnificent.",
+    "description_fr": "Pierreux, minéral, magnifique.",
+    "food_pairings_de": [
+      "Wild"
+    ],
+    "food_pairings_en": [
+      "Game"
+    ],
+    "food_pairings_fr": [
+      "Gibier"
+    ],
+    "created_at": "2025-12-12T23:46:18.079972+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "9c02a32e-de60-4331-bc27-558012e23eb8",
+    "name": "Bagarino 2022",
+    "winery": "Cantina Kopp von der Crone",
+    "country": "Schweiz",
+    "region": "Tessin - Barbengo",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Leicht, fröhlich, süffig.",
+    "description_en": "Light, cheerful, quaffable.",
+    "description_fr": "Léger, joyeux, gouleyant.",
+    "food_pairings_de": [
+      "Antipasti"
+    ],
+    "food_pairings_en": [
+      "Antipasti"
+    ],
+    "food_pairings_fr": [
+      "Antipasti"
+    ],
+    "created_at": "2025-12-12T23:46:18.080946+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "e453ea96-cfd4-484f-aa50-183b6f801d7a",
+    "name": "Meride Riserva 2020",
+    "winery": "Cantina La Montanina",
+    "country": "Schweiz",
+    "region": "Tessin - Meride",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Uralte Terrassen, tiefe Seele.",
+    "description_en": "Ancient terraces, deep soul.",
+    "description_fr": "Terrasses ancestrales, âme profonde.",
+    "food_pairings_de": [
+      "Risotto nero"
+    ],
+    "food_pairings_en": [
+      "Black risotto"
+    ],
+    "food_pairings_fr": [
+      "Risotto nero"
+    ],
+    "created_at": "2025-12-12T23:46:18.082124+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "ef83d2e4-b7a6-4ff2-ba07-2f5f12e47769",
+    "name": "Dogaia 2021",
+    "winery": "Cantina Dogaia",
+    "country": "Schweiz",
+    "region": "Tessin - Castel San Pietro",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Modern, sauber, präzise.",
+    "description_en": "Modern, clean, precise.",
+    "description_fr": "Moderne, propre, précis.",
+    "food_pairings_de": [
+      "Thunfischtatar"
+    ],
+    "food_pairings_en": [
+      "Tuna tartare"
+    ],
+    "food_pairings_fr": [
+      "Tartare de thon"
+    ],
+    "created_at": "2025-12-12T23:46:18.082888+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "72029fcf-d532-4134-b070-c11bd35e38e7",
+    "name": "Merlot Vigna Vecchia 2019",
+    "winery": "Pelossi – Greina",
+    "country": "Schweiz",
+    "region": "Tessin - Monteggio",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ehrwürdig und sanft.",
+    "description_en": "Venerable and gentle.",
+    "description_fr": "Vénérable et doux.",
+    "food_pairings_de": [
+      "Gereifter Käse"
+    ],
+    "food_pairings_en": [
+      "Aged cheese"
+    ],
+    "food_pairings_fr": [
+      "Fromage affiné"
+    ],
+    "created_at": "2025-12-12T23:46:18.083583+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "bfc7e9bd-f31e-41d5-b0ee-2070e65f7e13",
+    "name": "Castello Luigi 2021",
+    "winery": "Luigi Zanini",
+    "country": "Schweiz",
+    "region": "Tessin - Rivera",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Der Patriarch aller Tessiner Merlots.",
+    "description_en": "The patriarch of all Ticino Merlots.",
+    "description_fr": "Le patriarche de tous les Merlots tessinois.",
+    "food_pairings_de": [
+      "Zu allem Großen"
+    ],
+    "food_pairings_en": [
+      "For all grand occasions"
+    ],
+    "food_pairings_fr": [
+      "Pour toutes les grandes occasions"
+    ],
+    "created_at": "2025-12-12T23:46:18.084314+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "1234267b-6c44-4611-9856-01d591af8ef9",
+    "name": "Rosso di Clara 2022",
+    "winery": "Clara Gentili",
+    "country": "Schweiz",
+    "region": "Tessin - Novazzano",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Weibliche Kraft, rote Frucht.",
+    "description_en": "Feminine strength, red fruit.",
+    "description_fr": "Force féminine, fruit rouge.",
+    "food_pairings_de": [
+      "Pasta al ragù"
+    ],
+    "food_pairings_en": [
+      "Pasta with ragù"
+    ],
+    "food_pairings_fr": [
+      "Pâtes au ragù"
+    ],
+    "created_at": "2025-12-12T23:46:18.084992+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "79306d5f-1d5e-4b6b-a10a-dd8dc3d27d08",
+    "name": "Merlot Bianco 2023",
+    "winery": "Cantina Huber",
+    "country": "Schweiz",
+    "region": "Tessin - Coldrerio",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Frisch wie Morgentau.",
+    "description_en": "Fresh as morning dew.",
+    "description_fr": "Frais comme la rosée du matin.",
+    "food_pairings_de": [
+      "Ceviche"
+    ],
+    "food_pairings_en": [
+      "Ceviche"
+    ],
+    "food_pairings_fr": [
+      "Ceviche"
+    ],
+    "created_at": "2025-12-12T23:46:18.085783+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "eba6df26-d9b8-419f-afce-4aa3d628746d",
+    "name": "Ligornetto 2021",
+    "winery": "Cantina Latini",
+    "country": "Schweiz",
+    "region": "Tessin - Ligornetto",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Samtig, fast süß.",
+    "description_en": "Velvety, almost sweet.",
+    "description_fr": "Velouté, presque sucré.",
+    "food_pairings_de": [
+      "Schokoladendessert"
+    ],
+    "food_pairings_en": [
+      "Chocolate dessert"
+    ],
+    "food_pairings_fr": [
+      "Dessert au chocolat"
+    ],
+    "created_at": "2025-12-12T23:46:18.086653+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "e20223b7-1733-4bc9-87f0-4dccb9022994",
+    "name": "Merlot La Torre 2020",
+    "winery": "Cantina Torre",
+    "country": "Schweiz",
+    "region": "Tessin - Riva San Vitale",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Turmhoch, monumental.",
+    "description_en": "Tower-high, monumental.",
+    "description_fr": "Haut comme une tour, monumental.",
+    "food_pairings_de": [
+      "Rindsfilet"
+    ],
+    "food_pairings_en": [
+      "Beef fillet"
+    ],
+    "food_pairings_fr": [
+      "Filet de bœuf"
+    ],
+    "created_at": "2025-12-12T23:46:18.087485+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "de174e1a-2907-4922-a039-53248ed9d0ef",
+    "name": "Sotto il Bosco 2022",
+    "winery": "Cantina Boschetto",
+    "country": "Schweiz",
+    "region": "Tessin - Stabio",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Waldig, geheimnisvoll.",
+    "description_en": "Woody, mysterious.",
+    "description_fr": "Boisé, mystérieux.",
+    "food_pairings_de": [
+      "Pilzrisotto"
+    ],
+    "food_pairings_en": [
+      "Mushroom risotto"
+    ],
+    "food_pairings_fr": [
+      "Risotto aux champignons"
+    ],
+    "created_at": "2025-12-12T23:46:18.088263+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "1381eff1-1726-40fc-b0e1-f678edf443a2",
+    "name": "Merlot Armonia 2023",
+    "winery": "Cantina Carrara",
+    "country": "Schweiz",
+    "region": "Tessin - Castel San Pietro",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Ausgewogen, singt im Mund.",
+    "description_en": "Balanced, sings in the mouth.",
+    "description_fr": "Équilibré, chante en bouche.",
+    "food_pairings_de": [
+      "Kalbsleber"
+    ],
+    "food_pairings_en": [
+      "Calf liver"
+    ],
+    "food_pairings_fr": [
+      "Foie de veau"
+    ],
+    "created_at": "2025-12-12T23:46:18.089036+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "d6c871de-84ba-4db6-be8e-6aff8bf2110f",
+    "name": "Vino della Pace 2021",
+    "winery": "Coop. Astoria",
+    "country": "Schweiz",
+    "region": "Tessin - Mendrisio",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Friedenswein, weich und tröstend.",
+    "description_en": "Peace wine, soft and comforting.",
+    "description_fr": "Vin de paix, doux et réconfortant.",
+    "food_pairings_de": [
+      "Zu Freunden"
+    ],
+    "food_pairings_en": [
+      "With friends"
+    ],
+    "food_pairings_fr": [
+      "Entre amis"
+    ],
+    "created_at": "2025-12-12T23:46:18.089793+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "9ba2cc03-09d6-4f1a-a378-2d9a66f88abc",
+    "name": "Merlot Granito 2021",
+    "winery": "Cantina Il Bosco",
+    "country": "Schweiz",
+    "region": "Tessin - Stabio",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Granit pur, straff und lang.",
+    "description_en": "Pure granite, taut and long.",
+    "description_fr": "Pur granit, tendu et long.",
+    "food_pairings_de": [
+      "Lamm"
+    ],
+    "food_pairings_en": [
+      "Lamb"
+    ],
+    "food_pairings_fr": [
+      "Agneau"
+    ],
+    "created_at": "2025-12-12T23:46:18.090661+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "0d5a40fa-f807-44b2-9ec2-f0f1aa7fc89f",
+    "name": "Rosé Luna 2024",
+    "winery": "Gialdi",
+    "country": "Schweiz",
+    "region": "Tessin - Mendrisio",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rosé",
+    "price_category": "€€",
+    "description_de": "Mondlicht in Rosa.",
+    "description_en": "Moonlight in pink.",
+    "description_fr": "Clair de lune en rose.",
+    "food_pairings_de": [
+      "Sommerabenden"
+    ],
+    "food_pairings_en": [
+      "Summer evenings"
+    ],
+    "food_pairings_fr": [
+      "Soirées d'été"
+    ],
+    "created_at": "2025-12-12T23:46:18.091503+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "8cf16608-8b55-400c-bf3c-7a163dfd10cf",
+    "name": "Merlot Viti Vecchie 2020",
+    "winery": "Cantina Nobile",
+    "country": "Schweiz",
+    "region": "Tessin - Mendrisio",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Alte Reben, tiefe Weisheit.",
+    "description_en": "Old vines, deep wisdom.",
+    "description_fr": "Vieilles vignes, sagesse profonde.",
+    "food_pairings_de": [
+      "Meditation"
+    ],
+    "food_pairings_en": [
+      "Meditation"
+    ],
+    "food_pairings_fr": [
+      "Méditation"
+    ],
+    "created_at": "2025-12-12T23:46:18.092317+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "35adee33-e7a4-446e-93b7-4a7ac20c9fa2",
+    "name": "Sogno di Luigi 2021",
+    "winery": "Zanini",
+    "country": "Schweiz",
+    "region": "Tessin - Rivera",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein Traum in Rot.",
+    "description_en": "A dream in red.",
+    "description_fr": "Un rêve en rouge.",
+    "food_pairings_de": [
+      "Liebe"
+    ],
+    "food_pairings_en": [
+      "Love"
+    ],
+    "food_pairings_fr": [
+      "Amour"
+    ],
+    "created_at": "2025-12-12T23:46:18.093093+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "e239ffa6-558c-498c-b156-3142268f08a3",
+    "name": "Merlot Selezione 2023",
+    "winery": "Coop. Mendrisio",
+    "country": "Schweiz",
+    "region": "Tessin - Mendrisio",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Der beste Alltags-Merlot.",
+    "description_en": "The best everyday Merlot.",
+    "description_fr": "Le meilleur Merlot du quotidien.",
+    "food_pairings_de": [
+      "Zu jedem Tag"
+    ],
+    "food_pairings_en": [
+      "For every day"
+    ],
+    "food_pairings_fr": [
+      "Pour chaque jour"
+    ],
+    "created_at": "2025-12-12T23:46:18.093828+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "f9be3a63-bbec-439d-9a87-401daf03cfdb",
+    "name": "Barrique Selezione Oro 2020",
+    "winery": "Tamborini",
+    "country": "Schweiz",
+    "region": "Tessin - Lamone",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Golden und üppig.",
+    "description_en": "Golden and opulent.",
+    "description_fr": "Doré et opulent.",
+    "food_pairings_de": [
+      "Festen"
+    ],
+    "food_pairings_en": [
+      "Celebrations"
+    ],
+    "food_pairings_fr": [
+      "Fêtes"
+    ],
+    "created_at": "2025-12-12T23:46:18.094676+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "25b25f53-f689-4113-99b7-483c6256af68",
+    "name": "Merlot Collina d'Oro 2022",
+    "winery": "Cantina Collina d'Oro",
+    "country": "Schweiz",
+    "region": "Tessin - Collina d'Oro",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Goldener Hügel, goldener Wein.",
+    "description_en": "Golden hill, golden wine.",
+    "description_fr": "Colline dorée, vin doré.",
+    "food_pairings_de": [
+      "Sonnenuntergängen"
+    ],
+    "food_pairings_en": [
+      "Sunsets"
+    ],
+    "food_pairings_fr": [
+      "Couchers de soleil"
+    ],
+    "created_at": "2025-12-12T23:46:18.095394+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "75e0fa75-549f-4fc3-8049-678cedfe23f0",
+    "name": "Il Merlot del Nonno 2021",
+    "winery": "Cantina Ermotti",
+    "country": "Schweiz",
+    "region": "Tessin - Bioggio",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Großvaters Merlot, voller Geschichten.",
+    "description_en": "Grandfather's Merlot, full of stories.",
+    "description_fr": "Le Merlot de grand-père, plein d'histoires.",
+    "food_pairings_de": [
+      "Familie"
+    ],
+    "food_pairings_en": [
+      "Family"
+    ],
+    "food_pairings_fr": [
+      "Famille"
+    ],
+    "created_at": "2025-12-12T23:46:18.096069+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "89ac3304-c0fb-4e5a-a2b5-0d1920df95a7",
+    "name": "Merlot Ticino DOC Vigneti delle Terre di Pedemonte 2024",
+    "winery": "Terre di Pedemonte",
+    "country": "Schweiz",
+    "region": "Tessin - Pedemonte",
+    "appellation": "Ticino DOC",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Der pure, nackte, wunderschöne Tessiner Merlot – wie ein offenes Herz.",
+    "description_en": "The pure, naked, beautiful Ticino Merlot – like an open heart.",
+    "description_fr": "Le Merlot tessinois pur, nu et magnifique – comme un cœur ouvert.",
+    "food_pairings_de": [
+      "Zu allem, was das Leben schön macht"
+    ],
+    "food_pairings_en": [
+      "Everything that makes life beautiful"
+    ],
+    "food_pairings_fr": [
+      "Tout ce qui rend la vie belle"
+    ],
+    "created_at": "2025-12-12T23:46:18.097112+00:00",
+    "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
   }
 ]

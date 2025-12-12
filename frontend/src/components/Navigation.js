@@ -19,11 +19,11 @@ const Navigation = () => {
 
   // Secondary nav items (visible on larger screens or via scroll)
   const secondaryNavItems = [
+    { path: '/sommelier-kompass', icon: Compass, labelKey: 'regional_nav' },
     { path: '/wine-database', icon: BookOpen, labelKey: 'nav_wine_database' },
     { path: '/favorites', icon: Heart, labelKey: 'nav_favorites' },
     { path: '/cellar', icon: Wine, labelKey: 'nav_cellar' },
     { path: '/blog', icon: BookOpen, labelKey: 'nav_blog' },
-    { path: '/feed', icon: Users, labelKey: 'nav_feed' },
   ];
 
   const allNavItems = [...mainNavItems.slice(0, 4), ...secondaryNavItems, mainNavItems[4]];

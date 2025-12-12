@@ -21,6 +21,9 @@ const WineDatabasePage = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   
+  // Get initial search from URL
+  const initialSearch = searchParams.get('search') || '';
+  
   // Helper function to get description in current language
   const getDescription = (wine) => {
     if (language === 'en') return wine.description_en || wine.description_de || wine.description;

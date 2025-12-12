@@ -44,6 +44,7 @@ const splitDescription = (description) => {
 
 const PairingPage = () => {
   const { t, language } = useLanguage();
+  const navigate = useNavigate();
   const [dish, setDish] = useState('');
   const [useCellar, setUseCellar] = useState(false);
   const [wineTypeFilter, setWineTypeFilter] = useState('all');
@@ -62,6 +63,43 @@ const PairingPage = () => {
   const [spice, setSpice] = useState(null);
 
   const [history, setHistory] = useState([]);
+  
+  // Wine Detail Modal State
+  const [selectedWine, setSelectedWine] = useState(null);
+  const [wineModalOpen, setWineModalOpen] = useState(false);
+  
+  // Handle wine card click - open detail modal
+  const handleWineClick = (wine) => {
+    setSelectedWine(wine);
+    setWineModalOpen(true);
+  };
+  
+  // Search for wine in database
+  const searchWineInDatabase = (wineName) => {
+    // Extract the main wine name (before parentheses or commas)
+    const searchTerm = wineName.split('(')[0].split(',')[0].trim();
+    navigate(`/wine-database?search=${encodeURIComponent(searchTerm)}`);
+    setWineModalOpen(false);
+  };
+  
+  // Search for grape variety
+  const searchGrapeVariety = (wineName) => {
+    // Common grape varieties to search for
+    const grapeKeywords = ['Chardonnay', 'Riesling', 'Sauvignon', 'Pinot', 'Merlot', 'Cabernet', 'Syrah', 'Shiraz', 'Gewürztraminer', 'Grüner Veltliner', 'Chasselas', 'Fendant', 'Heida', 'Petite Arvine', 'Cornalin', 'Humagne'];
+    const searchTerm = wineName.split('(')[0].split(',')[0].trim();
+    
+    // Check if wine name contains a grape variety
+    for (const grape of grapeKeywords) {
+      if (searchTerm.toLowerCase().includes(grape.toLowerCase())) {
+        navigate(`/grapes?search=${encodeURIComponent(grape)}`);
+        setWineModalOpen(false);
+        return;
+      }
+    }
+    // If no grape found, search with the wine name
+    navigate(`/grapes?search=${encodeURIComponent(searchTerm)}`);
+    setWineModalOpen(false);
+  };
   
   useEffect(() => {
     const fetchDishes = async () => {

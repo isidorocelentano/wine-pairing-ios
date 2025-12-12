@@ -17,6 +17,7 @@ import hashlib
 import time
 import subprocess
 import asyncio
+import unicodedata
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -28,6 +29,41 @@ db = client[os.environ.get('DB_NAME', 'wine_pairing_db')]
 
 # LLM API Key
 EMERGENT_LLM_KEY = os.environ.get('EMERGENT_LLM_KEY', '')
+
+# ===================== ACCENT-INSENSITIVE SEARCH HELPER =====================
+# WICHTIG: Diese Funktion muss für alle Suchfunktionen verwendet werden!
+# Problem: "Chateau" muss "Château" finden, "Cotes" muss "Côtes" finden
+
+def create_accent_insensitive_pattern(search_term: str) -> str:
+    """
+    Erstellt ein Regex-Pattern, das Akzente ignoriert.
+    z.B. "chateau" -> "[cç]h[aàâäã]t[eéèêë][aàâäã][uùûüú]"
+    
+    MUSS bei allen Suchen verwendet werden, um französische Weine zu finden!
+    """
+    # Normalisiere den Suchbegriff (entferne Akzente)
+    normalized = ''.join(
+        c for c in unicodedata.normalize('NFD', search_term.strip())
+        if unicodedata.category(c) != 'Mn'
+    )
+    
+    # Ersetze Buchstaben durch Akzent-tolerante Patterns
+    ACCENT_REPLACEMENTS = {
+        'a': '[aàâäãá]',
+        'e': '[eéèêë]',
+        'i': '[iîïí]',
+        'o': '[oôöóò]',
+        'u': '[uùûüú]',
+        'c': '[cç]',
+        'n': '[nñ]',
+        'y': '[yÿý]',
+    }
+    
+    pattern = ''
+    for char in normalized.lower():
+        pattern += ACCENT_REPLACEMENTS.get(char, re.escape(char))
+    
+    return pattern
 
 # ===================== PAIRING CACHE =====================
 # In-memory cache for wine pairing recommendations

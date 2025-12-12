@@ -14,6 +14,7 @@ const Navigation = () => {
     { path: '/pairing', icon: Utensils, labelKey: 'nav_pairing' },
     { path: '/grapes', icon: Grape, labelKey: 'nav_grapes' },
     { path: '/wine-database', icon: Database, labelKey: 'nav_wine_database' },
+    { path: '/favorites', icon: Heart, labelKey: 'nav_favorites' },
     { path: '/feed', icon: Users, labelKey: 'nav_feed' },
     { path: '/chat', icon: MessageCircle, labelKey: 'nav_sommelier', isClaude: true },
   ];
@@ -21,7 +22,6 @@ const Navigation = () => {
   // Secondary nav items (visible on larger screens)
   const secondaryNavItems = [
     { path: '/sommelier-kompass', icon: Compass, labelKey: 'regional_nav' },
-    { path: '/favorites', icon: Heart, labelKey: 'nav_favorites' },
     { path: '/cellar', icon: Wine, labelKey: 'nav_cellar' },
     { path: '/blog', icon: BookOpen, labelKey: 'nav_blog' },
   ];

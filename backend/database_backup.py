@@ -17,6 +17,8 @@ if env_path.exists():
         for line in f:
             if '=' in line and not line.startswith('#'):
                 key, value = line.strip().split('=', 1)
+                # Remove quotes if present
+                value = value.strip('"').strip("'")
                 os.environ[key] = value
 
 # MongoDB connection

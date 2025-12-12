@@ -579,8 +579,10 @@ async def list_wine_database(
     query: dict = {}
 
     if search:
-        # Simple case-insensitive search in name, winery, region, appellation
-        regex = {"$regex": search, "$options": "i"}
+        # WICHTIG: Akzent-insensitive Suche verwenden!
+        # "Chateau" findet "Château", "Cotes" findet "Côtes"
+        accent_pattern = create_accent_insensitive_pattern(search)
+        regex = {"$regex": accent_pattern, "$options": "i"}
         query["$or"] = [
             {"name": regex},
             {"winery": regex},

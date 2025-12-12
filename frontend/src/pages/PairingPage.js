@@ -1,14 +1,13 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from "axios";
 import { toast } from 'sonner';
-import { Wine, Loader2, Search, X, ExternalLink, Grape } from 'lucide-react';
+import { Wine, Loader2, Search, ExternalLink } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useNavigate } from 'react-router-dom';
 import VoiceInputButton from "@/components/VoiceInputButton";

@@ -740,8 +740,8 @@ class WinePairingAPITester:
         return success
 
     def test_blog_post_detail(self):
-        """Test GET /api/blog/chardonnay - specific blog post"""
-        success, response = self.make_request('GET', 'blog/chardonnay', expected_status=200)
+        """Test GET /api/blog/rebsorte-chardonnay - specific blog post"""
+        success, response = self.make_request('GET', 'blog/rebsorte-chardonnay', expected_status=200)
         if success:
             title = response.get('title', 'Unknown')
             content = response.get('content', '')

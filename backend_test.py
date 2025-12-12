@@ -694,8 +694,8 @@ class WinePairingAPITester:
         return success
 
     def test_grape_variety_detail(self):
-        """Test GET /api/grape-varieties/chardonnay - specific grape details"""
-        success, response = self.make_request('GET', 'grape-varieties/chardonnay', expected_status=200)
+        """Test GET /api/grapes/chardonnay - specific grape details"""
+        success, response = self.make_request('GET', 'grapes/chardonnay', expected_status=200)
         if success:
             name = response.get('name', 'Unknown')
             grape_type = response.get('type', 'Unknown')

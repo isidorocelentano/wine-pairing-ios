@@ -595,12 +595,13 @@ const PairingPage = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                           {section.wines.map((wine, wineIdx) => {
                             const { short, long } = splitDescription(wine.description);
-                            const hasDetails = Boolean(long);
+                            const fullDescription = wine.description || '';
 
                             return (
                               <Card
                                 key={wineIdx}
                                 className="border-2 border-border hover:border-primary hover:shadow-lg transition-all cursor-pointer group"
+                                onClick={() => handleWineClick({ ...wine, fullDescription })}
                               >
                                 <CardContent className="p-4 flex flex-col gap-2">
                                   {/* Wine Name - PROMINENT */}
@@ -622,17 +623,11 @@ const PairingPage = () => {
                                     </p>
                                   )}
 
-                                  {/* Expandable details */}
-                                  {hasDetails && (
-                                    <details className="mt-1 group-open:mt-2">
-                                      <summary className="text-xs text-primary/80 hover:text-primary font-medium flex items-center gap-1 cursor-pointer list-none">
-                                        <span>{t('pairing_more_details')}</span>
-                                      </summary>
-                                      <p className="mt-2 text-xs text-muted-foreground leading-relaxed whitespace-pre-line">
-                                        {long}
-                                      </p>
-                                    </details>
-                                  )}
+                                  {/* Tap hint */}
+                                  <p className="text-xs text-primary/60 mt-1 flex items-center gap-1">
+                                    <ExternalLink className="w-3 h-3" />
+                                    {language === 'de' ? 'Tippen für Details' : language === 'fr' ? 'Appuyez pour détails' : 'Tap for details'}
+                                  </p>
                                 </CardContent>
                               </Card>
                             );

@@ -296,6 +296,18 @@ test_plan:
   test_all: false
   test_priority: "high_first"
 
+  - task: "Sommelier-Kompass Enhanced Dual Wine Recommendations"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/pages/SommelierKompassPage.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "COMPREHENSIVE TESTING COMPLETED - ALL ENHANCED DUAL WINE RECOMMENDATION REQUIREMENTS VERIFIED! ✅ Greece Test: Successfully verified dual wine sections with '🌍 Internationaler Klassiker' (International Classic) and '✨ Lokale Entdeckung' (Local Discovery). Found expected 'Assyrtiko (Santorini PDO)' as local discovery wine with proper amber/accent styling (bg-accent/10 border border-accent/30). ✅ Japan Test: Verified 3 pairing cards with dual wine structure. Found 'Edo-mae Sushi' with 'Champagner (Brut) oder Chablis' as international and 'Koshu (Yamanashi)' as local discovery. Mountain emoji (🗻) found in local wine descriptions as expected. ✅ Italy Test (Non-exotic): Confirmed backward compatibility - all 8 Italian dishes show ONLY international wine section (bg-secondary/30), NO local discovery sections found, maintaining single wine recommendation structure. ✅ Multilingual Test: Language switching working perfectly - English labels show '🌍 International Classic' and '✨ Local Discovery' correctly when switched from German. ✅ Visual Styling: Confirmed correct styling differences - International sections use gray/secondary background (bg-secondary/30) while Local Discovery sections use amber/accent styling (bg-accent/10 border border-accent/30) with Sparkles icon. ✅ All 4 Greece pairings, 3 Japan pairings tested successfully. Enhanced dual wine recommendation system fully operational for exotic countries (Greece, Japan, Turkey, China) while maintaining single wine structure for non-exotic countries (Italy, France, etc.)."
+
   - task: "Wine Regions and Appellations Display"
     implemented: true
     working: true

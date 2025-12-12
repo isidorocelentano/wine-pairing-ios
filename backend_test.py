@@ -669,8 +669,8 @@ class WinePairingAPITester:
         return success
 
     def test_grape_varieties_list(self):
-        """Test GET /api/grape-varieties - should return 140 varieties"""
-        success, response = self.make_request('GET', 'grape-varieties', expected_status=200)
+        """Test GET /api/grapes - should return 140 varieties"""
+        success, response = self.make_request('GET', 'grapes', expected_status=200)
         if success:
             varieties = response if isinstance(response, list) else []
             expected_count = 140

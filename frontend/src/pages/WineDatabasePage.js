@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import axios from 'axios';
 import { Wine, Search, Filter, ChevronDown, Heart, Plus, Loader2, X, Bookmark } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
@@ -19,6 +19,7 @@ const API = `${BACKEND_URL}/api`;
 const WineDatabasePage = () => {
   const { t, language } = useLanguage();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   
   // Helper function to get description in current language
   const getDescription = (wine) => {

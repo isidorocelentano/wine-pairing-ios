@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate, useLocation } from "react-router-dom";
-import { Wine, Utensils, MessageCircle, Home, BookOpen, Users, Grape, Heart, Compass } from 'lucide-react';
+import { Wine, Utensils, MessageCircle, Home, BookOpen, Users, Grape, Heart, Compass, Database } from 'lucide-react';
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navigation = () => {
@@ -8,19 +8,19 @@ const Navigation = () => {
   const location = useLocation();
   const { t } = useLanguage();
 
-  // Main nav items (shown on mobile dock)
+  // Main nav items (shown on mobile dock - scrollable)
   const mainNavItems = [
     { path: '/', icon: Home, labelKey: 'nav_home' },
     { path: '/pairing', icon: Utensils, labelKey: 'nav_pairing' },
     { path: '/grapes', icon: Grape, labelKey: 'nav_grapes' },
+    { path: '/wine-database', icon: Database, labelKey: 'nav_wine_database' },
     { path: '/feed', icon: Users, labelKey: 'nav_feed' },
     { path: '/chat', icon: MessageCircle, labelKey: 'nav_sommelier', isClaude: true },
   ];
 
-  // Secondary nav items (visible on larger screens or via scroll)
+  // Secondary nav items (visible on larger screens)
   const secondaryNavItems = [
     { path: '/sommelier-kompass', icon: Compass, labelKey: 'regional_nav' },
-    { path: '/wine-database', icon: BookOpen, labelKey: 'nav_wine_database' },
     { path: '/favorites', icon: Heart, labelKey: 'nav_favorites' },
     { path: '/cellar', icon: Wine, labelKey: 'nav_cellar' },
     { path: '/blog', icon: BookOpen, labelKey: 'nav_blog' },

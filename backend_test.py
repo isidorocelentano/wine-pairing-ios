@@ -1765,7 +1765,8 @@ class WinePairingAPITester:
 def main():
     """Main test execution"""
     tester = WinePairingAPITester()
-    success = tester.run_all_tests()
+    # Run comprehensive pre-deployment tests as specified in review request
+    success = tester.run_comprehensive_pre_deployment_tests()
     return 0 if success else 1
 
 if __name__ == "__main__":

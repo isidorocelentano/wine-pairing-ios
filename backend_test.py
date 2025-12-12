@@ -716,7 +716,7 @@ class WinePairingAPITester:
 
     def test_blog_posts_list(self):
         """Test GET /api/blog - should return 150 blog posts"""
-        success, response = self.make_request('GET', 'blog', expected_status=200)
+        success, response = self.make_request('GET', 'blog?limit=200', expected_status=200)
         if success:
             posts = response if isinstance(response, list) else []
             expected_count = 150

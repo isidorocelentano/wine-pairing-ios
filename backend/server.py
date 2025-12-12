@@ -2389,11 +2389,13 @@ async def get_wine_detail(wine_id: str):
 
 @api_router.get("/wine-database/autocomplete/{query}")
 async def autocomplete_wines(query: str, limit: int = 10):
-    """Autocomplete for wine search"""
+    """Autocomplete for wine search - mit Akzent-Unterstützung"""
+    # WICHTIG: Akzent-insensitive Suche verwenden!
+    accent_pattern = create_accent_insensitive_pattern(query)
     search_query = {"$or": [
-        {"name": {"$regex": query, "$options": "i"}},
-        {"winery": {"$regex": query, "$options": "i"}},
-        {"grape_variety": {"$regex": query, "$options": "i"}}
+        {"name": {"$regex": accent_pattern, "$options": "i"}},
+        {"winery": {"$regex": accent_pattern, "$options": "i"}},
+        {"grape_variety": {"$regex": accent_pattern, "$options": "i"}}
     ]}
     
     wines = await db.wine_database.find(search_query, {"_id": 0, "id": 1, "name": 1, "winery": 1, "wine_color": 1}).limit(limit).to_list(limit)

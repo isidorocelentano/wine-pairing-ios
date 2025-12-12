@@ -694,6 +694,67 @@ const PairingPage = () => {
           </div>
         )}
       </div>
+      
+      {/* Wine Detail Modal */}
+      <Dialog open={wineModalOpen} onOpenChange={setWineModalOpen}>
+        <DialogContent className="max-w-lg max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2 text-xl">
+              <Wine className="w-5 h-5 text-primary" />
+              {selectedWine?.name}
+            </DialogTitle>
+            {selectedWine?.category && (
+              <Badge variant="secondary" className="w-fit mt-2">
+                {selectedWine.category}
+              </Badge>
+            )}
+          </DialogHeader>
+          
+          {selectedWine && (
+            <div className="space-y-4 mt-4">
+              {/* Full Description */}
+              <div className="bg-secondary/30 rounded-lg p-4">
+                <h4 className="font-medium mb-2 text-sm text-muted-foreground">
+                  {language === 'de' ? 'Beschreibung' : language === 'fr' ? 'Description' : 'Description'}
+                </h4>
+                <p className="text-sm leading-relaxed whitespace-pre-line">
+                  {selectedWine.fullDescription || selectedWine.description || (language === 'de' ? 'Keine Beschreibung verfügbar.' : 'No description available.')}
+                </p>
+              </div>
+              
+              {/* Action Buttons */}
+              <div className="flex flex-col gap-2">
+                <Button 
+                  variant="default" 
+                  className="w-full justify-start gap-2"
+                  onClick={() => searchWineInDatabase(selectedWine.name)}
+                >
+                  <Wine className="w-4 h-4" />
+                  {language === 'de' ? 'In Wein-Datenbank suchen' : language === 'fr' ? 'Chercher dans la base de données' : 'Search in Wine Database'}
+                </Button>
+                
+                <Button 
+                  variant="outline" 
+                  className="w-full justify-start gap-2"
+                  onClick={() => searchGrapeVariety(selectedWine.name)}
+                >
+                  <Grape className="w-4 h-4" />
+                  {language === 'de' ? 'Rebsorte entdecken' : language === 'fr' ? 'Découvrir le cépage' : 'Discover Grape Variety'}
+                </Button>
+              </div>
+              
+              {/* Tip */}
+              <p className="text-xs text-muted-foreground text-center">
+                {language === 'de' 
+                  ? '💡 Tipp: Suchen Sie nach diesem Wein in unserer Datenbank für Preise und Bezugsquellen.'
+                  : language === 'fr'
+                  ? '💡 Conseil: Recherchez ce vin dans notre base de données pour les prix et les sources.'
+                  : '💡 Tip: Search for this wine in our database for prices and sources.'}
+              </p>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

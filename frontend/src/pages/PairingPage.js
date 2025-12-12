@@ -595,7 +595,7 @@ const PairingPage = () => {
                                   {/* Tap hint */}
                                   <p className="text-xs text-primary/60 mt-1 flex items-center gap-1">
                                     <ExternalLink className="w-3 h-3" />
-                                    {language === 'de' ? 'Tippen für Details' : language === 'fr' ? 'Appuyez pour détails' : 'Tap for details'}
+                                    {language === 'de' ? '→ In Wein-Datenbank suchen' : language === 'fr' ? '→ Rechercher dans la base' : '→ Search in wine database'}
                                   </p>
                                 </CardContent>
                               </Card>

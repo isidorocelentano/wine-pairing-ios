@@ -40,7 +40,7 @@ const WineDatabasePage = () => {
   
   const [wines, setWines] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState(initialSearch);
   const [filters, setFilters] = useState({
     country: 'all',
     region: 'all',

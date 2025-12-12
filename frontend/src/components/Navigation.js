@@ -26,7 +26,7 @@ const Navigation = () => {
     { path: '/blog', icon: BookOpen, labelKey: 'nav_blog' },
   ];
 
-  const allNavItems = [...mainNavItems.slice(0, 4), ...secondaryNavItems, mainNavItems[4]];
+  const allNavItems = [...mainNavItems.slice(0, 5), ...secondaryNavItems, mainNavItems[5]];
 
   return (
     <nav className="nav-dock fixed bottom-3 md:bottom-6 left-1/2 -translate-x-1/2 rounded-full px-2 md:px-6 py-1.5 md:py-3 shadow-2xl z-50 max-w-[95vw] md:max-w-none" data-testid="main-navigation">

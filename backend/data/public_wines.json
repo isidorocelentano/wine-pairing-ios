@@ -26520,5 +26520,1402 @@
     ],
     "created_at": "2025-12-12T23:32:57.918066+00:00",
     "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "ebee24be-75b6-4609-a0f7-3d5729aa185b",
+    "name": "Chardonnay Gourmand 2023",
+    "winery": "Cave des Viticulteurs de Bonvillars",
+    "country": "Schweiz",
+    "region": "Waadt - Bonvillars",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Ein goldener Traum, der von reifen Birnen und Vanilleflüstern erzählt – ein Wein, der die Seele in sanfte, cremige Umarmung hüllt und vergangene Sommer heraufbeschwört.",
+    "description_en": "A golden dream that speaks of ripe pears and vanilla whispers – a wine that wraps the soul in soft, creamy embrace and conjures past summers.",
+    "description_fr": "Un rêve doré qui parle de poires mûres et de murmures de vanille – un vin qui enveloppe l'âme d'une étreinte douce et crémeuse et évoque les étés passés.",
+    "food_pairings_de": [
+      "Gebratenes Huhn mit Kräutern",
+      "Tomme Vaudoise"
+    ],
+    "food_pairings_en": [
+      "Roast chicken with herbs",
+      "Tomme Vaudoise"
+    ],
+    "food_pairings_fr": [
+      "Poulet rôti aux herbes",
+      "Tomme Vaudoise"
+    ],
+    "created_at": "2025-12-12T23:38:19.670562+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "c5b49a55-557e-4cbd-9c8d-117d410d6617",
+    "name": "Dézaley-Marsens Grand Cru De la Tour 2022",
+    "winery": "Frères Dubois",
+    "country": "Schweiz",
+    "region": "Waadt - Cully",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Mineralisch und tiefgründig, wie ein Echo aus den Terrassen des Lavaux, das mit Zitrus und Stein die Seele auf eine meditative Wanderung durch Nebel und Licht schickt.",
+    "description_en": "Mineral and profound, like an echo from the Lavaux terraces, sending the soul on a meditative journey through mist and light with citrus and stone.",
+    "description_fr": "Minéral et profond, comme un écho des terrasses du Lavaux, envoyant l'âme dans un voyage méditatif à travers brume et lumière avec agrumes et pierre.",
+    "food_pairings_de": [
+      "Frisches Forellenfilet",
+      "Papet Vaudois"
+    ],
+    "food_pairings_en": [
+      "Fresh trout fillet",
+      "Papet Vaudois"
+    ],
+    "food_pairings_fr": [
+      "Filet de truite frais",
+      "Papet Vaudois"
+    ],
+    "created_at": "2025-12-12T23:38:19.671940+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "0514cccd-55e8-4d99-9831-8b7242522355",
+    "name": "Prélude 2023",
+    "winery": "Château de Valeyres",
+    "country": "Schweiz",
+    "region": "Waadt - Valeyres-sous-Rances",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Frisch und blumig, ein Chasselas, der wie ein erstes Erwachen im Frühling das Herz mit Apfelnoten und leichter Säure erfrischt und Hoffnung weckt.",
+    "description_en": "Fresh and floral, a Chasselas that refreshes the heart like a first spring awakening with apple notes and light acidity, awakening hope.",
+    "description_fr": "Frais et floral, un Chasselas qui rafraîchit le cœur comme un premier réveil printanier avec des notes de pomme et une légère acidité, éveillant l'espoir.",
+    "food_pairings_de": [
+      "Austern",
+      "Ziegenkäse-Platte"
+    ],
+    "food_pairings_en": [
+      "Oysters",
+      "Goat cheese platter"
+    ],
+    "food_pairings_fr": [
+      "Huîtres",
+      "Plateau de fromage de chèvre"
+    ],
+    "created_at": "2025-12-12T23:38:19.672905+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "9bdaa294-3f94-4018-9fd2-e7df9b54a478",
+    "name": "Pinot Gris 2023",
+    "winery": "Cave la Muscadelle",
+    "country": "Schweiz",
+    "region": "Waadt - Mont-sur-Rolle",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Pinot Gris",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Reich und exotisch, mit Birne und Gewürzen, die die Seele in eine orientalische Gartenoase entführen – ein Tropfen purer Verführung.",
+    "description_en": "Rich and exotic, with pear and spices that transport the soul to an oriental garden oasis – a drop of pure seduction.",
+    "description_fr": "Riche et exotique, avec de la poire et des épices qui transportent l'âme dans une oasis de jardin oriental – une goutte de pure séduction.",
+    "food_pairings_de": [
+      "Gegrillter Lachs",
+      "Asiatisches Gemüse"
+    ],
+    "food_pairings_en": [
+      "Grilled salmon",
+      "Asian vegetables"
+    ],
+    "food_pairings_fr": [
+      "Saumon grillé",
+      "Légumes asiatiques"
+    ],
+    "created_at": "2025-12-12T23:38:19.673968+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "692e2727-c53c-49bb-8f88-60633c17796d",
+    "name": "Rosé de Gamay 2023",
+    "winery": "Cave Jean-Daniel Coeytaux",
+    "country": "Schweiz",
+    "region": "Waadt - Yens",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Gamay",
+    "wine_color": "rosé",
+    "price_category": "€€",
+    "description_de": "Zartrosa und sommerlich, ein Rosé, der wie ein Sonnenuntergang über dem See das Herz mit Erdbeere und Frische umwebt.",
+    "description_en": "Delicate pink and summery, a Rosé that weaves the heart with strawberry and freshness like a sunset over the lake.",
+    "description_fr": "Rose délicat et estival, un Rosé qui tisse le cœur de fraise et de fraîcheur comme un coucher de soleil sur le lac.",
+    "food_pairings_de": [
+      "Salate mit Erdbeeren",
+      "Leichte Wurstplatten"
+    ],
+    "food_pairings_en": [
+      "Salads with strawberries",
+      "Light charcuterie"
+    ],
+    "food_pairings_fr": [
+      "Salades aux fraises",
+      "Charcuterie légère"
+    ],
+    "created_at": "2025-12-12T23:38:19.675131+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "13285d4d-b121-4f7a-a91e-6f31237e836e",
+    "name": "Gamay Vieilles Vignes 2023",
+    "winery": "Domaine Dillet",
+    "country": "Schweiz",
+    "region": "Waadt - Yvorne",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Gamay",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Robust und beerig, ein Gamay, der die Seele mit wilden Beeren und erdiger Wärme in herbstliche Wälder lockt.",
+    "description_en": "Robust and berry-rich, a Gamay that lures the soul into autumn forests with wild berries and earthy warmth.",
+    "description_fr": "Robuste et fruité, un Gamay qui attire l'âme dans les forêts d'automne avec des baies sauvages et une chaleur terreuse.",
+    "food_pairings_de": [
+      "Lammkoteletts",
+      "Pilzragout"
+    ],
+    "food_pairings_en": [
+      "Lamb chops",
+      "Mushroom ragout"
+    ],
+    "food_pairings_fr": [
+      "Côtelettes d'agneau",
+      "Ragoût de champignons"
+    ],
+    "created_at": "2025-12-12T23:38:19.676101+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "01bf6d2c-3a0c-41cb-be93-195c83dd61c3",
+    "name": "Pinot Noir Réserve 2022",
+    "winery": "Cave du Consul",
+    "country": "Schweiz",
+    "region": "Waadt - Perroy",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Elegant und filigran, mit Kirsche und Leder, das wie ein Liebesbrief die Seele in burgundische Melancholie taucht.",
+    "description_en": "Elegant and delicate, with cherry and leather that plunges the soul into Burgundian melancholy like a love letter.",
+    "description_fr": "Élégant et délicat, avec de la cerise et du cuir qui plonge l'âme dans la mélancolie bourguignonne comme une lettre d'amour.",
+    "food_pairings_de": [
+      "Entenbrust",
+      "Tomme Vaudoise"
+    ],
+    "food_pairings_en": [
+      "Duck breast",
+      "Tomme Vaudoise"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard",
+      "Tomme Vaudoise"
+    ],
+    "created_at": "2025-12-12T23:38:19.677027+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "7e5b703b-f565-4e78-bea1-3839a2f20365",
+    "name": "Merlot 2021",
+    "winery": "La Châtaigneraie",
+    "country": "Schweiz",
+    "region": "Waadt - Etoy",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Samten und fruchtig, ein Merlot, der das Herz mit Pflaume und Schokolade in tiefe, tröstliche Zufriedenheit wiegt.",
+    "description_en": "Velvety and fruity, a Merlot that rocks the heart into deep, comforting satisfaction with plum and chocolate.",
+    "description_fr": "Velouté et fruité, un Merlot qui berce le cœur dans une satisfaction profonde et réconfortante avec de la prune et du chocolat.",
+    "food_pairings_de": [
+      "Roastbeef",
+      "Dunkle Schokolade"
+    ],
+    "food_pairings_en": [
+      "Roast beef",
+      "Dark chocolate"
+    ],
+    "food_pairings_fr": [
+      "Rôti de bœuf",
+      "Chocolat noir"
+    ],
+    "created_at": "2025-12-12T23:38:19.678153+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "e7503b12-c497-47f8-a634-242655f3932e",
+    "name": "Plant Robert 2023",
+    "winery": "Laurent Berthet",
+    "country": "Schweiz",
+    "region": "Waadt - Cully",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Plant Robert",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Uralt und temperamentvoll, ein Rot, das wie ein vergessenes Gedicht die Seele mit Beeren und Gewürzen bezaubert.",
+    "description_en": "Ancient and spirited, a red that enchants the soul with berries and spices like a forgotten poem.",
+    "description_fr": "Ancien et fougueux, un rouge qui enchante l'âme de baies et d'épices comme un poème oublié.",
+    "food_pairings_de": [
+      "Wildpastete",
+      "Herzhafter Käse"
+    ],
+    "food_pairings_en": [
+      "Game pâté",
+      "Hearty cheese"
+    ],
+    "food_pairings_fr": [
+      "Pâté de gibier",
+      "Fromage corsé"
+    ],
+    "created_at": "2025-12-12T23:38:19.679140+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "7400de46-eeb9-447d-8c14-c7ce49b32d63",
+    "name": "LA BOLLIATTAZ Grand Cru 2022",
+    "winery": "Hammel – Terres de Vins",
+    "country": "Schweiz",
+    "region": "Waadt - Chablais Vaudois",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Strukturiert und mineralisch, ein Chasselas, der die Seele mit Feuerstein und Apfel in eine stille Reflexion versetzt.",
+    "description_en": "Structured and mineral, a Chasselas that sets the soul into quiet reflection with flint and apple.",
+    "description_fr": "Structuré et minéral, un Chasselas qui plonge l'âme dans une réflexion silencieuse avec du silex et de la pomme.",
+    "food_pairings_de": [
+      "Krebse",
+      "Frischer Salat"
+    ],
+    "food_pairings_en": [
+      "Crayfish",
+      "Fresh salad"
+    ],
+    "food_pairings_fr": [
+      "Écrevisses",
+      "Salade fraîche"
+    ],
+    "created_at": "2025-12-12T23:38:19.680045+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "8d2006b5-e4d3-41c3-8d72-d4fadbd8b3f3",
+    "name": "St-Saphorin Les Manchettes 2015",
+    "winery": "Pierre Monachon",
+    "country": "Schweiz",
+    "region": "Waadt - Lavaux",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Reif und golden, mit Honig und Nüssen, die wie ein alter Freund die Seele in nostalgische Wärme hüllen.",
+    "description_en": "Ripe and golden, with honey and nuts that wrap the soul in nostalgic warmth like an old friend.",
+    "description_fr": "Mûr et doré, avec du miel et des noix qui enveloppent l'âme d'une chaleur nostalgique comme un vieil ami.",
+    "food_pairings_de": [
+      "Foie gras",
+      "Reifer Camembert"
+    ],
+    "food_pairings_en": [
+      "Foie gras",
+      "Aged Camembert"
+    ],
+    "food_pairings_fr": [
+      "Foie gras",
+      "Camembert affiné"
+    ],
+    "created_at": "2025-12-12T23:38:19.680940+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "34d97f43-9aa2-492d-a163-bd3b568b5055",
+    "name": "Eys Rueyres 2023",
+    "winery": "Les Vignes de Vevey",
+    "country": "Schweiz",
+    "region": "Waadt - Vevey",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Frisch und aromatisch, ein Chasselas, der das Herz mit Zitrus und Kräutern auf eine Bergwanderung entführt.",
+    "description_en": "Fresh and aromatic, a Chasselas that takes the heart on a mountain hike with citrus and herbs.",
+    "description_fr": "Frais et aromatique, un Chasselas qui emmène le cœur en randonnée de montagne avec des agrumes et des herbes.",
+    "food_pairings_de": [
+      "Gegrillter Fisch",
+      "Sommergemüse"
+    ],
+    "food_pairings_en": [
+      "Grilled fish",
+      "Summer vegetables"
+    ],
+    "food_pairings_fr": [
+      "Poisson grillé",
+      "Légumes d'été"
+    ],
+    "created_at": "2025-12-12T23:38:19.681833+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "95014605-6fdb-48ca-bbe3-df6235c63df2",
+    "name": "Anthology 2017",
+    "winery": "Grognuz Marco & François",
+    "country": "Schweiz",
+    "region": "Waadt - Chablais Vaudois",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Assemblage",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Komplex und harmonisch, ein Assemblage, der die Seele in symphonische Tiefe taucht.",
+    "description_en": "Complex and harmonious, an assemblage that plunges the soul into symphonic depth.",
+    "description_fr": "Complexe et harmonieux, un assemblage qui plonge l'âme dans une profondeur symphonique.",
+    "food_pairings_de": [
+      "Ente",
+      "Pilzrisotto"
+    ],
+    "food_pairings_en": [
+      "Duck",
+      "Mushroom risotto"
+    ],
+    "food_pairings_fr": [
+      "Canard",
+      "Risotto aux champignons"
+    ],
+    "created_at": "2025-12-12T23:38:19.682723+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "9ac77fa5-fd3a-4894-a053-1f96706b9272",
+    "name": "Dézaley Grand Cru Chapotannaz 2015",
+    "winery": "Clos de la République",
+    "country": "Schweiz",
+    "region": "Waadt - Lavaux",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Legendär und mineralisch, mit Stein und Pfirsich, das wie ein Geheimnis die Seele verzaubert.",
+    "description_en": "Legendary and mineral, with stone and peach that enchants the soul like a secret.",
+    "description_fr": "Légendaire et minéral, avec de la pierre et de la pêche qui enchante l'âme comme un secret.",
+    "food_pairings_de": [
+      "Schalentiere",
+      "Zitronenhähnchen"
+    ],
+    "food_pairings_en": [
+      "Shellfish",
+      "Lemon chicken"
+    ],
+    "food_pairings_fr": [
+      "Crustacés",
+      "Poulet au citron"
+    ],
+    "created_at": "2025-12-12T23:38:19.683699+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "ac99565f-52d7-4eaa-a31a-ff2243d35b08",
+    "name": "Domaine de l'Ovaille 2016",
+    "winery": "Domaine de l'Ovaille",
+    "country": "Schweiz",
+    "region": "Waadt - Chablais Vaudois",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Weich und fruchtig, ein Weiß, der das Herz mit sanfter Süße umfängt.",
+    "description_en": "Soft and fruity, a white that embraces the heart with gentle sweetness.",
+    "description_fr": "Doux et fruité, un blanc qui embrasse le cœur d'une douce suavité.",
+    "food_pairings_de": [
+      "Geflügelterrine",
+      "Milde Raclette"
+    ],
+    "food_pairings_en": [
+      "Poultry terrine",
+      "Mild Raclette"
+    ],
+    "food_pairings_fr": [
+      "Terrine de volaille",
+      "Raclette douce"
+    ],
+    "created_at": "2025-12-12T23:38:19.684592+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "fe9b081f-0e08-4bf6-85a7-ccb0911ab0cc",
+    "name": "Gamaret 2017",
+    "winery": "Bernard Cavé",
+    "country": "Schweiz",
+    "region": "Waadt - Morges",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Gamaret",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Würzig und intensiv, ein Rot, das die Seele mit Pfeffer und Beeren in Ekstase versetzt.",
+    "description_en": "Spicy and intense, a red that sends the soul into ecstasy with pepper and berries.",
+    "description_fr": "Épicé et intense, un rouge qui envoie l'âme en extase avec du poivre et des baies.",
+    "food_pairings_de": [
+      "BBQ-Rippen",
+      "Scharfe Wurst"
+    ],
+    "food_pairings_en": [
+      "BBQ ribs",
+      "Spicy sausage"
+    ],
+    "food_pairings_fr": [
+      "Côtes BBQ",
+      "Saucisse épicée"
+    ],
+    "created_at": "2025-12-12T23:38:19.685562+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "9df0171e-c8f4-4879-9db9-366523b1612f",
+    "name": "Burignon 2023",
+    "winery": "Francey Vins",
+    "country": "Schweiz",
+    "region": "Waadt - Chexbres",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Rein und lebendig, ein Chasselas, der wie ein Bergquell die Seele klärt.",
+    "description_en": "Pure and vibrant, a Chasselas that clears the soul like a mountain spring.",
+    "description_fr": "Pur et vivant, un Chasselas qui clarifie l'âme comme une source de montagne.",
+    "food_pairings_de": [
+      "Meeresfrüchte",
+      "Frischer Salat"
+    ],
+    "food_pairings_en": [
+      "Seafood",
+      "Fresh salad"
+    ],
+    "food_pairings_fr": [
+      "Fruits de mer",
+      "Salade fraîche"
+    ],
+    "created_at": "2025-12-12T23:38:19.686436+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "b8b9a052-18ed-42fe-acea-456e4c3af637",
+    "name": "Yvorne Trechêne 2023",
+    "winery": "Commune d'Yvorne",
+    "country": "Schweiz",
+    "region": "Waadt - Yvorne",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Hoch und aromatisch, mit Mandeln und Nektarinen, das die Seele auf Höhenflüge trägt.",
+    "description_en": "High and aromatic, with almonds and nectarines that carry the soul to great heights.",
+    "description_fr": "Haut et aromatique, avec des amandes et des nectarines qui portent l'âme vers les sommets.",
+    "food_pairings_de": [
+      "Käseplatte",
+      "Gebratenes Forellenfilet"
+    ],
+    "food_pairings_en": [
+      "Cheese platter",
+      "Pan-fried trout fillet"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fromages",
+      "Filet de truite poêlé"
+    ],
+    "created_at": "2025-12-12T23:38:19.687328+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "ab164928-7c76-41a8-b86a-69dbb035c6e6",
+    "name": "Réserve St-Jacques 2023",
+    "winery": "Château de Valeyres",
+    "country": "Schweiz",
+    "region": "Waadt - Valeyres-sous-Rances",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Tief und tanninreich, mit Noten von Leder und Beeren, die die Seele in alte Legenden eintauchen lassen.",
+    "description_en": "Deep and tannic, with notes of leather and berries that immerse the soul in ancient legends.",
+    "description_fr": "Profond et tannique, avec des notes de cuir et de baies qui plongent l'âme dans d'anciennes légendes.",
+    "food_pairings_de": [
+      "Rehrücken",
+      "Dunkles Fleisch"
+    ],
+    "food_pairings_en": [
+      "Saddle of venison",
+      "Dark meat"
+    ],
+    "food_pairings_fr": [
+      "Selle de chevreuil",
+      "Viande brune"
+    ],
+    "created_at": "2025-12-12T23:38:19.688284+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "d8bd7ed9-992d-4dde-be96-37550a24a4cb",
+    "name": "Gamay Confidentiel 2023",
+    "winery": "Château de Valeyres",
+    "country": "Schweiz",
+    "region": "Waadt - Valeyres-sous-Rances",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Gamay",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Geheimnisvoll und samten, ein Gamay, der das Herz mit Kirschen und Geheimnissen umgarnt.",
+    "description_en": "Mysterious and velvety, a Gamay that captivates the heart with cherries and secrets.",
+    "description_fr": "Mystérieux et velouté, un Gamay qui envoûte le cœur de cerises et de secrets.",
+    "food_pairings_de": [
+      "Pasta Bolognese",
+      "Herzhaftes Brot"
+    ],
+    "food_pairings_en": [
+      "Pasta Bolognese",
+      "Hearty bread"
+    ],
+    "food_pairings_fr": [
+      "Pâtes bolognaise",
+      "Pain rustique"
+    ],
+    "created_at": "2025-12-12T23:38:19.689308+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "3997e2cd-631b-476f-bb29-f0ed142deda2",
+    "name": "Trois Tours Rosé 2024",
+    "winery": "Celliers du Chablais",
+    "country": "Schweiz",
+    "region": "Waadt - Aigle",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Gamay",
+    "wine_color": "rosé",
+    "price_category": "€€",
+    "description_de": "Leicht und verlockend, ein Rosé, der wie ein Flüstern die Seele mit Sommerfreude erfüllt.",
+    "description_en": "Light and alluring, a Rosé that fills the soul with summer joy like a whisper.",
+    "description_fr": "Léger et séduisant, un Rosé qui remplit l'âme de joie estivale comme un murmure.",
+    "food_pairings_de": [
+      "Tapas",
+      "Lachs"
+    ],
+    "food_pairings_en": [
+      "Tapas",
+      "Salmon"
+    ],
+    "food_pairings_fr": [
+      "Tapas",
+      "Saumon"
+    ],
+    "created_at": "2025-12-12T23:38:19.690297+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "1aec59bb-401c-4426-8264-97ec1016b4cd",
+    "name": "Le Sémillant 2023",
+    "winery": "Cave Champ des Clos",
+    "country": "Schweiz",
+    "region": "Waadt - Chexbres",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Hefeträchtig und blumig, ein Chasselas, der die Seele in goldene Sonnenuntergänge taucht.",
+    "description_en": "Yeasty and floral, a Chasselas that dips the soul into golden sunsets.",
+    "description_fr": "Levuré et floral, un Chasselas qui plonge l'âme dans des couchers de soleil dorés.",
+    "food_pairings_de": [
+      "Huhn mit Kräutern",
+      "Milde Raclette"
+    ],
+    "food_pairings_en": [
+      "Herb chicken",
+      "Mild Raclette"
+    ],
+    "food_pairings_fr": [
+      "Poulet aux herbes",
+      "Raclette douce"
+    ],
+    "created_at": "2025-12-12T23:38:19.691399+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "39fe041e-6f7d-4852-ac55-b9d4ebf692bd",
+    "name": "Leurs Excellences de Berne 2023",
+    "winery": "Cave Champ des Clos",
+    "country": "Schweiz",
+    "region": "Waadt - Chexbres",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Klassisch und elegant, mit Apfel und Mineral, das wie ein Tanz die Seele erheitert.",
+    "description_en": "Classic and elegant, with apple and mineral that gladdens the soul like a dance.",
+    "description_fr": "Classique et élégant, avec de la pomme et du minéral qui réjouit l'âme comme une danse.",
+    "food_pairings_de": [
+      "Asiatische Gerichte",
+      "Gebratener Tofu"
+    ],
+    "food_pairings_en": [
+      "Asian dishes",
+      "Pan-fried tofu"
+    ],
+    "food_pairings_fr": [
+      "Plats asiatiques",
+      "Tofu poêlé"
+    ],
+    "created_at": "2025-12-12T23:38:19.692354+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "84889f44-773c-4276-81d2-2411248ac59a",
+    "name": "Morges Tradition 2023",
+    "winery": "Cave de La Côte",
+    "country": "Schweiz",
+    "region": "Waadt - Morges",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Fruchtig und ausgewogen, ein Chasselas, der das Herz mit erdiger Wärme umfängt.",
+    "description_en": "Fruity and balanced, a Chasselas that embraces the heart with earthy warmth.",
+    "description_fr": "Fruité et équilibré, un Chasselas qui embrasse le cœur d'une chaleur terreuse.",
+    "food_pairings_de": [
+      "Fondue",
+      "Rind"
+    ],
+    "food_pairings_en": [
+      "Fondue",
+      "Beef"
+    ],
+    "food_pairings_fr": [
+      "Fondue",
+      "Bœuf"
+    ],
+    "created_at": "2025-12-12T23:38:19.693239+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "808c4135-0be4-4df2-8ff0-1c5be476a183",
+    "name": "Vin Joyeux 2023",
+    "winery": "Jean-Daniel Coeytaux",
+    "country": "Schweiz",
+    "region": "Waadt - Yens",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Chasselas",
+    "wine_color": "schaumwein",
+    "price_category": "€€",
+    "description_de": "Sprudelnd und fröhlich, ein Schaumwein, der die Seele mit kindlicher Freude weckt.",
+    "description_en": "Sparkling and joyful, a sparkling wine that awakens the soul with childlike joy.",
+    "description_fr": "Pétillant et joyeux, un vin mousseux qui éveille l'âme d'une joie enfantine.",
+    "food_pairings_de": [
+      "Austern",
+      "Leichte Vorspeisen"
+    ],
+    "food_pairings_en": [
+      "Oysters",
+      "Light appetizers"
+    ],
+    "food_pairings_fr": [
+      "Huîtres",
+      "Amuse-bouches légers"
+    ],
+    "created_at": "2025-12-12T23:38:19.694099+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "657eef23-59d8-4ecf-8fc2-a4169da73289",
+    "name": "Grand Cru Chasselas 2023",
+    "winery": "Catherine Cruchon",
+    "country": "Schweiz",
+    "region": "Waadt - Echichens",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Ikonisch und tief, mit Honig und Stein, das wie ein Erbe die Seele berührt.",
+    "description_en": "Iconic and deep, with honey and stone that touches the soul like a heritage.",
+    "description_fr": "Iconique et profond, avec du miel et de la pierre qui touche l'âme comme un héritage.",
+    "food_pairings_de": [
+      "Geflügel",
+      "Meeresfrüchte"
+    ],
+    "food_pairings_en": [
+      "Poultry",
+      "Seafood"
+    ],
+    "food_pairings_fr": [
+      "Volaille",
+      "Fruits de mer"
+    ],
+    "created_at": "2025-12-12T23:38:19.694945+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "05a6c372-b43a-4bdd-b366-1d2ce85864dd",
+    "name": "Lutry Tradition 2023",
+    "winery": "Francey Vins",
+    "country": "Schweiz",
+    "region": "Waadt - Lutry",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Traditionell und rein, ein Tropfen, der das Herz mit Bergfrische reinigt.",
+    "description_en": "Traditional and pure, a drop that cleanses the heart with mountain freshness.",
+    "description_fr": "Traditionnel et pur, une goutte qui purifie le cœur de fraîcheur de montagne.",
+    "food_pairings_de": [
+      "Fischfilet",
+      "Salat"
+    ],
+    "food_pairings_en": [
+      "Fish fillet",
+      "Salad"
+    ],
+    "food_pairings_fr": [
+      "Filet de poisson",
+      "Salade"
+    ],
+    "created_at": "2025-12-12T23:38:19.695883+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "ca8b27fc-1d4d-49f3-a799-f912465269ef",
+    "name": "Plant Robez 2022",
+    "winery": "Blaise Duboux",
+    "country": "Schweiz",
+    "region": "Waadt - Lavaux",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Gamay",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Robust und beerig, ein Gamay, der die Seele mit erdiger Kraft stärkt.",
+    "description_en": "Robust and berry-rich, a Gamay that strengthens the soul with earthy power.",
+    "description_fr": "Robuste et fruité, un Gamay qui renforce l'âme d'une puissance terreuse.",
+    "food_pairings_de": [
+      "Wild",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Game",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Gibier",
+      "Champignons"
+    ],
+    "created_at": "2025-12-12T23:38:19.696931+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "fa0dbaf3-b12d-4f24-9444-4094310e8b6b",
+    "name": "Quorum 2022",
+    "winery": "Domaine des Hospices Cantonaux",
+    "country": "Schweiz",
+    "region": "Waadt - Villeneuve",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Assemblage",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Assembliert und harmonisch, ein Rot, das wie ein Chor die Seele erhebt.",
+    "description_en": "Assembled and harmonious, a red that uplifts the soul like a choir.",
+    "description_fr": "Assemblé et harmonieux, un rouge qui élève l'âme comme un chœur.",
+    "food_pairings_de": [
+      "Lamm",
+      "Dunkles Fleisch"
+    ],
+    "food_pairings_en": [
+      "Lamb",
+      "Dark meat"
+    ],
+    "food_pairings_fr": [
+      "Agneau",
+      "Viande brune"
+    ],
+    "created_at": "2025-12-12T23:38:19.697923+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "f0686442-5477-45f9-b959-9de1ac89cb3e",
+    "name": "Baron Blanc Pinot Blanc 2023",
+    "winery": "Domaine Baron",
+    "country": "Schweiz",
+    "region": "Waadt - La Côte",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Pinot Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Zart und blumig, ein Weiß, der das Herz mit waadtländischer Reinheit erfüllt.",
+    "description_en": "Delicate and floral, a white that fills the heart with Vaudois purity.",
+    "description_fr": "Délicat et floral, un blanc qui remplit le cœur de pureté vaudoise.",
+    "food_pairings_de": [
+      "Fisch",
+      "Salate"
+    ],
+    "food_pairings_en": [
+      "Fish",
+      "Salads"
+    ],
+    "food_pairings_fr": [
+      "Poisson",
+      "Salades"
+    ],
+    "created_at": "2025-12-12T23:38:19.698887+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "c0c0237b-2ae9-4a67-b280-f5838571a91b",
+    "name": "Gamaret Barrique 2022",
+    "winery": "Cave des 13 Coteaux",
+    "country": "Schweiz",
+    "region": "Waadt - Arnex-sur-Orbe",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Gamaret",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Barriqué und würzig, ein Rot, der wie ein Traum die Seele umhüllt.",
+    "description_en": "Barrel-aged and spicy, a red that envelops the soul like a dream.",
+    "description_fr": "Élevé en barrique et épicé, un rouge qui enveloppe l'âme comme un rêve.",
+    "food_pairings_de": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "food_pairings_en": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "food_pairings_fr": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "created_at": "2025-12-12T23:38:19.699864+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "1df8c229-aa1d-4fb4-b046-b8277ee7d9b9",
+    "name": "Les Manchettes 2023",
+    "winery": "Pierre Monachon",
+    "country": "Schweiz",
+    "region": "Waadt - St-Saphorin",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Mineralisch und nervös, ein Chasselas, der die Seele mit alpiner Frische weckt.",
+    "description_en": "Mineral and nervous, a Chasselas that awakens the soul with alpine freshness.",
+    "description_fr": "Minéral et nerveux, un Chasselas qui éveille l'âme d'une fraîcheur alpine.",
+    "food_pairings_de": [
+      "Krebse",
+      "Kräutersuppe"
+    ],
+    "food_pairings_en": [
+      "Crayfish",
+      "Herb soup"
+    ],
+    "food_pairings_fr": [
+      "Écrevisses",
+      "Soupe aux herbes"
+    ],
+    "created_at": "2025-12-12T23:38:19.700771+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "93e3a5d1-8c3d-4486-aac8-0d28683f726b",
+    "name": "La Redoute 2024",
+    "winery": "Domaine St-Saphorin",
+    "country": "Schweiz",
+    "region": "Waadt - Lavaux",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Intensiv und salzig, ein Tropfen, der das Herz mit Meeresbrise umweht.",
+    "description_en": "Intense and salty, a drop that envelops the heart with sea breeze.",
+    "description_fr": "Intense et salé, une goutte qui enveloppe le cœur de brise marine.",
+    "food_pairings_de": [
+      "Schalentiere",
+      "Zitronenhähnchen"
+    ],
+    "food_pairings_en": [
+      "Shellfish",
+      "Lemon chicken"
+    ],
+    "food_pairings_fr": [
+      "Crustacés",
+      "Poulet au citron"
+    ],
+    "created_at": "2025-12-12T23:38:19.701631+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "46f12a52-6999-4428-a479-55654e100551",
+    "name": "Clos du Boux 2022",
+    "winery": "Domaine Clos du Boux",
+    "country": "Schweiz",
+    "region": "Waadt - Epesses",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Reich und strukturiert, ein Grand Cru, der die Seele in städtischer Eleganz badet.",
+    "description_en": "Rich and structured, a Grand Cru that bathes the soul in urban elegance.",
+    "description_fr": "Riche et structuré, un Grand Cru qui baigne l'âme dans l'élégance urbaine.",
+    "food_pairings_de": [
+      "Krustentiere",
+      "Geflügel"
+    ],
+    "food_pairings_en": [
+      "Crustaceans",
+      "Poultry"
+    ],
+    "food_pairings_fr": [
+      "Crustacés",
+      "Volaille"
+    ],
+    "created_at": "2025-12-12T23:38:19.702483+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "190e269b-148b-4d5a-b8ad-f853c4cf7fb9",
+    "name": "Le Cadran de Autecour Grand Cru 2023",
+    "winery": "Domaine de Autecour",
+    "country": "Schweiz",
+    "region": "Waadt - Mont-sur-Rolle",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Sonnig und fruchtig, ein Chasselas, der das Herz mit sommerlicher Leichtigkeit umfängt.",
+    "description_en": "Sunny and fruity, a Chasselas that embraces the heart with summery lightness.",
+    "description_fr": "Ensoleillé et fruité, un Chasselas qui embrasse le cœur d'une légèreté estivale.",
+    "food_pairings_de": [
+      "Sommergerichte",
+      "Frischkäse"
+    ],
+    "food_pairings_en": [
+      "Summer dishes",
+      "Fresh cheese"
+    ],
+    "food_pairings_fr": [
+      "Plats d'été",
+      "Fromage frais"
+    ],
+    "created_at": "2025-12-12T23:38:19.703342+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "ee683055-54f2-49dd-a0c1-0b2553e6aa83",
+    "name": "Domaine Bertholet 2023",
+    "winery": "Domaine Bertholet",
+    "country": "Schweiz",
+    "region": "Waadt - Lavaux",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Fruchtig und robust, ein Rot, der die Seele mit imperierender Kraft erhebt.",
+    "description_en": "Fruity and robust, a red that uplifts the soul with commanding power.",
+    "description_fr": "Fruité et robuste, un rouge qui élève l'âme d'une puissance impérieuse.",
+    "food_pairings_de": [
+      "Lamm",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Lamb",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Agneau",
+      "Champignons"
+    ],
+    "created_at": "2025-12-12T23:38:19.704179+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "f1500825-d06f-439e-ac30-39558bf2a271",
+    "name": "Domaine Le Luissalet 2023",
+    "winery": "Domaine Le Luissalet",
+    "country": "Schweiz",
+    "region": "Waadt - Lavaux",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Exotisch und würzig, ein Weiß, der das Herz mit orientalischem Flair verzaubert.",
+    "description_en": "Exotic and spicy, a white that enchants the heart with oriental flair.",
+    "description_fr": "Exotique et épicé, un blanc qui enchante le cœur d'un flair oriental.",
+    "food_pairings_de": [
+      "Curry",
+      "Vegetarische Gerichte"
+    ],
+    "food_pairings_en": [
+      "Curry",
+      "Vegetarian dishes"
+    ],
+    "food_pairings_fr": [
+      "Curry",
+      "Plats végétariens"
+    ],
+    "created_at": "2025-12-12T23:38:19.705025+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "6ef6f95d-e5b0-461f-aa21-303a224f9ff4",
+    "name": "Domaine Croix Duplex 2023",
+    "winery": "Domaine Croix Duplex",
+    "country": "Schweiz",
+    "region": "Waadt - Lavaux",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Assemblage",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Komplex und harmonisch, ein Assemblage, der die Seele in göttliche Ekstase versetzt.",
+    "description_en": "Complex and harmonious, an assemblage that sends the soul into divine ecstasy.",
+    "description_fr": "Complexe et harmonieux, un assemblage qui envoie l'âme en extase divine.",
+    "food_pairings_de": [
+      "Entrecôte",
+      "Schokolade"
+    ],
+    "food_pairings_en": [
+      "Entrecôte",
+      "Chocolate"
+    ],
+    "food_pairings_fr": [
+      "Entrecôte",
+      "Chocolat"
+    ],
+    "created_at": "2025-12-12T23:38:19.705889+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "b22e3af1-a112-4624-ac2e-a452c4bd9cf7",
+    "name": "Joëlle Rossier 2023",
+    "winery": "Joëlle Rossier & Famille Rossier",
+    "country": "Schweiz",
+    "region": "Waadt - Lavaux",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Tief und amaronig, ein Rot, das wie ein Abgrund die Seele fesselt.",
+    "description_en": "Deep and Amarone-like, a red that captivates the soul like an abyss.",
+    "description_fr": "Profond et amaronien, un rouge qui captive l'âme comme un abîme.",
+    "food_pairings_de": [
+      "Stark gewürzte Fleischgerichte"
+    ],
+    "food_pairings_en": [
+      "Heavily spiced meat dishes"
+    ],
+    "food_pairings_fr": [
+      "Plats de viande très épicés"
+    ],
+    "created_at": "2025-12-12T23:38:19.706770+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "bdfbd07b-c621-4d8a-add3-c400b51d08f0",
+    "name": "Jomini Vins 2023",
+    "winery": "Jomini Vins",
+    "country": "Schweiz",
+    "region": "Waadt - Lavaux",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Elegant und filigran, ein Pinot, der das Herz mit burgundischer Poesie umfängt.",
+    "description_en": "Elegant and delicate, a Pinot that embraces the heart with Burgundian poetry.",
+    "description_fr": "Élégant et délicat, un Pinot qui embrasse le cœur de poésie bourguignonne.",
+    "food_pairings_de": [
+      "Ente",
+      "Pilzgerichte"
+    ],
+    "food_pairings_en": [
+      "Duck",
+      "Mushroom dishes"
+    ],
+    "food_pairings_fr": [
+      "Canard",
+      "Plats aux champignons"
+    ],
+    "created_at": "2025-12-12T23:38:19.707736+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "1d314101-405e-4f5a-9a02-a64be90dcf83",
+    "name": "Gaillard et Fils 2023",
+    "winery": "Gaillard et Fils",
+    "country": "Schweiz",
+    "region": "Waadt - Lavaux",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Frisch und blumig, ein Weiß, der die Seele mit waadtländischer Reinheit erfüllt.",
+    "description_en": "Fresh and floral, a white that fills the soul with Vaudois purity.",
+    "description_fr": "Frais et floral, un blanc qui remplit l'âme de pureté vaudoise.",
+    "food_pairings_de": [
+      "Fisch",
+      "Salate"
+    ],
+    "food_pairings_en": [
+      "Fish",
+      "Salads"
+    ],
+    "food_pairings_fr": [
+      "Poisson",
+      "Salades"
+    ],
+    "created_at": "2025-12-12T23:38:19.708627+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "b596dcea-1bac-433a-8cc8-523e887712ba",
+    "name": "Domaine de la Ville de Morges 2023",
+    "winery": "Domaine de la Ville de Morges",
+    "country": "Schweiz",
+    "region": "Waadt - Morges",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Natürlich und lebendig, ein Chasselas, der wie ein Gebet die Seele beruhigt.",
+    "description_en": "Natural and vibrant, a Chasselas that calms the soul like a prayer.",
+    "description_fr": "Naturel et vivant, un Chasselas qui apaise l'âme comme une prière.",
+    "food_pairings_de": [
+      "Hummer",
+      "Milder Käse"
+    ],
+    "food_pairings_en": [
+      "Lobster",
+      "Mild cheese"
+    ],
+    "food_pairings_fr": [
+      "Homard",
+      "Fromage doux"
+    ],
+    "created_at": "2025-12-12T23:38:19.709546+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "2b407a86-28e7-403b-8c27-75d4d972b5dd",
+    "name": "Clos blanc du Clos du Châtelard 2023",
+    "winery": "Clos du Châtelard",
+    "country": "Schweiz",
+    "region": "Waadt - Villeneuve",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Historisch und elegant, ein Wein, der die Seele mit zeitloser Tiefe berührt.",
+    "description_en": "Historic and elegant, a wine that touches the soul with timeless depth.",
+    "description_fr": "Historique et élégant, un vin qui touche l'âme d'une profondeur intemporelle.",
+    "food_pairings_de": [
+      "Geflügel",
+      "Meeresfrüchte"
+    ],
+    "food_pairings_en": [
+      "Poultry",
+      "Seafood"
+    ],
+    "food_pairings_fr": [
+      "Volaille",
+      "Fruits de mer"
+    ],
+    "created_at": "2025-12-12T23:38:19.710415+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "5477fb13-da3a-4974-b930-c321124958ae",
+    "name": "Pinot Noir 2023",
+    "winery": "Jean-Daniel Coeytaux",
+    "country": "Schweiz",
+    "region": "Waadt - Yens",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Filigran und fruchtig, ein Windhauch aus Kirschen, der das Herz mit leichter Traurigkeit und purer Freude erfüllt.",
+    "description_en": "Delicate and fruity, a breath of wind carrying cherries that fills the heart with gentle sadness and pure joy.",
+    "description_fr": "Délicat et fruité, un souffle de vent de cerises qui remplit le cœur d'une légère tristesse et d'une joie pure.",
+    "food_pairings_de": [
+      "Entenbrust",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Duck breast",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard",
+      "Champignons"
+    ],
+    "created_at": "2025-12-12T23:38:19.711273+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "09924ef2-d98f-4d42-ac71-3bf90cad8edf",
+    "name": "Gamay 2023",
+    "winery": "Cave de La Côte",
+    "country": "Schweiz",
+    "region": "Waadt - Morges",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Gamay",
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Frisch und ausgewogen, ein Gamay, der das Herz mit klassischer Freude erheitert.",
+    "description_en": "Fresh and balanced, a Gamay that gladdens the heart with classic joy.",
+    "description_fr": "Frais et équilibré, un Gamay qui réjouit le cœur d'une joie classique.",
+    "food_pairings_de": [
+      "Fondue",
+      "Rind"
+    ],
+    "food_pairings_en": [
+      "Fondue",
+      "Beef"
+    ],
+    "food_pairings_fr": [
+      "Fondue",
+      "Bœuf"
+    ],
+    "created_at": "2025-12-12T23:38:19.712141+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "3ab02640-e13b-4c57-b6f6-96e595709313",
+    "name": "Chasselas Grand Cru 2023",
+    "winery": "Hammel – Terres de Vins",
+    "country": "Schweiz",
+    "region": "Waadt - Chablais",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Reich und strukturiert, ein Chasselas, der die Seele in waadtländische Wälder entführt.",
+    "description_en": "Rich and structured, a Chasselas that transports the soul to Vaudois forests.",
+    "description_fr": "Riche et structuré, un Chasselas qui transporte l'âme dans les forêts vaudoises.",
+    "food_pairings_de": [
+      "Lammkoteletts",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Lamb chops",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Côtelettes d'agneau",
+      "Fromage"
+    ],
+    "created_at": "2025-12-12T23:38:19.712982+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "53a298e9-a904-476c-8d75-3f96b726a804",
+    "name": "Pinot Noir 2023",
+    "winery": "Grognuz Marco & François",
+    "country": "Schweiz",
+    "region": "Waadt - Chablais",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Tief und mineralisch, mit dunklen Früchten, die wie ein Geheimnis die Seele berühren.",
+    "description_en": "Deep and mineral, with dark fruits that touch the soul like a secret.",
+    "description_fr": "Profond et minéral, avec des fruits noirs qui touchent l'âme comme un secret.",
+    "food_pairings_de": [
+      "Rindfleisch",
+      "Wild"
+    ],
+    "food_pairings_en": [
+      "Beef",
+      "Game"
+    ],
+    "food_pairings_fr": [
+      "Bœuf",
+      "Gibier"
+    ],
+    "created_at": "2025-12-12T23:38:19.713844+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "c0efa2a9-a7f7-4d2e-a5be-e0a20520c7e7",
+    "name": "Assemblage Rouge 2023",
+    "winery": "Cave des 13 Coteaux",
+    "country": "Schweiz",
+    "region": "Waadt - Arnex-sur-Orbe",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Assemblage",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Elegant und pfeffrig, ein Rot, der die Seele mit orientalischem Zauber umhüllt.",
+    "description_en": "Elegant and peppery, a red that envelops the soul with oriental magic.",
+    "description_fr": "Élégant et poivré, un rouge qui enveloppe l'âme de magie orientale.",
+    "food_pairings_de": [
+      "Gewürzhähnchen",
+      "Auberginen"
+    ],
+    "food_pairings_en": [
+      "Spiced chicken",
+      "Eggplant"
+    ],
+    "food_pairings_fr": [
+      "Poulet épicé",
+      "Aubergines"
+    ],
+    "created_at": "2025-12-12T23:38:19.714675+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "a773bc96-82cc-496d-86b2-25002bb05eee",
+    "name": "Plant Robert 2023",
+    "winery": "Blaise Duboux",
+    "country": "Schweiz",
+    "region": "Waadt - Lavaux",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Plant Robert",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Innovativ und fruchtig, ein Hybrid, der das Herz mit moderner Freude erfüllt.",
+    "description_en": "Innovative and fruity, a hybrid that fills the heart with modern joy.",
+    "description_fr": "Innovant et fruité, un hybride qui remplit le cœur d'une joie moderne.",
+    "food_pairings_de": [
+      "Grillgemüse",
+      "Fisch"
+    ],
+    "food_pairings_en": [
+      "Grilled vegetables",
+      "Fish"
+    ],
+    "food_pairings_fr": [
+      "Légumes grillés",
+      "Poisson"
+    ],
+    "created_at": "2025-12-12T23:38:19.715507+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
+  },
+  {
+    "id": "32528979-b40a-4e66-a68f-ef3c5d2911a1",
+    "name": "Lutry Tradition 2023",
+    "winery": "Union Vinicole de Cully",
+    "country": "Schweiz",
+    "region": "Waadt - Cully",
+    "appellation": "AOC Vaud",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Hoch und rein, ein Chasselas, der wie ein Gipfelblick die Seele erweitert.",
+    "description_en": "High and pure, a Chasselas that expands the soul like a summit view.",
+    "description_fr": "Haut et pur, un Chasselas qui élargit l'âme comme une vue du sommet.",
+    "food_pairings_de": [
+      "Käseplatte",
+      "Leichte Vorspeisen"
+    ],
+    "food_pairings_en": [
+      "Cheese platter",
+      "Light appetizers"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fromages",
+      "Amuse-bouches légers"
+    ],
+    "created_at": "2025-12-12T23:38:19.716345+00:00",
+    "source": "Top 50 Waadtländer Weine - Sélection des Vins Vaudois 2024, Falstaff, GaultMillau"
   }
 ]

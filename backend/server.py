@@ -3028,7 +3028,36 @@ async def get_public_wines(
     query = {}
     
     if search:
-        regex = {"$regex": search, "$options": "i"}
+        # Create accent-insensitive pattern for better search
+        # e.g., "chateau" matches both "chateau" and "château"
+        import unicodedata
+        search_term = search.strip()
+        
+        # Normalize search term
+        normalized = ''.join(
+            c for c in unicodedata.normalize('NFD', search_term)
+            if unicodedata.category(c) != 'Mn'
+        )
+        
+        # Build accent-insensitive pattern
+        def make_accent_pattern(term):
+            replacements = {
+                'e': '[eéèêë]',
+                'a': '[aàâäã]',
+                'i': '[iîïí]',
+                'o': '[oôöó]',
+                'u': '[uùûüú]',
+                'c': '[cç]',
+                'n': '[nñ]'
+            }
+            pattern = ''
+            for char in term.lower():
+                pattern += replacements.get(char, char)
+            return pattern
+        
+        accent_pattern = make_accent_pattern(normalized)
+        regex = {"$regex": accent_pattern, "$options": "i"}
+        
         query["$or"] = [
             {"name": regex},
             {"winery": regex},

@@ -1429,6 +1429,15 @@ class WinePairingAPITester:
         self.test_public_wines_search_egon_mueller()
         self.test_public_wines_total_count()
         
+        # Sommelier-Kompass Regional Pairings Tests (Enhanced Exotic Countries)
+        print("\n🌍 Testing Sommelier-Kompass Regional Pairings (Exotic Countries with Dual Wine Recommendations)...")
+        self.test_regional_pairings_greece()
+        self.test_regional_pairings_japan()
+        self.test_regional_pairings_turkey()
+        self.test_regional_pairings_china()
+        self.test_regional_pairings_italy_no_local_wines()
+        self.test_regional_pairings_exotic_discovery_content()
+        
         # Cleanup
         self.test_delete_wine()
         

@@ -638,6 +638,258 @@ class WinePairingAPITester:
             self.log_test("Get Favorites", False, str(response))
         return success
 
+    # ===================== COMPREHENSIVE PRE-DEPLOYMENT TESTS =====================
+    
+    def test_health_endpoint(self):
+        """Test GET /api/health - Core health check"""
+        success, response = self.make_request('GET', 'health', expected_status=200)
+        if success:
+            status = response.get('status', 'unknown')
+            self.log_test("Health Endpoint", True, f"Health status: {status}")
+        else:
+            self.log_test("Health Endpoint", False, str(response))
+        return success
+
+    def test_pairing_multilingual(self):
+        """Test POST /api/pairing with German language (Pizza Margherita)"""
+        pairing_data = {
+            "dish": "Pizza Margherita",
+            "language": "de"
+        }
+        
+        success, response = self.make_request('POST', 'pairing', data=pairing_data, expected_status=200)
+        if success:
+            recommendation = response.get('recommendation', '')
+            if len(recommendation) > 50:
+                self.log_test("Pairing Multilingual (German)", True, f"Got German recommendation for Pizza Margherita")
+            else:
+                self.log_test("Pairing Multilingual (German)", False, f"Recommendation too short: {recommendation}")
+        else:
+            self.log_test("Pairing Multilingual (German)", False, str(response))
+        return success
+
+    def test_grape_varieties_list(self):
+        """Test GET /api/grape-varieties - should return 140 varieties"""
+        success, response = self.make_request('GET', 'grape-varieties', expected_status=200)
+        if success:
+            varieties = response if isinstance(response, list) else []
+            expected_count = 140
+            
+            if len(varieties) < 100:  # Allow some variance
+                self.log_test("Grape Varieties List", False, f"Expected ~{expected_count} varieties, got {len(varieties)}")
+                return False
+            
+            # Check structure of first variety
+            if varieties:
+                variety = varieties[0]
+                required_fields = ['id', 'name', 'type', 'description']
+                missing_fields = [field for field in required_fields if field not in variety]
+                if missing_fields:
+                    self.log_test("Grape Varieties List", False, f"Missing fields: {missing_fields}")
+                    return False
+            
+            self.log_test("Grape Varieties List", True, f"Found {len(varieties)} grape varieties")
+        else:
+            self.log_test("Grape Varieties List", False, str(response))
+        return success
+
+    def test_grape_variety_detail(self):
+        """Test GET /api/grape-varieties/chardonnay - specific grape details"""
+        success, response = self.make_request('GET', 'grape-varieties/chardonnay', expected_status=200)
+        if success:
+            name = response.get('name', 'Unknown')
+            grape_type = response.get('type', 'Unknown')
+            description = response.get('description', '')
+            
+            if 'chardonnay' not in name.lower():
+                self.log_test("Grape Variety Detail (Chardonnay)", False, f"Expected Chardonnay, got {name}")
+                return False
+            
+            if len(description) < 20:
+                self.log_test("Grape Variety Detail (Chardonnay)", False, f"Description too short: {description}")
+                return False
+            
+            self.log_test("Grape Variety Detail (Chardonnay)", True, f"Retrieved {name} ({grape_type}) details")
+        else:
+            self.log_test("Grape Variety Detail (Chardonnay)", False, str(response))
+        return success
+
+    def test_blog_posts_list(self):
+        """Test GET /api/blog - should return 150 blog posts"""
+        success, response = self.make_request('GET', 'blog', expected_status=200)
+        if success:
+            posts = response if isinstance(response, list) else []
+            expected_count = 150
+            
+            if len(posts) < 100:  # Allow some variance
+                self.log_test("Blog Posts List", False, f"Expected ~{expected_count} posts, got {len(posts)}")
+                return False
+            
+            # Check structure of first post
+            if posts:
+                post = posts[0]
+                required_fields = ['id', 'title', 'excerpt', 'content', 'slug']
+                missing_fields = [field for field in required_fields if field not in post]
+                if missing_fields:
+                    self.log_test("Blog Posts List", False, f"Missing fields: {missing_fields}")
+                    return False
+            
+            self.log_test("Blog Posts List", True, f"Found {len(posts)} blog posts")
+        else:
+            self.log_test("Blog Posts List", False, str(response))
+        return success
+
+    def test_blog_post_detail(self):
+        """Test GET /api/blog/chardonnay - specific blog post"""
+        success, response = self.make_request('GET', 'blog/chardonnay', expected_status=200)
+        if success:
+            title = response.get('title', 'Unknown')
+            content = response.get('content', '')
+            slug = response.get('slug', '')
+            
+            if 'chardonnay' not in slug.lower() and 'chardonnay' not in title.lower():
+                self.log_test("Blog Post Detail (Chardonnay)", False, f"Expected Chardonnay post, got {title}")
+                return False
+            
+            if len(content) < 50:
+                self.log_test("Blog Post Detail (Chardonnay)", False, f"Content too short: {content[:100]}")
+                return False
+            
+            self.log_test("Blog Post Detail (Chardonnay)", True, f"Retrieved blog post: {title}")
+        else:
+            self.log_test("Blog Post Detail (Chardonnay)", False, str(response))
+        return success
+
+    def test_regional_pairings_countries(self):
+        """Test GET /api/regional-pairings/countries - should return 9+ countries"""
+        success, response = self.make_request('GET', 'regional-pairings/countries', expected_status=200)
+        if success:
+            countries = response if isinstance(response, list) else []
+            
+            if len(countries) < 9:
+                self.log_test("Regional Pairings Countries", False, f"Expected 9+ countries, got {len(countries)}")
+                return False
+            
+            # Check for expected countries
+            expected_countries = ['Griechenland', 'Italien', 'Japan', 'China']
+            found_expected = [country for country in expected_countries if country in countries]
+            
+            if len(found_expected) < 2:
+                self.log_test("Regional Pairings Countries", False, f"Missing expected countries. Found: {countries}")
+                return False
+            
+            self.log_test("Regional Pairings Countries", True, f"Found {len(countries)} countries including {found_expected}")
+        else:
+            self.log_test("Regional Pairings Countries", False, str(response))
+        return success
+
+    def test_regional_pairings_italy(self):
+        """Test GET /api/regional-pairings?country=Italien - should return 8 pairings (no local_wine_name)"""
+        success, response = self.make_request('GET', 'regional-pairings?country=Italien', expected_status=200)
+        if success:
+            pairings = response if isinstance(response, list) else []
+            
+            if len(pairings) != 8:
+                self.log_test("Regional Pairings Italy", False, f"Expected 8 pairings, got {len(pairings)}")
+                return False
+            
+            # Check that Italian pairings don't have local_wine_name (traditional wine country)
+            pairings_with_local_wine = [p for p in pairings if p.get('local_wine_name')]
+            if pairings_with_local_wine:
+                self.log_test("Regional Pairings Italy", False, f"Italian pairings should not have local_wine_name, found {len(pairings_with_local_wine)}")
+                return False
+            
+            # Check that all have wine_name (international recommendation)
+            pairings_without_wine = [p for p in pairings if not p.get('wine_name')]
+            if pairings_without_wine:
+                self.log_test("Regional Pairings Italy", False, f"Found {len(pairings_without_wine)} pairings without wine_name")
+                return False
+            
+            self.log_test("Regional Pairings Italy", True, f"Found 8 Italian pairings with international wines only")
+        else:
+            self.log_test("Regional Pairings Italy", False, str(response))
+        return success
+
+    def test_feed_posts_list(self):
+        """Test GET /api/feed - should return 268 feed posts"""
+        success, response = self.make_request('GET', 'feed', expected_status=200)
+        if success:
+            posts = response if isinstance(response, list) else []
+            expected_count = 268
+            
+            if len(posts) < 200:  # Allow some variance
+                self.log_test("Feed Posts List", False, f"Expected ~{expected_count} posts, got {len(posts)}")
+                return False
+            
+            # Check structure of first post
+            if posts:
+                post = posts[0]
+                required_fields = ['id', 'author_name', 'dish', 'wine_name', 'rating', 'experience']
+                missing_fields = [field for field in required_fields if field not in post]
+                if missing_fields:
+                    self.log_test("Feed Posts List", False, f"Missing fields: {missing_fields}")
+                    return False
+            
+            self.log_test("Feed Posts List", True, f"Found {len(posts)} feed posts")
+        else:
+            self.log_test("Feed Posts List", False, str(response))
+        return success
+
+    def test_backup_list(self):
+        """Test GET /api/backup/list - should return backup files"""
+        success, response = self.make_request('GET', 'backup/list', expected_status=200)
+        if success:
+            backups = response if isinstance(response, list) else []
+            self.log_test("Backup List", True, f"Found {len(backups)} backup files")
+        else:
+            self.log_test("Backup List", False, str(response))
+        return success
+
+    def test_sommelier_chat_multilingual(self):
+        """Test POST /api/chat with German message"""
+        chat_data = {
+            "message": "Was passt zu Steak?",
+            "language": "de"
+        }
+        
+        success, response = self.make_request('POST', 'chat', data=chat_data, expected_status=200)
+        if success:
+            chat_response = response.get('response', '')
+            session_id = response.get('session_id', '')
+            
+            if len(chat_response) < 20:
+                self.log_test("Sommelier Chat Multilingual", False, f"Response too short: {chat_response}")
+                return False
+            
+            if not session_id:
+                self.log_test("Sommelier Chat Multilingual", False, "Missing session_id")
+                return False
+            
+            self.log_test("Sommelier Chat Multilingual", True, f"Got German response for steak pairing")
+        else:
+            self.log_test("Sommelier Chat Multilingual", False, str(response))
+        return success
+
+    def test_sitemap_xml(self):
+        """Test GET /api/sitemap.xml - should return valid XML sitemap"""
+        success, response = self.make_request('GET', 'sitemap.xml', expected_status=200)
+        if success:
+            # Check if response contains XML content
+            xml_content = response.get('raw_response', '') if 'raw_response' in response else str(response)
+            
+            if '<?xml' not in xml_content:
+                self.log_test("Sitemap XML", False, f"Response doesn't contain XML: {xml_content[:100]}")
+                return False
+            
+            if 'sitemap' not in xml_content.lower():
+                self.log_test("Sitemap XML", False, f"Response doesn't contain sitemap structure: {xml_content[:100]}")
+                return False
+            
+            self.log_test("Sitemap XML", True, f"Valid XML sitemap returned")
+        else:
+            self.log_test("Sitemap XML", False, str(response))
+        return success
+
     # ===================== PUBLIC WINES DATABASE TESTS =====================
     
     def test_public_wines_list_basic(self):

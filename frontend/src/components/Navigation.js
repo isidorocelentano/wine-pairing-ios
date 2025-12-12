@@ -29,7 +29,7 @@ const Navigation = () => {
   const allNavItems = [...mainNavItems.slice(0, 6), ...secondaryNavItems, mainNavItems[6]];
 
   return (
-    <nav className="nav-dock fixed bottom-3 md:bottom-6 left-1/2 -translate-x-1/2 rounded-full px-2 md:px-6 py-1.5 md:py-3 shadow-2xl z-50 max-w-[95vw] md:max-w-none" data-testid="main-navigation">
+    <nav className="nav-dock fixed bottom-0 left-0 right-0 md:left-1/2 md:right-auto md:-translate-x-1/2 md:bottom-6 md:rounded-full rounded-t-2xl px-2 md:px-6 py-2 md:py-3 shadow-2xl z-[9999] md:max-w-none" data-testid="main-navigation">
       {/* Mobile: horizontal scroll, Desktop: all visible */}
       <div className="flex items-center gap-0.5 md:gap-2 overflow-x-auto scrollbar-hide">
         {/* Mobile view: show main 5 items */}

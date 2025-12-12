@@ -324,10 +324,13 @@ const SommelierKompassPage = () => {
                     )}
                   </CardHeader>
                   <CardContent className="space-y-3 mt-auto">
+                    {/* International Wine Recommendation (Safe Choice) */}
                     <div className="bg-secondary/30 rounded-lg p-3 space-y-2">
                       <div className="flex items-center gap-2">
                         <Wine className="w-4 h-4 text-accent" />
-                        <span className="text-xs font-medium text-accent">{t('regional_wine_pairing')}</span>
+                        <span className="text-xs font-medium text-accent">
+                          {pairing.local_wine_name ? (language === 'en' ? '🌍 International Classic' : language === 'fr' ? '🌍 Classique International' : '🌍 Internationaler Klassiker') : t('regional_wine_pairing')}
+                        </span>
                       </div>
                       <p className="font-medium text-sm">{pairing.wine_name}</p>
                       <p className="text-xs text-muted-foreground">{pairing.wine_type}</p>
@@ -337,6 +340,25 @@ const SommelierKompassPage = () => {
                         </p>
                       )}
                     </div>
+                    
+                    {/* Local Wine Alternative (Discovery) - Only show if available */}
+                    {pairing.local_wine_name && (
+                      <div className="bg-accent/10 border border-accent/30 rounded-lg p-3 space-y-2">
+                        <div className="flex items-center gap-2">
+                          <Sparkles className="w-4 h-4 text-amber-500" />
+                          <span className="text-xs font-medium text-amber-600 dark:text-amber-400">
+                            {language === 'en' ? '✨ Local Discovery' : language === 'fr' ? '✨ Découverte Locale' : '✨ Lokale Entdeckung'}
+                          </span>
+                        </div>
+                        <p className="font-medium text-sm">{pairing.local_wine_name}</p>
+                        <p className="text-xs text-muted-foreground">{pairing.local_wine_type}</p>
+                        {getLocalizedText(pairing, 'local_wine_description') && (
+                          <p className="text-xs text-muted-foreground leading-relaxed pt-2 border-t border-amber-500/20">
+                            {getLocalizedText(pairing, 'local_wine_description')}
+                          </p>
+                        )}
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
               ))}

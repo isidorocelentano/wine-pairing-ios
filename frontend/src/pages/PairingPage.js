@@ -70,8 +70,6 @@ const PairingPage = () => {
     const searchTerm = wine.name.split('(')[0].split(',')[0].trim();
     navigate(`/wine-database?search=${encodeURIComponent(searchTerm)}`);
   };
-    setWineModalOpen(false);
-  };
   
   useEffect(() => {
     const fetchDishes = async () => {

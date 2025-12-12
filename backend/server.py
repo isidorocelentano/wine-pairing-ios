@@ -345,11 +345,18 @@ class RegionalPairing(BaseModel):
     dish_description: Optional[str] = None
     dish_description_en: Optional[str] = None
     dish_description_fr: Optional[str] = None
+    # International Wine Recommendation (Safe Choice)
     wine_name: str
     wine_type: str
     wine_description: Optional[str] = None
     wine_description_en: Optional[str] = None
     wine_description_fr: Optional[str] = None
+    # Local Wine Alternative (Discovery)
+    local_wine_name: Optional[str] = None
+    local_wine_type: Optional[str] = None
+    local_wine_description: Optional[str] = None
+    local_wine_description_en: Optional[str] = None
+    local_wine_description_fr: Optional[str] = None
 
 # ===================== GRAPE VARIETY MODELS =====================
 

@@ -349,13 +349,9 @@ metadata:
   backend_test_timestamp: "2025-01-02T12:00:00Z"
 
 test_plan:
-  current_focus:
-    - "All backend API endpoints"
-    - "All frontend pages"
-    - "Mobile responsiveness"
-    - "Multilingual support"
+  current_focus: []
   stuck_tasks: []
-  test_all: true
+  test_all: false
   test_priority: "high_first"
 
 agent_communication:

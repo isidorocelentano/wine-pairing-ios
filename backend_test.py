@@ -1107,6 +1107,247 @@ class WinePairingAPITester:
             self.log_test("Public Wines Total Count", False, str(response))
         return success
 
+    # ===================== SOMMELIER-KOMPASS REGIONAL PAIRINGS TESTS =====================
+    
+    def test_regional_pairings_greece(self):
+        """Test GET /api/regional-pairings?country=Griechenland - should return 4 pairings with local wine fields"""
+        success, response = self.make_request('GET', 'regional-pairings?country=Griechenland', expected_status=200)
+        if success:
+            pairings = response if isinstance(response, list) else []
+            
+            # Check expected count
+            if len(pairings) != 4:
+                self.log_test("Regional Pairings Greece", False, 
+                             f"Expected 4 pairings, got {len(pairings)}")
+                return False
+            
+            # Validate each pairing has both international and local wine fields
+            for i, pairing in enumerate(pairings):
+                # Check international wine fields
+                if not pairing.get('wine_name'):
+                    self.log_test("Regional Pairings Greece", False, 
+                                 f"Pairing {i+1}: Missing wine_name (international wine)")
+                    return False
+                
+                # Check local wine fields (required for exotic countries)
+                if not pairing.get('local_wine_name'):
+                    self.log_test("Regional Pairings Greece", False, 
+                                 f"Pairing {i+1}: Missing local_wine_name")
+                    return False
+                
+                if not pairing.get('local_wine_type'):
+                    self.log_test("Regional Pairings Greece", False, 
+                                 f"Pairing {i+1}: Missing local_wine_type")
+                    return False
+                
+                if not pairing.get('local_wine_description'):
+                    self.log_test("Regional Pairings Greece", False, 
+                                 f"Pairing {i+1}: Missing local_wine_description")
+                    return False
+                
+                # Check multilingual local wine descriptions
+                if not pairing.get('local_wine_description_en'):
+                    self.log_test("Regional Pairings Greece", False, 
+                                 f"Pairing {i+1}: Missing local_wine_description_en")
+                    return False
+                
+                if not pairing.get('local_wine_description_fr'):
+                    self.log_test("Regional Pairings Greece", False, 
+                                 f"Pairing {i+1}: Missing local_wine_description_fr")
+                    return False
+                
+                # Check that local wine description contains meaningful content
+                local_desc = pairing.get('local_wine_description', '')
+                if len(local_desc.strip()) < 10:
+                    self.log_test("Regional Pairings Greece", False, 
+                                 f"Pairing {i+1}: local_wine_description too short: '{local_desc}'")
+                    return False
+            
+            self.log_test("Regional Pairings Greece", True, 
+                         f"Found 4 Greek pairings with complete local wine data")
+        else:
+            self.log_test("Regional Pairings Greece", False, str(response))
+        return success
+
+    def test_regional_pairings_japan(self):
+        """Test GET /api/regional-pairings?country=Japan - should return 3 pairings with local wine fields"""
+        success, response = self.make_request('GET', 'regional-pairings?country=Japan', expected_status=200)
+        if success:
+            pairings = response if isinstance(response, list) else []
+            
+            # Check expected count
+            if len(pairings) != 3:
+                self.log_test("Regional Pairings Japan", False, 
+                             f"Expected 3 pairings, got {len(pairings)}")
+                return False
+            
+            # Validate each pairing has both international and local wine fields
+            for i, pairing in enumerate(pairings):
+                # Check both wine_name and local_wine_name exist
+                if not pairing.get('wine_name') or not pairing.get('local_wine_name'):
+                    self.log_test("Regional Pairings Japan", False, 
+                                 f"Pairing {i+1}: Missing wine_name or local_wine_name")
+                    return False
+                
+                # Check local wine fields are not null
+                required_local_fields = ['local_wine_type', 'local_wine_description', 
+                                       'local_wine_description_en', 'local_wine_description_fr']
+                for field in required_local_fields:
+                    if not pairing.get(field):
+                        self.log_test("Regional Pairings Japan", False, 
+                                     f"Pairing {i+1}: Missing {field}")
+                        return False
+            
+            self.log_test("Regional Pairings Japan", True, 
+                         f"Found 3 Japanese pairings with complete local wine data")
+        else:
+            self.log_test("Regional Pairings Japan", False, str(response))
+        return success
+
+    def test_regional_pairings_turkey(self):
+        """Test GET /api/regional-pairings?country=Türkei (URL encoded) - should return 4 pairings"""
+        # URL encode Türkei as T%C3%BCrkei
+        success, response = self.make_request('GET', 'regional-pairings?country=T%C3%BCrkei', expected_status=200)
+        if success:
+            pairings = response if isinstance(response, list) else []
+            
+            # Check expected count
+            if len(pairings) != 4:
+                self.log_test("Regional Pairings Turkey", False, 
+                             f"Expected 4 pairings, got {len(pairings)}")
+                return False
+            
+            # Validate local wine fields
+            for i, pairing in enumerate(pairings):
+                if not pairing.get('local_wine_name') or not pairing.get('local_wine_type'):
+                    self.log_test("Regional Pairings Turkey", False, 
+                                 f"Pairing {i+1}: Missing local wine fields")
+                    return False
+                
+                # Check for meaningful local wine description
+                local_desc = pairing.get('local_wine_description', '')
+                if len(local_desc.strip()) < 10:
+                    self.log_test("Regional Pairings Turkey", False, 
+                                 f"Pairing {i+1}: local_wine_description too short")
+                    return False
+            
+            self.log_test("Regional Pairings Turkey", True, 
+                         f"Found 4 Turkish pairings with complete local wine data")
+        else:
+            self.log_test("Regional Pairings Turkey", False, str(response))
+        return success
+
+    def test_regional_pairings_china(self):
+        """Test GET /api/regional-pairings?country=China - should return 3 pairings with local wine fields"""
+        success, response = self.make_request('GET', 'regional-pairings?country=China', expected_status=200)
+        if success:
+            pairings = response if isinstance(response, list) else []
+            
+            # Check expected count
+            if len(pairings) != 3:
+                self.log_test("Regional Pairings China", False, 
+                             f"Expected 3 pairings, got {len(pairings)}")
+                return False
+            
+            # Validate dual wine structure (international + local)
+            for i, pairing in enumerate(pairings):
+                # Check international wine
+                if not pairing.get('wine_name'):
+                    self.log_test("Regional Pairings China", False, 
+                                 f"Pairing {i+1}: Missing international wine_name")
+                    return False
+                
+                # Check local wine
+                if not pairing.get('local_wine_name'):
+                    self.log_test("Regional Pairings China", False, 
+                                 f"Pairing {i+1}: Missing local_wine_name")
+                    return False
+                
+                # Verify multilingual local descriptions exist
+                multilingual_fields = ['local_wine_description', 'local_wine_description_en', 'local_wine_description_fr']
+                for field in multilingual_fields:
+                    if not pairing.get(field):
+                        self.log_test("Regional Pairings China", False, 
+                                     f"Pairing {i+1}: Missing {field}")
+                        return False
+            
+            self.log_test("Regional Pairings China", True, 
+                         f"Found 3 Chinese pairings with dual wine recommendations")
+        else:
+            self.log_test("Regional Pairings China", False, str(response))
+        return success
+
+    def test_regional_pairings_italy_no_local_wines(self):
+        """Test GET /api/regional-pairings?country=Italien - should NOT have local wine fields"""
+        success, response = self.make_request('GET', 'regional-pairings?country=Italien', expected_status=200)
+        if success:
+            pairings = response if isinstance(response, list) else []
+            
+            if not pairings:
+                self.log_test("Regional Pairings Italy (No Local Wines)", False, 
+                             "No Italian pairings found")
+                return False
+            
+            # Check that Italian pairings do NOT have local wine fields
+            for i, pairing in enumerate(pairings):
+                # Should have international wine
+                if not pairing.get('wine_name'):
+                    self.log_test("Regional Pairings Italy (No Local Wines)", False, 
+                                 f"Pairing {i+1}: Missing wine_name")
+                    return False
+                
+                # Should NOT have local wine fields (or they should be null)
+                local_wine_name = pairing.get('local_wine_name')
+                if local_wine_name is not None and local_wine_name.strip():
+                    self.log_test("Regional Pairings Italy (No Local Wines)", False, 
+                                 f"Pairing {i+1}: Unexpected local_wine_name: '{local_wine_name}'")
+                    return False
+            
+            self.log_test("Regional Pairings Italy (No Local Wines)", True, 
+                         f"Italian pairings correctly have no local wine fields ({len(pairings)} pairings)")
+        else:
+            self.log_test("Regional Pairings Italy (No Local Wines)", False, str(response))
+        return success
+
+    def test_regional_pairings_exotic_discovery_content(self):
+        """Test that exotic country local wine descriptions contain discovery-oriented content with emojis"""
+        exotic_countries = ['Griechenland', 'Japan', 'China']
+        discovery_emojis = ['🌋', '🗻', '🌙', '🐉', '🍇', '⛰️', '🌸', '🏛️']
+        
+        all_tests_passed = True
+        discovery_content_found = 0
+        
+        for country in exotic_countries:
+            success, response = self.make_request('GET', f'regional-pairings?country={country}', expected_status=200)
+            if success:
+                pairings = response if isinstance(response, list) else []
+                
+                for pairing in pairings:
+                    local_desc = pairing.get('local_wine_description', '')
+                    
+                    # Check for discovery-oriented content (emojis)
+                    has_emoji = any(emoji in local_desc for emoji in discovery_emojis)
+                    if has_emoji:
+                        discovery_content_found += 1
+                    
+                    # Check description length and quality
+                    if len(local_desc.strip()) < 20:
+                        self.log_test("Regional Pairings Discovery Content", False, 
+                                     f"{country}: local_wine_description too short: '{local_desc[:50]}'")
+                        all_tests_passed = False
+                        break
+            else:
+                self.log_test("Regional Pairings Discovery Content", False, 
+                             f"Failed to get pairings for {country}: {response}")
+                all_tests_passed = False
+                break
+        
+        if all_tests_passed:
+            self.log_test("Regional Pairings Discovery Content", True, 
+                         f"Discovery content verified - {discovery_content_found} descriptions with emojis")
+        
+        return all_tests_passed
+
     def test_delete_wine(self):
         """Test deleting a wine"""
         if not self.test_wine_id:

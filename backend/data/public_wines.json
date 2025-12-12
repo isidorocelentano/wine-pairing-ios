@@ -25123,5 +25123,1402 @@
     "image_url": "/placeholder-wine.png",
     "rating": null,
     "created_at": "2025-12-10T20:33:05.550173+00:00"
+  },
+  {
+    "id": "7e33e8c7-eed1-40dd-8d53-eb36a997b27d",
+    "name": "Petite Arvine Grain par Grain 2018",
+    "winery": "Marie-Thérèse Chappaz",
+    "country": "Schweiz",
+    "region": "Wallis - Fully",
+    "appellation": "AOC Valais",
+    "grape_variety": "Petite Arvine",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Ein Wein wie ein flüsternder Bergbach: frisch, mineralisch, mit Zitrusnoten, die an verirrte Sommerträume erinnern und die Seele mit salziger Lebendigkeit umhüllen.",
+    "description_en": "A wine like a whispering mountain stream: fresh, mineral, with citrus notes that recall lost summer dreams and envelop the soul with salty vitality.",
+    "description_fr": "Un vin comme un ruisseau de montagne murmurant : frais, minéral, avec des notes d'agrumes qui rappellent des rêves d'été égarés et enveloppent l'âme d'une vivacité salée.",
+    "food_pairings_de": [
+      "Gegrillter Fisch",
+      "Ziegenkäse-Creme"
+    ],
+    "food_pairings_en": [
+      "Grilled fish",
+      "Goat cheese cream"
+    ],
+    "food_pairings_fr": [
+      "Poisson grillé",
+      "Crème de chèvre"
+    ],
+    "created_at": "2025-12-12T23:32:57.874116+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "bfa55846-9259-4d62-aff3-a5f070e515a4",
+    "name": "Cayas 2009",
+    "winery": "Jean-René Germanier",
+    "country": "Schweiz",
+    "region": "Wallis - Vétroz",
+    "appellation": "AOC Valais",
+    "grape_variety": "Heida",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Ein zeitloser Poet unter den Weißen, reif und golden, der von Aprikosenkonfitüre und Honig träumt – ein Schluck, der die Vergänglichkeit des Lebens in ewiger Harmonie feiert.",
+    "description_en": "A timeless poet among whites, ripe and golden, dreaming of apricot jam and honey – a sip that celebrates life's transience in eternal harmony.",
+    "description_fr": "Un poète intemporel parmi les blancs, mûr et doré, rêvant de confiture d'abricot et de miel – une gorgée qui célèbre l'éphémère de la vie en harmonie éternelle.",
+    "food_pairings_de": [
+      "Foie gras",
+      "Reifer Camembert"
+    ],
+    "food_pairings_en": [
+      "Foie gras",
+      "Aged Camembert"
+    ],
+    "food_pairings_fr": [
+      "Foie gras",
+      "Camembert affiné"
+    ],
+    "created_at": "2025-12-12T23:32:57.878140+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "453216e0-231e-49ee-b4bb-b5796e2a6a8f",
+    "name": "Fendant 2022",
+    "winery": "Cave Jean-Claude et Vérène Mabillard",
+    "country": "Schweiz",
+    "region": "Wallis - Champlan",
+    "appellation": "AOC Valais",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Leichtfüßig wie ein Tanz auf den Terrassen, mit knackiger Säure und Apfelaromen, die das Herz mit kindlicher Freude erfüllen.",
+    "description_en": "Light-footed as a dance on the terraces, with crisp acidity and apple aromas that fill the heart with childlike joy.",
+    "description_fr": "Léger comme une danse sur les terrasses, avec une acidité croquante et des arômes de pomme qui remplissent le cœur d'une joie enfantine.",
+    "food_pairings_de": [
+      "Frische Austern",
+      "Raclette"
+    ],
+    "food_pairings_en": [
+      "Fresh oysters",
+      "Raclette"
+    ],
+    "food_pairings_fr": [
+      "Huîtres fraîches",
+      "Raclette"
+    ],
+    "created_at": "2025-12-12T23:32:57.879222+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "d699a36e-b9ae-48ef-acff-f23f2485a6de",
+    "name": "Johannisberg Fernand Cina 2022",
+    "winery": "Fernand Cina",
+    "country": "Schweiz",
+    "region": "Wallis - Salquenen",
+    "appellation": "AOC Valais",
+    "grape_variety": "Silvaner",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Eine warme Umarmung aus Pfirsich und Kräutern, der die Seele in sonnendurchflutete Wiesen entführt – pure, emotionale Wärme in jedem Tropfen.",
+    "description_en": "A warm embrace of peach and herbs that transports the soul to sun-drenched meadows – pure, emotional warmth in every drop.",
+    "description_fr": "Une étreinte chaleureuse de pêche et d'herbes qui transporte l'âme vers des prairies ensoleillées – une chaleur pure et émotionnelle dans chaque goutte.",
+    "food_pairings_de": [
+      "Geflügelterrine",
+      "Sommergemüse"
+    ],
+    "food_pairings_en": [
+      "Poultry terrine",
+      "Summer vegetables"
+    ],
+    "food_pairings_fr": [
+      "Terrine de volaille",
+      "Légumes d'été"
+    ],
+    "created_at": "2025-12-12T23:32:57.880245+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "0767be73-ef2b-4840-b45a-247b2680f002",
+    "name": "Heida Grand Métral 2022",
+    "winery": "Provins",
+    "country": "Schweiz",
+    "region": "Wallis - Sion",
+    "appellation": "AOC Valais",
+    "grape_variety": "Heida",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Hochalpin und mystisch, mit Mandeln und Nektarinen, die wie ein Echo der Alpen wehen – ein Wein, der die Seele auf Höhenflüge trägt.",
+    "description_en": "High alpine and mystical, with almonds and nectarines that drift like an echo of the Alps – a wine that carries the soul to great heights.",
+    "description_fr": "Haut-alpin et mystique, avec des amandes et des nectarines qui flottent comme un écho des Alpes – un vin qui porte l'âme vers les sommets.",
+    "food_pairings_de": [
+      "Käseplatte",
+      "Gebratenes Forellenfilet"
+    ],
+    "food_pairings_en": [
+      "Cheese platter",
+      "Pan-fried trout fillet"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fromages",
+      "Filet de truite poêlé"
+    ],
+    "created_at": "2025-12-12T23:32:57.881227+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "afd47f38-1939-41bb-8960-9cad1717b964",
+    "name": "Jean des Crêtes Petite Arvine 2022",
+    "winery": "Maison Maye",
+    "country": "Schweiz",
+    "region": "Wallis - Riddes",
+    "appellation": "AOC Valais",
+    "grape_variety": "Petite Arvine",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Nervös und lebendig, ein Funke Glycin und Grapefruit, der das Herz mit alpiner Frische weckt und verjüngt.",
+    "description_en": "Nervous and vibrant, a spark of wisteria and grapefruit that awakens and rejuvenates the heart with alpine freshness.",
+    "description_fr": "Nerveux et vivant, une étincelle de glycine et de pamplemousse qui éveille et rajeunit le cœur avec une fraîcheur alpine.",
+    "food_pairings_de": [
+      "Krebse",
+      "Leichte Kräutersuppe"
+    ],
+    "food_pairings_en": [
+      "Crayfish",
+      "Light herb soup"
+    ],
+    "food_pairings_fr": [
+      "Écrevisses",
+      "Soupe légère aux herbes"
+    ],
+    "created_at": "2025-12-12T23:32:57.882135+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "fbe5ef06-3b3e-4e63-8ca4-e92b91e4d4c4",
+    "name": "Syrah 2022",
+    "winery": "Domaine Claudy Clavien",
+    "country": "Schweiz",
+    "region": "Wallis - Miège",
+    "appellation": "AOC Valais",
+    "grape_variety": "Syrah",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Dunkel und leidenschaftlich, mit Pfeffer und Beeren, die wie ein verbotener Kuss die Sinne entzünden – ein roter Sturm, der die Seele bebt.",
+    "description_en": "Dark and passionate, with pepper and berries that ignite the senses like a forbidden kiss – a red storm that shakes the soul.",
+    "description_fr": "Sombre et passionné, avec du poivre et des baies qui enflamment les sens comme un baiser interdit – une tempête rouge qui fait trembler l'âme.",
+    "food_pairings_de": [
+      "Lammragout",
+      "Dunkle Schokolade"
+    ],
+    "food_pairings_en": [
+      "Lamb ragout",
+      "Dark chocolate"
+    ],
+    "food_pairings_fr": [
+      "Ragoût d'agneau",
+      "Chocolat noir"
+    ],
+    "created_at": "2025-12-12T23:32:57.883052+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "489ad89a-7691-435b-86a9-a14ebd516abf",
+    "name": "Cornalin Les Empereurs 2022",
+    "winery": "Cave La Romaine",
+    "country": "Schweiz",
+    "region": "Wallis - Flanthey",
+    "appellation": "AOC Valais",
+    "grape_variety": "Cornalin",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Samten und fruchtig, ein veloutierter Traum von Kirschen und Wald, der die Seele in sanfte Umarmung wiegt.",
+    "description_en": "Velvety and fruity, a smooth dream of cherries and forest that cradles the soul in gentle embrace.",
+    "description_fr": "Velouté et fruité, un rêve soyeux de cerises et de forêt qui berce l'âme dans une douce étreinte.",
+    "food_pairings_de": [
+      "Wildpastete",
+      "Pilzrisotto"
+    ],
+    "food_pairings_en": [
+      "Game pâté",
+      "Mushroom risotto"
+    ],
+    "food_pairings_fr": [
+      "Pâté de gibier",
+      "Risotto aux champignons"
+    ],
+    "created_at": "2025-12-12T23:32:57.884075+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "97858315-aa6a-4728-876e-5591b6b7d47d",
+    "name": "Dôle Salquenen Fernand Cina 2022",
+    "winery": "Fernand Cina",
+    "country": "Schweiz",
+    "region": "Wallis - Salquenen",
+    "appellation": "AOC Valais",
+    "grape_variety": "Pinot Noir, Gamay",
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Frisch und fruchtig, ein Duett aus Pinot Noir und Gamay, das wie ein Spaziergang durch herbstliche Weinberge das Herz erheitert.",
+    "description_en": "Fresh and fruity, a duet of Pinot Noir and Gamay that gladdens the heart like a walk through autumn vineyards.",
+    "description_fr": "Frais et fruité, un duo de Pinot Noir et Gamay qui réjouit le cœur comme une promenade dans les vignobles d'automne.",
+    "food_pairings_de": [
+      "Rindfleisch-Tartar",
+      "Käsefondue"
+    ],
+    "food_pairings_en": [
+      "Beef tartare",
+      "Cheese fondue"
+    ],
+    "food_pairings_fr": [
+      "Tartare de bœuf",
+      "Fondue au fromage"
+    ],
+    "created_at": "2025-12-12T23:32:57.885120+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "3aa14147-56e5-4adb-94cc-2fc5188a9238",
+    "name": "Humagne Rouge de Fully 2022",
+    "winery": "Cave Jean Maret Anthony Baselgia",
+    "country": "Schweiz",
+    "region": "Wallis - Fully",
+    "appellation": "AOC Valais",
+    "grape_variety": "Humagne Rouge",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Robust und temperamentvoll, mit wilden Früchten und Violetten, die die Seele mit uriger Kraft durchfluten.",
+    "description_en": "Robust and spirited, with wild fruits and violets that flood the soul with primal strength.",
+    "description_fr": "Robuste et fougueux, avec des fruits sauvages et des violettes qui inondent l'âme d'une force primitive.",
+    "food_pairings_de": [
+      "Gegrilltes Steak",
+      "Wildgerichte"
+    ],
+    "food_pairings_en": [
+      "Grilled steak",
+      "Game dishes"
+    ],
+    "food_pairings_fr": [
+      "Steak grillé",
+      "Plats de gibier"
+    ],
+    "created_at": "2025-12-12T23:32:57.885967+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "fa25a00e-97b6-4b54-b944-95c137bca66f",
+    "name": "Fendant 2021",
+    "winery": "Cave les Sentes",
+    "country": "Schweiz",
+    "region": "Wallis - Sierre",
+    "appellation": "AOC Valais",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Rein und mineralisch, ein kühler Hauch von Zitrone, der wie ein Bergnebel die Seele klärt und erfrischt.",
+    "description_en": "Pure and mineral, a cool breath of lemon that clears and refreshes the soul like mountain mist.",
+    "description_fr": "Pur et minéral, un souffle frais de citron qui clarifie et rafraîchit l'âme comme la brume de montagne.",
+    "food_pairings_de": [
+      "Meeresfrüchte",
+      "Frischer Salat"
+    ],
+    "food_pairings_en": [
+      "Seafood",
+      "Fresh salad"
+    ],
+    "food_pairings_fr": [
+      "Fruits de mer",
+      "Salade fraîche"
+    ],
+    "created_at": "2025-12-12T23:32:57.886693+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "cdd08962-1e22-408e-8315-37995a870760",
+    "name": "Johannisberg l'Orpailleur 2021",
+    "winery": "Frédéric Dumoulin",
+    "country": "Schweiz",
+    "region": "Wallis - Uvrier",
+    "appellation": "AOC Valais",
+    "grape_variety": "Silvaner",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Elegant und blumig, ein Wein, der die Seele in goldene Sonnenuntergänge taucht.",
+    "description_en": "Elegant and floral, a wine that immerses the soul in golden sunsets.",
+    "description_fr": "Élégant et floral, un vin qui plonge l'âme dans des couchers de soleil dorés.",
+    "food_pairings_de": [
+      "Huhn mit Kräutern",
+      "Milde Raclette"
+    ],
+    "food_pairings_en": [
+      "Herb chicken",
+      "Mild Raclette"
+    ],
+    "food_pairings_fr": [
+      "Poulet aux herbes",
+      "Raclette douce"
+    ],
+    "created_at": "2025-12-12T23:32:57.887394+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "bda8d8b5-a372-4cc0-bd26-6edcfbf6d172",
+    "name": "Païen Les Écrins 2020",
+    "winery": "Cave la Colombe",
+    "country": "Schweiz",
+    "region": "Wallis - Conthey",
+    "appellation": "AOC Valais",
+    "grape_variety": "Heida",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Exotisch und würzig, mit Apfel und Gewürzen, die wie ein Geheimnis die Seele verzaubern.",
+    "description_en": "Exotic and spicy, with apple and spices that enchant the soul like a secret.",
+    "description_fr": "Exotique et épicé, avec de la pomme et des épices qui enchantent l'âme comme un secret.",
+    "food_pairings_de": [
+      "Asiatische Gerichte",
+      "Gebratener Tofu"
+    ],
+    "food_pairings_en": [
+      "Asian dishes",
+      "Pan-fried tofu"
+    ],
+    "food_pairings_fr": [
+      "Plats asiatiques",
+      "Tofu poêlé"
+    ],
+    "created_at": "2025-12-12T23:32:57.888237+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "3995616c-35ca-4606-8808-fc266d66fd42",
+    "name": "Petite Arvine de Chamoson La Vouettaz 2021",
+    "winery": "Cave Colline de Daval",
+    "country": "Schweiz",
+    "region": "Wallis - Sierre",
+    "appellation": "AOC Valais",
+    "grape_variety": "Petite Arvine",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Lebendig und salzig, ein Tropfen, der die Seele mit Meeresbrise und Bergluft umweht.",
+    "description_en": "Vibrant and salty, a drop that envelops the soul with sea breeze and mountain air.",
+    "description_fr": "Vivant et salé, une goutte qui enveloppe l'âme de brise marine et d'air de montagne.",
+    "food_pairings_de": [
+      "Schalentiere",
+      "Zitronenhähnchen"
+    ],
+    "food_pairings_en": [
+      "Shellfish",
+      "Lemon chicken"
+    ],
+    "food_pairings_fr": [
+      "Crustacés",
+      "Poulet au citron"
+    ],
+    "created_at": "2025-12-12T23:32:57.889204+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "19485ee1-d4e0-4bcf-88de-b306a63db2c7",
+    "name": "Dôle les Coteaux de Sierre 2021",
+    "winery": "Cave Sinclair",
+    "country": "Schweiz",
+    "region": "Wallis - Loc-sur-Sierre",
+    "appellation": "AOC Valais",
+    "grape_variety": "Pinot Noir, Gamay",
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Ausgewogen und beerig, ein Wein, der das Herz mit erdiger Wärme umfängt.",
+    "description_en": "Balanced and berry-rich, a wine that embraces the heart with earthy warmth.",
+    "description_fr": "Équilibré et fruité, un vin qui embrasse le cœur d'une chaleur terreuse.",
+    "food_pairings_de": [
+      "Pasta Bolognese",
+      "Herzhaftes Brot"
+    ],
+    "food_pairings_en": [
+      "Pasta Bolognese",
+      "Hearty bread"
+    ],
+    "food_pairings_fr": [
+      "Pâtes bolognaise",
+      "Pain rustique"
+    ],
+    "created_at": "2025-12-12T23:32:57.890061+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "290c3c9b-1e25-49be-96f8-e6342a4b9abf",
+    "name": "Humagne Rouge Ardévaz 2020",
+    "winery": "Domaines Rouvinez",
+    "country": "Schweiz",
+    "region": "Wallis - Sierre",
+    "appellation": "AOC Valais",
+    "grape_variety": "Humagne Rouge",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Tief und tanninreich, mit Noten von Leder und Beeren, die die Seele in alte Legenden eintauchen lassen.",
+    "description_en": "Deep and tannic, with notes of leather and berries that immerse the soul in ancient legends.",
+    "description_fr": "Profond et tannique, avec des notes de cuir et de baies qui plongent l'âme dans d'anciennes légendes.",
+    "food_pairings_de": [
+      "Rehrücken",
+      "Dunkles Fleisch"
+    ],
+    "food_pairings_en": [
+      "Saddle of venison",
+      "Dark meat"
+    ],
+    "food_pairings_fr": [
+      "Selle de chevreuil",
+      "Viande brune"
+    ],
+    "created_at": "2025-12-12T23:32:57.890892+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "483926aa-0c87-4132-9a46-53b461cf5774",
+    "name": "Syrah 2020",
+    "winery": "Celliers de Vétroz Famille Fontannaz",
+    "country": "Schweiz",
+    "region": "Wallis - Vétroz",
+    "appellation": "AOC Valais",
+    "grape_variety": "Syrah",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Würzig und intensiv, ein Feuerwerk aus Pfeffer und Brombeeren, das die Sinne in Ekstase versetzt.",
+    "description_en": "Spicy and intense, a firework of pepper and blackberries that sends the senses into ecstasy.",
+    "description_fr": "Épicé et intense, un feu d'artifice de poivre et de mûres qui envoie les sens en extase.",
+    "food_pairings_de": [
+      "BBQ-Rippen",
+      "Scharfe Wurst"
+    ],
+    "food_pairings_en": [
+      "BBQ ribs",
+      "Spicy sausage"
+    ],
+    "food_pairings_fr": [
+      "Côtes BBQ",
+      "Saucisse épicée"
+    ],
+    "created_at": "2025-12-12T23:32:57.891711+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "3bb717f9-4e0c-43ab-a8d5-8ec1903c2426",
+    "name": "Cornalin Réserve 2020",
+    "winery": "Cave La Romaine",
+    "country": "Schweiz",
+    "region": "Wallis - Flanthey",
+    "appellation": "AOC Valais",
+    "grape_variety": "Cornalin",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Komplex und elegant, mit Kirschen und Gewürzen, die die Seele in sanfter Tiefe baden.",
+    "description_en": "Complex and elegant, with cherries and spices that bathe the soul in gentle depth.",
+    "description_fr": "Complexe et élégant, avec des cerises et des épices qui baignent l'âme dans une douce profondeur.",
+    "food_pairings_de": [
+      "Ente",
+      "Pilzragout"
+    ],
+    "food_pairings_en": [
+      "Duck",
+      "Mushroom ragout"
+    ],
+    "food_pairings_fr": [
+      "Canard",
+      "Ragoût de champignons"
+    ],
+    "created_at": "2025-12-12T23:32:57.892518+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "88db6ed8-0951-486c-b1e0-b34ce8275f75",
+    "name": "Pinot Noir Hurlevent 2021",
+    "winery": "Les Fils de Ch. Favre",
+    "country": "Schweiz",
+    "region": "Wallis - Sion",
+    "appellation": "AOC Valais",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Filigran und fruchtig, ein Windhauch aus Kirschen, der das Herz mit leichter Traurigkeit und purer Freude erfüllt.",
+    "description_en": "Delicate and fruity, a breath of wind carrying cherries that fills the heart with gentle sadness and pure joy.",
+    "description_fr": "Délicat et fruité, un souffle de vent de cerises qui remplit le cœur d'une légère tristesse et d'une joie pure.",
+    "food_pairings_de": [
+      "Entenbrust",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Duck breast",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard",
+      "Champignons"
+    ],
+    "created_at": "2025-12-12T23:32:57.893337+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "88eb7167-a3db-4e5e-841a-600544a2edf9",
+    "name": "Grain Pinot Charrat 2021",
+    "winery": "Domaine Chappaz",
+    "country": "Schweiz",
+    "region": "Wallis - Fully",
+    "appellation": "AOC Valais",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Reich und beerig, ein Pinot, der die Seele in valaisanische Wälder entführt.",
+    "description_en": "Rich and berry-laden, a Pinot that transports the soul to Valaisan forests.",
+    "description_fr": "Riche et fruité, un Pinot qui transporte l'âme dans les forêts valaisannes.",
+    "food_pairings_de": [
+      "Lammkoteletts",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Lamb chops",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Côtelettes d'agneau",
+      "Fromage"
+    ],
+    "created_at": "2025-12-12T23:32:57.894154+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "bd12c641-949e-4515-9692-e36a8cf74a8b",
+    "name": "La Magdalena 2021",
+    "winery": "André Fontannaz",
+    "country": "Schweiz",
+    "region": "Wallis - Vétroz",
+    "appellation": "AOC Valais",
+    "grape_variety": "Assemblage",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Tief und mineralisch, mit dunklen Früchten, die wie ein Geheimnis die Seele berühren.",
+    "description_en": "Deep and mineral, with dark fruits that touch the soul like a secret.",
+    "description_fr": "Profond et minéral, avec des fruits noirs qui touchent l'âme comme un secret.",
+    "food_pairings_de": [
+      "Rindfleisch",
+      "Wild"
+    ],
+    "food_pairings_en": [
+      "Beef",
+      "Game"
+    ],
+    "food_pairings_fr": [
+      "Bœuf",
+      "Gibier"
+    ],
+    "created_at": "2025-12-12T23:32:57.895142+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "37a1d41e-181a-4523-8b89-5148bd57fac8",
+    "name": "Syrah AOC Valais 2021",
+    "winery": "Albert Mathier & Fils",
+    "country": "Schweiz",
+    "region": "Wallis - Salquenen",
+    "appellation": "AOC Valais",
+    "grape_variety": "Syrah",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Elegant und pfeffrig, ein Wein, der die Seele mit orientalischem Zauber umhüllt.",
+    "description_en": "Elegant and peppery, a wine that envelops the soul with oriental magic.",
+    "description_fr": "Élégant et poivré, un vin qui enveloppe l'âme de magie orientale.",
+    "food_pairings_de": [
+      "Gewürzhähnchen",
+      "Auberginen"
+    ],
+    "food_pairings_en": [
+      "Spiced chicken",
+      "Eggplant"
+    ],
+    "food_pairings_fr": [
+      "Poulet épicé",
+      "Aubergines"
+    ],
+    "created_at": "2025-12-12T23:32:57.896022+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "b98e1b40-7229-410f-a255-3301b0c82325",
+    "name": "Merlot Les Serpentines 2021",
+    "winery": "Gérald Besse",
+    "country": "Schweiz",
+    "region": "Wallis - Martigny",
+    "appellation": "AOC Valais",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Weich und fruchtig, ein Merlot, der das Herz mit samtenen Umarmungen beschenkt.",
+    "description_en": "Soft and fruity, a Merlot that gifts the heart with velvety embraces.",
+    "description_fr": "Doux et fruité, un Merlot qui offre au cœur des étreintes veloutées.",
+    "food_pairings_de": [
+      "Pasta mit Tomatensauce",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Pasta with tomato sauce",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Pâtes sauce tomate",
+      "Fromage"
+    ],
+    "created_at": "2025-12-12T23:32:57.896933+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "211a66bb-5f3f-4468-bade-e7d267fa6d4d",
+    "name": "Cuvée Madame Rosmarie Mathier Rouge 2021",
+    "winery": "Albert Mathier",
+    "country": "Schweiz",
+    "region": "Wallis - Salquenen",
+    "appellation": "AOC Valais",
+    "grape_variety": "Assemblage",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Assemblage aus Tradition, mit Beeren und Gewürzen, die die Seele in familiäre Wärme tauchen.",
+    "description_en": "A traditional assemblage, with berries and spices that immerse the soul in familial warmth.",
+    "description_fr": "Un assemblage traditionnel, avec des baies et des épices qui plongent l'âme dans une chaleur familiale.",
+    "food_pairings_de": [
+      "Roastbeef",
+      "Schokoladendessert"
+    ],
+    "food_pairings_en": [
+      "Roast beef",
+      "Chocolate dessert"
+    ],
+    "food_pairings_fr": [
+      "Rôti de bœuf",
+      "Dessert au chocolat"
+    ],
+    "created_at": "2025-12-12T23:32:57.897735+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "d829f54f-4574-4f26-a729-1e414abceeef",
+    "name": "Brûlefer Fendant de Sion",
+    "winery": "Provins",
+    "country": "Schweiz",
+    "region": "Wallis - Sion",
+    "appellation": "AOC Valais",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Knackig und erfrischend, ein Fendant, der wie ein Lachen die Seele weckt.",
+    "description_en": "Crisp and refreshing, a Fendant that awakens the soul like laughter.",
+    "description_fr": "Croquant et rafraîchissant, un Fendant qui éveille l'âme comme un rire.",
+    "food_pairings_de": [
+      "Fischfilet",
+      "Salat"
+    ],
+    "food_pairings_en": [
+      "Fish fillet",
+      "Salad"
+    ],
+    "food_pairings_fr": [
+      "Filet de poisson",
+      "Salade"
+    ],
+    "created_at": "2025-12-12T23:32:57.898394+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "523c1133-56c2-4ced-a618-51e5731179af",
+    "name": "Fendant Les Mazots",
+    "winery": "Maurice Gay",
+    "country": "Schweiz",
+    "region": "Wallis - Sion",
+    "appellation": "AOC Valais",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Mineralisch und rein, ein Tropfen, der die Seele mit Bergfrische reinigt.",
+    "description_en": "Mineral and pure, a drop that cleanses the soul with mountain freshness.",
+    "description_fr": "Minéral et pur, une goutte qui purifie l'âme avec la fraîcheur de la montagne.",
+    "food_pairings_de": [
+      "Austern",
+      "Leichte Vorspeisen"
+    ],
+    "food_pairings_en": [
+      "Oysters",
+      "Light appetizers"
+    ],
+    "food_pairings_fr": [
+      "Huîtres",
+      "Amuse-bouches légers"
+    ],
+    "created_at": "2025-12-12T23:32:57.899105+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "8689c899-535a-4eb2-a2b7-bf5d1b84a9d3",
+    "name": "Fendant sans Culotte",
+    "winery": "Maurice Gay",
+    "country": "Schweiz",
+    "region": "Wallis - Sion",
+    "appellation": "AOC Valais",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Frech und sprudelnd, ein Wein, der das Herz mit unbeschwertem Genuss erfüllt.",
+    "description_en": "Cheeky and effervescent, a wine that fills the heart with carefree pleasure.",
+    "description_fr": "Effronté et pétillant, un vin qui remplit le cœur d'un plaisir insouciant.",
+    "food_pairings_de": [
+      "Tapas",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Tapas",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Tapas",
+      "Fromage"
+    ],
+    "created_at": "2025-12-12T23:32:57.899765+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "2fb88a88-8797-41c8-a494-0f88e9e34bf9",
+    "name": "Fendant Grand Cru Ville de Sion",
+    "winery": "Provins",
+    "country": "Schweiz",
+    "region": "Wallis - Sion",
+    "appellation": "AOC Valais",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Edel und strukturiert, ein Grand Cru, der die Seele in städtischer Eleganz badet.",
+    "description_en": "Noble and structured, a Grand Cru that bathes the soul in urban elegance.",
+    "description_fr": "Noble et structuré, un Grand Cru qui baigne l'âme dans l'élégance urbaine.",
+    "food_pairings_de": [
+      "Krustentiere",
+      "Geflügel"
+    ],
+    "food_pairings_en": [
+      "Crustaceans",
+      "Poultry"
+    ],
+    "food_pairings_fr": [
+      "Crustacés",
+      "Volaille"
+    ],
+    "created_at": "2025-12-12T23:32:57.900398+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "42bc3a45-0645-4a8c-9b81-1ac86b88f789",
+    "name": "Soleil du Valais Fendant",
+    "winery": "Provins",
+    "country": "Schweiz",
+    "region": "Wallis - Sion",
+    "appellation": "AOC Valais",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Sonnig und fruchtig, ein Wein, der das Herz mit sommerlicher Leichtigkeit umfängt.",
+    "description_en": "Sunny and fruity, a wine that embraces the heart with summery lightness.",
+    "description_fr": "Ensoleillé et fruité, un vin qui embrasse le cœur d'une légèreté estivale.",
+    "food_pairings_de": [
+      "Sommergerichte",
+      "Frischkäse"
+    ],
+    "food_pairings_en": [
+      "Summer dishes",
+      "Fresh cheese"
+    ],
+    "food_pairings_fr": [
+      "Plats d'été",
+      "Fromage frais"
+    ],
+    "created_at": "2025-12-12T23:32:57.901033+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "8284c56d-2ed3-43fb-8d4f-cf681bb80506",
+    "name": "Cornalin 2023",
+    "winery": "Charles Bonvin",
+    "country": "Schweiz",
+    "region": "Wallis - Sion",
+    "appellation": "AOC Valais",
+    "grape_variety": "Cornalin",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Fruchtig und robust, ein Cornalin, der die Seele mit erdiger Kraft stärkt.",
+    "description_en": "Fruity and robust, a Cornalin that strengthens the soul with earthy power.",
+    "description_fr": "Fruité et robuste, un Cornalin qui renforce l'âme d'une puissance terreuse.",
+    "food_pairings_de": [
+      "Wild",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Game",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Gibier",
+      "Champignons"
+    ],
+    "created_at": "2025-12-12T23:32:57.902219+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "60c53187-4b35-4dbc-9c51-88a4c8c946c0",
+    "name": "Cornalin",
+    "winery": "Philippe Varone",
+    "country": "Schweiz",
+    "region": "Wallis - Sion",
+    "appellation": "AOC Valais",
+    "grape_variety": "Cornalin",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Intensiv und tanninreich, ein Tropfen, der wie ein Bergsturm die Sinne weckt.",
+    "description_en": "Intense and tannic, a drop that awakens the senses like a mountain storm.",
+    "description_fr": "Intense et tannique, une goutte qui éveille les sens comme une tempête de montagne.",
+    "food_pairings_de": [
+      "Lamm",
+      "Dunkles Fleisch"
+    ],
+    "food_pairings_en": [
+      "Lamb",
+      "Dark meat"
+    ],
+    "food_pairings_fr": [
+      "Agneau",
+      "Viande brune"
+    ],
+    "created_at": "2025-12-12T23:32:57.903127+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "1e9e27f4-63ec-41a5-8927-9faea0d4ebc9",
+    "name": "Cornalin 2023",
+    "winery": "Yvo Mathier",
+    "country": "Schweiz",
+    "region": "Wallis - Salquenen",
+    "appellation": "AOC Valais",
+    "grape_variety": "Cornalin",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Samtig und würzig, ein Wein, der die Seele in tiefe Reflexion taucht.",
+    "description_en": "Velvety and spicy, a wine that plunges the soul into deep reflection.",
+    "description_fr": "Velouté et épicé, un vin qui plonge l'âme dans une profonde réflexion.",
+    "food_pairings_de": [
+      "Ragouts",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Ragouts",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Ragoûts",
+      "Fromage"
+    ],
+    "created_at": "2025-12-12T23:32:57.904054+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "dd685ebd-201f-4c49-9e43-1119927accb6",
+    "name": "Dôle du Valais",
+    "winery": "Emery",
+    "country": "Schweiz",
+    "region": "Wallis - Sierre",
+    "appellation": "AOC Valais",
+    "grape_variety": "Pinot Noir, Gamay",
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Frisch und ausgewogen, ein Dôle, der das Herz mit klassischer Freude erheitert.",
+    "description_en": "Fresh and balanced, a Dôle that gladdens the heart with classic joy.",
+    "description_fr": "Frais et équilibré, une Dôle qui réjouit le cœur d'une joie classique.",
+    "food_pairings_de": [
+      "Fondue",
+      "Rind"
+    ],
+    "food_pairings_en": [
+      "Fondue",
+      "Beef"
+    ],
+    "food_pairings_fr": [
+      "Fondue",
+      "Bœuf"
+    ],
+    "created_at": "2025-12-12T23:32:57.904918+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "d487c320-1693-4c07-9931-1bcf85dc0e55",
+    "name": "Oeil de Perdrix Mon Amour Rosé Pinot Noir",
+    "winery": "Sélection Hugi",
+    "country": "Schweiz",
+    "region": "Wallis - Wallis",
+    "appellation": "AOC Valais",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rosé",
+    "price_category": "€€",
+    "description_de": "Zartrosa und verlockend, ein Rosé, der die Seele mit sommerlicher Sinnlichkeit umwebt.",
+    "description_en": "Delicate pink and alluring, a Rosé that weaves the soul with summery sensuality.",
+    "description_fr": "Rose délicat et séduisant, un Rosé qui tisse l'âme d'une sensualité estivale.",
+    "food_pairings_de": [
+      "Salate",
+      "Lachs"
+    ],
+    "food_pairings_en": [
+      "Salads",
+      "Salmon"
+    ],
+    "food_pairings_fr": [
+      "Salades",
+      "Saumon"
+    ],
+    "created_at": "2025-12-12T23:32:57.905756+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "050313b7-a59b-4183-aea1-60cef9dd9fb7",
+    "name": "Heida AOC Valais",
+    "winery": "Cave Fin Bec",
+    "country": "Schweiz",
+    "region": "Wallis - Saillon",
+    "appellation": "AOC Valais",
+    "grape_variety": "Heida",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Aromatisch und mineralisch, ein Heida, der wie ein Hohelied die Seele erhebt.",
+    "description_en": "Aromatic and mineral, a Heida that uplifts the soul like a canticle.",
+    "description_fr": "Aromatique et minéral, un Heida qui élève l'âme comme un cantique.",
+    "food_pairings_de": [
+      "Käse",
+      "Fisch"
+    ],
+    "food_pairings_en": [
+      "Cheese",
+      "Fish"
+    ],
+    "food_pairings_fr": [
+      "Fromage",
+      "Poisson"
+    ],
+    "created_at": "2025-12-12T23:32:57.906564+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "8428fc45-8e15-447d-afe1-d929eb6e924e",
+    "name": "Petite Arvine 1883",
+    "winery": "Maurice Gay",
+    "country": "Schweiz",
+    "region": "Wallis - Sion",
+    "appellation": "AOC Valais",
+    "grape_variety": "Petite Arvine",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Historisch und elegant, ein Wein, der die Seele mit zeitloser Tiefe berührt.",
+    "description_en": "Historic and elegant, a wine that touches the soul with timeless depth.",
+    "description_fr": "Historique et élégant, un vin qui touche l'âme d'une profondeur intemporelle.",
+    "food_pairings_de": [
+      "Geflügel",
+      "Meeresfrüchte"
+    ],
+    "food_pairings_en": [
+      "Poultry",
+      "Seafood"
+    ],
+    "food_pairings_fr": [
+      "Volaille",
+      "Fruits de mer"
+    ],
+    "created_at": "2025-12-12T23:32:57.907520+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "147d0b06-76aa-4f00-81ec-6cd589ecb7f0",
+    "name": "Petite Arvine Nobles Cépages",
+    "winery": "Provins",
+    "country": "Schweiz",
+    "region": "Wallis - Sion",
+    "appellation": "AOC Valais",
+    "grape_variety": "Petite Arvine",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Rein und lebendig, ein Tropfen, der das Herz mit nobler Frische erfrischt.",
+    "description_en": "Pure and vibrant, a drop that refreshes the heart with noble freshness.",
+    "description_fr": "Pur et vivant, une goutte qui rafraîchit le cœur d'une fraîcheur noble.",
+    "food_pairings_de": [
+      "Krebse",
+      "Kräuterdesserts"
+    ],
+    "food_pairings_en": [
+      "Crayfish",
+      "Herb desserts"
+    ],
+    "food_pairings_fr": [
+      "Écrevisses",
+      "Desserts aux herbes"
+    ],
+    "created_at": "2025-12-12T23:32:57.908434+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "e21088ea-99db-4fd6-80d5-189f23c54d47",
+    "name": "Petite Arvine",
+    "winery": "Philippe Varone",
+    "country": "Schweiz",
+    "region": "Wallis - Sion",
+    "appellation": "AOC Valais",
+    "grape_variety": "Petite Arvine",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Zitrusfrisch und salzig, ein Arvine, der die Seele auf Reisen schickt.",
+    "description_en": "Citrus-fresh and salty, an Arvine that sends the soul traveling.",
+    "description_fr": "Frais d'agrumes et salé, un Arvine qui envoie l'âme en voyage.",
+    "food_pairings_de": [
+      "Gegrillter Fisch",
+      "Zitronengerichte"
+    ],
+    "food_pairings_en": [
+      "Grilled fish",
+      "Lemon dishes"
+    ],
+    "food_pairings_fr": [
+      "Poisson grillé",
+      "Plats au citron"
+    ],
+    "created_at": "2025-12-12T23:32:57.909214+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "9c166271-5af4-442c-a0e9-7d4abf18017b",
+    "name": "Petite Arvine 2023",
+    "winery": "Yvo Mathier",
+    "country": "Schweiz",
+    "region": "Wallis - Salquenen",
+    "appellation": "AOC Valais",
+    "grape_variety": "Petite Arvine",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Intensiv und mineralisch, ein Wein, der wie ein Gebet die Seele beruhigt.",
+    "description_en": "Intense and mineral, a wine that calms the soul like a prayer.",
+    "description_fr": "Intense et minéral, un vin qui apaise l'âme comme une prière.",
+    "food_pairings_de": [
+      "Hummer",
+      "Milder Käse"
+    ],
+    "food_pairings_en": [
+      "Lobster",
+      "Mild cheese"
+    ],
+    "food_pairings_fr": [
+      "Homard",
+      "Fromage doux"
+    ],
+    "created_at": "2025-12-12T23:32:57.909937+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "8b97bf8d-dbb2-4664-b4d0-9674828aa1d9",
+    "name": "Païen Les Serpentines 2018",
+    "winery": "Gérald Besse",
+    "country": "Schweiz",
+    "region": "Wallis - Martigny",
+    "appellation": "AOC Valais",
+    "grape_variety": "Heida",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Gewürzt und exotisch, ein Païen, der das Herz mit orientalischem Flair verzaubert.",
+    "description_en": "Spiced and exotic, a Païen that enchants the heart with oriental flair.",
+    "description_fr": "Épicé et exotique, un Païen qui enchante le cœur d'un flair oriental.",
+    "food_pairings_de": [
+      "Curry",
+      "Vegetarische Gerichte"
+    ],
+    "food_pairings_en": [
+      "Curry",
+      "Vegetarian dishes"
+    ],
+    "food_pairings_fr": [
+      "Curry",
+      "Plats végétariens"
+    ],
+    "created_at": "2025-12-12T23:32:57.910618+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "ae55ce65-72d7-42e8-883c-475e9f40eb4d",
+    "name": "Dieu de Viège Assemblage 2021",
+    "winery": "Chanton Weine",
+    "country": "Schweiz",
+    "region": "Wallis - Visp",
+    "appellation": "AOC Valais",
+    "grape_variety": "Assemblage",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Komplex und harmonisch, ein Assemblage, der die Seele in göttliche Ekstase versetzt.",
+    "description_en": "Complex and harmonious, an assemblage that sends the soul into divine ecstasy.",
+    "description_fr": "Complexe et harmonieux, un assemblage qui envoie l'âme en extase divine.",
+    "food_pairings_de": [
+      "Entrecôte",
+      "Schokolade"
+    ],
+    "food_pairings_en": [
+      "Entrecôte",
+      "Chocolate"
+    ],
+    "food_pairings_fr": [
+      "Entrecôte",
+      "Chocolat"
+    ],
+    "created_at": "2025-12-12T23:32:57.911310+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "bfb9ed2d-d698-450d-9955-7b5015b4deae",
+    "name": "Profondo Diversitas 2020",
+    "winery": "Cave du Rhodan - Mounir Weine",
+    "country": "Schweiz",
+    "region": "Wallis - Salquenen",
+    "appellation": "AOC Valais",
+    "grape_variety": "Assemblage",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Tief und amaronig, ein Rot, das wie ein Abgrund die Seele fesselt.",
+    "description_en": "Deep and Amarone-like, a red that captivates the soul like an abyss.",
+    "description_fr": "Profond et amaronien, un rouge qui captive l'âme comme un abîme.",
+    "food_pairings_de": [
+      "Stark gewürzte Fleischgerichte"
+    ],
+    "food_pairings_en": [
+      "Heavily spiced meat dishes"
+    ],
+    "food_pairings_fr": [
+      "Plats de viande très épicés"
+    ],
+    "created_at": "2025-12-12T23:32:57.912006+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "5a9c96bc-fdd9-4393-a557-ec839078c0c0",
+    "name": "Pinot Noir Collection F 2020",
+    "winery": "Les Fils de Ch. Favre",
+    "country": "Schweiz",
+    "region": "Wallis - Sion",
+    "appellation": "AOC Valais",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Elegant und filigran, ein Pinot, der das Herz mit burgundischer Poesie umfängt.",
+    "description_en": "Elegant and delicate, a Pinot that embraces the heart with Burgundian poetry.",
+    "description_fr": "Élégant et délicat, un Pinot qui embrasse le cœur de poésie bourguignonne.",
+    "food_pairings_de": [
+      "Ente",
+      "Pilzgerichte"
+    ],
+    "food_pairings_en": [
+      "Duck",
+      "Mushroom dishes"
+    ],
+    "food_pairings_fr": [
+      "Canard",
+      "Plats aux champignons"
+    ],
+    "created_at": "2025-12-12T23:32:57.912702+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "62f4f590-418a-469f-aa7c-611844b5b9c9",
+    "name": "Humagne Blanc",
+    "winery": "Défayes & Crettenand",
+    "country": "Schweiz",
+    "region": "Wallis - Leytron",
+    "appellation": "AOC Valais",
+    "grape_variety": "Humagne Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Frisch und blumig, ein Weiß, das die Seele mit valaisanischer Reinheit erfüllt.",
+    "description_en": "Fresh and floral, a white that fills the soul with Valaisan purity.",
+    "description_fr": "Frais et floral, un blanc qui remplit l'âme de pureté valaisanne.",
+    "food_pairings_de": [
+      "Fisch",
+      "Salate"
+    ],
+    "food_pairings_en": [
+      "Fish",
+      "Salads"
+    ],
+    "food_pairings_fr": [
+      "Poisson",
+      "Salades"
+    ],
+    "created_at": "2025-12-12T23:32:57.913376+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "28247a31-7cdf-4e7f-ad95-8a79afa9c501",
+    "name": "Ermitage",
+    "winery": "Gilles Besse",
+    "country": "Schweiz",
+    "region": "Wallis - Martigny",
+    "appellation": "AOC Valais",
+    "grape_variety": "Marsanne",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Reich und honigartig, ein Surmaturé, der wie ein Traum die Seele umhüllt.",
+    "description_en": "Rich and honeyed, a late harvest that envelops the soul like a dream.",
+    "description_fr": "Riche et miellé, un surmaturé qui enveloppe l'âme comme un rêve.",
+    "food_pairings_de": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "food_pairings_en": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "food_pairings_fr": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "created_at": "2025-12-12T23:32:57.914050+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "0f20a38f-3406-475f-82f0-b3199d53b6b2",
+    "name": "Merlot",
+    "winery": "Valentina Andrei",
+    "country": "Schweiz",
+    "region": "Wallis - Saillon",
+    "appellation": "AOC Valais",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Weich und fruchtig, ein Merlot, der das Herz mit warmer Umarmung beschenkt.",
+    "description_en": "Soft and fruity, a Merlot that gifts the heart with a warm embrace.",
+    "description_fr": "Doux et fruité, un Merlot qui offre au cœur une étreinte chaleureuse.",
+    "food_pairings_de": [
+      "Pasta",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Pasta",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Pâtes",
+      "Fromage"
+    ],
+    "created_at": "2025-12-12T23:32:57.914717+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "e1a07e2b-c2fe-4f77-acb0-0b8514700dc9",
+    "name": "Alchimie Blanche Ermitage",
+    "winery": "Christophe Abbet",
+    "country": "Schweiz",
+    "region": "Wallis - Martigny",
+    "appellation": "AOC Valais",
+    "grape_variety": "Marsanne",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Mystisch und komplex, ein Wein, der die Seele alchemistisch verändert.",
+    "description_en": "Mystical and complex, a wine that alchemically transforms the soul.",
+    "description_fr": "Mystique et complexe, un vin qui transforme alchimiquement l'âme.",
+    "food_pairings_de": [
+      "Wild",
+      "Reifer Käse"
+    ],
+    "food_pairings_en": [
+      "Game",
+      "Aged cheese"
+    ],
+    "food_pairings_fr": [
+      "Gibier",
+      "Fromage affiné"
+    ],
+    "created_at": "2025-12-12T23:32:57.915502+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "e8b9d95b-f253-4b1b-9bfb-c10173bd18cc",
+    "name": "Les Empereurs Cornalin",
+    "winery": "Joël Briguet",
+    "country": "Schweiz",
+    "region": "Wallis - Corin",
+    "appellation": "AOC Valais",
+    "grape_variety": "Cornalin",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Kaiserlich und robust, ein Cornalin, der die Seele mit imperierender Kraft erhebt.",
+    "description_en": "Imperial and robust, a Cornalin that uplifts the soul with commanding power.",
+    "description_fr": "Impérial et robuste, un Cornalin qui élève l'âme d'une puissance impérieuse.",
+    "food_pairings_de": [
+      "Lamm",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Lamb",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Agneau",
+      "Champignons"
+    ],
+    "created_at": "2025-12-12T23:32:57.916365+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "e9694af4-dd88-484a-b12d-9717f6dc86a7",
+    "name": "Ardévine",
+    "winery": "Cave Ardévaz",
+    "country": "Schweiz",
+    "region": "Wallis - Leytron",
+    "appellation": "AOC Valais",
+    "grape_variety": "Assemblage",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Innovativ und fruchtig, ein Hybrid, der das Herz mit moderner Freude erfüllt.",
+    "description_en": "Innovative and fruity, a hybrid that fills the heart with modern joy.",
+    "description_fr": "Innovant et fruité, un hybride qui remplit le cœur d'une joie moderne.",
+    "food_pairings_de": [
+      "Grillgemüse",
+      "Fisch"
+    ],
+    "food_pairings_en": [
+      "Grilled vegetables",
+      "Fish"
+    ],
+    "food_pairings_fr": [
+      "Légumes grillés",
+      "Poisson"
+    ],
+    "created_at": "2025-12-12T23:32:57.917206+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
+  },
+  {
+    "id": "9ab3afd3-edbf-4ce4-973c-e2006ec73d78",
+    "name": "Heida Les Fers de Lance 2023",
+    "winery": "Philippe Constantin",
+    "country": "Schweiz",
+    "region": "Wallis - Salgesch",
+    "appellation": "AOC Valais",
+    "grape_variety": "Heida",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Hoch und rein, ein Heida, der wie ein Gipfelblick die Seele erweitert.",
+    "description_en": "High and pure, a Heida that expands the soul like a summit view.",
+    "description_fr": "Haut et pur, un Heida qui élargit l'âme comme une vue du sommet.",
+    "food_pairings_de": [
+      "Käseplatte",
+      "Leichte Vorspeisen"
+    ],
+    "food_pairings_en": [
+      "Cheese platter",
+      "Light appetizers"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fromages",
+      "Amuse-bouches légers"
+    ],
+    "created_at": "2025-12-12T23:32:57.918066+00:00",
+    "source": "Top 50 Walliser Weine - Étoiles du Valais, Falstaff, GaultMillau"
   }
 ]

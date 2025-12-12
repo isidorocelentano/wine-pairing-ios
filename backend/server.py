@@ -3126,6 +3126,71 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# ===================== BACKUP DOWNLOAD ENDPOINTS =====================
+
+@api_router.get("/backup/list")
+async def list_backup_files():
+    """List all available backup files"""
+    data_dir = ROOT_DIR / "data"
+    backup_files = []
+    
+    for f in sorted(data_dir.glob("*.json")):
+        size_kb = f.stat().st_size / 1024
+        backup_files.append({
+            "filename": f.name,
+            "size_kb": round(size_kb, 1),
+            "download_url": f"/api/backup/download/{f.name}"
+        })
+    
+    return {"files": backup_files, "total_files": len(backup_files)}
+
+
+@api_router.get("/backup/download/{filename}")
+async def download_backup_file(filename: str):
+    """Download a specific backup file"""
+    # Security: Only allow .json files from data directory
+    if not filename.endswith('.json'):
+        raise HTTPException(status_code=400, detail="Only JSON files are allowed")
+    
+    # Prevent path traversal
+    if '/' in filename or '\\' in filename or '..' in filename:
+        raise HTTPException(status_code=400, detail="Invalid filename")
+    
+    data_dir = ROOT_DIR / "data"
+    file_path = data_dir / filename
+    
+    if not file_path.exists():
+        raise HTTPException(status_code=404, detail=f"File not found: {filename}")
+    
+    # Read file content
+    with open(file_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+    
+    return Response(
+        content=content,
+        media_type="application/json",
+        headers={
+            "Content-Disposition": f"attachment; filename={filename}"
+        }
+    )
+
+
+@api_router.get("/backup/download-all")
+async def download_all_backups():
+    """Get all backup data as a single JSON object"""
+    data_dir = ROOT_DIR / "data"
+    all_data = {}
+    
+    for f in sorted(data_dir.glob("*.json")):
+        try:
+            with open(f, 'r', encoding='utf-8') as file:
+                all_data[f.stem] = json.load(file)
+        except Exception as e:
+            all_data[f.stem] = {"error": str(e)}
+    
+    return all_data
+
+
 # Include the router AFTER middleware
 app.include_router(api_router)
 

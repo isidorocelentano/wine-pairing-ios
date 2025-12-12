@@ -770,12 +770,13 @@ class WinePairingAPITester:
                 self.log_test("Regional Pairings Countries", False, f"Expected 9+ countries, got {len(countries)}")
                 return False
             
-            # Check for expected countries
+            # Check for expected countries - response contains objects with 'country' field
             expected_countries = ['Griechenland', 'Italien', 'Japan', 'China']
-            found_expected = [country for country in expected_countries if country in countries]
+            country_names = [c.get('country') for c in countries if isinstance(c, dict)]
+            found_expected = [country for country in expected_countries if country in country_names]
             
             if len(found_expected) < 2:
-                self.log_test("Regional Pairings Countries", False, f"Missing expected countries. Found: {countries}")
+                self.log_test("Regional Pairings Countries", False, f"Missing expected countries. Found: {country_names}")
                 return False
             
             self.log_test("Regional Pairings Countries", True, f"Found {len(countries)} countries including {found_expected}")

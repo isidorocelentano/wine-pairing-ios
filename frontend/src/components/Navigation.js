@@ -13,7 +13,7 @@ const Navigation = () => {
     { path: '/', icon: Home, labelKey: 'nav_home' },
     { path: '/pairing', icon: Utensils, labelKey: 'nav_pairing' },
     { path: '/grapes', icon: Grape, labelKey: 'nav_grapes' },
-    { path: '/sommelier-kompass', icon: Compass, labelKey: 'regional_nav' },
+    { path: '/feed', icon: Users, labelKey: 'nav_feed' },
     { path: '/chat', icon: MessageCircle, labelKey: 'nav_sommelier', isClaude: true },
   ];
 

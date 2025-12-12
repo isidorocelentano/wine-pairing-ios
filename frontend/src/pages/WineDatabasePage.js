@@ -54,6 +54,14 @@ const WineDatabasePage = () => {
   const [favorites, setFavorites] = useState(new Set());
   const [wishlist, setWishlist] = useState(new Set());
 
+  // Initialize search from URL parameter
+  useEffect(() => {
+    const urlSearch = searchParams.get('search');
+    if (urlSearch) {
+      setSearchQuery(urlSearch);
+    }
+  }, [searchParams]);
+
   // Fetch available filter options
   const fetchFilterOptions = useCallback(async () => {
     try {

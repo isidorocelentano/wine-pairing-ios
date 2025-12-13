@@ -38844,5 +38844,868 @@
     ],
     "created_at": "2025-12-13T05:45:43.853821+00:00",
     "source": "Top 50 Berner Weine - Berner Wein des Jahres 2025, GaultMillau, Falstaff, Expovina"
+  },
+  {
+    "id": "ddfe4cf5-4837-4941-8f43-21c2340bc2ee",
+    "name": "Zweigelt 2020",
+    "winery": "tobias wein.gut",
+    "country": "Schweiz",
+    "region": "St. Gallen - Berneck",
+    "appellation": "AOC St. Gallen",
+    "grape_variety": "Zweigelt",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Ein dunkler Verführer, der von schwarzen Beeren und Pfeffer flüstert – ein Wein, der die Seele in leidenschaftliche Umarmung hüllt und als bester Deutschschweizer Rotwein triumphiert.",
+    "description_en": "A dark seducer whispering of black berries and pepper – a wine that wraps the soul in passionate embrace, triumphant as the best German-Swiss red wine.",
+    "description_fr": "Un séducteur sombre qui murmure des baies noires et du poivre – un vin qui enveloppe l'âme dans une étreinte passionnée, triomphant comme le meilleur vin rouge suisse alémanique.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Gegrilltes Rind",
+      "Dunkle Schokolade"
+    ],
+    "food_pairings_en": [
+      "Grilled beef",
+      "Dark chocolate"
+    ],
+    "food_pairings_fr": [
+      "Bœuf grillé",
+      "Chocolat noir"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:04:34.324287Z"
+  },
+  {
+    "id": "65412bf9-1f86-4d5e-8280-68afa477dbd4",
+    "name": "Merlot 2019",
+    "winery": "tobias wein.gut",
+    "country": "Schweiz",
+    "region": "St. Gallen - Berneck",
+    "appellation": "AOC St. Gallen",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Samten und intensiv, mit Pflaume und Tabak, der wie ein alter Freund die Seele in tröstliche Wärme taucht – Gold beim Grand Prix du Vin Suisse.",
+    "description_en": "Velvety and intense, with plum and tobacco, immersing the soul in comforting warmth like an old friend – Gold at the Grand Prix du Vin Suisse.",
+    "description_fr": "Velouté et intense, avec de la prune et du tabac, plongeant l'âme dans une chaleur réconfortante – Or au Grand Prix du Vin Suisse.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Lammragout",
+      "Reifer Käse"
+    ],
+    "food_pairings_en": [
+      "Lamb ragout",
+      "Aged cheese"
+    ],
+    "food_pairings_fr": [
+      "Ragoût d'agneau",
+      "Fromage affiné"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:04:34.332825Z"
+  },
+  {
+    "id": "00845cc4-d587-4f1d-9c1e-3fdeb2583d46",
+    "name": "Müller-Thurgau 2024",
+    "winery": "Weingut Zünd",
+    "country": "Schweiz",
+    "region": "St. Gallen - Altstätten",
+    "appellation": "AOC St. Gallen",
+    "grape_variety": "Müller-Thurgau",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Frisch und aromatisch, ein Hauch von Muskat und Apfel, der die Seele mit jugendlicher Lebendigkeit erfrischt.",
+    "description_en": "Fresh and aromatic, a hint of muscat and apple that refreshes the soul with youthful vivacity.",
+    "description_fr": "Frais et aromatique, une touche de muscat et de pomme qui rafraîchit l'âme avec une vivacité juvénile.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Gebratener Fisch",
+      "Sommergemüse"
+    ],
+    "food_pairings_en": [
+      "Fried fish",
+      "Summer vegetables"
+    ],
+    "food_pairings_fr": [
+      "Poisson frit",
+      "Légumes d'été"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:04:34.333853Z"
+  },
+  {
+    "id": "24398147-4c5e-421e-a45b-0c6f945b036c",
+    "name": "Pinot Noir Barrique 2023",
+    "winery": "Weingut Bad Osterfingen",
+    "country": "Schweiz",
+    "region": "St. Gallen - Osterfingen",
+    "appellation": "AOC St. Gallen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Elegant und filigran, mit Kirsche und Leder, der die Seele in burgundische Melancholie entführt.",
+    "description_en": "Elegant and delicate, with cherry and leather, transporting the soul into Burgundian melancholy.",
+    "description_fr": "Élégant et délicat, avec de la cerise et du cuir, transportant l'âme dans la mélancolie bourguignonne.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Entenbrust",
+      "Pilzrisotto"
+    ],
+    "food_pairings_en": [
+      "Duck breast",
+      "Mushroom risotto"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard",
+      "Risotto aux champignons"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:04:34.334846Z"
+  },
+  {
+    "id": "374b8a56-4b0a-4d42-8f7b-45162ce7ea1c",
+    "name": "Riesling-Sylvaner 2024",
+    "winery": "Ochsentorkel Weinbau",
+    "country": "Schweiz",
+    "region": "St. Gallen - Thal",
+    "appellation": "AOC St. Gallen",
+    "grape_variety": "Riesling-Sylvaner",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Knackig und mineralisch, ein Tropfen, der wie ein Rheinnebel die Seele klärt und verjüngt.",
+    "description_en": "Crisp and mineral, a drop that clears and rejuvenates the soul like Rhine mist.",
+    "description_fr": "Croquant et minéral, une goutte qui clarifie et rajeunit l'âme comme la brume du Rhin.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Meeresfrüchte",
+      "Frischer Salat"
+    ],
+    "food_pairings_en": [
+      "Seafood",
+      "Fresh salad"
+    ],
+    "food_pairings_fr": [
+      "Fruits de mer",
+      "Salade fraîche"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:04:34.335762Z"
+  },
+  {
+    "id": "82d035e6-eca7-479e-a736-1bcc6432a82b",
+    "name": "Chardonnay 2023",
+    "winery": "Casa Nova Wein Pur AG",
+    "country": "Schweiz",
+    "region": "St. Gallen - Walenstadt",
+    "appellation": "AOC St. Gallen",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Cremig und golden, mit Nuss und Zitrus, der die Seele in sonnige Höhen trägt.",
+    "description_en": "Creamy and golden, with nut and citrus, carrying the soul to sunny heights.",
+    "description_fr": "Crémeux et doré, avec de la noix et des agrumes, portant l'âme vers des hauteurs ensoleillées.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Gegrilltes Huhn",
+      "Milde Tomme"
+    ],
+    "food_pairings_en": [
+      "Grilled chicken",
+      "Mild Tomme"
+    ],
+    "food_pairings_fr": [
+      "Poulet grillé",
+      "Tomme douce"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:04:34.336643Z"
+  },
+  {
+    "id": "80e57d47-6983-4d47-af36-8a8d342b6e37",
+    "name": "Crémant Brut",
+    "winery": "tobias wein.gut",
+    "country": "Schweiz",
+    "region": "St. Gallen - Berneck",
+    "appellation": "AOC St. Gallen",
+    "grape_variety": "Assemblage",
+    "wine_color": "schaumwein",
+    "year": null,
+    "description_de": "Perlender Traum, der von Blasen und Zitruspoesie erzählt – festlich und lebendig.",
+    "description_en": "Sparkling dream that speaks of bubbles and citrus poetry – festive and lively.",
+    "description_fr": "Rêve pétillant qui parle de bulles et de poésie d'agrumes – festif et vivant.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Austern",
+      "Aperitif"
+    ],
+    "food_pairings_en": [
+      "Oysters",
+      "Aperitif"
+    ],
+    "food_pairings_fr": [
+      "Huîtres",
+      "Apéritif"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:04:34.340348Z"
+  },
+  {
+    "id": "ec54a2e1-3841-4684-b2cc-1de33fc8c34c",
+    "name": "Pinot Noir 2023",
+    "winery": "Weingut Seewer",
+    "country": "Schweiz",
+    "region": "St. Gallen - Wilchingen",
+    "appellation": "AOC St. Gallen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Filigran und fruchtig, ein Windhauch aus Beeren, der das Herz mit Frische weckt.",
+    "description_en": "Delicate and fruity, a breath of berries that awakens the heart with freshness.",
+    "description_fr": "Délicat et fruité, un souffle de baies qui éveille le cœur avec fraîcheur.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Entenbrust",
+      "Salat"
+    ],
+    "food_pairings_en": [
+      "Duck breast",
+      "Salad"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard",
+      "Salade"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:04:34.342257Z"
+  },
+  {
+    "id": "ed7b0d5e-89a8-4a36-b119-b4024f8a5d2b",
+    "name": "Pinot Noir 2023",
+    "winery": "Weingut GVS Schachenmann",
+    "country": "Schweiz",
+    "region": "St. Gallen - Hallau",
+    "appellation": "AOC St. Gallen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Tief und mineralisch, mit dunklen Früchten, die wie ein Geheimnis die Seele berühren.",
+    "description_en": "Deep and mineral, with dark fruits that touch the soul like a secret.",
+    "description_fr": "Profond et minéral, avec des fruits sombres qui touchent l'âme comme un secret.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Rind",
+      "Wild"
+    ],
+    "food_pairings_en": [
+      "Beef",
+      "Game"
+    ],
+    "food_pairings_fr": [
+      "Bœuf",
+      "Gibier"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:04:34.344336Z"
+  },
+  {
+    "id": "eaa1ba2d-e655-4e50-a7f6-1263779c41a5",
+    "name": "Chardonnay 2023",
+    "winery": "Weingut Ruch",
+    "country": "Schweiz",
+    "region": "St. Gallen - Hallau",
+    "appellation": "AOC St. Gallen",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Reich und honigartig, ein Traum, der die Seele umhüllt.",
+    "description_en": "Rich and honeyed, a dream that envelops the soul.",
+    "description_fr": "Riche et miellé, un rêve qui enveloppe l'âme.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "food_pairings_en": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "food_pairings_fr": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:04:34.346643Z"
+  },
+  {
+    "id": "84fa7244-7b97-4da6-b786-b3d04a096374",
+    "name": "Pinot Noir 2023",
+    "winery": "Weingut Höcklistein",
+    "country": "Schweiz",
+    "region": "St. Gallen - Rapperswil-Jona",
+    "appellation": "AOC St. Gallen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Tief und harmonisch, ein Meister der Balance, der die Seele beruhigt.",
+    "description_en": "Deep and harmonious, a master of balance that calms the soul.",
+    "description_fr": "Profond et harmonieux, un maître de l'équilibre qui apaise l'âme.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Ente",
+      "Schokolade"
+    ],
+    "food_pairings_en": [
+      "Duck",
+      "Chocolate"
+    ],
+    "food_pairings_fr": [
+      "Canard",
+      "Chocolat"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:04:34.348827Z"
+  },
+  {
+    "id": "f13200da-632f-4111-bda1-7da896d7cf43",
+    "name": "Pinot Noir 2023",
+    "winery": "Weinbau Markus Ruch",
+    "country": "Schweiz",
+    "region": "St. Gallen - Hallau",
+    "appellation": "AOC St. Gallen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Samten und warm, eine Umarmung in Rot.",
+    "description_en": "Velvety and warm, an embrace in red.",
+    "description_fr": "Velouté et chaud, une étreinte en rouge.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Pasta",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Pasta",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Pâtes",
+      "Fromage"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:04:34.350378Z"
+  },
+  {
+    "id": "2c98a98a-e4e8-41d7-8988-dcea2cf8fe97",
+    "name": "Pinot Noir 2022",
+    "winery": "Weingut Höcklistein",
+    "country": "Schweiz",
+    "region": "St. Gallen - Rapperswil-Jona",
+    "appellation": "AOC St. Gallen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Würzig und intensiv, ein Feuerwerk der Sinne.",
+    "description_en": "Spicy and intense, a firework of the senses.",
+    "description_fr": "Épicé et intense, un feu d'artifice des sens.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Gewürztes Fleisch"
+    ],
+    "food_pairings_en": [
+      "Spiced meat"
+    ],
+    "food_pairings_fr": [
+      "Viande épicée"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:04:34.351910Z"
+  },
+  {
+    "id": "70949a47-b47f-46be-b1df-6ba2993463bd",
+    "name": "Pinot Noir GVS 2023",
+    "winery": "Weingut GVS Schachenmann",
+    "country": "Schweiz",
+    "region": "St. Gallen - Hallau",
+    "appellation": "AOC St. Gallen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Präzise und tief, ein Elite-Tropfen.",
+    "description_en": "Precise and deep, an elite drop.",
+    "description_fr": "Précis et profond, une goutte d'élite.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Ente",
+      "Risotto"
+    ],
+    "food_pairings_en": [
+      "Duck",
+      "Risotto"
+    ],
+    "food_pairings_fr": [
+      "Canard",
+      "Risotto"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:04:34.353347Z"
+  },
+  {
+    "id": "b3336fa9-2e65-4435-85e4-8002942825c6",
+    "name": "Pinot Noir Aagne 2024",
+    "winery": "aagne weingut",
+    "country": "Schweiz",
+    "region": "St. Gallen - Hallau",
+    "appellation": "AOC St. Gallen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Robust und kraftvoll, ein Imperator.",
+    "description_en": "Robust and powerful, an emperor.",
+    "description_fr": "Robuste et puissant, un empereur.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Lamm",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Lamb",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Agneau",
+      "Champignons"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:04:34.354860Z"
+  },
+  {
+    "id": "db06c97e-80fc-4384-8805-c9a53f18721b",
+    "name": "Pinot Noir Seewer 2023",
+    "winery": "Weingut Seewer",
+    "country": "Schweiz",
+    "region": "St. Gallen - Wilchingen",
+    "appellation": "AOC St. Gallen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Dynamisch und choral, eine Symphonie.",
+    "description_en": "Dynamic and choral, a symphony.",
+    "description_fr": "Dynamique et choral, une symphonie.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Dunkles Fleisch"
+    ],
+    "food_pairings_en": [
+      "Dark meat"
+    ],
+    "food_pairings_fr": [
+      "Viande brune"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:04:34.356293Z"
+  },
+  {
+    "id": "624b13eb-fc54-4356-aef0-0bf96f19b865",
+    "name": "Riesling 2023",
+    "winery": "Weinbau Markus Ruch",
+    "country": "Schweiz",
+    "region": "St. Gallen - Hallau",
+    "appellation": "AOC St. Gallen",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Blumig und leicht, ein Sommertraum.",
+    "description_en": "Floral and light, a summer dream.",
+    "description_fr": "Floral et léger, un rêve d'été.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Sommergerichte"
+    ],
+    "food_pairings_en": [
+      "Summer dishes"
+    ],
+    "food_pairings_fr": [
+      "Plats d'été"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:04:34.358270Z"
+  },
+  {
+    "id": "38e3b86b-9ec0-4634-bd07-1d6455151797",
+    "name": "Sauvignon Blanc GVS 2024",
+    "winery": "Weingut GVS Schachenmann",
+    "country": "Schweiz",
+    "region": "St. Gallen - Hallau",
+    "appellation": "AOC St. Gallen",
+    "grape_variety": "Sauvignon Blanc",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Würzig und orientalisch, ein Zauber.",
+    "description_en": "Spicy and oriental, a spell.",
+    "description_fr": "Épicé et oriental, un sortilège.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Curry",
+      "Vegetarisch"
+    ],
+    "food_pairings_en": [
+      "Curry",
+      "Vegetarian"
+    ],
+    "food_pairings_fr": [
+      "Curry",
+      "Végétarien"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:04:34.359746Z"
+  },
+  {
+    "id": "cf6e7598-d95e-40c0-9624-8f48784a287b",
+    "name": "Pinot Noir Baumann 2023",
+    "winery": "Weingut Baumann",
+    "country": "Schweiz",
+    "region": "St. Gallen - Oberhallau",
+    "appellation": "AOC St. Gallen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Harmonisch und göttlich, eine Ekstase.",
+    "description_en": "Harmonious and divine, an ecstasy.",
+    "description_fr": "Harmonieux et divin, une extase.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Entrecôte",
+      "Schokolade"
+    ],
+    "food_pairings_en": [
+      "Entrecôte",
+      "Chocolate"
+    ],
+    "food_pairings_fr": [
+      "Entrecôte",
+      "Chocolat"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:04:34.360672Z"
+  },
+  {
+    "id": "2c875e34-be37-4218-bb16-35a5ae2ba34b",
+    "name": "Chardonnay Aagne 2022",
+    "winery": "aagne weingut",
+    "country": "Schweiz",
+    "region": "St. Gallen - Hallau",
+    "appellation": "AOC St. Gallen",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Strukturiert und elegant, ein Grand Cru.",
+    "description_en": "Structured and elegant, a Grand Cru.",
+    "description_fr": "Structuré et élégant, un Grand Cru.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Krustentiere"
+    ],
+    "food_pairings_en": [
+      "Crustaceans"
+    ],
+    "food_pairings_fr": [
+      "Crustacés"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:04:34.361555Z"
+  },
+  {
+    "id": "1e3ec5ab-4c5c-4c41-9260-56e231e480d2",
+    "name": "Pinot Noir Ruch 2023",
+    "winery": "Weingut Ruch",
+    "country": "Schweiz",
+    "region": "St. Gallen - Hallau",
+    "appellation": "AOC St. Gallen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Lebendig und frisch, ein Funke.",
+    "description_en": "Lively and fresh, a spark.",
+    "description_fr": "Vivant et frais, une étincelle.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Krebse",
+      "Suppe"
+    ],
+    "food_pairings_en": [
+      "Crayfish",
+      "Soup"
+    ],
+    "food_pairings_fr": [
+      "Écrevisses",
+      "Soupe"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:04:34.362404Z"
+  },
+  {
+    "id": "cd9529c1-6705-4251-8dc8-bcd458904a1e",
+    "name": "Müller-Thurgau Seewer 2023",
+    "winery": "Weingut Seewer",
+    "country": "Schweiz",
+    "region": "St. Gallen - Wilchingen",
+    "appellation": "AOC St. Gallen",
+    "grape_variety": "Müller-Thurgau",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Tief und reich, ein Abgrund der Aromen.",
+    "description_en": "Deep and rich, an abyss of aromas.",
+    "description_fr": "Profond et riche, un abîme d'arômes.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Gewürztes"
+    ],
+    "food_pairings_en": [
+      "Spiced dishes"
+    ],
+    "food_pairings_fr": [
+      "Plats épicés"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:04:34.363224Z"
+  },
+  {
+    "id": "5b09cede-1460-402f-b40a-fbe3e6cf8ef0",
+    "name": "Pinot Noir Hedinger 2024",
+    "winery": "Hedinger Weingut & Kellerei",
+    "country": "Schweiz",
+    "region": "St. Gallen - Wilchingen",
+    "appellation": "AOC St. Gallen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Elegant und zeitlos, eine Tiefe.",
+    "description_en": "Elegant and timeless, a depth.",
+    "description_fr": "Élégant et intemporel, une profondeur.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Geflügel"
+    ],
+    "food_pairings_en": [
+      "Poultry"
+    ],
+    "food_pairings_fr": [
+      "Volaille"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:04:34.364030Z"
+  },
+  {
+    "id": "6d7e3ad8-653b-48b1-9725-a60702eb2ecf",
+    "name": "Riesling-Silvaner 2023",
+    "winery": "Weingut Bad Osterfingen",
+    "country": "Schweiz",
+    "region": "St. Gallen - Osterfingen",
+    "appellation": "AOC St. Gallen",
+    "grape_variety": "Riesling-Silvaner",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Fruchtig und traurig-freudig, ein Windhauch.",
+    "description_en": "Fruity and bittersweet, a breath of wind.",
+    "description_fr": "Fruité et doux-amer, un souffle de vent.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Champignons"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:04:34.364852Z"
+  },
+  {
+    "id": "345e2206-7e06-4c8e-b611-b65af225c245",
+    "name": "Pinot Blanc Ruch 2023",
+    "winery": "Weinbau Markus Ruch",
+    "country": "Schweiz",
+    "region": "St. Gallen - Hallau",
+    "appellation": "AOC St. Gallen",
+    "grape_variety": "Pinot Blanc",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Ausgewogen und klassisch, eine Freude.",
+    "description_en": "Balanced and classic, a joy.",
+    "description_fr": "Équilibré et classique, une joie.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Fondue"
+    ],
+    "food_pairings_en": [
+      "Fondue"
+    ],
+    "food_pairings_fr": [
+      "Fondue"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:04:34.365677Z"
+  },
+  {
+    "id": "6b4207f6-e3b2-4a57-9b5a-4c7f4ba1021f",
+    "name": "Chardonnay Höcklistein 2023",
+    "winery": "Weingut Höcklistein",
+    "country": "Schweiz",
+    "region": "St. Gallen - Rapperswil-Jona",
+    "appellation": "AOC St. Gallen",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Beerig und waldig, ein Entführer.",
+    "description_en": "Berry-rich and woody, an abductor.",
+    "description_fr": "Riche en baies et boisé, un ravisseur.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Lamm"
+    ],
+    "food_pairings_en": [
+      "Lamb"
+    ],
+    "food_pairings_fr": [
+      "Agneau"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:04:34.366500Z"
+  },
+  {
+    "id": "6eade0d8-b224-4b24-ba74-b6e08a330d08",
+    "name": "Sauvignon Blanc GVS 2023",
+    "winery": "Weingut GVS Schachenmann",
+    "country": "Schweiz",
+    "region": "St. Gallen - Hallau",
+    "appellation": "AOC St. Gallen",
+    "grape_variety": "Sauvignon Blanc",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Pfeffrig und zauberhaft, ein Orient.",
+    "description_en": "Peppery and magical, an Orient.",
+    "description_fr": "Poivré et magique, un Orient.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Auberginen"
+    ],
+    "food_pairings_en": [
+      "Eggplant"
+    ],
+    "food_pairings_fr": [
+      "Aubergines"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:04:34.367333Z"
+  },
+  {
+    "id": "eebb59cb-4d86-4b19-9da0-bf8834870e75",
+    "name": "Pinot Noir Baumann 2022",
+    "winery": "Weingut Baumann",
+    "country": "Schweiz",
+    "region": "St. Gallen - Oberhallau",
+    "appellation": "AOC St. Gallen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Modern und fruchtig, eine Freude.",
+    "description_en": "Modern and fruity, a delight.",
+    "description_fr": "Moderne et fruité, un délice.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Grillgemüse"
+    ],
+    "food_pairings_en": [
+      "Grilled vegetables"
+    ],
+    "food_pairings_fr": [
+      "Légumes grillés"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:04:34.368275Z"
   }
 ]

@@ -490,8 +490,9 @@ const PairingPage = () => {
                 lines.forEach((line, idx) => {
                   const trimmedLine = line.trim();
                   
-                  // Main heading
-                  if (trimmedLine.match(/^1\.\s*\*\*.*HAUPTEMPFEHLUNG/i)) {
+                  // Main heading - more flexible regex to catch various formats
+                  // Matches: "1. **🍷 HAUPTEMPFEHLUNG**", "1. **HAUPTEMPFEHLUNG**", "**🍷 HAUPTEMPFEHLUNG**", etc.
+                  if (trimmedLine.match(/HAUPTEMPFEHLUNG|TOP RECOMMENDATION|RECOMMANDATION PRINCIPALE/i)) {
                     if (currentSection) {
                       currentSection.wines = wines;
                       sections.push(currentSection);
@@ -501,7 +502,7 @@ const PairingPage = () => {
                     currentIntro = '';
                   }
                   // Alternative Options heading
-                  else if (trimmedLine.match(/^2\.\s*\*\*.*Alternative/i)) {
+                  else if (trimmedLine.match(/Alternative.*Option|Options.*Alternative/i)) {
                     if (currentSection) {
                       currentSection.intro = currentIntro;
                       currentSection.wines = wines;
@@ -511,17 +512,17 @@ const PairingPage = () => {
                     wines = [];
                     currentIntro = '';
                   }
-                  // Sub-heading (wine categories)
-                  else if (trimmedLine.match(/^\*\*.*wein/i) || trimmedLine.match(/^-\s*\*\*.*wein/i)) {
+                  // Sub-heading for wine type categories (Bester Weintyp, Schaumwein, etc.)
+                  else if (trimmedLine.match(/^\*\*.*(?:Weintyp|wein|Wine Type|Vin).*:/i) || trimmedLine.match(/^\*\*(?:Schaumwein|Rotwein|Weißwein|Sparkling|Red Wine|White Wine)/i)) {
                     // Extract category name
                     const categoryMatch = trimmedLine.match(/\*\*([^*]+)\*\*/);
                     if (categoryMatch) {
-                      currentIntro = categoryMatch[1];
+                      currentIntro = categoryMatch[1].replace(/:/g, '').trim();
                     }
                   }
                   // Wine recommendation (starts with - or *)
                   else if (trimmedLine.match(/^[-*]\s+\*\*(.+?)\*\*/)) {
-                    const wineMatch = trimmedLine.match(/^[-*]\s+\*\*(.+?)\*\*\s*[-–—]\s*(.+)/);
+                    const wineMatch = trimmedLine.match(/^[-*]\s+\*\*(.+?)\*\*\s*[-–—:]\s*(.+)/);
                     if (wineMatch) {
                       wines.push({
                         name: wineMatch[1].trim(),
@@ -530,8 +531,8 @@ const PairingPage = () => {
                       });
                     }
                   }
-                  // Introduction text (not a wine, not a heading)
-                  else if (trimmedLine && !trimmedLine.match(/^[-*#]/) && !trimmedLine.match(/^---/) && currentSection && wines.length === 0) {
+                  // Introduction text (not a wine, not a heading, not "Bester Weintyp")
+                  else if (trimmedLine && !trimmedLine.match(/^[-*#\d]/) && !trimmedLine.match(/^---/) && !trimmedLine.match(/^\*\*/) && currentSection && wines.length === 0) {
                     currentIntro += (currentIntro ? ' ' : '') + trimmedLine;
                   }
                 });

@@ -47362,5 +47362,1503 @@
     "image_url": null,
     "rating": null,
     "created_at": "2025-12-13T07:53:59.053Z"
+  },
+  {
+    "id": "5d2b6c64-e6ce-4fe6-b70a-cd82dbc9ea66",
+    "name": "Herrenberg Spätburgunder GG 2024",
+    "winery": "Jean Stodden",
+    "country": "Deutschland",
+    "region": "Ahr - Rech",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Ein seidiger Traum von Kirsche, Unterholz und feiner Würze – ein Wein, der die Seele in absolute Ahr-Perfektion und burgundische Tiefe taucht (100 Falstaff-Punkte).",
+    "description_en": "A silky dream of cherry, undergrowth and fine spice – a wine that immerses the soul in absolute Ahr perfection and Burgundian depth (100 Falstaff points).",
+    "description_fr": "Un rêve soyeux de cerise, de sous-bois et d'épices fines – un vin qui plonge l'âme dans la perfection absolue de l'Ahr et la profondeur bourguignonne (100 points Falstaff).",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Rehrücken",
+      "Dunkle Schokolade"
+    ],
+    "food_pairings_en": [
+      "Saddle of venison",
+      "Dark chocolate"
+    ],
+    "food_pairings_fr": [
+      "Selle de chevreuil",
+      "Chocolat noir"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.583Z"
+  },
+  {
+    "id": "c3b1f6fc-8156-441c-8249-7191fbd657f3",
+    "name": "No. 1 Spätburgunder GG 2024",
+    "winery": "J.J. Adeneuer",
+    "country": "Deutschland",
+    "region": "Ahr - Ahrweiler",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Kraftvoll und filigran, ein No. 1 der Eleganz und Länge, das das Herz mit purer Frucht und Mineralität umfängt.",
+    "description_en": "Powerful and delicate, a No. 1 of elegance and length that embraces the heart with pure fruit and minerality.",
+    "description_fr": "Puissant et délicat, un No. 1 d'élégance et de longueur qui enlace le cœur avec du fruit pur et de la minéralité.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Entenbrust",
+      "Pilzrisotto"
+    ],
+    "food_pairings_en": [
+      "Duck breast",
+      "Mushroom risotto"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard",
+      "Risotto aux champignons"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.585Z"
+  },
+  {
+    "id": "65a016c6-348f-4b56-bbcb-ef6ca332fb8e",
+    "name": "Dernauer Pfarrwingert Spätburgunder GG 2024",
+    "winery": "Meyer-Näkel",
+    "country": "Deutschland",
+    "region": "Ahr - Dernau",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Intensiv und mineralisch, ein Pfarrwingert-Feuer von Beeren und Schiefer – ein Tropfen, der die Sinne in Ekstase versetzt.",
+    "description_en": "Intense and mineral, a Pfarrwingert fire of berries and slate – a drop that sends the senses into ecstasy.",
+    "description_fr": "Intense et minéral, un feu de Pfarrwingert de baies et d'ardoise – une goutte qui met les sens en extase.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Wild",
+      "Gereifter Comté"
+    ],
+    "food_pairings_en": [
+      "Game",
+      "Aged Comté"
+    ],
+    "food_pairings_fr": [
+      "Gibier",
+      "Comté affiné"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.586Z"
+  },
+  {
+    "id": "cb95ad67-e1e9-41b9-a11b-19cc51ba08ac",
+    "name": "Neuenahrer Schieferlay Spätburgunder GG 2024",
+    "winery": "Deutzerhof",
+    "country": "Deutschland",
+    "region": "Ahr - Neuenahr",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Schiefer-pur und präzise, ein Schieferlay der Frische und Tiefe, der die Seele mit kühler Noblesse erfrischt.",
+    "description_en": "Slate-pure and precise, a Schieferlay of freshness and depth that refreshes the soul with cool nobility.",
+    "description_fr": "Pur ardoise et précis, un Schieferlay de fraîcheur et de profondeur qui rafraîchit l'âme avec une noblesse fraîche.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Gegrilltes Lamm",
+      "Milde Tomme"
+    ],
+    "food_pairings_en": [
+      "Grilled lamb",
+      "Mild Tomme"
+    ],
+    "food_pairings_fr": [
+      "Agneau grillé",
+      "Tomme douce"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.587Z"
+  },
+  {
+    "id": "b3315274-4d9b-42e4-90b8-1769e11a6da8",
+    "name": "Ahrweiler Rosenthal Spätburgunder GG 2024",
+    "winery": "Kreuzberg",
+    "country": "Deutschland",
+    "region": "Ahr - Ahrweiler",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Rosenthal-romantisch und tief, ein Rosenthal der Harmonie und Frucht, das das Herz mit badischer Wärme erfüllt.",
+    "description_en": "Rosenthal-romantic and deep, a Rosenthal of harmony and fruit that fills the heart with warmth.",
+    "description_fr": "Rosenthal-romantique et profond, un Rosenthal d'harmonie et de fruit qui remplit le cœur de chaleur.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Roastbeef",
+      "Dunkles Fleisch"
+    ],
+    "food_pairings_en": [
+      "Roast beef",
+      "Dark meat"
+    ],
+    "food_pairings_fr": [
+      "Rosbif",
+      "Viande brune"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.588Z"
+  },
+  {
+    "id": "ff3bdd49-1195-4ccd-8ecf-64de02b988ea",
+    "name": "Heimersheimer Landskrone Spätburgunder GG 2024",
+    "winery": "Nelles",
+    "country": "Deutschland",
+    "region": "Ahr - Heimersheim",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Landskrone-königlich und robust, ein Monument der Ahr-Roten.",
+    "description_en": "Landskrone-royal and robust, a monument of Ahr reds.",
+    "description_fr": "Landskrone-royal et robuste, un monument des rouges de l'Ahr.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Wildpastete",
+      "Schokolade"
+    ],
+    "food_pairings_en": [
+      "Game pâté",
+      "Chocolate"
+    ],
+    "food_pairings_fr": [
+      "Pâté de gibier",
+      "Chocolat"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.589Z"
+  },
+  {
+    "id": "6e7d63b3-8e80-4ffc-944e-70e7635efbdd",
+    "name": "Neuenahrer Kirchtürmchen Spätburgunder GG 2024",
+    "winery": "Burggarten",
+    "country": "Deutschland",
+    "region": "Ahr - Neuenahr",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Kirchtürmchen-heilig und seidig, ein Kirchtürmchen der Reinheit.",
+    "description_en": "Kirchtürmchen-holy and silky, a Kirchtürmchen of purity.",
+    "description_fr": "Kirchtürmchen-sacré et soyeux, un Kirchtürmchen de pureté.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Geflügel",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Poultry",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Volaille",
+      "Champignons"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.589Z"
+  },
+  {
+    "id": "d71a65bf-2cfa-40c4-b417-9a9a49d3f211",
+    "name": "Ahrweiler Daubhaus Spätburgunder GG 2024",
+    "winery": "Julia Bertram",
+    "country": "Deutschland",
+    "region": "Ahr - Ahrweiler",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Aufstrebend und präzise, ein Daubhaus der neuen Generation, der die Seele mit moderner Eleganz weckt.",
+    "description_en": "Rising and precise, a Daubhaus of the new generation that awakens the soul with modern elegance.",
+    "description_fr": "Montant et précis, un Daubhaus de la nouvelle génération qui éveille l'âme avec une élégance moderne.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Entenbrust",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Duck breast",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard",
+      "Fromage"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.590Z"
+  },
+  {
+    "id": "00e02200-7c0a-4323-ac10-c64ac52e0b83",
+    "name": "Recher Herrenberg Spätburgunder Alte Reben 2023",
+    "winery": "Jean Stodden",
+    "country": "Deutschland",
+    "region": "Ahr - Rech",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Alte Reben-tief und konzentriert, ein Herrenberg der Reife.",
+    "description_en": "Old vines-deep and concentrated, a Herrenberg of maturity.",
+    "description_fr": "Vieilles vignes-profond et concentré, un Herrenberg de maturité.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Rehrücken",
+      "Blauschimmel"
+    ],
+    "food_pairings_en": [
+      "Saddle of venison",
+      "Blue cheese"
+    ],
+    "food_pairings_fr": [
+      "Selle de chevreuil",
+      "Bleu"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.591Z"
+  },
+  {
+    "id": "65f3e2d0-2a48-4f9d-a5aa-8a154ad1384b",
+    "name": "Walporzheimer Gärkammer Spätburgunder GG 2024",
+    "winery": "J.J. Adeneuer",
+    "country": "Deutschland",
+    "region": "Ahr - Walporzheim",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Gärkammer-intensiv und mineralisch, ein Kammer-Geheimnis.",
+    "description_en": "Gärkammer-intense and mineral, a chamber secret.",
+    "description_fr": "Gärkammer-intense et minéral, un secret de chambre.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "BBQ",
+      "Scharfe Wurst"
+    ],
+    "food_pairings_en": [
+      "BBQ",
+      "Spicy sausage"
+    ],
+    "food_pairings_fr": [
+      "BBQ",
+      "Saucisse épicée"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.592Z"
+  },
+  {
+    "id": "9b61c599-f735-41d7-8f89-78162d29dc59",
+    "name": "Dernauer Schieferlay Spätburgunder GG 2024",
+    "winery": "Meyer-Näkel",
+    "country": "Deutschland",
+    "region": "Ahr - Dernau",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Schieferlay-schiefrig und tief, ein Lay der Mineralität.",
+    "description_en": "Schieferlay-slaty and deep, a Lay of minerality.",
+    "description_fr": "Schieferlay-ardoisé et profond, un Lay de minéralité.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Wild",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Game",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Gibier",
+      "Champignons"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.593Z"
+  },
+  {
+    "id": "61f576b7-36f6-42b8-9409-9df6b955be5c",
+    "name": "Mayschosser Mönchberg Spätburgunder GG 2024",
+    "winery": "Deutzerhof",
+    "country": "Deutschland",
+    "region": "Ahr - Mayschoss",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Mönchberg-mönchisch und harmonisch, ein Berg der Stille.",
+    "description_en": "Mönchberg-monastic and harmonious, a mountain of silence.",
+    "description_fr": "Mönchberg-monastique et harmonieux, une montagne de silence.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Geflügel",
+      "Gemüse"
+    ],
+    "food_pairings_en": [
+      "Poultry",
+      "Vegetables"
+    ],
+    "food_pairings_fr": [
+      "Volaille",
+      "Légumes"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.594Z"
+  },
+  {
+    "id": "b4c31d88-0644-4094-b16d-9c097fa76f54",
+    "name": "Dernauer Pfarrwingert Spätburgunder GG 2024",
+    "winery": "Kreuzberg",
+    "country": "Deutschland",
+    "region": "Ahr - Dernau",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Pfarrwingert-kirchenwürdig und kraftvoll.",
+    "description_en": "Pfarrwingert-church-worthy and powerful.",
+    "description_fr": "Pfarrwingert-digne d'une église et puissant.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Rind",
+      "Entrecôte"
+    ],
+    "food_pairings_en": [
+      "Beef",
+      "Entrecôte"
+    ],
+    "food_pairings_fr": [
+      "Bœuf",
+      "Entrecôte"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.595Z"
+  },
+  {
+    "id": "7756d034-6ecc-459c-a41a-9be1f06cb3d5",
+    "name": "B-52 Spätburgunder Reserve 2023",
+    "winery": "Nelles",
+    "country": "Deutschland",
+    "region": "Ahr - Heimersheim",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "B-52-explosiv und tief, ein Reserve der Leidenschaft.",
+    "description_en": "B-52-explosive and deep, a Reserve of passion.",
+    "description_fr": "B-52-explosif et profond, une Réserve de passion.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Dunkles Fleisch"
+    ],
+    "food_pairings_en": [
+      "Dark meat"
+    ],
+    "food_pairings_fr": [
+      "Viande brune"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.596Z"
+  },
+  {
+    "id": "7f1c3693-a3d4-4bd4-9eda-f89059758a47",
+    "name": "Heppinger Spätburgunder GG 2024",
+    "winery": "Burggarten",
+    "country": "Deutschland",
+    "region": "Ahr - Heppingen",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Heppinger-fruchtig und saftig, ein Alltags-Rot der Freude.",
+    "description_en": "Heppinger-fruity and juicy, an everyday red of joy.",
+    "description_fr": "Heppinger-fruité et juteux, un rouge quotidien de joie.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Pasta",
+      "Fondue"
+    ],
+    "food_pairings_en": [
+      "Pasta",
+      "Fondue"
+    ],
+    "food_pairings_fr": [
+      "Pâtes",
+      "Fondue"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.597Z"
+  },
+  {
+    "id": "fa578d7a-f454-49f1-ac95-16e6ba33104d",
+    "name": "Dernauer Schieferlay Spätburgunder GG 2024",
+    "winery": "Julia Bertram",
+    "country": "Deutschland",
+    "region": "Ahr - Dernau",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Schieferlay-feminin und präzise, ein Lay der Zukunft.",
+    "description_en": "Schieferlay-feminine and precise, a Lay of the future.",
+    "description_fr": "Schieferlay-féminin et précis, un Lay de l'avenir.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Pilze",
+      "Vegetarisch"
+    ],
+    "food_pairings_en": [
+      "Mushrooms",
+      "Vegetarian"
+    ],
+    "food_pairings_fr": [
+      "Champignons",
+      "Végétarien"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.598Z"
+  },
+  {
+    "id": "ce491c3d-dde8-4aee-b817-44e9b154b440",
+    "name": "JS Spätburgunder 2024",
+    "winery": "Jean Stodden",
+    "country": "Deutschland",
+    "region": "Ahr - Rech",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "JS-signiert und edel, ein Stodden-Klassiker.",
+    "description_en": "JS-signed and noble, a Stodden classic.",
+    "description_fr": "JS-signé et noble, un classique de Stodden.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Lamm"
+    ],
+    "food_pairings_en": [
+      "Lamb"
+    ],
+    "food_pairings_fr": [
+      "Agneau"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.599Z"
+  },
+  {
+    "id": "4eec169f-22cd-462e-bf86-fb2b74ed6a05",
+    "name": "Rosenthal Spätburgunder GG 2024",
+    "winery": "J.J. Adeneuer",
+    "country": "Deutschland",
+    "region": "Ahr - Ahrweiler",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Rosenthal-romantisch und seidig.",
+    "description_en": "Rosenthal-romantic and silky.",
+    "description_fr": "Rosenthal-romantique et soyeux.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Entenbrust"
+    ],
+    "food_pairings_en": [
+      "Duck breast"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.599Z"
+  },
+  {
+    "id": "01da0301-f4cb-41db-abac-707152deff68",
+    "name": "Walporzheimer Kräuterberg Spätburgunder GG 2024",
+    "winery": "Meyer-Näkel",
+    "country": "Deutschland",
+    "region": "Ahr - Walporzheim",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Kräuterberg-würzig und tief.",
+    "description_en": "Kräuterberg-spicy and deep.",
+    "description_fr": "Kräuterberg-épicé et profond.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Wild"
+    ],
+    "food_pairings_en": [
+      "Game"
+    ],
+    "food_pairings_fr": [
+      "Gibier"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.601Z"
+  },
+  {
+    "id": "6bd191c1-2619-49f6-8b8b-64b77ac111f6",
+    "name": "Altenahrer Eck Spätburgunder GG 2024",
+    "winery": "Deutzerhof",
+    "country": "Deutschland",
+    "region": "Ahr - Altenahr",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Eck-eckig und kraftvoll, ein Eck der Stärke.",
+    "description_en": "Eck-angular and powerful, an Eck of strength.",
+    "description_fr": "Eck-anguleux et puissant, un Eck de force.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Roastbeef"
+    ],
+    "food_pairings_en": [
+      "Roast beef"
+    ],
+    "food_pairings_fr": [
+      "Rosbif"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.602Z"
+  },
+  {
+    "id": "fb90327c-10a0-4f45-8257-cc841fb87f50",
+    "name": "Ahrweiler Daubhaus Spätburgunder GG 2024",
+    "winery": "Kreuzberg",
+    "country": "Deutschland",
+    "region": "Ahr - Ahrweiler",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Daubhaus-historisch und mineralisch.",
+    "description_en": "Daubhaus-historic and mineral.",
+    "description_fr": "Daubhaus-historique et minéral.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Käseplatte"
+    ],
+    "food_pairings_en": [
+      "Cheese platter"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fromages"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.603Z"
+  },
+  {
+    "id": "7aaf7544-d400-4913-b12c-453c34ecec56",
+    "name": "Landskrone Frühburgunder GG 2024",
+    "winery": "Nelles",
+    "country": "Deutschland",
+    "region": "Ahr - Heimersheim",
+    "appellation": "Ahr",
+    "grape_variety": "Frühburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Frühburgunder-früh und lebendig.",
+    "description_en": "Frühburgunder-early and lively.",
+    "description_fr": "Frühburgunder-précoce et vivant.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Grilladen"
+    ],
+    "food_pairings_en": [
+      "Grilled meats"
+    ],
+    "food_pairings_fr": [
+      "Grillades"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.603Z"
+  },
+  {
+    "id": "7cb43e38-10a1-43df-a4f6-4f08f5c2f888",
+    "name": "Neuenahrer Schieferlay Spätburgunder GG 2024",
+    "winery": "Burggarten",
+    "country": "Deutschland",
+    "region": "Ahr - Neuenahr",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Schieferlay-schiefrig und elegant.",
+    "description_en": "Schieferlay-slaty and elegant.",
+    "description_fr": "Schieferlay-ardoisé et élégant.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Champignons"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.604Z"
+  },
+  {
+    "id": "de5bfec0-a440-4c1d-a473-3901b163dd81",
+    "name": "Ahrweiler Rosenthal Spätburgunder GG 2024",
+    "winery": "Julia Bertram",
+    "country": "Deutschland",
+    "region": "Ahr - Ahrweiler",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Rosenthal-jung und aufstrebend.",
+    "description_en": "Rosenthal-young and rising.",
+    "description_fr": "Rosenthal-jeune et montant.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Entenbrust"
+    ],
+    "food_pairings_en": [
+      "Duck breast"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.605Z"
+  },
+  {
+    "id": "83069a49-c1cb-4d82-bea8-2e6ed95b9886",
+    "name": "Recher Herrenberg Spätburgunder Reserve 2023",
+    "winery": "Jean Stodden",
+    "country": "Deutschland",
+    "region": "Ahr - Rech",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Reserve-tief und reif.",
+    "description_en": "Reserve-deep and ripe.",
+    "description_fr": "Réserve-profond et mûr.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Schokolade"
+    ],
+    "food_pairings_en": [
+      "Chocolate"
+    ],
+    "food_pairings_fr": [
+      "Chocolat"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.606Z"
+  },
+  {
+    "id": "ea75897d-9170-4ab8-9c94-a2315816237c",
+    "name": "No. 2 Spätburgunder 2024",
+    "winery": "J.J. Adeneuer",
+    "country": "Deutschland",
+    "region": "Ahr - Ahrweiler",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "No. 2-zweitbester und harmonisch.",
+    "description_en": "No. 2-second best and harmonious.",
+    "description_fr": "No. 2-deuxième meilleur et harmonieux.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Geflügel"
+    ],
+    "food_pairings_en": [
+      "Poultry"
+    ],
+    "food_pairings_fr": [
+      "Volaille"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.607Z"
+  },
+  {
+    "id": "00b7515a-c08d-49f8-ab29-bc8c5ae8df14",
+    "name": "S Spätburgunder 2024",
+    "winery": "Meyer-Näkel",
+    "country": "Deutschland",
+    "region": "Ahr - Dernau",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "S-signiert und saftig.",
+    "description_en": "S-signed and juicy.",
+    "description_fr": "S-signé et juteux.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Pasta"
+    ],
+    "food_pairings_en": [
+      "Pasta"
+    ],
+    "food_pairings_fr": [
+      "Pâtes"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.608Z"
+  },
+  {
+    "id": "e5aaf158-86dd-4338-923d-6add7d660a87",
+    "name": "Cossmannsches Eck Spätburgunder GG 2024",
+    "winery": "Deutzerhof",
+    "country": "Deutschland",
+    "region": "Ahr - Altenahr",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Cossmannsches Eck-geheimnisvoll und tief.",
+    "description_en": "Cossmannsches Eck-mysterious and deep.",
+    "description_fr": "Cossmannsches Eck-mystérieux et profond.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Wild"
+    ],
+    "food_pairings_en": [
+      "Game"
+    ],
+    "food_pairings_fr": [
+      "Gibier"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.609Z"
+  },
+  {
+    "id": "1ca9d4b1-64d6-4c74-a484-d435a4c0f294",
+    "name": "Dernauer Schieferlay Spätburgunder GG 2024",
+    "winery": "Kreuzberg",
+    "country": "Deutschland",
+    "region": "Ahr - Dernau",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Schieferlay-mineralisch und intensiv.",
+    "description_en": "Schieferlay-mineral and intense.",
+    "description_fr": "Schieferlay-minéral et intense.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "BBQ"
+    ],
+    "food_pairings_en": [
+      "BBQ"
+    ],
+    "food_pairings_fr": [
+      "BBQ"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.610Z"
+  },
+  {
+    "id": "3b7adfbd-a735-4d05-8ebc-04763e826186",
+    "name": "Heimersheimer Burggarten Spätburgunder GG 2024",
+    "winery": "Nelles",
+    "country": "Deutschland",
+    "region": "Ahr - Heimersheim",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Burggarten-adelig und seidig.",
+    "description_en": "Burggarten-noble and silky.",
+    "description_fr": "Burggarten-noble et soyeux.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Rehrücken"
+    ],
+    "food_pairings_en": [
+      "Saddle of venison"
+    ],
+    "food_pairings_fr": [
+      "Selle de chevreuil"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.611Z"
+  },
+  {
+    "id": "ce7c5585-9078-420b-b9ad-7a50b144406a",
+    "name": "Heppinger Frühburgunder 2024",
+    "winery": "Burggarten",
+    "country": "Deutschland",
+    "region": "Ahr - Heppingen",
+    "appellation": "Ahr",
+    "grape_variety": "Frühburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Frühburgunder-früh und fruchtig.",
+    "description_en": "Frühburgunder-early and fruity.",
+    "description_fr": "Frühburgunder-précoce et fruité.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Salate"
+    ],
+    "food_pairings_en": [
+      "Salads"
+    ],
+    "food_pairings_fr": [
+      "Salades"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.612Z"
+  },
+  {
+    "id": "23a30e71-ddb8-43bb-a3c7-45e05e03e924",
+    "name": "Dernauer Hardtberg Spätburgunder GG 2024",
+    "winery": "Julia Bertram",
+    "country": "Deutschland",
+    "region": "Ahr - Dernau",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Hardtberg-hart und kraftvoll.",
+    "description_en": "Hardtberg-hard and powerful.",
+    "description_fr": "Hardtberg-dur et puissant.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Lamm"
+    ],
+    "food_pairings_en": [
+      "Lamb"
+    ],
+    "food_pairings_fr": [
+      "Agneau"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.612Z"
+  },
+  {
+    "id": "34da0066-19b5-4f3e-92f1-c3aa85d6202e",
+    "name": "Alte Reben Spätburgunder 2023",
+    "winery": "Jean Stodden",
+    "country": "Deutschland",
+    "region": "Ahr - Rech",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Alte Reben-weise und tief.",
+    "description_en": "Old vines-wise and deep.",
+    "description_fr": "Vieilles vignes-sage et profond.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Blauschimmel"
+    ],
+    "food_pairings_en": [
+      "Blue cheese"
+    ],
+    "food_pairings_fr": [
+      "Bleu"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.614Z"
+  },
+  {
+    "id": "f8625af5-a4cc-4cb4-8881-f2e49aa0b5df",
+    "name": "Gärkammer Reserve 2023",
+    "winery": "J.J. Adeneuer",
+    "country": "Deutschland",
+    "region": "Ahr - Walporzheim",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Gärkammer-reserviert und komplex.",
+    "description_en": "Gärkammer-reserved and complex.",
+    "description_fr": "Gärkammer-réservé et complexe.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Entrecôte"
+    ],
+    "food_pairings_en": [
+      "Entrecôte"
+    ],
+    "food_pairings_fr": [
+      "Entrecôte"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.614Z"
+  },
+  {
+    "id": "b406c6b4-c2e0-4642-ab39-654cf638c74e",
+    "name": "Pfarrwingert Spätburgunder Auslese Trocken 2023",
+    "winery": "Meyer-Näkel",
+    "country": "Deutschland",
+    "region": "Ahr - Dernau",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Auslese-konzentriert und rot.",
+    "description_en": "Auslese-concentrated and red.",
+    "description_fr": "Auslese-concentré et rouge.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Schokolade"
+    ],
+    "food_pairings_en": [
+      "Chocolate"
+    ],
+    "food_pairings_fr": [
+      "Chocolat"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.615Z"
+  },
+  {
+    "id": "fed579ac-b4d2-49a7-88f1-cc4aadf05aba",
+    "name": "Neuenahrer Frühburgunder GG 2024",
+    "winery": "Deutzerhof",
+    "country": "Deutschland",
+    "region": "Ahr - Neuenahr",
+    "appellation": "Ahr",
+    "grape_variety": "Frühburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Frühburgunder-lebendig und frisch.",
+    "description_en": "Frühburgunder-lively and fresh.",
+    "description_fr": "Frühburgunder-vivant et frais.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Grilladen"
+    ],
+    "food_pairings_en": [
+      "Grilled meats"
+    ],
+    "food_pairings_fr": [
+      "Grillades"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.616Z"
+  },
+  {
+    "id": "ebfa65a8-913c-4e4d-81b7-c7faf2ec7c6b",
+    "name": "Ahrweiler Silberberg Spätburgunder GG 2024",
+    "winery": "Kreuzberg",
+    "country": "Deutschland",
+    "region": "Ahr - Ahrweiler",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Silberberg-strahlend und mineralisch.",
+    "description_en": "Silberberg-radiant and mineral.",
+    "description_fr": "Silberberg-radieux et minéral.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Champignons"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.617Z"
+  },
+  {
+    "id": "03f3ee9b-f397-4149-94d1-3171b9fa987c",
+    "name": "B-52 Reserve 2023",
+    "winery": "Nelles",
+    "country": "Deutschland",
+    "region": "Ahr - Heimersheim",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "B-52-explosiv und tief.",
+    "description_en": "B-52-explosive and deep.",
+    "description_fr": "B-52-explosif et profond.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Wild"
+    ],
+    "food_pairings_en": [
+      "Game"
+    ],
+    "food_pairings_fr": [
+      "Gibier"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.618Z"
+  },
+  {
+    "id": "bee216f9-0573-4560-b84b-80447676023d",
+    "name": "Neuenahrer Sonnenberg Spätburgunder GG 2024",
+    "winery": "Burggarten",
+    "country": "Deutschland",
+    "region": "Ahr - Neuenahr",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Sonnenberg-sonnig und warm.",
+    "description_en": "Sonnenberg-sunny and warm.",
+    "description_fr": "Sonnenberg-ensoleillé et chaud.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Roastbeef"
+    ],
+    "food_pairings_en": [
+      "Roast beef"
+    ],
+    "food_pairings_fr": [
+      "Rosbif"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.619Z"
+  },
+  {
+    "id": "1f9ab3ce-8cb6-4fb1-926f-b1e6fbb615f4",
+    "name": "Ahrweiler Daubhaus Spätburgunder Alte Reben 2023",
+    "winery": "Julia Bertram",
+    "country": "Deutschland",
+    "region": "Ahr - Ahrweiler",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Alte Reben-tief und feminin.",
+    "description_en": "Old vines-deep and feminine.",
+    "description_fr": "Vieilles vignes-profond et féminin.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Fromage"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.620Z"
+  },
+  {
+    "id": "4aec7ccb-d040-4234-ac6c-570ba5c72a45",
+    "name": "JS Rosé 2024",
+    "winery": "Jean Stodden",
+    "country": "Deutschland",
+    "region": "Ahr - Rech",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rosé",
+    "year": null,
+    "description_de": "Rosé-zart und sommerlich.",
+    "description_en": "Rosé-delicate and summery.",
+    "description_fr": "Rosé-délicat et estival.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Salate"
+    ],
+    "food_pairings_en": [
+      "Salads"
+    ],
+    "food_pairings_fr": [
+      "Salades"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.621Z"
+  },
+  {
+    "id": "4e4c741e-a29b-4d86-8d9a-0977a256c347",
+    "name": "Rosenthal Spätburgunder Rosé 2024",
+    "winery": "J.J. Adeneuer",
+    "country": "Deutschland",
+    "region": "Ahr - Ahrweiler",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rosé",
+    "year": null,
+    "description_de": "Rosenthal-rosa und frisch.",
+    "description_en": "Rosenthal-pink and fresh.",
+    "description_fr": "Rosenthal-rose et frais.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Sommergerichte"
+    ],
+    "food_pairings_en": [
+      "Summer dishes"
+    ],
+    "food_pairings_fr": [
+      "Plats d'été"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.622Z"
+  },
+  {
+    "id": "89284ca4-d8dc-4548-9712-4692dbec7a4d",
+    "name": "Blanc de Noir 2024",
+    "winery": "Meyer-Näkel",
+    "country": "Deutschland",
+    "region": "Ahr - Dernau",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Blanc de Noir-weiß und elegant.",
+    "description_en": "Blanc de Noir-white and elegant.",
+    "description_fr": "Blanc de Noir-blanc et élégant.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Fisch"
+    ],
+    "food_pairings_en": [
+      "Fish"
+    ],
+    "food_pairings_fr": [
+      "Poisson"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.623Z"
+  },
+  {
+    "id": "9ec1c3df-b8fc-424b-b0e0-bb5df00e5c2d",
+    "name": "Weißburgunder Trocken 2024",
+    "winery": "Deutzerhof",
+    "country": "Deutschland",
+    "region": "Ahr - Neuenahr",
+    "appellation": "Ahr",
+    "grape_variety": "Weißburgunder",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Weißburgunder-cremig und sauber.",
+    "description_en": "Weißburgunder-creamy and clean.",
+    "description_fr": "Weißburgunder-crémeux et propre.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Geflügel"
+    ],
+    "food_pairings_en": [
+      "Poultry"
+    ],
+    "food_pairings_fr": [
+      "Volaille"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.624Z"
+  },
+  {
+    "id": "ee72abae-93fd-492b-8eaf-60b2c58562bd",
+    "name": "Portugieser Trocken 2024",
+    "winery": "Kreuzberg",
+    "country": "Deutschland",
+    "region": "Ahr - Ahrweiler",
+    "appellation": "Ahr",
+    "grape_variety": "Portugieser",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Portugieser-leicht und fruchtig.",
+    "description_en": "Portugieser-light and fruity.",
+    "description_fr": "Portugieser-léger et fruité.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Aperitif"
+    ],
+    "food_pairings_en": [
+      "Aperitif"
+    ],
+    "food_pairings_fr": [
+      "Apéritif"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.624Z"
+  },
+  {
+    "id": "8d1e96ab-10fd-4bcd-a579-3345920b8c6f",
+    "name": "Frühburgunder Rosé 2024",
+    "winery": "Nelles",
+    "country": "Deutschland",
+    "region": "Ahr - Heimersheim",
+    "appellation": "Ahr",
+    "grape_variety": "Frühburgunder",
+    "wine_color": "rosé",
+    "year": null,
+    "description_de": "Frühburgunder-rosa und lebendig.",
+    "description_en": "Frühburgunder-pink and lively.",
+    "description_fr": "Frühburgunder-rose et vivant.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Tapas"
+    ],
+    "food_pairings_en": [
+      "Tapas"
+    ],
+    "food_pairings_fr": [
+      "Tapas"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.625Z"
+  },
+  {
+    "id": "65c72d3d-b8a2-4249-a912-d917a4f649cf",
+    "name": "Ahrweiler Frühburgunder 2024",
+    "winery": "Burggarten",
+    "country": "Deutschland",
+    "region": "Ahr - Ahrweiler",
+    "appellation": "Ahr",
+    "grape_variety": "Frühburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Frühburgunder-früh und saftig.",
+    "description_en": "Frühburgunder-early and juicy.",
+    "description_fr": "Frühburgunder-précoce et juteux.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Grilladen"
+    ],
+    "food_pairings_en": [
+      "Grilled meats"
+    ],
+    "food_pairings_fr": [
+      "Grillades"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.626Z"
+  },
+  {
+    "id": "cc5367b7-3dbe-4f44-abfd-620b403e559f",
+    "name": "Pinot Madeleine 2024",
+    "winery": "Julia Bertram",
+    "country": "Deutschland",
+    "region": "Ahr - Dernau",
+    "appellation": "Ahr",
+    "grape_variety": "Pinot Madeleine",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Pinot Madeleine-früh und feminin.",
+    "description_en": "Pinot Madeleine-early and feminine.",
+    "description_fr": "Pinot Madeleine-précoce et féminin.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Salat"
+    ],
+    "food_pairings_en": [
+      "Salad"
+    ],
+    "food_pairings_fr": [
+      "Salade"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.627Z"
+  },
+  {
+    "id": "40d40ef0-66de-4e54-a46b-42230cfec4a3",
+    "name": "Blanc de Noir 2024",
+    "winery": "Jean Stodden",
+    "country": "Deutschland",
+    "region": "Ahr - Rech",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Blanc de Noir-rein und mineralisch.",
+    "description_en": "Blanc de Noir-pure and mineral.",
+    "description_fr": "Blanc de Noir-pur et minéral.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Meeresfrüchte"
+    ],
+    "food_pairings_en": [
+      "Seafood"
+    ],
+    "food_pairings_fr": [
+      "Fruits de mer"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.628Z"
+  },
+  {
+    "id": "640a2cbf-d121-46bd-b15a-20b99629db27",
+    "name": "Ahrweiler Rosenthal Spätburgunder GG Alte Reben 2023",
+    "winery": "J.J. Adeneuer",
+    "country": "Deutschland",
+    "region": "Ahr - Ahrweiler",
+    "appellation": "Ahr",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Alte Reben-rosenthal-tief und harmonisch, ein Abschluss der Ahr-Leidenschaft.",
+    "description_en": "Old vines-rosenthal-deep and harmonious, a finale of Ahr passion.",
+    "description_fr": "Vieilles vignes-rosenthal-profond et harmonieux, un final de la passion de l'Ahr.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Dunkles Fleisch",
+      "Als Meditation"
+    ],
+    "food_pairings_en": [
+      "Dark meat",
+      "As meditation"
+    ],
+    "food_pairings_fr": [
+      "Viande brune",
+      "En méditation"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:57:38.629Z"
   }
 ]

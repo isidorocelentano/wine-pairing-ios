@@ -48860,5 +48860,1309 @@
     "image_url": null,
     "rating": null,
     "created_at": "2025-12-13T07:57:38.629Z"
+  },
+  {
+    "id": "69dd59c7-d2ef-4e96-a9e7-69ed0d6e74f1",
+    "name": "Würzburger Stein Silvaner GG 2024",
+    "winery": "Juliusspital",
+    "grape_variety": "Silvaner",
+    "region": "Würzburg",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€€€€",
+    "description_de": "Ein monumentaler Stein-Silvaner von Kräutern, Apfel und salziger Mineralität – ein Wein, der die Seele in pure fränkische Kraft und Tiefe taucht (99 Falstaff-Punkte).",
+    "description_en": "A monumental Stein Silvaner of herbs, apple and salty minerality – a wine that immerses the soul in pure Franconian power and depth (99 Falstaff points).",
+    "description_fr": "Un Silvaner Stein monumental aux herbes, à la pomme et à la minéralité salée – un vin qui plonge l'âme dans la pure puissance et profondeur franconienne (99 points Falstaff).",
+    "food_pairings_de": [
+      "Schweinshaxe",
+      "Milder Ziegenkäse"
+    ],
+    "food_pairings_en": [
+      "Pork knuckle",
+      "Mild goat cheese"
+    ],
+    "food_pairings_fr": [
+      "Jarret de porc",
+      "Fromage de chèvre doux"
+    ],
+    "created_at": "2025-12-13T19:55:10.825249Z",
+    "updated_at": "2025-12-13T19:55:10.825258Z"
+  },
+  {
+    "id": "1cb93a48-ba51-4964-9cf3-d5c29470c2a8",
+    "name": "Iphöfer Julius-Echter-Berg Silvaner GG 2024",
+    "winery": "Hans Wirsching",
+    "grape_variety": "Silvaner",
+    "region": "Iphofen",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€€€€",
+    "description_de": "Adelig und präzise, ein Julius-Echter-Berg-Juwel von Birne und Stein – ein Tropfen, der das Herz mit trockener Noblesse umfängt.",
+    "description_en": "Noble and precise, a Julius-Echter-Berg jewel of pear and stone – a drop that embraces the heart with dry nobility.",
+    "description_fr": "Noble et précis, un joyau du Julius-Echter-Berg de poire et de pierre – une goutte qui enlace le cœur avec une noblesse sèche.",
+    "food_pairings_de": [
+      "Gegrillter Zander",
+      "Reifer Parmesan"
+    ],
+    "food_pairings_en": [
+      "Grilled pike-perch",
+      "Aged Parmesan"
+    ],
+    "food_pairings_fr": [
+      "Sandre grillé",
+      "Parmesan affiné"
+    ],
+    "created_at": "2025-12-13T19:55:10.825266Z",
+    "updated_at": "2025-12-13T19:55:10.825268Z"
+  },
+  {
+    "id": "64403825-9ac2-482f-91ab-cef42f5423ff",
+    "name": "Bürgstadter Centgrafenberg Spätburgunder GG 2024",
+    "winery": "Rudolf Fürst",
+    "grape_variety": "Spätburgunder",
+    "region": "Bürgstadt",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "rot",
+    "price_category": "€€€€€",
+    "description_de": "Rot und leidenschaftlich, ein Centgrafenberg-Feuer von Kirsche und Gewürz – der König der fränkischen Roten.",
+    "description_en": "Red and passionate, a Centgrafenberg fire of cherry and spice – the king of Franconian reds.",
+    "description_fr": "Rouge et passionné, un feu de Centgrafenberg de cerise et d'épices – le roi des rouges franconiens.",
+    "food_pairings_de": [
+      "Rehrücken",
+      "Dunkle Schokolade"
+    ],
+    "food_pairings_en": [
+      "Saddle of venison",
+      "Dark chocolate"
+    ],
+    "food_pairings_fr": [
+      "Selle de chevreuil",
+      "Chocolat noir"
+    ],
+    "created_at": "2025-12-13T19:55:10.825280Z",
+    "updated_at": "2025-12-13T19:55:10.825281Z"
+  },
+  {
+    "id": "fef1d5a4-2515-4cd5-91e2-c70edf8ba5de",
+    "name": "Küchenmeister Silvaner GG 2024",
+    "winery": "Paul Weltner",
+    "grape_variety": "Silvaner",
+    "region": "Rödelsee",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€€€",
+    "description_de": "Küchenmeister-kraftvoll und mineralisch, ein Silvaner der Intensität und Länge.",
+    "description_en": "Küchenmeister-powerful and mineral, a Silvaner of intensity and length.",
+    "description_fr": "Küchenmeister-puissant et minéral, un Silvaner d'intensité et de longueur.",
+    "food_pairings_de": [
+      "Schweinebraten",
+      "Pilzrisotto"
+    ],
+    "food_pairings_en": [
+      "Roast pork",
+      "Mushroom risotto"
+    ],
+    "food_pairings_fr": [
+      "Rôti de porc",
+      "Risotto aux champignons"
+    ],
+    "created_at": "2025-12-13T19:55:10.825288Z",
+    "updated_at": "2025-12-13T19:55:10.825289Z"
+  },
+  {
+    "id": "9d7d44c3-90d8-4aa6-b8f5-6b5713dc9412",
+    "name": "Escherndorfer Lump Silvaner GG 2024",
+    "winery": "Horst Sauer",
+    "grape_variety": "Silvaner",
+    "region": "Escherndorf",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€€€€",
+    "description_de": "Lump-ig und brillant, ein Escherndorfer Traum von Apfel und Salz – ein Wein, der die Sinne in Ekstase versetzt.",
+    "description_en": "Lump-ish and brilliant, an Escherndorf dream of apple and salt – a wine that sends the senses into ecstasy.",
+    "description_fr": "Lump-esque et brillant, un rêve d'Escherndorf de pomme et de sel – un vin qui met les sens en extase.",
+    "food_pairings_de": [
+      "Gegrillter Fisch",
+      "Milde Tomme"
+    ],
+    "food_pairings_en": [
+      "Grilled fish",
+      "Mild Tomme"
+    ],
+    "food_pairings_fr": [
+      "Poisson grillé",
+      "Tomme douce"
+    ],
+    "created_at": "2025-12-13T19:55:10.825295Z",
+    "updated_at": "2025-12-13T19:55:10.825296Z"
+  },
+  {
+    "id": "dd2d987f-a271-41c4-b223-1bc9274416da",
+    "name": "Randersackerer Pfülben Silvaner GG 2024",
+    "winery": "Zeintheresienhof",
+    "grape_variety": "Silvaner",
+    "region": "Randersacker",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€€€",
+    "description_de": "Pfülben-tief und harmonisch, ein Silvaner der Frucht und Mineralität.",
+    "description_en": "Pfülben-deep and harmonious, a Silvaner of fruit and minerality.",
+    "description_fr": "Pfülben-profond et harmonieux, un Silvaner de fruit et de minéralité.",
+    "food_pairings_de": [
+      "Forelle",
+      "Sommergemüse"
+    ],
+    "food_pairings_en": [
+      "Trout",
+      "Summer vegetables"
+    ],
+    "food_pairings_fr": [
+      "Truite",
+      "Légumes d'été"
+    ],
+    "created_at": "2025-12-13T19:55:10.825302Z",
+    "updated_at": "2025-12-13T19:55:10.825303Z"
+  },
+  {
+    "id": "42d61465-0060-4ebb-8c7d-d749d5ac5416",
+    "name": "Würzburger Stein-Harfe Silvaner GG 2024",
+    "winery": "Bürgerspital",
+    "grape_variety": "Silvaner",
+    "region": "Würzburg",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€€€€",
+    "description_de": "Stein-Harfe-musikalisch und präzise, ein Harfe der Reinheit.",
+    "description_en": "Stein-Harfe-musical and precise, a harp of purity.",
+    "description_fr": "Stein-Harfe-musical et précis, une harpe de pureté.",
+    "food_pairings_de": [
+      "Meeresfrüchte",
+      "Salat"
+    ],
+    "food_pairings_en": [
+      "Seafood",
+      "Salad"
+    ],
+    "food_pairings_fr": [
+      "Fruits de mer",
+      "Salade"
+    ],
+    "created_at": "2025-12-13T19:55:10.825313Z",
+    "updated_at": "2025-12-13T19:55:10.825314Z"
+  },
+  {
+    "id": "d09fd40f-6509-4239-aae3-f9ff687f2620",
+    "name": "Bürgstadter Berg Spätburgunder GG 2024",
+    "winery": "Rudolf Fürst",
+    "grape_variety": "Spätburgunder",
+    "region": "Bürgstadt",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "rot",
+    "price_category": "€€€€€",
+    "description_de": "Berg-steil und seidig, ein Rot der burgundischen Finesse.",
+    "description_en": "Berg-steep and silky, a red of Burgundian finesse.",
+    "description_fr": "Berg-escarpé et soyeux, un rouge de finesse bourguignonne.",
+    "food_pairings_de": [
+      "Wild",
+      "Gereifter Comté"
+    ],
+    "food_pairings_en": [
+      "Game",
+      "Aged Comté"
+    ],
+    "food_pairings_fr": [
+      "Gibier",
+      "Comté affiné"
+    ],
+    "created_at": "2025-12-13T19:55:10.825324Z",
+    "updated_at": "2025-12-13T19:55:10.825325Z"
+  },
+  {
+    "id": "c11f7874-2e06-4eb4-b2fa-635064a9013a",
+    "name": "Sommeracher Katzenkopf Silvaner GG 2024",
+    "winery": "Schmitts Kinder",
+    "grape_variety": "Silvaner",
+    "region": "Sommerach",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€€€",
+    "description_de": "Katzenkopf-katzenhaft und tief, ein Silvaner der Eigenständigkeit.",
+    "description_en": "Katzenkopf-cat-like and deep, a Silvaner of independence.",
+    "description_fr": "Katzenkopf-félin et profond, un Silvaner d'indépendance.",
+    "food_pairings_de": [
+      "Schwein",
+      "Käseplatte"
+    ],
+    "food_pairings_en": [
+      "Pork",
+      "Cheese plate"
+    ],
+    "food_pairings_fr": [
+      "Porc",
+      "Plateau de fromages"
+    ],
+    "created_at": "2025-12-13T19:55:10.825331Z",
+    "updated_at": "2025-12-13T19:55:10.825332Z"
+  },
+  {
+    "id": "d0222bc8-1261-420a-acb2-b81ad5c0db99",
+    "name": "Sulzfelder Maustal Silvaner GG 2024",
+    "winery": "Luckert Zehnthof",
+    "grape_variety": "Silvaner",
+    "region": "Sulzfeld",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€€€",
+    "description_de": "Maustal-mineralisch und saftig, ein fränkischer Klassiker.",
+    "description_en": "Maustal-mineral and juicy, a Franconian classic.",
+    "description_fr": "Maustal-minéral et juteux, un classique franconien.",
+    "food_pairings_de": [
+      "Fisch",
+      "Fondue"
+    ],
+    "food_pairings_en": [
+      "Fish",
+      "Fondue"
+    ],
+    "food_pairings_fr": [
+      "Poisson",
+      "Fondue"
+    ],
+    "created_at": "2025-12-13T19:55:10.825338Z",
+    "updated_at": "2025-12-13T19:55:10.825339Z"
+  },
+  {
+    "id": "2727b540-9ff6-4c7a-99e8-b80f7755b207",
+    "name": "Würzburger Innere Leiste Silvaner GG 2024",
+    "winery": "Juliusspital",
+    "grape_variety": "Silvaner",
+    "region": "Würzburg",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€€€€",
+    "description_de": "Innere Leiste-innerlich und tief, ein Stück Würzburger Seele.",
+    "description_en": "Innere Leiste-inner and deep, a piece of Würzburg soul.",
+    "description_fr": "Innere Leiste-intérieur et profond, un morceau d'âme de Würzburg.",
+    "food_pairings_de": [
+      "Ente",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Duck",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Canard",
+      "Champignons"
+    ],
+    "created_at": "2025-12-13T19:55:10.825344Z",
+    "updated_at": "2025-12-13T19:55:10.825345Z"
+  },
+  {
+    "id": "ed1b9b7b-ba0c-4a68-9bbb-802be57241ac",
+    "name": "Iphöfer Kronsberg Silvaner GG 2024",
+    "winery": "Hans Wirsching",
+    "grape_variety": "Silvaner",
+    "region": "Iphofen",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€€€€",
+    "description_de": "Kronsberg-krönend und kraftvoll, ein Berg der Mineralität.",
+    "description_en": "Kronsberg-crowning and powerful, a mountain of minerality.",
+    "description_fr": "Kronsberg-couronnant et puissant, une montagne de minéralité.",
+    "food_pairings_de": [
+      "Rind",
+      "BBQ"
+    ],
+    "food_pairings_en": [
+      "Beef",
+      "BBQ"
+    ],
+    "food_pairings_fr": [
+      "Bœuf",
+      "BBQ"
+    ],
+    "created_at": "2025-12-13T19:55:10.825350Z",
+    "updated_at": "2025-12-13T19:55:10.825352Z"
+  },
+  {
+    "id": "85e8d886-cc53-4786-95d6-6c4e65fa3397",
+    "name": "Tradition Spätburgunder 2024",
+    "winery": "Rudolf Fürst",
+    "grape_variety": "Spätburgunder",
+    "region": "Bürgstadt",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Tradition-ehrlich und rot, ein Alltags-Rot der Freude.",
+    "description_en": "Tradition-honest and red, an everyday red of joy.",
+    "description_fr": "Tradition-honnête et rouge, un rouge quotidien de joie.",
+    "food_pairings_de": [
+      "Pasta",
+      "Fondue"
+    ],
+    "food_pairings_en": [
+      "Pasta",
+      "Fondue"
+    ],
+    "food_pairings_fr": [
+      "Pâtes",
+      "Fondue"
+    ],
+    "created_at": "2025-12-13T19:55:10.825357Z",
+    "updated_at": "2025-12-13T19:55:10.825358Z"
+  },
+  {
+    "id": "c2f1a05e-66ba-42a5-903f-6c1d1704af3d",
+    "name": "Escherndorfer Am Lumpen Silvaner Erste Lage 2024",
+    "winery": "Horst Sauer",
+    "grape_variety": "Silvaner",
+    "region": "Escherndorf",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€€€",
+    "description_de": "Am Lumpen-lumpig und intensiv, ein Silvaner der Frische.",
+    "description_en": "Am Lumpen-ragged and intense, a Silvaner of freshness.",
+    "description_fr": "Am Lumpen-déchiré et intense, un Silvaner de fraîcheur.",
+    "food_pairings_de": [
+      "Scharfes Thai",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Spicy Thai",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Thai épicé",
+      "Fromage"
+    ],
+    "created_at": "2025-12-13T19:55:10.825362Z",
+    "updated_at": "2025-12-13T19:55:10.825364Z"
+  },
+  {
+    "id": "5b38dafc-34e9-44b2-a079-0ce19252b1fe",
+    "name": "Rödelseer Küchenmeister Riesling GG 2024",
+    "winery": "Paul Weltner",
+    "grape_variety": "Riesling",
+    "region": "Rödelsee",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€€€",
+    "description_de": "Riesling-kühl und präzise, ein rarer Franken-Riesling.",
+    "description_en": "Riesling-cool and precise, a rare Franconian Riesling.",
+    "description_fr": "Riesling-frais et précis, un rare Riesling franconien.",
+    "food_pairings_de": [
+      "Gegrillter Lachs"
+    ],
+    "food_pairings_en": [
+      "Grilled salmon"
+    ],
+    "food_pairings_fr": [
+      "Saumon grillé"
+    ],
+    "created_at": "2025-12-13T19:55:10.825372Z",
+    "updated_at": "2025-12-13T19:55:10.825394Z"
+  },
+  {
+    "id": "1b1de264-fd95-483e-9708-3c2f9f4ef324",
+    "name": "Randersackerer Sonnenstuhl Silvaner GG 2024",
+    "winery": "Zeintheresienhof",
+    "grape_variety": "Silvaner",
+    "region": "Randersacker",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€€€",
+    "description_de": "Sonnenstuhl-sonnig und warm, ein Stuhl der Harmonie.",
+    "description_en": "Sonnenstuhl-sunny and warm, a chair of harmony.",
+    "description_fr": "Sonnenstuhl-ensoleillé et chaud, une chaise d'harmonie.",
+    "food_pairings_de": [
+      "Geflügel",
+      "Gemüse"
+    ],
+    "food_pairings_en": [
+      "Poultry",
+      "Vegetables"
+    ],
+    "food_pairings_fr": [
+      "Volaille",
+      "Légumes"
+    ],
+    "created_at": "2025-12-13T19:55:10.825399Z",
+    "updated_at": "2025-12-13T19:55:10.825401Z"
+  },
+  {
+    "id": "75200afc-eab0-4dc5-95a6-17d479170b9b",
+    "name": "Würzburger Pfaffenberg Silvaner GG 2024",
+    "winery": "Bürgerspital",
+    "grape_variety": "Silvaner",
+    "region": "Würzburg",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€€€€",
+    "description_de": "Pfaffenberg-pfäffisch und tief, ein Berg der Noblesse.",
+    "description_en": "Pfaffenberg-priestly and deep, a mountain of nobility.",
+    "description_fr": "Pfaffenberg-sacerdotal et profond, une montagne de noblesse.",
+    "food_pairings_de": [
+      "Wildgerichte"
+    ],
+    "food_pairings_en": [
+      "Game dishes"
+    ],
+    "food_pairings_fr": [
+      "Plats de gibier"
+    ],
+    "created_at": "2025-12-13T19:55:10.825405Z",
+    "updated_at": "2025-12-13T19:55:10.825406Z"
+  },
+  {
+    "id": "1a800eaf-3f7f-44be-a718-abd02a5f4fde",
+    "name": "Sommeracher Silvaner Trocken 2024",
+    "winery": "Schmitts Kinder",
+    "grape_variety": "Silvaner",
+    "region": "Sommerach",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€",
+    "description_de": "Sommeracher-sommerlich und saftig, ein Alltags-Silvaner.",
+    "description_en": "Sommerach-summery and juicy, an everyday Silvaner.",
+    "description_fr": "Sommerach-estival et juteux, un Silvaner quotidien.",
+    "food_pairings_de": [
+      "Salat",
+      "Aperitif"
+    ],
+    "food_pairings_en": [
+      "Salad",
+      "Aperitif"
+    ],
+    "food_pairings_fr": [
+      "Salade",
+      "Apéritif"
+    ],
+    "created_at": "2025-12-13T19:55:10.825412Z",
+    "updated_at": "2025-12-13T19:55:10.825414Z"
+  },
+  {
+    "id": "5d1711a0-1161-4282-ab26-3c241ef78657",
+    "name": "Randersackerer Pfülben Rieslaner Auslese 2023",
+    "winery": "Luckert Zehnthof",
+    "grape_variety": "Rieslaner",
+    "region": "Randersacker",
+    "country": "Deutschland",
+    "year": 2023,
+    "wine_color": "weiß",
+    "price_category": "€€€€€",
+    "description_de": "Rieslaner-süß und golden, ein rarer Schatz.",
+    "description_en": "Rieslaner-sweet and golden, a rare treasure.",
+    "description_fr": "Rieslaner-doux et doré, un trésor rare.",
+    "food_pairings_de": [
+      "Desserts",
+      "Blauschimmel"
+    ],
+    "food_pairings_en": [
+      "Desserts",
+      "Blue cheese"
+    ],
+    "food_pairings_fr": [
+      "Desserts",
+      "Bleu"
+    ],
+    "created_at": "2025-12-13T19:55:10.825418Z",
+    "updated_at": "2025-12-13T19:55:10.825419Z"
+  },
+  {
+    "id": "14984db2-65a8-43d0-9c2a-d25e2f8ea6ee",
+    "name": "Klingenberger Spätburgunder GG 2024",
+    "winery": "Rudolf Fürst",
+    "grape_variety": "Spätburgunder",
+    "region": "Klingenberg",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "rot",
+    "price_category": "€€€€€",
+    "description_de": "Klingenberger-rot und mineralisch, ein Main-Rot der Tiefe.",
+    "description_en": "Klingenberg-red and mineral, a Main red of depth.",
+    "description_fr": "Klingenberg-rouge et minéral, un rouge du Main de profondeur.",
+    "food_pairings_de": [
+      "Roastbeef"
+    ],
+    "food_pairings_en": [
+      "Roast beef"
+    ],
+    "food_pairings_fr": [
+      "Rosbif"
+    ],
+    "created_at": "2025-12-13T19:55:10.825424Z",
+    "updated_at": "2025-12-13T19:55:10.825425Z"
+  },
+  {
+    "id": "b3a9a55e-ac91-4242-b686-6d4c8cff0ee9",
+    "name": "Iphöfer Silvaner GG 2024",
+    "winery": "Juliusspital",
+    "grape_variety": "Silvaner",
+    "region": "Iphofen",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€€€",
+    "description_de": "Iphöfer-klassisch und tief.",
+    "description_en": "Iphofen-classic and deep.",
+    "description_fr": "Iphofen-classique et profond.",
+    "food_pairings_de": [
+      "Schwein"
+    ],
+    "food_pairings_en": [
+      "Pork"
+    ],
+    "food_pairings_fr": [
+      "Porc"
+    ],
+    "created_at": "2025-12-13T19:55:10.825432Z",
+    "updated_at": "2025-12-13T19:55:10.825433Z"
+  },
+  {
+    "id": "03423952-74a6-436b-a707-8537285d98a9",
+    "name": "Kronsberg Scheurebe Trocken 2024",
+    "winery": "Hans Wirsching",
+    "grape_variety": "Scheurebe",
+    "region": "Iphofen",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Scheurebe-aromatisch und frisch.",
+    "description_en": "Scheurebe-aromatic and fresh.",
+    "description_fr": "Scheurebe-aromatique et frais.",
+    "food_pairings_de": [
+      "Asiatisch"
+    ],
+    "food_pairings_en": [
+      "Asian cuisine"
+    ],
+    "food_pairings_fr": [
+      "Cuisine asiatique"
+    ],
+    "created_at": "2025-12-13T19:55:10.825439Z",
+    "updated_at": "2025-12-13T19:55:10.825440Z"
+  },
+  {
+    "id": "935a5511-29d8-41b7-bd38-8b9132552e23",
+    "name": "Escherndorfer Fürstenberg Silvaner GG 2024",
+    "winery": "Horst Sauer",
+    "grape_variety": "Silvaner",
+    "region": "Escherndorf",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€€€€",
+    "description_de": "Fürstenberg-fürstlich und mineralisch.",
+    "description_en": "Fürstenberg-princely and mineral.",
+    "description_fr": "Fürstenberg-princier et minéral.",
+    "food_pairings_de": [
+      "Parmesan"
+    ],
+    "food_pairings_en": [
+      "Parmesan"
+    ],
+    "food_pairings_fr": [
+      "Parmesan"
+    ],
+    "created_at": "2025-12-13T19:55:10.825444Z",
+    "updated_at": "2025-12-13T19:55:10.825446Z"
+  },
+  {
+    "id": "313ac014-48a8-4e7e-b6d5-2fa5444fd12a",
+    "name": "Rödelseer Müller-Thurgau Trocken 2024",
+    "winery": "Paul Weltner",
+    "grape_variety": "Müller-Thurgau",
+    "region": "Rödelsee",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€",
+    "description_de": "Müller-Thurgau-leicht und fruchtig.",
+    "description_en": "Müller-Thurgau-light and fruity.",
+    "description_fr": "Müller-Thurgau-léger et fruité.",
+    "food_pairings_de": [
+      "Aperitif"
+    ],
+    "food_pairings_en": [
+      "Aperitif"
+    ],
+    "food_pairings_fr": [
+      "Apéritif"
+    ],
+    "created_at": "2025-12-13T19:55:10.825450Z",
+    "updated_at": "2025-12-13T19:55:10.825451Z"
+  },
+  {
+    "id": "1a9f2fcf-e1c2-4d69-9b8d-c8345621b578",
+    "name": "Randersackerer Marsberg Riesling GG 2024",
+    "winery": "Zeintheresienhof",
+    "grape_variety": "Riesling",
+    "region": "Randersacker",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€€€",
+    "description_de": "Marsberg-kraftvoll und tief.",
+    "description_en": "Marsberg-powerful and deep.",
+    "description_fr": "Marsberg-puissant et profond.",
+    "food_pairings_de": [
+      "Lamm"
+    ],
+    "food_pairings_en": [
+      "Lamb"
+    ],
+    "food_pairings_fr": [
+      "Agneau"
+    ],
+    "created_at": "2025-12-13T19:55:10.825456Z",
+    "updated_at": "2025-12-13T19:55:10.825457Z"
+  },
+  {
+    "id": "b85d66e7-79da-4692-ac31-a9d951d93914",
+    "name": "Würzburger Abtsberg Silvaner GG 2024",
+    "winery": "Bürgerspital",
+    "grape_variety": "Silvaner",
+    "region": "Würzburg",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€€€",
+    "description_de": "Abtsberg-abtlich und harmonisch.",
+    "description_en": "Abtsberg-abbatial and harmonious.",
+    "description_fr": "Abtsberg-abbatial et harmonieux.",
+    "food_pairings_de": [
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Champignons"
+    ],
+    "created_at": "2025-12-13T19:55:10.825462Z",
+    "updated_at": "2025-12-13T19:55:10.825464Z"
+  },
+  {
+    "id": "de1de021-2b58-48d7-b23f-8dcb6cefb414",
+    "name": "Sommeracher Spätburgunder GG 2024",
+    "winery": "Schmitts Kinder",
+    "grape_variety": "Spätburgunder",
+    "region": "Sommerach",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Spätburgunder-rot und seidig.",
+    "description_en": "Spätburgunder-red and silky.",
+    "description_fr": "Spätburgunder-rouge et soyeux.",
+    "food_pairings_de": [
+      "Entrecôte"
+    ],
+    "food_pairings_en": [
+      "Entrecôte"
+    ],
+    "food_pairings_fr": [
+      "Entrecôte"
+    ],
+    "created_at": "2025-12-13T19:55:10.825468Z",
+    "updated_at": "2025-12-13T19:55:10.825469Z"
+  },
+  {
+    "id": "872c607e-35ab-4680-b9a1-b96e76698711",
+    "name": "Sulzfelder Cyriakusberg Silvaner GG 2024",
+    "winery": "Luckert Zehnthof",
+    "grape_variety": "Silvaner",
+    "region": "Sulzfeld",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€€€",
+    "description_de": "Cyriakusberg-heilig und mineralisch.",
+    "description_en": "Cyriakusberg-holy and mineral.",
+    "description_fr": "Cyriakusberg-sacré et minéral.",
+    "food_pairings_de": [
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Fromage"
+    ],
+    "created_at": "2025-12-13T19:55:10.825475Z",
+    "updated_at": "2025-12-13T19:55:10.825476Z"
+  },
+  {
+    "id": "32655c96-8eff-4808-8fc6-c33ef9f93a2d",
+    "name": "Centgrafenberg Frühburgunder GG 2024",
+    "winery": "Rudolf Fürst",
+    "grape_variety": "Frühburgunder",
+    "region": "Bürgstadt",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "rot",
+    "price_category": "€€€€€",
+    "description_de": "Frühburgunder-früh und lebendig.",
+    "description_en": "Frühburgunder-early and lively.",
+    "description_fr": "Frühburgunder-précoce et vif.",
+    "food_pairings_de": [
+      "Grilladen"
+    ],
+    "food_pairings_en": [
+      "Grilled meats"
+    ],
+    "food_pairings_fr": [
+      "Grillades"
+    ],
+    "created_at": "2025-12-13T19:55:10.825481Z",
+    "updated_at": "2025-12-13T19:55:10.825482Z"
+  },
+  {
+    "id": "d1bbf3cb-32df-4651-9f08-a823f39fc13f",
+    "name": "Würzburger Stein Riesling GG 2024",
+    "winery": "Juliusspital",
+    "grape_variety": "Riesling",
+    "region": "Würzburg",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€€€€",
+    "description_de": "Stein-Riesling-rar und strahlend.",
+    "description_en": "Stein-Riesling-rare and radiant.",
+    "description_fr": "Stein-Riesling-rare et radieux.",
+    "food_pairings_de": [
+      "Forelle"
+    ],
+    "food_pairings_en": [
+      "Trout"
+    ],
+    "food_pairings_fr": [
+      "Truite"
+    ],
+    "created_at": "2025-12-13T19:55:10.825487Z",
+    "updated_at": "2025-12-13T19:55:10.825488Z"
+  },
+  {
+    "id": "83be2d81-f202-45d9-a771-c2f57d46c71b",
+    "name": "Iphöfer Kalb Silvaner GG 2024",
+    "winery": "Hans Wirsching",
+    "grape_variety": "Silvaner",
+    "region": "Iphofen",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€€€",
+    "description_de": "Kalb-kraftvoll und tief.",
+    "description_en": "Kalb-powerful and deep.",
+    "description_fr": "Kalb-puissant et profond.",
+    "food_pairings_de": [
+      "Schwein"
+    ],
+    "food_pairings_en": [
+      "Pork"
+    ],
+    "food_pairings_fr": [
+      "Porc"
+    ],
+    "created_at": "2025-12-13T19:55:10.825492Z",
+    "updated_at": "2025-12-13T19:55:10.825494Z"
+  },
+  {
+    "id": "46fec2e6-cdb1-48df-bf13-714f8387307c",
+    "name": "Escherndorfer Berg Silvaner GG 2024",
+    "winery": "Horst Sauer",
+    "grape_variety": "Silvaner",
+    "region": "Escherndorf",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€€€",
+    "description_de": "Berg-steil und intensiv.",
+    "description_en": "Berg-steep and intense.",
+    "description_fr": "Berg-escarpé et intense.",
+    "food_pairings_de": [
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Champignons"
+    ],
+    "created_at": "2025-12-13T19:55:10.825498Z",
+    "updated_at": "2025-12-13T19:55:10.825499Z"
+  },
+  {
+    "id": "d7ba185e-e00f-4e50-80fe-1296b7fa8d74",
+    "name": "Rödelseer Schwanleite Silvaner GG 2024",
+    "winery": "Paul Weltner",
+    "grape_variety": "Silvaner",
+    "region": "Rödelsee",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€€€",
+    "description_de": "Schwanleite-elegant und mineralisch.",
+    "description_en": "Schwanleite-elegant and mineral.",
+    "description_fr": "Schwanleite-élégant et minéral.",
+    "food_pairings_de": [
+      "Gemüse"
+    ],
+    "food_pairings_en": [
+      "Vegetables"
+    ],
+    "food_pairings_fr": [
+      "Légumes"
+    ],
+    "created_at": "2025-12-13T19:55:10.825504Z",
+    "updated_at": "2025-12-13T19:55:10.825505Z"
+  },
+  {
+    "id": "19e7ffa2-8ac6-4617-b49d-476d2d65bed5",
+    "name": "Randersackerer Lämmerberg Silvaner GG 2024",
+    "winery": "Zeintheresienhof",
+    "grape_variety": "Silvaner",
+    "region": "Randersacker",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€€€",
+    "description_de": "Lämmerberg-sanft und tief.",
+    "description_en": "Lämmerberg-gentle and deep.",
+    "description_fr": "Lämmerberg-doux et profond.",
+    "food_pairings_de": [
+      "Geflügel"
+    ],
+    "food_pairings_en": [
+      "Poultry"
+    ],
+    "food_pairings_fr": [
+      "Volaille"
+    ],
+    "created_at": "2025-12-13T19:55:10.825510Z",
+    "updated_at": "2025-12-13T19:55:10.825511Z"
+  },
+  {
+    "id": "d5e12250-b733-48e9-8786-188c7e4d275b",
+    "name": "Würzburger Innere Leiste Rieslaner Auslese 2023",
+    "winery": "Bürgerspital",
+    "grape_variety": "Rieslaner",
+    "region": "Würzburg",
+    "country": "Deutschland",
+    "year": 2023,
+    "wine_color": "weiß",
+    "price_category": "€€€€€",
+    "description_de": "Rieslaner-süß und golden.",
+    "description_en": "Rieslaner-sweet and golden.",
+    "description_fr": "Rieslaner-doux et doré.",
+    "food_pairings_de": [
+      "Desserts"
+    ],
+    "food_pairings_en": [
+      "Desserts"
+    ],
+    "food_pairings_fr": [
+      "Desserts"
+    ],
+    "created_at": "2025-12-13T19:55:10.825515Z",
+    "updated_at": "2025-12-13T19:55:10.825516Z"
+  },
+  {
+    "id": "46039a60-945f-4e37-b583-b155245beef1",
+    "name": "Sommeracher Katzenkopf Müller-Thurgau 2024",
+    "winery": "Schmitts Kinder",
+    "grape_variety": "Müller-Thurgau",
+    "region": "Sommerach",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€",
+    "description_de": "Katzenkopf-leicht und frisch.",
+    "description_en": "Katzenkopf-light and fresh.",
+    "description_fr": "Katzenkopf-léger et frais.",
+    "food_pairings_de": [
+      "Aperitif"
+    ],
+    "food_pairings_en": [
+      "Aperitif"
+    ],
+    "food_pairings_fr": [
+      "Apéritif"
+    ],
+    "created_at": "2025-12-13T19:55:10.825521Z",
+    "updated_at": "2025-12-13T19:55:10.825522Z"
+  },
+  {
+    "id": "72de5028-2f7d-4246-9737-7959ed612834",
+    "name": "Sulzfelder Spätburgunder GG 2024",
+    "winery": "Luckert Zehnthof",
+    "grape_variety": "Spätburgunder",
+    "region": "Sulzfeld",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Spätburgunder-rot und harmonisch.",
+    "description_en": "Spätburgunder-red and harmonious.",
+    "description_fr": "Spätburgunder-rouge et harmonieux.",
+    "food_pairings_de": [
+      "Wild"
+    ],
+    "food_pairings_en": [
+      "Game"
+    ],
+    "food_pairings_fr": [
+      "Gibier"
+    ],
+    "created_at": "2025-12-13T19:55:10.825526Z",
+    "updated_at": "2025-12-13T19:55:10.825528Z"
+  },
+  {
+    "id": "e254c705-45bc-4058-9166-207ee693f8a2",
+    "name": "Hundsrück Spätburgunder GG 2024",
+    "winery": "Rudolf Fürst",
+    "grape_variety": "Spätburgunder",
+    "region": "Bürgstadt",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "rot",
+    "price_category": "€€€€€",
+    "description_de": "Hundsrück-wild und tief.",
+    "description_en": "Hundsrück-wild and deep.",
+    "description_fr": "Hundsrück-sauvage et profond.",
+    "food_pairings_de": [
+      "Schokolade"
+    ],
+    "food_pairings_en": [
+      "Chocolate"
+    ],
+    "food_pairings_fr": [
+      "Chocolat"
+    ],
+    "created_at": "2025-12-13T19:55:10.825535Z",
+    "updated_at": "2025-12-13T19:55:10.825537Z"
+  },
+  {
+    "id": "56a13c8b-b83f-4f12-814f-edbb47020aa0",
+    "name": "Würzburger Pfaffenberg Silvaner Spätlese 2023",
+    "winery": "Juliusspital",
+    "grape_variety": "Silvaner",
+    "region": "Würzburg",
+    "country": "Deutschland",
+    "year": 2023,
+    "wine_color": "weiß",
+    "price_category": "€€€€",
+    "description_de": "Pfaffenberg-spät und verlockend.",
+    "description_en": "Pfaffenberg-late and enticing.",
+    "description_fr": "Pfaffenberg-tardif et séduisant.",
+    "food_pairings_de": [
+      "Scharfes Thai"
+    ],
+    "food_pairings_en": [
+      "Spicy Thai"
+    ],
+    "food_pairings_fr": [
+      "Thai épicé"
+    ],
+    "created_at": "2025-12-13T19:55:10.825541Z",
+    "updated_at": "2025-12-13T19:55:10.825542Z"
+  },
+  {
+    "id": "4fdd1a39-b96a-48b4-afab-29f630bf75b2",
+    "name": "Iphöfer Julius-Echter-Berg Scheurebe Spätlese 2023",
+    "winery": "Hans Wirsching",
+    "grape_variety": "Scheurebe",
+    "region": "Iphofen",
+    "country": "Deutschland",
+    "year": 2023,
+    "wine_color": "weiß",
+    "price_category": "€€€€",
+    "description_de": "Scheurebe-aromatisch und süß.",
+    "description_en": "Scheurebe-aromatic and sweet.",
+    "description_fr": "Scheurebe-aromatique et doux.",
+    "food_pairings_de": [
+      "Desserts"
+    ],
+    "food_pairings_en": [
+      "Desserts"
+    ],
+    "food_pairings_fr": [
+      "Desserts"
+    ],
+    "created_at": "2025-12-13T19:55:10.825548Z",
+    "updated_at": "2025-12-13T19:55:10.825550Z"
+  },
+  {
+    "id": "2fc44e18-6367-4701-b087-b0f7b1d173b6",
+    "name": "Escherndorfer Lump Riesling GG 2024",
+    "winery": "Horst Sauer",
+    "grape_variety": "Riesling",
+    "region": "Escherndorf",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€€€€",
+    "description_de": "Lump-Riesling-rar und mineralisch.",
+    "description_en": "Lump-Riesling-rare and mineral.",
+    "description_fr": "Lump-Riesling-rare et minéral.",
+    "food_pairings_de": [
+      "Fisch"
+    ],
+    "food_pairings_en": [
+      "Fish"
+    ],
+    "food_pairings_fr": [
+      "Poisson"
+    ],
+    "created_at": "2025-12-13T19:55:10.825554Z",
+    "updated_at": "2025-12-13T19:55:10.825556Z"
+  },
+  {
+    "id": "33161904-2430-49be-b6be-750b8845f073",
+    "name": "Rödelseer Küchenmeister Bacchus 2024",
+    "winery": "Paul Weltner",
+    "grape_variety": "Bacchus",
+    "region": "Rödelsee",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€",
+    "description_de": "Bacchus-duftend und fruchtig.",
+    "description_en": "Bacchus-fragrant and fruity.",
+    "description_fr": "Bacchus-parfumé et fruité.",
+    "food_pairings_de": [
+      "Asiatisch"
+    ],
+    "food_pairings_en": [
+      "Asian cuisine"
+    ],
+    "food_pairings_fr": [
+      "Cuisine asiatique"
+    ],
+    "created_at": "2025-12-13T19:55:10.825560Z",
+    "updated_at": "2025-12-13T19:55:10.825561Z"
+  },
+  {
+    "id": "b5d0e5a9-6e3d-4163-b353-c96ddbfbd6b7",
+    "name": "Randersackerer Sonnenstuhl Müller-Thurgau 2024",
+    "winery": "Zeintheresienhof",
+    "grape_variety": "Müller-Thurgau",
+    "region": "Randersacker",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€",
+    "description_de": "Sonnenstuhl-sonnig und leicht.",
+    "description_en": "Sonnenstuhl-sunny and light.",
+    "description_fr": "Sonnenstuhl-ensoleillé et léger.",
+    "food_pairings_de": [
+      "Aperitif"
+    ],
+    "food_pairings_en": [
+      "Aperitif"
+    ],
+    "food_pairings_fr": [
+      "Apéritif"
+    ],
+    "created_at": "2025-12-13T19:55:10.825565Z",
+    "updated_at": "2025-12-13T19:55:10.825567Z"
+  },
+  {
+    "id": "423b8a1b-1b65-4a8d-b0da-f54dec8de0aa",
+    "name": "Würzburger Stein Silvaner Auslese 2023",
+    "winery": "Bürgerspital",
+    "grape_variety": "Silvaner",
+    "region": "Würzburg",
+    "country": "Deutschland",
+    "year": 2023,
+    "wine_color": "weiß",
+    "price_category": "€€€€€",
+    "description_de": "Stein-süß und konzentriert.",
+    "description_en": "Stein-sweet and concentrated.",
+    "description_fr": "Stein-doux et concentré.",
+    "food_pairings_de": [
+      "Blauschimmel"
+    ],
+    "food_pairings_en": [
+      "Blue cheese"
+    ],
+    "food_pairings_fr": [
+      "Bleu"
+    ],
+    "created_at": "2025-12-13T19:55:10.825572Z",
+    "updated_at": "2025-12-13T19:55:10.825574Z"
+  },
+  {
+    "id": "94ba3cd8-0c4e-44d8-a955-dfe7dc8bd500",
+    "name": "Sommeracher Silvaner Spätlese 2023",
+    "winery": "Schmitts Kinder",
+    "grape_variety": "Silvaner",
+    "region": "Sommerach",
+    "country": "Deutschland",
+    "year": 2023,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Spätlese-verlockend und golden.",
+    "description_en": "Spätlese-enticing and golden.",
+    "description_fr": "Spätlese-séduisant et doré.",
+    "food_pairings_de": [
+      "Käseplatte"
+    ],
+    "food_pairings_en": [
+      "Cheese plate"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fromages"
+    ],
+    "created_at": "2025-12-13T19:55:10.825578Z",
+    "updated_at": "2025-12-13T19:55:10.825579Z"
+  },
+  {
+    "id": "8beaf788-e373-42bd-82fe-a18451e72c53",
+    "name": "Sulzfelder Weißburgunder GG 2024",
+    "winery": "Luckert Zehnthof",
+    "grape_variety": "Weißburgunder",
+    "region": "Sulzfeld",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€€€",
+    "description_de": "Weißburgunder-cremig und edel.",
+    "description_en": "Weißburgunder-creamy and noble.",
+    "description_fr": "Weißburgunder-crémeux et noble.",
+    "food_pairings_de": [
+      "Geflügel"
+    ],
+    "food_pairings_en": [
+      "Poultry"
+    ],
+    "food_pairings_fr": [
+      "Volaille"
+    ],
+    "created_at": "2025-12-13T19:55:10.825584Z",
+    "updated_at": "2025-12-13T19:55:10.825586Z"
+  },
+  {
+    "id": "ea59d201-bfcc-4206-9535-d38406c942a8",
+    "name": "Bürgstadter Berg Weißburgunder GG 2024",
+    "winery": "Rudolf Fürst",
+    "grape_variety": "Weißburgunder",
+    "region": "Bürgstadt",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€€€",
+    "description_de": "Berg-weiß und mineralisch.",
+    "description_en": "Berg-white and mineral.",
+    "description_fr": "Berg-blanc et minéral.",
+    "food_pairings_de": [
+      "Gemüse"
+    ],
+    "food_pairings_en": [
+      "Vegetables"
+    ],
+    "food_pairings_fr": [
+      "Légumes"
+    ],
+    "created_at": "2025-12-13T19:55:10.825591Z",
+    "updated_at": "2025-12-13T19:55:10.825592Z"
+  },
+  {
+    "id": "d14de897-44a3-4f4e-b375-177985624465",
+    "name": "Iphöfer Silvaner Trocken 2024",
+    "winery": "Juliusspital",
+    "grape_variety": "Silvaner",
+    "region": "Iphofen",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Trocken-sauber und charakterstark.",
+    "description_en": "Dry-clean and full of character.",
+    "description_fr": "Sec-propre et plein de caractère.",
+    "food_pairings_de": [
+      "Schwein"
+    ],
+    "food_pairings_en": [
+      "Pork"
+    ],
+    "food_pairings_fr": [
+      "Porc"
+    ],
+    "created_at": "2025-12-13T19:55:10.825598Z",
+    "updated_at": "2025-12-13T19:55:10.825599Z"
+  },
+  {
+    "id": "f8cb5687-f873-4967-89e5-539f9ababcd2",
+    "name": "Kronsberg Riesling Trocken 2024",
+    "winery": "Hans Wirsching",
+    "grape_variety": "Riesling",
+    "region": "Iphofen",
+    "country": "Deutschland",
+    "year": 2024,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Riesling-frisch und rar.",
+    "description_en": "Riesling-fresh and rare.",
+    "description_fr": "Riesling-frais et rare.",
+    "food_pairings_de": [
+      "Forelle"
+    ],
+    "food_pairings_en": [
+      "Trout"
+    ],
+    "food_pairings_fr": [
+      "Truite"
+    ],
+    "created_at": "2025-12-13T19:55:10.825603Z",
+    "updated_at": "2025-12-13T19:55:10.825605Z"
+  },
+  {
+    "id": "2678a056-3492-42a9-bb55-a709b035892f",
+    "name": "Escherndorfer Lump Silvaner Auslese 2023",
+    "winery": "Horst Sauer",
+    "grape_variety": "Silvaner",
+    "region": "Escherndorf",
+    "country": "Deutschland",
+    "year": 2023,
+    "wine_color": "weiß",
+    "price_category": "€€€€€",
+    "description_de": "Lump-auslese-golden und tief, ein Abschluss der fränkischen Trockenheit und Seele.",
+    "description_en": "Lump-auslese-golden and deep, a finale of Franconian dryness and soul.",
+    "description_fr": "Lump-auslese-doré et profond, un finale de sécheresse et d'âme franconienne.",
+    "food_pairings_de": [
+      "Desserts",
+      "Milder Käse"
+    ],
+    "food_pairings_en": [
+      "Desserts",
+      "Mild cheese"
+    ],
+    "food_pairings_fr": [
+      "Desserts",
+      "Fromage doux"
+    ],
+    "created_at": "2025-12-13T19:55:10.825609Z",
+    "updated_at": "2025-12-13T19:55:10.825610Z"
   }
 ]

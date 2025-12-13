@@ -44354,5 +44354,1512 @@
     "image_url": null,
     "rating": null,
     "created_at": "2025-12-13T06:27:25.430Z"
+  },
+  {
+    "id": "abda6071-48f3-41ab-9ca3-439ae8dcfd67",
+    "name": "Malterdinger Spätburgunder GG 2024",
+    "winery": "Bernhard Huber",
+    "country": "Deutschland",
+    "region": "Baden - Malterdingen",
+    "appellation": "Baden",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Ein burgundischer Traum von Kirsche, Unterholz und seidiger Tiefe – ein Wein, der die Seele in absolute Perfektion und badische Leidenschaft taucht (100 Falstaff-Punkte).",
+    "description_en": "A Burgundian dream of cherry, undergrowth and silky depth – a wine that immerses the soul in absolute perfection and Baden passion (100 Falstaff points).",
+    "description_fr": "Un rêve bourguignon de cerise, de sous-bois et de profondeur soyeuse – un vin qui plonge l'âme dans la perfection absolue et la passion badoise (100 points Falstaff).",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Rehrücken",
+      "Dunkle Schokolade"
+    ],
+    "food_pairings_en": [
+      "Saddle of venison",
+      "Dark chocolate"
+    ],
+    "food_pairings_fr": [
+      "Selle de chevreuil",
+      "Chocolat noir"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.808Z"
+  },
+  {
+    "id": "271e6b3c-d9b5-466e-903e-d6af41349f21",
+    "name": "Henkenberg Spätburgunder GG 2024",
+    "winery": "Salwey",
+    "country": "Deutschland",
+    "region": "Baden - Oberrotweil",
+    "appellation": "Baden",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Vulkanisch und kraftvoll, ein Henkenberg-Feuer von Beeren und Rauch, das das Herz mit intensiver Mineralität erobert.",
+    "description_en": "Volcanic and powerful, a Henkenberg fire of berries and smoke that conquers the heart with intense minerality.",
+    "description_fr": "Volcanique et puissant, un feu de Henkenberg de baies et de fumée qui conquiert le cœur avec une minéralité intense.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Wild",
+      "Gereifter Comté"
+    ],
+    "food_pairings_en": [
+      "Game",
+      "Aged Comté"
+    ],
+    "food_pairings_fr": [
+      "Gibier",
+      "Comté affiné"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.818Z"
+  },
+  {
+    "id": "b377bbf6-f631-4962-930d-702924f4f602",
+    "name": "Schwarzer Adler Eichberg Spätburgunder GG 2024",
+    "winery": "Franz Keller",
+    "country": "Deutschland",
+    "region": "Baden - Oberbergen",
+    "appellation": "Baden",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Elegant und filigran, ein Eichberg-Juwel von Kirsche und Gewürz – ein Tropfen, der die Sinne in burgundische Ekstase versetzt.",
+    "description_en": "Elegant and delicate, an Eichberg jewel of cherry and spice – a drop that sends the senses into Burgundian ecstasy.",
+    "description_fr": "Élégant et délicat, un joyau d'Eichberg de cerise et d'épices – une goutte qui met les sens en extase bourguignonne.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Entenbrust",
+      "Pilzrisotto"
+    ],
+    "food_pairings_en": [
+      "Duck breast",
+      "Mushroom risotto"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard",
+      "Risotto aux champignons"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.820Z"
+  },
+  {
+    "id": "7375eea3-7002-40ae-95ad-11899e62681e",
+    "name": "Oberklamm Spätburgunder GG 2024",
+    "winery": "Seeger",
+    "country": "Deutschland",
+    "region": "Baden - Leimen",
+    "appellation": "Baden",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Nordbadisch und präzise, ein Oberklamm der Finesse und Länge, der die Seele mit kühler Eleganz umfängt.",
+    "description_en": "North Baden and precise, an Oberklamm of finesse and length that embraces the soul with cool elegance.",
+    "description_fr": "Nord-badois et précis, un Oberklamm de finesse et de longueur qui enlace l'âme avec une élégance fraîche.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Gegrilltes Lamm",
+      "Milde Tomme"
+    ],
+    "food_pairings_en": [
+      "Grilled lamb",
+      "Mild Tomme"
+    ],
+    "food_pairings_fr": [
+      "Agneau grillé",
+      "Tomme douce"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.821Z"
+  },
+  {
+    "id": "89bd1871-926c-4b52-85e5-7c8a1d0f1fd7",
+    "name": "Ihringer Winklerberg Grauburgunder GG 2024",
+    "winery": "Dr. Heger",
+    "country": "Deutschland",
+    "region": "Baden - Ihringen",
+    "appellation": "Baden",
+    "grape_variety": "Grauburgunder",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Cremig und opulent, ein Winklerberg-Monument von Birne und Nuss – ein Grauburgunder der Weltklasse.",
+    "description_en": "Creamy and opulent, a Winklerberg monument of pear and nut – a world-class Grauburgunder.",
+    "description_fr": "Crémeux et opulent, un monument de Winklerberg de poire et de noix – un Grauburgunder de classe mondiale.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Gegrillter Lachs",
+      "Asiatisches Gemüse"
+    ],
+    "food_pairings_en": [
+      "Grilled salmon",
+      "Asian vegetables"
+    ],
+    "food_pairings_fr": [
+      "Saumon grillé",
+      "Légumes asiatiques"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.822Z"
+  },
+  {
+    "id": "8ee8d2e8-d82d-403d-a156-e6204b016fc0",
+    "name": "Ihringer Winklerberg Spätburgunder GG 2024",
+    "winery": "Stigler",
+    "country": "Deutschland",
+    "region": "Baden - Ihringen",
+    "appellation": "Baden",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Vulkanisch und tief, ein Winklerberg der Kraft und Frucht, das das Herz mit badischer Wärme erfüllt.",
+    "description_en": "Volcanic and deep, a Winklerberg of power and fruit that fills the heart with Baden warmth.",
+    "description_fr": "Volcanique et profond, un Winklerberg de puissance et de fruit qui remplit le cœur de chaleur badoise.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Roastbeef",
+      "Dunkles Fleisch"
+    ],
+    "food_pairings_en": [
+      "Roast beef",
+      "Dark meat"
+    ],
+    "food_pairings_fr": [
+      "Rosbif",
+      "Viande brune"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.823Z"
+  },
+  {
+    "id": "74897985-02de-4298-8901-a411ff29cfeb",
+    "name": "Durbacher Schlossberg Weißburgunder GG 2024",
+    "winery": "Schneider",
+    "country": "Deutschland",
+    "region": "Baden - Durbach",
+    "appellation": "Baden",
+    "grape_variety": "Weißburgunder",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Ortenau-elegant und mineralisch, ein Schlossberg der Reinheit und Tiefe.",
+    "description_en": "Ortenau-elegant and mineral, a Schlossberg of purity and depth.",
+    "description_fr": "Ortenau-élégant et minéral, un Schlossberg de pureté et de profondeur.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Forelle",
+      "Ziegenkäse"
+    ],
+    "food_pairings_en": [
+      "Trout",
+      "Goat cheese"
+    ],
+    "food_pairings_fr": [
+      "Truite",
+      "Fromage de chèvre"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.825Z"
+  },
+  {
+    "id": "f2e3e57a-dbe4-41ad-846a-77440c77b770",
+    "name": "Schlatter Maltesergarten Spätburgunder GG 2024",
+    "winery": "Fritz Wassmer",
+    "country": "Deutschland",
+    "region": "Baden - Schlatt",
+    "appellation": "Baden",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Samten und würzig, ein Maltesergarten der Reife und Samtigkeit.",
+    "description_en": "Velvety and spicy, a Maltesergarten of maturity and velvetiness.",
+    "description_fr": "Velouté et épicé, un Maltesergarten de maturité et de velouté.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Wildpastete",
+      "Schokolade"
+    ],
+    "food_pairings_en": [
+      "Game pâté",
+      "Chocolate"
+    ],
+    "food_pairings_fr": [
+      "Pâté de gibier",
+      "Chocolat"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.826Z"
+  },
+  {
+    "id": "1adb24e1-36ce-4686-bd5b-70190f81755f",
+    "name": "Kaiserstuhl Spätburgunder 2024",
+    "winery": "Duijn Badenhorst",
+    "country": "Deutschland",
+    "region": "Baden - Kaiserstuhl",
+    "appellation": "Baden",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Aufstrebend und präzise, ein Kaiserstuhl der neuen Generation, der die Seele mit moderner Eleganz weckt.",
+    "description_en": "Rising and precise, a Kaiserstuhl of the new generation that awakens the soul with modern elegance.",
+    "description_fr": "Montant et précis, un Kaiserstuhl de la nouvelle génération qui éveille l'âme avec une élégance moderne.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Entenbrust",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Duck breast",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard",
+      "Champignons"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.827Z"
+  },
+  {
+    "id": "84fa528c-adba-410a-9db2-cf14335f4ff1",
+    "name": "Bischoffinger Enselberg Spätburgunder GG 2024",
+    "winery": "Karl H. Johner",
+    "country": "Deutschland",
+    "region": "Baden - Bischoffingen",
+    "appellation": "Baden",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Enselberg-vulkanisch und intensiv, ein Feuer der Frucht.",
+    "description_en": "Enselberg-volcanic and intense, a fire of fruit.",
+    "description_fr": "Enselberg-volcanique et intense, un feu de fruit.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "BBQ",
+      "Scharfe Wurst"
+    ],
+    "food_pairings_en": [
+      "BBQ",
+      "Spicy sausage"
+    ],
+    "food_pairings_fr": [
+      "BBQ",
+      "Saucisse épicée"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.828Z"
+  },
+  {
+    "id": "9492328f-dbc3-4d0d-9ebc-b2ad14f56399",
+    "name": "RS Reserve Spätburgunder 2023",
+    "winery": "Salwey",
+    "country": "Deutschland",
+    "region": "Baden - Oberrotweil",
+    "appellation": "Baden",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Reserve-tief und komplex, ein RS der Ewigkeit.",
+    "description_en": "Reserve-deep and complex, an RS of eternity.",
+    "description_fr": "Reserve-profond et complexe, un RS d'éternité.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Rehrücken",
+      "Blauschimmel"
+    ],
+    "food_pairings_en": [
+      "Saddle of venison",
+      "Blue cheese"
+    ],
+    "food_pairings_fr": [
+      "Selle de chevreuil",
+      "Bleu"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.829Z"
+  },
+  {
+    "id": "08d3f635-46b7-42bc-a44f-26507bde56fd",
+    "name": "Oberrotweiler Eichberg Grauburgunder GG 2024",
+    "winery": "Franz Keller",
+    "country": "Deutschland",
+    "region": "Baden - Oberrotweil",
+    "appellation": "Baden",
+    "grape_variety": "Grauburgunder",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Eichberg-cremig und golden, ein Grauburgunder der Opulenz.",
+    "description_en": "Eichberg-creamy and golden, a Grauburgunder of opulence.",
+    "description_fr": "Eichberg-crémeux et doré, un Grauburgunder d'opulence.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Huhn",
+      "Milde Raclette"
+    ],
+    "food_pairings_en": [
+      "Chicken",
+      "Mild Raclette"
+    ],
+    "food_pairings_fr": [
+      "Poulet",
+      "Raclette douce"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.831Z"
+  },
+  {
+    "id": "d3e77650-d8b9-43c1-a8a3-3233a7473b66",
+    "name": "Bienenberg Weißburgunder GG 2024",
+    "winery": "Bernhard Huber",
+    "country": "Deutschland",
+    "region": "Baden - Malterdingen",
+    "appellation": "Baden",
+    "grape_variety": "Weißburgunder",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Bienenberg-rein und harmonisch, ein Weißburgunder der Noblesse.",
+    "description_en": "Bienenberg-pure and harmonious, a Weißburgunder of nobility.",
+    "description_fr": "Bienenberg-pur et harmonieux, un Weißburgunder de noblesse.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Meeresfrüchte",
+      "Salat"
+    ],
+    "food_pairings_en": [
+      "Seafood",
+      "Salad"
+    ],
+    "food_pairings_fr": [
+      "Fruits de mer",
+      "Salade"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.832Z"
+  },
+  {
+    "id": "4a25354a-8f73-4592-ae37-a7bc325fcf80",
+    "name": "Königsgarten Spätburgunder GG 2024",
+    "winery": "Weingut Heitlinger",
+    "country": "Deutschland",
+    "region": "Baden - Kraichgau",
+    "appellation": "Baden",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Königsgarten-königlich und kraftvoll, ein Kraichgau-Klassiker.",
+    "description_en": "Königsgarten-royal and powerful, a Kraichgau classic.",
+    "description_fr": "Königsgarten-royal et puissant, un classique du Kraichgau.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Rind",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Beef",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Bœuf",
+      "Champignons"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.833Z"
+  },
+  {
+    "id": "02f4d084-b02a-4a36-874e-0ea40e38e7ed",
+    "name": "Vulkangestein Riesling GG 2024",
+    "winery": "Stigler",
+    "country": "Deutschland",
+    "region": "Baden - Ihringen",
+    "appellation": "Baden",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Vulkangestein-mineralisch und strahlend, ein Riesling der Frische.",
+    "description_en": "Vulkangestein-mineral and radiant, a Riesling of freshness.",
+    "description_fr": "Vulkangestein-minéral et radieux, un Riesling de fraîcheur.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Gegrillter Fisch"
+    ],
+    "food_pairings_en": [
+      "Grilled fish"
+    ],
+    "food_pairings_fr": [
+      "Poisson grillé"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.835Z"
+  },
+  {
+    "id": "a6418de8-bfe0-45a8-bb8b-998cb7c63bb4",
+    "name": "Mauerberg Riesling GG 2024",
+    "winery": "Schloss Neuweier",
+    "country": "Deutschland",
+    "region": "Baden - Baden-Baden",
+    "appellation": "Baden",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Mauerberg-steil und präzise, ein Ortenau-Riesling der Eleganz.",
+    "description_en": "Mauerberg-steep and precise, an Ortenau Riesling of elegance.",
+    "description_fr": "Mauerberg-raide et précis, un Riesling d'Ortenau d'élégance.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Forelle",
+      "Gemüse"
+    ],
+    "food_pairings_en": [
+      "Trout",
+      "Vegetables"
+    ],
+    "food_pairings_fr": [
+      "Truite",
+      "Légumes"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.836Z"
+  },
+  {
+    "id": "c5bcc30d-6ebd-4614-a38f-a60e14dddd83",
+    "name": "Durbacher Plauelrain Spätburgunder GG 2024",
+    "winery": "Andreas Männle",
+    "country": "Deutschland",
+    "region": "Baden - Durbach",
+    "appellation": "Baden",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Plauelrain-fruchtig und tief, ein badischer Rotwein-Klassiker.",
+    "description_en": "Plauelrain-fruity and deep, a Baden red wine classic.",
+    "description_fr": "Plauelrain-fruité et profond, un classique du vin rouge badois.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Lamm",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Lamb",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Agneau",
+      "Fromage"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.837Z"
+  },
+  {
+    "id": "0e28cdcf-e409-496d-b6e1-6ef230e16cac",
+    "name": "Bombacher Sommerhalde Grauburgunder GG 2024",
+    "winery": "Fritz Wassmer",
+    "country": "Deutschland",
+    "region": "Baden - Bombach",
+    "appellation": "Baden",
+    "grape_variety": "Grauburgunder",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Sommerhalde-sonnig und cremig, ein Grauburgunder der Wärme.",
+    "description_en": "Sommerhalde-sunny and creamy, a Grauburgunder of warmth.",
+    "description_fr": "Sommerhalde-ensoleillé et crémeux, un Grauburgunder de chaleur.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Geflügel"
+    ],
+    "food_pairings_en": [
+      "Poultry"
+    ],
+    "food_pairings_fr": [
+      "Volaille"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.839Z"
+  },
+  {
+    "id": "7b54116c-3ddd-4526-b347-b44c006c5b4e",
+    "name": "Baden-Baden Spätburgunder 2024",
+    "winery": "Karl Trautwein",
+    "country": "Deutschland",
+    "region": "Baden - Baden-Baden",
+    "appellation": "Baden",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Rebgut-ehrlich und saftig, ein Alltags-Rot der Freude.",
+    "description_en": "Rebgut-honest and juicy, an everyday red of joy.",
+    "description_fr": "Rebgut-honnête et juteux, un rouge quotidien de joie.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Pasta",
+      "Fondue"
+    ],
+    "food_pairings_en": [
+      "Pasta",
+      "Fondue"
+    ],
+    "food_pairings_fr": [
+      "Pâtes",
+      "Fondue"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.840Z"
+  },
+  {
+    "id": "8a0525d9-2588-4b4f-8d39-abea9c55888f",
+    "name": "Chardonnay 2024",
+    "winery": "Duijn Badenhorst",
+    "country": "Deutschland",
+    "region": "Baden - Kaiserstuhl",
+    "appellation": "Baden",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Chardonnay-opulent und modern, ein neuer Stern.",
+    "description_en": "Chardonnay-opulent and modern, a new star.",
+    "description_fr": "Chardonnay-opulent et moderne, une nouvelle étoile.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Huhn",
+      "Desserts"
+    ],
+    "food_pairings_en": [
+      "Chicken",
+      "Desserts"
+    ],
+    "food_pairings_fr": [
+      "Poulet",
+      "Desserts"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.841Z"
+  },
+  {
+    "id": "fc9c4106-dea1-40d8-b8e0-9455d8570e53",
+    "name": "Oberrotweiler Grauburgunder GG 2024",
+    "winery": "Salwey",
+    "country": "Deutschland",
+    "region": "Baden - Oberrotweil",
+    "appellation": "Baden",
+    "grape_variety": "Grauburgunder",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Oberrotweiler-cremig und vulkanisch.",
+    "description_en": "Oberrotweiler-creamy and volcanic.",
+    "description_fr": "Oberrotweiler-crémeux et volcanique.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Asiatisch"
+    ],
+    "food_pairings_en": [
+      "Asian cuisine"
+    ],
+    "food_pairings_fr": [
+      "Cuisine asiatique"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.843Z"
+  },
+  {
+    "id": "72c22f24-b7c7-4fb7-99f1-b2bdd5f3109f",
+    "name": "Sommerhalde Spätburgunder GG 2024",
+    "winery": "Bernhard Huber",
+    "country": "Deutschland",
+    "region": "Baden - Malterdingen",
+    "appellation": "Baden",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Sommerhalde-sonnig und tief.",
+    "description_en": "Sommerhalde-sunny and deep.",
+    "description_fr": "Sommerhalde-ensoleillé et profond.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Wild"
+    ],
+    "food_pairings_en": [
+      "Game"
+    ],
+    "food_pairings_fr": [
+      "Gibier"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.844Z"
+  },
+  {
+    "id": "5afd2bc6-1c72-4fd2-9bb4-bde9d27d7948",
+    "name": "Achkarrer Schlossberg Weißburgunder GG 2024",
+    "winery": "Dr. Heger",
+    "country": "Deutschland",
+    "region": "Baden - Achkarren",
+    "appellation": "Baden",
+    "grape_variety": "Weißburgunder",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Schlossberg-edel und mineralisch.",
+    "description_en": "Schlossberg-noble and mineral.",
+    "description_fr": "Schlossberg-noble et minéral.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Parmesan"
+    ],
+    "food_pairings_en": [
+      "Parmesan"
+    ],
+    "food_pairings_fr": [
+      "Parmesan"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.845Z"
+  },
+  {
+    "id": "b123f1e1-3b07-42a9-af7c-8e07c2ab7f4c",
+    "name": "Heerkretz Grauburgunder GG 2024",
+    "winery": "Seeger",
+    "country": "Deutschland",
+    "region": "Baden - Leimen",
+    "appellation": "Baden",
+    "grape_variety": "Grauburgunder",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Heerkretz-kühl und präzise.",
+    "description_en": "Heerkretz-cool and precise.",
+    "description_fr": "Heerkretz-frais et précis.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Gemüse"
+    ],
+    "food_pairings_en": [
+      "Vegetables"
+    ],
+    "food_pairings_fr": [
+      "Légumes"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.847Z"
+  },
+  {
+    "id": "286f131e-4609-4857-abce-22125bc1bb04",
+    "name": "Pulverbuck Chardonnay GG 2024",
+    "winery": "Franz Keller",
+    "country": "Deutschland",
+    "region": "Baden - Oberbergen",
+    "appellation": "Baden",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Pulverbuck-cremig und tief.",
+    "description_en": "Pulverbuck-creamy and deep.",
+    "description_fr": "Pulverbuck-crémeux et profond.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Krustentiere"
+    ],
+    "food_pairings_en": [
+      "Crustaceans"
+    ],
+    "food_pairings_fr": [
+      "Crustacés"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.848Z"
+  },
+  {
+    "id": "82bf4603-7c4e-43b4-ab4d-310e0f3b0fce",
+    "name": "Winklerberg Riesling Auslese 2023",
+    "winery": "Stigler",
+    "country": "Deutschland",
+    "region": "Baden - Ihringen",
+    "appellation": "Baden",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Winklerberg-süß und golden.",
+    "description_en": "Winklerberg-sweet and golden.",
+    "description_fr": "Winklerberg-doux et doré.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Foie gras"
+    ],
+    "food_pairings_en": [
+      "Foie gras"
+    ],
+    "food_pairings_fr": [
+      "Foie gras"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.849Z"
+  },
+  {
+    "id": "92b29988-9f45-434d-8020-9ffc61c3b1d4",
+    "name": "Durbacher Kochberg Riesling GG 2024",
+    "winery": "Schneider",
+    "country": "Deutschland",
+    "region": "Baden - Durbach",
+    "appellation": "Baden",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Kochberg-steil und frisch.",
+    "description_en": "Kochberg-steep and fresh.",
+    "description_fr": "Kochberg-raide et frais.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Fisch"
+    ],
+    "food_pairings_en": [
+      "Fish"
+    ],
+    "food_pairings_fr": [
+      "Poisson"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.850Z"
+  },
+  {
+    "id": "5d90bb8f-c4b5-4fa0-8bb2-d60185c27824",
+    "name": "Schlatter Spätburgunder Rosé 2024",
+    "winery": "Fritz Wassmer",
+    "country": "Deutschland",
+    "region": "Baden - Schlatt",
+    "appellation": "Baden",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rosé",
+    "year": null,
+    "description_de": "Rosé-zart und sommerlich.",
+    "description_en": "Rosé-delicate and summery.",
+    "description_fr": "Rosé-délicat et estival.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Salate"
+    ],
+    "food_pairings_en": [
+      "Salads"
+    ],
+    "food_pairings_fr": [
+      "Salades"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.852Z"
+  },
+  {
+    "id": "ff8e8dc2-a2e0-4f62-9db4-aa8eee284603",
+    "name": "Spiegelberg Riesling GG 2024",
+    "winery": "Weingut Heitlinger",
+    "country": "Deutschland",
+    "region": "Baden - Kraichgau",
+    "appellation": "Baden",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Spiegelberg-mineralisch und klar.",
+    "description_en": "Spiegelberg-mineral and clear.",
+    "description_fr": "Spiegelberg-minéral et clair.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Forelle"
+    ],
+    "food_pairings_en": [
+      "Trout"
+    ],
+    "food_pairings_fr": [
+      "Truite"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.853Z"
+  },
+  {
+    "id": "e24b5f20-22b5-4cd6-ab56-1e78a8376a00",
+    "name": "Pinot Noir Reserve 2023",
+    "winery": "Duijn Badenhorst",
+    "country": "Deutschland",
+    "region": "Baden - Kaiserstuhl",
+    "appellation": "Baden",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Reserve-tief und modern.",
+    "description_en": "Reserve-deep and modern.",
+    "description_fr": "Reserve-profond et moderne.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Entrecôte"
+    ],
+    "food_pairings_en": [
+      "Entrecôte"
+    ],
+    "food_pairings_fr": [
+      "Entrecôte"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.854Z"
+  },
+  {
+    "id": "0c0a345f-cb58-48b4-9c24-e682285395c6",
+    "name": "Henkenberg Grauburgunder GG 2024",
+    "winery": "Salwey",
+    "country": "Deutschland",
+    "region": "Baden - Oberrotweil",
+    "appellation": "Baden",
+    "grape_variety": "Grauburgunder",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Henkenberg-vulkanisch und cremig.",
+    "description_en": "Henkenberg-volcanic and creamy.",
+    "description_fr": "Henkenberg-volcanique et crémeux.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Huhn"
+    ],
+    "food_pairings_en": [
+      "Chicken"
+    ],
+    "food_pairings_fr": [
+      "Poulet"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.855Z"
+  },
+  {
+    "id": "1f24dce0-093b-4629-9801-d3881e80dae3",
+    "name": "Wildenstein Spätburgunder GG 2024",
+    "winery": "Bernhard Huber",
+    "country": "Deutschland",
+    "region": "Baden - Malterdingen",
+    "appellation": "Baden",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Wildenstein-wild und intensiv.",
+    "description_en": "Wildenstein-wild and intense.",
+    "description_fr": "Wildenstein-sauvage et intense.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Champignons"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.857Z"
+  },
+  {
+    "id": "3ac67a45-d0cc-4f4c-bb12-89bd3a49f3ff",
+    "name": "Ihringer Vorderer Winklerberg Riesling GG 2024",
+    "winery": "Dr. Heger",
+    "country": "Deutschland",
+    "region": "Baden - Ihringen",
+    "appellation": "Baden",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Vorderer Winklerberg-sonnig und kraftvoll.",
+    "description_en": "Vorderer Winklerberg-sunny and powerful.",
+    "description_fr": "Vorderer Winklerberg-ensoleillé et puissant.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Lamm"
+    ],
+    "food_pairings_en": [
+      "Lamb"
+    ],
+    "food_pairings_fr": [
+      "Agneau"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.858Z"
+  },
+  {
+    "id": "30d1de6f-f340-4b72-9097-0c55e97cd596",
+    "name": "Goldenes Loch Riesling GG 2024",
+    "winery": "Schloss Neuweier",
+    "country": "Deutschland",
+    "region": "Baden - Baden-Baden",
+    "appellation": "Baden",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Goldenes Loch-geheimnisvoll und mineralisch.",
+    "description_en": "Goldenes Loch-mysterious and mineral.",
+    "description_fr": "Goldenes Loch-mystérieux et minéral.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Fromage"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.859Z"
+  },
+  {
+    "id": "2cd35cd0-7ac8-44a7-b3a2-7c26532f2fbe",
+    "name": "Bienenberg Weißburgunder GG 2024",
+    "winery": "Andreas Männle",
+    "country": "Deutschland",
+    "region": "Baden - Durbach",
+    "appellation": "Baden",
+    "grape_variety": "Weißburgunder",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Bienenberg-rein und harmonisch.",
+    "description_en": "Bienenberg-pure and harmonious.",
+    "description_fr": "Bienenberg-pur et harmonieux.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Gemüse"
+    ],
+    "food_pairings_en": [
+      "Vegetables"
+    ],
+    "food_pairings_fr": [
+      "Légumes"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.861Z"
+  },
+  {
+    "id": "4540bf63-aae6-4ad3-9bd9-7c49c57bf684",
+    "name": "Enselberg Spätburgunder Auslese Trocken 2023",
+    "winery": "Franz Keller",
+    "country": "Deutschland",
+    "region": "Baden - Oberbergen",
+    "appellation": "Baden",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Enselberg-konzentriert und tief.",
+    "description_en": "Enselberg-concentrated and deep.",
+    "description_fr": "Enselberg-concentré et profond.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Schokolade"
+    ],
+    "food_pairings_en": [
+      "Chocolate"
+    ],
+    "food_pairings_fr": [
+      "Chocolat"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.862Z"
+  },
+  {
+    "id": "b23ec8c4-85f0-47cb-b2d4-423af94513e6",
+    "name": "Lößlehm Spätburgunder 2024",
+    "winery": "Seeger",
+    "country": "Deutschland",
+    "region": "Baden - Leimen",
+    "appellation": "Baden",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Lößlehm-weich und fruchtig.",
+    "description_en": "Lößlehm-soft and fruity.",
+    "description_fr": "Lößlehm-doux et fruité.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Pasta"
+    ],
+    "food_pairings_en": [
+      "Pasta"
+    ],
+    "food_pairings_fr": [
+      "Pâtes"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.863Z"
+  },
+  {
+    "id": "da63d638-6a3e-46e4-9a82-d8077ace5ab3",
+    "name": "Vulkangestein Chardonnay GG 2024",
+    "winery": "Stigler",
+    "country": "Deutschland",
+    "region": "Baden - Ihringen",
+    "appellation": "Baden",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Vulkangestein-opulent und rauchig.",
+    "description_en": "Vulkangestein-opulent and smoky.",
+    "description_fr": "Vulkangestein-opulent et fumé.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Geflügel"
+    ],
+    "food_pairings_en": [
+      "Poultry"
+    ],
+    "food_pairings_fr": [
+      "Volaille"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.864Z"
+  },
+  {
+    "id": "e37537aa-3ab8-4e48-a9b3-de611041e334",
+    "name": "Bombacher Spätburgunder Reserve 2023",
+    "winery": "Fritz Wassmer",
+    "country": "Deutschland",
+    "region": "Baden - Bombach",
+    "appellation": "Baden",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Reserve-tief und reif.",
+    "description_en": "Reserve-deep and ripe.",
+    "description_fr": "Reserve-profond et mûr.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Wild"
+    ],
+    "food_pairings_en": [
+      "Game"
+    ],
+    "food_pairings_fr": [
+      "Gibier"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.866Z"
+  },
+  {
+    "id": "fc10371a-1e79-410a-a8f5-70e55cad71d2",
+    "name": "Königsgarten Weißburgunder GG 2024",
+    "winery": "Weingut Heitlinger",
+    "country": "Deutschland",
+    "region": "Baden - Kraichgau",
+    "appellation": "Baden",
+    "grape_variety": "Weißburgunder",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Königsgarten-edel und cremig.",
+    "description_en": "Königsgarten-noble and creamy.",
+    "description_fr": "Königsgarten-noble et crémeux.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Salat"
+    ],
+    "food_pairings_en": [
+      "Salad"
+    ],
+    "food_pairings_fr": [
+      "Salade"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.867Z"
+  },
+  {
+    "id": "4fbd5dd7-ba0c-4e82-a513-ad7af548baa3",
+    "name": "Sauvignon Blanc 2024",
+    "winery": "Duijn Badenhorst",
+    "country": "Deutschland",
+    "region": "Baden - Kaiserstuhl",
+    "appellation": "Baden",
+    "grape_variety": "Sauvignon Blanc",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Sauvignon-exotisch und frisch.",
+    "description_en": "Sauvignon-exotic and fresh.",
+    "description_fr": "Sauvignon-exotique et frais.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Ziegenkäse"
+    ],
+    "food_pairings_en": [
+      "Goat cheese"
+    ],
+    "food_pairings_fr": [
+      "Fromage de chèvre"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.868Z"
+  },
+  {
+    "id": "dae91994-ed32-46c1-9040-89f14c46aa17",
+    "name": "RS Grauburgunder Reserve 2024",
+    "winery": "Salwey",
+    "country": "Deutschland",
+    "region": "Baden - Oberrotweil",
+    "appellation": "Baden",
+    "grape_variety": "Grauburgunder",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "RS-cremig und tief.",
+    "description_en": "RS-creamy and deep.",
+    "description_fr": "RS-crémeux et profond.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Huhn"
+    ],
+    "food_pairings_en": [
+      "Chicken"
+    ],
+    "food_pairings_fr": [
+      "Poulet"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.869Z"
+  },
+  {
+    "id": "aa7f5dad-baf6-45f5-a961-b61e022d5c29",
+    "name": "R Spätburgunder 2023",
+    "winery": "Bernhard Huber",
+    "country": "Deutschland",
+    "region": "Baden - Malterdingen",
+    "appellation": "Baden",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "R-reserviert und monumental.",
+    "description_en": "R-reserved and monumental.",
+    "description_fr": "R-réservé et monumental.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Entrecôte"
+    ],
+    "food_pairings_en": [
+      "Entrecôte"
+    ],
+    "food_pairings_fr": [
+      "Entrecôte"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.871Z"
+  },
+  {
+    "id": "8083e443-de35-4732-8b39-3e110cd6f3aa",
+    "name": "Achkarrer Schlossberg Spätburgunder GG 2024",
+    "winery": "Dr. Heger",
+    "country": "Deutschland",
+    "region": "Baden - Achkarren",
+    "appellation": "Baden",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Schlossberg-rot und vulkanisch.",
+    "description_en": "Schlossberg-red and volcanic.",
+    "description_fr": "Schlossberg-rouge et volcanique.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Champignons"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.872Z"
+  },
+  {
+    "id": "2aad95a3-237d-4539-8593-cfcfdddee112",
+    "name": "Durbacher Plauelrain Riesling Spätlese 2023",
+    "winery": "Schneider",
+    "country": "Deutschland",
+    "region": "Baden - Durbach",
+    "appellation": "Baden",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Plauelrain-spät und verlockend.",
+    "description_en": "Plauelrain-late and enticing.",
+    "description_fr": "Plauelrain-tardif et séduisant.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Scharfer Thai"
+    ],
+    "food_pairings_en": [
+      "Spicy Thai"
+    ],
+    "food_pairings_fr": [
+      "Thaï épicé"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.873Z"
+  },
+  {
+    "id": "58cbc6eb-0971-41f7-8db3-7d863e16dac1",
+    "name": "Bassgeige Spätburgunder GG 2024",
+    "winery": "Franz Keller",
+    "country": "Deutschland",
+    "region": "Baden - Oberbergen",
+    "appellation": "Baden",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Bassgeige-tief und harmonisch.",
+    "description_en": "Bassgeige-deep and harmonious.",
+    "description_fr": "Bassgeige-profond et harmonieux.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Roastbeef"
+    ],
+    "food_pairings_en": [
+      "Roast beef"
+    ],
+    "food_pairings_fr": [
+      "Rosbif"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.874Z"
+  },
+  {
+    "id": "dce99853-50c3-498e-bfdb-f3fcd5d784fa",
+    "name": "Chardonnay Reserve 2024",
+    "winery": "Seeger",
+    "country": "Deutschland",
+    "region": "Baden - Leimen",
+    "appellation": "Baden",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Chardonnay-kühl und elegant.",
+    "description_en": "Chardonnay-cool and elegant.",
+    "description_fr": "Chardonnay-frais et élégant.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Fisch"
+    ],
+    "food_pairings_en": [
+      "Fish"
+    ],
+    "food_pairings_fr": [
+      "Poisson"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.876Z"
+  },
+  {
+    "id": "c8bd7ffa-7093-49bd-9872-0af87028aa32",
+    "name": "Ihringer Winklerberg Weißburgunder GG 2024",
+    "winery": "Stigler",
+    "country": "Deutschland",
+    "region": "Baden - Ihringen",
+    "appellation": "Baden",
+    "grape_variety": "Weißburgunder",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Winklerberg-cremig und sonnig.",
+    "description_en": "Winklerberg-creamy and sunny.",
+    "description_fr": "Winklerberg-crémeux et ensoleillé.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Geflügel"
+    ],
+    "food_pairings_en": [
+      "Poultry"
+    ],
+    "food_pairings_fr": [
+      "Volaille"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.877Z"
+  },
+  {
+    "id": "2ce0a399-d5e3-4eaa-b2aa-89adae728011",
+    "name": "Schlatter Maltesergarten Rosé 2024",
+    "winery": "Fritz Wassmer",
+    "country": "Deutschland",
+    "region": "Baden - Schlatt",
+    "appellation": "Baden",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rosé",
+    "year": null,
+    "description_de": "Maltesergarten-rosa und sommerlich.",
+    "description_en": "Maltesergarten-pink and summery.",
+    "description_fr": "Maltesergarten-rose et estival.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Salate"
+    ],
+    "food_pairings_en": [
+      "Salads"
+    ],
+    "food_pairings_fr": [
+      "Salades"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.878Z"
+  },
+  {
+    "id": "dbbbc238-14a9-4257-80c5-30a59bfea0c7",
+    "name": "Bienenberg Grauburgunder GG 2024",
+    "winery": "Bernhard Huber",
+    "country": "Deutschland",
+    "region": "Baden - Malterdingen",
+    "appellation": "Baden",
+    "grape_variety": "Grauburgunder",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Bienenberg-opulent und rein, ein Abschluss des badischen Burgunderzaubers.",
+    "description_en": "Bienenberg-opulent and pure, a finale of Baden's Burgundian magic.",
+    "description_fr": "Bienenberg-opulent et pur, un final de la magie bourguignonne badoise.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Käseplatte",
+      "Leichte Vorspeisen"
+    ],
+    "food_pairings_en": [
+      "Cheese platter",
+      "Light appetizers"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fromages",
+      "Entrées légères"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:44:25.879Z"
   }
 ]

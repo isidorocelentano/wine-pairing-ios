@@ -50164,5 +50164,150 @@
     ],
     "created_at": "2025-12-13T19:55:10.825609Z",
     "updated_at": "2025-12-13T19:55:10.825610Z"
+  },
+  {
+    "name": "Château Sociando-Mallet, Haut-Médoc",
+    "winery": "Château Sociando-Mallet",
+    "grape_variety": "Cabernet Sauvignon, Merlot, Cabernet Franc",
+    "region": "Bordeaux (Haut-Médoc)",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein kraftvoller, klassischer Haut-Médoc mit tiefer dunkler Frucht, straffer Struktur und kühler, eleganter Art – ein Bordeaux für Geduldige und Genießer.",
+    "description_en": "A powerful and classical Haut-Médoc with deep dark fruit, firm structure and cool elegance – a Bordeaux built for patience and true wine lovers.",
+    "description_fr": "Un Haut-Médoc puissant et classique, aux fruits noirs profonds, à la structure ferme et à l’élégance fraîche – un Bordeaux taillé pour la garde et les grands amateurs.",
+    "food_pairings_de": [
+      "Entrecôte vom Rind",
+      "Geschmorte Lammkeule mit Kräutern"
+    ],
+    "food_pairings_en": [
+      "Ribeye steak",
+      "Slow-braised herb-crusted lamb shoulder"
+    ],
+    "food_pairings_fr": [
+      "Entrecôte de bœuf",
+      "Épaule d’agneau braisée aux herbes"
+    ],
+    "id": "e02752fd-811d-46f1-ba63-e882ad868b3b",
+    "created_at": "2025-12-13T23:47:48.024770Z",
+    "updated_at": "2025-12-13T23:47:48.024779Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Marchesi Antinori “Pèppoli” Chianti Classico",
+    "winery": "Marchesi Antinori",
+    "grape_variety": "Sangiovese",
+    "region": "Toskana, Chianti Classico",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Ein eleganter Chianti Classico mit saftiger Kirschenfrucht, feiner Würze und lebendiger Frische – ein temperamentvoller Toskaner mit klassischem Charakter und moderner Finesse.",
+    "description_en": "An elegant Chianti Classico with juicy cherry fruit, gentle spice and vibrant acidity, showing classic Tuscan character with a modern, polished style.",
+    "description_fr": "Un Chianti Classico élégant aux arômes de cerise juteuse, d’épices fines et d’une acidité vive, exprimant le caractère classique de la Toscane avec une touche moderne.",
+    "food_pairings_de": [
+      "Pasta mit Tomaten- oder Ragù-Sauce",
+      "Gegrilltes oder geschmortes Rind- und Lammfleisch"
+    ],
+    "food_pairings_en": [
+      "Pasta with tomato or meat ragù",
+      "Grilled or braised beef and lamb"
+    ],
+    "food_pairings_fr": [
+      "Pâtes à la sauce tomate ou au ragù",
+      "Viandes de bœuf ou d’agneau grillées ou braisées"
+    ],
+    "id": "3be14f29-37a2-4ded-8d00-8d5f52905f2f",
+    "created_at": "2025-12-13T23:47:52.553504Z",
+    "updated_at": "2025-12-13T23:47:52.553513Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Domaine Michel Gros Bourgogne Rouge",
+    "winery": "Domaine Michel Gros",
+    "grape_variety": "Pinot Noir",
+    "region": "Bourgogne",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Feingliedriger Bourgogne Rouge mit reifen roten Beeren, zarter Würze und eleganter Struktur – klassisch, burgundisch und betörend trinkig.",
+    "description_en": "Elegant Bourgogne Rouge showing pure red berry fruit, subtle spice and silky tannins, capturing the finesse of classic Burgundy Pinot Noir.",
+    "description_fr": "Bourgogne Rouge élégant aux arômes de petits fruits rouges, d’épices fines et de tanins soyeux, incarnant toute la finesse du Pinot Noir bourguignon.",
+    "food_pairings_de": [
+      "Coq au Vin",
+      "Gebratene Entenbrust mit Kirschsauce"
+    ],
+    "food_pairings_en": [
+      "Roast duck breast with cherry sauce",
+      "Coq au Vin"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard rôti aux cerises",
+      "Coq au Vin"
+    ],
+    "id": "bed131bd-ef23-46b4-8d0e-ba06583e8a46",
+    "created_at": "2025-12-13T23:47:55.792069Z",
+    "updated_at": "2025-12-13T23:47:55.792077Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Bollinger Special Cuvée Brut",
+    "winery": "Champagne Bollinger",
+    "grape_variety": "Pinot Noir, Chardonnay, Pinot Meunier",
+    "region": "Champagne",
+    "country": "Frankreich",
+    "year": 0,
+    "wine_color": "weiß",
+    "price_category": "€€€€",
+    "description_de": "Ikonischer Champagner mit intensiver, reifer Frucht, feiner Brioche-Note und enormer Tiefe – kraftvoll, elegant und lang anhaltend am Gaumen.",
+    "description_en": "Iconic Champagne with concentrated ripe fruit, fine brioche notes and impressive depth – powerful yet elegantly balanced with a long finish.",
+    "description_fr": "Champagne iconique aux arômes de fruits mûrs, de brioche fine et une grande profondeur – puissant, élégant et d’une belle longueur en bouche.",
+    "food_pairings_de": [
+      "Austern und Meeresfrüchteplatte",
+      "Geflügel oder Kalb in Rahmsauce"
+    ],
+    "food_pairings_en": [
+      "Oysters and mixed seafood platter",
+      "Poultry or veal in cream sauce"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fruits de mer et huîtres",
+      "Volaille ou veau à la crème"
+    ],
+    "id": "f8905baf-c48a-46f5-ac35-4f5202e92af2",
+    "created_at": "2025-12-13T23:48:00.019133Z",
+    "updated_at": "2025-12-13T23:48:00.019141Z",
+    "auto_generated": true
+  },
+  {
+    "name": "La Rioja Alta “Viña Ardanza” Reserva",
+    "winery": "La Rioja Alta S.A.",
+    "grape_variety": "Tempranillo, Garnacha",
+    "region": "Rioja",
+    "country": "Spanien",
+    "year": 2016,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Klassische Rioja-Eleganz mit reifer roter Frucht, feiner Würze und seidigen Tanninen – ein charaktervoller, gereifter Rotwein mit großer Finesse.",
+    "description_en": "A classic Rioja Reserva showing ripe red fruit, subtle spice and silky tannins, combining traditional charm with remarkable elegance and length.",
+    "description_fr": "Un Rioja Reserva classique aux arômes de fruits rouges mûrs, d’épices délicates et de tanins soyeux, alliant charme traditionnel et grande élégance.",
+    "food_pairings_de": [
+      "Lammkoteletts mit Rosmarin",
+      "Geschmorte Rinderschulter"
+    ],
+    "food_pairings_en": [
+      "Roast lamb with herbs",
+      "Braised beef"
+    ],
+    "food_pairings_fr": [
+      "Côtelettes d’agneau au romarin",
+      "Boeuf braisé"
+    ],
+    "id": "84735d35-4c49-4de2-8658-520b072b2acd",
+    "created_at": "2025-12-13T23:48:03.626180Z",
+    "updated_at": "2025-12-13T23:48:03.626188Z",
+    "auto_generated": true
   }
 ]

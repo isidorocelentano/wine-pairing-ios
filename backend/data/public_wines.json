@@ -39707,5 +39707,1593 @@
     "image_url": null,
     "rating": null,
     "created_at": "2025-12-13T06:04:34.368275Z"
+  },
+  {
+    "id": "476b9ce7-1818-4b66-bf55-f415d7c0b58a",
+    "name": "Scharzhofberger Riesling Trockenbeerenauslese 2021",
+    "winery": "Egon Müller",
+    "country": "Deutschland",
+    "region": "Mosel - Wiltingen",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Ein göttlicher Nektar, flüssiges Gold aus konzentrierter Essenz – ein Wein, der die Seele in ewige Süße und Tiefe taucht.",
+    "description_en": "A divine nectar, liquid gold of concentrated essence – a wine that immerses the soul in eternal sweetness and depth.",
+    "description_fr": "Un nectar divin, or liquide d'essence concentrée – un vin qui plonge l'âme dans une douceur et une profondeur éternelles.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Blauschimmelkäse",
+      "Als Meditation"
+    ],
+    "food_pairings_en": [
+      "Blue cheese",
+      "As meditation"
+    ],
+    "food_pairings_fr": [
+      "Fromage bleu",
+      "En méditation"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.561Z"
+  },
+  {
+    "id": "6680c394-e14f-4e9a-876e-c25e6caafc74",
+    "name": "Wehlener Sonnenuhr Riesling Auslese Goldkapsel 2022",
+    "winery": "J.J. Prüm",
+    "country": "Deutschland",
+    "region": "Mosel - Wehlen",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Golden und filigran, wie ein Sonnenstrahl durch Morgennebel – ein Tropfen, der das Herz mit unendlicher Eleganz verzaubert.",
+    "description_en": "Golden and delicate, like a sunbeam through morning mist – a drop that enchants the heart with infinite elegance.",
+    "description_fr": "Doré et délicat, comme un rayon de soleil à travers la brume matinale – une goutte qui enchante le cœur avec une élégance infinie.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Foie gras",
+      "Reifer Comté"
+    ],
+    "food_pairings_en": [
+      "Foie gras",
+      "Aged Comté"
+    ],
+    "food_pairings_fr": [
+      "Foie gras",
+      "Comté affiné"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.562Z"
+  },
+  {
+    "id": "1295f9eb-3df0-4cf9-b0c4-1effbafa2559",
+    "name": "Zeltinger Sonnenuhr Riesling Auslese *** 2022",
+    "winery": "Markus Molitor",
+    "country": "Deutschland",
+    "region": "Mosel - Zeltingen",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Explosiv und tief, ein Feuerwerk aus Pfirsich und Schiefer, das die Sinne in Ekstase versetzt.",
+    "description_en": "Explosive and deep, a firework of peach and slate that sends the senses into ecstasy.",
+    "description_fr": "Explosif et profond, un feu d'artifice de pêche et d'ardoise qui met les sens en extase.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Asiatisches Curry",
+      "Gereifter Gouda"
+    ],
+    "food_pairings_en": [
+      "Asian curry",
+      "Aged Gouda"
+    ],
+    "food_pairings_fr": [
+      "Curry asiatique",
+      "Gouda affiné"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.563Z"
+  },
+  {
+    "id": "04bbb9f5-fc32-4e3a-8496-dae2ac2bdec0",
+    "name": "Erdener Prälat Riesling Alte Reben Grosses Gewächs 2022",
+    "winery": "Dr. Loosen",
+    "country": "Deutschland",
+    "region": "Mosel - Erden",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Kraftvoll und mineralisch, ein roter Schiefertraum, der die Seele mit uriger Stärke umfängt.",
+    "description_en": "Powerful and mineral, a red slate dream that embraces the soul with primal strength.",
+    "description_fr": "Puissant et minéral, un rêve d'ardoise rouge qui enlace l'âme d'une force primale.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Gegrilltes Lamm",
+      "Wild"
+    ],
+    "food_pairings_en": [
+      "Grilled lamb",
+      "Game"
+    ],
+    "food_pairings_fr": [
+      "Agneau grillé",
+      "Gibier"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.564Z"
+  },
+  {
+    "id": "671b5aa0-cbc1-4eab-932f-d43bf832a5dc",
+    "name": "Brauneberger Juffer Sonnenuhr Riesling Auslese 2022",
+    "winery": "Fritz Haag",
+    "country": "Deutschland",
+    "region": "Mosel - Brauneberg",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Leichtfüßig und brillant, ein Tanz von Zitrus und Honig, der das Herz höher schlagen lässt.",
+    "description_en": "Light-footed and brilliant, a dance of citrus and honey that makes the heart beat faster.",
+    "description_fr": "Léger et brillant, une danse d'agrumes et de miel qui fait battre le cœur plus vite.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Meeresfrüchte",
+      "Ziegenkäse"
+    ],
+    "food_pairings_en": [
+      "Seafood",
+      "Goat cheese"
+    ],
+    "food_pairings_fr": [
+      "Fruits de mer",
+      "Fromage de chèvre"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.565Z"
+  },
+  {
+    "id": "443df23c-61d2-4a56-8d96-8546dd8b8cfc",
+    "name": "Eitelsbacher Karthäuserhofberg Riesling Spätlese 2022",
+    "winery": "Karthäuserhof",
+    "country": "Deutschland",
+    "region": "Mosel - Trier",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Mystisch und fein, ein Klostergeheimnis von Apfel und Stein – pure Harmonie.",
+    "description_en": "Mystical and fine, a monastery secret of apple and stone – pure harmony.",
+    "description_fr": "Mystique et fin, un secret de monastère de pomme et de pierre – pure harmonie.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Gebratene Forelle",
+      "Milde Tomme"
+    ],
+    "food_pairings_en": [
+      "Fried trout",
+      "Mild Tomme"
+    ],
+    "food_pairings_fr": [
+      "Truite poêlée",
+      "Tomme douce"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.566Z"
+  },
+  {
+    "id": "c7a6cca8-64d1-46b0-b64f-dfed6749b932",
+    "name": "Brauneberger Juffer Sonnenuhr Riesling GG 2023",
+    "winery": "Schloss Lieser",
+    "country": "Deutschland",
+    "region": "Mosel - Lieser",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Strahlend und präzise, ein Spiegel der Sonne, der die Seele mit Klarheit erfüllt.",
+    "description_en": "Radiant and precise, a mirror of the sun that fills the soul with clarity.",
+    "description_fr": "Radieux et précis, un miroir du soleil qui remplit l'âme de clarté.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Gegrillter Fisch",
+      "Salat"
+    ],
+    "food_pairings_en": [
+      "Grilled fish",
+      "Salad"
+    ],
+    "food_pairings_fr": [
+      "Poisson grillé",
+      "Salade"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.567Z"
+  },
+  {
+    "id": "e1886027-c864-4bbf-9c72-de926e81cd7a",
+    "name": "Piesporter Goldtröpfchen Riesling Auslese 2022",
+    "winery": "Reinhold Haart",
+    "country": "Deutschland",
+    "region": "Mosel - Piesport",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Süß und lebendig, ein goldener Tropfen, der wie ein Lachen die Seele weckt.",
+    "description_en": "Sweet and lively, a golden drop that awakens the soul like laughter.",
+    "description_fr": "Doux et vivant, une goutte dorée qui éveille l'âme comme un rire.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Desserts",
+      "Scharfer Thai"
+    ],
+    "food_pairings_en": [
+      "Desserts",
+      "Spicy Thai"
+    ],
+    "food_pairings_fr": [
+      "Desserts",
+      "Thaï épicé"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.568Z"
+  },
+  {
+    "id": "28167c87-8cdb-4386-ad3a-7de8593260d3",
+    "name": "Scharzhofberger Riesling GG 2023",
+    "winery": "Van Volxem",
+    "country": "Deutschland",
+    "region": "Mosel - Wiltingen",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Tief und komplex, ein Meisterwerk der Mineralität, das die Seele in meditative Ruhe taucht.",
+    "description_en": "Deep and complex, a masterpiece of minerality that immerses the soul in meditative calm.",
+    "description_fr": "Profond et complexe, un chef-d'œuvre de minéralité qui plonge l'âme dans un calme méditatif.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Hummer",
+      "Reifer Parmesan"
+    ],
+    "food_pairings_en": [
+      "Lobster",
+      "Aged Parmesan"
+    ],
+    "food_pairings_fr": [
+      "Homard",
+      "Parmesan affiné"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.569Z"
+  },
+  {
+    "id": "81ac7b3d-4c01-4abd-ac4a-9ef4c256975b",
+    "name": "Pündericher Marienburg Riesling Felsterrasse GG 2023",
+    "winery": "Clemens Busch",
+    "country": "Deutschland",
+    "region": "Mosel - Pünderich",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Biodynamisch und wild, ein Terroir-Fels, das die Seele mit purer Naturkraft berührt.",
+    "description_en": "Biodynamic and wild, a terroir rock that touches the soul with pure natural power.",
+    "description_fr": "Biodynamique et sauvage, un rocher de terroir qui touche l'âme avec une puissance naturelle pure.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Vegetarische Gerichte",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Vegetarian dishes",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Plats végétariens",
+      "Fromage"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.570Z"
+  },
+  {
+    "id": "2635bd61-acfa-4e04-916f-61dccc414b7c",
+    "name": "Zeltinger Schlossberg Riesling Auslese 2022",
+    "winery": "Selbach-Oster",
+    "country": "Deutschland",
+    "region": "Mosel - Zeltingen",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Zart und verlockend, ein Schlossgeheimnis von Honig und Säure.",
+    "description_en": "Delicate and enticing, a castle secret of honey and acidity.",
+    "description_fr": "Délicat et séduisant, un secret de château de miel et d'acidité.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Entenleber",
+      "Blauschimmel"
+    ],
+    "food_pairings_en": [
+      "Duck liver",
+      "Blue cheese"
+    ],
+    "food_pairings_fr": [
+      "Foie de canard",
+      "Bleu"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.571Z"
+  },
+  {
+    "id": "599c199e-e43d-4e1c-afdc-ce85cf3fb268",
+    "name": "Graacher Domprobst Riesling Auslese 2022",
+    "winery": "Willi Schaefer",
+    "country": "Deutschland",
+    "region": "Mosel - Graach",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Filigran und tiefgründig, ein Domherren-Traum, der das Herz mit Eleganz umfängt.",
+    "description_en": "Delicate and profound, a canon's dream that embraces the heart with elegance.",
+    "description_fr": "Délicat et profond, un rêve de chanoine qui enlace le cœur avec élégance.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Geflügel",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Poultry",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Volaille",
+      "Champignons"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.572Z"
+  },
+  {
+    "id": "af5292e1-04f4-41eb-986d-e8e683d145d6",
+    "name": "Uhlen Roth Lay Riesling GG 2023",
+    "winery": "Heymann-Löwenstein",
+    "country": "Deutschland",
+    "region": "Mosel - Winningen",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Terroir pur, rot und kraftvoll, ein Wein, der die Seele in vulkanische Leidenschaft stürzt.",
+    "description_en": "Pure terroir, red and powerful, a wine that plunges the soul into volcanic passion.",
+    "description_fr": "Terroir pur, rouge et puissant, un vin qui plonge l'âme dans une passion volcanique.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Wild",
+      "Dunkles Fleisch"
+    ],
+    "food_pairings_en": [
+      "Game",
+      "Dark meat"
+    ],
+    "food_pairings_fr": [
+      "Gibier",
+      "Viande brune"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.573Z"
+  },
+  {
+    "id": "808f808f-ff17-40dc-9754-63b647bdb9d7",
+    "name": "Winninger Röttgen Riesling GG 2023",
+    "winery": "Knebel",
+    "country": "Deutschland",
+    "region": "Mosel - Winningen",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Steil und intensiv, ein Röttgen-Feuer, das die Sinne entzündet.",
+    "description_en": "Steep and intense, a Röttgen fire that ignites the senses.",
+    "description_fr": "Raide et intense, un feu de Röttgen qui enflamme les sens.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Lamm",
+      "BBQ"
+    ],
+    "food_pairings_en": [
+      "Lamb",
+      "BBQ"
+    ],
+    "food_pairings_fr": [
+      "Agneau",
+      "BBQ"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.574Z"
+  },
+  {
+    "id": "85fdd28d-6e67-4040-a3de-52e691d811df",
+    "name": "Abtsberg Riesling Auslese 2022",
+    "winery": "Maximin Grünhaus",
+    "country": "Deutschland",
+    "region": "Mosel - Mertesdorf",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Adelig und harmonisch, ein Abtstraum von Frucht und Mineral.",
+    "description_en": "Noble and harmonious, an abbot's dream of fruit and mineral.",
+    "description_fr": "Noble et harmonieux, un rêve d'abbé de fruit et de minéral.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Asiatisch",
+      "Käseplatte"
+    ],
+    "food_pairings_en": [
+      "Asian cuisine",
+      "Cheese platter"
+    ],
+    "food_pairings_fr": [
+      "Cuisine asiatique",
+      "Plateau de fromages"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.575Z"
+  },
+  {
+    "id": "8b679d46-b7b6-48e0-8c4e-5c541e82d8ab",
+    "name": "Niederberg Helden Riesling Auslese 2022",
+    "winery": "Schloss Lieser",
+    "country": "Deutschland",
+    "region": "Mosel - Lieser",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Heroisch und süß, ein Heldenepos in flüssiger Form.",
+    "description_en": "Heroic and sweet, a heroic epic in liquid form.",
+    "description_fr": "Héroïque et doux, une épopée héroïque sous forme liquide.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Desserts",
+      "Scharfes Essen"
+    ],
+    "food_pairings_en": [
+      "Desserts",
+      "Spicy food"
+    ],
+    "food_pairings_fr": [
+      "Desserts",
+      "Plats épicés"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.575Z"
+  },
+  {
+    "id": "9d6ae2bb-7d04-4735-9f36-a1b45ef4ac57",
+    "name": "Bernkasteler Doctor Riesling Spätlese 2022",
+    "winery": "Dr. Thanisch",
+    "country": "Deutschland",
+    "region": "Mosel - Bernkastel",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Legendär und geheimnisvoll, ein Doctor, der die Seele heilt.",
+    "description_en": "Legendary and mysterious, a Doctor that heals the soul.",
+    "description_fr": "Légendaire et mystérieux, un Docteur qui guérit l'âme.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Fisch",
+      "Geflügel"
+    ],
+    "food_pairings_en": [
+      "Fish",
+      "Poultry"
+    ],
+    "food_pairings_fr": [
+      "Poisson",
+      "Volaille"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.576Z"
+  },
+  {
+    "id": "e8921eda-de87-4907-8b04-04f169976df1",
+    "name": "Wehlener Sonnenuhr Riesling Kabinett 2023",
+    "winery": "S.A. Prüm",
+    "country": "Deutschland",
+    "region": "Mosel - Wehlen",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Leicht und tänzerisch, ein Kabinett, das das Herz mit Jugend erfrischt.",
+    "description_en": "Light and dancing, a Kabinett that refreshes the heart with youth.",
+    "description_fr": "Léger et dansant, un Kabinett qui rafraîchit le cœur avec jeunesse.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Aperitif",
+      "Salat"
+    ],
+    "food_pairings_en": [
+      "Aperitif",
+      "Salad"
+    ],
+    "food_pairings_fr": [
+      "Apéritif",
+      "Salade"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.577Z"
+  },
+  {
+    "id": "6a808c23-a646-4763-9b69-9826d6e2b239",
+    "name": "Maximiner Grünhaus Riesling GG 2023",
+    "winery": "Studert-Prüm",
+    "country": "Deutschland",
+    "region": "Mosel - Mertesdorf",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Klassisch und tief, ein Grünhaus-Juwel.",
+    "description_en": "Classic and deep, a Grünhaus jewel.",
+    "description_fr": "Classique et profond, un joyau de Grünhaus.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Forelle",
+      "Gemüse"
+    ],
+    "food_pairings_en": [
+      "Trout",
+      "Vegetables"
+    ],
+    "food_pairings_fr": [
+      "Truite",
+      "Légumes"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.578Z"
+  },
+  {
+    "id": "679c0cd8-61d4-4953-be8f-94b99524272b",
+    "name": "Enkircher Zeppwingert Riesling GG 2023",
+    "winery": "Immich-Batterieberg",
+    "country": "Deutschland",
+    "region": "Mosel - Enkirch",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Wild und ungeschliffen, ein Batterieberg-Sturm.",
+    "description_en": "Wild and unpolished, a Batterieberg storm.",
+    "description_fr": "Sauvage et brut, une tempête de Batterieberg.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Wildgerichte"
+    ],
+    "food_pairings_en": [
+      "Game dishes"
+    ],
+    "food_pairings_fr": [
+      "Plats de gibier"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.579Z"
+  },
+  {
+    "id": "683e617f-eedd-437c-8605-feb020100ff7",
+    "name": "Wolfer Goldgrube Riesling Auslese 2022",
+    "winery": "Daniel Vollenweider",
+    "country": "Deutschland",
+    "region": "Mosel - Traben-Trarbach",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Wild und golden, ein Grubenjuwel von Honig und Säure, das die Seele in abenteuerliche Tiefe führt.",
+    "description_en": "Wild and golden, a mine jewel of honey and acidity that leads the soul to adventurous depths.",
+    "description_fr": "Sauvage et doré, un joyau de mine de miel et d'acidité qui mène l'âme vers des profondeurs aventureuses.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Scharfer Thai",
+      "Blauschimmelkäse"
+    ],
+    "food_pairings_en": [
+      "Spicy Thai",
+      "Blue cheese"
+    ],
+    "food_pairings_fr": [
+      "Thaï épicé",
+      "Fromage bleu"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.580Z"
+  },
+  {
+    "id": "9417e360-bddf-4da4-a8dc-37d125b86751",
+    "name": "Schubertslay Riesling GG 2023",
+    "winery": "Julian Haart",
+    "country": "Deutschland",
+    "region": "Mosel - Piesport",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Präzise und explosiv, ein junger Meisterstreich von Schiefer und Zitrus.",
+    "description_en": "Precise and explosive, a young masterstroke of slate and citrus.",
+    "description_fr": "Précis et explosif, un jeune coup de maître d'ardoise et d'agrumes.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Gegrillter Fisch",
+      "Zitronenhähnchen"
+    ],
+    "food_pairings_en": [
+      "Grilled fish",
+      "Lemon chicken"
+    ],
+    "food_pairings_fr": [
+      "Poisson grillé",
+      "Poulet au citron"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.580Z"
+  },
+  {
+    "id": "6a82b20b-2991-4129-a2b8-9974c2c78199",
+    "name": "Bockstein Riesling GG 2023",
+    "winery": "Nik Weis St. Urbans-Hof",
+    "country": "Deutschland",
+    "region": "Mosel - Wiltingen",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Mineralisch und strahlend, ein Bockstein-Blick in die Ewigkeit.",
+    "description_en": "Mineral and radiant, a Bockstein glimpse into eternity.",
+    "description_fr": "Minéral et radieux, un aperçu de Bockstein dans l'éternité.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Meeresfrüchte",
+      "Frischer Salat"
+    ],
+    "food_pairings_en": [
+      "Seafood",
+      "Fresh salad"
+    ],
+    "food_pairings_fr": [
+      "Fruits de mer",
+      "Salade fraîche"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.581Z"
+  },
+  {
+    "id": "aa64e913-97b0-4ccf-9506-fe1fca6581c8",
+    "name": "Saarburger Rausch Riesling Auslese 2022",
+    "winery": "Forstmeister Geltz-Zilliken",
+    "country": "Deutschland",
+    "region": "Mosel - Saarburg",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Saar-elegant und süß, ein Rausch von Pfirsich und Stein.",
+    "description_en": "Saar-elegant and sweet, a rush of peach and stone.",
+    "description_fr": "Élégant-Sarre et doux, une ivresse de pêche et de pierre.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Desserts",
+      "Foie gras"
+    ],
+    "food_pairings_en": [
+      "Desserts",
+      "Foie gras"
+    ],
+    "food_pairings_fr": [
+      "Desserts",
+      "Foie gras"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.582Z"
+  },
+  {
+    "id": "dc7c0738-39d6-417c-b314-a25ebe8177a4",
+    "name": "Dorsheimer Burgberg Riesling GG 2023",
+    "winery": "Schlossgut Diel",
+    "country": "Deutschland",
+    "region": "Mosel - Dorsheim",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Burgfest und kraftvoll, ein Fels der Stärke.",
+    "description_en": "Castle-strong and powerful, a rock of strength.",
+    "description_fr": "Fort comme un château et puissant, un roc de force.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Wild",
+      "Dunkles Fleisch"
+    ],
+    "food_pairings_en": [
+      "Game",
+      "Dark meat"
+    ],
+    "food_pairings_fr": [
+      "Gibier",
+      "Viande brune"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.583Z"
+  },
+  {
+    "id": "99db05ef-9040-4be2-8ee9-3082ad614796",
+    "name": "Bopparder Hamm Feuerlay Riesling GG 2023",
+    "winery": "Florian Weingart",
+    "country": "Deutschland",
+    "region": "Mosel - Boppard",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Feurig und steil, ein Hamm-Feuer, das die Sinne entzündet.",
+    "description_en": "Fiery and steep, a Hamm fire that ignites the senses.",
+    "description_fr": "Fougueux et raide, un feu de Hamm qui enflamme les sens.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Lamm",
+      "BBQ"
+    ],
+    "food_pairings_en": [
+      "Lamb",
+      "BBQ"
+    ],
+    "food_pairings_fr": [
+      "Agneau",
+      "BBQ"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.584Z"
+  },
+  {
+    "id": "81eb0e09-330c-4581-9a48-a7568102ffd4",
+    "name": "Gondorfer Gäns Riesling GG 2023",
+    "winery": "Lubentiushof",
+    "country": "Deutschland",
+    "region": "Mosel - Gondorf",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Geheimnisvoll und tief, ein Gäns-Traum von Mineral.",
+    "description_en": "Mysterious and deep, a Gäns dream of mineral.",
+    "description_fr": "Mystérieux et profond, un rêve de Gäns de minéral.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Geflügel",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Poultry",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Volaille",
+      "Champignons"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.585Z"
+  },
+  {
+    "id": "2a229c41-d680-4c41-8c8f-2001ae831795",
+    "name": "Winninger Uhlen Blaufüßer Lay Riesling GG 2023",
+    "winery": "Weingut Knebel",
+    "country": "Deutschland",
+    "region": "Mosel - Winningen",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Blau und intensiv, ein Uhlen-Monument der Frische.",
+    "description_en": "Blue and intense, an Uhlen monument of freshness.",
+    "description_fr": "Bleu et intense, un monument d'Uhlen de fraîcheur.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Forelle",
+      "Gemüse"
+    ],
+    "food_pairings_en": [
+      "Trout",
+      "Vegetables"
+    ],
+    "food_pairings_fr": [
+      "Truite",
+      "Légumes"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.586Z"
+  },
+  {
+    "id": "7ee798fb-8ba4-47a0-9ec6-e0fe59d2333b",
+    "name": "Trittenheimer Apotheke Riesling Auslese 2022",
+    "winery": "Ansgar Clüsserath",
+    "country": "Deutschland",
+    "region": "Mosel - Trittenheim",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Apotheker-heilend und süß, ein Balsam für die Seele.",
+    "description_en": "Apothecary-healing and sweet, a balm for the soul.",
+    "description_fr": "Guérisseur d'apothicaire et doux, un baume pour l'âme.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Scharfes Essen",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Spicy food",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Plats épicés",
+      "Fromage"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.586Z"
+  },
+  {
+    "id": "39323b7e-ac10-4c4d-8a19-1a64a5616e1a",
+    "name": "Ürziger Würzgarten Riesling Spätlese 2022",
+    "winery": "Weingut Rebenhof",
+    "country": "Deutschland",
+    "region": "Mosel - Ürzig",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Würzig und exotisch, ein Garten der Sinne.",
+    "description_en": "Spicy and exotic, a garden of the senses.",
+    "description_fr": "Épicé et exotique, un jardin des sens.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Asiatisch",
+      "Curry"
+    ],
+    "food_pairings_en": [
+      "Asian cuisine",
+      "Curry"
+    ],
+    "food_pairings_fr": [
+      "Cuisine asiatique",
+      "Curry"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.587Z"
+  },
+  {
+    "id": "0951dbd5-3aaf-4ddc-a953-547ae4d81fcb",
+    "name": "Erdener Treppchen Riesling Auslese 2022",
+    "winery": "Stein",
+    "country": "Deutschland",
+    "region": "Mosel - Erden",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Treppensteil und konzentriert, ein Aufstieg zur Perfektion.",
+    "description_en": "Staircase-steep and concentrated, an ascent to perfection.",
+    "description_fr": "Raide comme un escalier et concentré, une ascension vers la perfection.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Desserts",
+      "Blauschimmel"
+    ],
+    "food_pairings_en": [
+      "Desserts",
+      "Blue cheese"
+    ],
+    "food_pairings_fr": [
+      "Desserts",
+      "Bleu"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.588Z"
+  },
+  {
+    "id": "ca201df1-8d8e-4cb5-bd8a-b3cd5d6b52a2",
+    "name": "Reiler Mullay-Hofberg Riesling GG 2023",
+    "winery": "Weingut Melsheimer",
+    "country": "Deutschland",
+    "region": "Mosel - Reil",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Biodynamisch und rein, ein Hofberg der Natürlichkeit.",
+    "description_en": "Biodynamic and pure, a Hofberg of naturalness.",
+    "description_fr": "Biodynamique et pur, un Hofberg de naturalité.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Vegetarisch",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Vegetarian",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Végétarien",
+      "Fromage"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.589Z"
+  },
+  {
+    "id": "72ad1b30-8a33-4e30-b1c9-193c4a6743e9",
+    "name": "Brauneberger Juffer Riesling Kabinett 2023",
+    "winery": "Weingut Karp-Schreiber",
+    "country": "Deutschland",
+    "region": "Mosel - Brauneberg",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Leicht und tänzerisch, ein Juffer-Kabinett der Freude.",
+    "description_en": "Light and dancing, a Juffer Kabinett of joy.",
+    "description_fr": "Léger et dansant, un Kabinett de Juffer de joie.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Aperitif",
+      "Salat"
+    ],
+    "food_pairings_en": [
+      "Aperitif",
+      "Salad"
+    ],
+    "food_pairings_fr": [
+      "Apéritif",
+      "Salade"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.590Z"
+  },
+  {
+    "id": "7e688583-3f27-4973-98c8-ca57a11a9819",
+    "name": "Piesporter Günterslay Riesling GG 2023",
+    "winery": "Weingut Frieden-Berg",
+    "country": "Deutschland",
+    "region": "Mosel - Piesport",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Friedlich und tief, ein Lay der Ruhe.",
+    "description_en": "Peaceful and deep, a Lay of tranquility.",
+    "description_fr": "Paisible et profond, un Lay de tranquillité.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Fisch",
+      "Geflügel"
+    ],
+    "food_pairings_en": [
+      "Fish",
+      "Poultry"
+    ],
+    "food_pairings_fr": [
+      "Poisson",
+      "Volaille"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.591Z"
+  },
+  {
+    "id": "683631d1-a68b-49f8-93fc-a3d91c6ce7b0",
+    "name": "Trittenheimer Altärchen Riesling Auslese 2022",
+    "winery": "Weingut Grans-Fassian",
+    "country": "Deutschland",
+    "region": "Mosel - Trittenheim",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Alt und weise, ein Altärchen der Süße.",
+    "description_en": "Old and wise, a little altar of sweetness.",
+    "description_fr": "Ancien et sage, un petit autel de douceur.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "food_pairings_en": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "food_pairings_fr": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.592Z"
+  },
+  {
+    "id": "2f57cc48-6fd7-4c68-a2e5-2ff3e2c5c230",
+    "name": "Wehlener Sonnenuhr Riesling Spätlese 2023",
+    "winery": "Weingut Kerpen",
+    "country": "Deutschland",
+    "region": "Mosel - Wehlen",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Sonnig und harmonisch, ein Uhrwerk der Balance.",
+    "description_en": "Sunny and harmonious, a clockwork of balance.",
+    "description_fr": "Ensoleillé et harmonieux, une horlogerie d'équilibre.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Asiatisch",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Asian cuisine",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Cuisine asiatique",
+      "Fromage"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.592Z"
+  },
+  {
+    "id": "164d99e2-fafd-4588-a9ca-09484742be21",
+    "name": "Kanzemer Altenberg Riesling GG 2023",
+    "winery": "Weingut von Othegraven",
+    "country": "Deutschland",
+    "region": "Mosel - Kanzem",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Adelig und präzise, ein Altenberg der Noblesse.",
+    "description_en": "Noble and precise, an Altenberg of nobility.",
+    "description_fr": "Noble et précis, un Altenberg de noblesse.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Hummer",
+      "Parmesan"
+    ],
+    "food_pairings_en": [
+      "Lobster",
+      "Parmesan"
+    ],
+    "food_pairings_fr": [
+      "Homard",
+      "Parmesan"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.593Z"
+  },
+  {
+    "id": "cccdf344-2624-4cb4-ac07-7f0abd9651f9",
+    "name": "Kröver Steffensberg Riesling GG 2023",
+    "winery": "Weingut Vollenweider",
+    "country": "Deutschland",
+    "region": "Mosel - Kröv",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Steil und wild, ein Steffensberg-Sturm.",
+    "description_en": "Steep and wild, a Steffensberg storm.",
+    "description_fr": "Raide et sauvage, une tempête de Steffensberg.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Wildgerichte"
+    ],
+    "food_pairings_en": [
+      "Game dishes"
+    ],
+    "food_pairings_fr": [
+      "Plats de gibier"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.594Z"
+  },
+  {
+    "id": "0158a9ab-7154-4ee3-8046-afca86ae8ffc",
+    "name": "Brauneberger Kammer Riesling Auslese 2022",
+    "winery": "Weingut Haag",
+    "country": "Deutschland",
+    "region": "Mosel - Brauneberg",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Kammer-geheim und süß, ein verborgener Schatz.",
+    "description_en": "Chamber-secret and sweet, a hidden treasure.",
+    "description_fr": "Secret de chambre et doux, un trésor caché.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Scharfer Thai"
+    ],
+    "food_pairings_en": [
+      "Spicy Thai"
+    ],
+    "food_pairings_fr": [
+      "Thaï épicé"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.596Z"
+  },
+  {
+    "id": "2e594923-5c77-4c71-a403-63d87740df54",
+    "name": "Ürziger Würzgarten Riesling Auslese 2022",
+    "winery": "Weingut Jos. Christoffel Jr.",
+    "country": "Deutschland",
+    "region": "Mosel - Ürzig",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Würzig und intensiv, ein Garten der Leidenschaft.",
+    "description_en": "Spicy and intense, a garden of passion.",
+    "description_fr": "Épicé et intense, un jardin de passion.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Curry",
+      "Vegetarisch"
+    ],
+    "food_pairings_en": [
+      "Curry",
+      "Vegetarian"
+    ],
+    "food_pairings_fr": [
+      "Curry",
+      "Végétarien"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.597Z"
+  },
+  {
+    "id": "6d2a72c9-b7ba-4f31-8194-b8c6419dce39",
+    "name": "Brauneberger Juffer Riesling GG 2023",
+    "winery": "Weingut Richard Richter",
+    "country": "Deutschland",
+    "region": "Mosel - Brauneberg",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Reich und strukturiert, ein Juffer der Stärke.",
+    "description_en": "Rich and structured, a Juffer of strength.",
+    "description_fr": "Riche et structuré, un Juffer de force.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Krustentiere",
+      "Geflügel"
+    ],
+    "food_pairings_en": [
+      "Crustaceans",
+      "Poultry"
+    ],
+    "food_pairings_fr": [
+      "Crustacés",
+      "Volaille"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.598Z"
+  },
+  {
+    "id": "2d3fb934-723d-4573-ae2f-2c3b93c0360b",
+    "name": "Graacher Himmelreich Riesling Kabinett 2023",
+    "winery": "Weingut S.A. Prüm",
+    "country": "Deutschland",
+    "region": "Mosel - Graach",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Himmlisch und leicht, ein Reich der Freude.",
+    "description_en": "Heavenly and light, a realm of joy.",
+    "description_fr": "Céleste et léger, un royaume de joie.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Aperitif",
+      "Salat"
+    ],
+    "food_pairings_en": [
+      "Aperitif",
+      "Salad"
+    ],
+    "food_pairings_fr": [
+      "Apéritif",
+      "Salade"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.599Z"
+  },
+  {
+    "id": "f086a90f-692c-4296-b999-5761c54afce8",
+    "name": "Piesporter Goldtröpfchen Riesling Spätlese 2022",
+    "winery": "Weingut Willi Haag",
+    "country": "Deutschland",
+    "region": "Mosel - Piesport",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Golden und verlockend, ein Tröpfchen der Verführung.",
+    "description_en": "Golden and enticing, a droplet of seduction.",
+    "description_fr": "Doré et séduisant, une gouttelette de séduction.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Desserts",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Desserts",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Desserts",
+      "Fromage"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.600Z"
+  },
+  {
+    "id": "7c0187e9-cb26-46d7-88ae-48ecd6e16514",
+    "name": "Lorenzhöfer Riesling GG 2023",
+    "winery": "Weingut Karlsmühle",
+    "country": "Deutschland",
+    "region": "Mosel - Mertesdorf",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Lorenz-rein und mineralisch, ein Mühlrad der Frische.",
+    "description_en": "Lorenz-pure and mineral, a mill wheel of freshness.",
+    "description_fr": "Pur-Lorenz et minéral, une roue de moulin de fraîcheur.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Fisch",
+      "Gemüse"
+    ],
+    "food_pairings_en": [
+      "Fish",
+      "Vegetables"
+    ],
+    "food_pairings_fr": [
+      "Poisson",
+      "Légumes"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.601Z"
+  },
+  {
+    "id": "7c74455b-ba42-4309-9866-859ba1845b4e",
+    "name": "Bremmer Calmont Riesling GG 2023",
+    "winery": "Weingut Franzen",
+    "country": "Deutschland",
+    "region": "Mosel - Bremm",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Steilst und feurig, ein Calmont der Extreme.",
+    "description_en": "Steepest and fiery, a Calmont of extremes.",
+    "description_fr": "Le plus raide et fougueux, un Calmont des extrêmes.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Lamm",
+      "BBQ"
+    ],
+    "food_pairings_en": [
+      "Lamb",
+      "BBQ"
+    ],
+    "food_pairings_fr": [
+      "Agneau",
+      "BBQ"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.603Z"
+  },
+  {
+    "id": "5db87ce9-da26-4a8c-a3bd-53f45340cd18",
+    "name": "Piesporter Grafenberg Riesling GG 2023",
+    "winery": "Weingut Günther Steinmetz",
+    "country": "Deutschland",
+    "region": "Mosel - Piesport",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Grafen-elegant und tief, ein Berg der Noblesse.",
+    "description_en": "Count-elegant and deep, a mountain of nobility.",
+    "description_fr": "Élégant-comte et profond, une montagne de noblesse.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Wild",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Game",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Gibier",
+      "Champignons"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.604Z"
+  },
+  {
+    "id": "af9cde89-190f-4447-89e4-f2b8b0b16533",
+    "name": "Thörnicher Ritsch Riesling Auslese 2022",
+    "winery": "Weingut Hermann Ludes",
+    "country": "Deutschland",
+    "region": "Mosel - Thörnich",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Ritsch-intensiv und süß, ein Riss der Süße.",
+    "description_en": "Ritsch-intense and sweet, a rift of sweetness.",
+    "description_fr": "Ritsch-intense et doux, une fissure de douceur.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Scharfes Essen"
+    ],
+    "food_pairings_en": [
+      "Spicy food"
+    ],
+    "food_pairings_fr": [
+      "Plats épicés"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.605Z"
+  },
+  {
+    "id": "248b9377-1426-4d05-ab0f-4875d4ae8ceb",
+    "name": "Piesporter Domherr Riesling GG 2023",
+    "winery": "Weingut Reuscher-Haart",
+    "country": "Deutschland",
+    "region": "Mosel - Piesport",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Domherren-würdig und präzise, ein Herr der Mineralität.",
+    "description_en": "Canon-worthy and precise, a lord of minerality.",
+    "description_fr": "Digne d'un chanoine et précis, un seigneur de minéralité.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Geflügel",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Poultry",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Volaille",
+      "Fromage"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.606Z"
+  },
+  {
+    "id": "bfb70c16-8d83-463c-9cda-8e60f54c5bd1",
+    "name": "Ockfener Bockstein Riesling Kabinett 2023",
+    "winery": "Weingut St. Nikolaus-Hof",
+    "country": "Deutschland",
+    "region": "Mosel - Ockfen",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Bockstein-lebendig und leicht, ein Stein der Jugend.",
+    "description_en": "Bockstein-lively and light, a stone of youth.",
+    "description_fr": "Bockstein-vif et léger, une pierre de jeunesse.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Aperitif",
+      "Salat"
+    ],
+    "food_pairings_en": [
+      "Aperitif",
+      "Salad"
+    ],
+    "food_pairings_fr": [
+      "Apéritif",
+      "Salade"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.607Z"
+  },
+  {
+    "id": "d882f2d0-5119-4dd1-bf2a-2705ecfec1fe",
+    "name": "Scharzhofberger Riesling Spätlese 2022",
+    "winery": "Weingut Von Hövel",
+    "country": "Deutschland",
+    "region": "Mosel - Wiltingen",
+    "appellation": "Mosel",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Hövel-adelig und harmonisch, ein Scharzhofberger Abschluss der Perfektion.",
+    "description_en": "Hövel-noble and harmonious, a Scharzhofberger finale of perfection.",
+    "description_fr": "Hövel-noble et harmonieux, un final de Scharzhofberger de perfection.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Asiatisch",
+      "Milder Käse"
+    ],
+    "food_pairings_en": [
+      "Asian cuisine",
+      "Mild cheese"
+    ],
+    "food_pairings_fr": [
+      "Cuisine asiatique",
+      "Fromage doux"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:13:49.608Z"
   }
 ]

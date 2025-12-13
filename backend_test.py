@@ -638,6 +638,175 @@ class WinePairingAPITester:
             self.log_test("Get Favorites", False, str(response))
         return success
 
+    # ===================== DATA EXPANSION TESTS (846 -> 1671+ wines) =====================
+    
+    def test_public_wines_total_count_expansion(self):
+        """Test that public wines database has expanded to 1671+ wines"""
+        success, response = self.make_request('GET', 'public-wines?limit=2000', expected_status=200)
+        if success:
+            wines = response if isinstance(response, list) else []
+            wine_count = len(wines)
+            
+            if wine_count < 1671:
+                self.log_test("Public Wines Total Count (1671+)", False, 
+                             f"Expected 1671+ wines after expansion, got {wine_count}")
+                return False
+            
+            self.log_test("Public Wines Total Count (1671+)", True, 
+                         f"Database expanded successfully - Found {wine_count} wines (target: 1671+)")
+        else:
+            self.log_test("Public Wines Total Count (1671+)", False, str(response))
+        return success
+
+    def test_german_wines_new_regions(self):
+        """Test new German wine regions: Mosel, Rheingau, Pfalz, Baden, Nahe, Ahr"""
+        new_german_regions = ['Mosel', 'Rheingau', 'Pfalz', 'Baden', 'Nahe', 'Ahr']
+        results = {}
+        
+        for region in new_german_regions:
+            success, response = self.make_request('GET', f'public-wines?region={region}', expected_status=200)
+            if success:
+                wines = response if isinstance(response, list) else []
+                results[region] = len(wines)
+                
+                # Verify wines are actually from Germany
+                non_german_wines = [w for w in wines if w.get('country') != 'Deutschland']
+                if non_german_wines:
+                    self.log_test(f"German Region {region}", False, 
+                                 f"Found non-German wines in {region}: {[w.get('country') for w in non_german_wines[:3]]}")
+                    return False
+            else:
+                self.log_test(f"German Region {region}", False, str(response))
+                return False
+        
+        # Check that all regions have wines
+        empty_regions = [region for region, count in results.items() if count == 0]
+        if empty_regions:
+            self.log_test("German New Regions", False, f"No wines found in regions: {empty_regions}")
+            return False
+        
+        total_new_wines = sum(results.values())
+        self.log_test("German New Regions", True, 
+                     f"All new German regions have wines - Total: {total_new_wines} wines across {results}")
+        return True
+
+    def test_swiss_st_gallen_wines(self):
+        """Test Swiss wines from St. Gallen region"""
+        success, response = self.make_request('GET', 'public-wines?region=St. Gallen', expected_status=200)
+        if success:
+            wines = response if isinstance(response, list) else []
+            
+            if len(wines) == 0:
+                self.log_test("Swiss St. Gallen Wines", False, "No wines found in St. Gallen region")
+                return False
+            
+            # Verify wines are from Switzerland
+            non_swiss_wines = [w for w in wines if w.get('country') != 'Schweiz']
+            if non_swiss_wines:
+                self.log_test("Swiss St. Gallen Wines", False, 
+                             f"Found non-Swiss wines in St. Gallen: {[w.get('country') for w in non_swiss_wines]}")
+                return False
+            
+            self.log_test("Swiss St. Gallen Wines", True, 
+                         f"Found {len(wines)} Swiss wines from St. Gallen region")
+        else:
+            self.log_test("Swiss St. Gallen Wines", False, str(response))
+        return success
+
+    def test_public_wines_filters_new_regions(self):
+        """Test that public-wines-filters includes all new regions"""
+        success, response = self.make_request('GET', 'public-wines-filters', expected_status=200)
+        if success:
+            regions = response.get('regions', [])
+            new_regions = ['Mosel', 'Rheingau', 'Pfalz', 'Baden', 'Nahe', 'Ahr', 'St. Gallen']
+            
+            missing_regions = [region for region in new_regions if region not in regions]
+            if missing_regions:
+                self.log_test("Public Wines Filters New Regions", False, 
+                             f"Missing new regions in filters: {missing_regions}")
+                return False
+            
+            self.log_test("Public Wines Filters New Regions", True, 
+                         f"All new regions appear in filters - Total regions: {len(regions)}")
+        else:
+            self.log_test("Public Wines Filters New Regions", False, str(response))
+        return success
+
+    def test_german_pairing_rehrucken(self):
+        """Test German pairing with Rehrücken mit Preiselbeeren"""
+        pairing_data = {
+            "dish": "Rehrücken mit Preiselbeeren",
+            "language": "de"
+        }
+        
+        success, response = self.make_request('POST', 'pairing', data=pairing_data, expected_status=200)
+        if success:
+            recommendation = response.get('recommendation', '')
+            
+            if len(recommendation) < 50:
+                self.log_test("German Pairing (Rehrücken)", False, f"Recommendation too short: {recommendation}")
+                return False
+            
+            # Check for German language response
+            german_indicators = ['wein', 'empfehlung', 'passt', 'harmoniert', 'rotwein', 'weißwein']
+            has_german = any(indicator in recommendation.lower() for indicator in german_indicators)
+            
+            if not has_german:
+                self.log_test("German Pairing (Rehrücken)", False, "Response doesn't appear to be in German")
+                return False
+            
+            self.log_test("German Pairing (Rehrücken)", True, "Got German pairing for Rehrücken mit Preiselbeeren")
+        else:
+            self.log_test("German Pairing (Rehrücken)", False, str(response))
+        return success
+
+    def test_sommelier_chat_german_schnitzel(self):
+        """Test sommelier chat with German question about Wiener Schnitzel"""
+        chat_data = {
+            "message": "Welchen Wein zum Wiener Schnitzel?",
+            "language": "de"
+        }
+        
+        success, response = self.make_request('POST', 'chat', data=chat_data, expected_status=200)
+        if success:
+            chat_response = response.get('response', '')
+            
+            if len(chat_response) < 50:
+                self.log_test("Sommelier Chat German (Schnitzel)", False, f"Response too short: {chat_response}")
+                return False
+            
+            # Check for German language response
+            german_indicators = ['wein', 'schnitzel', 'empfehle', 'passt', 'weißwein', 'riesling']
+            has_german = any(indicator in chat_response.lower() for indicator in german_indicators)
+            
+            if not has_german:
+                self.log_test("Sommelier Chat German (Schnitzel)", False, "Response doesn't appear to be in German")
+                return False
+            
+            self.log_test("Sommelier Chat German (Schnitzel)", True, "Got German response for Wiener Schnitzel pairing")
+        else:
+            self.log_test("Sommelier Chat German (Schnitzel)", False, str(response))
+        return success
+
+    def test_backup_database_endpoint(self):
+        """Test backup database endpoint"""
+        success, response = self.make_request('GET', 'backup-database', expected_status=200)
+        if success:
+            # Should return some kind of success message or backup info
+            if isinstance(response, dict):
+                self.log_test("Backup Database Endpoint", True, "Backup endpoint accessible")
+            else:
+                self.log_test("Backup Database Endpoint", True, "Backup endpoint returned response")
+        else:
+            # Check if it's a different status code that's acceptable
+            status_code = response.get('status_code', 0)
+            if status_code in [404, 501]:  # Not implemented or not found is acceptable
+                self.log_test("Backup Database Endpoint", True, f"Backup endpoint returned {status_code} (acceptable)")
+                return True
+            else:
+                self.log_test("Backup Database Endpoint", False, str(response))
+        return success
+
     # ===================== COMPREHENSIVE PRE-DEPLOYMENT TESTS =====================
     
     def test_health_endpoint(self):

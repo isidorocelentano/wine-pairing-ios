@@ -80,7 +80,7 @@ backend:
         agent: "testing"
         comment: "✅ Regional Pairings Countries PASSED - Found 10 countries including ['Griechenland', 'Italien', 'Japan', 'China']. ✅ Regional Pairings Greece PASSED - Found 4 Greek pairings with complete local wine data. ✅ Regional Pairings Italy PASSED - Found 8 Italian pairings with international wines only. Dual wine recommendation system working correctly for exotic vs traditional wine countries."
 
-  - task: "Wine Database (Public Wines)"
+  - task: "Wine Database (Public Wines) - MAJOR DATA EXPANSION"
     implemented: true
     working: true
     file: "server.py"
@@ -94,6 +94,9 @@ backend:
       - working: true
         agent: "testing"
         comment: "✅ Public Wines List (Basic) PASSED - Found 50 wines, default limit working. ✅ Public Wines Filters PASSED - Filters working - Countries: 12, Regions: 60, Colors: 5, Prices: 3. ✅ Public Wines List (Country Filter) PASSED - Country filter working, found 50 French wines. Database contains 846+ wines as expected."
+      - working: true
+        agent: "testing"
+        comment: "🎉 MAJOR DATA EXPANSION VERIFIED - Database successfully expanded from 846 to 1671 wines (+825 new wines). ✅ All new German regions working: Mosel (50 wines), Rheingau (50), Pfalz (50), Baden (50), Nahe (50), Ahr (50). ✅ Swiss St. Gallen region: 28 wines. ✅ All new regions appear in filters (73 total regions). ✅ Country filters working: Deutschland and Schweiz wines properly categorized. Database expansion complete and fully functional."
 
   - task: "Community Feed"
     implemented: true

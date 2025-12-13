@@ -41295,5 +41295,1554 @@
     "image_url": null,
     "rating": null,
     "created_at": "2025-12-13T06:13:49.608Z"
+  },
+  {
+    "id": "f0e8b202-da76-4d6a-8f28-973bf5b1150b",
+    "name": "Rüdesheimer Berg Schlossberg Riesling Trocken GG 2024",
+    "winery": "Georg Breuer",
+    "country": "Deutschland",
+    "region": "Rheingau - Rüdesheim",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Ein Monument der Präzision, strahlend und tief, mit nasser Stein und exotischer Frucht – ein Wein, der die Seele in pure Rheingau-Eleganz taucht (99 Falstaff-Punkte).",
+    "description_en": "A monument of precision, radiant and deep, with wet stone and exotic fruit – a wine that immerses the soul in pure Rheingau elegance (99 Falstaff points).",
+    "description_fr": "Un monument de précision, radieux et profond, avec pierre mouillée et fruits exotiques – un vin qui plonge l'âme dans l'élégance pure du Rheingau (99 points Falstaff).",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Gegrillter Fisch",
+      "Milder Ziegenkäse"
+    ],
+    "food_pairings_en": [
+      "Grilled fish",
+      "Mild goat cheese"
+    ],
+    "food_pairings_fr": [
+      "Poisson grillé",
+      "Fromage de chèvre doux"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.143Z"
+  },
+  {
+    "id": "3ce4ef93-e5f3-4b0d-8512-928dbe55fa88",
+    "name": "Kiedricher Gräfenberg Riesling Trocken GG 2024",
+    "winery": "Robert Weil",
+    "country": "Deutschland",
+    "region": "Rheingau - Kiedrich",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Adelig und komplex, ein Gräfenberg-Juwel von Pfirsich und Mineral, das das Herz mit unendlicher Tiefe umfängt.",
+    "description_en": "Noble and complex, a Gräfenberg jewel of peach and mineral that embraces the heart with infinite depth.",
+    "description_fr": "Noble et complexe, un joyau de Gräfenberg de pêche et de minéral qui enlace le cœur d'une profondeur infinie.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Hummer",
+      "Reifer Parmesan"
+    ],
+    "food_pairings_en": [
+      "Lobster",
+      "Aged Parmesan"
+    ],
+    "food_pairings_fr": [
+      "Homard",
+      "Parmesan affiné"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.145Z"
+  },
+  {
+    "id": "15e9b159-cd98-4f5b-a295-f912905c9b10",
+    "name": "Hochheimer Hölle Riesling Trocken GG 2024",
+    "winery": "Franz Künstler",
+    "country": "Deutschland",
+    "region": "Rheingau - Hochheim",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Kraftvoll und brillant, ein Hölle-Feuer von Zitrus und Salz – ein Tropfen, der die Sinne in Ekstase versetzt.",
+    "description_en": "Powerful and brilliant, a Hell-fire of citrus and salt – a drop that sends the senses into ecstasy.",
+    "description_fr": "Puissant et brillant, un feu d'Enfer d'agrumes et de sel – une goutte qui met les sens en extase.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Lamm",
+      "Asiatisches Curry"
+    ],
+    "food_pairings_en": [
+      "Lamb",
+      "Asian curry"
+    ],
+    "food_pairings_fr": [
+      "Agneau",
+      "Curry asiatique"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.150Z"
+  },
+  {
+    "id": "1c901d31-29c5-4f22-a0b4-afe368235e67",
+    "name": "Rüdesheimer Berg Rottland Riesling Trocken GG 2024",
+    "winery": "Johannes Leitz",
+    "country": "Deutschland",
+    "region": "Rheingau - Rüdesheim",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Filigran und mineralisch, ein Rottland-Traum von Stein und Frucht, der die Seele mit jugendlicher Lebendigkeit erfrischt.",
+    "description_en": "Delicate and mineral, a Rottland dream of stone and fruit that refreshes the soul with youthful vivacity.",
+    "description_fr": "Délicat et minéral, un rêve de Rottland de pierre et de fruit qui rafraîchit l'âme avec une vivacité juvénile.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Meeresfrüchte",
+      "Sommergemüse"
+    ],
+    "food_pairings_en": [
+      "Seafood",
+      "Summer vegetables"
+    ],
+    "food_pairings_fr": [
+      "Fruits de mer",
+      "Légumes d'été"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.153Z"
+  },
+  {
+    "id": "e289e0a0-da11-4e24-9028-4169511c4dc6",
+    "name": "Oestricher Lenchen Riesling Trockenbeerenauslese 2024",
+    "winery": "Josef Spreitzer",
+    "country": "Deutschland",
+    "region": "Rheingau - Oestrich-Winkel",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Golden und konzentriert, ein Eisberg der Süße, der wie ein Wunder die Seele verzaubert (98+ Falstaff).",
+    "description_en": "Golden and concentrated, an iceberg of sweetness that enchants the soul like a miracle (98+ Falstaff).",
+    "description_fr": "Doré et concentré, un iceberg de douceur qui enchante l'âme comme un miracle (98+ Falstaff).",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Foie gras",
+      "Blauschimmelkäse"
+    ],
+    "food_pairings_en": [
+      "Foie gras",
+      "Blue cheese"
+    ],
+    "food_pairings_fr": [
+      "Foie gras",
+      "Fromage bleu"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.154Z"
+  },
+  {
+    "id": "0293509c-d528-411c-90d3-3f0477ed86ad",
+    "name": "Oestricher Doosberg Riesling Trocken GG 2024",
+    "winery": "Peter Jakob Kühn",
+    "country": "Deutschland",
+    "region": "Rheingau - Oestrich",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Biodynamisch und tief, ein Doosberg der Natürlichkeit, das das Herz mit erdiger Harmonie umfängt.",
+    "description_en": "Biodynamic and deep, a Doosberg of naturalness that embraces the heart with earthy harmony.",
+    "description_fr": "Biodynamique et profond, un Doosberg de naturalité qui enlace le cœur d'une harmonie terreuse.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Geflügel",
+      "Pilzrisotto"
+    ],
+    "food_pairings_en": [
+      "Poultry",
+      "Mushroom risotto"
+    ],
+    "food_pairings_fr": [
+      "Volaille",
+      "Risotto aux champignons"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.155Z"
+  },
+  {
+    "id": "a9b0cdfd-5d65-4669-b6f6-b6a7334cd71a",
+    "name": "Silberlack Riesling Trocken GG 2024",
+    "winery": "Schloss Johannisberg",
+    "country": "Deutschland",
+    "region": "Rheingau - Johannisberg",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Legendär und strahlend, ein Silberlack der Noblesse, der die Seele in historische Tiefe taucht.",
+    "description_en": "Legendary and radiant, a Silberlack of nobility that immerses the soul in historical depth.",
+    "description_fr": "Légendaire et radieux, un Silberlack de noblesse qui plonge l'âme dans une profondeur historique.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Gegrillter Lachs",
+      "Milde Tomme"
+    ],
+    "food_pairings_en": [
+      "Grilled salmon",
+      "Mild Tomme"
+    ],
+    "food_pairings_fr": [
+      "Saumon grillé",
+      "Tomme douce"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.157Z"
+  },
+  {
+    "id": "0173ccfe-60a3-481f-8b5c-1eb2ee225c80",
+    "name": "Assmannshäuser Höllenberg Spätburgunder GG 2024",
+    "winery": "August Kesseler",
+    "country": "Deutschland",
+    "region": "Rheingau - Assmannshausen",
+    "appellation": "Rheingau",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Rot und leidenschaftlich, ein Höllenberg-Feuer von Kirsche und Gewürz – der König der Rheingau-Roten.",
+    "description_en": "Red and passionate, a Höllenberg fire of cherry and spice – the king of Rheingau reds.",
+    "description_fr": "Rouge et passionné, un feu de Höllenberg de cerise et d'épices – le roi des rouges du Rheingau.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Wild",
+      "Dunkles Fleisch"
+    ],
+    "food_pairings_en": [
+      "Game",
+      "Dark meat"
+    ],
+    "food_pairings_fr": [
+      "Gibier",
+      "Viande brune"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.158Z"
+  },
+  {
+    "id": "89b57c2f-5d08-4a47-afaf-645492d4463c",
+    "name": "Schlossberg Riesling Trocken GG 2024",
+    "winery": "Schloss Vollrads",
+    "country": "Deutschland",
+    "region": "Rheingau - Winkel",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Klassisch und mineralisch, ein Schlossberg der Tradition, der das Herz mit purer Reinheit erfüllt.",
+    "description_en": "Classic and mineral, a Schlossberg of tradition that fills the heart with pure purity.",
+    "description_fr": "Classique et minéral, un Schlossberg de tradition qui remplit le cœur de pureté pure.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Forelle",
+      "Salat"
+    ],
+    "food_pairings_en": [
+      "Trout",
+      "Salad"
+    ],
+    "food_pairings_fr": [
+      "Truite",
+      "Salade"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.159Z"
+  },
+  {
+    "id": "818989d9-e247-43f3-ae28-ecb407663057",
+    "name": "Lorcher Seligmacher Riesling Trocken GG 2024",
+    "winery": "Eva Fricke",
+    "country": "Deutschland",
+    "region": "Rheingau - Lorch",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Aufstrebend und präzise, ein Seligmacher der Frische, der die Seele mit moderner Eleganz weckt.",
+    "description_en": "Rising and precise, a Seligmacher of freshness that awakens the soul with modern elegance.",
+    "description_fr": "Montant et précis, un Seligmacher de fraîcheur qui éveille l'âme avec une élégance moderne.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Vegetarisch",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Vegetarian",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Végétarien",
+      "Fromage"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.160Z"
+  },
+  {
+    "id": "0cbe9824-4e3d-47b0-9dfc-6c1d31d379c7",
+    "name": "Hochheimer Kirchenstück Riesling Trocken GG 2024",
+    "winery": "Domdechant Werner",
+    "country": "Deutschland",
+    "region": "Rheingau - Hochheim",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Kirchenwürdig und tief, ein Stück der Geschichte in flüssiger Form.",
+    "description_en": "Church-worthy and deep, a piece of history in liquid form.",
+    "description_fr": "Digne d'une église et profond, un morceau d'histoire sous forme liquide.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Ente",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Duck",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Canard",
+      "Champignons"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.161Z"
+  },
+  {
+    "id": "3e45e033-486f-49e2-a47c-47f9622a51c2",
+    "name": "Rüdesheimer Riesling Sekt Extra Brut NV",
+    "winery": "Weingut Barth",
+    "country": "Deutschland",
+    "region": "Rheingau - Hattenheim",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "schaumwein",
+    "year": null,
+    "description_de": "Perlend und lebendig, ein Sekt, der die Seele in festliche Ekstase versetzt.",
+    "description_en": "Sparkling and lively, a Sekt that sends the soul into festive ecstasy.",
+    "description_fr": "Pétillant et vivant, un Sekt qui met l'âme en extase festive.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Aperitif",
+      "Austern"
+    ],
+    "food_pairings_en": [
+      "Aperitif",
+      "Oysters"
+    ],
+    "food_pairings_fr": [
+      "Apéritif",
+      "Huîtres"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.162Z"
+  },
+  {
+    "id": "cab198b4-935b-4b0a-a2be-3b23bae1f7cc",
+    "name": "Hochheimer Domdechaney Riesling Trocken GG 2024",
+    "winery": "Franz Künstler",
+    "country": "Deutschland",
+    "region": "Rheingau - Hochheim",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Domdechaney-adelig und kraftvoll, ein Monument der Mineralität.",
+    "description_en": "Domdechaney-noble and powerful, a monument of minerality.",
+    "description_fr": "Domdechaney-noble et puissant, un monument de minéralité.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Rind",
+      "BBQ"
+    ],
+    "food_pairings_en": [
+      "Beef",
+      "BBQ"
+    ],
+    "food_pairings_fr": [
+      "Bœuf",
+      "BBQ"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.163Z"
+  },
+  {
+    "id": "914aa8e2-bb86-40a7-bd12-f6776f141606",
+    "name": "Rüdesheimer Drachenstein Riesling Trocken 2024",
+    "winery": "Johannes Leitz",
+    "country": "Deutschland",
+    "region": "Rheingau - Rüdesheim",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Drachenstark und feurig, ein Drache der Aromen.",
+    "description_en": "Dragon-strong and fiery, a dragon of aromas.",
+    "description_fr": "Fort comme un dragon et fougueux, un dragon d'arômes.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Scharfer Thai",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Spicy Thai",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Thaï épicé",
+      "Fromage"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.164Z"
+  },
+  {
+    "id": "84dad70f-d9ac-4c97-a551-e3122bbe5de3",
+    "name": "Rauenthaler Nonnenberg Riesling Trocken GG 2024",
+    "winery": "Georg Breuer",
+    "country": "Deutschland",
+    "region": "Rheingau - Rauenthal",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Nonnen-rein und harmonisch, ein Berg der Stille.",
+    "description_en": "Nun-pure and harmonious, a mountain of silence.",
+    "description_fr": "Pur comme une nonne et harmonieux, une montagne de silence.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Geflügel",
+      "Gemüse"
+    ],
+    "food_pairings_en": [
+      "Poultry",
+      "Vegetables"
+    ],
+    "food_pairings_fr": [
+      "Volaille",
+      "Légumes"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.165Z"
+  },
+  {
+    "id": "7698752b-eaad-4ba6-b66e-6afedfff14ac",
+    "name": "Kiedricher Monte Vacano Riesling Trocken 2024",
+    "winery": "Robert Weil",
+    "country": "Deutschland",
+    "region": "Rheingau - Kiedrich",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Exotisch und tief, ein Vacano der Verführung.",
+    "description_en": "Exotic and deep, a Vacano of seduction.",
+    "description_fr": "Exotique et profond, un Vacano de séduction.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Asiatisch",
+      "Desserts"
+    ],
+    "food_pairings_en": [
+      "Asian cuisine",
+      "Desserts"
+    ],
+    "food_pairings_fr": [
+      "Cuisine asiatique",
+      "Desserts"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.166Z"
+  },
+  {
+    "id": "9e744e4b-2764-45e4-81b6-1503cf32a8b5",
+    "name": "Assmannshäuser Spätburgunder Trocken GG 2024",
+    "winery": "August Kesseler",
+    "country": "Deutschland",
+    "region": "Rheingau - Assmannshausen",
+    "appellation": "Rheingau",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Samten und würzig, ein Rot der Leidenschaft.",
+    "description_en": "Velvety and spicy, a red of passion.",
+    "description_fr": "Velouté et épicé, un rouge de passion.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Roastbeef",
+      "Schokolade"
+    ],
+    "food_pairings_en": [
+      "Roast beef",
+      "Chocolate"
+    ],
+    "food_pairings_fr": [
+      "Rosbif",
+      "Chocolat"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.167Z"
+  },
+  {
+    "id": "5439448f-71a8-4e8e-8b7b-1106cc128666",
+    "name": "Hallgartener Hendelberg Riesling Trocken GG 2024",
+    "winery": "Josef Spreitzer",
+    "country": "Deutschland",
+    "region": "Rheingau - Hallgarten",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Hendelberg-wild und intensiv, ein Aufstieg zur Perfektion.",
+    "description_en": "Hendelberg-wild and intense, an ascent to perfection.",
+    "description_fr": "Hendelberg-sauvage et intense, une ascension vers la perfection.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Wildgerichte"
+    ],
+    "food_pairings_en": [
+      "Game dishes"
+    ],
+    "food_pairings_fr": [
+      "Plats de gibier"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.168Z"
+  },
+  {
+    "id": "05d49cf6-c517-452a-b66e-35efc0fcc6b7",
+    "name": "Jacobus Riesling Trocken 2024",
+    "winery": "Peter Jakob Kühn",
+    "country": "Deutschland",
+    "region": "Rheingau - Oestrich",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Jakobus-segnend und ausgewogen, ein Segen für die Seele.",
+    "description_en": "Jacobus-blessing and balanced, a blessing for the soul.",
+    "description_fr": "Jacobus-bénissant et équilibré, une bénédiction pour l'âme.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Fisch",
+      "Salat"
+    ],
+    "food_pairings_en": [
+      "Fish",
+      "Salad"
+    ],
+    "food_pairings_fr": [
+      "Poisson",
+      "Salade"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.169Z"
+  },
+  {
+    "id": "ae71b488-5aeb-4223-af6b-60a23dd4f3be",
+    "name": "Rosalack Riesling Kabinett 2024",
+    "winery": "Schloss Johannisberg",
+    "country": "Deutschland",
+    "region": "Rheingau - Johannisberg",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Zart und tänzerisch, ein Rosalack der Jugend.",
+    "description_en": "Delicate and dancing, a Rosalack of youth.",
+    "description_fr": "Délicat et dansant, un Rosalack de jeunesse.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Aperitif",
+      "Leichte Vorspeisen"
+    ],
+    "food_pairings_en": [
+      "Aperitif",
+      "Light appetizers"
+    ],
+    "food_pairings_fr": [
+      "Apéritif",
+      "Entrées légères"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.170Z"
+  },
+  {
+    "id": "f68f4087-6cf2-4721-aed5-d14a48da01d3",
+    "name": "Hochheimer Stielweg Alte Reben Riesling GG 2024",
+    "winery": "Franz Künstler",
+    "country": "Deutschland",
+    "region": "Rheingau - Hochheim",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Alte Reben-weise und tief, ein Stielweg der Weisheit.",
+    "description_en": "Old vines-wise and deep, a Stielweg of wisdom.",
+    "description_fr": "Vieilles vignes-sage et profond, un Stielweg de sagesse.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Parmesan",
+      "Hummer"
+    ],
+    "food_pairings_en": [
+      "Parmesan",
+      "Lobster"
+    ],
+    "food_pairings_fr": [
+      "Parmesan",
+      "Homard"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.172Z"
+  },
+  {
+    "id": "007c84a4-5639-47e7-82b2-cccc334f8780",
+    "name": "Ehrenfels Riesling Trocken GG 2024",
+    "winery": "Johannes Leitz",
+    "country": "Deutschland",
+    "region": "Rheingau - Rüdesheim",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Ehrenvoll und strahlend, ein Fels der Stärke.",
+    "description_en": "Honorable and radiant, a rock of strength.",
+    "description_fr": "Honorable et radieux, un roc de force.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Lamm",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Lamb",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Agneau",
+      "Champignons"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.173Z"
+  },
+  {
+    "id": "af84fdee-be97-48b0-84cd-bc1b9986b00d",
+    "name": "Kiedricher Turmberg Riesling TBA 2023",
+    "winery": "Robert Weil",
+    "country": "Deutschland",
+    "region": "Rheingau - Kiedrich",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Turmhoch und golden, eine Beerenauslese der Ewigkeit.",
+    "description_en": "Tower-high and golden, a Beerenauslese of eternity.",
+    "description_fr": "Haut comme une tour et doré, une Beerenauslese d'éternité.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Desserts",
+      "Blauschimmel"
+    ],
+    "food_pairings_en": [
+      "Desserts",
+      "Blue cheese"
+    ],
+    "food_pairings_fr": [
+      "Desserts",
+      "Bleu"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.174Z"
+  },
+  {
+    "id": "77247635-418e-4a46-ba6b-7ef6f4529512",
+    "name": "Rüdesheimer Berg Roseneck Riesling Trocken GG 2024",
+    "winery": "Georg Breuer",
+    "country": "Deutschland",
+    "region": "Rheingau - Rüdesheim",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Rosen-duftend und filigran, ein Roseneck der Poesie.",
+    "description_en": "Rose-scented and delicate, a Roseneck of poetry.",
+    "description_fr": "Parfumé à la rose et délicat, un Roseneck de poésie.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Meeresfrüchte"
+    ],
+    "food_pairings_en": [
+      "Seafood"
+    ],
+    "food_pairings_fr": [
+      "Fruits de mer"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.175Z"
+  },
+  {
+    "id": "5b71919b-7e0e-4b17-9a2d-ee9472d8faf5",
+    "name": "Der König Spätburgunder GG 2024",
+    "winery": "August Kesseler",
+    "country": "Deutschland",
+    "region": "Rheingau - Assmannshausen",
+    "appellation": "Rheingau",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Königlich und robust, ein König der Roten.",
+    "description_en": "Royal and robust, a king of reds.",
+    "description_fr": "Royal et robuste, un roi des rouges.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Dunkles Fleisch",
+      "Schokolade"
+    ],
+    "food_pairings_en": [
+      "Dark meat",
+      "Chocolate"
+    ],
+    "food_pairings_fr": [
+      "Viande brune",
+      "Chocolat"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.176Z"
+  },
+  {
+    "id": "a0361401-7abc-42e3-8433-d10796dcd404",
+    "name": "Riesling Kabinett 2024",
+    "winery": "Schloss Vollrads",
+    "country": "Deutschland",
+    "region": "Rheingau - Winkel",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Leicht und fruchtig, ein Kabinett der Freude.",
+    "description_en": "Light and fruity, a Kabinett of joy.",
+    "description_fr": "Léger et fruité, un Kabinett de joie.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Salat",
+      "Aperitif"
+    ],
+    "food_pairings_en": [
+      "Salad",
+      "Aperitif"
+    ],
+    "food_pairings_fr": [
+      "Salade",
+      "Apéritif"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.177Z"
+  },
+  {
+    "id": "c84695e8-fb7d-468f-bc1b-38760162a1f8",
+    "name": "Krone Riesling Trocken GG 2024",
+    "winery": "Eva Fricke",
+    "country": "Deutschland",
+    "region": "Rheingau - Lorch",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Krone-würdig und präzise, ein Aufsteiger-Traum.",
+    "description_en": "Crown-worthy and precise, a rising star dream.",
+    "description_fr": "Digne d'une couronne et précis, un rêve d'étoile montante.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Vegetarisch",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Vegetarian",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Végétarien",
+      "Fromage"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.178Z"
+  },
+  {
+    "id": "95c517a1-8004-4da1-9805-b56156a4ca97",
+    "name": "Rheingau Riesling Estate 2024",
+    "winery": "Franz Künstler",
+    "country": "Deutschland",
+    "region": "Rheingau - Hochheim",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Estate-ehrlich und saftig, ein Alltags-Juwel.",
+    "description_en": "Estate-honest and juicy, an everyday jewel.",
+    "description_fr": "Estate-honnête et juteux, un joyau quotidien.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Fisch",
+      "Fondue"
+    ],
+    "food_pairings_en": [
+      "Fish",
+      "Fondue"
+    ],
+    "food_pairings_fr": [
+      "Poisson",
+      "Fondue"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.179Z"
+  },
+  {
+    "id": "a17484be-17ba-444e-b91e-5b6d253b3fa1",
+    "name": "Quarzit Riesling Trocken 2024",
+    "winery": "Peter Jakob Kühn",
+    "country": "Deutschland",
+    "region": "Rheingau - Oestrich",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Quarzit-mineralisch und biodynamisch, ein Stein der Reinheit.",
+    "description_en": "Quarzit-mineral and biodynamic, a stone of purity.",
+    "description_fr": "Quarzit-minéral et biodynamique, une pierre de pureté.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Gemüse",
+      "Tofu"
+    ],
+    "food_pairings_en": [
+      "Vegetables",
+      "Tofu"
+    ],
+    "food_pairings_fr": [
+      "Légumes",
+      "Tofu"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.180Z"
+  },
+  {
+    "id": "85095a0a-9c25-4549-9819-5f8c1f8749c4",
+    "name": "Grünlack Riesling Spätlese 2024",
+    "winery": "Schloss Johannisberg",
+    "country": "Deutschland",
+    "region": "Rheingau - Johannisberg",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Spät und verlockend, ein Grünlack der Süße.",
+    "description_en": "Late and enticing, a Grünlack of sweetness.",
+    "description_fr": "Tardif et séduisant, un Grünlack de douceur.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Scharfes Essen",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Spicy food",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Plats épicés",
+      "Fromage"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.182Z"
+  },
+  {
+    "id": "3959f74b-4b5e-4451-9ad5-02267ddb20b6",
+    "name": "Charta Riesling Trocken 2024",
+    "winery": "Josef Spreitzer",
+    "country": "Deutschland",
+    "region": "Rheingau - Oestrich-Winkel",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Charta-klassisch und ausgewogen, ein Traditionsträger.",
+    "description_en": "Charta-classic and balanced, a tradition bearer.",
+    "description_fr": "Charta-classique et équilibré, un porteur de tradition.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Geflügel"
+    ],
+    "food_pairings_en": [
+      "Poultry"
+    ],
+    "food_pairings_fr": [
+      "Volaille"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.183Z"
+  },
+  {
+    "id": "d5339332-fda6-40a5-bb88-f51ce35ea814",
+    "name": "Magic Mountain Riesling Trocken 2024",
+    "winery": "Johannes Leitz",
+    "country": "Deutschland",
+    "region": "Rheingau - Rüdesheim",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Magisch und kraftvoll, ein Berg der Wunder.",
+    "description_en": "Magical and powerful, a mountain of wonders.",
+    "description_fr": "Magique et puissant, une montagne de merveilles.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Lamm",
+      "BBQ"
+    ],
+    "food_pairings_en": [
+      "Lamb",
+      "BBQ"
+    ],
+    "food_pairings_fr": [
+      "Agneau",
+      "BBQ"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.184Z"
+  },
+  {
+    "id": "a29c4876-8d2f-465d-91d2-841c77d350ea",
+    "name": "Monte Vacano Riesling Trocken 2024",
+    "winery": "Robert Weil",
+    "country": "Deutschland",
+    "region": "Rheingau - Kiedrich",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Vacano-exotisch und tief, ein Geheimnis.",
+    "description_en": "Vacano-exotic and deep, a secret.",
+    "description_fr": "Vacano-exotique et profond, un secret.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Asiatisch",
+      "Desserts"
+    ],
+    "food_pairings_en": [
+      "Asian cuisine",
+      "Desserts"
+    ],
+    "food_pairings_fr": [
+      "Cuisine asiatique",
+      "Desserts"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.185Z"
+  },
+  {
+    "id": "ce6c0879-890d-45ed-bf8b-36e646d1095c",
+    "name": "Cuvée Max Spätburgunder 2024",
+    "winery": "August Kesseler",
+    "country": "Deutschland",
+    "region": "Rheingau - Assmannshausen",
+    "appellation": "Rheingau",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Cuvée-harmonisch und rot, ein Max der Leidenschaft.",
+    "description_en": "Cuvée-harmonious and red, a Max of passion.",
+    "description_fr": "Cuvée-harmonieux et rouge, un Max de passion.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Wild"
+    ],
+    "food_pairings_en": [
+      "Game"
+    ],
+    "food_pairings_fr": [
+      "Gibier"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.186Z"
+  },
+  {
+    "id": "770182a3-a2b0-4631-9b08-798968dd8e0c",
+    "name": "Sauvage Riesling Trocken 2024",
+    "winery": "Georg Breuer",
+    "country": "Deutschland",
+    "region": "Rheingau - Rüdesheim",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Sauvage-wild und ungezähmt, ein Naturtraum.",
+    "description_en": "Sauvage-wild and untamed, a nature dream.",
+    "description_fr": "Sauvage-sauvage et indomptable, un rêve de nature.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Pilze",
+      "Vegetarisch"
+    ],
+    "food_pairings_en": [
+      "Mushrooms",
+      "Vegetarian"
+    ],
+    "food_pairings_fr": [
+      "Champignons",
+      "Végétarien"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.188Z"
+  },
+  {
+    "id": "b9cb9a98-0ff6-4edd-94b6-b33cc8d512d2",
+    "name": "Riesling Auslese 2023",
+    "winery": "Schloss Vollrads",
+    "country": "Deutschland",
+    "region": "Rheingau - Winkel",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Auslese-süß und golden, ein Schatz.",
+    "description_en": "Auslese-sweet and golden, a treasure.",
+    "description_fr": "Auslese-doux et doré, un trésor.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Foie gras"
+    ],
+    "food_pairings_en": [
+      "Foie gras"
+    ],
+    "food_pairings_fr": [
+      "Foie gras"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.189Z"
+  },
+  {
+    "id": "1e1448da-0c18-4e7a-86af-23712b0c4bc4",
+    "name": "Kirchenstück Riesling GG 2024",
+    "winery": "Franz Künstler",
+    "country": "Deutschland",
+    "region": "Rheingau - Hochheim",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Kirchen-heilig und tief, ein Stück Paradies.",
+    "description_en": "Church-holy and deep, a piece of paradise.",
+    "description_fr": "Saint d'église et profond, un morceau de paradis.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Parmesan"
+    ],
+    "food_pairings_en": [
+      "Parmesan"
+    ],
+    "food_pairings_fr": [
+      "Parmesan"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.190Z"
+  },
+  {
+    "id": "da1eec2d-c831-48a7-a23c-8ab7938fff62",
+    "name": "Rheingau Riesling Trocken 2024",
+    "winery": "Eva Fricke",
+    "country": "Deutschland",
+    "region": "Rheingau - Lorch",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Frisch und aufstrebend, ein Fricke der Zukunft.",
+    "description_en": "Fresh and rising, a Fricke of the future.",
+    "description_fr": "Frais et montant, un Fricke de l'avenir.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Salat",
+      "Fisch"
+    ],
+    "food_pairings_en": [
+      "Salad",
+      "Fish"
+    ],
+    "food_pairings_fr": [
+      "Salade",
+      "Poisson"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.191Z"
+  },
+  {
+    "id": "70e9aa52-066f-4541-a12b-e12cdd0bd9ed",
+    "name": "Höllenberg Spätburgunder Alte Reben 2024",
+    "winery": "August Kesseler",
+    "country": "Deutschland",
+    "region": "Rheingau - Assmannshausen",
+    "appellation": "Rheingau",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Alte Reben-tief und rot, ein Höllenberg der Reife.",
+    "description_en": "Old vines-deep and red, a Höllenberg of maturity.",
+    "description_fr": "Vieilles vignes-profond et rouge, un Höllenberg de maturité.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Roastbeef"
+    ],
+    "food_pairings_en": [
+      "Roast beef"
+    ],
+    "food_pairings_fr": [
+      "Rosbif"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.192Z"
+  },
+  {
+    "id": "495c5901-2799-41ee-b975-1dae2ec5e8dc",
+    "name": "Hallgartener Hendelberg GG 2024",
+    "winery": "Peter Jakob Kühn",
+    "country": "Deutschland",
+    "region": "Rheingau - Hallgarten",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Hendelberg-biodynamisch und mineralisch.",
+    "description_en": "Hendelberg-biodynamic and mineral.",
+    "description_fr": "Hendelberg-biodynamique et minéral.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Gemüse"
+    ],
+    "food_pairings_en": [
+      "Vegetables"
+    ],
+    "food_pairings_fr": [
+      "Légumes"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.193Z"
+  },
+  {
+    "id": "4791522a-9189-45e6-af20-1d61a0c9c0fd",
+    "name": "Riesling Kabinett 2024",
+    "winery": "Robert Weil",
+    "country": "Deutschland",
+    "region": "Rheingau - Kiedrich",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Kabinett-leicht und tänzerisch, ein Einstieg in die Noblesse.",
+    "description_en": "Kabinett-light and dancing, an entry into nobility.",
+    "description_fr": "Kabinett-léger et dansant, une entrée dans la noblesse.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Aperitif"
+    ],
+    "food_pairings_en": [
+      "Aperitif"
+    ],
+    "food_pairings_fr": [
+      "Apéritif"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.194Z"
+  },
+  {
+    "id": "a56ee524-6698-415d-89ff-22f8d6caa67c",
+    "name": "Rüdesheimer Berg Kaisersteinfels GG 2024",
+    "winery": "Johannes Leitz",
+    "country": "Deutschland",
+    "region": "Rheingau - Rüdesheim",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Kaiserlich und steil, ein Fels der Majestät.",
+    "description_en": "Imperial and steep, a rock of majesty.",
+    "description_fr": "Impérial et raide, un roc de majesté.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Lamm"
+    ],
+    "food_pairings_en": [
+      "Lamb"
+    ],
+    "food_pairings_fr": [
+      "Agneau"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.195Z"
+  },
+  {
+    "id": "86624fa7-afc7-49d3-aae8-fcf86ddb831e",
+    "name": "Nonnenberg Riesling Auslese 2023",
+    "winery": "Georg Breuer",
+    "country": "Deutschland",
+    "region": "Rheingau - Rauenthal",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Nonnen-süß und geheimnisvoll.",
+    "description_en": "Nun-sweet and mysterious.",
+    "description_fr": "Doux comme une nonne et mystérieux.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Desserts"
+    ],
+    "food_pairings_en": [
+      "Desserts"
+    ],
+    "food_pairings_fr": [
+      "Desserts"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.197Z"
+  },
+  {
+    "id": "6545be87-2344-4b09-b7a5-ac61457b4f76",
+    "name": "Pfaffenberg Riesling GG 2024",
+    "winery": "Franz Künstler",
+    "country": "Deutschland",
+    "region": "Rheingau - Hochheim",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Pfaffenberg-monopol und titanisch.",
+    "description_en": "Pfaffenberg-monopole and titanic.",
+    "description_fr": "Pfaffenberg-monopole et titanique.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Krustentiere"
+    ],
+    "food_pairings_en": [
+      "Crustaceans"
+    ],
+    "food_pairings_fr": [
+      "Crustacés"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.198Z"
+  },
+  {
+    "id": "16129693-8d79-4cc3-a426-87fbf4bb3f11",
+    "name": "Riesling Auslese 2023",
+    "winery": "Schloss Johannisberg",
+    "country": "Deutschland",
+    "region": "Rheingau - Johannisberg",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Auslese-historisch und golden.",
+    "description_en": "Auslese-historic and golden.",
+    "description_fr": "Auslese-historique et doré.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Blauschimmel"
+    ],
+    "food_pairings_en": [
+      "Blue cheese"
+    ],
+    "food_pairings_fr": [
+      "Bleu"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.199Z"
+  },
+  {
+    "id": "85cb734c-310e-4a87-9508-961c8d59ccf1",
+    "name": "Lenchen Riesling Spätlese 2024",
+    "winery": "Josef Spreitzer",
+    "country": "Deutschland",
+    "region": "Rheingau - Oestrich",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Lenchen-spät und verlockend.",
+    "description_en": "Lenchen-late and enticing.",
+    "description_fr": "Lenchen-tardif et séduisant.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Scharfer Thai"
+    ],
+    "food_pairings_en": [
+      "Spicy Thai"
+    ],
+    "food_pairings_fr": [
+      "Thaï épicé"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.200Z"
+  },
+  {
+    "id": "fbcc75ad-c65a-4c60-ae06-1774821459a2",
+    "name": "Gräfenberg Riesling Spätlese 2024",
+    "winery": "Robert Weil",
+    "country": "Deutschland",
+    "region": "Rheingau - Kiedrich",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Gräfenberg-spät und edel.",
+    "description_en": "Gräfenberg-late and noble.",
+    "description_fr": "Gräfenberg-tardif et noble.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Käseplatte"
+    ],
+    "food_pairings_en": [
+      "Cheese platter"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fromages"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.201Z"
+  },
+  {
+    "id": "8319f6e3-5b41-46c9-994d-f6375439aebe",
+    "name": "Assmannshäuser Spätburgunder Rosé 2024",
+    "winery": "August Kesseler",
+    "country": "Deutschland",
+    "region": "Rheingau - Assmannshausen",
+    "appellation": "Rheingau",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rosé",
+    "year": null,
+    "description_de": "Rosé-zart und sommerlich.",
+    "description_en": "Rosé-delicate and summery.",
+    "description_fr": "Rosé-délicat et estival.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Salate"
+    ],
+    "food_pairings_en": [
+      "Salads"
+    ],
+    "food_pairings_fr": [
+      "Salades"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.203Z"
+  },
+  {
+    "id": "1337c241-3351-40eb-8c84-6ee601e39aec",
+    "name": "Lorcher Krone Riesling Auslese 2023",
+    "winery": "Eva Fricke",
+    "country": "Deutschland",
+    "region": "Rheingau - Lorch",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Krone-süß und aufstrebend.",
+    "description_en": "Krone-sweet and rising.",
+    "description_fr": "Krone-doux et montant.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Desserts"
+    ],
+    "food_pairings_en": [
+      "Desserts"
+    ],
+    "food_pairings_fr": [
+      "Desserts"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.204Z"
+  },
+  {
+    "id": "34e5577a-0602-46a9-b96a-04e9a848c8da",
+    "name": "Riesling Erstes Gewächs 2024",
+    "winery": "Schloss Vollrads",
+    "country": "Deutschland",
+    "region": "Rheingau - Winkel",
+    "appellation": "Rheingau",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Erstes Gewächs-klassisch und rein, ein Abschluss der Rheingau-Seele.",
+    "description_en": "Erstes Gewächs-classic and pure, a finale of the Rheingau soul.",
+    "description_fr": "Erstes Gewächs-classique et pur, un final de l'âme du Rheingau.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Forelle",
+      "Leichte Vorspeisen"
+    ],
+    "food_pairings_en": [
+      "Trout",
+      "Light appetizers"
+    ],
+    "food_pairings_fr": [
+      "Truite",
+      "Entrées légères"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:19:39.205Z"
   }
 ]

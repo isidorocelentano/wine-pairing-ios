@@ -31911,5 +31911,1402 @@
     ],
     "created_at": "2025-12-13T05:19:20.813340+00:00",
     "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "35b58598-3609-4c34-95a7-6c0007a8f9aa",
+    "name": "Cuvée Louis Edouard Mauler 2016",
+    "winery": "Maison Mauler",
+    "country": "Schweiz",
+    "region": "Neuenburg - Neuenburg",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Assemblage",
+    "wine_color": "schaumwein",
+    "price_category": "€€€€",
+    "description_de": "Ein perlender Traum, der von goldenen Blasen und reifen Birnen erzählt – ein Wein, der die Seele in festliche Ekstase versetzt und vergangene Feste heraufbeschwört.",
+    "description_en": "A sparkling dream speaking of golden bubbles and ripe pears – a wine that sends the soul into festive ecstasy and evokes past celebrations.",
+    "description_fr": "Un rêve pétillant parlant de bulles dorées et de poires mûres – un vin qui envoie l'âme en extase festive et évoque les fêtes passées.",
+    "food_pairings_de": [
+      "Austern",
+      "Frischer Ziegenkäse"
+    ],
+    "food_pairings_en": [
+      "Oysters",
+      "Fresh goat cheese"
+    ],
+    "food_pairings_fr": [
+      "Huîtres",
+      "Fromage de chèvre frais"
+    ],
+    "created_at": "2025-12-13T05:25:52.265603+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "78844a81-fcd3-444f-bae8-8fa584c58deb",
+    "name": "Les Bovardes Pinot Noir 2022",
+    "winery": "Domaine de Chambleau",
+    "country": "Schweiz",
+    "region": "Neuenburg - Colombier",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Tief und solar, mit roten Früchten und seidenen Tanninen, der wie ein Sonnenuntergang über dem See die Seele in bio-dynamische Wärme hüllt.",
+    "description_en": "Deep and solar, with red fruits and silky tannins, wrapping the soul in biodynamic warmth like a sunset over the lake.",
+    "description_fr": "Profond et solaire, avec des fruits rouges et des tanins soyeux, enveloppant l'âme de chaleur biodynamique comme un coucher de soleil sur le lac.",
+    "food_pairings_de": [
+      "Rehrücken",
+      "Pilzrisotto"
+    ],
+    "food_pairings_en": [
+      "Saddle of venison",
+      "Mushroom risotto"
+    ],
+    "food_pairings_fr": [
+      "Selle de chevreuil",
+      "Risotto aux champignons"
+    ],
+    "created_at": "2025-12-13T05:25:52.266884+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "d63ff53b-c2b1-4a91-9551-b3c4640868ab",
+    "name": "Œil de Perdrix 2024",
+    "winery": "Caves de la Ville de Neuchâtel",
+    "country": "Schweiz",
+    "region": "Neuenburg - Neuenburg",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rosé",
+    "price_category": "€€",
+    "description_de": "Zartrosa und verlockend, ein Rosé, der das Herz mit Erdbeere und mineralischer Frische umwebt – pure, sommerliche Sinnlichkeit.",
+    "description_en": "Delicate pink and alluring, a rosé that weaves around the heart with strawberry and mineral freshness – pure, summery sensuality.",
+    "description_fr": "Rose délicat et séduisant, un rosé qui enveloppe le cœur de fraise et de fraîcheur minérale – pure sensualité estivale.",
+    "food_pairings_de": [
+      "Salate mit Erdbeeren",
+      "Gegrillter Lachs"
+    ],
+    "food_pairings_en": [
+      "Salads with strawberries",
+      "Grilled salmon"
+    ],
+    "food_pairings_fr": [
+      "Salades aux fraises",
+      "Saumon grillé"
+    ],
+    "created_at": "2025-12-13T05:25:52.268159+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "cbcdf243-f9fd-41c7-bd71-0d12cf7863a5",
+    "name": "Œil de Perdrix Sélection Tradition 2024",
+    "winery": "Caves du Château d'Auvernier",
+    "country": "Schweiz",
+    "region": "Neuenburg - Auvernier",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rosé",
+    "price_category": "€€€",
+    "description_de": "Frisch und blumig, mit Pfirsich und Kräutern, der wie ein Flüstern des Sees die Seele erfrischt und verjüngt.",
+    "description_en": "Fresh and floral, with peach and herbs, refreshing and rejuvenating the soul like a whisper from the lake.",
+    "description_fr": "Frais et floral, avec de la pêche et des herbes, rafraîchissant et rajeunissant l'âme comme un murmure du lac.",
+    "food_pairings_de": [
+      "Papet Vaudois",
+      "Meeresfrüchte"
+    ],
+    "food_pairings_en": [
+      "Papet Vaudois",
+      "Seafood"
+    ],
+    "food_pairings_fr": [
+      "Papet Vaudois",
+      "Fruits de mer"
+    ],
+    "created_at": "2025-12-13T05:25:52.269269+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "e3322ffa-be5a-42b1-9ea0-5a699916defb",
+    "name": "Lacrima Nobilis 2022",
+    "winery": "Les Caves du Prieuré",
+    "country": "Schweiz",
+    "region": "Neuenburg - Bevaix",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Elegant und filigran, mit Kirsche und Leder, das die Seele in burgundische Melancholie taucht – ein edler Tropfen der Tradition.",
+    "description_en": "Elegant and delicate, with cherry and leather, plunging the soul into Burgundian melancholy – a noble drop of tradition.",
+    "description_fr": "Élégant et délicat, avec de la cerise et du cuir, plongeant l'âme dans la mélancolie bourguignonne – une noble goutte de tradition.",
+    "food_pairings_de": [
+      "Entenbrust",
+      "Tomme Vaudoise"
+    ],
+    "food_pairings_en": [
+      "Duck breast",
+      "Tomme Vaudoise"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard",
+      "Tomme Vaudoise"
+    ],
+    "created_at": "2025-12-13T05:25:52.270493+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "ee47e16d-a038-48fd-8f1d-4be027f97ad5",
+    "name": "Neuchâtel Pinot Noir 2023",
+    "winery": "Sandoz Vins",
+    "country": "Schweiz",
+    "region": "Neuenburg - Cressier",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Robust und beerig, ein Pinot, der das Herz mit wilden Beeren und erdiger Wärme in herbstliche Wälder lockt.",
+    "description_en": "Robust and berry-filled, a Pinot that lures the heart into autumn forests with wild berries and earthy warmth.",
+    "description_fr": "Robuste et fruité, un Pinot qui attire le cœur dans les forêts d'automne avec des baies sauvages et une chaleur terreuse.",
+    "food_pairings_de": [
+      "Lammkoteletts",
+      "Wildpastete"
+    ],
+    "food_pairings_en": [
+      "Lamb chops",
+      "Game pâté"
+    ],
+    "food_pairings_fr": [
+      "Côtelettes d'agneau",
+      "Pâté de gibier"
+    ],
+    "created_at": "2025-12-13T05:25:52.271517+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "5f0a18c4-60c0-407a-96fa-343b0e8ba920",
+    "name": "Neuchâtel Pinot Noir Barrique 2023",
+    "winery": "Sandoz Vins",
+    "country": "Schweiz",
+    "region": "Neuenburg - Cressier",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Würzig und intensiv, mit Eiche und Beeren, das wie ein warmer Föhn die Seele in Ekstase versetzt.",
+    "description_en": "Spicy and intense, with oak and berries, sending the soul into ecstasy like a warm Föhn wind.",
+    "description_fr": "Épicé et intense, avec du chêne et des baies, envoyant l'âme en extase comme un foehn chaud.",
+    "food_pairings_de": [
+      "BBQ-Rippen",
+      "Scharfe Wurst"
+    ],
+    "food_pairings_en": [
+      "BBQ ribs",
+      "Spicy sausage"
+    ],
+    "food_pairings_fr": [
+      "Côtes BBQ",
+      "Saucisse épicée"
+    ],
+    "created_at": "2025-12-13T05:25:52.272557+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "edc8aba0-625a-4488-9d1b-0641060952d0",
+    "name": "Pinot Noir 2023",
+    "winery": "Les Vins de Boris Keller",
+    "country": "Schweiz",
+    "region": "Neuenburg - Milvignes",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Nervös und aromatisch, mit Grapefruit und Kräutern, der wie ein Bergquell die Seele klärt und Hoffnung weckt.",
+    "description_en": "Nervous and aromatic, with grapefruit and herbs, clearing the soul like a mountain spring and awakening hope.",
+    "description_fr": "Nerveux et aromatique, avec du pamplemousse et des herbes, purifiant l'âme comme une source de montagne et éveillant l'espoir.",
+    "food_pairings_de": [
+      "Krebse",
+      "Frischer Salat"
+    ],
+    "food_pairings_en": [
+      "Crayfish",
+      "Fresh salad"
+    ],
+    "food_pairings_fr": [
+      "Écrevisses",
+      "Salade fraîche"
+    ],
+    "created_at": "2025-12-13T05:25:52.273638+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "733a4566-0919-4ff3-bab8-e32091f8847f",
+    "name": "Œil de Perdrix 2024",
+    "winery": "Caves des Lauriers – Jungo & Fellmann",
+    "country": "Schweiz",
+    "region": "Neuenburg - Cressier",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rosé",
+    "price_category": "€€",
+    "description_de": "Knackig und erfrischend, ein Rosé, der wie ein Lachen die Seele weckt – lebendig und unbeschwert.",
+    "description_en": "Crisp and refreshing, a rosé that awakens the soul like laughter – lively and carefree.",
+    "description_fr": "Croquant et rafraîchissant, un rosé qui éveille l'âme comme un rire – vif et insouciant.",
+    "food_pairings_de": [
+      "Fischfilet",
+      "Sommergemüse"
+    ],
+    "food_pairings_en": [
+      "Fish fillet",
+      "Summer vegetables"
+    ],
+    "food_pairings_fr": [
+      "Filet de poisson",
+      "Légumes d'été"
+    ],
+    "created_at": "2025-12-13T05:25:52.274640+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "1b1c737f-2720-46b3-b523-0e21e40cc062",
+    "name": "Pinot Noir Vieilles Vignes Bio 2023",
+    "winery": "Domaine du Pampre",
+    "country": "Schweiz",
+    "region": "Neuenburg - Peseux",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Reich und honigartig, ein Bio-Pinot, der wie ein Traum die Seele umhüllt – tief und authentisch.",
+    "description_en": "Rich and honeyed, an organic Pinot that wraps the soul like a dream – deep and authentic.",
+    "description_fr": "Riche et miellé, un Pinot bio qui enveloppe l'âme comme un rêve – profond et authentique.",
+    "food_pairings_de": [
+      "Foie gras",
+      "Reifer Camembert"
+    ],
+    "food_pairings_en": [
+      "Foie gras",
+      "Aged Camembert"
+    ],
+    "food_pairings_fr": [
+      "Foie gras",
+      "Camembert affiné"
+    ],
+    "created_at": "2025-12-13T05:25:52.275606+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "2d2a00ec-7e1a-4217-872e-3ae36a058f52",
+    "name": "Pinot Noir 2023",
+    "winery": "Domaine Hôpital Pourtalès",
+    "country": "Schweiz",
+    "region": "Neuenburg - Neuenburg",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Filigran und fruchtig, mit Kirschen und Geheimnissen, der das Herz mit leichter Traurigkeit und purer Freude erfüllt.",
+    "description_en": "Delicate and fruity, with cherries and secrets, filling the heart with gentle sadness and pure joy.",
+    "description_fr": "Délicat et fruité, avec des cerises et des secrets, remplissant le cœur d'une douce tristesse et d'une joie pure.",
+    "food_pairings_de": [
+      "Entenbrust",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Duck breast",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard",
+      "Champignons"
+    ],
+    "created_at": "2025-12-13T05:25:52.276583+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "724857ee-0d02-4740-bf31-4f713812e527",
+    "name": "Pinot Noir Barrique 2022",
+    "winery": "Domaine Hôpital Pourtalès",
+    "country": "Schweiz",
+    "region": "Neuenburg - Neuenburg",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Samten und fruchtig, ein Barrique, der das Herz mit Pflaume und Schokolade in tiefe Zufriedenheit wiegt.",
+    "description_en": "Velvety and fruity, a barrique that rocks the heart into deep contentment with plum and chocolate.",
+    "description_fr": "Velouté et fruité, une barrique qui berce le cœur dans une profonde satisfaction avec de la prune et du chocolat.",
+    "food_pairings_de": [
+      "Roastbeef",
+      "Dunkle Schokolade"
+    ],
+    "food_pairings_en": [
+      "Roast beef",
+      "Dark chocolate"
+    ],
+    "food_pairings_fr": [
+      "Rôti de bœuf",
+      "Chocolat noir"
+    ],
+    "created_at": "2025-12-13T05:25:52.277558+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "3db3b344-c710-47d4-8092-e43a18463980",
+    "name": "Œil de Perdrix 2024",
+    "winery": "Caves de la Béroche",
+    "country": "Schweiz",
+    "region": "Neuenburg - Saint-Blaise",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rosé",
+    "price_category": "€€",
+    "description_de": "Rein und mineralisch, ein Tropfen, der das Herz mit Bergfrische reinigt – kühler und klar.",
+    "description_en": "Pure and mineral, a drop that cleanses the heart with mountain freshness – cool and clear.",
+    "description_fr": "Pur et minéral, une goutte qui purifie le cœur avec la fraîcheur de la montagne – frais et clair.",
+    "food_pairings_de": [
+      "Austern",
+      "Leichte Vorspeisen"
+    ],
+    "food_pairings_en": [
+      "Oysters",
+      "Light appetizers"
+    ],
+    "food_pairings_fr": [
+      "Huîtres",
+      "Entrées légères"
+    ],
+    "created_at": "2025-12-13T05:25:52.278525+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "6df1639a-c50a-4ee6-a2f8-32fbbb193edc",
+    "name": "Blanc Béroche 2024",
+    "winery": "Caves de la Béroche",
+    "country": "Schweiz",
+    "region": "Neuenburg - Saint-Blaise",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Frisch und blumig, ein Chasselas, der die Seele in goldene Sonnenuntergänge taucht.",
+    "description_en": "Fresh and floral, a Chasselas that immerses the soul in golden sunsets.",
+    "description_fr": "Frais et floral, un Chasselas qui plonge l'âme dans des couchers de soleil dorés.",
+    "food_pairings_de": [
+      "Huhn mit Kräutern",
+      "Raclette"
+    ],
+    "food_pairings_en": [
+      "Chicken with herbs",
+      "Raclette"
+    ],
+    "food_pairings_fr": [
+      "Poulet aux herbes",
+      "Raclette"
+    ],
+    "created_at": "2025-12-13T05:25:52.279370+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "b65f3642-fadc-44b3-88bd-3bde5482521d",
+    "name": "Non-Filtré 2024",
+    "winery": "Caves des Lauriers – Jungo & Fellmann",
+    "country": "Schweiz",
+    "region": "Neuenburg - Cressier",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Sprudelnd und fröhlich, ein Schaumwein, der die Seele mit kindlicher Freude weckt – ungeschliffen und vital.",
+    "description_en": "Bubbly and cheerful, a sparkling wine that awakens the soul with childlike joy – unrefined and vital.",
+    "description_fr": "Pétillant et joyeux, un vin mousseux qui éveille l'âme avec une joie enfantine – brut et vital.",
+    "food_pairings_de": [
+      "Tapas",
+      "Lachs"
+    ],
+    "food_pairings_en": [
+      "Tapas",
+      "Salmon"
+    ],
+    "food_pairings_fr": [
+      "Tapas",
+      "Saumon"
+    ],
+    "created_at": "2025-12-13T05:25:52.280127+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "33998c84-311e-4453-aadf-3889633d5b13",
+    "name": "Château d'Auvernier Sélection Tradition 2024",
+    "winery": "Caves du Château d'Auvernier",
+    "country": "Schweiz",
+    "region": "Neuenburg - Auvernier",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Ikonisch und tief, mit Honig und Stein, das wie ein Erbe die Seele berührt.",
+    "description_en": "Iconic and deep, with honey and stone, touching the soul like an heritage.",
+    "description_fr": "Iconique et profond, avec du miel et de la pierre, touchant l'âme comme un héritage.",
+    "food_pairings_de": [
+      "Geflügel",
+      "Meeresfrüchte"
+    ],
+    "food_pairings_en": [
+      "Poultry",
+      "Seafood"
+    ],
+    "food_pairings_fr": [
+      "Volaille",
+      "Fruits de mer"
+    ],
+    "created_at": "2025-12-13T05:25:52.280881+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "7a81a26c-8432-4a33-a9af-aae2def80a79",
+    "name": "Château d'Auvernier Non Filtré 2024",
+    "winery": "Caves du Château d'Auvernier",
+    "country": "Schweiz",
+    "region": "Neuenburg - Auvernier",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Lebendig und salzig, ein Tropfen, der das Herz mit Meeresbrise umweht.",
+    "description_en": "Lively and salty, a drop that caresses the heart with sea breeze.",
+    "description_fr": "Vif et salé, une goutte qui caresse le cœur avec la brise marine.",
+    "food_pairings_de": [
+      "Schalentiere",
+      "Zitronenhähnchen"
+    ],
+    "food_pairings_en": [
+      "Shellfish",
+      "Lemon chicken"
+    ],
+    "food_pairings_fr": [
+      "Crustacés",
+      "Poulet au citron"
+    ],
+    "created_at": "2025-12-13T05:25:52.281615+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "66bc2d7c-dcda-4b8d-92b0-1c09135749e2",
+    "name": "Cru de la Ville 2024",
+    "winery": "Caves de la Ville de Neuchâtel",
+    "country": "Schweiz",
+    "region": "Neuenburg - Neuenburg",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Elegant und strukturiert, mit Apfel und Mineral, das wie ein Tanz die Seele erheitert.",
+    "description_en": "Elegant and structured, with apple and mineral, cheering the soul like a dance.",
+    "description_fr": "Élégant et structuré, avec de la pomme et du minéral, égayant l'âme comme une danse.",
+    "food_pairings_de": [
+      "Asiatische Gerichte",
+      "Gebratener Tofu"
+    ],
+    "food_pairings_en": [
+      "Asian dishes",
+      "Fried tofu"
+    ],
+    "food_pairings_fr": [
+      "Plats asiatiques",
+      "Tofu frit"
+    ],
+    "created_at": "2025-12-13T05:25:52.282345+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "d21c2825-b4f7-4e16-bd66-6d41c02b9844",
+    "name": "Le Charmeur 2024",
+    "winery": "Caves des Lauriers – Jungo & Fellmann",
+    "country": "Schweiz",
+    "region": "Neuenburg - Cressier",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Exotisch und würzig, ein Weiß, der das Herz mit orientalischem Flair verzaubert.",
+    "description_en": "Exotic and spicy, a white that enchants the heart with oriental flair.",
+    "description_fr": "Exotique et épicé, un blanc qui enchante le cœur avec un flair oriental.",
+    "food_pairings_de": [
+      "Curry",
+      "Vegetarische Gerichte"
+    ],
+    "food_pairings_en": [
+      "Curry",
+      "Vegetarian dishes"
+    ],
+    "food_pairings_fr": [
+      "Curry",
+      "Plats végétariens"
+    ],
+    "created_at": "2025-12-13T05:25:52.283297+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "3ed982de-5573-423f-8102-721f8b0982c1",
+    "name": "Champréveyres Chasselas 2023",
+    "winery": "Alain Gerber",
+    "country": "Schweiz",
+    "region": "Neuenburg - Hauterive",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Fruchtig und ausgewogen, ein Chasselas, der das Herz mit erdiger Wärme umfängt.",
+    "description_en": "Fruity and balanced, a Chasselas that embraces the heart with earthy warmth.",
+    "description_fr": "Fruité et équilibré, un Chasselas qui embrasse le cœur avec une chaleur terreuse.",
+    "food_pairings_de": [
+      "Fondue",
+      "Rind"
+    ],
+    "food_pairings_en": [
+      "Fondue",
+      "Beef"
+    ],
+    "food_pairings_fr": [
+      "Fondue",
+      "Bœuf"
+    ],
+    "created_at": "2025-12-13T05:25:52.284052+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "c896c76a-5a14-4aff-be72-0f7d8ecb5420",
+    "name": "Cru d'Hauterive Pinot Noir 2022",
+    "winery": "Alain Gerber",
+    "country": "Schweiz",
+    "region": "Neuenburg - Hauterive",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Tief und tanninreich, mit Leder und Beeren, die die Seele in alte Legenden eintauchen lassen.",
+    "description_en": "Deep and tannic, with leather and berries that immerse the soul in ancient legends.",
+    "description_fr": "Profond et tannique, avec du cuir et des baies qui plongent l'âme dans les légendes anciennes.",
+    "food_pairings_de": [
+      "Rehrücken",
+      "Dunkles Fleisch"
+    ],
+    "food_pairings_en": [
+      "Saddle of venison",
+      "Dark meat"
+    ],
+    "food_pairings_fr": [
+      "Selle de chevreuil",
+      "Viande brune"
+    ],
+    "created_at": "2025-12-13T05:25:52.285172+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "d1477687-7c7f-44af-b541-e3c0a62d4568",
+    "name": "Expression Chardonnay 2023",
+    "winery": "Alain Gerber",
+    "country": "Schweiz",
+    "region": "Neuenburg - Hauterive",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Cremig und blumig, ein Chardonnay, der die Seele in sonnendurchflutete Gärten entführt.",
+    "description_en": "Creamy and floral, a Chardonnay that transports the soul to sun-drenched gardens.",
+    "description_fr": "Crémeux et floral, un Chardonnay qui transporte l'âme dans des jardins ensoleillés.",
+    "food_pairings_de": [
+      "Gegrillter Lachs",
+      "Asiatisches Gemüse"
+    ],
+    "food_pairings_en": [
+      "Grilled salmon",
+      "Asian vegetables"
+    ],
+    "food_pairings_fr": [
+      "Saumon grillé",
+      "Légumes asiatiques"
+    ],
+    "created_at": "2025-12-13T05:25:52.286216+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "c5ccfc59-f489-416a-a10d-8354bd6354e0",
+    "name": "Divico 2023",
+    "winery": "Domaine Divernois",
+    "country": "Schweiz",
+    "region": "Neuenburg - Milvignes",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Divico",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Robust und fruchtig, ein Piwi, der die Seele mit innovativer Kraft stärkt.",
+    "description_en": "Robust and fruity, a Piwi that strengthens the soul with innovative power.",
+    "description_fr": "Robuste et fruité, un Piwi qui renforce l'âme avec une puissance innovante.",
+    "food_pairings_de": [
+      "Wild",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Game",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Gibier",
+      "Champignons"
+    ],
+    "created_at": "2025-12-13T05:25:52.287144+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "b5a3cfd9-a9ad-4b46-b029-f502a51b3ea7",
+    "name": "Harmonie 2023",
+    "winery": "Domaine Divernois",
+    "country": "Schweiz",
+    "region": "Neuenburg - Milvignes",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Assemblage",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Harmonisch und komplex, ein Assemblage, der wie ein Chor die Seele erhebt.",
+    "description_en": "Harmonious and complex, an assemblage that elevates the soul like a choir.",
+    "description_fr": "Harmonieux et complexe, un assemblage qui élève l'âme comme un chœur.",
+    "food_pairings_de": [
+      "Lamm",
+      "Dunkles Fleisch"
+    ],
+    "food_pairings_en": [
+      "Lamb",
+      "Dark meat"
+    ],
+    "food_pairings_fr": [
+      "Agneau",
+      "Viande brune"
+    ],
+    "created_at": "2025-12-13T05:25:52.288079+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "c446c640-a371-4581-ba62-18e8b5f792d8",
+    "name": "Instant Plaisir Rosé 2024",
+    "winery": "Domaine Divernois",
+    "country": "Schweiz",
+    "region": "Neuenburg - Milvignes",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rosé",
+    "price_category": "€€",
+    "description_de": "Leicht und verlockend, ein Rosé, der wie ein Flüstern die Seele mit Sommerfreude erfüllt.",
+    "description_en": "Light and alluring, a rosé that fills the soul with summer joy like a whisper.",
+    "description_fr": "Léger et séduisant, un rosé qui remplit l'âme de joie estivale comme un murmure.",
+    "food_pairings_de": [
+      "Tapas",
+      "Lachs"
+    ],
+    "food_pairings_en": [
+      "Tapas",
+      "Salmon"
+    ],
+    "food_pairings_fr": [
+      "Tapas",
+      "Saumon"
+    ],
+    "created_at": "2025-12-13T05:25:52.289031+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "54e78854-3880-444c-a02c-dbafe343d4b0",
+    "name": "Chasselas 2024",
+    "winery": "Sandoz Vins",
+    "country": "Schweiz",
+    "region": "Neuenburg - Cressier",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Frisch und aromatisch, ein Chasselas, der wie ein erstes Erwachen im Frühling das Herz erfrischt.",
+    "description_en": "Fresh and aromatic, a Chasselas that refreshes the heart like the first awakening in spring.",
+    "description_fr": "Frais et aromatique, un Chasselas qui rafraîchit le cœur comme le premier réveil au printemps.",
+    "food_pairings_de": [
+      "Austern",
+      "Ziegenkäse-Platte"
+    ],
+    "food_pairings_en": [
+      "Oysters",
+      "Goat cheese platter"
+    ],
+    "food_pairings_fr": [
+      "Huîtres",
+      "Plateau de fromage de chèvre"
+    ],
+    "created_at": "2025-12-13T05:25:52.289999+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "5de88634-dddc-49e9-85f6-70c15c3564ee",
+    "name": "Le 1808 Chasselas Effervescent 2023",
+    "winery": "Domaine Hôpital Pourtalès",
+    "country": "Schweiz",
+    "region": "Neuenburg - Neuenburg",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Chasselas",
+    "wine_color": "schaumwein",
+    "price_category": "€€€",
+    "description_de": "Perlend und mystisch, ein Effervescent, der die Seele alchemistisch verändert.",
+    "description_en": "Sparkling and mystical, an effervescent that alchemically transforms the soul.",
+    "description_fr": "Pétillant et mystique, un effervescent qui transforme l'âme de manière alchimique.",
+    "food_pairings_de": [
+      "Wild",
+      "Reifer Käse"
+    ],
+    "food_pairings_en": [
+      "Game",
+      "Aged cheese"
+    ],
+    "food_pairings_fr": [
+      "Gibier",
+      "Fromage affiné"
+    ],
+    "created_at": "2025-12-13T05:25:52.290926+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "741d74d6-a0b7-49aa-ae64-541e033d33f4",
+    "name": "Pinot Noir Clos de la Perrière 2022",
+    "winery": "Domaine Saint-Sébaste",
+    "country": "Schweiz",
+    "region": "Neuenburg - Saint-Blaise",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Biodynamisch und tief, ein Clos, der wie ein Geheimnis die Seele berührt.",
+    "description_en": "Biodynamic and deep, a Clos that touches the soul like a secret.",
+    "description_fr": "Biodynamique et profond, un Clos qui touche l'âme comme un secret.",
+    "food_pairings_de": [
+      "Rindfleisch",
+      "Wild"
+    ],
+    "food_pairings_en": [
+      "Beef",
+      "Game"
+    ],
+    "food_pairings_fr": [
+      "Bœuf",
+      "Gibier"
+    ],
+    "created_at": "2025-12-13T05:25:52.291866+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "8d9f689d-5074-48ab-a805-af0ae0b54921",
+    "name": "Chasselas Vieilles Vignes 2023",
+    "winery": "Domaine Saint-Sébaste",
+    "country": "Schweiz",
+    "region": "Neuenburg - Saint-Blaise",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Reich und beerig, ein Vieilles Vignes, der die Seele in neuenburgische Wälder entführt.",
+    "description_en": "Rich and berry-filled, a Vieilles Vignes that transports the soul to Neuchâtel forests.",
+    "description_fr": "Riche et fruité, un Vieilles Vignes qui transporte l'âme dans les forêts neuchâteloises.",
+    "food_pairings_de": [
+      "Lammkoteletts",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Lamb chops",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Côtelettes d'agneau",
+      "Fromage"
+    ],
+    "created_at": "2025-12-13T05:25:52.292840+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "15bcf283-f5aa-4f2f-b512-49aef287c8a6",
+    "name": "Orange Wine 2023",
+    "winery": "Domaine Saint-Sébaste",
+    "country": "Schweiz",
+    "region": "Neuenburg - Saint-Blaise",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Chasselas",
+    "wine_color": "orange",
+    "price_category": "€€€",
+    "description_de": "Innovativ und würzig, ein Orange, der das Herz mit moderner Freude erfüllt.",
+    "description_en": "Innovative and spicy, an Orange wine that fills the heart with modern joy.",
+    "description_fr": "Innovant et épicé, un vin Orange qui remplit le cœur de joie moderne.",
+    "food_pairings_de": [
+      "Grillgemüse",
+      "Fisch"
+    ],
+    "food_pairings_en": [
+      "Grilled vegetables",
+      "Fish"
+    ],
+    "food_pairings_fr": [
+      "Légumes grillés",
+      "Poisson"
+    ],
+    "created_at": "2025-12-13T05:25:52.293832+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "b91e56ec-822f-48b8-a0b7-b7ed12b2f636",
+    "name": "Chasselas 2023",
+    "winery": "Domaine des Landions",
+    "country": "Schweiz",
+    "region": "Neuenburg - Cortaillod",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Hoch und aromatisch, mit Mandeln und Nektarinen, das die Seele auf Höhenflüge trägt.",
+    "description_en": "High and aromatic, with almonds and nectarines, carrying the soul to soaring heights.",
+    "description_fr": "Haut et aromatique, avec des amandes et des nectarines, portant l'âme vers les sommets.",
+    "food_pairings_de": [
+      "Käseplatte",
+      "Gebratenes Forellenfilet"
+    ],
+    "food_pairings_en": [
+      "Cheese platter",
+      "Pan-fried trout fillet"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fromages",
+      "Filet de truite poêlé"
+    ],
+    "created_at": "2025-12-13T05:25:52.294791+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "54a5aa3e-5537-4bff-87ce-089bc2b55fcf",
+    "name": "Pinot Noir 2022",
+    "winery": "Domaine des Landions",
+    "country": "Schweiz",
+    "region": "Neuenburg - Cortaillod",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Samtig und elegant, ein Pinot, der das Herz mit burgundischer Poesie umfängt.",
+    "description_en": "Velvety and elegant, a Pinot that embraces the heart with Burgundian poetry.",
+    "description_fr": "Velouté et élégant, un Pinot qui embrasse le cœur avec la poésie bourguignonne.",
+    "food_pairings_de": [
+      "Ente",
+      "Pilzgerichte"
+    ],
+    "food_pairings_en": [
+      "Duck",
+      "Mushroom dishes"
+    ],
+    "food_pairings_fr": [
+      "Canard",
+      "Plats aux champignons"
+    ],
+    "created_at": "2025-12-13T05:25:52.295716+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "f22dac44-4241-490c-893a-309626705202",
+    "name": "Chardonnay 2023",
+    "winery": "Domaine de la Maison Carrée",
+    "country": "Schweiz",
+    "region": "Neuenburg - Auvernier",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Opulent und harmonisch, mit Pfirsich und Eiche, das wie ein warmer Föhn die Seele streichelt.",
+    "description_en": "Opulent and harmonious, with peach and oak, caressing the soul like a warm Föhn wind.",
+    "description_fr": "Opulent et harmonieux, avec de la pêche et du chêne, caressant l'âme comme un foehn chaud.",
+    "food_pairings_de": [
+      "Gegrilltes Huhn",
+      "Tomme"
+    ],
+    "food_pairings_en": [
+      "Grilled chicken",
+      "Tomme"
+    ],
+    "food_pairings_fr": [
+      "Poulet grillé",
+      "Tomme"
+    ],
+    "created_at": "2025-12-13T05:25:52.296665+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "2de1a827-621e-44de-876a-1470616e7559",
+    "name": "Œil de Perdrix 2023",
+    "winery": "Domaine de la Maison Carrée",
+    "country": "Schweiz",
+    "region": "Neuenburg - Auvernier",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rosé",
+    "price_category": "€€",
+    "description_de": "Zart und blumig, ein Rosé, der die Seele mit valaisanischer Reinheit erfüllt.",
+    "description_en": "Delicate and floral, a rosé that fills the soul with Valaisan purity.",
+    "description_fr": "Délicat et floral, un rosé qui remplit l'âme de pureté valaisanne.",
+    "food_pairings_de": [
+      "Fisch",
+      "Salate"
+    ],
+    "food_pairings_en": [
+      "Fish",
+      "Salads"
+    ],
+    "food_pairings_fr": [
+      "Poisson",
+      "Salades"
+    ],
+    "created_at": "2025-12-13T05:25:52.297659+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "bffce90b-81f2-4aec-b0b4-76de421b7b13",
+    "name": "Merlot 2022",
+    "winery": "Jacques Tatasciore",
+    "country": "Schweiz",
+    "region": "Neuenburg - Cressier",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Weich und fruchtig, ein Merlot, der das Herz mit warmer Umarmung beschenkt.",
+    "description_en": "Soft and fruity, a Merlot that gifts the heart with a warm embrace.",
+    "description_fr": "Doux et fruité, un Merlot qui offre au cœur une étreinte chaleureuse.",
+    "food_pairings_de": [
+      "Pasta mit Tomatensauce",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Pasta with tomato sauce",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Pâtes à la sauce tomate",
+      "Fromage"
+    ],
+    "created_at": "2025-12-13T05:25:52.298694+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "05092ef5-ad0a-47fc-b41a-6a886aca0575",
+    "name": "Pinot Noir Réserve 2022",
+    "winery": "Caves Alain Gerber",
+    "country": "Schweiz",
+    "region": "Neuenburg - Hauterive",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Monumental und samtig, ein Réserve, der die Seele in göttliche Ekstase versetzt.",
+    "description_en": "Monumental and velvety, a Réserve that sends the soul into divine ecstasy.",
+    "description_fr": "Monumental et velouté, une Réserve qui envoie l'âme en extase divine.",
+    "food_pairings_de": [
+      "Entrecôte",
+      "Schokolade"
+    ],
+    "food_pairings_en": [
+      "Entrecôte",
+      "Chocolate"
+    ],
+    "food_pairings_fr": [
+      "Entrecôte",
+      "Chocolat"
+    ],
+    "created_at": "2025-12-13T05:25:52.299559+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "6be37bbb-84a5-4e9d-8ab2-7afcab383271",
+    "name": "Gewürztraminer PULP 2024",
+    "winery": "Lavanchy Vins",
+    "country": "Schweiz",
+    "region": "Neuenburg - Neuenburg",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Gewürztraminer",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Exotisch und intensiv, ein Gewürz, der wie ein Traum die Seele umhüllt.",
+    "description_en": "Exotic and intense, a Gewürztraminer that wraps the soul like a dream.",
+    "description_fr": "Exotique et intense, un Gewürztraminer qui enveloppe l'âme comme un rêve.",
+    "food_pairings_de": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "food_pairings_en": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "food_pairings_fr": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "created_at": "2025-12-13T05:25:52.300373+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "464702cd-e75b-4524-acf8-46b3fa229614",
+    "name": "Sauvignier 2024",
+    "winery": "Lavanchy Vins",
+    "country": "Schweiz",
+    "region": "Neuenburg - Neuenburg",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Sauvignier Gris",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Nervös und lebendig, ein Blanc, der die Seele mit alpiner Frische weckt.",
+    "description_en": "Nervous and lively, a Blanc that awakens the soul with Alpine freshness.",
+    "description_fr": "Nerveux et vif, un Blanc qui éveille l'âme avec la fraîcheur alpine.",
+    "food_pairings_de": [
+      "Krebse",
+      "Kräutersuppe"
+    ],
+    "food_pairings_en": [
+      "Crayfish",
+      "Herb soup"
+    ],
+    "food_pairings_fr": [
+      "Écrevisses",
+      "Soupe aux herbes"
+    ],
+    "created_at": "2025-12-13T05:25:52.301130+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "294cb7ee-7340-49de-88cb-dcd4d979037b",
+    "name": "Chasselas Non Filtré 2024",
+    "winery": "Caves de la Béroche",
+    "country": "Schweiz",
+    "region": "Neuenburg - Saint-Blaise",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Frisch und vielschichtig, ein Non Filtré, der das Herz mit kindlicher Freude weckt.",
+    "description_en": "Fresh and multilayered, a Non Filtré that awakens the heart with childlike joy.",
+    "description_fr": "Frais et complexe, un Non Filtré qui éveille le cœur avec une joie enfantine.",
+    "food_pairings_de": [
+      "Tapas",
+      "Lachs"
+    ],
+    "food_pairings_en": [
+      "Tapas",
+      "Salmon"
+    ],
+    "food_pairings_fr": [
+      "Tapas",
+      "Saumon"
+    ],
+    "created_at": "2025-12-13T05:25:52.301859+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "a6a12ce4-759d-4ac0-828d-f03a7082c91b",
+    "name": "Pinot Noir 2023",
+    "winery": "Domaine Bouvet-Jabloir",
+    "country": "Schweiz",
+    "region": "Neuenburg - Auvernier",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Filigran und robust, ein Pinot, der die Seele mit imperierender Kraft erhebt.",
+    "description_en": "Delicate yet robust, a Pinot that elevates the soul with imperial power.",
+    "description_fr": "Délicat mais robuste, un Pinot qui élève l'âme avec une puissance impériale.",
+    "food_pairings_de": [
+      "Lamm",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Lamb",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Agneau",
+      "Champignons"
+    ],
+    "created_at": "2025-12-13T05:25:52.302578+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "f63d3419-271a-4afa-a1fb-16d4df4c62e4",
+    "name": "Chardonnay 2023",
+    "winery": "Domaine Bouvet-Jabloir",
+    "country": "Schweiz",
+    "region": "Neuenburg - Auvernier",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Reich und strukturiert, ein Grand Cru, der die Seele in städtischer Eleganz badet.",
+    "description_en": "Rich and structured, a Grand Cru that bathes the soul in urban elegance.",
+    "description_fr": "Riche et structuré, un Grand Cru qui baigne l'âme dans l'élégance urbaine.",
+    "food_pairings_de": [
+      "Krustentiere",
+      "Geflügel"
+    ],
+    "food_pairings_en": [
+      "Crustaceans",
+      "Poultry"
+    ],
+    "food_pairings_fr": [
+      "Crustacés",
+      "Volaille"
+    ],
+    "created_at": "2025-12-13T05:25:52.303318+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "724d5967-380d-48f3-9484-1b9d682cd7b7",
+    "name": "Œil de Perdrix 2024",
+    "winery": "Caves Alain Gerber",
+    "country": "Schweiz",
+    "region": "Neuenburg - Hauterive",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rosé",
+    "price_category": "€€",
+    "description_de": "Sonnig und fruchtig, ein Rosé, der das Herz mit sommerlicher Leichtigkeit umfängt.",
+    "description_en": "Sunny and fruity, a rosé that embraces the heart with summery lightness.",
+    "description_fr": "Ensoleillé et fruité, un rosé qui embrasse le cœur avec une légèreté estivale.",
+    "food_pairings_de": [
+      "Sommergerichte",
+      "Frischkäse"
+    ],
+    "food_pairings_en": [
+      "Summer dishes",
+      "Fresh cheese"
+    ],
+    "food_pairings_fr": [
+      "Plats d'été",
+      "Fromage frais"
+    ],
+    "created_at": "2025-12-13T05:25:52.304219+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "86070c49-bdd1-4383-bc32-1cd3f7f68153",
+    "name": "Chasselas 2023",
+    "winery": "Domaine de Chambleau",
+    "country": "Schweiz",
+    "region": "Neuenburg - Colombier",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Mineralisch und nervös, ein Chasselas, der die Seele mit seefrischem Wind umweht.",
+    "description_en": "Mineral and nervous, a Chasselas that caresses the soul with lake-fresh wind.",
+    "description_fr": "Minéral et nerveux, un Chasselas qui caresse l'âme avec le vent frais du lac.",
+    "food_pairings_de": [
+      "Schalentiere",
+      "Zitronenhähnchen"
+    ],
+    "food_pairings_en": [
+      "Shellfish",
+      "Lemon chicken"
+    ],
+    "food_pairings_fr": [
+      "Crustacés",
+      "Poulet au citron"
+    ],
+    "created_at": "2025-12-13T05:25:52.305053+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "c16890f5-9fad-403d-9ead-110ef4ec068a",
+    "name": "Pinot Noir 2022",
+    "winery": "Caves du Prieuré",
+    "country": "Schweiz",
+    "region": "Neuenburg - Bevaix",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Tief und amaronig, ein Rot, das wie ein Abgrund die Seele fesselt.",
+    "description_en": "Deep and Amarone-like, a red that captivates the soul like an abyss.",
+    "description_fr": "Profond et de style Amarone, un rouge qui captive l'âme comme un abîme.",
+    "food_pairings_de": [
+      "Stark gewürzte Fleischgerichte"
+    ],
+    "food_pairings_en": [
+      "Heavily spiced meat dishes"
+    ],
+    "food_pairings_fr": [
+      "Plats de viande très épicés"
+    ],
+    "created_at": "2025-12-13T05:25:52.305787+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "6d87b2e2-3cd6-4fdd-b032-518483a3e40b",
+    "name": "Chasselas 2024",
+    "winery": "Caves des Lauriers",
+    "country": "Schweiz",
+    "region": "Neuenburg - Cressier",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Historisch und elegant, ein Wein, der die Seele mit zeitloser Tiefe berührt.",
+    "description_en": "Historic and elegant, a wine that touches the soul with timeless depth.",
+    "description_fr": "Historique et élégant, un vin qui touche l'âme avec une profondeur intemporelle.",
+    "food_pairings_de": [
+      "Geflügel",
+      "Meeresfrüchte"
+    ],
+    "food_pairings_en": [
+      "Poultry",
+      "Seafood"
+    ],
+    "food_pairings_fr": [
+      "Volaille",
+      "Fruits de mer"
+    ],
+    "created_at": "2025-12-13T05:25:52.306520+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "384c7f9d-700a-461c-abd1-3b7d0ab05b1b",
+    "name": "Merlot 2023",
+    "winery": "Sandoz Vins",
+    "country": "Schweiz",
+    "region": "Neuenburg - Cressier",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Frisch und ausgewogen, ein Merlot, der das Herz mit klassischer Freude erheitert.",
+    "description_en": "Fresh and balanced, a Merlot that cheers the heart with classic joy.",
+    "description_fr": "Frais et équilibré, un Merlot qui égaye le cœur avec une joie classique.",
+    "food_pairings_de": [
+      "Fondue",
+      "Rind"
+    ],
+    "food_pairings_en": [
+      "Fondue",
+      "Beef"
+    ],
+    "food_pairings_fr": [
+      "Fondue",
+      "Bœuf"
+    ],
+    "created_at": "2025-12-13T05:25:52.307386+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "e1087be0-6548-4d5a-84d4-279f3d78eb3d",
+    "name": "Viognier 2023",
+    "winery": "Domaine du Pampre",
+    "country": "Schweiz",
+    "region": "Neuenburg - Peseux",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Viognier",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Reich und beerig, ein Viognier, der die Seele in neuenburgische Wälder entführt.",
+    "description_en": "Rich and berry-filled, a Viognier that transports the soul to Neuchâtel forests.",
+    "description_fr": "Riche et fruité, un Viognier qui transporte l'âme dans les forêts neuchâteloises.",
+    "food_pairings_de": [
+      "Lammkoteletts",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Lamb chops",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Côtelettes d'agneau",
+      "Fromage"
+    ],
+    "created_at": "2025-12-13T05:25:52.308259+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "84eaf652-53b8-46c3-a712-0c7719a2b4bb",
+    "name": "Pinot Gris 2022",
+    "winery": "Domaine Hôpital Pourtalès",
+    "country": "Schweiz",
+    "region": "Neuenburg - Neuenburg",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Pinot Gris",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Elegant und pfeffrig, ein Gris, der die Seele mit orientalischem Zauber umhüllt.",
+    "description_en": "Elegant and peppery, a Gris that wraps the soul in oriental magic.",
+    "description_fr": "Élégant et poivré, un Gris qui enveloppe l'âme de magie orientale.",
+    "food_pairings_de": [
+      "Gewürzhähnchen",
+      "Auberginen"
+    ],
+    "food_pairings_en": [
+      "Spiced chicken",
+      "Eggplant"
+    ],
+    "food_pairings_fr": [
+      "Poulet épicé",
+      "Aubergines"
+    ],
+    "created_at": "2025-12-13T05:25:52.309003+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "8f4bdcd0-87e2-4603-b235-0f8491977836",
+    "name": "Flétri 2023",
+    "winery": "Caves de la Ville de Neuchâtel",
+    "country": "Schweiz",
+    "region": "Neuenburg - Neuenburg",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Chasselas",
+    "wine_color": "süsswein",
+    "price_category": "€€€€",
+    "description_de": "Süß und komplex, ein Edelsüßer, der das Herz mit nobler Verführung erfüllt.",
+    "description_en": "Sweet and complex, a noble sweet wine that fills the heart with noble seduction.",
+    "description_fr": "Doux et complexe, un vin liquoreux qui remplit le cœur d'une noble séduction.",
+    "food_pairings_de": [
+      "Desserts",
+      "Blauschimmelkäse"
+    ],
+    "food_pairings_en": [
+      "Desserts",
+      "Blue cheese"
+    ],
+    "food_pairings_fr": [
+      "Desserts",
+      "Fromage bleu"
+    ],
+    "created_at": "2025-12-13T05:25:52.309745+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "0d0190c8-633b-49cf-9745-14eb925d5d94",
+    "name": "Chasselas Grand Cru 2024",
+    "winery": "Alain Gerber",
+    "country": "Schweiz",
+    "region": "Neuenburg - Hauterive",
+    "appellation": "AOC Neuchâtel",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Hoch und rein, ein Grand Cru, der wie ein Gipfelblick die Seele erweitert.",
+    "description_en": "High and pure, a Grand Cru that expands the soul like a summit view.",
+    "description_fr": "Haut et pur, un Grand Cru qui élargit l'âme comme une vue du sommet.",
+    "food_pairings_de": [
+      "Käseplatte",
+      "Leichte Vorspeisen"
+    ],
+    "food_pairings_en": [
+      "Cheese platter",
+      "Light appetizers"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fromages",
+      "Entrées légères"
+    ],
+    "created_at": "2025-12-13T05:25:52.310486+00:00",
+    "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
   }
 ]

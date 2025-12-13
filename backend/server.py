@@ -1082,6 +1082,9 @@ async def get_wine_pairing(request: PairingRequest):
         doc['created_at'] = doc['created_at'].isoformat()
         await db.pairings.insert_one(doc)
         
+        # 🍷 AUTO-ADD: Empfohlene Weine im Hintergrund zur DB hinzufügen
+        asyncio.create_task(auto_add_recommended_wines(response, request.dish))
+        
         return pairing
         
     except Exception as e:

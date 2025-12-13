@@ -36090,5 +36090,1396 @@
     ],
     "created_at": "2025-12-13T05:37:16.084941+00:00",
     "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "4e366b20-0fd9-489d-b4d9-a667e23dd83e",
+    "name": "Abt Ambros Rosé 2023",
+    "winery": "Weingut Klosterhof",
+    "country": "Schweiz",
+    "region": "Luzern - Aesch",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rosé",
+    "price_category": "€€€",
+    "description_de": "Ein zartrosa Poet, der von Erdbeeren und Sommerflüstern erzählt – ein Wein, der die Seele in sanfte, fruchtige Umarmung hüllt und vergangene Picknicks heraufbeschwört.",
+    "description_en": "A delicate pink poet speaking of strawberries and summer whispers – a wine that wraps the soul in a soft, fruity embrace and evokes past picnics.",
+    "description_fr": "Un poète rose délicat parlant de fraises et de murmures d'été – un vin qui enveloppe l'âme dans une étreinte douce et fruitée.",
+    "food_pairings_de": [
+      "Gegrillter Fisch",
+      "Ziegenkäse"
+    ],
+    "food_pairings_en": [
+      "Grilled fish",
+      "Goat cheese"
+    ],
+    "food_pairings_fr": [
+      "Poisson grillé",
+      "Fromage de chèvre"
+    ],
+    "created_at": "2025-12-13T05:41:22.097494+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "46f00e62-97fc-41f2-85cd-361335f2df17",
+    "name": "Trienger Sonnetropfe 2023",
+    "winery": "Weingut Triengen",
+    "country": "Schweiz",
+    "region": "Luzern - Triengen",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Assemblage",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Frisch und mineralisch, ein Assemblage, der wie ein Morgenhauch über dem See das Herz mit Apfel und Stein erfrischt und Hoffnung weckt.",
+    "description_en": "Fresh and mineral, an assemblage that refreshes the heart with apple and stone like a morning breeze over the lake, awakening hope.",
+    "description_fr": "Frais et minéral, un assemblage qui rafraîchit le cœur avec de la pomme et de la pierre comme une brise matinale sur le lac.",
+    "food_pairings_de": [
+      "Papet Vaudois",
+      "Krebse"
+    ],
+    "food_pairings_en": [
+      "Papet Vaudois",
+      "Crayfish"
+    ],
+    "food_pairings_fr": [
+      "Papet Vaudois",
+      "Écrevisses"
+    ],
+    "created_at": "2025-12-13T05:41:22.098848+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "df941ec6-88ae-41a5-8830-027d147f1bd3",
+    "name": "Frau 2023",
+    "winery": "DeinWein vom Römerweg",
+    "country": "Schweiz",
+    "region": "Luzern - Schenkon",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Assemblage",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Elegant und filigran, mit Zitrus und Kräutern, der die Seele in blumige Melancholie taucht – ein Liebesbrief in Weiß, der das Herz mit leichter Traurigkeit und purer Freude erfüllt.",
+    "description_en": "Elegant and delicate, with citrus and herbs, plunging the soul into floral melancholy – a love letter in white filling the heart with gentle sadness and pure joy.",
+    "description_fr": "Élégant et délicat, avec des agrumes et des herbes, plongeant l'âme dans la mélancolie florale – une lettre d'amour en blanc.",
+    "food_pairings_de": [
+      "Entenbrust",
+      "Pilzrisotto"
+    ],
+    "food_pairings_en": [
+      "Duck breast",
+      "Mushroom risotto"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard",
+      "Risotto aux champignons"
+    ],
+    "created_at": "2025-12-13T05:41:22.099926+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "052ec32b-4457-4a98-b132-cd1610fdddf1",
+    "name": "Widder 2024",
+    "winery": "DeinWein vom Römerweg",
+    "country": "Schweiz",
+    "region": "Luzern - Schenkon",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Assemblage",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Robust und beerig, ein Rot, der das Herz mit wilden Beeren und erdiger Wärme in herbstliche Wälder lockt.",
+    "description_en": "Robust and berry-filled, a red that lures the heart into autumn forests with wild berries and earthy warmth.",
+    "description_fr": "Robuste et fruité, un rouge qui attire le cœur dans les forêts d'automne avec des baies sauvages et une chaleur terreuse.",
+    "food_pairings_de": [
+      "Lammkoteletts",
+      "Wildpastete"
+    ],
+    "food_pairings_en": [
+      "Lamb chops",
+      "Game pâté"
+    ],
+    "food_pairings_fr": [
+      "Côtelettes d'agneau",
+      "Pâté de gibier"
+    ],
+    "created_at": "2025-12-13T05:41:22.100916+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "1eb7f73d-ed79-43d8-a9e8-3f8d4d301e83",
+    "name": "Unica Sauvignon Blanc 2023",
+    "winery": "Rebberg an der Tellsplatte",
+    "country": "Schweiz",
+    "region": "Luzern - Sisikon",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Sauvignon Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Nervös und aromatisch, mit Grapefruit und Kräutern, der wie ein Bergquell die Seele klärt und verjüngt.",
+    "description_en": "Nervous and aromatic, with grapefruit and herbs, clearing and rejuvenating the soul like a mountain spring.",
+    "description_fr": "Nerveux et aromatique, avec du pamplemousse et des herbes, purifiant et rajeunissant l'âme comme une source de montagne.",
+    "food_pairings_de": [
+      "Frischer Salat",
+      "Meeresfrüchte"
+    ],
+    "food_pairings_en": [
+      "Fresh salad",
+      "Seafood"
+    ],
+    "food_pairings_fr": [
+      "Salade fraîche",
+      "Fruits de mer"
+    ],
+    "created_at": "2025-12-13T05:41:22.102075+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "f5edf2cc-f57b-413d-88d4-4c2f1acc586d",
+    "name": "Solaris Barrique 2022",
+    "winery": "Bioweingut Sitenrain",
+    "country": "Schweiz",
+    "region": "Luzern - Meggen",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Solaris",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Reich und honigartig, ein Bio-Weiß, der wie ein Traum die Seele umhüllt – cremig, mit Nuss und Eiche.",
+    "description_en": "Rich and honeyed, an organic white that wraps the soul like a dream – creamy, with nut and oak.",
+    "description_fr": "Riche et miellé, un blanc bio qui enveloppe l'âme comme un rêve – crémeux, avec de la noix et du chêne.",
+    "food_pairings_de": [
+      "Foie gras",
+      "Reifer Camembert"
+    ],
+    "food_pairings_en": [
+      "Foie gras",
+      "Aged Camembert"
+    ],
+    "food_pairings_fr": [
+      "Foie gras",
+      "Camembert affiné"
+    ],
+    "created_at": "2025-12-13T05:41:22.103261+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "1a2c4153-a303-4e8c-87c1-60453cc7ab01",
+    "name": "Winzigen Riesling 2022",
+    "winery": "Bioweinbau Winzigen",
+    "country": "Schweiz",
+    "region": "Luzern - Luzern",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Frisch und blumig, ein Riesling, der die Seele in goldene Sonnenuntergänge taucht.",
+    "description_en": "Fresh and floral, a Riesling that immerses the soul in golden sunsets.",
+    "description_fr": "Frais et floral, un Riesling qui plonge l'âme dans des couchers de soleil dorés.",
+    "food_pairings_de": [
+      "Huhn mit Kräutern",
+      "Raclette"
+    ],
+    "food_pairings_en": [
+      "Chicken with herbs",
+      "Raclette"
+    ],
+    "food_pairings_fr": [
+      "Poulet aux herbes",
+      "Raclette"
+    ],
+    "created_at": "2025-12-13T05:41:22.104393+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "a4ac28d2-4590-496a-b128-3a96d39ce7a6",
+    "name": "Rosé Divico 2024",
+    "winery": "Roth Weinbau",
+    "country": "Schweiz",
+    "region": "Luzern - Hohenrain",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Divico",
+    "wine_color": "rosé",
+    "price_category": "€€",
+    "description_de": "Zartrosa und verlockend, ein Piwi-Rosé, der das Herz mit Beere und Frische umwebt – pure, sommerliche Sinnlichkeit.",
+    "description_en": "Delicate pink and alluring, a Piwi rosé that weaves around the heart with berry and freshness – pure, summery sensuality.",
+    "description_fr": "Rose délicat et séduisant, un rosé Piwi qui enveloppe le cœur de baies et de fraîcheur – pure sensualité estivale.",
+    "food_pairings_de": [
+      "Salate mit Erdbeeren",
+      "Gegrillter Lachs"
+    ],
+    "food_pairings_en": [
+      "Salads with strawberries",
+      "Grilled salmon"
+    ],
+    "food_pairings_fr": [
+      "Salades aux fraises",
+      "Saumon grillé"
+    ],
+    "created_at": "2025-12-13T05:41:22.105570+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "e619a99f-0290-47ec-9411-14ae4fb61fe8",
+    "name": "Pinot Noir Spissen 2023",
+    "winery": "Weingut Kastanienbaum",
+    "country": "Schweiz",
+    "region": "Luzern - Luzern",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Tief und tanninreich, mit Kirsche und Leder, die die Seele in alte Legenden eintauchen lassen.",
+    "description_en": "Deep and tannic, with cherry and leather that immerse the soul in ancient legends.",
+    "description_fr": "Profond et tannique, avec de la cerise et du cuir qui plongent l'âme dans les légendes anciennes.",
+    "food_pairings_de": [
+      "Rehrücken",
+      "Dunkles Fleisch"
+    ],
+    "food_pairings_en": [
+      "Saddle of venison",
+      "Dark meat"
+    ],
+    "food_pairings_fr": [
+      "Selle de chevreuil",
+      "Viande brune"
+    ],
+    "created_at": "2025-12-13T05:41:22.106822+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "ded8ab0a-923d-4117-8f51-df73d64b8fff",
+    "name": "Pinot Noir B Rosenau 2019",
+    "winery": "Weinbau Ottiger",
+    "country": "Schweiz",
+    "region": "Luzern - Luzern",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Sinnlich und legendär, mit Beeren und Gewürz, der das Herz mit unvergesslicher Tiefe umfängt.",
+    "description_en": "Sensual and legendary, with berries and spice, embracing the heart with unforgettable depth.",
+    "description_fr": "Sensuel et légendaire, avec des baies et des épices, embrassant le cœur avec une profondeur inoubliable.",
+    "food_pairings_de": [
+      "Ente",
+      "Pilzragout"
+    ],
+    "food_pairings_en": [
+      "Duck",
+      "Mushroom ragout"
+    ],
+    "food_pairings_fr": [
+      "Canard",
+      "Ragoût de champignons"
+    ],
+    "created_at": "2025-12-13T05:41:22.107941+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "0dacd7d5-bfb1-4449-8248-7ee3acc78ef5",
+    "name": "Sauvignon Blanc 2023",
+    "winery": "Brunner Weinmanufaktur",
+    "country": "Schweiz",
+    "region": "Luzern - Luzern",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Sauvignon Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Opulent und harmonisch, mit Pfirsich und Kräutern, das wie ein warmer Föhn die Seele streichelt.",
+    "description_en": "Opulent and harmonious, with peach and herbs, caressing the soul like a warm Föhn wind.",
+    "description_fr": "Opulent et harmonieux, avec de la pêche et des herbes, caressant l'âme comme un foehn chaud.",
+    "food_pairings_de": [
+      "Asiatisches Gemüse",
+      "Gebratener Tofu"
+    ],
+    "food_pairings_en": [
+      "Asian vegetables",
+      "Fried tofu"
+    ],
+    "food_pairings_fr": [
+      "Légumes asiatiques",
+      "Tofu frit"
+    ],
+    "created_at": "2025-12-13T05:41:22.108999+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "ac53a73a-fd23-46c9-8b83-7c97047931fb",
+    "name": "Pinot Blanc 2023",
+    "winery": "Brunner Weinmanufaktur",
+    "country": "Schweiz",
+    "region": "Luzern - Luzern",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Pinot Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Reif und filigran, ein Alter Reben-Traum von Apfel und Erde, der die Seele in nostalgische Wärme hüllt.",
+    "description_en": "Mature and delicate, an old vine dream of apple and earth, wrapping the soul in nostalgic warmth.",
+    "description_fr": "Mûr et délicat, un rêve de vieilles vignes de pomme et de terre, enveloppant l'âme de chaleur nostalgique.",
+    "food_pairings_de": [
+      "Roastbeef",
+      "Dunkle Schokolade"
+    ],
+    "food_pairings_en": [
+      "Roast beef",
+      "Dark chocolate"
+    ],
+    "food_pairings_fr": [
+      "Rôti de bœuf",
+      "Chocolat noir"
+    ],
+    "created_at": "2025-12-13T05:41:22.110057+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "15496423-329a-4504-8188-ff8ef11139a0",
+    "name": "Pinot Noir Barrique 2023",
+    "winery": "Weingut Kastanienbaum",
+    "country": "Schweiz",
+    "region": "Luzern - Luzern",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Cremig und großes Gold, mit Nuss und Säure, der die Seele mit barriquerter Tiefe berührt.",
+    "description_en": "Creamy and great gold, with nut and acidity, touching the soul with barrel-aged depth.",
+    "description_fr": "Crémeux et grand or, avec de la noix et de l'acidité, touchant l'âme avec une profondeur de barrique.",
+    "food_pairings_de": [
+      "Krebse",
+      "Frischer Salat"
+    ],
+    "food_pairings_en": [
+      "Crayfish",
+      "Fresh salad"
+    ],
+    "food_pairings_fr": [
+      "Écrevisses",
+      "Salade fraîche"
+    ],
+    "created_at": "2025-12-13T05:41:22.111101+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "60ac22b8-9ff2-4f03-bb7f-04069f84a78a",
+    "name": "Seelagencuvée Rot 2023",
+    "winery": "Brunner Weinmanufaktur",
+    "country": "Schweiz",
+    "region": "Luzern - Luzern",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Assemblage",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Robust und fruchtig, eine Cuvée, der das Herz mit wilden Früchten und erdiger Wärme in herbstliche Wälder lockt.",
+    "description_en": "Robust and fruity, a cuvée that lures the heart into autumn forests with wild fruits and earthy warmth.",
+    "description_fr": "Robuste et fruité, une cuvée qui attire le cœur dans les forêts d'automne avec des fruits sauvages.",
+    "food_pairings_de": [
+      "Lammkoteletts",
+      "Pilzragout"
+    ],
+    "food_pairings_en": [
+      "Lamb chops",
+      "Mushroom ragout"
+    ],
+    "food_pairings_fr": [
+      "Côtelettes d'agneau",
+      "Ragoût de champignons"
+    ],
+    "created_at": "2025-12-13T05:41:22.112359+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "79542e9d-ba8e-4169-88d0-781eba1e1ee1",
+    "name": "Kirchbühl Donauriesling 2023",
+    "winery": "Weinbau Sempachersee",
+    "country": "Schweiz",
+    "region": "Luzern - Sempach",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Donauriesling",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Frisch und aromatisch, mit Apfel und Kräutern, der wie ein erstes Erwachen im Frühling das Herz erfrischt.",
+    "description_en": "Fresh and aromatic, with apple and herbs, refreshing the heart like the first awakening in spring.",
+    "description_fr": "Frais et aromatique, avec de la pomme et des herbes, rafraîchissant le cœur comme le premier réveil au printemps.",
+    "food_pairings_de": [
+      "Austern",
+      "Ziegenkäse-Platte"
+    ],
+    "food_pairings_en": [
+      "Oysters",
+      "Goat cheese platter"
+    ],
+    "food_pairings_fr": [
+      "Huîtres",
+      "Plateau de fromage de chèvre"
+    ],
+    "created_at": "2025-12-13T05:41:22.113540+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "6422e8ac-69fe-494b-89c2-4010938824a1",
+    "name": "Sauvignon Blanc Sélection 2023",
+    "winery": "Weingut Kastanienbaum",
+    "country": "Schweiz",
+    "region": "Luzern - Luzern",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Sauvignon Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Einzellagen-Extraklasse, nervös und würzig, ein Blanc, der die Seele mit Pfeffer und Zitrus in Ekstase versetzt.",
+    "description_en": "Single vineyard excellence, nervous and spicy, a Blanc that sends the soul into ecstasy with pepper and citrus.",
+    "description_fr": "Excellence de parcelle unique, nerveux et épicé, un Blanc qui envoie l'âme en extase.",
+    "food_pairings_de": [
+      "BBQ-Rippen",
+      "Scharfe Wurst"
+    ],
+    "food_pairings_en": [
+      "BBQ ribs",
+      "Spicy sausage"
+    ],
+    "food_pairings_fr": [
+      "Côtes BBQ",
+      "Saucisse épicée"
+    ],
+    "created_at": "2025-12-13T05:41:22.114714+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "d7e70c3d-c47b-4941-a8ae-68887d282fe7",
+    "name": "Pinot Noir Eichberg 2023",
+    "winery": "Brunner Weinmanufaktur",
+    "country": "Schweiz",
+    "region": "Luzern - Luzern",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Meisterwerk und streng, mit Mandel und Säure, der wie ein Hohelied die Seele erhebt.",
+    "description_en": "A masterpiece, austere with almond and acidity, elevating the soul like a song of songs.",
+    "description_fr": "Un chef-d'œuvre, austère avec de l'amande et de l'acidité, élevant l'âme comme un cantique.",
+    "food_pairings_de": [
+      "Käseplatte",
+      "Gebratenes Forellenfilet"
+    ],
+    "food_pairings_en": [
+      "Cheese platter",
+      "Pan-fried trout fillet"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fromages",
+      "Filet de truite poêlé"
+    ],
+    "created_at": "2025-12-13T05:41:22.116053+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "01f52794-1a28-4739-bec3-14cc86eb0cbe",
+    "name": "Malbec Pinot Eichberg 2023",
+    "winery": "Brunner Weinmanufaktur",
+    "country": "Schweiz",
+    "region": "Luzern - Luzern",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Malbec-Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "20/20-Cuvée mit enormem Potenzial, fruchtig und robust, der das Herz mit imperierender Kraft erhebt.",
+    "description_en": "20/20 cuvée with enormous potential, fruity and robust, elevating the heart with imperial power.",
+    "description_fr": "Cuvée 20/20 avec un potentiel énorme, fruité et robuste, élevant le cœur avec une puissance impériale.",
+    "food_pairings_de": [
+      "Wild",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Game",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Gibier",
+      "Champignons"
+    ],
+    "created_at": "2025-12-13T05:41:22.117543+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "a2395a43-1481-4a1d-9f4c-e49be0fc055b",
+    "name": "Sauvignon Pinot Eichberg 2023",
+    "winery": "Brunner Weinmanufaktur",
+    "country": "Schweiz",
+    "region": "Luzern - Luzern",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Sauvignon Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Nervös und aromatisch, mit Grapefruit und Kräutern, das wie ein Bergnebel die Seele klärt.",
+    "description_en": "Nervous and aromatic, with grapefruit and herbs, clearing the soul like mountain mist.",
+    "description_fr": "Nerveux et aromatique, avec du pamplemousse et des herbes, purifiant l'âme comme la brume de montagne.",
+    "food_pairings_de": [
+      "Meeresfrüchte",
+      "Sommergemüse"
+    ],
+    "food_pairings_en": [
+      "Seafood",
+      "Summer vegetables"
+    ],
+    "food_pairings_fr": [
+      "Fruits de mer",
+      "Légumes d'été"
+    ],
+    "created_at": "2025-12-13T05:41:22.118908+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "00b62f80-b783-465f-936d-9b1037037e5e",
+    "name": "Le Rouge Cuvée 2023",
+    "winery": "Weingut Kastanienbaum",
+    "country": "Schweiz",
+    "region": "Luzern - Luzern",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Assemblage",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Unvergleichlich trinkbar, mit Kirschen und Geheimnissen, der das Herz mit leichter Freude erheitert.",
+    "description_en": "Incomparably drinkable, with cherries and secrets, cheering the heart with light joy.",
+    "description_fr": "Incomparablement buvable, avec des cerises et des secrets, égayant le cœur d'une joie légère.",
+    "food_pairings_de": [
+      "Pasta Bolognese",
+      "Herzhaftes Brot"
+    ],
+    "food_pairings_en": [
+      "Pasta Bolognese",
+      "Hearty bread"
+    ],
+    "food_pairings_fr": [
+      "Pâtes bolognaise",
+      "Pain rustique"
+    ],
+    "created_at": "2025-12-13T05:41:22.120449+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "45f6ba41-c971-4867-ba82-04113d5dc9ce",
+    "name": "Chasselas Clos à l'Abbé 2023",
+    "winery": "Steiner Schernelz",
+    "country": "Schweiz",
+    "region": "Luzern - Luzern",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Reich und honigartig, ein Surmaturé, der wie ein Traum die Seele umhüllt.",
+    "description_en": "Rich and honeyed, a surmaturé that wraps the soul like a dream.",
+    "description_fr": "Riche et miellé, un surmaturé qui enveloppe l'âme comme un rêve.",
+    "food_pairings_de": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "food_pairings_en": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "food_pairings_fr": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "created_at": "2025-12-13T05:41:22.122227+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "2e12bdbb-8fc0-4dca-b7d6-43dd54b84069",
+    "name": "Pinot Noir Classic 2023",
+    "winery": "Weinbau Ottiger",
+    "country": "Schweiz",
+    "region": "Luzern - Luzern",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Filigran und fruchtig, ein Windhauch aus Kirschen, der das Herz mit alpiner Frische weckt.",
+    "description_en": "Delicate and fruity, a breath of cherries that awakens the heart with Alpine freshness.",
+    "description_fr": "Délicat et fruité, un souffle de cerises qui éveille le cœur avec la fraîcheur alpine.",
+    "food_pairings_de": [
+      "Entenbrust",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Duck breast",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard",
+      "Champignons"
+    ],
+    "created_at": "2025-12-13T05:41:22.123687+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "adc6abac-a99f-4081-a6ac-e076ab22d258",
+    "name": "Sauvignon Blanc Summerrode 2023",
+    "winery": "Steiner Schernelz",
+    "country": "Schweiz",
+    "region": "Luzern - Luzern",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Sauvignon Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Exotisch und würzig, mit Apfel und Gewürzen, die wie ein Geheimnis die Seele verzaubern.",
+    "description_en": "Exotic and spicy, with apple and spices that enchant the soul like a secret.",
+    "description_fr": "Exotique et épicé, avec de la pomme et des épices qui enchantent l'âme comme un secret.",
+    "food_pairings_de": [
+      "Asiatische Gerichte",
+      "Gebratener Tofu"
+    ],
+    "food_pairings_en": [
+      "Asian dishes",
+      "Fried tofu"
+    ],
+    "food_pairings_fr": [
+      "Plats asiatiques",
+      "Tofu frit"
+    ],
+    "created_at": "2025-12-13T05:41:22.125062+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "6e4b1e64-e4b5-4080-85c3-a3cf51e99572",
+    "name": "Pinot Buurehöf 2023",
+    "winery": "Steiner Schernelz",
+    "country": "Schweiz",
+    "region": "Luzern - Luzern",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Tief und mineralisch, mit dunklen Früchten, die wie ein Abgrund die Seele fesselt.",
+    "description_en": "Deep and mineral, with dark fruits that captivate the soul like an abyss.",
+    "description_fr": "Profond et minéral, avec des fruits noirs qui captivent l'âme comme un abîme.",
+    "food_pairings_de": [
+      "Rindfleisch",
+      "Wild"
+    ],
+    "food_pairings_en": [
+      "Beef",
+      "Game"
+    ],
+    "food_pairings_fr": [
+      "Bœuf",
+      "Gibier"
+    ],
+    "created_at": "2025-12-13T05:41:22.126554+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "73220990-737d-4d20-a6e1-5618d70beaed",
+    "name": "Pinot Noir Alte Reben 2023",
+    "winery": "Krebs Weine",
+    "country": "Schweiz",
+    "region": "Luzern - Luzern",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Zart und blumig, ein Pinot, der die Seele mit luzerner Reinheit erfüllt – frisch und nervös.",
+    "description_en": "Delicate and floral, a Pinot that fills the soul with Lucerne purity – fresh and nervous.",
+    "description_fr": "Délicat et floral, un Pinot qui remplit l'âme de pureté lucernoise – frais et nerveux.",
+    "food_pairings_de": [
+      "Fisch",
+      "Salate"
+    ],
+    "food_pairings_en": [
+      "Fish",
+      "Salads"
+    ],
+    "food_pairings_fr": [
+      "Poisson",
+      "Salades"
+    ],
+    "created_at": "2025-12-13T05:41:22.127890+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "f5e12cb1-ce0b-4943-9487-28813976bb8e",
+    "name": "Chardonnay 2023",
+    "winery": "Krebs Weine",
+    "country": "Schweiz",
+    "region": "Luzern - Luzern",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Samten und fruchtig, ein Chardonnay, der das Herz mit warmer Umarmung beschenkt.",
+    "description_en": "Velvety and fruity, a Chardonnay that gifts the heart with a warm embrace.",
+    "description_fr": "Velouté et fruité, un Chardonnay qui offre au cœur une étreinte chaleureuse.",
+    "food_pairings_de": [
+      "Pasta mit Tomatensauce",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Pasta with tomato sauce",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Pâtes à la sauce tomate",
+      "Fromage"
+    ],
+    "created_at": "2025-12-13T05:41:22.129077+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "ddd01ff1-8c12-490a-9b8e-fe5bebc4b894",
+    "name": "Pinot Noir 2023",
+    "winery": "Bioweingut Sitenrain",
+    "country": "Schweiz",
+    "region": "Luzern - Meggen",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Elegant und strukturiert, mit Apfel und Mineral, das wie ein Tanz die Seele erheitert.",
+    "description_en": "Elegant and structured, with apple and mineral, cheering the soul like a dance.",
+    "description_fr": "Élégant et structuré, avec de la pomme et du minéral, égayant l'âme comme une danse.",
+    "food_pairings_de": [
+      "Huhn mit Kräutern",
+      "Raclette"
+    ],
+    "food_pairings_en": [
+      "Chicken with herbs",
+      "Raclette"
+    ],
+    "food_pairings_fr": [
+      "Poulet aux herbes",
+      "Raclette"
+    ],
+    "created_at": "2025-12-13T05:41:22.130484+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "fd871509-cf2b-455a-8b7f-06a075caac2a",
+    "name": "Divico Rosé Premium 2023",
+    "winery": "Roth Weinbau",
+    "country": "Schweiz",
+    "region": "Luzern - Hohenrain",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Divico",
+    "wine_color": "rosé",
+    "price_category": "€€€",
+    "description_de": "Würzig und intensiv, ein Rosé, das die Seele mit orientalischem Zauber umhüllt.",
+    "description_en": "Spicy and intense, a rosé that wraps the soul in oriental magic.",
+    "description_fr": "Épicé et intense, un rosé qui enveloppe l'âme de magie orientale.",
+    "food_pairings_de": [
+      "Gewürzhähnchen",
+      "Auberginen"
+    ],
+    "food_pairings_en": [
+      "Spiced chicken",
+      "Eggplant"
+    ],
+    "food_pairings_fr": [
+      "Poulet épicé",
+      "Aubergines"
+    ],
+    "created_at": "2025-12-13T05:41:22.132044+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "73d57fb5-47b3-4243-adae-bba50876804e",
+    "name": "Riesling Premium 2023",
+    "winery": "Bioweinbau Winzigen",
+    "country": "Schweiz",
+    "region": "Luzern - Luzern",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Feminine Eleganz, mit Veilchen und Säure, der das Herz mit Seide und Feuer erobert.",
+    "description_en": "Feminine elegance, with violet and acidity, conquering the heart with silk and fire.",
+    "description_fr": "Élégance féminine, avec de la violette et de l'acidité, conquérant le cœur avec de la soie et du feu.",
+    "food_pairings_de": [
+      "Perlhuhn mit Morcheln"
+    ],
+    "food_pairings_en": [
+      "Guinea fowl with morels"
+    ],
+    "food_pairings_fr": [
+      "Pintade aux morilles"
+    ],
+    "created_at": "2025-12-13T05:41:22.133578+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "0afac7db-070e-4840-8e5e-760c18e9835b",
+    "name": "Pinot Noir 2022",
+    "winery": "Weingut Klosterhof",
+    "country": "Schweiz",
+    "region": "Luzern - Aesch",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Präzise und charaktervoll, ein Neuling der Elite, der die Seele mit erdiger Wärme umfängt.",
+    "description_en": "Precise and characterful, a newcomer to the elite, embracing the soul with earthy warmth.",
+    "description_fr": "Précis et plein de caractère, un nouveau venu dans l'élite, embrassant l'âme avec une chaleur terreuse.",
+    "food_pairings_de": [
+      "Ente",
+      "Pilzrisotto"
+    ],
+    "food_pairings_en": [
+      "Duck",
+      "Mushroom risotto"
+    ],
+    "food_pairings_fr": [
+      "Canard",
+      "Risotto aux champignons"
+    ],
+    "created_at": "2025-12-13T05:41:22.134950+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "e7a18a8a-5a13-42f0-aa14-3d33db57af00",
+    "name": "Chasselas 2023",
+    "winery": "Weingut Triengen",
+    "country": "Schweiz",
+    "region": "Luzern - Triengen",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Überraschend und tief, mit Nuss und Zitrus, das wie ein alter Freund die Seele in nostalgische Wärme hüllt.",
+    "description_en": "Surprising and deep, with nut and citrus, wrapping the soul in nostalgic warmth like an old friend.",
+    "description_fr": "Surprenant et profond, avec de la noix et des agrumes, enveloppant l'âme de chaleur nostalgique.",
+    "food_pairings_de": [
+      "Foie gras",
+      "Reifer Käse"
+    ],
+    "food_pairings_en": [
+      "Foie gras",
+      "Aged cheese"
+    ],
+    "food_pairings_fr": [
+      "Foie gras",
+      "Fromage affiné"
+    ],
+    "created_at": "2025-12-13T05:41:22.136504+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "3c4fecec-40cc-46f8-a90c-c909f5b98cc3",
+    "name": "Sauvignon Blanc Tellsplatte 2023",
+    "winery": "Rebberg an der Tellsplatte",
+    "country": "Schweiz",
+    "region": "Luzern - Sisikon",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Sauvignon Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Filigran und robust, ein Sauvignon, der die Seele mit imperierender Kraft erhebt.",
+    "description_en": "Delicate yet robust, a Sauvignon that elevates the soul with imperial power.",
+    "description_fr": "Délicat mais robuste, un Sauvignon qui élève l'âme avec une puissance impériale.",
+    "food_pairings_de": [
+      "Lamm",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Lamb",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Agneau",
+      "Champignons"
+    ],
+    "created_at": "2025-12-13T05:41:22.137810+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "57a45faf-f541-451e-8781-5eab731f7d24",
+    "name": "Solaris 2022",
+    "winery": "Bioweingut Sitenrain",
+    "country": "Schweiz",
+    "region": "Luzern - Meggen",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Solaris",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Frisch und vielschichtig, ein Weiß, der das Herz mit kindlicher Freude weckt.",
+    "description_en": "Fresh and multilayered, a white that awakens the heart with childlike joy.",
+    "description_fr": "Frais et complexe, un blanc qui éveille le cœur avec une joie enfantine.",
+    "food_pairings_de": [
+      "Tapas",
+      "Lachs"
+    ],
+    "food_pairings_en": [
+      "Tapas",
+      "Salmon"
+    ],
+    "food_pairings_fr": [
+      "Tapas",
+      "Saumon"
+    ],
+    "created_at": "2025-12-13T05:41:22.139241+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "51e39295-15cb-4514-afad-819ca54f9434",
+    "name": "Pinot Noir Römerweg 2023",
+    "winery": "DeinWein vom Römerweg",
+    "country": "Schweiz",
+    "region": "Luzern - Schenkon",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Dynamisch und harmonisch, ein Neuling, der wie ein Chor die Seele erhebt.",
+    "description_en": "Dynamic and harmonious, a newcomer that elevates the soul like a choir.",
+    "description_fr": "Dynamique et harmonieux, un nouveau venu qui élève l'âme comme un chœur.",
+    "food_pairings_de": [
+      "Dunkles Fleisch"
+    ],
+    "food_pairings_en": [
+      "Dark meat"
+    ],
+    "food_pairings_fr": [
+      "Viande brune"
+    ],
+    "created_at": "2025-12-13T05:41:22.140510+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "26f863cb-c954-4fd0-86f1-97df46dad5a6",
+    "name": "Chasselas Seelage 2023",
+    "winery": "Weingut Kastanienbaum",
+    "country": "Schweiz",
+    "region": "Luzern - Luzern",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Hoch und aromatisch, mit Mandeln und Nektarinen, das die Seele auf Höhenflüge trägt.",
+    "description_en": "High and aromatic, with almonds and nectarines, carrying the soul to soaring heights.",
+    "description_fr": "Haut et aromatique, avec des amandes et des nectarines, portant l'âme vers les sommets.",
+    "food_pairings_de": [
+      "Käseplatte",
+      "Forelle"
+    ],
+    "food_pairings_en": [
+      "Cheese platter",
+      "Trout"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fromages",
+      "Truite"
+    ],
+    "created_at": "2025-12-13T05:41:22.141688+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "a1b0bb6d-b447-4c4a-9eab-0660d7b545d4",
+    "name": "Pinot Gris Abt Jodok 2023",
+    "winery": "Weingut Klosterhof",
+    "country": "Schweiz",
+    "region": "Luzern - Aesch",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Pinot Gris",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Barriqué und tief, ein Gris, der die Seele in symphonische Tiefe taucht.",
+    "description_en": "Barrel-aged and deep, a Gris that plunges the soul into symphonic depth.",
+    "description_fr": "Élevé en barrique et profond, un Gris qui plonge l'âme dans une profondeur symphonique.",
+    "food_pairings_de": [
+      "Ente",
+      "Pilzragout"
+    ],
+    "food_pairings_en": [
+      "Duck",
+      "Mushroom ragout"
+    ],
+    "food_pairings_fr": [
+      "Canard",
+      "Ragoût de champignons"
+    ],
+    "created_at": "2025-12-13T05:41:22.143296+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "88979228-2ac0-4c79-81bf-bad734a7b3df",
+    "name": "Gamaret Barrique Abt Bonaventura 2023",
+    "winery": "Weingut Klosterhof",
+    "country": "Schweiz",
+    "region": "Luzern - Aesch",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Gamaret",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Opulent und blumig, ein Tropfen, der das Herz mit sommerlicher Leichtigkeit umfängt.",
+    "description_en": "Opulent and floral, a drop that embraces the heart with summery lightness.",
+    "description_fr": "Opulent et floral, une goutte qui embrasse le cœur avec une légèreté estivale.",
+    "food_pairings_de": [
+      "Sommergerichte",
+      "Frischkäse"
+    ],
+    "food_pairings_en": [
+      "Summer dishes",
+      "Fresh cheese"
+    ],
+    "food_pairings_fr": [
+      "Plats d'été",
+      "Fromage frais"
+    ],
+    "created_at": "2025-12-13T05:41:22.144610+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "00475655-61d0-4e93-b310-c70b59b71571",
+    "name": "Rosé Pinot Noir Abt Ambros 2023",
+    "winery": "Weingut Klosterhof",
+    "country": "Schweiz",
+    "region": "Luzern - Aesch",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rosé",
+    "price_category": "€€€",
+    "description_de": "Traditionell und rein, ein Tropfen, der das Herz mit Bergfrische reinigt.",
+    "description_en": "Traditional and pure, a drop that cleanses the heart with mountain freshness.",
+    "description_fr": "Traditionnel et pur, une goutte qui purifie le cœur avec la fraîcheur de la montagne.",
+    "food_pairings_de": [
+      "Fischfilet",
+      "Salat"
+    ],
+    "food_pairings_en": [
+      "Fish fillet",
+      "Salad"
+    ],
+    "food_pairings_fr": [
+      "Filet de poisson",
+      "Salade"
+    ],
+    "created_at": "2025-12-13T05:41:22.145939+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "cd78b977-f40b-409b-8c72-a56990d419eb",
+    "name": "Sauvignon Blanc Premium 2023",
+    "winery": "Weinbau Ottiger",
+    "country": "Schweiz",
+    "region": "Luzern - Luzern",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Sauvignon Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Exotisch und würzig, ein Weiß, der das Herz mit orientalischem Flair verzaubert.",
+    "description_en": "Exotic and spicy, a white that enchants the heart with oriental flair.",
+    "description_fr": "Exotique et épicé, un blanc qui enchante le cœur avec un flair oriental.",
+    "food_pairings_de": [
+      "Curry",
+      "Vegetarische Gerichte"
+    ],
+    "food_pairings_en": [
+      "Curry",
+      "Vegetarian dishes"
+    ],
+    "food_pairings_fr": [
+      "Curry",
+      "Plats végétariens"
+    ],
+    "created_at": "2025-12-13T05:41:22.147134+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "0df97946-59d7-4b8b-a51a-c83d728ef652",
+    "name": "Pinot Noir Grand Cru 2023",
+    "winery": "Brunner Weinmanufaktur",
+    "country": "Schweiz",
+    "region": "Luzern - Luzern",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Komplex und harmonisch, ein Assemblage, der die Seele in göttliche Ekstase versetzt.",
+    "description_en": "Complex and harmonious, an assemblage that sends the soul into divine ecstasy.",
+    "description_fr": "Complexe et harmonieux, un assemblage qui envoie l'âme en extase divine.",
+    "food_pairings_de": [
+      "Entrecôte",
+      "Schokolade"
+    ],
+    "food_pairings_en": [
+      "Entrecôte",
+      "Chocolate"
+    ],
+    "food_pairings_fr": [
+      "Entrecôte",
+      "Chocolat"
+    ],
+    "created_at": "2025-12-13T05:41:22.148476+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "7fb0c864-bb31-46ab-b13c-c3a8c2738687",
+    "name": "Chasselas Sempachersee 2023",
+    "winery": "Weinbau Sempachersee",
+    "country": "Schweiz",
+    "region": "Luzern - Sempach",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Reich und strukturiert, ein Grand Cru, der die Seele in städtischer Eleganz badet.",
+    "description_en": "Rich and structured, a Grand Cru that bathes the soul in urban elegance.",
+    "description_fr": "Riche et structuré, un Grand Cru qui baigne l'âme dans l'élégance urbaine.",
+    "food_pairings_de": [
+      "Krustentiere",
+      "Geflügel"
+    ],
+    "food_pairings_en": [
+      "Crustaceans",
+      "Poultry"
+    ],
+    "food_pairings_fr": [
+      "Crustacés",
+      "Volaille"
+    ],
+    "created_at": "2025-12-13T05:41:22.149856+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "2e373b89-09be-4506-beea-384804502cec",
+    "name": "Pinot Noir Sélection 2023",
+    "winery": "Bioweingut Sitenrain",
+    "country": "Schweiz",
+    "region": "Luzern - Meggen",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Nervös und lebendig, ein Funke Glycin und Grapefruit, der das Herz mit alpiner Frische weckt.",
+    "description_en": "Nervous and lively, a spark of glycine and grapefruit that awakens the heart with Alpine freshness.",
+    "description_fr": "Nerveux et vif, une étincelle de glycine et de pamplemousse qui éveille le cœur avec la fraîcheur alpine.",
+    "food_pairings_de": [
+      "Krebse",
+      "Kräutersuppe"
+    ],
+    "food_pairings_en": [
+      "Crayfish",
+      "Herb soup"
+    ],
+    "food_pairings_fr": [
+      "Écrevisses",
+      "Soupe aux herbes"
+    ],
+    "created_at": "2025-12-13T05:41:22.151343+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "0762c583-578d-4058-b913-733c7d01ece9",
+    "name": "Riesling Spätlese 2023",
+    "winery": "Roth Weinbau",
+    "country": "Schweiz",
+    "region": "Luzern - Hohenrain",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Tief und aromatisch, ein Weiss, das wie ein Abgrund die Seele fesselt.",
+    "description_en": "Deep and aromatic, a white that captivates the soul like an abyss.",
+    "description_fr": "Profond et aromatique, un blanc qui captive l'âme comme un abîme.",
+    "food_pairings_de": [
+      "Stark gewürzte Gerichte"
+    ],
+    "food_pairings_en": [
+      "Heavily spiced dishes"
+    ],
+    "food_pairings_fr": [
+      "Plats très épicés"
+    ],
+    "created_at": "2025-12-13T05:41:22.152635+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "0b992aa3-b7b4-4c37-b912-abdb461334df",
+    "name": "Chasselas Bio 2022",
+    "winery": "Bioweinbau Winzigen",
+    "country": "Schweiz",
+    "region": "Luzern - Luzern",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Historisch und elegant, ein Wein, der die Seele mit zeitloser Tiefe berührt.",
+    "description_en": "Historic and elegant, a wine that touches the soul with timeless depth.",
+    "description_fr": "Historique et élégant, un vin qui touche l'âme avec une profondeur intemporelle.",
+    "food_pairings_de": [
+      "Geflügel",
+      "Meeresfrüchte"
+    ],
+    "food_pairings_en": [
+      "Poultry",
+      "Seafood"
+    ],
+    "food_pairings_fr": [
+      "Volaille",
+      "Fruits de mer"
+    ],
+    "created_at": "2025-12-13T05:41:22.153838+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "e3db9a4e-06fa-4fe2-8cf0-8283d3a5e40d",
+    "name": "Pinot Noir Schernelz 2023",
+    "winery": "Steiner Schernelz",
+    "country": "Schweiz",
+    "region": "Luzern - Luzern",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Filigran und fruchtig, ein Windhauch aus Kirschen, der das Herz mit leichter Traurigkeit und purer Freude erfüllt.",
+    "description_en": "Delicate and fruity, a breath of cherries that fills the heart with gentle sadness and pure joy.",
+    "description_fr": "Délicat et fruité, un souffle de cerises qui remplit le cœur d'une douce tristesse et d'une joie pure.",
+    "food_pairings_de": [
+      "Entenbrust",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Duck breast",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard",
+      "Champignons"
+    ],
+    "created_at": "2025-12-13T05:41:22.155037+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "68b96d83-3e78-4c70-9ceb-d1b78d419bf3",
+    "name": "Sauvignon Blanc Classic 2023",
+    "winery": "Krebs Weine",
+    "country": "Schweiz",
+    "region": "Luzern - Luzern",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Sauvignon Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Frisch und ausgewogen, ein Blanc, der das Herz mit klassischer Freude erheitert.",
+    "description_en": "Fresh and balanced, a Blanc that cheers the heart with classic joy.",
+    "description_fr": "Frais et équilibré, un Blanc qui égaye le cœur avec une joie classique.",
+    "food_pairings_de": [
+      "Fondue",
+      "Rind"
+    ],
+    "food_pairings_en": [
+      "Fondue",
+      "Beef"
+    ],
+    "food_pairings_fr": [
+      "Fondue",
+      "Bœuf"
+    ],
+    "created_at": "2025-12-13T05:41:22.156091+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "df5a23b2-0ec2-4039-9758-47316e40933f",
+    "name": "Chardonnay Premium 2023",
+    "winery": "Weingut Triengen",
+    "country": "Schweiz",
+    "region": "Luzern - Triengen",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Reich und beerig, ein Chardonnay, der die Seele in luzerner Wälder entführt.",
+    "description_en": "Rich and berry-filled, a Chardonnay that transports the soul to Lucerne forests.",
+    "description_fr": "Riche et fruité, un Chardonnay qui transporte l'âme dans les forêts lucernoises.",
+    "food_pairings_de": [
+      "Lammkoteletts",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Lamb chops",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Côtelettes d'agneau",
+      "Fromage"
+    ],
+    "created_at": "2025-12-13T05:41:22.157277+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "e7dc1ebf-5755-4a1e-887c-e15e32988e1e",
+    "name": "Pinot Noir Premium 2023",
+    "winery": "DeinWein vom Römerweg",
+    "country": "Schweiz",
+    "region": "Luzern - Schenkon",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Elegant und pfeffrig, ein Rot, der die Seele mit orientalischem Zauber umhüllt.",
+    "description_en": "Elegant and peppery, a red that wraps the soul in oriental magic.",
+    "description_fr": "Élégant et poivré, un rouge qui enveloppe l'âme de magie orientale.",
+    "food_pairings_de": [
+      "Gewürzhähnchen",
+      "Auberginen"
+    ],
+    "food_pairings_en": [
+      "Spiced chicken",
+      "Eggplant"
+    ],
+    "food_pairings_fr": [
+      "Poulet épicé",
+      "Aubergines"
+    ],
+    "created_at": "2025-12-13T05:41:22.158182+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "eabeb8e3-17fc-437e-826f-cacd5bc003cb",
+    "name": "Solaris Premium 2023",
+    "winery": "Rebberg an der Tellsplatte",
+    "country": "Schweiz",
+    "region": "Luzern - Sisikon",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Solaris",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Innovativ und fruchtig, ein Hybrid, der das Herz mit moderner Freude erfüllt.",
+    "description_en": "Innovative and fruity, a hybrid that fills the heart with modern joy.",
+    "description_fr": "Innovant et fruité, un hybride qui remplit le cœur de joie moderne.",
+    "food_pairings_de": [
+      "Grillgemüse",
+      "Fisch"
+    ],
+    "food_pairings_en": [
+      "Grilled vegetables",
+      "Fish"
+    ],
+    "food_pairings_fr": [
+      "Légumes grillés",
+      "Poisson"
+    ],
+    "created_at": "2025-12-13T05:41:22.159017+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
+  },
+  {
+    "id": "b800dd4e-199c-4d9f-bc87-75cd709f12a1",
+    "name": "Chasselas Grand Cru 2023",
+    "winery": "Weingut Klosterhof",
+    "country": "Schweiz",
+    "region": "Luzern - Aesch",
+    "appellation": "AOC Luzern",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Hoch und rein, ein Chasselas, der wie ein Gipfelblick die Seele erweitert.",
+    "description_en": "High and pure, a Chasselas that expands the soul like a summit view.",
+    "description_fr": "Haut et pur, un Chasselas qui élargit l'âme comme une vue du sommet.",
+    "food_pairings_de": [
+      "Käseplatte",
+      "Leichte Vorspeisen"
+    ],
+    "food_pairings_en": [
+      "Cheese platter",
+      "Light appetizers"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fromages",
+      "Entrées légères"
+    ],
+    "created_at": "2025-12-13T05:41:22.160152+00:00",
+    "source": "Top 50 Luzerner Weine - Zentralschweizer Weinprämierungen 2024/2025, Falstaff, GaultMillau, Expovina"
   }
 ]

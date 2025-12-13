@@ -29179,5 +29179,2737 @@
     ],
     "created_at": "2025-12-12T23:46:18.097112+00:00",
     "source": "Top 50 Tessiner Weine - Ticino DOC, Merlot del Ticino Gran Premio, GaultMillau 2024/2025"
+  },
+  {
+    "id": "8c3a938b-80bb-468d-bbd5-5afb8690251b",
+    "name": "Mousseux Tradition Brut 2023",
+    "winery": "Domaine des Curiades",
+    "country": "Schweiz",
+    "region": "Genf - Satigny",
+    "appellation": "AOC Genève",
+    "grape_variety": "Assemblage",
+    "wine_color": "schaumwein",
+    "price_category": "€€€",
+    "description_de": "Ein perlender Traum, der von goldenen Blasen und Zitruspoesie erzählt – ein Wein, der die Seele in festliche Ekstase versetzt und vergangene Feste heraufbeschwört.",
+    "description_en": "A sparkling dream that speaks of golden bubbles and citrus poetry – a wine that sends the soul into festive ecstasy and evokes past celebrations.",
+    "description_fr": "Un rêve pétillant qui parle de bulles dorées et de poésie d'agrumes – un vin qui envoie l'âme en extase festive et évoque les fêtes passées.",
+    "food_pairings_de": [
+      "Austern",
+      "Frischer Ziegenkäse"
+    ],
+    "food_pairings_en": [
+      "Oysters",
+      "Fresh goat cheese"
+    ],
+    "food_pairings_fr": [
+      "Huîtres",
+      "Fromage de chèvre frais"
+    ],
+    "created_at": "2025-12-12T23:50:59.281828+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "e86b5bde-76c8-4aca-8fb1-c54e2356bad1",
+    "name": "Gewürztraminer 2022",
+    "winery": "Domaine Les Hutins",
+    "country": "Schweiz",
+    "region": "Genf - Dardagny",
+    "appellation": "AOC Genève",
+    "grape_variety": "Gewürztraminer",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Exotisch und verlockend, mit Lychee und Rose, die wie ein Geheimnis aus dem Orient die Seele verzaubert – purer, aromatischer Zauber.",
+    "description_en": "Exotic and alluring, with lychee and rose that enchants the soul like a secret from the Orient – pure, aromatic magic.",
+    "description_fr": "Exotique et séduisant, avec du litchi et de la rose qui enchante l'âme comme un secret d'Orient – magie aromatique pure.",
+    "food_pairings_de": [
+      "Foie gras",
+      "Würziges Curry"
+    ],
+    "food_pairings_en": [
+      "Foie gras",
+      "Spicy curry"
+    ],
+    "food_pairings_fr": [
+      "Foie gras",
+      "Curry épicé"
+    ],
+    "created_at": "2025-12-12T23:50:59.284500+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "79f797c6-d9d2-45b5-bb85-d3802cd9bbdb",
+    "name": "Chasselas Clémence 2021",
+    "winery": "La Cave de Genève",
+    "country": "Schweiz",
+    "region": "Genf - Satigny",
+    "appellation": "AOC Genève",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Frisch und mineralisch, ein Chasselas, der wie ein Morgenhauch über dem See das Herz mit Apfel und Stein erfrischt und Hoffnung weckt.",
+    "description_en": "Fresh and mineral, a Chasselas that refreshes the heart like a morning breeze over the lake with apple and stone, awakening hope.",
+    "description_fr": "Frais et minéral, un Chasselas qui rafraîchit le cœur comme une brise matinale sur le lac avec de la pomme et de la pierre, éveillant l'espoir.",
+    "food_pairings_de": [
+      "Papet Vaudois",
+      "Gegrillter Fisch"
+    ],
+    "food_pairings_en": [
+      "Papet Vaudois",
+      "Grilled fish"
+    ],
+    "food_pairings_fr": [
+      "Papet Vaudois",
+      "Poisson grillé"
+    ],
+    "created_at": "2025-12-12T23:50:59.285828+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "43632e28-030b-4d53-a659-6fd2906bd46a",
+    "name": "Pinot Noir 2023",
+    "winery": "Domaine de la Guérite",
+    "country": "Schweiz",
+    "region": "Genf - Russin",
+    "appellation": "AOC Genève",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Elegant und filigran, mit Kirsche und Samt, der die Seele in burgundische Melancholie taucht – ein Liebesbrief in Rot.",
+    "description_en": "Elegant and delicate, with cherry and velvet that plunges the soul into Burgundian melancholy – a love letter in red.",
+    "description_fr": "Élégant et délicat, avec de la cerise et du velours qui plonge l'âme dans la mélancolie bourguignonne – une lettre d'amour en rouge.",
+    "food_pairings_de": [
+      "Entenbrust",
+      "Pilzrisotto"
+    ],
+    "food_pairings_en": [
+      "Duck breast",
+      "Mushroom risotto"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard",
+      "Risotto aux champignons"
+    ],
+    "created_at": "2025-12-12T23:50:59.286992+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "f960af4c-fb3c-4c45-b56d-6dc249af2c07",
+    "name": "Gamay 2023",
+    "winery": "Cave de Sézenove",
+    "country": "Schweiz",
+    "region": "Genf - Satigny",
+    "appellation": "AOC Genève",
+    "grape_variety": "Gamay",
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Saftig und beerig, ein Gamay, der das Herz mit wilden Beeren und erdiger Wärme in herbstliche Wälder lockt.",
+    "description_en": "Juicy and berry-rich, a Gamay that lures the heart into autumn forests with wild berries and earthy warmth.",
+    "description_fr": "Juteux et fruité, un Gamay qui attire le cœur dans les forêts d'automne avec des baies sauvages et une chaleur terreuse.",
+    "food_pairings_de": [
+      "Lammkoteletts",
+      "Charcuterie"
+    ],
+    "food_pairings_en": [
+      "Lamb chops",
+      "Charcuterie"
+    ],
+    "food_pairings_fr": [
+      "Côtelettes d'agneau",
+      "Charcuterie"
+    ],
+    "created_at": "2025-12-12T23:50:59.288164+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "450f93bc-042b-45eb-987a-b3bf51a3b289",
+    "name": "Sauvignon Blanc 2022",
+    "winery": "Domaine des Bonnettes",
+    "country": "Schweiz",
+    "region": "Genf - Dardagny",
+    "appellation": "AOC Genève",
+    "grape_variety": "Sauvignon Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Nervös und aromatisch, mit Grapefruit und Kräutern, das wie ein Bergquell die Seele klärt und verjüngt.",
+    "description_en": "Nervous and aromatic, with grapefruit and herbs that clears and rejuvenates the soul like a mountain spring.",
+    "description_fr": "Nerveux et aromatique, avec du pamplemousse et des herbes qui clarifie et rajeunit l'âme comme une source de montagne.",
+    "food_pairings_de": [
+      "Krebse",
+      "Frischer Salat"
+    ],
+    "food_pairings_en": [
+      "Crayfish",
+      "Fresh salad"
+    ],
+    "food_pairings_fr": [
+      "Écrevisses",
+      "Salade fraîche"
+    ],
+    "created_at": "2025-12-12T23:50:59.291047+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "f8537693-d127-4c4c-a42d-4b509695b8a7",
+    "name": "Merlot 2021",
+    "winery": "Domaine Grand'Cour",
+    "country": "Schweiz",
+    "region": "Genf - Peissy-Satigny",
+    "appellation": "AOC Genève",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Samten und fruchtig, ein Merlot, der das Herz mit Pflaume und Schokolade in tiefe, tröstliche Zufriedenheit wiegt.",
+    "description_en": "Velvety and fruity, a Merlot that rocks the heart into deep, comforting satisfaction with plum and chocolate.",
+    "description_fr": "Velouté et fruité, un Merlot qui berce le cœur dans une satisfaction profonde et réconfortante avec de la prune et du chocolat.",
+    "food_pairings_de": [
+      "Roastbeef",
+      "Dunkle Schokolade"
+    ],
+    "food_pairings_en": [
+      "Roast beef",
+      "Dark chocolate"
+    ],
+    "food_pairings_fr": [
+      "Rôti de bœuf",
+      "Chocolat noir"
+    ],
+    "created_at": "2025-12-12T23:50:59.292329+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "1aa60023-e4bd-4c85-bfbe-4fa810f37af4",
+    "name": "Viognier 2022",
+    "winery": "Domaine de la Printanière",
+    "country": "Schweiz",
+    "region": "Genf - Avully",
+    "appellation": "AOC Genève",
+    "grape_variety": "Viognier",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Blumig und opulent, mit Pfirsich und Gewürzen, der die Seele in sonnendurchflutete Gärten entführt.",
+    "description_en": "Floral and opulent, with peach and spices that transports the soul to sun-drenched gardens.",
+    "description_fr": "Floral et opulent, avec de la pêche et des épices qui transporte l'âme dans des jardins ensoleillés.",
+    "food_pairings_de": [
+      "Gegrillter Lachs",
+      "Asiatisches Gemüse"
+    ],
+    "food_pairings_en": [
+      "Grilled salmon",
+      "Asian vegetables"
+    ],
+    "food_pairings_fr": [
+      "Saumon grillé",
+      "Légumes asiatiques"
+    ],
+    "created_at": "2025-12-12T23:50:59.293897+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "f4e1fc6a-f92b-44e3-bbaf-d354ed8a1c9d",
+    "name": "Pinot Noir Réserve 2022",
+    "winery": "Domaine de la Mermière",
+    "country": "Schweiz",
+    "region": "Genf - Satigny",
+    "appellation": "AOC Genève",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Tief und tanninreich, mit Leder und Beeren, die die Seele in alte Legenden eintauchen lassen.",
+    "description_en": "Deep and tannic, with leather and berries that immerse the soul in ancient legends.",
+    "description_fr": "Profond et tannique, avec du cuir et des baies qui plongent l'âme dans d'anciennes légendes.",
+    "food_pairings_de": [
+      "Rehrücken",
+      "Dunkles Fleisch"
+    ],
+    "food_pairings_en": [
+      "Saddle of venison",
+      "Dark meat"
+    ],
+    "food_pairings_fr": [
+      "Selle de chevreuil",
+      "Viande brune"
+    ],
+    "created_at": "2025-12-12T23:50:59.295088+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "6238fce0-ccec-4e72-94bd-8d099d48e678",
+    "name": "Chasselas Grand Cru 2023",
+    "winery": "Les Perrières",
+    "country": "Schweiz",
+    "region": "Genf - Satigny",
+    "appellation": "AOC Genève",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Rein und lebendig, ein Grand Cru, der wie ein Bergnebel die Seele mit Zitrus und Mineral umhüllt.",
+    "description_en": "Pure and vibrant, a Grand Cru that envelops the soul with citrus and mineral like mountain mist.",
+    "description_fr": "Pur et vivant, un Grand Cru qui enveloppe l'âme d'agrumes et de minéral comme la brume de montagne.",
+    "food_pairings_de": [
+      "Meeresfrüchte",
+      "Sommergemüse"
+    ],
+    "food_pairings_en": [
+      "Seafood",
+      "Summer vegetables"
+    ],
+    "food_pairings_fr": [
+      "Fruits de mer",
+      "Légumes d'été"
+    ],
+    "created_at": "2025-12-12T23:50:59.296138+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "1a21ab9e-259b-4979-99ef-e4f2da80c2cc",
+    "name": "Gamay Vieilles Vignes 2023",
+    "winery": "Domaine Villard & Fils",
+    "country": "Schweiz",
+    "region": "Genf - Anières",
+    "appellation": "AOC Genève",
+    "grape_variety": "Gamay",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Robust und fruchtig, ein Gamay, der das Herz mit Kirschen und Geheimnissen umgarnt.",
+    "description_en": "Robust and fruity, a Gamay that captivates the heart with cherries and secrets.",
+    "description_fr": "Robuste et fruité, un Gamay qui envoûte le cœur de cerises et de secrets.",
+    "food_pairings_de": [
+      "Pasta Bolognese",
+      "Herzhaftes Brot"
+    ],
+    "food_pairings_en": [
+      "Pasta Bolognese",
+      "Hearty bread"
+    ],
+    "food_pairings_fr": [
+      "Pâtes bolognaise",
+      "Pain rustique"
+    ],
+    "created_at": "2025-12-12T23:50:59.297094+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "3402a907-18f7-4e1d-989e-2869904b06d8",
+    "name": "Sauvignon Blanc 2022",
+    "winery": "Domaine de la République et Canton de Genève",
+    "country": "Schweiz",
+    "region": "Genf - Lully",
+    "appellation": "AOC Genève",
+    "grape_variety": "Sauvignon Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Hoch und aromatisch, mit Mandeln und Nektarinen, das die Seele auf Höhenflüge trägt.",
+    "description_en": "High and aromatic, with almonds and nectarines that carry the soul to great heights.",
+    "description_fr": "Haut et aromatique, avec des amandes et des nectarines qui portent l'âme vers les sommets.",
+    "food_pairings_de": [
+      "Käseplatte",
+      "Gebratenes Forellenfilet"
+    ],
+    "food_pairings_en": [
+      "Cheese platter",
+      "Pan-fried trout fillet"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fromages",
+      "Filet de truite poêlé"
+    ],
+    "created_at": "2025-12-12T23:50:59.298062+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "d3faf44a-1836-4095-87a7-7c9b8cc0d6b1",
+    "name": "Cabernet Franc 2021",
+    "winery": "Cave Les Crêtets",
+    "country": "Schweiz",
+    "region": "Genf - Peissy",
+    "appellation": "AOC Genève",
+    "grape_variety": "Cabernet Franc",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Würzig und intensiv, ein Rot, das die Seele mit Pfeffer und Beeren in Ekstase versetzt.",
+    "description_en": "Spicy and intense, a red that sends the soul into ecstasy with pepper and berries.",
+    "description_fr": "Épicé et intense, un rouge qui envoie l'âme en extase avec du poivre et des baies.",
+    "food_pairings_de": [
+      "BBQ-Rippen",
+      "Scharfe Wurst"
+    ],
+    "food_pairings_en": [
+      "BBQ ribs",
+      "Spicy sausage"
+    ],
+    "food_pairings_fr": [
+      "Côtes BBQ",
+      "Saucisse épicée"
+    ],
+    "created_at": "2025-12-12T23:50:59.299202+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "2838b408-3675-4aed-a447-10c21ff0fb05",
+    "name": "Chardonnay 2023",
+    "winery": "Domaine des Balisiers",
+    "country": "Schweiz",
+    "region": "Genf - Satigny",
+    "appellation": "AOC Genève",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Cremig und blumig, ein Chardonnay, der die Seele in goldene Sonnenuntergänge taucht.",
+    "description_en": "Creamy and floral, a Chardonnay that dips the soul into golden sunsets.",
+    "description_fr": "Crémeux et floral, un Chardonnay qui plonge l'âme dans des couchers de soleil dorés.",
+    "food_pairings_de": [
+      "Huhn mit Kräutern",
+      "Milde Raclette"
+    ],
+    "food_pairings_en": [
+      "Herb chicken",
+      "Mild Raclette"
+    ],
+    "food_pairings_fr": [
+      "Poulet aux herbes",
+      "Raclette douce"
+    ],
+    "created_at": "2025-12-12T23:50:59.302140+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "766c424f-40d9-44aa-9949-b8d407d00c02",
+    "name": "Rosé de Garanoir 2023",
+    "winery": "Domaine du Paradis",
+    "country": "Schweiz",
+    "region": "Genf - Russin",
+    "appellation": "AOC Genève",
+    "grape_variety": "Garanoir",
+    "wine_color": "rosé",
+    "price_category": "€€",
+    "description_de": "Zartrosa und sommerlich, ein Rosé, der wie ein Sonnenuntergang über dem See das Herz mit Erdbeere und Frische umwebt.",
+    "description_en": "Delicate pink and summery, a Rosé that weaves the heart with strawberry and freshness like a sunset over the lake.",
+    "description_fr": "Rose délicat et estival, un Rosé qui tisse le cœur de fraise et de fraîcheur comme un coucher de soleil sur le lac.",
+    "food_pairings_de": [
+      "Salate mit Erdbeeren",
+      "Leichte Wurstplatten"
+    ],
+    "food_pairings_en": [
+      "Salads with strawberries",
+      "Light charcuterie"
+    ],
+    "food_pairings_fr": [
+      "Salades aux fraises",
+      "Charcuterie légère"
+    ],
+    "created_at": "2025-12-12T23:50:59.306927+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "b5c141e9-9f0a-4a44-be59-7dea2293c1a6",
+    "name": "Pinot Noir 2021",
+    "winery": "Domaine de la Devinière",
+    "country": "Schweiz",
+    "region": "Genf - Dardagny",
+    "appellation": "AOC Genève",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Filigran und fruchtig, mit Kirschen und Leder, der das Herz mit leichter Traurigkeit und purer Freude erfüllt.",
+    "description_en": "Delicate and fruity, with cherries and leather that fills the heart with gentle sadness and pure joy.",
+    "description_fr": "Délicat et fruité, avec des cerises et du cuir qui remplit le cœur d'une légère tristesse et d'une joie pure.",
+    "food_pairings_de": [
+      "Entenbrust",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Duck breast",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard",
+      "Champignons"
+    ],
+    "created_at": "2025-12-12T23:50:59.308426+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "88187a33-9e31-430d-a4fe-2ada483e20a4",
+    "name": "Aligoté 2023",
+    "winery": "Château du Crest",
+    "country": "Schweiz",
+    "region": "Genf - Collex-Bossy",
+    "appellation": "AOC Genève",
+    "grape_variety": "Aligoté",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Knackig und erfrischend, ein Aligoté, der wie ein Lachen die Seele weckt.",
+    "description_en": "Crisp and refreshing, an Aligoté that awakens the soul like laughter.",
+    "description_fr": "Croquant et rafraîchissant, un Aligoté qui éveille l'âme comme un rire.",
+    "food_pairings_de": [
+      "Fischfilet",
+      "Salat"
+    ],
+    "food_pairings_en": [
+      "Fish fillet",
+      "Salad"
+    ],
+    "food_pairings_fr": [
+      "Filet de poisson",
+      "Salade"
+    ],
+    "created_at": "2025-12-12T23:50:59.309741+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "9c4a31c9-bb1d-4a61-9f30-580cb7f988c2",
+    "name": "Savagnin Blanc 2022",
+    "winery": "Domaine Dugerdil",
+    "country": "Schweiz",
+    "region": "Genf - Avully",
+    "appellation": "AOC Genève",
+    "grape_variety": "Savagnin Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Mineralisch und rein, ein Tropfen, der das Herz mit Bergfrische reinigt.",
+    "description_en": "Mineral and pure, a drop that cleanses the heart with mountain freshness.",
+    "description_fr": "Minéral et pur, une goutte qui purifie le cœur de fraîcheur de montagne.",
+    "food_pairings_de": [
+      "Austern",
+      "Leichte Vorspeisen"
+    ],
+    "food_pairings_en": [
+      "Oysters",
+      "Light appetizers"
+    ],
+    "food_pairings_fr": [
+      "Huîtres",
+      "Amuse-bouches légers"
+    ],
+    "created_at": "2025-12-12T23:50:59.310921+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "fe771248-d946-4ce9-85bd-706f04fcc4fc",
+    "name": "Assemblage Rouge L'Esprit de Genève 2021",
+    "winery": "Château du Crest",
+    "country": "Schweiz",
+    "region": "Genf - Collex-Bossy",
+    "appellation": "AOC Genève",
+    "grape_variety": "Assemblage",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Harmonisch und komplex, ein Blend, der die Seele in symphonische Tiefe taucht.",
+    "description_en": "Harmonious and complex, a blend that plunges the soul into symphonic depth.",
+    "description_fr": "Harmonieux et complexe, un assemblage qui plonge l'âme dans une profondeur symphonique.",
+    "food_pairings_de": [
+      "Ente",
+      "Pilzragout"
+    ],
+    "food_pairings_en": [
+      "Duck",
+      "Mushroom ragout"
+    ],
+    "food_pairings_fr": [
+      "Canard",
+      "Ragoût de champignons"
+    ],
+    "created_at": "2025-12-12T23:50:59.311979+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "b065fc4a-51d7-46a4-9b97-99abb2d273f2",
+    "name": "Gamay 2023",
+    "winery": "Les Perrières",
+    "country": "Schweiz",
+    "region": "Genf - Satigny",
+    "appellation": "AOC Genève",
+    "grape_variety": "Gamay",
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Frisch und ausgewogen, ein Gamay, der das Herz mit klassischer Freude erheitert.",
+    "description_en": "Fresh and balanced, a Gamay that gladdens the heart with classic joy.",
+    "description_fr": "Frais et équilibré, un Gamay qui réjouit le cœur d'une joie classique.",
+    "food_pairings_de": [
+      "Fondue",
+      "Rind"
+    ],
+    "food_pairings_en": [
+      "Fondue",
+      "Beef"
+    ],
+    "food_pairings_fr": [
+      "Fondue",
+      "Bœuf"
+    ],
+    "created_at": "2025-12-12T23:50:59.312985+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "0a0283df-9733-4f06-8ca2-8f295bc5f6ac",
+    "name": "Chasselas Le Clos 2022",
+    "winery": "Domaine de la Printanière",
+    "country": "Schweiz",
+    "region": "Genf - Avully",
+    "appellation": "AOC Genève",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Elegant und strukturiert, mit Apfel und Stein, das wie ein Tanz die Seele erheitert.",
+    "description_en": "Elegant and structured, with apple and stone that gladdens the soul like a dance.",
+    "description_fr": "Élégant et structuré, avec de la pomme et de la pierre qui réjouit l'âme comme une danse.",
+    "food_pairings_de": [
+      "Asiatische Gerichte",
+      "Gebratener Tofu"
+    ],
+    "food_pairings_en": [
+      "Asian dishes",
+      "Pan-fried tofu"
+    ],
+    "food_pairings_fr": [
+      "Plats asiatiques",
+      "Tofu poêlé"
+    ],
+    "created_at": "2025-12-12T23:50:59.313956+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "d3cf0524-2b58-4031-afdf-60b3329e5eb3",
+    "name": "Pinot Noir Le Palindrome 2022",
+    "winery": "Les Vins de la Gara",
+    "country": "Schweiz",
+    "region": "Genf - Satigny",
+    "appellation": "AOC Genève",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Spiegelbildlich und tief, ein Pinot, der die Seele mit erdiger Wärme umfängt.",
+    "description_en": "Mirror-like and deep, a Pinot that embraces the soul with earthy warmth.",
+    "description_fr": "En miroir et profond, un Pinot qui embrasse l'âme d'une chaleur terreuse.",
+    "food_pairings_de": [
+      "Wildpastete",
+      "Herzhafter Käse"
+    ],
+    "food_pairings_en": [
+      "Game pâté",
+      "Hearty cheese"
+    ],
+    "food_pairings_fr": [
+      "Pâté de gibier",
+      "Fromage corsé"
+    ],
+    "created_at": "2025-12-12T23:50:59.315316+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "d5af5a54-0c46-4f19-ad28-978a5f31d07f",
+    "name": "Merlot 2021",
+    "winery": "Domaine Les Hutins",
+    "country": "Schweiz",
+    "region": "Genf - Dardagny",
+    "appellation": "AOC Genève",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Weich und fruchtig, ein Merlot, der das Herz mit warmer Umarmung beschenkt.",
+    "description_en": "Soft and fruity, a Merlot that gifts the heart with a warm embrace.",
+    "description_fr": "Doux et fruité, un Merlot qui offre au cœur une étreinte chaleureuse.",
+    "food_pairings_de": [
+      "Pasta mit Tomatensauce",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Pasta with tomato sauce",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Pâtes sauce tomate",
+      "Fromage"
+    ],
+    "created_at": "2025-12-12T23:50:59.316456+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "2ec4a294-dc17-45f9-9148-d4bce0ade906",
+    "name": "Chardonnay 2023",
+    "winery": "Domaine de la Guérite",
+    "country": "Schweiz",
+    "region": "Genf - Russin",
+    "appellation": "AOC Genève",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Reich und honigartig, ein Surmaturé, der wie ein Traum die Seele umhüllt.",
+    "description_en": "Rich and honeyed, a late harvest that envelops the soul like a dream.",
+    "description_fr": "Riche et miellé, un surmaturé qui enveloppe l'âme comme un rêve.",
+    "food_pairings_de": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "food_pairings_en": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "food_pairings_fr": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "created_at": "2025-12-12T23:50:59.317668+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "40868538-0f9d-45bb-89c2-e754e4b548a1",
+    "name": "Gamay Mathurin 2023",
+    "winery": "Domaine de Chafalet",
+    "country": "Schweiz",
+    "region": "Genf - Peissy",
+    "appellation": "AOC Genève",
+    "grape_variety": "Gamay",
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Jung und sprudelnd, ein Gamay, der die Seele mit kindlicher Freude weckt.",
+    "description_en": "Young and effervescent, a Gamay that awakens the soul with childlike joy.",
+    "description_fr": "Jeune et pétillant, un Gamay qui éveille l'âme d'une joie enfantine.",
+    "food_pairings_de": [
+      "Tapas",
+      "Lachs"
+    ],
+    "food_pairings_en": [
+      "Tapas",
+      "Salmon"
+    ],
+    "food_pairings_fr": [
+      "Tapas",
+      "Saumon"
+    ],
+    "created_at": "2025-12-12T23:50:59.318712+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "4b8fe918-aabe-401d-8b32-36c461aef979",
+    "name": "Sauvignon Blanc Effijie 2022",
+    "winery": "Domaine Les Hutins",
+    "country": "Schweiz",
+    "region": "Genf - Dardagny",
+    "appellation": "AOC Genève",
+    "grape_variety": "Sauvignon Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Naturrein und lebendig, ein Blanc, der wie ein Gebet die Seele beruhigt.",
+    "description_en": "Natural and vibrant, a Blanc that calms the soul like a prayer.",
+    "description_fr": "Naturel et vivant, un Blanc qui apaise l'âme comme une prière.",
+    "food_pairings_de": [
+      "Hummer",
+      "Milder Käse"
+    ],
+    "food_pairings_en": [
+      "Lobster",
+      "Mild cheese"
+    ],
+    "food_pairings_fr": [
+      "Homard",
+      "Fromage doux"
+    ],
+    "created_at": "2025-12-12T23:50:59.319664+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "00c94844-7f83-4150-9a79-b77178468ed4",
+    "name": "Pinot Noir 2023",
+    "winery": "Domaine des Curiades",
+    "country": "Schweiz",
+    "region": "Genf - Satigny",
+    "appellation": "AOC Genève",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Tief und mineralisch, mit dunklen Früchten, die wie ein Geheimnis die Seele berühren.",
+    "description_en": "Deep and mineral, with dark fruits that touch the soul like a secret.",
+    "description_fr": "Profond et minéral, avec des fruits noirs qui touchent l'âme comme un secret.",
+    "food_pairings_de": [
+      "Rindfleisch",
+      "Wild"
+    ],
+    "food_pairings_en": [
+      "Beef",
+      "Game"
+    ],
+    "food_pairings_fr": [
+      "Bœuf",
+      "Gibier"
+    ],
+    "created_at": "2025-12-12T23:50:59.320612+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "cba41439-b394-4a4d-9295-83d8bb193e09",
+    "name": "Chasselas 2023",
+    "winery": "Domaine des Alouettes",
+    "country": "Schweiz",
+    "region": "Genf - Satigny",
+    "appellation": "AOC Genève",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Ikonisch und tief, mit Honig und Stein, das wie ein Erbe die Seele berührt.",
+    "description_en": "Iconic and deep, with honey and stone that touches the soul like a heritage.",
+    "description_fr": "Iconique et profond, avec du miel et de la pierre qui touche l'âme comme un héritage.",
+    "food_pairings_de": [
+      "Geflügel",
+      "Meeresfrüchte"
+    ],
+    "food_pairings_en": [
+      "Poultry",
+      "Seafood"
+    ],
+    "food_pairings_fr": [
+      "Volaille",
+      "Fruits de mer"
+    ],
+    "created_at": "2025-12-12T23:50:59.321582+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "0bf28775-1914-4771-bc03-f73ff20fd41b",
+    "name": "Cabernet Sauvignon 2021",
+    "winery": "Cave Les Crêtets",
+    "country": "Schweiz",
+    "region": "Genf - Peissy",
+    "appellation": "AOC Genève",
+    "grape_variety": "Cabernet Sauvignon",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Strukturiert und pfeffrig, ein Rot, der die Seele mit orientalischem Zauber umhüllt.",
+    "description_en": "Structured and peppery, a red that envelops the soul with oriental magic.",
+    "description_fr": "Structuré et poivré, un rouge qui enveloppe l'âme de magie orientale.",
+    "food_pairings_de": [
+      "Gewürzhähnchen",
+      "Auberginen"
+    ],
+    "food_pairings_en": [
+      "Spiced chicken",
+      "Eggplant"
+    ],
+    "food_pairings_fr": [
+      "Poulet épicé",
+      "Aubergines"
+    ],
+    "created_at": "2025-12-12T23:50:59.322620+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "e0d3de6c-58fe-487c-bac4-273c19580cac",
+    "name": "Viognier 2023",
+    "winery": "Domaine Villard & Fils",
+    "country": "Schweiz",
+    "region": "Genf - Anières",
+    "appellation": "AOC Genève",
+    "grape_variety": "Viognier",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Exotisch und würzig, ein Weiß, der das Herz mit orientalischem Flair verzaubert.",
+    "description_en": "Exotic and spicy, a white that enchants the heart with oriental flair.",
+    "description_fr": "Exotique et épicé, un blanc qui enchante le cœur d'un flair oriental.",
+    "food_pairings_de": [
+      "Curry",
+      "Vegetarische Gerichte"
+    ],
+    "food_pairings_en": [
+      "Curry",
+      "Vegetarian dishes"
+    ],
+    "food_pairings_fr": [
+      "Curry",
+      "Plats végétariens"
+    ],
+    "created_at": "2025-12-12T23:50:59.323551+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "b9c0cf60-a2af-4d05-8614-9efc4a12acc5",
+    "name": "Gamay Grand'Cour 2022",
+    "winery": "Domaine Grand'Cour",
+    "country": "Schweiz",
+    "region": "Genf - Peissy-Satigny",
+    "appellation": "AOC Genève",
+    "grape_variety": "Gamay",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Monumental und samtig, ein Gamay, der die Seele in göttliche Ekstase versetzt.",
+    "description_en": "Monumental and velvety, a Gamay that sends the soul into divine ecstasy.",
+    "description_fr": "Monumental et velouté, un Gamay qui envoie l'âme en extase divine.",
+    "food_pairings_de": [
+      "Entrecôte",
+      "Schokolade"
+    ],
+    "food_pairings_en": [
+      "Entrecôte",
+      "Chocolate"
+    ],
+    "food_pairings_fr": [
+      "Entrecôte",
+      "Chocolat"
+    ],
+    "created_at": "2025-12-12T23:50:59.324484+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "9474bc38-454c-43d1-a309-0c5647ba8c8a",
+    "name": "Chasselas Coteau de Peissy 1er Cru 2023",
+    "winery": "Domaine Grand'Cour",
+    "country": "Schweiz",
+    "region": "Genf - Peissy-Satigny",
+    "appellation": "AOC Genève",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Fruchtig und robust, ein Chasselas, der wie ein Abgrund die Seele fesselt.",
+    "description_en": "Fruity and robust, a Chasselas that captivates the soul like an abyss.",
+    "description_fr": "Fruité et robuste, un Chasselas qui captive l'âme comme un abîme.",
+    "food_pairings_de": [
+      "Stark gewürzte Fleischgerichte"
+    ],
+    "food_pairings_en": [
+      "Heavily spiced meat dishes"
+    ],
+    "food_pairings_fr": [
+      "Plats de viande très épicés"
+    ],
+    "created_at": "2025-12-12T23:50:59.325405+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "a9987070-eb84-4b2c-bf65-353f9b5a1cc9",
+    "name": "Pinot Gris 2022",
+    "winery": "Philippe Chevrier",
+    "country": "Schweiz",
+    "region": "Genf - Satigny",
+    "appellation": "AOC Genève",
+    "grape_variety": "Pinot Gris",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Elegant und filigran, ein Gris, der das Herz mit burgundischer Poesie umfängt.",
+    "description_en": "Elegant and delicate, a Gris that embraces the heart with Burgundian poetry.",
+    "description_fr": "Élégant et délicat, un Gris qui embrasse le cœur de poésie bourguignonne.",
+    "food_pairings_de": [
+      "Ente",
+      "Pilzgerichte"
+    ],
+    "food_pairings_en": [
+      "Duck",
+      "Mushroom dishes"
+    ],
+    "food_pairings_fr": [
+      "Canard",
+      "Plats aux champignons"
+    ],
+    "created_at": "2025-12-12T23:50:59.326402+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "72eb70c0-4aff-4ae0-bb0b-230906d309b5",
+    "name": "Assemblage de G 2021",
+    "winery": "Domaine de la Guérite",
+    "country": "Schweiz",
+    "region": "Genf - Russin",
+    "appellation": "AOC Genève",
+    "grape_variety": "Assemblage",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Frisch und blumig, ein Blend, der die Seele mit genevischer Reinheit erfüllt.",
+    "description_en": "Fresh and floral, a blend that fills the soul with Genevan purity.",
+    "description_fr": "Frais et floral, un assemblage qui remplit l'âme de pureté genevoise.",
+    "food_pairings_de": [
+      "Fisch",
+      "Salate"
+    ],
+    "food_pairings_en": [
+      "Fish",
+      "Salads"
+    ],
+    "food_pairings_fr": [
+      "Poisson",
+      "Salades"
+    ],
+    "created_at": "2025-12-12T23:50:59.327415+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "18da2cb8-95ba-4a74-ba4d-eed8c9df180e",
+    "name": "Merlot 2023",
+    "winery": "Domaine de la Mermière",
+    "country": "Schweiz",
+    "region": "Genf - Satigny",
+    "appellation": "AOC Genève",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Weich und beerig, ein Merlot, der die Seele in genevische Wälder entführt.",
+    "description_en": "Soft and berry-rich, a Merlot that transports the soul to Genevan forests.",
+    "description_fr": "Doux et fruité, un Merlot qui transporte l'âme dans les forêts genevoises.",
+    "food_pairings_de": [
+      "Lammkoteletts",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Lamb chops",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Côtelettes d'agneau",
+      "Fromage"
+    ],
+    "created_at": "2025-12-12T23:50:59.328358+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "3bd0c448-096e-45de-bdbf-0f912482d173",
+    "name": "Sauvignon Blanc 2023",
+    "winery": "Domaine des Bonnettes",
+    "country": "Schweiz",
+    "region": "Genf - Dardagny",
+    "appellation": "AOC Genève",
+    "grape_variety": "Sauvignon Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Intensiv und salzig, ein Tropfen, der das Herz mit Meeresbrise umweht.",
+    "description_en": "Intense and salty, a drop that envelops the heart with sea breeze.",
+    "description_fr": "Intense et salé, une goutte qui enveloppe le cœur de brise marine.",
+    "food_pairings_de": [
+      "Schalentiere",
+      "Zitronenhähnchen"
+    ],
+    "food_pairings_en": [
+      "Shellfish",
+      "Lemon chicken"
+    ],
+    "food_pairings_fr": [
+      "Crustacés",
+      "Poulet au citron"
+    ],
+    "created_at": "2025-12-12T23:50:59.329278+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "da370ce1-448d-4633-9ccf-4b88eac5986b",
+    "name": "Gamay 2022",
+    "winery": "Stéphane Gros",
+    "country": "Schweiz",
+    "region": "Genf - Dardagny",
+    "appellation": "AOC Genève",
+    "grape_variety": "Gamay",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Reich und strukturiert, ein Grand Cru, der die Seele in städtischer Eleganz badet.",
+    "description_en": "Rich and structured, a Grand Cru that bathes the soul in urban elegance.",
+    "description_fr": "Riche et structuré, un Grand Cru qui baigne l'âme dans l'élégance urbaine.",
+    "food_pairings_de": [
+      "Krustentiere",
+      "Geflügel"
+    ],
+    "food_pairings_en": [
+      "Crustaceans",
+      "Poultry"
+    ],
+    "food_pairings_fr": [
+      "Crustacés",
+      "Volaille"
+    ],
+    "created_at": "2025-12-12T23:50:59.330200+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "5d6a9bf2-0baa-4bca-86bc-39ff615ab8b8",
+    "name": "Chardonnay 2023",
+    "winery": "Domaine de la République",
+    "country": "Schweiz",
+    "region": "Genf - Lully",
+    "appellation": "AOC Genève",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Sonnig und fruchtig, ein Chardonnay, der das Herz mit sommerlicher Leichtigkeit umfängt.",
+    "description_en": "Sunny and fruity, a Chardonnay that embraces the heart with summery lightness.",
+    "description_fr": "Ensoleillé et fruité, un Chardonnay qui embrasse le cœur d'une légèreté estivale.",
+    "food_pairings_de": [
+      "Sommergerichte",
+      "Frischkäse"
+    ],
+    "food_pairings_en": [
+      "Summer dishes",
+      "Fresh cheese"
+    ],
+    "food_pairings_fr": [
+      "Plats d'été",
+      "Fromage frais"
+    ],
+    "created_at": "2025-12-12T23:50:59.331106+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "4cb34cb4-11d4-4c2d-b354-29b1414c7488",
+    "name": "Pinot Noir 2023",
+    "winery": "Les Vins de Philippe Chevrier",
+    "country": "Schweiz",
+    "region": "Genf - Satigny",
+    "appellation": "AOC Genève",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Filigran und robust, ein Pinot, der die Seele mit imperierender Kraft erhebt.",
+    "description_en": "Delicate and robust, a Pinot that uplifts the soul with commanding power.",
+    "description_fr": "Délicat et robuste, un Pinot qui élève l'âme d'une puissance impérieuse.",
+    "food_pairings_de": [
+      "Lamm",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Lamb",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Agneau",
+      "Champignons"
+    ],
+    "created_at": "2025-12-12T23:50:59.332013+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "bdb02b41-1e22-4657-8827-f75d7178630d",
+    "name": "Rosé Blanc de Noirs 2024",
+    "winery": "Les Parcelles - L. Villard",
+    "country": "Schweiz",
+    "region": "Genf - Satigny",
+    "appellation": "AOC Genève",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rosé",
+    "price_category": "€€",
+    "description_de": "Leicht und verlockend, ein Rosé, der wie ein Flüstern die Seele mit Sommerfreude erfüllt.",
+    "description_en": "Light and alluring, a Rosé that fills the soul with summer joy like a whisper.",
+    "description_fr": "Léger et séduisant, un Rosé qui remplit l'âme de joie estivale comme un murmure.",
+    "food_pairings_de": [
+      "Tapas",
+      "Lachs"
+    ],
+    "food_pairings_en": [
+      "Tapas",
+      "Salmon"
+    ],
+    "food_pairings_fr": [
+      "Tapas",
+      "Saumon"
+    ],
+    "created_at": "2025-12-12T23:50:59.332936+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "7fd4342d-c1d0-4f39-b25a-84d846fa3e1b",
+    "name": "Gamaret 2021",
+    "winery": "Domaine des Balisiers",
+    "country": "Schweiz",
+    "region": "Genf - Satigny",
+    "appellation": "AOC Genève",
+    "grape_variety": "Gamaret",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Würzig und amaronig, ein Rot, das wie ein Traum die Seele umhüllt.",
+    "description_en": "Spicy and Amarone-like, a red that envelops the soul like a dream.",
+    "description_fr": "Épicé et amaronien, un rouge qui enveloppe l'âme comme un rêve.",
+    "food_pairings_de": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "food_pairings_en": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "food_pairings_fr": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "created_at": "2025-12-12T23:50:59.333852+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "26314c1a-a134-46e2-817a-3ac42f2e8640",
+    "name": "Chasselas 2023",
+    "winery": "Domaine Les Hutins",
+    "country": "Schweiz",
+    "region": "Genf - Dardagny",
+    "appellation": "AOC Genève",
+    "grape_variety": "Chasselas",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Mineralisch und nervös, ein Chasselas, der die Seele mit alpiner Frische weckt.",
+    "description_en": "Mineral and nervous, a Chasselas that awakens the soul with alpine freshness.",
+    "description_fr": "Minéral et nerveux, un Chasselas qui éveille l'âme d'une fraîcheur alpine.",
+    "food_pairings_de": [
+      "Krebse",
+      "Kräutersuppe"
+    ],
+    "food_pairings_en": [
+      "Crayfish",
+      "Herb soup"
+    ],
+    "food_pairings_fr": [
+      "Écrevisses",
+      "Soupe aux herbes"
+    ],
+    "created_at": "2025-12-12T23:50:59.334755+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "4118c591-2df9-4c39-b2bc-8e911377a67c",
+    "name": "Merlot 2022",
+    "winery": "Château du Crest",
+    "country": "Schweiz",
+    "region": "Genf - Collex-Bossy",
+    "appellation": "AOC Genève",
+    "grape_variety": "Merlot",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Tief und harmonisch, ein Assemblage, der die Seele in göttliche Ekstase versetzt.",
+    "description_en": "Deep and harmonious, an assemblage that sends the soul into divine ecstasy.",
+    "description_fr": "Profond et harmonieux, un assemblage qui envoie l'âme en extase divine.",
+    "food_pairings_de": [
+      "Entrecôte",
+      "Schokolade"
+    ],
+    "food_pairings_en": [
+      "Entrecôte",
+      "Chocolate"
+    ],
+    "food_pairings_fr": [
+      "Entrecôte",
+      "Chocolat"
+    ],
+    "created_at": "2025-12-12T23:50:59.335655+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "80f0001f-30fa-4602-929c-ede7a0476555",
+    "name": "Sauvignon Gris 2023",
+    "winery": "Domaine Dugerdil",
+    "country": "Schweiz",
+    "region": "Genf - Avully",
+    "appellation": "AOC Genève",
+    "grape_variety": "Sauvignon Gris",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Zart und blumig, ein Gris, der das Herz mit genevischer Reinheit erfüllt.",
+    "description_en": "Delicate and floral, a Gris that fills the heart with Genevan purity.",
+    "description_fr": "Délicat et floral, un Gris qui remplit le cœur de pureté genevoise.",
+    "food_pairings_de": [
+      "Fisch",
+      "Salate"
+    ],
+    "food_pairings_en": [
+      "Fish",
+      "Salads"
+    ],
+    "food_pairings_fr": [
+      "Poisson",
+      "Salades"
+    ],
+    "created_at": "2025-12-12T23:50:59.336548+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "5477789c-a8dc-4dba-b69d-ec80a5f7708c",
+    "name": "Pinot Noir 2023",
+    "winery": "Domaine de Chafalet",
+    "country": "Schweiz",
+    "region": "Genf - Peissy",
+    "appellation": "AOC Genève",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Historisch und elegant, ein Wein, der die Seele mit zeitloser Tiefe berührt.",
+    "description_en": "Historic and elegant, a wine that touches the soul with timeless depth.",
+    "description_fr": "Historique et élégant, un vin qui touche l'âme d'une profondeur intemporelle.",
+    "food_pairings_de": [
+      "Geflügel",
+      "Meeresfrüchte"
+    ],
+    "food_pairings_en": [
+      "Poultry",
+      "Seafood"
+    ],
+    "food_pairings_fr": [
+      "Volaille",
+      "Fruits de mer"
+    ],
+    "created_at": "2025-12-12T23:50:59.337463+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "6a409af8-a32b-4d42-96f0-059b53b72a8a",
+    "name": "Gamay 2023",
+    "winery": "Domaine de la Devinière",
+    "country": "Schweiz",
+    "region": "Genf - Dardagny",
+    "appellation": "AOC Genève",
+    "grape_variety": "Gamay",
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Frisch und ausgewogen, ein Gamay, der das Herz mit klassischer Freude erheitert.",
+    "description_en": "Fresh and balanced, a Gamay that gladdens the heart with classic joy.",
+    "description_fr": "Frais et équilibré, un Gamay qui réjouit le cœur d'une joie classique.",
+    "food_pairings_de": [
+      "Fondue",
+      "Rind"
+    ],
+    "food_pairings_en": [
+      "Fondue",
+      "Beef"
+    ],
+    "food_pairings_fr": [
+      "Fondue",
+      "Bœuf"
+    ],
+    "created_at": "2025-12-12T23:50:59.338575+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "bc3d5ba7-f370-47ea-9521-c25085102b4a",
+    "name": "Cabernet Franc 2023",
+    "winery": "Cave Les Crêtets",
+    "country": "Schweiz",
+    "region": "Genf - Peissy",
+    "appellation": "AOC Genève",
+    "grape_variety": "Cabernet Franc",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Elegant und pfeffrig, ein Rot, der die Seele mit orientalischem Zauber umhüllt.",
+    "description_en": "Elegant and peppery, a red that envelops the soul with oriental magic.",
+    "description_fr": "Élégant et poivré, un rouge qui enveloppe l'âme de magie orientale.",
+    "food_pairings_de": [
+      "Gewürzhähnchen",
+      "Auberginen"
+    ],
+    "food_pairings_en": [
+      "Spiced chicken",
+      "Eggplant"
+    ],
+    "food_pairings_fr": [
+      "Poulet épicé",
+      "Aubergines"
+    ],
+    "created_at": "2025-12-12T23:50:59.339992+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "8e5b0653-1cc3-4c6b-8d24-8b0c00ee950f",
+    "name": "Mousseux Blanc Noir 2023",
+    "winery": "Domaine de la République et Canton de Genève",
+    "country": "Schweiz",
+    "region": "Genf - Lully",
+    "appellation": "AOC Genève",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "schaumwein",
+    "price_category": "€€€",
+    "description_de": "Hoch und rein, ein Mousseux, der wie ein Gipfelblick die Seele erweitert.",
+    "description_en": "High and pure, a Mousseux that expands the soul like a summit view.",
+    "description_fr": "Haut et pur, un Mousseux qui élargit l'âme comme une vue du sommet.",
+    "food_pairings_de": [
+      "Käseplatte",
+      "Leichte Vorspeisen"
+    ],
+    "food_pairings_en": [
+      "Cheese platter",
+      "Light appetizers"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fromages",
+      "Amuse-bouches légers"
+    ],
+    "created_at": "2025-12-12T23:50:59.341285+00:00",
+    "source": "Top 50 Genfer Weine - Sélection des Vins de Genève 2024, GaultMillau, Falstaff"
+  },
+  {
+    "id": "f939f26a-2608-48ff-a5d2-e6524ae2e852",
+    "name": "Chardonnay 2019",
+    "winery": "Weingut Gantenbein",
+    "country": "Schweiz",
+    "region": "Graubünden - Fläsch",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Ein goldener Sonnenstrahl, der von reifen Birnen und Vanilleflüstern erzählt – ein Wein, der die Seele in sanfte, cremige Umarmung hüllt und vergangene Sommer heraufbeschwört.",
+    "description_en": "A golden sunbeam speaking of ripe pears and vanilla whispers – a wine that wraps the soul in a soft, creamy embrace and evokes past summers.",
+    "description_fr": "Un rayon de soleil doré parlant de poires mûres et de murmures de vanille – un vin qui enveloppe l'âme dans une étreinte douce et crémeuse.",
+    "food_pairings_de": [
+      "Gebratenes Huhn mit Kräutern",
+      "Tomme Vaudoise"
+    ],
+    "food_pairings_en": [
+      "Roasted chicken with herbs",
+      "Tomme Vaudoise"
+    ],
+    "food_pairings_fr": [
+      "Poulet rôti aux herbes",
+      "Tomme Vaudoise"
+    ],
+    "created_at": "2025-12-13T05:19:20.759688+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "743f944e-c6bb-4a27-a832-edee6aef6d37",
+    "name": "Pinot Noir 2019",
+    "winery": "Weingut Gantenbein",
+    "country": "Schweiz",
+    "region": "Graubünden - Fläsch",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Elegant und filigran, mit Kirsche und Samt, der die Seele in burgundische Melancholie taucht – ein Liebesbrief in Rot, der das Herz mit leichter Traurigkeit und purer Freude erfüllt.",
+    "description_en": "Elegant and delicate, with cherry and velvet that plunges the soul into Burgundian melancholy – a love letter in red that fills the heart with gentle sadness and pure joy.",
+    "description_fr": "Élégant et délicat, avec de la cerise et du velours qui plonge l'âme dans la mélancolie bourguignonne – une lettre d'amour en rouge.",
+    "food_pairings_de": [
+      "Entenbrust",
+      "Pilzrisotto"
+    ],
+    "food_pairings_en": [
+      "Duck breast",
+      "Mushroom risotto"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard",
+      "Risotto aux champignons"
+    ],
+    "created_at": "2025-12-13T05:19:20.771122+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "71b3143f-7ffc-4395-92ab-60523337f569",
+    "name": "Pinot Noir Unique 2021",
+    "winery": "Weingut Donatsch",
+    "country": "Schweiz",
+    "region": "Graubünden - Malans",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Tief und tanninreich, mit Leder und Beeren, die die Seele in alte Legenden eintauchen lassen – ein Monument aus Frucht und Finesse.",
+    "description_en": "Deep and tannic, with leather and berries that immerse the soul in ancient legends – a monument of fruit and finesse.",
+    "description_fr": "Profond et tannique, avec du cuir et des baies qui plongent l'âme dans les légendes anciennes – un monument de fruit et de finesse.",
+    "food_pairings_de": [
+      "Rehrücken",
+      "Dunkles Fleisch"
+    ],
+    "food_pairings_en": [
+      "Saddle of venison",
+      "Dark meat"
+    ],
+    "food_pairings_fr": [
+      "Selle de chevreuil",
+      "Viande brune"
+    ],
+    "created_at": "2025-12-13T05:19:20.772158+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "fcb46f22-152d-4bdd-9c25-a2eba1874c24",
+    "name": "Chardonnay Frassa 2019",
+    "winery": "Weingut Wegelin",
+    "country": "Schweiz",
+    "region": "Graubünden - Malans",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Reich und blumig, ein Chardonnay, der die Seele in goldene Sonnenuntergänge taucht – cremig, mit Nuss und Zitrus, wie ein Traum der Alpen.",
+    "description_en": "Rich and floral, a Chardonnay that immerses the soul in golden sunsets – creamy, with nut and citrus, like an Alpine dream.",
+    "description_fr": "Riche et floral, un Chardonnay qui plonge l'âme dans des couchers de soleil dorés – crémeux, avec de la noix et des agrumes.",
+    "food_pairings_de": [
+      "Huhn mit Kräutern",
+      "Raclette"
+    ],
+    "food_pairings_en": [
+      "Chicken with herbs",
+      "Raclette"
+    ],
+    "food_pairings_fr": [
+      "Poulet aux herbes",
+      "Raclette"
+    ],
+    "created_at": "2025-12-13T05:19:20.773406+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "31a98a36-2984-4cb7-9476-10c47b72ab94",
+    "name": "Completer 2022",
+    "winery": "Weingut Donatsch",
+    "country": "Schweiz",
+    "region": "Graubünden - Malans",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Completer",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Streng und charaktervoll, mit Quitte und Mandel, der wie ein vergessenes Gebet die Seele verzaubert – rare Essenz der Bündner Tradition.",
+    "description_en": "Austere and characterful, with quince and almond, enchanting the soul like a forgotten prayer – rare essence of Graubünden tradition.",
+    "description_fr": "Austère et plein de caractère, avec du coing et de l'amande, enchantant l'âme comme une prière oubliée – essence rare de la tradition grisonne.",
+    "food_pairings_de": [
+      "Foie gras",
+      "Reifer Camembert"
+    ],
+    "food_pairings_en": [
+      "Foie gras",
+      "Aged Camembert"
+    ],
+    "food_pairings_fr": [
+      "Foie gras",
+      "Camembert affiné"
+    ],
+    "created_at": "2025-12-13T05:19:20.774402+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "8b89c7b5-1668-477e-a2cb-3f1ec04a85a6",
+    "name": "Pinot Noir Monolith 2021",
+    "winery": "Weingut Obrecht",
+    "country": "Schweiz",
+    "region": "Graubünden - Jenins",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Biodynamisch und intensiv, mit dunklen Beeren und floralen Noten, das die Seele auf Höhenflüge trägt – pure Alpenkraft in Samt.",
+    "description_en": "Biodynamic and intense, with dark berries and floral notes that carry the soul to soaring heights – pure Alpine power in velvet.",
+    "description_fr": "Biodynamique et intense, avec des baies noires et des notes florales qui portent l'âme vers les sommets – pure puissance alpine en velours.",
+    "food_pairings_de": [
+      "Lammkoteletts",
+      "Wildpastete"
+    ],
+    "food_pairings_en": [
+      "Lamb chops",
+      "Game pâté"
+    ],
+    "food_pairings_fr": [
+      "Côtelettes d'agneau",
+      "Pâté de gibier"
+    ],
+    "created_at": "2025-12-13T05:19:20.775255+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "2d2f3078-a52c-4ae0-be14-221a3504bc90",
+    "name": "Riesling-Silvaner 2024",
+    "winery": "von Salis",
+    "country": "Schweiz",
+    "region": "Graubünden - Malans",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Riesling-Silvaner",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Frisch und mineralisch, ein Weiß, der wie ein Bergquell die Seele klärt und erfrischt – drittbester der Schweiz, voller Zitrus und Stein.",
+    "description_en": "Fresh and mineral, a white that cleanses and refreshes the soul like a mountain spring – third best in Switzerland, full of citrus and stone.",
+    "description_fr": "Frais et minéral, un blanc qui purifie et rafraîchit l'âme comme une source de montagne – troisième meilleur de Suisse, plein d'agrumes et de pierre.",
+    "food_pairings_de": [
+      "Gegrillter Fisch",
+      "Papet Vaudois"
+    ],
+    "food_pairings_en": [
+      "Grilled fish",
+      "Papet Vaudois"
+    ],
+    "food_pairings_fr": [
+      "Poisson grillé",
+      "Papet Vaudois"
+    ],
+    "created_at": "2025-12-13T05:19:20.776079+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "7ede5ddb-46b7-46c4-a1f3-f095c7c65bda",
+    "name": "Pinot Noir Gian-Battista 2018",
+    "winery": "Weinbau von Tscharner",
+    "country": "Schweiz",
+    "region": "Graubünden - Chur",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Sinnlich und legendär, mit Kirsche und Gewürz, der das Herz mit unvergesslicher Tiefe umfängt – ein Geniestreich der Bündner Seele.",
+    "description_en": "Sensual and legendary, with cherry and spice, embracing the heart with unforgettable depth – a masterstroke of the Graubünden soul.",
+    "description_fr": "Sensuel et légendaire, avec de la cerise et des épices, embrassant le cœur avec une profondeur inoubliable – un coup de maître de l'âme grisonne.",
+    "food_pairings_de": [
+      "Ente",
+      "Pilzragout"
+    ],
+    "food_pairings_en": [
+      "Duck",
+      "Mushroom ragout"
+    ],
+    "food_pairings_fr": [
+      "Canard",
+      "Ragoût de champignons"
+    ],
+    "created_at": "2025-12-13T05:19:20.777093+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "e6da1f66-6696-4e8b-87b0-a49ae227c4af",
+    "name": "Chardonnay Passion 2021",
+    "winery": "Weingut Donatsch",
+    "country": "Schweiz",
+    "region": "Graubünden - Malans",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Opulent und harmonisch, mit Pfirsich und Eiche, das wie ein warmer Föhn die Seele streichelt.",
+    "description_en": "Opulent and harmonious, with peach and oak, caressing the soul like a warm Föhn wind.",
+    "description_fr": "Opulent et harmonieux, avec de la pêche et du chêne, caressant l'âme comme un foehn chaud.",
+    "food_pairings_de": [
+      "Gegrillter Lachs",
+      "Asiatisches Gemüse"
+    ],
+    "food_pairings_en": [
+      "Grilled salmon",
+      "Asian vegetables"
+    ],
+    "food_pairings_fr": [
+      "Saumon grillé",
+      "Légumes asiatiques"
+    ],
+    "created_at": "2025-12-13T05:19:20.777960+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "5d1a16f1-6880-4234-b238-bc6151675817",
+    "name": "Pinot Noir Schöpfiwingert 2011",
+    "winery": "Weingut Fromm",
+    "country": "Schweiz",
+    "region": "Graubünden - Fläsch",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Reif und filigran, ein Alter Reben-Traum von Beeren und Erde, der die Seele in nostalgische Wärme hüllt.",
+    "description_en": "Mature and delicate, an old vine dream of berries and earth, wrapping the soul in nostalgic warmth.",
+    "description_fr": "Mûr et délicat, un rêve de vieilles vignes de baies et de terre, enveloppant l'âme de chaleur nostalgique.",
+    "food_pairings_de": [
+      "Roastbeef",
+      "Dunkle Schokolade"
+    ],
+    "food_pairings_en": [
+      "Roast beef",
+      "Dark chocolate"
+    ],
+    "food_pairings_fr": [
+      "Rôti de bœuf",
+      "Chocolat noir"
+    ],
+    "created_at": "2025-12-13T05:19:20.778755+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "98b3aa99-ebf3-4352-8bac-df5605e575b3",
+    "name": "Pinot Blanc Elevé en Barrique 2024",
+    "winery": "Thürer Weine",
+    "country": "Schweiz",
+    "region": "Graubünden - Maienfeld",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Pinot Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Cremig und großes Gold, mit Apfel und Haselnuss, der die Seele mit barriqueter Tiefe berührt.",
+    "description_en": "Creamy and great gold, with apple and hazelnut, touching the soul with barrel-aged depth.",
+    "description_fr": "Crémeux et grand or, avec de la pomme et de la noisette, touchant l'âme avec une profondeur de barrique.",
+    "food_pairings_de": [
+      "Krebse",
+      "Frischer Salat"
+    ],
+    "food_pairings_en": [
+      "Crayfish",
+      "Fresh salad"
+    ],
+    "food_pairings_fr": [
+      "Écrevisses",
+      "Salade fraîche"
+    ],
+    "created_at": "2025-12-13T05:19:20.779546+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "55069237-4a59-449a-91cf-def292458c3c",
+    "name": "Pinot Noir Tscharnergut Alte Reben 2011",
+    "winery": "Weingut Donatsch",
+    "country": "Schweiz",
+    "region": "Graubünden - Jenins",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Robust und fruchtig, ein Pinot, der das Herz mit wilden Beeren und erdiger Wärme in herbstliche Wälder lockt.",
+    "description_en": "Robust and fruity, a Pinot that lures the heart into autumn forests with wild berries and earthy warmth.",
+    "description_fr": "Robuste et fruité, un Pinot qui attire le cœur dans les forêts d'automne avec des baies sauvages et une chaleur terreuse.",
+    "food_pairings_de": [
+      "Lammkoteletts",
+      "Pilzragout"
+    ],
+    "food_pairings_en": [
+      "Lamb chops",
+      "Mushroom ragout"
+    ],
+    "food_pairings_fr": [
+      "Côtelettes d'agneau",
+      "Ragoût de champignons"
+    ],
+    "created_at": "2025-12-13T05:19:20.780453+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "8b7758ca-de6c-4250-9f58-d8c5328b9cbb",
+    "name": "Müller-Thurgau 2023",
+    "winery": "Weinbau Jenny Luzi",
+    "country": "Schweiz",
+    "region": "Graubünden - Jenins",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Müller-Thurgau",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Frisch und aromatisch, mit Apfel und Kräutern, der wie ein erstes Erwachen im Frühling das Herz erfrischt.",
+    "description_en": "Fresh and aromatic, with apple and herbs, refreshing the heart like the first awakening in spring.",
+    "description_fr": "Frais et aromatique, avec de la pomme et des herbes, rafraîchissant le cœur comme le premier réveil au printemps.",
+    "food_pairings_de": [
+      "Austern",
+      "Ziegenkäse-Platte"
+    ],
+    "food_pairings_en": [
+      "Oysters",
+      "Goat cheese platter"
+    ],
+    "food_pairings_fr": [
+      "Huîtres",
+      "Plateau de fromage de chèvre"
+    ],
+    "created_at": "2025-12-13T05:19:20.781293+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "cad3718c-962d-463e-82af-7ead256ec5d6",
+    "name": "Pinot Noir Weisstorkel 2019",
+    "winery": "Weingut Wegelin",
+    "country": "Schweiz",
+    "region": "Graubünden - Malans",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Elegant und präzise, mit Kirschen und Leder, das die Seele in burgundische Poesie taucht.",
+    "description_en": "Elegant and precise, with cherries and leather, plunging the soul into Burgundian poetry.",
+    "description_fr": "Élégant et précis, avec des cerises et du cuir, plongeant l'âme dans la poésie bourguignonne.",
+    "food_pairings_de": [
+      "Entenbrust",
+      "Tomme Vaudoise"
+    ],
+    "food_pairings_en": [
+      "Duck breast",
+      "Tomme Vaudoise"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard",
+      "Tomme Vaudoise"
+    ],
+    "created_at": "2025-12-13T05:19:20.782337+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "52db4b95-8483-4011-9580-42021807d76a",
+    "name": "Chardonnay Le Rosy 2018",
+    "winery": "Domaine de Chambleau",
+    "country": "Schweiz",
+    "region": "Graubünden - Colombier",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Blumig und exotisch, mit Birne und Gewürzen, die die Seele in eine orientalische Gartenoase entführen.",
+    "description_en": "Floral and exotic, with pear and spices, transporting the soul to an oriental garden oasis.",
+    "description_fr": "Floral et exotique, avec de la poire et des épices, transportant l'âme dans une oasis de jardin oriental.",
+    "food_pairings_de": [
+      "Geflügelterrine",
+      "Raclette"
+    ],
+    "food_pairings_en": [
+      "Poultry terrine",
+      "Raclette"
+    ],
+    "food_pairings_fr": [
+      "Terrine de volaille",
+      "Raclette"
+    ],
+    "created_at": "2025-12-13T05:19:20.783142+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "9f114060-7010-455d-a7c3-7d6adf0fdfe4",
+    "name": "Pinot Noir Pradafant 2019",
+    "winery": "Georg Schlegel",
+    "country": "Schweiz",
+    "region": "Graubünden - Malans",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Einzellagen-Extraklasse, samtig und würzig, ein Rot, das die Seele mit Pfeffer und Beeren in Ekstase versetzt.",
+    "description_en": "Single vineyard excellence, velvety and spicy, a red that sends the soul into ecstasy with pepper and berries.",
+    "description_fr": "Excellence de parcelle unique, velouté et épicé, un rouge qui envoie l'âme en extase avec du poivre et des baies.",
+    "food_pairings_de": [
+      "BBQ-Rippen",
+      "Scharfe Wurst"
+    ],
+    "food_pairings_en": [
+      "BBQ ribs",
+      "Spicy sausage"
+    ],
+    "food_pairings_fr": [
+      "Côtes BBQ",
+      "Saucisse épicée"
+    ],
+    "created_at": "2025-12-13T05:19:20.783924+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "18a2ec69-a0cc-4f97-8ed5-1b40a02ea217",
+    "name": "Completer 2022",
+    "winery": "Weingut Roman Hermann",
+    "country": "Schweiz",
+    "region": "Graubünden - Fläsch",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Completer",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Meisterwerk und streng, mit Mandel und Säure, der wie ein Hohelied die Seele erhebt.",
+    "description_en": "A masterpiece, austere with almond and acidity, elevating the soul like a song of songs.",
+    "description_fr": "Un chef-d'œuvre, austère avec de l'amande et de l'acidité, élevant l'âme comme un cantique des cantiques.",
+    "food_pairings_de": [
+      "Käseplatte",
+      "Gebratenes Forellenfilet"
+    ],
+    "food_pairings_en": [
+      "Cheese platter",
+      "Pan-fried trout fillet"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fromages",
+      "Filet de truite poêlé"
+    ],
+    "created_at": "2025-12-13T05:19:20.784899+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "54d6fc25-346f-4531-b55c-83872ebe1263",
+    "name": "Pinot Noir Saliser Grande Selection 2019",
+    "winery": "Georg Schlegel",
+    "country": "Schweiz",
+    "region": "Graubünden - Malans",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "20/20-Pinot mit enormem Potenzial, fruchtig und robust, der das Herz mit imperierender Kraft erhebt.",
+    "description_en": "20/20 Pinot with enormous potential, fruity and robust, elevating the heart with imperial power.",
+    "description_fr": "Pinot 20/20 avec un potentiel énorme, fruité et robuste, élevant le cœur avec une puissance impériale.",
+    "food_pairings_de": [
+      "Wild",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Game",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Gibier",
+      "Champignons"
+    ],
+    "created_at": "2025-12-13T05:19:20.785864+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "f5cc99b7-b940-4153-8cae-569a68345182",
+    "name": "Sauvignon Blanc 2023",
+    "winery": "Weingut Obrecht",
+    "country": "Schweiz",
+    "region": "Graubünden - Jenins",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Sauvignon Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Nervös und aromatisch, mit Grapefruit und Kräutern, das wie ein Bergnebel die Seele klärt.",
+    "description_en": "Nervous and aromatic, with grapefruit and herbs, clearing the soul like mountain mist.",
+    "description_fr": "Nerveux et aromatique, avec du pamplemousse et des herbes, purifiant l'âme comme la brume de montagne.",
+    "food_pairings_de": [
+      "Meeresfrüchte",
+      "Sommergemüse"
+    ],
+    "food_pairings_en": [
+      "Seafood",
+      "Summer vegetables"
+    ],
+    "food_pairings_fr": [
+      "Fruits de mer",
+      "Légumes d'été"
+    ],
+    "created_at": "2025-12-13T05:19:20.786688+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "b1803f65-b406-47e1-98e3-aa657e0dde45",
+    "name": "Pinot Noir Lupa 2020",
+    "winery": "Georg Schlegel",
+    "country": "Schweiz",
+    "region": "Graubünden - Malans",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Unvergleichlich trinkbar, mit Kirschen und Geheimnissen, der das Herz mit leichter Freude erheitert.",
+    "description_en": "Incomparably drinkable, with cherries and secrets, cheering the heart with light joy.",
+    "description_fr": "Incomparablement buvable, avec des cerises et des secrets, égayant le cœur d'une joie légère.",
+    "food_pairings_de": [
+      "Pasta Bolognese",
+      "Herzhaftes Brot"
+    ],
+    "food_pairings_en": [
+      "Pasta Bolognese",
+      "Hearty bread"
+    ],
+    "food_pairings_fr": [
+      "Pâtes bolognaise",
+      "Pain rustique"
+    ],
+    "created_at": "2025-12-13T05:19:20.787520+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "420ed306-51fd-4f1a-b0dc-6b1892c52fc0",
+    "name": "Chardonnay Surmaturé 2019",
+    "winery": "Weingut Fromm",
+    "country": "Schweiz",
+    "region": "Graubünden - Fläsch",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Reich und honigartig, ein Surmaturé, der wie ein Traum die Seele umhüllt.",
+    "description_en": "Rich and honeyed, a surmaturé that wraps the soul like a dream.",
+    "description_fr": "Riche et miellé, un surmaturé qui enveloppe l'âme comme un rêve.",
+    "food_pairings_de": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "food_pairings_en": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "food_pairings_fr": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "created_at": "2025-12-13T05:19:20.788342+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "e2dbad0c-c82b-49c2-bd81-0204e7ba9245",
+    "name": "Pinot Noir 2023",
+    "winery": "Weingut Sprecher von Bernegg",
+    "country": "Schweiz",
+    "region": "Graubünden - Fläsch",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Filigran und fruchtig, ein Windhauch aus Kirschen, der das Herz mit alpiner Frische weckt.",
+    "description_en": "Delicate and fruity, a breath of cherries that awakens the heart with Alpine freshness.",
+    "description_fr": "Délicat et fruité, un souffle de cerises qui éveille le cœur avec la fraîcheur alpine.",
+    "food_pairings_de": [
+      "Entenbrust",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Duck breast",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard",
+      "Champignons"
+    ],
+    "created_at": "2025-12-13T05:19:20.789126+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "5bca9c5b-a9da-4b5f-ba95-3a6f4456bf8f",
+    "name": "Malvasier 2022",
+    "winery": "Weingut Möhr-Niggli",
+    "country": "Schweiz",
+    "region": "Graubünden - Fläsch",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Malvasier",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Exotisch und würzig, mit Apfel und Gewürzen, die wie ein Geheimnis die Seele verzaubern.",
+    "description_en": "Exotic and spicy, with apple and spices that enchant the soul like a secret.",
+    "description_fr": "Exotique et épicé, avec de la pomme et des épices qui enchantent l'âme comme un secret.",
+    "food_pairings_de": [
+      "Asiatische Gerichte",
+      "Gebratener Tofu"
+    ],
+    "food_pairings_en": [
+      "Asian dishes",
+      "Fried tofu"
+    ],
+    "food_pairings_fr": [
+      "Plats asiatiques",
+      "Tofu frit"
+    ],
+    "created_at": "2025-12-13T05:19:20.789913+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "930763da-71a6-4fc4-b5f7-8608ddcb9600",
+    "name": "Pinot Noir 2021",
+    "winery": "Weingut Christian Herrmann",
+    "country": "Schweiz",
+    "region": "Graubünden - Maienfeld",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Tief und mineralisch, mit dunklen Früchten, die wie ein Abgrund die Seele fesselt.",
+    "description_en": "Deep and mineral, with dark fruits that captivate the soul like an abyss.",
+    "description_fr": "Profond et minéral, avec des fruits noirs qui captivent l'âme comme un abîme.",
+    "food_pairings_de": [
+      "Rindfleisch",
+      "Wild"
+    ],
+    "food_pairings_en": [
+      "Beef",
+      "Game"
+    ],
+    "food_pairings_fr": [
+      "Bœuf",
+      "Gibier"
+    ],
+    "created_at": "2025-12-13T05:19:20.790985+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "17efbc6a-1d0c-4d7b-81f4-98dafd4c587c",
+    "name": "Pinot Blanc 2020",
+    "winery": "Weingut Giani Boner",
+    "country": "Schweiz",
+    "region": "Graubünden - Jenins",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Pinot Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Zart und blumig, ein Blanc, der die Seele mit valaisanischer Reinheit erfüllt – frisch und nervös.",
+    "description_en": "Delicate and floral, a Blanc that fills the soul with Valaisan purity – fresh and nervous.",
+    "description_fr": "Délicat et floral, un Blanc qui remplit l'âme de pureté valaisanne – frais et nerveux.",
+    "food_pairings_de": [
+      "Fisch",
+      "Salate"
+    ],
+    "food_pairings_en": [
+      "Fish",
+      "Salads"
+    ],
+    "food_pairings_fr": [
+      "Poisson",
+      "Salades"
+    ],
+    "created_at": "2025-12-13T05:19:20.791879+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "76495f2f-dce3-429d-96c9-af770e0d262f",
+    "name": "Pinot Noir 2023",
+    "winery": "Weingut Familie Hansruedi Adank",
+    "country": "Schweiz",
+    "region": "Graubünden - Fläsch",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Samten und fruchtig, ein Pinot, der das Herz mit warmer Umarmung beschenkt.",
+    "description_en": "Velvety and fruity, a Pinot that gifts the heart with a warm embrace.",
+    "description_fr": "Velouté et fruité, un Pinot qui offre au cœur une étreinte chaleureuse.",
+    "food_pairings_de": [
+      "Pasta mit Tomatensauce",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Pasta with tomato sauce",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Pâtes à la sauce tomate",
+      "Fromage"
+    ],
+    "created_at": "2025-12-13T05:19:20.792792+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "81e59252-2d83-470c-8693-a49aaf51357c",
+    "name": "Chardonnay 2022",
+    "winery": "Weingut Thomas Studach",
+    "country": "Schweiz",
+    "region": "Graubünden - Malans",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Elegant und strukturiert, mit Apfel und Mineral, das wie ein Tanz die Seele erheitert.",
+    "description_en": "Elegant and structured, with apple and mineral, cheering the soul like a dance.",
+    "description_fr": "Élégant et structuré, avec de la pomme et du minéral, égayant l'âme comme une danse.",
+    "food_pairings_de": [
+      "Huhn mit Kräutern",
+      "Raclette"
+    ],
+    "food_pairings_en": [
+      "Chicken with herbs",
+      "Raclette"
+    ],
+    "food_pairings_fr": [
+      "Poulet aux herbes",
+      "Raclette"
+    ],
+    "created_at": "2025-12-13T05:19:20.793580+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "2aab55a4-8dbe-4dfa-a276-b470f81434ac",
+    "name": "Pinot Noir 2021",
+    "winery": "Weingut Eichholz",
+    "country": "Schweiz",
+    "region": "Graubünden - Fläsch",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Würzig und intensiv, ein Rot, das die Seele mit orientalischem Zauber umhüllt.",
+    "description_en": "Spicy and intense, a red that wraps the soul in oriental magic.",
+    "description_fr": "Épicé et intense, un rouge qui enveloppe l'âme de magie orientale.",
+    "food_pairings_de": [
+      "Gewürzhähnchen",
+      "Auberginen"
+    ],
+    "food_pairings_en": [
+      "Spiced chicken",
+      "Eggplant"
+    ],
+    "food_pairings_fr": [
+      "Poulet épicé",
+      "Aubergines"
+    ],
+    "created_at": "2025-12-13T05:19:20.794377+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "47e46246-c4a3-4909-9476-949a28343ef8",
+    "name": "Completer 2023",
+    "winery": "Weingut Pelizzatti Perego",
+    "country": "Schweiz",
+    "region": "Graubünden - Jenins",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Completer",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Feminine Eleganz, mit Veilchen und Säure, der das Herz mit Seide und Feuer erobert.",
+    "description_en": "Feminine elegance, with violet and acidity, conquering the heart with silk and fire.",
+    "description_fr": "Élégance féminine, avec de la violette et de l'acidité, conquérant le cœur avec de la soie et du feu.",
+    "food_pairings_de": [
+      "Perlhuhn mit Morcheln"
+    ],
+    "food_pairings_en": [
+      "Guinea fowl with morels"
+    ],
+    "food_pairings_fr": [
+      "Pintade aux morilles"
+    ],
+    "created_at": "2025-12-13T05:19:20.795135+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "6bca75cb-32ac-4693-bb69-1e09f8b16390",
+    "name": "Pinot Noir 2022",
+    "winery": "Silas Hörler",
+    "country": "Schweiz",
+    "region": "Graubünden - Fläsch",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Präzise und charaktervoll, ein Neuling der Elite, der die Seele mit erdiger Wärme umfängt.",
+    "description_en": "Precise and characterful, a newcomer to the elite, embracing the soul with earthy warmth.",
+    "description_fr": "Précis et plein de caractère, un nouveau venu dans l'élite, embrassant l'âme avec une chaleur terreuse.",
+    "food_pairings_de": [
+      "Ente",
+      "Pilzrisotto"
+    ],
+    "food_pairings_en": [
+      "Duck",
+      "Mushroom risotto"
+    ],
+    "food_pairings_fr": [
+      "Canard",
+      "Risotto aux champignons"
+    ],
+    "created_at": "2025-12-13T05:19:20.795940+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "16b36907-1018-476c-acfc-ca8f51f42c7d",
+    "name": "Chardonnay 2021",
+    "winery": "Weingut Manfred Meier",
+    "country": "Schweiz",
+    "region": "Graubünden - Zizers",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Überraschend und tief, mit Nuss und Zitrus, das wie ein alter Freund die Seele in nostalgische Wärme hüllt.",
+    "description_en": "Surprising and deep, with nut and citrus, wrapping the soul in nostalgic warmth like an old friend.",
+    "description_fr": "Surprenant et profond, avec de la noix et des agrumes, enveloppant l'âme de chaleur nostalgique comme un vieil ami.",
+    "food_pairings_de": [
+      "Foie gras",
+      "Reifer Käse"
+    ],
+    "food_pairings_en": [
+      "Foie gras",
+      "Aged cheese"
+    ],
+    "food_pairings_fr": [
+      "Foie gras",
+      "Fromage affiné"
+    ],
+    "created_at": "2025-12-13T05:19:20.796775+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "1b2cb58d-c842-4f77-a127-034c75bc1fac",
+    "name": "Pinot Noir 2023",
+    "winery": "Weingut Jan Luzi",
+    "country": "Schweiz",
+    "region": "Graubünden - Malans",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Filigran und robust, ein Pinot, der die Seele mit imperierender Kraft erhebt.",
+    "description_en": "Delicate yet robust, a Pinot that elevates the soul with imperial power.",
+    "description_fr": "Délicat mais robuste, un Pinot qui élève l'âme avec une puissance impériale.",
+    "food_pairings_de": [
+      "Lamm",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Lamb",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Agneau",
+      "Champignons"
+    ],
+    "created_at": "2025-12-13T05:19:20.797575+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "fbd1cd13-ebad-4cb6-88e6-e6a9a7293520",
+    "name": "Müller-Thurgau 2023",
+    "winery": "Gutsbetrieb Engel AG",
+    "country": "Schweiz",
+    "region": "Graubünden - Herrschaft",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Müller-Thurgau",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Frisch und vielschichtig, ein Weiß, der das Herz mit kindlicher Freude weckt.",
+    "description_en": "Fresh and multilayered, a white that awakens the heart with childlike joy.",
+    "description_fr": "Frais et complexe, un blanc qui éveille le cœur avec une joie enfantine.",
+    "food_pairings_de": [
+      "Tapas",
+      "Lachs"
+    ],
+    "food_pairings_en": [
+      "Tapas",
+      "Salmon"
+    ],
+    "food_pairings_fr": [
+      "Tapas",
+      "Saumon"
+    ],
+    "created_at": "2025-12-13T05:19:20.798523+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "3e57c6e8-4822-48ac-b81a-643faef6aa02",
+    "name": "Pinot Noir 2022",
+    "winery": "Weingut Treib de Jürg",
+    "country": "Schweiz",
+    "region": "Graubünden - Maienfeld",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Dynamisch und harmonisch, ein Neuling, der wie ein Chor die Seele erhebt.",
+    "description_en": "Dynamic and harmonious, a newcomer that elevates the soul like a choir.",
+    "description_fr": "Dynamique et harmonieux, un nouveau venu qui élève l'âme comme un chœur.",
+    "food_pairings_de": [
+      "Dunkles Fleisch"
+    ],
+    "food_pairings_en": [
+      "Dark meat"
+    ],
+    "food_pairings_fr": [
+      "Viande brune"
+    ],
+    "created_at": "2025-12-13T05:19:20.799433+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "d71f7c01-2d6d-4b02-8280-942fc02ebe94",
+    "name": "Sauvignon Blanc 2023",
+    "winery": "Weingut Irene Grünenfelder",
+    "country": "Schweiz",
+    "region": "Graubünden - Jenins",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Sauvignon Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Hoch und aromatisch, mit Mandeln und Nektarinen, das die Seele auf Höhenflüge trägt.",
+    "description_en": "High and aromatic, with almonds and nectarines, carrying the soul to soaring heights.",
+    "description_fr": "Haut et aromatique, avec des amandes et des nectarines, portant l'âme vers les sommets.",
+    "food_pairings_de": [
+      "Käseplatte",
+      "Forelle"
+    ],
+    "food_pairings_en": [
+      "Cheese platter",
+      "Trout"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fromages",
+      "Truite"
+    ],
+    "created_at": "2025-12-13T05:19:20.800390+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "ec2c61f2-d2ac-4bac-bc88-d88484275732",
+    "name": "Pinot Noir Barrique 2021",
+    "winery": "Weingut Scadenagut",
+    "country": "Schweiz",
+    "region": "Graubünden - Malans",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Barriqué und tief, ein Pinot, der die Seele in symphonische Tiefe taucht.",
+    "description_en": "Barrel-aged and deep, a Pinot that plunges the soul into symphonic depth.",
+    "description_fr": "Élevé en barrique et profond, un Pinot qui plonge l'âme dans une profondeur symphonique.",
+    "food_pairings_de": [
+      "Ente",
+      "Pilzragout"
+    ],
+    "food_pairings_en": [
+      "Duck",
+      "Mushroom ragout"
+    ],
+    "food_pairings_fr": [
+      "Canard",
+      "Ragoût de champignons"
+    ],
+    "created_at": "2025-12-13T05:19:20.801369+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "ed42cf41-121e-4a9c-9470-07e5ca3b6f3b",
+    "name": "Chardonnay 2023",
+    "winery": "Weingut Francisca Obrecht",
+    "country": "Schweiz",
+    "region": "Graubünden - Jenins",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Opulent und blumig, ein Tropfen, der das Herz mit sommerlicher Leichtigkeit umfängt.",
+    "description_en": "Opulent and floral, a drop that embraces the heart with summery lightness.",
+    "description_fr": "Opulent et floral, une goutte qui embrasse le cœur avec une légèreté estivale.",
+    "food_pairings_de": [
+      "Sommergerichte",
+      "Frischkäse"
+    ],
+    "food_pairings_en": [
+      "Summer dishes",
+      "Fresh cheese"
+    ],
+    "food_pairings_fr": [
+      "Plats d'été",
+      "Fromage frais"
+    ],
+    "created_at": "2025-12-13T05:19:20.802211+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "03ebcde7-5825-4a9a-b789-47b42806d6d6",
+    "name": "Pinot Noir 2022",
+    "winery": "Weingut Peter Wegelin",
+    "country": "Schweiz",
+    "region": "Graubünden - Malans",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Traditionell und rein, ein Tropfen, der das Herz mit Bergfrische reinigt.",
+    "description_en": "Traditional and pure, a drop that cleanses the heart with mountain freshness.",
+    "description_fr": "Traditionnel et pur, une goutte qui purifie le cœur avec la fraîcheur de la montagne.",
+    "food_pairings_de": [
+      "Fischfilet",
+      "Salat"
+    ],
+    "food_pairings_en": [
+      "Fish fillet",
+      "Salad"
+    ],
+    "food_pairings_fr": [
+      "Filet de poisson",
+      "Salade"
+    ],
+    "created_at": "2025-12-13T05:19:20.802976+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "e9e183ef-6464-4d9d-be3d-6237aad163cb",
+    "name": "Malvasier 2023",
+    "winery": "Weingut Donatsch",
+    "country": "Schweiz",
+    "region": "Graubünden - Malans",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Malvasier",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Exotisch und würzig, ein Weiß, der das Herz mit orientalischem Flair verzaubert.",
+    "description_en": "Exotic and spicy, a white that enchants the heart with oriental flair.",
+    "description_fr": "Exotique et épicé, un blanc qui enchante le cœur avec un flair oriental.",
+    "food_pairings_de": [
+      "Curry",
+      "Vegetarische Gerichte"
+    ],
+    "food_pairings_en": [
+      "Curry",
+      "Vegetarian dishes"
+    ],
+    "food_pairings_fr": [
+      "Curry",
+      "Plats végétariens"
+    ],
+    "created_at": "2025-12-13T05:19:20.803782+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "7e01abcf-9951-4fb4-9357-6a4a3b35d05f",
+    "name": "Pinot Noir 2021",
+    "winery": "Weingut Roman Hermann",
+    "country": "Schweiz",
+    "region": "Graubünden - Fläsch",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Komplex und harmonisch, ein Assemblage, der die Seele in göttliche Ekstase versetzt.",
+    "description_en": "Complex and harmonious, an assemblage that sends the soul into divine ecstasy.",
+    "description_fr": "Complexe et harmonieux, un assemblage qui envoie l'âme en extase divine.",
+    "food_pairings_de": [
+      "Entrecôte",
+      "Schokolade"
+    ],
+    "food_pairings_en": [
+      "Entrecôte",
+      "Chocolate"
+    ],
+    "food_pairings_fr": [
+      "Entrecôte",
+      "Chocolat"
+    ],
+    "created_at": "2025-12-13T05:19:20.804634+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "bacb49d3-9ab2-47ec-9bc7-a454a46f3810",
+    "name": "Chardonnay Grand Cru 2022",
+    "winery": "Weingut Sprecher von Bernegg",
+    "country": "Schweiz",
+    "region": "Graubünden - Fläsch",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Reich und strukturiert, ein Grand Cru, der die Seele in städtischer Eleganz badet.",
+    "description_en": "Rich and structured, a Grand Cru that bathes the soul in urban elegance.",
+    "description_fr": "Riche et structuré, un Grand Cru qui baigne l'âme dans l'élégance urbaine.",
+    "food_pairings_de": [
+      "Krustentiere",
+      "Geflügel"
+    ],
+    "food_pairings_en": [
+      "Crustaceans",
+      "Poultry"
+    ],
+    "food_pairings_fr": [
+      "Crustacés",
+      "Volaille"
+    ],
+    "created_at": "2025-12-13T05:19:20.805563+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "06c7ebe2-4e74-41e7-9d18-83430f44b490",
+    "name": "Pinot Blanc 2023",
+    "winery": "Weingut Gantenbein",
+    "country": "Schweiz",
+    "region": "Graubünden - Fläsch",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Pinot Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Nervös und lebendig, ein Funke Glycin und Grapefruit, der das Herz mit alpiner Frische weckt.",
+    "description_en": "Nervous and lively, a spark of glycine and grapefruit that awakens the heart with Alpine freshness.",
+    "description_fr": "Nerveux et vif, une étincelle de glycine et de pamplemousse qui éveille le cœur avec la fraîcheur alpine.",
+    "food_pairings_de": [
+      "Krebse",
+      "Kräutersuppe"
+    ],
+    "food_pairings_en": [
+      "Crayfish",
+      "Herb soup"
+    ],
+    "food_pairings_fr": [
+      "Écrevisses",
+      "Soupe aux herbes"
+    ],
+    "created_at": "2025-12-13T05:19:20.806359+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "1c2298ab-0b29-4b2f-89a8-79a6ce597a78",
+    "name": "Pinot Noir Amarone-Style 2023",
+    "winery": "Weingut Möhr-Niggli",
+    "country": "Schweiz",
+    "region": "Graubünden - Fläsch",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Tief und amaronig, ein Rot, das wie ein Abgrund die Seele fesselt.",
+    "description_en": "Deep and Amarone-like, a red that captivates the soul like an abyss.",
+    "description_fr": "Profond et de style Amarone, un rouge qui captive l'âme comme un abîme.",
+    "food_pairings_de": [
+      "Stark gewürzte Fleischgerichte"
+    ],
+    "food_pairings_en": [
+      "Heavily spiced meat dishes"
+    ],
+    "food_pairings_fr": [
+      "Plats de viande très épicés"
+    ],
+    "created_at": "2025-12-13T05:19:20.807218+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "398cdd46-e454-4d13-b741-ae987fff91e7",
+    "name": "Completer 2021",
+    "winery": "Weingut Fromm",
+    "country": "Schweiz",
+    "region": "Graubünden - Fläsch",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Completer",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Historisch und elegant, ein Wein, der die Seele mit zeitloser Tiefe berührt.",
+    "description_en": "Historic and elegant, a wine that touches the soul with timeless depth.",
+    "description_fr": "Historique et élégant, un vin qui touche l'âme avec une profondeur intemporelle.",
+    "food_pairings_de": [
+      "Geflügel",
+      "Meeresfrüchte"
+    ],
+    "food_pairings_en": [
+      "Poultry",
+      "Seafood"
+    ],
+    "food_pairings_fr": [
+      "Volaille",
+      "Fruits de mer"
+    ],
+    "created_at": "2025-12-13T05:19:20.808059+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "98e0f43a-446e-463a-80e5-fb6fef560cb7",
+    "name": "Pinot Noir Reserve 2022",
+    "winery": "Weingut Christian Herrmann",
+    "country": "Schweiz",
+    "region": "Graubünden - Maienfeld",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Filigran und fruchtig, ein Windhauch aus Kirschen, der das Herz mit leichter Traurigkeit und purer Freude erfüllt.",
+    "description_en": "Delicate and fruity, a breath of cherries that fills the heart with gentle sadness and pure joy.",
+    "description_fr": "Délicat et fruité, un souffle de cerises qui remplit le cœur d'une douce tristesse et d'une joie pure.",
+    "food_pairings_de": [
+      "Entenbrust",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Duck breast",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard",
+      "Champignons"
+    ],
+    "created_at": "2025-12-13T05:19:20.809036+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "753a25f8-6bf8-452f-9a14-85bcb4b2278e",
+    "name": "Chardonnay Classic 2023",
+    "winery": "Weingut Thomas Studach",
+    "country": "Schweiz",
+    "region": "Graubünden - Malans",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Frisch und ausgewogen, ein Chardonnay, der das Herz mit klassischer Freude erheitert.",
+    "description_en": "Fresh and balanced, a Chardonnay that cheers the heart with classic joy.",
+    "description_fr": "Frais et équilibré, un Chardonnay qui égaye le cœur avec une joie classique.",
+    "food_pairings_de": [
+      "Fondue",
+      "Rind"
+    ],
+    "food_pairings_en": [
+      "Fondue",
+      "Beef"
+    ],
+    "food_pairings_fr": [
+      "Fondue",
+      "Bœuf"
+    ],
+    "created_at": "2025-12-13T05:19:20.810001+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "3fcad421-6775-42e2-b2f0-a01994d92e58",
+    "name": "Pinot Noir Alte Reben 2021",
+    "winery": "Weingut Familie Hansruedi Adank",
+    "country": "Schweiz",
+    "region": "Graubünden - Fläsch",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Reich und beerig, ein Pinot, der die Seele in bündnerische Wälder entführt.",
+    "description_en": "Rich and berry-filled, a Pinot that transports the soul to Graubünden forests.",
+    "description_fr": "Riche et fruité, un Pinot qui transporte l'âme dans les forêts des Grisons.",
+    "food_pairings_de": [
+      "Lammkoteletts",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Lamb chops",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Côtelettes d'agneau",
+      "Fromage"
+    ],
+    "created_at": "2025-12-13T05:19:20.810819+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "39e38440-e771-4008-98a4-0a31c4894d86",
+    "name": "Sauvignon Blanc 2022",
+    "winery": "Weingut Eichholz",
+    "country": "Schweiz",
+    "region": "Graubünden - Fläsch",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Sauvignon Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Elegant und pfeffrig, ein Blanc, der die Seele mit orientalischem Zauber umhüllt.",
+    "description_en": "Elegant and peppery, a Blanc that wraps the soul in oriental magic.",
+    "description_fr": "Élégant et poivré, un Blanc qui enveloppe l'âme de magie orientale.",
+    "food_pairings_de": [
+      "Gewürzhähnchen",
+      "Auberginen"
+    ],
+    "food_pairings_en": [
+      "Spiced chicken",
+      "Eggplant"
+    ],
+    "food_pairings_fr": [
+      "Poulet épicé",
+      "Aubergines"
+    ],
+    "created_at": "2025-12-13T05:19:20.811713+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "4f39a4ee-377b-4b44-9d0e-4f9fde4affdb",
+    "name": "Malvasier Hybrid 2023",
+    "winery": "Weingut Pelizzatti Perego",
+    "country": "Schweiz",
+    "region": "Graubünden - Jenins",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Malvasier",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Innovativ und fruchtig, ein Hybrid, der das Herz mit moderner Freude erfüllt.",
+    "description_en": "Innovative and fruity, a hybrid that fills the heart with modern joy.",
+    "description_fr": "Innovant et fruité, un hybride qui remplit le cœur de joie moderne.",
+    "food_pairings_de": [
+      "Grillgemüse",
+      "Fisch"
+    ],
+    "food_pairings_en": [
+      "Grilled vegetables",
+      "Fish"
+    ],
+    "food_pairings_fr": [
+      "Légumes grillés",
+      "Poisson"
+    ],
+    "created_at": "2025-12-13T05:19:20.812526+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
+  },
+  {
+    "id": "8be6821e-0c3a-49db-80a0-1d372ba82c54",
+    "name": "Pinot Noir Gipfelblick 2023",
+    "winery": "Weingut Giani Boner",
+    "country": "Schweiz",
+    "region": "Graubünden - Jenins",
+    "appellation": "AOC Graubünden",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Hoch und rein, ein Pinot, der wie ein Gipfelblick die Seele erweitert.",
+    "description_en": "High and pure, a Pinot that expands the soul like a summit view.",
+    "description_fr": "Haut et pur, un Pinot qui élargit l'âme comme une vue du sommet.",
+    "food_pairings_de": [
+      "Käseplatte",
+      "Leichte Vorspeisen"
+    ],
+    "food_pairings_en": [
+      "Cheese platter",
+      "Light appetizers"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fromages",
+      "Entrées légères"
+    ],
+    "created_at": "2025-12-13T05:19:20.813340+00:00",
+    "source": "Top 50 Graubündner Weine - Grand Prix du Vin Suisse 2025, Falstaff, GaultMillau, VINUM"
   }
 ]

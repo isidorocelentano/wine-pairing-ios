@@ -45861,5 +45861,1506 @@
     "image_url": null,
     "rating": null,
     "created_at": "2025-12-13T07:44:25.879Z"
+  },
+  {
+    "id": "e3798347-1311-4db0-8a85-5b6d7971cd8f",
+    "name": "Oberhäuser Brücke Riesling Spätlese 2024",
+    "winery": "Dönnhoff",
+    "country": "Deutschland",
+    "region": "Nahe - Oberhausen",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Ein legendärer Tropfen von unendlicher Tiefe, Pfirsich, Honig und salziger Mineralität – ein Wein, der die Seele in absolute Perfektion und Nahe-Magie taucht (100 Falstaff-Punkte).",
+    "description_en": "A legendary drop of infinite depth, peach, honey and salty minerality – a wine that immerses the soul in absolute perfection and Nahe magic (100 Falstaff points).",
+    "description_fr": "Une goutte légendaire de profondeur infinie, pêche, miel et minéralité salée – un vin qui plonge l'âme dans la perfection absolue et la magie de la Nahe (100 points Falstaff).",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Foie gras",
+      "Blauschimmelkäse"
+    ],
+    "food_pairings_en": [
+      "Foie gras",
+      "Blue cheese"
+    ],
+    "food_pairings_fr": [
+      "Foie gras",
+      "Fromage bleu"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.008Z"
+  },
+  {
+    "id": "5fdbc004-ce11-4535-9f0f-a0706e28aeeb",
+    "name": "Dorsheimer Pittermännchen Riesling GG 2024",
+    "winery": "Schlossgut Diel",
+    "country": "Deutschland",
+    "region": "Nahe - Dorsheim",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Vulkanisch und präzise, ein Pittermännchen-Juwel von Zitrus und Stein – ein Tropfen, der das Herz mit kraftvoller Eleganz umfängt.",
+    "description_en": "Volcanic and precise, a Pittermännchen jewel of citrus and stone – a drop that embraces the heart with powerful elegance.",
+    "description_fr": "Volcanique et précis, un joyau de Pittermännchen d'agrumes et de pierre – une goutte qui enlace le cœur d'une élégance puissante.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Hummer",
+      "Reifer Parmesan"
+    ],
+    "food_pairings_en": [
+      "Lobster",
+      "Aged Parmesan"
+    ],
+    "food_pairings_fr": [
+      "Homard",
+      "Parmesan affiné"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.009Z"
+  },
+  {
+    "id": "fc0e6400-ba57-45a4-a7ee-21815a9e178a",
+    "name": "Monzinger Frühlingsplätzchen Riesling GG 2024",
+    "winery": "Emrich-Schönleber",
+    "country": "Deutschland",
+    "region": "Nahe - Monzingen",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Frühlingsfrisch und mineralisch, ein Frühlingsplätzchen der Leichtigkeit und Tiefe, das die Sinne in Ekstase versetzt.",
+    "description_en": "Spring-fresh and mineral, a Frühlingsplätzchen of lightness and depth that sends the senses into ecstasy.",
+    "description_fr": "Frais comme le printemps et minéral, un Frühlingsplätzchen de légèreté et de profondeur qui met les sens en extase.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Gegrillter Fisch",
+      "Milder Ziegenkäse"
+    ],
+    "food_pairings_en": [
+      "Grilled fish",
+      "Mild goat cheese"
+    ],
+    "food_pairings_fr": [
+      "Poisson grillé",
+      "Fromage de chèvre doux"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.010Z"
+  },
+  {
+    "id": "195bdf26-d2eb-4166-b345-bde5bdbe762e",
+    "name": "Münsterer Pittersberg Riesling GG 2024",
+    "winery": "Kruger-Rumpf",
+    "country": "Deutschland",
+    "region": "Nahe - Münster-Sarmsheim",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Filigran und strahlend, ein Pittersberg-Traum von Apfel und Salz, der die Seele mit jugendlicher Lebendigkeit erfrischt.",
+    "description_en": "Delicate and radiant, a Pittersberg dream of apple and salt that refreshes the soul with youthful vivacity.",
+    "description_fr": "Délicat et radieux, un rêve de Pittersberg de pomme et de sel qui rafraîchit l'âme avec une vivacité juvénile.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Meeresfrüchte",
+      "Sommergemüse"
+    ],
+    "food_pairings_en": [
+      "Seafood",
+      "Summer vegetables"
+    ],
+    "food_pairings_fr": [
+      "Fruits de mer",
+      "Légumes d'été"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.011Z"
+  },
+  {
+    "id": "e5dcbb4c-ee45-404f-a4b7-2307c0743ba0",
+    "name": "Niederhäuser Hermannshöhle Riesling GG 2024",
+    "winery": "Gut Hermannsberg",
+    "country": "Deutschland",
+    "region": "Nahe - Niederhausen",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Monumental und komplex, ein Hermannshöhle-Monument der Mineralität – ein Wein, der das Herz mit uriger Kraft verzaubert.",
+    "description_en": "Monumental and complex, a Hermannshöhle monument of minerality – a wine that enchants the heart with primal power.",
+    "description_fr": "Monumental et complexe, un monument de Hermannshöhle de minéralité – un vin qui enchante le cœur avec une puissance primale.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Lamm",
+      "Pilzrisotto"
+    ],
+    "food_pairings_en": [
+      "Lamb",
+      "Mushroom risotto"
+    ],
+    "food_pairings_fr": [
+      "Agneau",
+      "Risotto aux champignons"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.012Z"
+  },
+  {
+    "id": "97f6d495-f774-4bdd-8c9c-d82262c80f75",
+    "name": "Bockenauer Felseneck Riesling GG 2024",
+    "winery": "Schäfer-Fröhlich",
+    "country": "Deutschland",
+    "region": "Nahe - Bockenau",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Steil und explosiv, ein Felseneck der Intensität und Frische, das die Seele mit moderner Brillanz weckt.",
+    "description_en": "Steep and explosive, a Felseneck of intensity and freshness that awakens the soul with modern brilliance.",
+    "description_fr": "Raide et explosif, un Felseneck d'intensité et de fraîcheur qui éveille l'âme avec une brillance moderne.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Asiatisches Curry",
+      "Gereifter Gouda"
+    ],
+    "food_pairings_en": [
+      "Asian curry",
+      "Aged Gouda"
+    ],
+    "food_pairings_fr": [
+      "Curry asiatique",
+      "Gouda affiné"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.013Z"
+  },
+  {
+    "id": "0c303199-7296-4496-9b3d-5fb1f455d13a",
+    "name": "Norheimer Dellchen Riesling GG 2024",
+    "winery": "Dönnhoff",
+    "country": "Deutschland",
+    "region": "Nahe - Norheim",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Dellchen-geheimnisvoll und tief, ein Nahe-Juwel der Harmonie.",
+    "description_en": "Dellchen-mysterious and deep, a Nahe jewel of harmony.",
+    "description_fr": "Dellchen-mystérieux et profond, un joyau de la Nahe d'harmonie.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Gegrillter Lachs",
+      "Milde Tomme"
+    ],
+    "food_pairings_en": [
+      "Grilled salmon",
+      "Mild Tomme"
+    ],
+    "food_pairings_fr": [
+      "Saumon grillé",
+      "Tomme douce"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.014Z"
+  },
+  {
+    "id": "a7fa4cc2-5ab1-4cdd-99d5-0281e20da871",
+    "name": "Monzinger Halenberg Riesling GG 2024",
+    "winery": "Emrich-Schönleber",
+    "country": "Deutschland",
+    "region": "Nahe - Monzingen",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Halenberg-kühl und mineralisch, ein Berg der Reinheit.",
+    "description_en": "Halenberg-cool and mineral, a mountain of purity.",
+    "description_fr": "Halenberg-frais et minéral, une montagne de pureté.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Forelle",
+      "Salat"
+    ],
+    "food_pairings_en": [
+      "Trout",
+      "Salad"
+    ],
+    "food_pairings_fr": [
+      "Truite",
+      "Salade"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.015Z"
+  },
+  {
+    "id": "1e19af3f-424d-4597-ae52-99762999cefc",
+    "name": "Kupfergrube Riesling GG 2024",
+    "winery": "Gut Hermannsberg",
+    "country": "Deutschland",
+    "region": "Nahe - Niederhausen",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Kupfergrube-vulkanisch und rauchig, ein Schatz der Tiefe.",
+    "description_en": "Kupfergrube-volcanic and smoky, a treasure of depth.",
+    "description_fr": "Kupfergrube-volcanique et fumé, un trésor de profondeur.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Wild",
+      "Dunkles Fleisch"
+    ],
+    "food_pairings_en": [
+      "Game",
+      "Dark meat"
+    ],
+    "food_pairings_fr": [
+      "Gibier",
+      "Viande brune"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.015Z"
+  },
+  {
+    "id": "06433469-0eee-40d8-a33c-ea23413ca994",
+    "name": "Binger Scharlachberg Riesling GG 2024",
+    "winery": "Kruger-Rumpf",
+    "country": "Deutschland",
+    "region": "Nahe - Bingen",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Scharlachberg-rot und kraftvoll, ein Feuer der Frucht.",
+    "description_en": "Scharlachberg-red and powerful, a fire of fruit.",
+    "description_fr": "Scharlachberg-rouge et puissant, un feu de fruit.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "BBQ",
+      "Scharfe Wurst"
+    ],
+    "food_pairings_en": [
+      "BBQ",
+      "Spicy sausage"
+    ],
+    "food_pairings_fr": [
+      "BBQ",
+      "Saucisse épicée"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.017Z"
+  },
+  {
+    "id": "f660f16d-159f-4111-8ef2-e2d46e5b071d",
+    "name": "Dorsheimer Burgberg Riesling GG 2024",
+    "winery": "Schlossgut Diel",
+    "country": "Deutschland",
+    "region": "Nahe - Dorsheim",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Burgberg-adelig und tief, ein Stück Paradies.",
+    "description_en": "Burgberg-noble and deep, a piece of paradise.",
+    "description_fr": "Burgberg-noble et profond, un morceau de paradis.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Ente",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Duck",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Canard",
+      "Champignons"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.018Z"
+  },
+  {
+    "id": "8562f868-60ac-4561-abd1-e50499ce3114",
+    "name": "Hermannshöhle Riesling Spätlese 2024",
+    "winery": "Dönnhoff",
+    "country": "Deutschland",
+    "region": "Nahe - Niederhausen",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Spät und verlockend, ein Hermannshöhle der Süße.",
+    "description_en": "Late and enticing, a Hermannshöhle of sweetness.",
+    "description_fr": "Tardif et séduisant, un Hermannshöhle de douceur.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Scharfer Thai",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Spicy Thai",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Thaï épicé",
+      "Fromage"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.019Z"
+  },
+  {
+    "id": "c23d77f4-86cd-44f7-b497-73f20c652c2a",
+    "name": "Felsenberg Riesling GG 2024",
+    "winery": "Schäfer-Fröhlich",
+    "country": "Deutschland",
+    "region": "Nahe - Schlossböckelheim",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Felsenberg-steil und intensiv, ein Fels der Leidenschaft.",
+    "description_en": "Felsenberg-steep and intense, a rock of passion.",
+    "description_fr": "Felsenberg-raide et intense, un roc de passion.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Lamm",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Lamb",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Agneau",
+      "Champignons"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.020Z"
+  },
+  {
+    "id": "1b56fc7b-8009-4312-b8ec-29e7e587e7b5",
+    "name": "Halgans Riesling Trocken 2024",
+    "winery": "Emrich-Schönleber",
+    "country": "Deutschland",
+    "region": "Nahe - Monzingen",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Halgans-ehrlich und saftig, ein Alltags-Juwel.",
+    "description_en": "Halgans-honest and juicy, an everyday jewel.",
+    "description_fr": "Halgans-honnête et juteux, un joyau quotidien.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Fisch",
+      "Fondue"
+    ],
+    "food_pairings_en": [
+      "Fish",
+      "Fondue"
+    ],
+    "food_pairings_fr": [
+      "Poisson",
+      "Fondue"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.021Z"
+  },
+  {
+    "id": "d8768966-bc1e-4601-b714-12cce94d4de0",
+    "name": "Steinberg Riesling GG 2024",
+    "winery": "Gut Hermannsberg",
+    "country": "Deutschland",
+    "region": "Nahe - Niederhausen",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Steinberg-steinig und präzise, ein Stein der Reinheit.",
+    "description_en": "Steinberg-stony and precise, a stone of purity.",
+    "description_fr": "Steinberg-pierreux et précis, une pierre de pureté.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Vegetarisch",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Vegetarian",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Végétarien",
+      "Fromage"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.021Z"
+  },
+  {
+    "id": "e3ed0afd-4c68-422b-b041-ae9a80105cc2",
+    "name": "Im Pitterberg Riesling Auslese 2023",
+    "winery": "Kruger-Rumpf",
+    "country": "Deutschland",
+    "region": "Nahe - Münster-Sarmsheim",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Pitterberg-süß und golden, ein Schatz der Konzentration.",
+    "description_en": "Pitterberg-sweet and golden, a treasure of concentration.",
+    "description_fr": "Pitterberg-doux et doré, un trésor de concentration.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Desserts"
+    ],
+    "food_pairings_en": [
+      "Desserts"
+    ],
+    "food_pairings_fr": [
+      "Desserts"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.022Z"
+  },
+  {
+    "id": "16da6d08-5a44-4d50-9ed8-0d2a67e289c8",
+    "name": "Kreuznacher Krötenpfuhl Riesling GG 2024",
+    "winery": "Dönnhoff",
+    "country": "Deutschland",
+    "region": "Nahe - Kreuznach",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Krötenpfuhl-geheimnisvoll und mineralisch.",
+    "description_en": "Krötenpfuhl-mysterious and mineral.",
+    "description_fr": "Krötenpfuhl-mystérieux et minéral.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Geflügel"
+    ],
+    "food_pairings_en": [
+      "Poultry"
+    ],
+    "food_pairings_fr": [
+      "Volaille"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.023Z"
+  },
+  {
+    "id": "d18c984c-a282-44a8-8de8-13b49888db48",
+    "name": "Goldloch Riesling GG 2024",
+    "winery": "Schlossgut Diel",
+    "country": "Deutschland",
+    "region": "Nahe - Dorsheim",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Goldloch-golden und tief, ein Loch der Wunder.",
+    "description_en": "Goldloch-golden and deep, a hole of wonders.",
+    "description_fr": "Goldloch-doré et profond, un trou de merveilles.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Roastbeef"
+    ],
+    "food_pairings_en": [
+      "Roast beef"
+    ],
+    "food_pairings_fr": [
+      "Rosbif"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.024Z"
+  },
+  {
+    "id": "debef4ef-577f-4d28-a458-ac1707b2ced1",
+    "name": "Stromberg Riesling GG 2024",
+    "winery": "Schäfer-Fröhlich",
+    "country": "Deutschland",
+    "region": "Nahe - Bockenau",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Stromberg-kraftvoll und langlebig, ein Strom der Energie.",
+    "description_en": "Stromberg-powerful and long-lived, a stream of energy.",
+    "description_fr": "Stromberg-puissant et longévif, un courant d'énergie.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Rind"
+    ],
+    "food_pairings_en": [
+      "Beef"
+    ],
+    "food_pairings_fr": [
+      "Bœuf"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.025Z"
+  },
+  {
+    "id": "c62a831e-8ecb-411b-a2c2-9446693bce1c",
+    "name": "Mineral Riesling Trocken 2024",
+    "winery": "Emrich-Schönleber",
+    "country": "Deutschland",
+    "region": "Nahe - Monzingen",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Mineral-pur und trocken, ein Nahe-Klassiker.",
+    "description_en": "Mineral-pure and dry, a Nahe classic.",
+    "description_fr": "Mineral-pur et sec, un classique de la Nahe.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Salat",
+      "Aperitif"
+    ],
+    "food_pairings_en": [
+      "Salad",
+      "Aperitif"
+    ],
+    "food_pairings_fr": [
+      "Salade",
+      "Apéritif"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.026Z"
+  },
+  {
+    "id": "6a2780c2-2ece-45e7-a5af-7c94fd357b88",
+    "name": "Rotenberg Riesling GG 2024",
+    "winery": "Gut Hermannsberg",
+    "country": "Deutschland",
+    "region": "Nahe - Niederhausen",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Rotenberg-rot und vulkanisch.",
+    "description_en": "Rotenberg-red and volcanic.",
+    "description_fr": "Rotenberg-rouge et volcanique.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Wild"
+    ],
+    "food_pairings_en": [
+      "Game"
+    ],
+    "food_pairings_fr": [
+      "Gibier"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.027Z"
+  },
+  {
+    "id": "7a34ad59-37a4-410b-aecd-cc5ac542d128",
+    "name": "Dautenpflänzer Riesling GG 2024",
+    "winery": "Kruger-Rumpf",
+    "country": "Deutschland",
+    "region": "Nahe - Münster-Sarmsheim",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Dautenpflänzer-fruchtig und tief.",
+    "description_en": "Dautenpflänzer-fruity and deep.",
+    "description_fr": "Dautenpflänzer-fruité et profond.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Champignons"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.028Z"
+  },
+  {
+    "id": "e42cf541-8a5d-47db-84eb-711cd48ea8f8",
+    "name": "Tonschiefer Riesling Trocken 2024",
+    "winery": "Dönnhoff",
+    "country": "Deutschland",
+    "region": "Nahe - Oberhausen",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Tonschiefer-mineralisch und sauber.",
+    "description_en": "Tonschiefer-mineral and clean.",
+    "description_fr": "Tonschiefer-minéral et propre.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Fisch"
+    ],
+    "food_pairings_en": [
+      "Fish"
+    ],
+    "food_pairings_fr": [
+      "Poisson"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.029Z"
+  },
+  {
+    "id": "1e60da5e-6a53-4517-adaa-29d5460e8c28",
+    "name": "Halenberg Riesling Auslese 2023",
+    "winery": "Schäfer-Fröhlich",
+    "country": "Deutschland",
+    "region": "Nahe - Monzingen",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Halenberg-süß und intensiv.",
+    "description_en": "Halenberg-sweet and intense.",
+    "description_fr": "Halenberg-doux et intense.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Foie gras"
+    ],
+    "food_pairings_en": [
+      "Foie gras"
+    ],
+    "food_pairings_fr": [
+      "Foie gras"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.030Z"
+  },
+  {
+    "id": "30adad45-ee26-419a-82f0-a46a835afa76",
+    "name": "Caroline Riesling Spätlese 2024",
+    "winery": "Schlossgut Diel",
+    "country": "Deutschland",
+    "region": "Nahe - Dorsheim",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Caroline-zart und verlockend.",
+    "description_en": "Caroline-delicate and enticing.",
+    "description_fr": "Caroline-délicat et séduisant.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Desserts"
+    ],
+    "food_pairings_en": [
+      "Desserts"
+    ],
+    "food_pairings_fr": [
+      "Desserts"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.031Z"
+  },
+  {
+    "id": "05aa81fc-3b43-4c48-9248-6682d8e66cf6",
+    "name": "Frühlingsplätzchen Riesling Auslese 2023",
+    "winery": "Emrich-Schönleber",
+    "country": "Deutschland",
+    "region": "Nahe - Monzingen",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Frühlingsplätzchen-golden und frisch.",
+    "description_en": "Frühlingsplätzchen-golden and fresh.",
+    "description_fr": "Frühlingsplätzchen-doré et frais.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Blauschimmel"
+    ],
+    "food_pairings_en": [
+      "Blue cheese"
+    ],
+    "food_pairings_fr": [
+      "Bleu"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.031Z"
+  },
+  {
+    "id": "5b6238d1-964b-4d7f-94ea-ba91f319f6a7",
+    "name": "Vom Vulkan Riesling Trocken 2024",
+    "winery": "Gut Hermannsberg",
+    "country": "Deutschland",
+    "region": "Nahe - Niederhausen",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Vom Vulkan-rauchig und kraftvoll.",
+    "description_en": "Vom Vulkan-smoky and powerful.",
+    "description_fr": "Vom Vulkan-fumé et puissant.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Lamm"
+    ],
+    "food_pairings_en": [
+      "Lamb"
+    ],
+    "food_pairings_fr": [
+      "Agneau"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.032Z"
+  },
+  {
+    "id": "633bb74e-96ec-47ba-858f-eb72bc80c521",
+    "name": "Rheinberg Riesling GG 2024",
+    "winery": "Kruger-Rumpf",
+    "country": "Deutschland",
+    "region": "Nahe - Bingen",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Rheinberg-flüssig und elegant.",
+    "description_en": "Rheinberg-fluid and elegant.",
+    "description_fr": "Rheinberg-fluide et élégant.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Krustentiere"
+    ],
+    "food_pairings_en": [
+      "Crustaceans"
+    ],
+    "food_pairings_fr": [
+      "Crustacés"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.033Z"
+  },
+  {
+    "id": "77c5ee0a-c698-43d6-8e23-4bd77f8e3de3",
+    "name": "Roxheimer Höllenpfad Riesling GG 2024",
+    "winery": "Dönnhoff",
+    "country": "Deutschland",
+    "region": "Nahe - Roxheim",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Höllenpfad-feurig und tief.",
+    "description_en": "Höllenpfad-fiery and deep.",
+    "description_fr": "Höllenpfad-fougueux et profond.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Asiatisch"
+    ],
+    "food_pairings_en": [
+      "Asian cuisine"
+    ],
+    "food_pairings_fr": [
+      "Cuisine asiatique"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.034Z"
+  },
+  {
+    "id": "3732da80-bcd9-4c0d-a802-a0e8715df8c1",
+    "name": "Vulkangestein Riesling Trocken 2024",
+    "winery": "Schäfer-Fröhlich",
+    "country": "Deutschland",
+    "region": "Nahe - Bockenau",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Vulkangestein-wild und mineralisch.",
+    "description_en": "Vulkangestein-wild and mineral.",
+    "description_fr": "Vulkangestein-sauvage et minéral.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Gemüse"
+    ],
+    "food_pairings_en": [
+      "Vegetables"
+    ],
+    "food_pairings_fr": [
+      "Légumes"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.035Z"
+  },
+  {
+    "id": "bdb70f92-9f07-4bf9-ab81-62393580efec",
+    "name": "Pittermännchen Riesling Auslese 2023",
+    "winery": "Schlossgut Diel",
+    "country": "Deutschland",
+    "region": "Nahe - Dorsheim",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Pittermännchen-süß und geheimnisvoll.",
+    "description_en": "Pittermännchen-sweet and mysterious.",
+    "description_fr": "Pittermännchen-doux et mystérieux.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Käseplatte"
+    ],
+    "food_pairings_en": [
+      "Cheese platter"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fromages"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.036Z"
+  },
+  {
+    "id": "6b51224b-7f4c-46c2-8423-d10af945dd6b",
+    "name": "Enkircher Riesling GG 2024",
+    "winery": "Emrich-Schönleber",
+    "country": "Deutschland",
+    "region": "Nahe - Monzingen",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Enkircher-historisch und tief.",
+    "description_en": "Enkircher-historic and deep.",
+    "description_fr": "Enkircher-historique et profond.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Parmesan"
+    ],
+    "food_pairings_en": [
+      "Parmesan"
+    ],
+    "food_pairings_fr": [
+      "Parmesan"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.037Z"
+  },
+  {
+    "id": "65db43f6-2bd8-44d2-9c7b-e3041e17e8b4",
+    "name": "Justus Riesling Trocken 2024",
+    "winery": "Gut Hermannsberg",
+    "country": "Deutschland",
+    "region": "Nahe - Niederhausen",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Justus-gerecht und ausgewogen.",
+    "description_en": "Justus-fair and balanced.",
+    "description_fr": "Justus-juste et équilibré.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Geflügel"
+    ],
+    "food_pairings_en": [
+      "Poultry"
+    ],
+    "food_pairings_fr": [
+      "Volaille"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.038Z"
+  },
+  {
+    "id": "5d4cf2d6-7dd5-46ff-94e5-0c199b9c6afb",
+    "name": "Kapellenberg Riesling GG 2024",
+    "winery": "Kruger-Rumpf",
+    "country": "Deutschland",
+    "region": "Nahe - Münster-Sarmsheim",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Kapellenberg-kirchenwürdig und mineralisch.",
+    "description_en": "Kapellenberg-church-worthy and mineral.",
+    "description_fr": "Kapellenberg-digne d'une église et minéral.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Forelle"
+    ],
+    "food_pairings_en": [
+      "Trout"
+    ],
+    "food_pairings_fr": [
+      "Truite"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.038Z"
+  },
+  {
+    "id": "c728c4c5-d07a-4a0d-97fa-9494c12044f0",
+    "name": "Leistenberg Riesling Kabinett 2024",
+    "winery": "Dönnhoff",
+    "country": "Deutschland",
+    "region": "Nahe - Oberhausen",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Leistenberg-leicht und tänzerisch.",
+    "description_en": "Leistenberg-light and dancing.",
+    "description_fr": "Leistenberg-léger et dansant.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Aperitif"
+    ],
+    "food_pairings_en": [
+      "Aperitif"
+    ],
+    "food_pairings_fr": [
+      "Apéritif"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.039Z"
+  },
+  {
+    "id": "0f22a9f4-d662-4ddd-8700-94e0dec1317c",
+    "name": "Felseneck Riesling Auslese 2023",
+    "winery": "Schäfer-Fröhlich",
+    "country": "Deutschland",
+    "region": "Nahe - Bockenau",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Felseneck-süß und konzentriert.",
+    "description_en": "Felseneck-sweet and concentrated.",
+    "description_fr": "Felseneck-doux et concentré.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Desserts"
+    ],
+    "food_pairings_en": [
+      "Desserts"
+    ],
+    "food_pairings_fr": [
+      "Desserts"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.040Z"
+  },
+  {
+    "id": "a16b8caa-f078-4e49-babc-8ba5f92e6c2f",
+    "name": "Burgberg Riesling Spätlese 2024",
+    "winery": "Schlossgut Diel",
+    "country": "Deutschland",
+    "region": "Nahe - Dorsheim",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Burgberg-spät und edel.",
+    "description_en": "Burgberg-late and noble.",
+    "description_fr": "Burgberg-tardif et noble.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Scharfer Thai"
+    ],
+    "food_pairings_en": [
+      "Spicy Thai"
+    ],
+    "food_pairings_fr": [
+      "Thaï épicé"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.041Z"
+  },
+  {
+    "id": "94c7a7c4-4f3d-4f8a-aad7-40881f67d7e8",
+    "name": "Mineral Riesling Auslese 2023",
+    "winery": "Emrich-Schönleber",
+    "country": "Deutschland",
+    "region": "Nahe - Monzingen",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Mineral-süß und rein.",
+    "description_en": "Mineral-sweet and pure.",
+    "description_fr": "Mineral-doux et pur.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Blauschimmel"
+    ],
+    "food_pairings_en": [
+      "Blue cheese"
+    ],
+    "food_pairings_fr": [
+      "Bleu"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.042Z"
+  },
+  {
+    "id": "3920b3ee-2032-4c45-a955-bca78db2f1fe",
+    "name": "Kupfergrube Riesling Auslese 2023",
+    "winery": "Gut Hermannsberg",
+    "country": "Deutschland",
+    "region": "Nahe - Niederhausen",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Kupfergrube-golden und rauchig.",
+    "description_en": "Kupfergrube-golden and smoky.",
+    "description_fr": "Kupfergrube-doré et fumé.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Foie gras"
+    ],
+    "food_pairings_en": [
+      "Foie gras"
+    ],
+    "food_pairings_fr": [
+      "Foie gras"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.043Z"
+  },
+  {
+    "id": "de83b04c-1ca9-49e2-9f44-e918b1ed2fcc",
+    "name": "Im Pitterberg Riesling Spätlese 2024",
+    "winery": "Kruger-Rumpf",
+    "country": "Deutschland",
+    "region": "Nahe - Münster-Sarmsheim",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Im Pitterberg-verlockend und fruchtig.",
+    "description_en": "Im Pitterberg-enticing and fruity.",
+    "description_fr": "Im Pitterberg-séduisant et fruité.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Fromage"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.044Z"
+  },
+  {
+    "id": "2b45b662-d029-41e7-95c1-9f74c647f562",
+    "name": "Schlossböckelheimer Kupfergrube Riesling GG 2024",
+    "winery": "Dönnhoff",
+    "country": "Deutschland",
+    "region": "Nahe - Schlossböckelheim",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Kupfergrube-kraftvoll und tief.",
+    "description_en": "Kupfergrube-powerful and deep.",
+    "description_fr": "Kupfergrube-puissant et profond.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Wild"
+    ],
+    "food_pairings_en": [
+      "Game"
+    ],
+    "food_pairings_fr": [
+      "Gibier"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.045Z"
+  },
+  {
+    "id": "82044f1c-a613-452b-b491-0956e314aef1",
+    "name": "Bockenauer Riesling Trocken 2024",
+    "winery": "Schäfer-Fröhlich",
+    "country": "Deutschland",
+    "region": "Nahe - Bockenau",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Bockenauer-sauber und lebendig.",
+    "description_en": "Bockenauer-clean and lively.",
+    "description_fr": "Bockenauer-propre et vivant.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Salat"
+    ],
+    "food_pairings_en": [
+      "Salad"
+    ],
+    "food_pairings_fr": [
+      "Salade"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.046Z"
+  },
+  {
+    "id": "d7db4a4d-b9a0-4451-99ea-a7363ba3b23a",
+    "name": "Nahesteiner Riesling Trocken 2024",
+    "winery": "Schlossgut Diel",
+    "country": "Deutschland",
+    "region": "Nahe - Dorsheim",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Nahesteiner-ehrlich und mineralisch.",
+    "description_en": "Nahesteiner-honest and mineral.",
+    "description_fr": "Nahesteiner-honnête et minéral.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Fisch"
+    ],
+    "food_pairings_en": [
+      "Fish"
+    ],
+    "food_pairings_fr": [
+      "Poisson"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.046Z"
+  },
+  {
+    "id": "8cf02bd6-8109-4d7d-b603-81a40a867303",
+    "name": "Halgans Riesling Spätlese 2024",
+    "winery": "Emrich-Schönleber",
+    "country": "Deutschland",
+    "region": "Nahe - Monzingen",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Halgans-spät und harmonisch.",
+    "description_en": "Halgans-late and harmonious.",
+    "description_fr": "Halgans-tardif et harmonieux.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Asiatisch"
+    ],
+    "food_pairings_en": [
+      "Asian cuisine"
+    ],
+    "food_pairings_fr": [
+      "Cuisine asiatique"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.047Z"
+  },
+  {
+    "id": "0d2c49d8-7c11-4839-976b-08f6913523b0",
+    "name": "Rotenberg Riesling Auslese 2023",
+    "winery": "Gut Hermannsberg",
+    "country": "Deutschland",
+    "region": "Nahe - Niederhausen",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Rotenberg-süß und vulkanisch.",
+    "description_en": "Rotenberg-sweet and volcanic.",
+    "description_fr": "Rotenberg-doux et volcanique.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Desserts"
+    ],
+    "food_pairings_en": [
+      "Desserts"
+    ],
+    "food_pairings_fr": [
+      "Desserts"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.048Z"
+  },
+  {
+    "id": "ece62427-a056-49d9-8376-e0c8cfb56d04",
+    "name": "Scharlachberg Riesling Spätlese 2024",
+    "winery": "Kruger-Rumpf",
+    "country": "Deutschland",
+    "region": "Nahe - Bingen",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Scharlachberg-verlockend und rot.",
+    "description_en": "Scharlachberg-enticing and red.",
+    "description_fr": "Scharlachberg-séduisant et rouge.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Käseplatte"
+    ],
+    "food_pairings_en": [
+      "Cheese platter"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fromages"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.049Z"
+  },
+  {
+    "id": "ff1340a9-abc3-404e-bdcb-1250a57d6a7e",
+    "name": "Kreuznacher Kahlenberg Riesling Trocken 2024",
+    "winery": "Dönnhoff",
+    "country": "Deutschland",
+    "region": "Nahe - Kreuznach",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Kahlenberg-trocken und strahlend.",
+    "description_en": "Kahlenberg-dry and radiant.",
+    "description_fr": "Kahlenberg-sec et radieux.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Geflügel"
+    ],
+    "food_pairings_en": [
+      "Poultry"
+    ],
+    "food_pairings_fr": [
+      "Volaille"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.050Z"
+  },
+  {
+    "id": "554109a1-6773-4b56-895f-087e1fdd485c",
+    "name": "Stromberg Riesling Auslese 2023",
+    "winery": "Schäfer-Fröhlich",
+    "country": "Deutschland",
+    "region": "Nahe - Bockenau",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Stromberg-konzentriert und tief.",
+    "description_en": "Stromberg-concentrated and deep.",
+    "description_fr": "Stromberg-concentré et profond.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Blauschimmel"
+    ],
+    "food_pairings_en": [
+      "Blue cheese"
+    ],
+    "food_pairings_fr": [
+      "Bleu"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.051Z"
+  },
+  {
+    "id": "c6546f2e-f668-4e57-8483-38e9ed73abed",
+    "name": "Goldloch Riesling Auslese 2023",
+    "winery": "Schlossgut Diel",
+    "country": "Deutschland",
+    "region": "Nahe - Dorsheim",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Goldloch-golden und geheimnisvoll.",
+    "description_en": "Goldloch-golden and mysterious.",
+    "description_fr": "Goldloch-doré et mystérieux.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Foie gras"
+    ],
+    "food_pairings_en": [
+      "Foie gras"
+    ],
+    "food_pairings_fr": [
+      "Foie gras"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.052Z"
+  },
+  {
+    "id": "44ece7a8-07db-4f98-80ce-904b9e58028d",
+    "name": "Monzinger Halenberg Riesling Auslese 2023",
+    "winery": "Emrich-Schönleber",
+    "country": "Deutschland",
+    "region": "Nahe - Monzingen",
+    "appellation": "Nahe",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Halenberg-harmonisch und golden, ein Abschluss der Nahe-Mineralität.",
+    "description_en": "Halenberg-harmonious and golden, a finale of Nahe minerality.",
+    "description_fr": "Halenberg-harmonieux et doré, un final de la minéralité de la Nahe.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Leichte Desserts",
+      "Milder Käse"
+    ],
+    "food_pairings_en": [
+      "Light desserts",
+      "Mild cheese"
+    ],
+    "food_pairings_fr": [
+      "Desserts légers",
+      "Fromage doux"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T07:53:59.053Z"
   }
 ]

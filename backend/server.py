@@ -3118,9 +3118,44 @@ async def get_public_wine_detail(wine_id: str):
     return wine
 
 
+# ==============================================================================
+# REGION SIMPLIFICATION FIX (Dezember 2024)
+# ==============================================================================
+# PROBLEM: Swiss wines are stored with detailed sub-regions like:
+#   - "Genf - Anières", "Genf - Satigny", "Genf - Dardagny" (9 sub-regions)
+#   - "Wallis - Sion", "Wallis - Salgesch", "Wallis - Fully" (20+ sub-regions)
+#   - "Waadt - Aigle", "Waadt - Lavaux", "Waadt - Yvorne" (20+ sub-regions)
+#   - "Tessin - Lugano", "Tessin - Mendrisio", etc. (20+ sub-regions)
+#
+# This made the region dropdown unreadable with 133 entries.
+#
+# SOLUTION: 
+#   1. simplify_region() extracts just the canton name (before " - ")
+#   2. Region filter uses regex "^Genf" to match all sub-regions
+#   3. Result: Clean dropdown with only 64 entries, Swiss cantons as single items
+#
+# IMPORTANT: When adding new Swiss wines, use format "Kanton - Unterregion"
+#            e.g., "Genf - Satigny", "Wallis - Sion"
+# ==============================================================================
+
 def simplify_region(region: str) -> str:
-    """Simplify region names by extracting just the canton/main region.
-    E.g., 'Genf - Satigny' -> 'Genf', 'Wallis - Sion' -> 'Wallis'
+    """
+    Simplify region names by extracting just the canton/main region.
+    
+    Swiss wines are stored with detailed sub-regions (e.g., 'Genf - Satigny').
+    For the filter dropdown, we only show the canton (e.g., 'Genf').
+    
+    Examples:
+        'Genf - Satigny' -> 'Genf'
+        'Wallis - Sion' -> 'Wallis'
+        'Tessin - Lugano' -> 'Tessin'
+        'Burgund' -> 'Burgund' (no change for non-Swiss regions)
+    
+    Args:
+        region: The full region name from database
+        
+    Returns:
+        Simplified region name (canton only for Swiss wines)
     """
     if not region:
         return region
@@ -3129,9 +3164,16 @@ def simplify_region(region: str) -> str:
         return region.split(" - ")[0].strip()
     return region
 
+
 @api_router.get("/public-wines-filters")
 async def get_public_wines_filters(country: Optional[str] = None, region: Optional[str] = None):
-    """Get available filter options for public wines with cascading support"""
+    """
+    Get available filter options for public wines with cascading support.
+    
+    NOTE: Regions are simplified for display (see simplify_region function).
+    When filtering by a simplified region like 'Genf', the API will match
+    all sub-regions (Genf - Satigny, Genf - Dardagny, etc.) using regex.
+    """
     
     # Base query
     query = {}

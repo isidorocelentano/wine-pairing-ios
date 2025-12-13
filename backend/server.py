@@ -3084,8 +3084,15 @@ async def get_public_wines(
     if country:
         query["country"] = country
     if region:
-        # Match simplified region (e.g., "Genf" matches "Genf - Anières", "Genf - Satigny", etc.)
-        # Use regex to match region starting with the selected canton/region
+        # =================================================================
+        # REGION FILTER FIX: Match simplified region names
+        # =================================================================
+        # When user selects "Genf" from dropdown, we need to find ALL wines
+        # from Genf sub-regions: "Genf - Anières", "Genf - Satigny", etc.
+        # 
+        # Solution: Use regex "^Genf" to match any region starting with "Genf"
+        # This works because Swiss wines are stored as "Kanton - Unterregion"
+        # =================================================================
         query["region"] = {"$regex": f"^{re.escape(region)}", "$options": "i"}
     if wine_color:
         query["wine_color"] = wine_color

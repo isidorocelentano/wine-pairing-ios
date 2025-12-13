@@ -3116,6 +3116,17 @@ async def get_public_wine_detail(wine_id: str):
     return wine
 
 
+def simplify_region(region: str) -> str:
+    """Simplify region names by extracting just the canton/main region.
+    E.g., 'Genf - Satigny' -> 'Genf', 'Wallis - Sion' -> 'Wallis'
+    """
+    if not region:
+        return region
+    # Check if region contains " - " separator (Swiss canton format)
+    if " - " in region:
+        return region.split(" - ")[0].strip()
+    return region
+
 @api_router.get("/public-wines-filters")
 async def get_public_wines_filters(country: Optional[str] = None, region: Optional[str] = None):
     """Get available filter options for public wines with cascading support"""
@@ -3125,15 +3136,22 @@ async def get_public_wines_filters(country: Optional[str] = None, region: Option
     if country and country != 'all':
         query["country"] = country
     if region and region != 'all':
-        query["region"] = region
+        # When filtering by simplified region (e.g., "Genf"), match all sub-regions
+        query["region"] = create_accent_insensitive_pattern(f"^{re.escape(region)}")
     
     # Get all distinct values
     countries = await db.public_wines.distinct("country", {})
-    regions = await db.public_wines.distinct("region", query if country and country != 'all' else {})
+    raw_regions = await db.public_wines.distinct("region", {"country": country} if country and country != 'all' else {})
     appellations = await db.public_wines.distinct("appellation", query)
     colors = await db.public_wines.distinct("wine_color")
     price_categories = await db.public_wines.distinct("price_category")
     grape_varieties = await db.public_wines.distinct("grape_variety")
+    
+    # Simplify regions - extract just the canton/main region
+    simplified_regions = set()
+    for r in raw_regions:
+        if r and r != 'Unbekannt':
+            simplified_regions.add(simplify_region(r))
     
     # Build hierarchy map
     hierarchy = {}
@@ -3148,10 +3166,12 @@ async def get_public_wines_filters(country: Optional[str] = None, region: Option
                 if c not in hierarchy:
                     hierarchy[c] = {}
                 if r and r != 'Unbekannt':
-                    if r not in hierarchy[c]:
-                        hierarchy[c][r] = set()
+                    # Use simplified region for hierarchy
+                    simplified_r = simplify_region(r)
+                    if simplified_r not in hierarchy[c]:
+                        hierarchy[c][simplified_r] = set()
                     if a and a != 'Unbekannt':
-                        hierarchy[c][r].add(a)
+                        hierarchy[c][simplified_r].add(a)
         
         # Convert sets to sorted lists
         for c in hierarchy:
@@ -3160,7 +3180,7 @@ async def get_public_wines_filters(country: Optional[str] = None, region: Option
     
     return {
         "countries": sorted([c for c in countries if c and c != 'Unbekannt']),
-        "regions": sorted([r for r in regions if r and r != 'Unbekannt']),
+        "regions": sorted(list(simplified_regions)),
         "appellations": sorted([a for a in appellations if a and a != 'Unbekannt']),
         "wine_colors": sorted([c for c in colors if c]),
         "price_categories": sorted([p for p in price_categories if p]),

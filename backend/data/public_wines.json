@@ -34699,5 +34699,1396 @@
     ],
     "created_at": "2025-12-13T05:30:36.394989+00:00",
     "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "a256f7ab-0db7-4493-b329-77b067d0f58c",
+    "name": "Pinot Noir Reblaube 2023",
+    "winery": "Erich Meier",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Uetikon am See",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Ein rubinroter Poet, der von dunklen Kirschen und Vanilleflüstern erzählt – ein Wein, der die Seele in sanfte, tanninreiche Umarmung hüllt und vergangene Herbsttage heraufbeschwört.",
+    "description_en": "A ruby-red poet speaking of dark cherries and vanilla whispers – a wine that wraps the soul in a soft, tannic embrace and evokes past autumn days.",
+    "description_fr": "Un poète rouge rubis parlant de cerises noires et de murmures de vanille – un vin qui enveloppe l'âme dans une étreinte douce et tannique.",
+    "food_pairings_de": [
+      "Gebratenes Huhn mit Kräutern",
+      "Tomme Vaudoise"
+    ],
+    "food_pairings_en": [
+      "Roasted chicken with herbs",
+      "Tomme Vaudoise"
+    ],
+    "food_pairings_fr": [
+      "Poulet rôti aux herbes",
+      "Tomme Vaudoise"
+    ],
+    "created_at": "2025-12-13T05:37:16.034202+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "c12048e4-545b-4ae5-b394-57d510f310fb",
+    "name": "Sauvignon Blanc 2024",
+    "winery": "aagne weingut",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Hallau",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Sauvignon Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Frisch und mineralisch, ein Blanc, der wie ein Morgenhauch über dem Rhein das Herz mit Zitrus und Stein erfrischt und Hoffnung weckt.",
+    "description_en": "Fresh and mineral, a Blanc that refreshes the heart with citrus and stone like a morning breeze over the Rhine, awakening hope.",
+    "description_fr": "Frais et minéral, un Blanc qui rafraîchit le cœur avec des agrumes et de la pierre comme une brise matinale sur le Rhin.",
+    "food_pairings_de": [
+      "Papet Vaudois",
+      "Gegrillter Fisch"
+    ],
+    "food_pairings_en": [
+      "Papet Vaudois",
+      "Grilled fish"
+    ],
+    "food_pairings_fr": [
+      "Papet Vaudois",
+      "Poisson grillé"
+    ],
+    "created_at": "2025-12-13T05:37:16.035448+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "781bd1d6-899a-443d-8639-0d7ea28624e9",
+    "name": "Pinot Noir 2023",
+    "winery": "Weingut Bad Osterfingen",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Osterfingen",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Elegant und filigran, mit Kirsche und Samt, der die Seele in burgundische Melancholie taucht – ein Liebesbrief in Rot, der das Herz mit leichter Traurigkeit und purer Freude erfüllt.",
+    "description_en": "Elegant and delicate, with cherry and velvet, plunging the soul into Burgundian melancholy – a love letter in red filling the heart with gentle sadness and pure joy.",
+    "description_fr": "Élégant et délicat, avec de la cerise et du velours, plongeant l'âme dans la mélancolie bourguignonne – une lettre d'amour en rouge.",
+    "food_pairings_de": [
+      "Entenbrust",
+      "Pilzrisotto"
+    ],
+    "food_pairings_en": [
+      "Duck breast",
+      "Mushroom risotto"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard",
+      "Risotto aux champignons"
+    ],
+    "created_at": "2025-12-13T05:37:16.036405+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "f8b2c80a-c8ca-4904-8a46-3b32aaa52083",
+    "name": "Chardonnay 2023",
+    "winery": "Weingut Bad Osterfingen",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Osterfingen",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Reich und blumig, ein Chardonnay, der die Seele in goldene Sonnenuntergänge taucht – cremig, mit Nuss und Zitrus, wie ein Traum der Klettgau-Hügel.",
+    "description_en": "Rich and floral, a Chardonnay that immerses the soul in golden sunsets – creamy, with nut and citrus, like a dream of the Klettgau hills.",
+    "description_fr": "Riche et floral, un Chardonnay qui plonge l'âme dans des couchers de soleil dorés – crémeux, avec de la noix et des agrumes.",
+    "food_pairings_de": [
+      "Huhn mit Kräutern",
+      "Raclette"
+    ],
+    "food_pairings_en": [
+      "Chicken with herbs",
+      "Raclette"
+    ],
+    "food_pairings_fr": [
+      "Poulet aux herbes",
+      "Raclette"
+    ],
+    "created_at": "2025-12-13T05:37:16.037406+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "7ae3bc54-16a4-4087-89b3-a6b2bb93d7e9",
+    "name": "Alte Reben Eisenhalde 2022",
+    "winery": "GVS Schachenmann AG",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Hallau",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Tief und tanninreich, mit Leder und Beeren, die die Seele in alte Legenden eintauchen lassen – ein Monument aus Frucht und Finesse.",
+    "description_en": "Deep and tannic, with leather and berries that immerse the soul in ancient legends – a monument of fruit and finesse.",
+    "description_fr": "Profond et tannique, avec du cuir et des baies qui plongent l'âme dans les légendes anciennes – un monument de fruit et de finesse.",
+    "food_pairings_de": [
+      "Rehrücken",
+      "Dunkles Fleisch"
+    ],
+    "food_pairings_en": [
+      "Saddle of venison",
+      "Dark meat"
+    ],
+    "food_pairings_fr": [
+      "Selle de chevreuil",
+      "Viande brune"
+    ],
+    "created_at": "2025-12-13T05:37:16.038549+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "3220a3f9-9a5d-42ba-8284-1761c246052f",
+    "name": "Mousseux Brut Bio 2023",
+    "winery": "Rimuss & Strada Wein",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Hallau",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Assemblage",
+    "wine_color": "schaumwein",
+    "price_category": "€€€",
+    "description_de": "Perlender Traum, der von goldenen Blasen und reifen Birnen erzählt – ein Wein, der die Seele in festliche Ekstase versetzt und vergangene Feste heraufbeschwört.",
+    "description_en": "A sparkling dream speaking of golden bubbles and ripe pears – a wine that sends the soul into festive ecstasy and evokes past celebrations.",
+    "description_fr": "Un rêve pétillant parlant de bulles dorées et de poires mûres – un vin qui envoie l'âme en extase festive.",
+    "food_pairings_de": [
+      "Austern",
+      "Frischer Ziegenkäse"
+    ],
+    "food_pairings_en": [
+      "Oysters",
+      "Fresh goat cheese"
+    ],
+    "food_pairings_fr": [
+      "Huîtres",
+      "Fromage de chèvre frais"
+    ],
+    "created_at": "2025-12-13T05:37:16.039797+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "1f009c9f-7234-4c26-9a98-a54a039eb140",
+    "name": "Irma la Douce 2024",
+    "winery": "aagne weingut",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Hallau",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Assemblage",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Nervös und aromatisch, mit Grapefruit und Kräutern, der wie ein Bergquell die Seele klärt und verjüngt.",
+    "description_en": "Nervous and aromatic, with grapefruit and herbs, clearing and rejuvenating the soul like a mountain spring.",
+    "description_fr": "Nerveux et aromatique, avec du pamplemousse et des herbes, purifiant et rajeunissant l'âme comme une source de montagne.",
+    "food_pairings_de": [
+      "Krebse",
+      "Frischer Salat"
+    ],
+    "food_pairings_en": [
+      "Crayfish",
+      "Fresh salad"
+    ],
+    "food_pairings_fr": [
+      "Écrevisses",
+      "Salade fraîche"
+    ],
+    "created_at": "2025-12-13T05:37:16.041148+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "d7cec3f2-4cf4-4350-8fcf-79df8a3436a4",
+    "name": "Pinot Noir Buck 2023",
+    "winery": "Weinbau Markus Ruch",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Hallau",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Robust und beerig, ein Pinot, der das Herz mit wilden Beeren und erdiger Wärme in herbstliche Wälder lockt.",
+    "description_en": "Robust and berry-filled, a Pinot that lures the heart into autumn forests with wild berries and earthy warmth.",
+    "description_fr": "Robuste et fruité, un Pinot qui attire le cœur dans les forêts d'automne avec des baies sauvages et une chaleur terreuse.",
+    "food_pairings_de": [
+      "Lammkoteletts",
+      "Wildpastete"
+    ],
+    "food_pairings_en": [
+      "Lamb chops",
+      "Game pâté"
+    ],
+    "food_pairings_fr": [
+      "Côtelettes d'agneau",
+      "Pâté de gibier"
+    ],
+    "created_at": "2025-12-13T05:37:16.042377+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "bbbc3b4c-3e19-4dd1-9612-e3d587376d59",
+    "name": "Riesling-Silvaner 2022",
+    "winery": "Hedinger Weingut & Kellerei",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Wilchingen",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Riesling-Silvaner",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Frisch und aromatisch, mit Apfel und Kräutern, der wie ein erstes Erwachen im Frühling das Herz erfrischt.",
+    "description_en": "Fresh and aromatic, with apple and herbs, refreshing the heart like the first awakening in spring.",
+    "description_fr": "Frais et aromatique, avec de la pomme et des herbes, rafraîchissant le cœur comme le premier réveil au printemps.",
+    "food_pairings_de": [
+      "Austern",
+      "Ziegenkäse-Platte"
+    ],
+    "food_pairings_en": [
+      "Oysters",
+      "Goat cheese platter"
+    ],
+    "food_pairings_fr": [
+      "Huîtres",
+      "Plateau de fromage de chèvre"
+    ],
+    "created_at": "2025-12-13T05:37:16.043497+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "02317b41-211b-4e54-9315-645ec84dc3b3",
+    "name": "Pinot Noir Classique 2023",
+    "winery": "Weingut Baumann",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Oberhallau",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Sinnlich und legendär, mit Kirsche und Gewürz, der das Herz mit unvergesslicher Tiefe umfängt – ein Geniestreich der Schaffhauser Seele.",
+    "description_en": "Sensual and legendary, with cherry and spice, embracing the heart with unforgettable depth – a masterstroke of the Schaffhausen soul.",
+    "description_fr": "Sensuel et légendaire, avec de la cerise et des épices, embrassant le cœur avec une profondeur inoubliable.",
+    "food_pairings_de": [
+      "Ente",
+      "Pilzragout"
+    ],
+    "food_pairings_en": [
+      "Duck",
+      "Mushroom ragout"
+    ],
+    "food_pairings_fr": [
+      "Canard",
+      "Ragoût de champignons"
+    ],
+    "created_at": "2025-12-13T05:37:16.044542+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "2f1ce4fd-2e1f-4a45-b328-35ef268dd231",
+    "name": "Malbec 2023",
+    "winery": "Hedinger Weingut & Kellerei",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Wilchingen",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Malbec",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Opulent und harmonisch, mit Pflaume und Eiche, das wie ein warmer Föhn die Seele streichelt.",
+    "description_en": "Opulent and harmonious, with plum and oak, caressing the soul like a warm Föhn wind.",
+    "description_fr": "Opulent et harmonieux, avec de la prune et du chêne, caressant l'âme comme un foehn chaud.",
+    "food_pairings_de": [
+      "Gegrillter Lachs",
+      "Asiatisches Gemüse"
+    ],
+    "food_pairings_en": [
+      "Grilled salmon",
+      "Asian vegetables"
+    ],
+    "food_pairings_fr": [
+      "Saumon grillé",
+      "Légumes asiatiques"
+    ],
+    "created_at": "2025-12-13T05:37:16.045569+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "30f79d6b-b981-4a2a-b672-4783569cefb0",
+    "name": "Pinot Noir Pilgrim 2022",
+    "winery": "Weingut Höcklistein",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Rapperswil-Jona",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Reif und filigran, ein Alter Reben-Traum von Beeren und Erde, der die Seele in nostalgische Wärme hüllt.",
+    "description_en": "Mature and delicate, an old vine dream of berries and earth, wrapping the soul in nostalgic warmth.",
+    "description_fr": "Mûr et délicat, un rêve de vieilles vignes de baies et de terre, enveloppant l'âme de chaleur nostalgique.",
+    "food_pairings_de": [
+      "Roastbeef",
+      "Dunkle Schokolade"
+    ],
+    "food_pairings_en": [
+      "Roast beef",
+      "Dark chocolate"
+    ],
+    "food_pairings_fr": [
+      "Rôti de bœuf",
+      "Chocolat noir"
+    ],
+    "created_at": "2025-12-13T05:37:16.046692+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "b92e8892-660b-46ff-a00a-7df0f9a15b74",
+    "name": "Chardonnay Hedinger 2023",
+    "winery": "Hedinger Weingut & Kellerei",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Wilchingen",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Cremig und großes Gold, mit Apfel und Haselnuss, der die Seele mit barriquerter Tiefe berührt.",
+    "description_en": "Creamy and great gold, with apple and hazelnut, touching the soul with barrel-aged depth.",
+    "description_fr": "Crémeux et grand or, avec de la pomme et de la noisette, touchant l'âme avec une profondeur de barrique.",
+    "food_pairings_de": [
+      "Krebse",
+      "Frischer Salat"
+    ],
+    "food_pairings_en": [
+      "Crayfish",
+      "Fresh salad"
+    ],
+    "food_pairings_fr": [
+      "Écrevisses",
+      "Salade fraîche"
+    ],
+    "created_at": "2025-12-13T05:37:16.047719+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "d6f70d82-4758-4c14-b623-d395e7e37159",
+    "name": "Pinot Noir Klettgau 2023",
+    "winery": "Weinbau von Tscharner",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Schaffhausen",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Robust und fruchtig, ein Pinot, der das Herz mit wilden Beeren und erdiger Wärme in herbstliche Wälder lockt.",
+    "description_en": "Robust and fruity, a Pinot that lures the heart into autumn forests with wild berries and earthy warmth.",
+    "description_fr": "Robuste et fruité, un Pinot qui attire le cœur dans les forêts d'automne avec des baies sauvages.",
+    "food_pairings_de": [
+      "Lammkoteletts",
+      "Pilzragout"
+    ],
+    "food_pairings_en": [
+      "Lamb chops",
+      "Mushroom ragout"
+    ],
+    "food_pairings_fr": [
+      "Côtelettes d'agneau",
+      "Ragoût de champignons"
+    ],
+    "created_at": "2025-12-13T05:37:16.048709+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "13d14478-6b6b-4ca7-990a-f29078715276",
+    "name": "Pinot Noir Réserve 2023",
+    "winery": "Weingut Landolt",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Schaffhausen",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Frisch und blumig, ein Rot, das die Seele in goldene Sonnenuntergänge taucht – cremig, mit Nuss und Zitrus.",
+    "description_en": "Fresh and floral, a red that immerses the soul in golden sunsets – creamy, with nut and citrus.",
+    "description_fr": "Frais et floral, un rouge qui plonge l'âme dans des couchers de soleil dorés – crémeux.",
+    "food_pairings_de": [
+      "Huhn mit Kräutern",
+      "Raclette"
+    ],
+    "food_pairings_en": [
+      "Chicken with herbs",
+      "Raclette"
+    ],
+    "food_pairings_fr": [
+      "Poulet aux herbes",
+      "Raclette"
+    ],
+    "created_at": "2025-12-13T05:37:16.049858+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "ec91201e-335a-47ca-a83c-12b1494d94e9",
+    "name": "Pinot Noir Gian-Battista 2022",
+    "winery": "Weingut Donatsch",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Klettgau",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Einzellagen-Extraklasse, samtig und würzig, ein Rot, das die Seele mit Pfeffer und Beeren in Ekstase versetzt.",
+    "description_en": "Single vineyard excellence, velvety and spicy, a red that sends the soul into ecstasy with pepper and berries.",
+    "description_fr": "Excellence de parcelle unique, velouté et épicé, un rouge qui envoie l'âme en extase.",
+    "food_pairings_de": [
+      "BBQ-Rippen",
+      "Scharfe Wurst"
+    ],
+    "food_pairings_en": [
+      "BBQ ribs",
+      "Spicy sausage"
+    ],
+    "food_pairings_fr": [
+      "Côtes BBQ",
+      "Saucisse épicée"
+    ],
+    "created_at": "2025-12-13T05:37:16.050812+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "f310fbc9-e0bb-4682-a328-d5f917e1cac0",
+    "name": "Sauvignon Blanc 2023",
+    "winery": "Weingut Baumann",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Oberhallau",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Sauvignon Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Meisterwerk und streng, mit Mandel und Säure, der wie ein Hohelied die Seele erhebt.",
+    "description_en": "A masterpiece, austere with almond and acidity, elevating the soul like a song of songs.",
+    "description_fr": "Un chef-d'œuvre, austère avec de l'amande et de l'acidité, élevant l'âme comme un cantique.",
+    "food_pairings_de": [
+      "Käseplatte",
+      "Gebratenes Forellenfilet"
+    ],
+    "food_pairings_en": [
+      "Cheese platter",
+      "Pan-fried trout fillet"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fromages",
+      "Filet de truite poêlé"
+    ],
+    "created_at": "2025-12-13T05:37:16.051657+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "2319d350-22ea-44a6-9c74-ac42981dcca9",
+    "name": "Pinot Noir Saliser Grande Selection 2023",
+    "winery": "Georg Schlegel",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Schaffhausen",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "20/20-Pinot mit enormem Potenzial, fruchtig und robust, der das Herz mit imperierender Kraft erhebt.",
+    "description_en": "20/20 Pinot with enormous potential, fruity and robust, elevating the heart with imperial power.",
+    "description_fr": "Pinot 20/20 avec un potentiel énorme, fruité et robuste, élevant le cœur avec une puissance impériale.",
+    "food_pairings_de": [
+      "Wild",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Game",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Gibier",
+      "Champignons"
+    ],
+    "created_at": "2025-12-13T05:37:16.052776+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "88871a49-a02f-4926-8e69-cfc937479fda",
+    "name": "Riesling 2023",
+    "winery": "aagne weingut",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Hallau",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Nervös und aromatisch, mit Grapefruit und Kräutern, das wie ein Bergnebel die Seele klärt.",
+    "description_en": "Nervous and aromatic, with grapefruit and herbs, clearing the soul like mountain mist.",
+    "description_fr": "Nerveux et aromatique, avec du pamplemousse et des herbes, purifiant l'âme comme la brume de montagne.",
+    "food_pairings_de": [
+      "Meeresfrüchte",
+      "Sommergemüse"
+    ],
+    "food_pairings_en": [
+      "Seafood",
+      "Summer vegetables"
+    ],
+    "food_pairings_fr": [
+      "Fruits de mer",
+      "Légumes d'été"
+    ],
+    "created_at": "2025-12-13T05:37:16.053797+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "f23ab527-607b-4b89-bdd0-f7f3794183dd",
+    "name": "Pinot Noir Lupa 2022",
+    "winery": "Weingut Bad Osterfingen",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Osterfingen",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Unvergleichlich trinkbar, mit Kirschen und Geheimnissen, der das Herz mit leichter Freude erheitert.",
+    "description_en": "Incomparably drinkable, with cherries and secrets, cheering the heart with light joy.",
+    "description_fr": "Incomparablement buvable, avec des cerises et des secrets, égayant le cœur d'une joie légère.",
+    "food_pairings_de": [
+      "Pasta Bolognese",
+      "Herzhaftes Brot"
+    ],
+    "food_pairings_en": [
+      "Pasta Bolognese",
+      "Hearty bread"
+    ],
+    "food_pairings_fr": [
+      "Pâtes bolognaise",
+      "Pain rustique"
+    ],
+    "created_at": "2025-12-13T05:37:16.054812+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "7c9ab654-52a0-424d-997d-16982f1eda93",
+    "name": "Chardonnay Réserve 2023",
+    "winery": "Weingut Ruch",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Hallau",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Reich und honigartig, ein Surmaturé, der wie ein Traum die Seele umhüllt.",
+    "description_en": "Rich and honeyed, a surmaturé that wraps the soul like a dream.",
+    "description_fr": "Riche et miellé, un surmaturé qui enveloppe l'âme comme un rêve.",
+    "food_pairings_de": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "food_pairings_en": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "food_pairings_fr": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "created_at": "2025-12-13T05:37:16.056010+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "b7597719-8c80-4122-a462-7a1522a4fb43",
+    "name": "Pinot Noir 2024",
+    "winery": "Hedinger Weingut & Kellerei",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Wilchingen",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Filigran und fruchtig, ein Windhauch aus Kirschen, der das Herz mit alpiner Frische weckt.",
+    "description_en": "Delicate and fruity, a breath of cherries that awakens the heart with Alpine freshness.",
+    "description_fr": "Délicat et fruité, un souffle de cerises qui éveille le cœur avec la fraîcheur alpine.",
+    "food_pairings_de": [
+      "Entenbrust",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Duck breast",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard",
+      "Champignons"
+    ],
+    "created_at": "2025-12-13T05:37:16.056925+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "8577151a-e6d1-4577-8663-4252323c8085",
+    "name": "Müller-Thurgau 2023",
+    "winery": "Weingut Baumann",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Oberhallau",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Müller-Thurgau",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Exotisch und würzig, mit Apfel und Gewürzen, die wie ein Geheimnis die Seele verzaubern.",
+    "description_en": "Exotic and spicy, with apple and spices that enchant the soul like a secret.",
+    "description_fr": "Exotique et épicé, avec de la pomme et des épices qui enchantent l'âme comme un secret.",
+    "food_pairings_de": [
+      "Asiatische Gerichte",
+      "Gebratener Tofu"
+    ],
+    "food_pairings_en": [
+      "Asian dishes",
+      "Fried tofu"
+    ],
+    "food_pairings_fr": [
+      "Plats asiatiques",
+      "Tofu frit"
+    ],
+    "created_at": "2025-12-13T05:37:16.057965+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "ece15ad5-d4fa-41d8-b2f1-e64893902223",
+    "name": "Pinot Noir Sélection 2023",
+    "winery": "Weingut Seewer",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Wilchingen",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Tief und mineralisch, mit dunklen Früchten, die wie ein Abgrund die Seele fesselt.",
+    "description_en": "Deep and mineral, with dark fruits that captivate the soul like an abyss.",
+    "description_fr": "Profond et minéral, avec des fruits noirs qui captivent l'âme comme un abîme.",
+    "food_pairings_de": [
+      "Rindfleisch",
+      "Wild"
+    ],
+    "food_pairings_en": [
+      "Beef",
+      "Game"
+    ],
+    "food_pairings_fr": [
+      "Bœuf",
+      "Gibier"
+    ],
+    "created_at": "2025-12-13T05:37:16.058874+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "31d361e5-ab5d-4aac-b378-1da431ebe09d",
+    "name": "Pinot Blanc 2022",
+    "winery": "aagne weingut",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Hallau",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Pinot Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Zart und blumig, ein Blanc, der die Seele mit schaffhauser Reinheit erfüllt – frisch und nervös.",
+    "description_en": "Delicate and floral, a Blanc that fills the soul with Schaffhausen purity – fresh and nervous.",
+    "description_fr": "Délicat et floral, un Blanc qui remplit l'âme de pureté schaffhousoise – frais et nerveux.",
+    "food_pairings_de": [
+      "Fisch",
+      "Salate"
+    ],
+    "food_pairings_en": [
+      "Fish",
+      "Salads"
+    ],
+    "food_pairings_fr": [
+      "Poisson",
+      "Salades"
+    ],
+    "created_at": "2025-12-13T05:37:16.059709+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "b807d218-13a6-475a-bd47-147741cd1886",
+    "name": "Pinot Noir Premium 2023",
+    "winery": "Weinbau Markus Ruch",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Hallau",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Samten und fruchtig, ein Pinot, der das Herz mit warmer Umarmung beschenkt.",
+    "description_en": "Velvety and fruity, a Pinot that gifts the heart with a warm embrace.",
+    "description_fr": "Velouté et fruité, un Pinot qui offre au cœur une étreinte chaleureuse.",
+    "food_pairings_de": [
+      "Pasta mit Tomatensauce",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Pasta with tomato sauce",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Pâtes à la sauce tomate",
+      "Fromage"
+    ],
+    "created_at": "2025-12-13T05:37:16.060528+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "b28d9752-63dc-4ec8-94ec-822105887084",
+    "name": "Chardonnay 2024",
+    "winery": "Weingut Bad Osterfingen",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Osterfingen",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Elegant und strukturiert, mit Apfel und Mineral, das wie ein Tanz die Seele erheitert.",
+    "description_en": "Elegant and structured, with apple and mineral, cheering the soul like a dance.",
+    "description_fr": "Élégant et structuré, avec de la pomme et du minéral, égayant l'âme comme une danse.",
+    "food_pairings_de": [
+      "Huhn mit Kräutern",
+      "Raclette"
+    ],
+    "food_pairings_en": [
+      "Chicken with herbs",
+      "Raclette"
+    ],
+    "food_pairings_fr": [
+      "Poulet aux herbes",
+      "Raclette"
+    ],
+    "created_at": "2025-12-13T05:37:16.061324+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "b17a723d-b68a-4f99-8b14-aa2544672c52",
+    "name": "Pinot Noir Alte Reben 2022",
+    "winery": "Weingut Höcklistein",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Rapperswil-Jona",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Würzig und intensiv, ein Rot, das die Seele mit orientalischem Zauber umhüllt.",
+    "description_en": "Spicy and intense, a red that wraps the soul in oriental magic.",
+    "description_fr": "Épicé et intense, un rouge qui enveloppe l'âme de magie orientale.",
+    "food_pairings_de": [
+      "Gewürzhähnchen",
+      "Auberginen"
+    ],
+    "food_pairings_en": [
+      "Spiced chicken",
+      "Eggplant"
+    ],
+    "food_pairings_fr": [
+      "Poulet épicé",
+      "Aubergines"
+    ],
+    "created_at": "2025-12-13T05:37:16.062110+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "13980424-fb87-4386-9ccc-ff20b92a6631",
+    "name": "Riesling-Silvaner 2023",
+    "winery": "Hedinger Weingut & Kellerei",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Wilchingen",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Riesling-Silvaner",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Feminine Eleganz, mit Veilchen und Säure, der das Herz mit Seide und Feuer erobert.",
+    "description_en": "Feminine elegance, with violet and acidity, conquering the heart with silk and fire.",
+    "description_fr": "Élégance féminine, avec de la violette et de l'acidité, conquérant le cœur avec de la soie et du feu.",
+    "food_pairings_de": [
+      "Perlhuhn mit Morcheln"
+    ],
+    "food_pairings_en": [
+      "Guinea fowl with morels"
+    ],
+    "food_pairings_fr": [
+      "Pintade aux morilles"
+    ],
+    "created_at": "2025-12-13T05:37:16.062879+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "5c3b2445-708b-45b2-9fc6-1a5f9c6faddf",
+    "name": "Pinot Noir Klettgauer 2023",
+    "winery": "GVS Schachenmann AG",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Hallau",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Präzise und charaktervoll, ein Neuling der Elite, der die Seele mit erdiger Wärme umfängt.",
+    "description_en": "Precise and characterful, a newcomer to the elite, embracing the soul with earthy warmth.",
+    "description_fr": "Précis et plein de caractère, un nouveau venu dans l'élite, embrassant l'âme avec une chaleur terreuse.",
+    "food_pairings_de": [
+      "Ente",
+      "Pilzrisotto"
+    ],
+    "food_pairings_en": [
+      "Duck",
+      "Mushroom risotto"
+    ],
+    "food_pairings_fr": [
+      "Canard",
+      "Risotto aux champignons"
+    ],
+    "created_at": "2025-12-13T05:37:16.063630+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "9fd97402-9062-4b0a-9d16-177a5454c10b",
+    "name": "Sauvignon Blanc Réserve 2023",
+    "winery": "Weingut Baumann",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Oberhallau",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Sauvignon Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Überraschend und tief, mit Nuss und Zitrus, das wie ein alter Freund die Seele in nostalgische Wärme hüllt.",
+    "description_en": "Surprising and deep, with nut and citrus, wrapping the soul in nostalgic warmth like an old friend.",
+    "description_fr": "Surprenant et profond, avec de la noix et des agrumes, enveloppant l'âme de chaleur nostalgique.",
+    "food_pairings_de": [
+      "Foie gras",
+      "Reifer Käse"
+    ],
+    "food_pairings_en": [
+      "Foie gras",
+      "Aged cheese"
+    ],
+    "food_pairings_fr": [
+      "Foie gras",
+      "Fromage affiné"
+    ],
+    "created_at": "2025-12-13T05:37:16.064464+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "da82f86b-5d32-4d0f-b868-dbbc6777658c",
+    "name": "Pinot Noir Tradition 2024",
+    "winery": "aagne weingut",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Hallau",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Filigran und robust, ein Pinot, der die Seele mit imperierender Kraft erhebt.",
+    "description_en": "Delicate yet robust, a Pinot that elevates the soul with imperial power.",
+    "description_fr": "Délicat mais robuste, un Pinot qui élève l'âme avec une puissance impériale.",
+    "food_pairings_de": [
+      "Lamm",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Lamb",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Agneau",
+      "Champignons"
+    ],
+    "created_at": "2025-12-13T05:37:16.065546+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "cc9b5f9f-4fe6-485d-bcb1-d828395aa4f9",
+    "name": "Müller-Thurgau 2024",
+    "winery": "Weingut Ruch",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Hallau",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Müller-Thurgau",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Frisch und vielschichtig, ein Weiß, der das Herz mit kindlicher Freude weckt.",
+    "description_en": "Fresh and multilayered, a white that awakens the heart with childlike joy.",
+    "description_fr": "Frais et complexe, un blanc qui éveille le cœur avec une joie enfantine.",
+    "food_pairings_de": [
+      "Tapas",
+      "Lachs"
+    ],
+    "food_pairings_en": [
+      "Tapas",
+      "Salmon"
+    ],
+    "food_pairings_fr": [
+      "Tapas",
+      "Saumon"
+    ],
+    "created_at": "2025-12-13T05:37:16.066666+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "3ae036b9-e208-4ae0-96e7-65c168965d43",
+    "name": "Pinot Noir Harmonie 2023",
+    "winery": "Weingut Seewer",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Wilchingen",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Dynamisch und harmonisch, ein Neuling, der wie ein Chor die Seele erhebt.",
+    "description_en": "Dynamic and harmonious, a newcomer that elevates the soul like a choir.",
+    "description_fr": "Dynamique et harmonieux, un nouveau venu qui élève l'âme comme un chœur.",
+    "food_pairings_de": [
+      "Dunkles Fleisch"
+    ],
+    "food_pairings_en": [
+      "Dark meat"
+    ],
+    "food_pairings_fr": [
+      "Viande brune"
+    ],
+    "created_at": "2025-12-13T05:37:16.067789+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "2e91d68d-11d3-47b9-b70c-2d56e2918593",
+    "name": "Chardonnay Premium 2023",
+    "winery": "Hedinger Weingut & Kellerei",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Wilchingen",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Hoch und aromatisch, mit Mandeln und Nektarinen, das die Seele auf Höhenflüge trägt.",
+    "description_en": "High and aromatic, with almonds and nectarines, carrying the soul to soaring heights.",
+    "description_fr": "Haut et aromatique, avec des amandes et des nectarines, portant l'âme vers les sommets.",
+    "food_pairings_de": [
+      "Käseplatte",
+      "Forelle"
+    ],
+    "food_pairings_en": [
+      "Cheese platter",
+      "Trout"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fromages",
+      "Truite"
+    ],
+    "created_at": "2025-12-13T05:37:16.068870+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "a0af8215-7c04-43b6-9f1a-019d77c477ed",
+    "name": "Pinot Noir Barrique 2022",
+    "winery": "Weingut Bad Osterfingen",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Osterfingen",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Barriqué und tief, ein Pinot, der die Seele in symphonische Tiefe taucht.",
+    "description_en": "Barrel-aged and deep, a Pinot that plunges the soul into symphonic depth.",
+    "description_fr": "Élevé en barrique et profond, un Pinot qui plonge l'âme dans une profondeur symphonique.",
+    "food_pairings_de": [
+      "Ente",
+      "Pilzragout"
+    ],
+    "food_pairings_en": [
+      "Duck",
+      "Mushroom ragout"
+    ],
+    "food_pairings_fr": [
+      "Canard",
+      "Ragoût de champignons"
+    ],
+    "created_at": "2025-12-13T05:37:16.069938+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "e768db77-86be-40ae-99f7-919d17c01322",
+    "name": "Riesling Premium 2023",
+    "winery": "Weinbau Markus Ruch",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Hallau",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Opulent und blumig, ein Tropfen, der das Herz mit sommerlicher Leichtigkeit umfängt.",
+    "description_en": "Opulent and floral, a drop that embraces the heart with summery lightness.",
+    "description_fr": "Opulent et floral, une goutte qui embrasse le cœur avec une légèreté estivale.",
+    "food_pairings_de": [
+      "Sommergerichte",
+      "Frischkäse"
+    ],
+    "food_pairings_en": [
+      "Summer dishes",
+      "Fresh cheese"
+    ],
+    "food_pairings_fr": [
+      "Plats d'été",
+      "Fromage frais"
+    ],
+    "created_at": "2025-12-13T05:37:16.070970+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "d685b84d-9c2c-4fcf-8c83-afadff156935",
+    "name": "Pinot Blanc 2023",
+    "winery": "Weingut Höcklistein",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Rapperswil-Jona",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Pinot Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Traditionell und rein, ein Tropfen, der das Herz mit Bergfrische reinigt.",
+    "description_en": "Traditional and pure, a drop that cleanses the heart with mountain freshness.",
+    "description_fr": "Traditionnel et pur, une goutte qui purifie le cœur avec la fraîcheur de la montagne.",
+    "food_pairings_de": [
+      "Fischfilet",
+      "Salat"
+    ],
+    "food_pairings_en": [
+      "Fish fillet",
+      "Salad"
+    ],
+    "food_pairings_fr": [
+      "Filet de poisson",
+      "Salade"
+    ],
+    "created_at": "2025-12-13T05:37:16.071975+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "8a7936c7-e482-4372-92c4-3ebca7503bd6",
+    "name": "Sauvignon Blanc 2024",
+    "winery": "GVS Schachenmann AG",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Hallau",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Sauvignon Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Exotisch und würzig, ein Weiß, der das Herz mit orientalischem Flair verzaubert.",
+    "description_en": "Exotic and spicy, a white that enchants the heart with oriental flair.",
+    "description_fr": "Exotique et épicé, un blanc qui enchante le cœur avec un flair oriental.",
+    "food_pairings_de": [
+      "Curry",
+      "Vegetarische Gerichte"
+    ],
+    "food_pairings_en": [
+      "Curry",
+      "Vegetarian dishes"
+    ],
+    "food_pairings_fr": [
+      "Curry",
+      "Plats végétariens"
+    ],
+    "created_at": "2025-12-13T05:37:16.073006+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "1158c2b8-c75c-4e04-9012-4511cf7c751c",
+    "name": "Pinot Noir Grand Cru 2023",
+    "winery": "Weingut Baumann",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Oberhallau",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Komplex und harmonisch, ein Assemblage, der die Seele in göttliche Ekstase versetzt.",
+    "description_en": "Complex and harmonious, an assemblage that sends the soul into divine ecstasy.",
+    "description_fr": "Complexe et harmonieux, un assemblage qui envoie l'âme en extase divine.",
+    "food_pairings_de": [
+      "Entrecôte",
+      "Schokolade"
+    ],
+    "food_pairings_en": [
+      "Entrecôte",
+      "Chocolate"
+    ],
+    "food_pairings_fr": [
+      "Entrecôte",
+      "Chocolat"
+    ],
+    "created_at": "2025-12-13T05:37:16.074018+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "4249c1ba-390b-4ca3-98bd-c2ca40dbbe77",
+    "name": "Chardonnay Grand Cru 2022",
+    "winery": "aagne weingut",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Hallau",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Reich und strukturiert, ein Grand Cru, der die Seele in städtischer Eleganz badet.",
+    "description_en": "Rich and structured, a Grand Cru that bathes the soul in urban elegance.",
+    "description_fr": "Riche et structuré, un Grand Cru qui baigne l'âme dans l'élégance urbaine.",
+    "food_pairings_de": [
+      "Krustentiere",
+      "Geflügel"
+    ],
+    "food_pairings_en": [
+      "Crustaceans",
+      "Poultry"
+    ],
+    "food_pairings_fr": [
+      "Crustacés",
+      "Volaille"
+    ],
+    "created_at": "2025-12-13T05:37:16.075022+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "5bc45cbe-a560-495f-886b-2d0417b104ab",
+    "name": "Pinot Noir Seeblick 2023",
+    "winery": "Weingut Ruch",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Hallau",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Nervös und lebendig, ein Funke Glycin und Grapefruit, der das Herz mit alpiner Frische weckt.",
+    "description_en": "Nervous and lively, a spark of glycine and grapefruit that awakens the heart with Alpine freshness.",
+    "description_fr": "Nerveux et vif, une étincelle de glycine et de pamplemousse qui éveille le cœur avec la fraîcheur alpine.",
+    "food_pairings_de": [
+      "Krebse",
+      "Kräutersuppe"
+    ],
+    "food_pairings_en": [
+      "Crayfish",
+      "Herb soup"
+    ],
+    "food_pairings_fr": [
+      "Écrevisses",
+      "Soupe aux herbes"
+    ],
+    "created_at": "2025-12-13T05:37:16.076243+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "4c553612-e4cb-4776-afcc-113a57dc8c02",
+    "name": "Müller-Thurgau Spätlese 2023",
+    "winery": "Weingut Seewer",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Wilchingen",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Müller-Thurgau",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Tief und aromatisch, ein Rot, das wie ein Abgrund die Seele fesselt.",
+    "description_en": "Deep and aromatic, capturing the soul like an abyss.",
+    "description_fr": "Profond et aromatique, captivant l'âme comme un abîme.",
+    "food_pairings_de": [
+      "Stark gewürzte Fleischgerichte"
+    ],
+    "food_pairings_en": [
+      "Heavily spiced meat dishes"
+    ],
+    "food_pairings_fr": [
+      "Plats de viande très épicés"
+    ],
+    "created_at": "2025-12-13T05:37:16.077318+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "10f93432-f944-4d45-b013-cec88bfa3cfe",
+    "name": "Pinot Noir Classic 2024",
+    "winery": "Hedinger Weingut & Kellerei",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Wilchingen",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Historisch und elegant, ein Wein, der die Seele mit zeitloser Tiefe berührt.",
+    "description_en": "Historic and elegant, a wine that touches the soul with timeless depth.",
+    "description_fr": "Historique et élégant, un vin qui touche l'âme avec une profondeur intemporelle.",
+    "food_pairings_de": [
+      "Geflügel",
+      "Meeresfrüchte"
+    ],
+    "food_pairings_en": [
+      "Poultry",
+      "Seafood"
+    ],
+    "food_pairings_fr": [
+      "Volaille",
+      "Fruits de mer"
+    ],
+    "created_at": "2025-12-13T05:37:16.078381+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "f856d2a3-53ae-45fb-9103-da868b2c056a",
+    "name": "Riesling-Silvaner Premium 2023",
+    "winery": "Weingut Bad Osterfingen",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Osterfingen",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Riesling-Silvaner",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Filigran und fruchtig, ein Windhauch aus Kirschen, der das Herz mit leichter Traurigkeit und purer Freude erfüllt.",
+    "description_en": "Delicate and fruity, a breath of cherries that fills the heart with gentle sadness and pure joy.",
+    "description_fr": "Délicat et fruité, un souffle de cerises qui remplit le cœur d'une douce tristesse et d'une joie pure.",
+    "food_pairings_de": [
+      "Entenbrust",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Duck breast",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard",
+      "Champignons"
+    ],
+    "created_at": "2025-12-13T05:37:16.079465+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "b566fa59-00c2-4685-a50c-8e3edd576470",
+    "name": "Pinot Blanc Harmonie 2023",
+    "winery": "Weinbau Markus Ruch",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Hallau",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Pinot Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Frisch und ausgewogen, ein Blanc, der das Herz mit klassischer Freude erheitert.",
+    "description_en": "Fresh and balanced, a Blanc that cheers the heart with classic joy.",
+    "description_fr": "Frais et équilibré, un Blanc qui égaye le cœur avec une joie classique.",
+    "food_pairings_de": [
+      "Fondue",
+      "Rind"
+    ],
+    "food_pairings_en": [
+      "Fondue",
+      "Beef"
+    ],
+    "food_pairings_fr": [
+      "Fondue",
+      "Bœuf"
+    ],
+    "created_at": "2025-12-13T05:37:16.080498+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "e7401b4b-772f-4cb4-ba64-7aa4a2721847",
+    "name": "Chardonnay Vieilles Vignes 2023",
+    "winery": "Weingut Höcklistein",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Rapperswil-Jona",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Reich und beerig, ein Chardonnay, der die Seele in schaffhauser Wälder entführt.",
+    "description_en": "Rich and berry-filled, a Chardonnay that transports the soul to Schaffhausen forests.",
+    "description_fr": "Riche et fruité, un Chardonnay qui transporte l'âme dans les forêts schaffhousoises.",
+    "food_pairings_de": [
+      "Lammkoteletts",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Lamb chops",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Côtelettes d'agneau",
+      "Fromage"
+    ],
+    "created_at": "2025-12-13T05:37:16.081552+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "57dc5b4c-94c3-44d4-8d77-1d3f6197924a",
+    "name": "Sauvignon Blanc Premium 2023",
+    "winery": "GVS Schachenmann AG",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Hallau",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Sauvignon Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Elegant und pfeffrig, ein Blanc, der die Seele mit orientalischem Zauber umhüllt.",
+    "description_en": "Elegant and peppery, a Blanc that wraps the soul in oriental magic.",
+    "description_fr": "Élégant et poivré, un Blanc qui enveloppe l'âme de magie orientale.",
+    "food_pairings_de": [
+      "Gewürzhähnchen",
+      "Auberginen"
+    ],
+    "food_pairings_en": [
+      "Spiced chicken",
+      "Eggplant"
+    ],
+    "food_pairings_fr": [
+      "Poulet épicé",
+      "Aubergines"
+    ],
+    "created_at": "2025-12-13T05:37:16.082616+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "43f79011-e94c-4507-8bae-62a63b08c7f0",
+    "name": "Pinot Noir Innovation 2022",
+    "winery": "Weingut Baumann",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Oberhallau",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Innovativ und fruchtig, ein Hybrid, der das Herz mit moderner Freude erfüllt.",
+    "description_en": "Innovative and fruity, a hybrid that fills the heart with modern joy.",
+    "description_fr": "Innovant et fruité, un hybride qui remplit le cœur de joie moderne.",
+    "food_pairings_de": [
+      "Grillgemüse",
+      "Fisch"
+    ],
+    "food_pairings_en": [
+      "Grilled vegetables",
+      "Fish"
+    ],
+    "food_pairings_fr": [
+      "Légumes grillés",
+      "Poisson"
+    ],
+    "created_at": "2025-12-13T05:37:16.083697+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "5eeb0f14-f2e0-472a-b86d-bd1f6410f3dd",
+    "name": "Mousseux Brut 2023",
+    "winery": "Rimuss & Strada Wein",
+    "country": "Schweiz",
+    "region": "Schaffhausen - Hallau",
+    "appellation": "AOC Schaffhausen",
+    "grape_variety": "Assemblage",
+    "wine_color": "schaumwein",
+    "price_category": "€€€",
+    "description_de": "Hoch und rein, ein Mousseux, der wie ein Gipfelblick die Seele erweitert.",
+    "description_en": "High and pure, a Mousseux that expands the soul like a summit view.",
+    "description_fr": "Haut et pur, un Mousseux qui élargit l'âme comme une vue du sommet.",
+    "food_pairings_de": [
+      "Käseplatte",
+      "Leichte Vorspeisen"
+    ],
+    "food_pairings_en": [
+      "Cheese platter",
+      "Light appetizers"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fromages",
+      "Entrées légères"
+    ],
+    "created_at": "2025-12-13T05:37:16.084941+00:00",
+    "source": "Top 50 Schaffhauser Weine - Expovina Best-of 2025, Falstaff Weinguide 2025, GaultMillau, Grand Prix du Vin Suisse"
   }
 ]

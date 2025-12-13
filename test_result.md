@@ -266,6 +266,9 @@ frontend:
       - working: true
         agent: "testing"
         comment: "✅ Wine Database page loads successfully with wine entries displayed. Page structure and wine cards are properly rendered and accessible."
+      - working: true
+        agent: "testing"
+        comment: "🎉 MAJOR DATA EXPANSION FRONTEND VERIFICATION COMPLETE! ✅ All 7/7 new regions verified in frontend filters: Mosel, Rheingau, Pfalz, Baden, Nahe, Ahr (Germany) + St. Gallen (Switzerland). ✅ Region dropdown shows 74 total regions. ✅ Country filters working: Deutschland & Schweiz present. ✅ Mosel filter test successful (51 wines displayed). ✅ Wine cards display correctly (50 wines per page). ✅ Filter functionality fully operational. Frontend successfully reflects backend data expansion from 846 to 1671 wines."
 
   - task: "Blog Page"
     implemented: true

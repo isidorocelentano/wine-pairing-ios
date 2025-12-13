@@ -33308,5 +33308,1396 @@
     ],
     "created_at": "2025-12-13T05:25:52.310486+00:00",
     "source": "Top 50 Neuenburger Weine - Sélection des Vins de Neuchâtel 2024/2025, GaultMillau, Falstaff, Grand Prix du Vin Suisse"
+  },
+  {
+    "id": "9f54538c-8f6c-407c-8798-ba82d0fc57b3",
+    "name": "Pinot Noir Barrique Exklusive 2022",
+    "winery": "Weingut Gehring",
+    "country": "Schweiz",
+    "region": "Zürich - Freienstein",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Ein rubinroter Poet, der von dunklen Kirschen und Vanilleflüstern erzählt – ein Wein, der die Seele in sanfte, tanninreiche Umarmung hüllt und vergangene Herbsttage heraufbeschwört.",
+    "description_en": "A ruby-red poet speaking of dark cherries and vanilla whispers – a wine that wraps the soul in a soft, tannic embrace and evokes past autumn days.",
+    "description_fr": "Un poète rouge rubis parlant de cerises noires et de murmures de vanille – un vin qui enveloppe l'âme dans une étreinte douce et tannique.",
+    "food_pairings_de": [
+      "Gebratenes Huhn mit Kräutern",
+      "Tomme Vaudoise"
+    ],
+    "food_pairings_en": [
+      "Roasted chicken with herbs",
+      "Tomme Vaudoise"
+    ],
+    "food_pairings_fr": [
+      "Poulet rôti aux herbes",
+      "Tomme Vaudoise"
+    ],
+    "created_at": "2025-12-13T05:30:36.353243+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "e8e1bc6e-fce2-43a9-8344-2ae23527dc56",
+    "name": "Pinot Blanc 2023",
+    "winery": "Weingut Gehring",
+    "country": "Schweiz",
+    "region": "Zürich - Freienstein",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Pinot Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Frisch und mineralisch, ein Blanc, der wie ein Morgenhauch über dem See das Herz mit Apfel und Stein erfrischt und Hoffnung weckt.",
+    "description_en": "Fresh and mineral, a Blanc that refreshes the heart with apple and stone like a morning breeze over the lake, awakening hope.",
+    "description_fr": "Frais et minéral, un Blanc qui rafraîchit le cœur avec de la pomme et de la pierre comme une brise matinale sur le lac.",
+    "food_pairings_de": [
+      "Papet Vaudois",
+      "Gegrillter Fisch"
+    ],
+    "food_pairings_en": [
+      "Papet Vaudois",
+      "Grilled fish"
+    ],
+    "food_pairings_fr": [
+      "Papet Vaudois",
+      "Poisson grillé"
+    ],
+    "created_at": "2025-12-13T05:30:36.354597+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "b4290ff7-1207-4788-9dc9-9d3f7aa7ec82",
+    "name": "Pinot Noir Fergettli 2024",
+    "winery": "Clos Vert",
+    "country": "Schweiz",
+    "region": "Zürich - Zürichsee",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Elegant und filigran, mit Kirsche und Samt, der die Seele in burgundische Melancholie taucht – ein Liebesbrief in Rot, der das Herz mit leichter Traurigkeit und purer Freude erfüllt.",
+    "description_en": "Elegant and delicate, with cherry and velvet, plunging the soul into Burgundian melancholy – a love letter in red filling the heart with gentle sadness and pure joy.",
+    "description_fr": "Élégant et délicat, avec de la cerise et du velours, plongeant l'âme dans la mélancolie bourguignonne – une lettre d'amour en rouge.",
+    "food_pairings_de": [
+      "Entenbrust",
+      "Pilzrisotto"
+    ],
+    "food_pairings_en": [
+      "Duck breast",
+      "Mushroom risotto"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard",
+      "Risotto aux champignons"
+    ],
+    "created_at": "2025-12-13T05:30:36.355732+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "bd323077-22e3-453a-af6c-d12d15518d8c",
+    "name": "Rätschling Seehalden 2023",
+    "winery": "Weingut Schwarzenbach",
+    "country": "Schweiz",
+    "region": "Zürich - Meilen",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Rätschling",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Rein und lebendig, ein Rätschling, der wie ein Bergquell die Seele mit Zitrus und Mineral umhüllt – rare Essenz der Zürcher Tradition.",
+    "description_en": "Pure and lively, a Rätschling that wraps the soul in citrus and mineral like a mountain spring – rare essence of Zurich tradition.",
+    "description_fr": "Pur et vif, un Rätschling qui enveloppe l'âme d'agrumes et de minéral comme une source de montagne – essence rare de la tradition zurichoise.",
+    "food_pairings_de": [
+      "Meeresfrüchte",
+      "Sommergemüse"
+    ],
+    "food_pairings_en": [
+      "Seafood",
+      "Summer vegetables"
+    ],
+    "food_pairings_fr": [
+      "Fruits de mer",
+      "Légumes d'été"
+    ],
+    "created_at": "2025-12-13T05:30:36.356722+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "f46f2d94-8a07-4e0c-adf4-aa8e0d51ab0f",
+    "name": "Pinot Noir 2023",
+    "winery": "Weingut Bachmann",
+    "country": "Schweiz",
+    "region": "Zürich - Stäfa",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Biodynamisch und intensiv, mit dunklen Beeren und floralen Noten, das die Seele auf Höhenflüge trägt – pure Seestärke in Samt.",
+    "description_en": "Biodynamic and intense, with dark berries and floral notes, carrying the soul to soaring heights – pure lake strength in velvet.",
+    "description_fr": "Biodynamique et intense, avec des baies noires et des notes florales, portant l'âme vers les sommets – pure puissance lacustre en velours.",
+    "food_pairings_de": [
+      "Lammkoteletts",
+      "Wildpastete"
+    ],
+    "food_pairings_en": [
+      "Lamb chops",
+      "Game pâté"
+    ],
+    "food_pairings_fr": [
+      "Côtelettes d'agneau",
+      "Pâté de gibier"
+    ],
+    "created_at": "2025-12-13T05:30:36.357723+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "eb7e7bab-debe-4367-adb5-b4e2cde0c71e",
+    "name": "Riesling-Silvaner 2023",
+    "winery": "Weingut Pircher",
+    "country": "Schweiz",
+    "region": "Zürich - Zürcher Weinland",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Riesling-Silvaner",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Frisch und aromatisch, mit Apfel und Kräutern, der wie ein erstes Erwachen im Frühling das Herz erfrischt.",
+    "description_en": "Fresh and aromatic, with apple and herbs, refreshing the heart like the first awakening in spring.",
+    "description_fr": "Frais et aromatique, avec de la pomme et des herbes, rafraîchissant le cœur comme le premier réveil au printemps.",
+    "food_pairings_de": [
+      "Austern",
+      "Ziegenkäse-Platte"
+    ],
+    "food_pairings_en": [
+      "Oysters",
+      "Goat cheese platter"
+    ],
+    "food_pairings_fr": [
+      "Huîtres",
+      "Plateau de fromage de chèvre"
+    ],
+    "created_at": "2025-12-13T05:30:36.358569+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "bb15ca72-b296-4ce9-8bd3-c1bbfd04127e",
+    "name": "Pinot Noir Prestige 2022",
+    "winery": "Weingut Welti",
+    "country": "Schweiz",
+    "region": "Zürich - Küsnacht",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Sinnlich und legendär, mit Kirsche und Gewürz, der das Herz mit unvergesslicher Tiefe umfängt – ein Geniestreich der See-Seele.",
+    "description_en": "Sensual and legendary, with cherry and spice, embracing the heart with unforgettable depth – a masterstroke of lake soul.",
+    "description_fr": "Sensuel et légendaire, avec de la cerise et des épices, embrassant le cœur avec une profondeur inoubliable – un coup de maître de l'âme lacustre.",
+    "food_pairings_de": [
+      "Ente",
+      "Pilzragout"
+    ],
+    "food_pairings_en": [
+      "Duck",
+      "Mushroom ragout"
+    ],
+    "food_pairings_fr": [
+      "Canard",
+      "Ragoût de champignons"
+    ],
+    "created_at": "2025-12-13T05:30:36.359398+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "4e70e9c7-67ae-403e-9a1e-e1c6f304667a",
+    "name": "Rätschling 2024",
+    "winery": "Weingut Besson-Strasser",
+    "country": "Schweiz",
+    "region": "Zürich - Uhwiesen",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Rätschling",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Opulent und harmonisch, mit Pfirsich und Eiche, das wie ein warmer Föhn die Seele streichelt.",
+    "description_en": "Opulent and harmonious, with peach and oak, caressing the soul like a warm Föhn wind.",
+    "description_fr": "Opulent et harmonieux, avec de la pêche et du chêne, caressant l'âme comme un foehn chaud.",
+    "food_pairings_de": [
+      "Gegrillter Lachs",
+      "Asiatisches Gemüse"
+    ],
+    "food_pairings_en": [
+      "Grilled salmon",
+      "Asian vegetables"
+    ],
+    "food_pairings_fr": [
+      "Saumon grillé",
+      "Légumes asiatiques"
+    ],
+    "created_at": "2025-12-13T05:30:36.360218+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "31e5617b-9732-4662-97a5-275621ae0e87",
+    "name": "Pinot Noir 2021",
+    "winery": "Weingut Landolt",
+    "country": "Schweiz",
+    "region": "Zürich - Wädenswil",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Reif und filigran, ein Alter Reben-Traum von Beeren und Erde, der die Seele in nostalgische Wärme hüllt.",
+    "description_en": "Mature and delicate, an old vine dream of berries and earth, wrapping the soul in nostalgic warmth.",
+    "description_fr": "Mûr et délicat, un rêve de vieilles vignes de baies et de terre, enveloppant l'âme de chaleur nostalgique.",
+    "food_pairings_de": [
+      "Roastbeef",
+      "Dunkle Schokolade"
+    ],
+    "food_pairings_en": [
+      "Roast beef",
+      "Dark chocolate"
+    ],
+    "food_pairings_fr": [
+      "Rôti de bœuf",
+      "Chocolat noir"
+    ],
+    "created_at": "2025-12-13T05:30:36.361045+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "b4aea7ca-867a-4221-948c-f9bec88d7fab",
+    "name": "Solaris Chorb 2024",
+    "winery": "Bio-Weingut Rheinau",
+    "country": "Schweiz",
+    "region": "Zürich - Rheinau",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Solaris",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Cremig und großes Gold, mit Apfel und Haselnuss, der die Seele mit bio-Tiefe berührt.",
+    "description_en": "Creamy and great gold, with apple and hazelnut, touching the soul with organic depth.",
+    "description_fr": "Crémeux et grand or, avec de la pomme et de la noisette, touchant l'âme avec une profondeur biologique.",
+    "food_pairings_de": [
+      "Krebse",
+      "Frischer Salat"
+    ],
+    "food_pairings_en": [
+      "Crayfish",
+      "Fresh salad"
+    ],
+    "food_pairings_fr": [
+      "Écrevisses",
+      "Salade fraîche"
+    ],
+    "created_at": "2025-12-13T05:30:36.361876+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "fff117b8-6a7c-4d88-b172-4c78830e1617",
+    "name": "Pinot Noir 2023",
+    "winery": "Weingut Vergani",
+    "country": "Schweiz",
+    "region": "Zürich - Zürich",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Robust und fruchtig, ein Pinot, der das Herz mit wilden Beeren und erdiger Wärme in herbstliche Wälder lockt.",
+    "description_en": "Robust and fruity, a Pinot that lures the heart into autumn forests with wild berries and earthy warmth.",
+    "description_fr": "Robuste et fruité, un Pinot qui attire le cœur dans les forêts d'automne avec des baies sauvages et une chaleur terreuse.",
+    "food_pairings_de": [
+      "Lammkoteletts",
+      "Pilzragout"
+    ],
+    "food_pairings_en": [
+      "Lamb chops",
+      "Mushroom ragout"
+    ],
+    "food_pairings_fr": [
+      "Côtelettes d'agneau",
+      "Ragoût de champignons"
+    ],
+    "created_at": "2025-12-13T05:30:36.362698+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "92089bbb-7356-4631-88c6-bcf33f58835c",
+    "name": "Müller-Thurgau 2023",
+    "winery": "Weingut Egli",
+    "country": "Schweiz",
+    "region": "Zürich - Weinland",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Müller-Thurgau",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Frisch und blumig, ein Weiß, der die Seele in goldene Sonnenuntergänge taucht – cremig, mit Nuss und Zitrus.",
+    "description_en": "Fresh and floral, a white that immerses the soul in golden sunsets – creamy, with nut and citrus.",
+    "description_fr": "Frais et floral, un blanc qui plonge l'âme dans des couchers de soleil dorés – crémeux, avec de la noix et des agrumes.",
+    "food_pairings_de": [
+      "Huhn mit Kräutern",
+      "Raclette"
+    ],
+    "food_pairings_en": [
+      "Chicken with herbs",
+      "Raclette"
+    ],
+    "food_pairings_fr": [
+      "Poulet aux herbes",
+      "Raclette"
+    ],
+    "created_at": "2025-12-13T05:30:36.363480+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "949fe0a1-680f-4da9-9eb3-f32b9a7c3b92",
+    "name": "Pinot Noir Sélection 2022",
+    "winery": "Weingut Diederik",
+    "country": "Schweiz",
+    "region": "Zürich - Küsnacht",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Einzellagen-Extraklasse, samtig und würzig, ein Rot, das die Seele mit Pfeffer und Beeren in Ekstase versetzt.",
+    "description_en": "Single vineyard excellence, velvety and spicy, a red that sends the soul into ecstasy with pepper and berries.",
+    "description_fr": "Excellence de parcelle unique, velouté et épicé, un rouge qui envoie l'âme en extase avec du poivre et des baies.",
+    "food_pairings_de": [
+      "BBQ-Rippen",
+      "Scharfe Wurst"
+    ],
+    "food_pairings_en": [
+      "BBQ ribs",
+      "Spicy sausage"
+    ],
+    "food_pairings_fr": [
+      "Côtes BBQ",
+      "Saucisse épicée"
+    ],
+    "created_at": "2025-12-13T05:30:36.364284+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "20761131-2266-4f1a-b5da-1bfec56a9f29",
+    "name": "Rätschling 2023",
+    "winery": "Weingut Ribi-Wyss",
+    "country": "Schweiz",
+    "region": "Zürich - Humlikon",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Rätschling",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Meisterwerk und streng, mit Mandel und Säure, der wie ein Hohelied die Seele erhebt.",
+    "description_en": "A masterpiece, austere with almond and acidity, elevating the soul like a song of songs.",
+    "description_fr": "Un chef-d'œuvre, austère avec de l'amande et de l'acidité, élevant l'âme comme un cantique des cantiques.",
+    "food_pairings_de": [
+      "Käseplatte",
+      "Gebratenes Forellenfilet"
+    ],
+    "food_pairings_en": [
+      "Cheese platter",
+      "Pan-fried trout fillet"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fromages",
+      "Filet de truite poêlé"
+    ],
+    "created_at": "2025-12-13T05:30:36.365172+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "ed3cf945-5f3b-4cb2-a819-190b7c7833ce",
+    "name": "Chardonnay 2023",
+    "winery": "Weingut Bachmann",
+    "country": "Schweiz",
+    "region": "Zürich - Stäfa",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Reich und fruchtig mit enormem Potenzial, der das Herz mit imperierender Kraft erhebt.",
+    "description_en": "Rich and fruity with enormous potential, elevating the heart with imperial power.",
+    "description_fr": "Riche et fruité avec un potentiel énorme, élevant le cœur avec une puissance impériale.",
+    "food_pairings_de": [
+      "Wild",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Game",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Gibier",
+      "Champignons"
+    ],
+    "created_at": "2025-12-13T05:30:36.366395+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "8dff76ec-45ee-4473-bad1-69d90d0e4ade",
+    "name": "Pinot Gris 2022",
+    "winery": "Weingut Welti",
+    "country": "Schweiz",
+    "region": "Zürich - Küsnacht",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Pinot Gris",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Nervös und aromatisch, mit Grapefruit und Kräutern, das wie ein Bergnebel die Seele klärt.",
+    "description_en": "Nervous and aromatic, with grapefruit and herbs, clearing the soul like mountain mist.",
+    "description_fr": "Nerveux et aromatique, avec du pamplemousse et des herbes, purifiant l'âme comme la brume de montagne.",
+    "food_pairings_de": [
+      "Meeresfrüchte",
+      "Sommergemüse"
+    ],
+    "food_pairings_en": [
+      "Seafood",
+      "Summer vegetables"
+    ],
+    "food_pairings_fr": [
+      "Fruits de mer",
+      "Légumes d'été"
+    ],
+    "created_at": "2025-12-13T05:30:36.367384+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "2c518f3f-8cd2-4036-8b40-4779fd4ad1e3",
+    "name": "Pinot Noir Classic 2023",
+    "winery": "Weingut Pircher",
+    "country": "Schweiz",
+    "region": "Zürich - Zürcher Weinland",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Unvergleichlich trinkbar, mit Kirschen und Geheimnissen, der das Herz mit leichter Freude erheitert.",
+    "description_en": "Incomparably drinkable, with cherries and secrets, cheering the heart with light joy.",
+    "description_fr": "Incomparablement buvable, avec des cerises et des secrets, égayant le cœur d'une joie légère.",
+    "food_pairings_de": [
+      "Pasta Bolognese",
+      "Herzhaftes Brot"
+    ],
+    "food_pairings_en": [
+      "Pasta Bolognese",
+      "Hearty bread"
+    ],
+    "food_pairings_fr": [
+      "Pâtes bolognaise",
+      "Pain rustique"
+    ],
+    "created_at": "2025-12-13T05:30:36.368277+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "c8ad3dbe-d470-44c4-8c20-95fb31be7d6d",
+    "name": "Souvignier Gris 2023",
+    "winery": "Staatskellerei Zürich",
+    "country": "Schweiz",
+    "region": "Zürich - Zürich",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Souvignier Gris",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Reich und honigartig, ein Surmaturé, der wie ein Traum die Seele umhüllt.",
+    "description_en": "Rich and honeyed, a surmaturé that wraps the soul like a dream.",
+    "description_fr": "Riche et miellé, un surmaturé qui enveloppe l'âme comme un rêve.",
+    "food_pairings_de": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "food_pairings_en": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "food_pairings_fr": [
+      "Foie gras",
+      "Desserts"
+    ],
+    "created_at": "2025-12-13T05:30:36.369081+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "28c1c097-ee25-46e2-a15c-a022d786eae8",
+    "name": "Pinot Blanc Réserve 2022",
+    "winery": "Weingut Gehring",
+    "country": "Schweiz",
+    "region": "Zürich - Freienstein",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Pinot Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Filigran und fruchtig, ein Windhauch aus Kirschen, der das Herz mit alpiner Frische weckt.",
+    "description_en": "Delicate and fruity, a breath of cherries that awakens the heart with Alpine freshness.",
+    "description_fr": "Délicat et fruité, un souffle de cerises qui éveille le cœur avec la fraîcheur alpine.",
+    "food_pairings_de": [
+      "Entenbrust",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Duck breast",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard",
+      "Champignons"
+    ],
+    "created_at": "2025-12-13T05:30:36.369906+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "5e1acbec-7ff2-4600-bf78-2a6bfa5ef218",
+    "name": "Riesling 2023",
+    "winery": "Weingut Besson-Strasser",
+    "country": "Schweiz",
+    "region": "Zürich - Uhwiesen",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Exotisch und würzig, mit Apfel und Gewürzen, die wie ein Geheimnis die Seele verzaubern.",
+    "description_en": "Exotic and spicy, with apple and spices that enchant the soul like a secret.",
+    "description_fr": "Exotique et épicé, avec de la pomme et des épices qui enchantent l'âme comme un secret.",
+    "food_pairings_de": [
+      "Asiatische Gerichte",
+      "Gebratener Tofu"
+    ],
+    "food_pairings_en": [
+      "Asian dishes",
+      "Fried tofu"
+    ],
+    "food_pairings_fr": [
+      "Plats asiatiques",
+      "Tofu frit"
+    ],
+    "created_at": "2025-12-13T05:30:36.370727+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "e7e3df6a-b956-44e6-bb59-6ffa6bff29b6",
+    "name": "Pinot Noir Barrique 2022",
+    "winery": "Weingut Landolt",
+    "country": "Schweiz",
+    "region": "Zürich - Wädenswil",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Tief und mineralisch, mit dunklen Früchten, die wie ein Abgrund die Seele fesselt.",
+    "description_en": "Deep and mineral, with dark fruits that captivate the soul like an abyss.",
+    "description_fr": "Profond et minéral, avec des fruits noirs qui captivent l'âme comme un abîme.",
+    "food_pairings_de": [
+      "Rindfleisch",
+      "Wild"
+    ],
+    "food_pairings_en": [
+      "Beef",
+      "Game"
+    ],
+    "food_pairings_fr": [
+      "Bœuf",
+      "Gibier"
+    ],
+    "created_at": "2025-12-13T05:30:36.371758+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "b1e19cba-2ac4-4fa7-8e45-3d538d2b1433",
+    "name": "Müller-Thurgau 2024",
+    "winery": "Weingut Schwarzenbach",
+    "country": "Schweiz",
+    "region": "Zürich - Meilen",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Müller-Thurgau",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Zart und blumig, ein Blanc, der die Seele mit zürcherischer Reinheit erfüllt – frisch und nervös.",
+    "description_en": "Delicate and floral, a Blanc that fills the soul with Zurich purity – fresh and nervous.",
+    "description_fr": "Délicat et floral, un Blanc qui remplit l'âme de pureté zurichoise – frais et nerveux.",
+    "food_pairings_de": [
+      "Fisch",
+      "Salate"
+    ],
+    "food_pairings_en": [
+      "Fish",
+      "Salads"
+    ],
+    "food_pairings_fr": [
+      "Poisson",
+      "Salades"
+    ],
+    "created_at": "2025-12-13T05:30:36.372769+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "b570fbbd-b539-4655-8086-d2ff0cce9eba",
+    "name": "Pinot Noir Urban 2023",
+    "winery": "Weingut Vergani",
+    "country": "Schweiz",
+    "region": "Zürich - Zürich",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Samten und fruchtig, ein Pinot, der das Herz mit warmer Umarmung beschenkt.",
+    "description_en": "Velvety and fruity, a Pinot that gifts the heart with a warm embrace.",
+    "description_fr": "Velouté et fruité, un Pinot qui offre au cœur une étreinte chaleureuse.",
+    "food_pairings_de": [
+      "Pasta mit Tomatensauce",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Pasta with tomato sauce",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Pâtes à la sauce tomate",
+      "Fromage"
+    ],
+    "created_at": "2025-12-13T05:30:36.373604+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "42432e7f-30ea-4b65-9b7c-3bcb52c2498d",
+    "name": "Rätschling Sélection 2023",
+    "winery": "Weingut Stetter",
+    "country": "Schweiz",
+    "region": "Zürich - Stäfa",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Rätschling",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Elegant und strukturiert, mit Apfel und Mineral, das wie ein Tanz die Seele erheitert.",
+    "description_en": "Elegant and structured, with apple and mineral, cheering the soul like a dance.",
+    "description_fr": "Élégant et structuré, avec de la pomme et du minéral, égayant l'âme comme une danse.",
+    "food_pairings_de": [
+      "Huhn mit Kräutern",
+      "Raclette"
+    ],
+    "food_pairings_en": [
+      "Chicken with herbs",
+      "Raclette"
+    ],
+    "food_pairings_fr": [
+      "Poulet aux herbes",
+      "Raclette"
+    ],
+    "created_at": "2025-12-13T05:30:36.374402+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "d7fffb27-baf3-485f-a80a-8708ba2f0389",
+    "name": "Pinot Noir Alte Reben 2022",
+    "winery": "Weingut Ribi-Wyss",
+    "country": "Schweiz",
+    "region": "Zürich - Humlikon",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Würzig und intensiv, ein Rot, das die Seele mit orientalischem Zauber umhüllt.",
+    "description_en": "Spicy and intense, a red that wraps the soul in oriental magic.",
+    "description_fr": "Épicé et intense, un rouge qui enveloppe l'âme de magie orientale.",
+    "food_pairings_de": [
+      "Gewürzhähnchen",
+      "Auberginen"
+    ],
+    "food_pairings_en": [
+      "Spiced chicken",
+      "Eggplant"
+    ],
+    "food_pairings_fr": [
+      "Poulet épicé",
+      "Aubergines"
+    ],
+    "created_at": "2025-12-13T05:30:36.375356+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "f31939c4-a14b-4932-aaf1-4a2cc4a1905b",
+    "name": "Chardonnay Réserve 2023",
+    "winery": "Weingut Welti",
+    "country": "Schweiz",
+    "region": "Zürich - Küsnacht",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Feminine Eleganz, mit Veilchen und Säure, der das Herz mit Seide und Feuer erobert.",
+    "description_en": "Feminine elegance, with violet and acidity, conquering the heart with silk and fire.",
+    "description_fr": "Élégance féminine, avec de la violette et de l'acidité, conquérant le cœur avec de la soie et du feu.",
+    "food_pairings_de": [
+      "Perlhuhn mit Morcheln"
+    ],
+    "food_pairings_en": [
+      "Guinea fowl with morels"
+    ],
+    "food_pairings_fr": [
+      "Pintade aux morilles"
+    ],
+    "created_at": "2025-12-13T05:30:36.376222+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "1de9fb41-ef99-40e9-98bb-cc2c813a63f1",
+    "name": "Pinot Gris 2023",
+    "winery": "Weingut Pircher",
+    "country": "Schweiz",
+    "region": "Zürich - Zürcher Weinland",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Pinot Gris",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Präzise und charaktervoll, ein Neuling der Elite, der die Seele mit erdiger Wärme umfängt.",
+    "description_en": "Precise and characterful, a newcomer to the elite, embracing the soul with earthy warmth.",
+    "description_fr": "Précis et plein de caractère, un nouveau venu dans l'élite, embrassant l'âme avec une chaleur terreuse.",
+    "food_pairings_de": [
+      "Ente",
+      "Pilzrisotto"
+    ],
+    "food_pairings_en": [
+      "Duck",
+      "Mushroom risotto"
+    ],
+    "food_pairings_fr": [
+      "Canard",
+      "Risotto aux champignons"
+    ],
+    "created_at": "2025-12-13T05:30:36.377032+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "3c6187ae-7c61-473d-a332-1a295864ff47",
+    "name": "Solaris 2024",
+    "winery": "Bio-Weingut Rheinau",
+    "country": "Schweiz",
+    "region": "Zürich - Rheinau",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Solaris",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Überraschend und tief, mit Nuss und Zitrus, das wie ein alter Freund die Seele in nostalgische Wärme hüllt.",
+    "description_en": "Surprising and deep, with nut and citrus, wrapping the soul in nostalgic warmth like an old friend.",
+    "description_fr": "Surprenant et profond, avec de la noix et des agrumes, enveloppant l'âme de chaleur nostalgique comme un vieil ami.",
+    "food_pairings_de": [
+      "Foie gras",
+      "Reifer Käse"
+    ],
+    "food_pairings_en": [
+      "Foie gras",
+      "Aged cheese"
+    ],
+    "food_pairings_fr": [
+      "Foie gras",
+      "Fromage affiné"
+    ],
+    "created_at": "2025-12-13T05:30:36.377890+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "a549ed15-5bfa-48fc-88b3-340b65a0a52d",
+    "name": "Pinot Noir Premium 2023",
+    "winery": "Weingut Bachmann",
+    "country": "Schweiz",
+    "region": "Zürich - Stäfa",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Filigran und robust, ein Pinot, der die Seele mit imperierender Kraft erhebt.",
+    "description_en": "Delicate yet robust, a Pinot that elevates the soul with imperial power.",
+    "description_fr": "Délicat mais robuste, un Pinot qui élève l'âme avec une puissance impériale.",
+    "food_pairings_de": [
+      "Lamm",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Lamb",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Agneau",
+      "Champignons"
+    ],
+    "created_at": "2025-12-13T05:30:36.378670+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "315caedb-47c6-4f03-a39a-4fb3ec2b5506",
+    "name": "Rätschling Non Filtré 2024",
+    "winery": "Weingut Gehring",
+    "country": "Schweiz",
+    "region": "Zürich - Freienstein",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Rätschling",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Frisch und vielschichtig, ein Non Filtré, der das Herz mit kindlicher Freude weckt.",
+    "description_en": "Fresh and multilayered, a Non Filtré that awakens the heart with childlike joy.",
+    "description_fr": "Frais et complexe, un Non Filtré qui éveille le cœur avec une joie enfantine.",
+    "food_pairings_de": [
+      "Tapas",
+      "Lachs"
+    ],
+    "food_pairings_en": [
+      "Tapas",
+      "Salmon"
+    ],
+    "food_pairings_fr": [
+      "Tapas",
+      "Saumon"
+    ],
+    "created_at": "2025-12-13T05:30:36.379447+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "73d0f625-339e-4b08-87e7-d0a6bcc04d2a",
+    "name": "Pinot Blanc Harmonie 2023",
+    "winery": "Weingut Besson-Strasser",
+    "country": "Schweiz",
+    "region": "Zürich - Uhwiesen",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Pinot Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Dynamisch und harmonisch, ein Neuling, der wie ein Chor die Seele erhebt.",
+    "description_en": "Dynamic and harmonious, a newcomer that elevates the soul like a choir.",
+    "description_fr": "Dynamique et harmonieux, un nouveau venu qui élève l'âme comme un chœur.",
+    "food_pairings_de": [
+      "Dunkles Fleisch"
+    ],
+    "food_pairings_en": [
+      "Dark meat"
+    ],
+    "food_pairings_fr": [
+      "Viande brune"
+    ],
+    "created_at": "2025-12-13T05:30:36.380228+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "2a89053c-d8eb-4ebf-b327-420bf4a0f7bc",
+    "name": "Müller-Thurgau Spätlese 2023",
+    "winery": "Weingut Landolt",
+    "country": "Schweiz",
+    "region": "Zürich - Wädenswil",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Müller-Thurgau",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Hoch und aromatisch, mit Mandeln und Nektarinen, das die Seele auf Höhenflüge trägt.",
+    "description_en": "High and aromatic, with almonds and nectarines, carrying the soul to soaring heights.",
+    "description_fr": "Haut et aromatique, avec des amandes et des nectarines, portant l'âme vers les sommets.",
+    "food_pairings_de": [
+      "Käseplatte",
+      "Forelle"
+    ],
+    "food_pairings_en": [
+      "Cheese platter",
+      "Trout"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fromages",
+      "Truite"
+    ],
+    "created_at": "2025-12-13T05:30:36.380979+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "3b36602c-9fdf-4a01-9dbe-1e632f2d6d66",
+    "name": "Pinot Noir Réserve 2022",
+    "winery": "Weingut Schwarzenbach",
+    "country": "Schweiz",
+    "region": "Zürich - Meilen",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Barriqué und tief, ein Pinot, der die Seele in symphonische Tiefe taucht.",
+    "description_en": "Barrel-aged and deep, a Pinot that plunges the soul into symphonic depth.",
+    "description_fr": "Élevé en barrique et profond, un Pinot qui plonge l'âme dans une profondeur symphonique.",
+    "food_pairings_de": [
+      "Ente",
+      "Pilzragout"
+    ],
+    "food_pairings_en": [
+      "Duck",
+      "Mushroom ragout"
+    ],
+    "food_pairings_fr": [
+      "Canard",
+      "Ragoût de champignons"
+    ],
+    "created_at": "2025-12-13T05:30:36.381792+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "af5ae515-02ba-42af-a80c-e3dbc724f885",
+    "name": "Riesling-Silvaner 2024",
+    "winery": "Weingut Vergani",
+    "country": "Schweiz",
+    "region": "Zürich - Zürich",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Riesling-Silvaner",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Opulent und blumig, ein Tropfen, der das Herz mit sommerlicher Leichtigkeit umfängt.",
+    "description_en": "Opulent and floral, a drop that embraces the heart with summery lightness.",
+    "description_fr": "Opulent et floral, une goutte qui embrasse le cœur avec une légèreté estivale.",
+    "food_pairings_de": [
+      "Sommergerichte",
+      "Frischkäse"
+    ],
+    "food_pairings_en": [
+      "Summer dishes",
+      "Fresh cheese"
+    ],
+    "food_pairings_fr": [
+      "Plats d'été",
+      "Fromage frais"
+    ],
+    "created_at": "2025-12-13T05:30:36.382627+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "b9ff4cc8-d906-4c3e-a89d-8f4ac2dbb427",
+    "name": "Pinot Gris Sélection 2023",
+    "winery": "Weingut Stetter",
+    "country": "Schweiz",
+    "region": "Zürich - Stäfa",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Pinot Gris",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Traditionell und rein, ein Tropfen, der das Herz mit Bergfrische reinigt.",
+    "description_en": "Traditional and pure, a drop that cleanses the heart with mountain freshness.",
+    "description_fr": "Traditionnel et pur, une goutte qui purifie le cœur avec la fraîcheur de la montagne.",
+    "food_pairings_de": [
+      "Fischfilet",
+      "Salat"
+    ],
+    "food_pairings_en": [
+      "Fish fillet",
+      "Salad"
+    ],
+    "food_pairings_fr": [
+      "Filet de poisson",
+      "Salade"
+    ],
+    "created_at": "2025-12-13T05:30:36.383497+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "2a31bc6b-767b-4edd-94b8-a408c1d809b1",
+    "name": "Chardonnay 2022",
+    "winery": "Weingut Ribi-Wyss",
+    "country": "Schweiz",
+    "region": "Zürich - Humlikon",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Exotisch und würzig, ein Weiß, der das Herz mit orientalischem Flair verzaubert.",
+    "description_en": "Exotic and spicy, a white that enchants the heart with oriental flair.",
+    "description_fr": "Exotique et épicé, un blanc qui enchante le cœur avec un flair oriental.",
+    "food_pairings_de": [
+      "Curry",
+      "Vegetarische Gerichte"
+    ],
+    "food_pairings_en": [
+      "Curry",
+      "Vegetarian dishes"
+    ],
+    "food_pairings_fr": [
+      "Curry",
+      "Plats végétariens"
+    ],
+    "created_at": "2025-12-13T05:30:36.384284+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "585ee61f-a420-497d-8053-66ce8ff406bf",
+    "name": "Pinot Noir Grand Cru 2023",
+    "winery": "Weingut Welti",
+    "country": "Schweiz",
+    "region": "Zürich - Küsnacht",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Komplex und harmonisch, ein Assemblage, der die Seele in göttliche Ekstase versetzt.",
+    "description_en": "Complex and harmonious, an assemblage that sends the soul into divine ecstasy.",
+    "description_fr": "Complexe et harmonieux, un assemblage qui envoie l'âme en extase divine.",
+    "food_pairings_de": [
+      "Entrecôte",
+      "Schokolade"
+    ],
+    "food_pairings_en": [
+      "Entrecôte",
+      "Chocolate"
+    ],
+    "food_pairings_fr": [
+      "Entrecôte",
+      "Chocolat"
+    ],
+    "created_at": "2025-12-13T05:30:36.385022+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "0f1a2cdd-7604-424c-af07-b96e363ff7f8",
+    "name": "Rätschling Grand Cru 2023",
+    "winery": "Weingut Pircher",
+    "country": "Schweiz",
+    "region": "Zürich - Zürcher Weinland",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Rätschling",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Reich und strukturiert, ein Grand Cru, der die Seele in städtischer Eleganz badet.",
+    "description_en": "Rich and structured, a Grand Cru that bathes the soul in urban elegance.",
+    "description_fr": "Riche et structuré, un Grand Cru qui baigne l'âme dans l'élégance urbaine.",
+    "food_pairings_de": [
+      "Krustentiere",
+      "Geflügel"
+    ],
+    "food_pairings_en": [
+      "Crustaceans",
+      "Poultry"
+    ],
+    "food_pairings_fr": [
+      "Crustacés",
+      "Volaille"
+    ],
+    "created_at": "2025-12-13T05:30:36.385824+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "a9a2563d-11e6-4865-b526-0a8899e6e47b",
+    "name": "Solaris Premium 2024",
+    "winery": "Weingut Bachmann",
+    "country": "Schweiz",
+    "region": "Zürich - Stäfa",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Solaris",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Nervös und lebendig, ein Funke Glycin und Grapefruit, der das Herz mit alpiner Frische weckt.",
+    "description_en": "Nervous and lively, a spark of glycine and grapefruit that awakens the heart with Alpine freshness.",
+    "description_fr": "Nerveux et vif, une étincelle de glycine et de pamplemousse qui éveille le cœur avec la fraîcheur alpine.",
+    "food_pairings_de": [
+      "Krebse",
+      "Kräutersuppe"
+    ],
+    "food_pairings_en": [
+      "Crayfish",
+      "Herb soup"
+    ],
+    "food_pairings_fr": [
+      "Écrevisses",
+      "Soupe aux herbes"
+    ],
+    "created_at": "2025-12-13T05:30:36.386584+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "839a1943-7b01-4e10-85d3-aac3b22f8967",
+    "name": "Pinot Noir Bio 2022",
+    "winery": "Bio-Weingut Rheinau",
+    "country": "Schweiz",
+    "region": "Zürich - Rheinau",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Tief und amaronig, ein Rot, das wie ein Abgrund die Seele fesselt.",
+    "description_en": "Deep and Amarone-like, a red that captivates the soul like an abyss.",
+    "description_fr": "Profond et de style Amarone, un rouge qui captive l'âme comme un abîme.",
+    "food_pairings_de": [
+      "Stark gewürzte Fleischgerichte"
+    ],
+    "food_pairings_en": [
+      "Heavily spiced meat dishes"
+    ],
+    "food_pairings_fr": [
+      "Plats de viande très épicés"
+    ],
+    "created_at": "2025-12-13T05:30:36.387353+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "302e8023-f1db-42d9-b95e-1a8c7c6e7a82",
+    "name": "Müller-Thurgau Classic 2023",
+    "winery": "Weingut Gehring",
+    "country": "Schweiz",
+    "region": "Zürich - Freienstein",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Müller-Thurgau",
+    "wine_color": "weiss",
+    "price_category": "€€",
+    "description_de": "Historisch und elegant, ein Wein, der die Seele mit zeitloser Tiefe berührt.",
+    "description_en": "Historic and elegant, a wine that touches the soul with timeless depth.",
+    "description_fr": "Historique et élégant, un vin qui touche l'âme avec une profondeur intemporelle.",
+    "food_pairings_de": [
+      "Geflügel",
+      "Meeresfrüchte"
+    ],
+    "food_pairings_en": [
+      "Poultry",
+      "Seafood"
+    ],
+    "food_pairings_fr": [
+      "Volaille",
+      "Fruits de mer"
+    ],
+    "created_at": "2025-12-13T05:30:36.388096+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "1077aefd-05e4-4ee2-ad2f-9914ec21fac8",
+    "name": "Pinot Blanc Classic 2023",
+    "winery": "Weingut Besson-Strasser",
+    "country": "Schweiz",
+    "region": "Zürich - Uhwiesen",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Pinot Blanc",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Frisch und ausgewogen, ein Blanc, der das Herz mit klassischer Freude erheitert.",
+    "description_en": "Fresh and balanced, a Blanc that cheers the heart with classic joy.",
+    "description_fr": "Frais et équilibré, un Blanc qui égaye le cœur avec une joie classique.",
+    "food_pairings_de": [
+      "Fondue",
+      "Rind"
+    ],
+    "food_pairings_en": [
+      "Fondue",
+      "Beef"
+    ],
+    "food_pairings_fr": [
+      "Fondue",
+      "Bœuf"
+    ],
+    "created_at": "2025-12-13T05:30:36.388842+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "e8cba48a-56c4-470d-a2e8-16bffd45cf8b",
+    "name": "Rätschling Vieilles Vignes 2024",
+    "winery": "Weingut Landolt",
+    "country": "Schweiz",
+    "region": "Zürich - Wädenswil",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Rätschling",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Reich und beerig, ein Rätschling, der die Seele in zürcherische Wälder entführt.",
+    "description_en": "Rich and berry-filled, a Rätschling that transports the soul to Zurich forests.",
+    "description_fr": "Riche et fruité, un Rätschling qui transporte l'âme dans les forêts zurichoises.",
+    "food_pairings_de": [
+      "Lammkoteletts",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Lamb chops",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Côtelettes d'agneau",
+      "Fromage"
+    ],
+    "created_at": "2025-12-13T05:30:36.389606+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "b92d7df9-f060-402e-b7ae-7fb50b135ba2",
+    "name": "Pinot Noir Seeblick 2023",
+    "winery": "Weingut Schwarzenbach",
+    "country": "Schweiz",
+    "region": "Zürich - Meilen",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Elegant und pfeffrig, ein Rot, der die Seele mit orientalischem Zauber umhüllt.",
+    "description_en": "Elegant and peppery, a red that wraps the soul in oriental magic.",
+    "description_fr": "Élégant et poivré, un rouge qui enveloppe l'âme de magie orientale.",
+    "food_pairings_de": [
+      "Gewürzhähnchen",
+      "Auberginen"
+    ],
+    "food_pairings_en": [
+      "Spiced chicken",
+      "Eggplant"
+    ],
+    "food_pairings_fr": [
+      "Poulet épicé",
+      "Aubergines"
+    ],
+    "created_at": "2025-12-13T05:30:36.390382+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "07dd9157-08b5-4f44-ade1-fad956484e76",
+    "name": "Chardonnay Urban 2023",
+    "winery": "Weingut Vergani",
+    "country": "Schweiz",
+    "region": "Zürich - Zürich",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Innovativ und fruchtig, ein Hybrid, der das Herz mit moderner Freude erfüllt.",
+    "description_en": "Innovative and fruity, a hybrid that fills the heart with modern joy.",
+    "description_fr": "Innovant et fruité, un hybride qui remplit le cœur de joie moderne.",
+    "food_pairings_de": [
+      "Grillgemüse",
+      "Fisch"
+    ],
+    "food_pairings_en": [
+      "Grilled vegetables",
+      "Fish"
+    ],
+    "food_pairings_fr": [
+      "Légumes grillés",
+      "Poisson"
+    ],
+    "created_at": "2025-12-13T05:30:36.391124+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "13489bc4-dd2b-4208-8a92-c2ab862dd208",
+    "name": "Pinot Gris Premium 2022",
+    "winery": "Weingut Stetter",
+    "country": "Schweiz",
+    "region": "Zürich - Stäfa",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Pinot Gris",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Frisch und ausgewogen, ein Gris, der das Herz mit klassischer Freude erheitert.",
+    "description_en": "Fresh and balanced, a Gris that cheers the heart with classic joy.",
+    "description_fr": "Frais et équilibré, un Gris qui égaye le cœur avec une joie classique.",
+    "food_pairings_de": [
+      "Fondue",
+      "Rind"
+    ],
+    "food_pairings_en": [
+      "Fondue",
+      "Beef"
+    ],
+    "food_pairings_fr": [
+      "Fondue",
+      "Bœuf"
+    ],
+    "created_at": "2025-12-13T05:30:36.391862+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "d9d0f33a-dd60-496f-bd48-65dc8ed2a022",
+    "name": "Riesling Spätlese 2023",
+    "winery": "Weingut Ribi-Wyss",
+    "country": "Schweiz",
+    "region": "Zürich - Humlikon",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Reich und beerig, ein Riesling, der die Seele in zürcherische Wälder entführt.",
+    "description_en": "Rich and berry-filled, a Riesling that transports the soul to Zurich forests.",
+    "description_fr": "Riche et fruité, un Riesling qui transporte l'âme dans les forêts zurichoises.",
+    "food_pairings_de": [
+      "Lammkoteletts",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Lamb chops",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Côtelettes d'agneau",
+      "Fromage"
+    ],
+    "created_at": "2025-12-13T05:30:36.392615+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "ff4be646-2077-4469-b33d-b541d9af860d",
+    "name": "Pinot Noir Stadtgut 2024",
+    "winery": "Weingut Welti",
+    "country": "Schweiz",
+    "region": "Zürich - Küsnacht",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Pinot Noir",
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Elegant und pfeffrig, ein Rot, der die Seele mit orientalischem Zauber umhüllt.",
+    "description_en": "Elegant and peppery, a red that wraps the soul in oriental magic.",
+    "description_fr": "Élégant et poivré, un rouge qui enveloppe l'âme de magie orientale.",
+    "food_pairings_de": [
+      "Gewürzhähnchen",
+      "Auberginen"
+    ],
+    "food_pairings_en": [
+      "Spiced chicken",
+      "Eggplant"
+    ],
+    "food_pairings_fr": [
+      "Poulet épicé",
+      "Aubergines"
+    ],
+    "created_at": "2025-12-13T05:30:36.393474+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "d36cf811-9b3d-4da2-9ca3-d0cda6c049f7",
+    "name": "Müller-Thurgau Premium 2023",
+    "winery": "Weingut Pircher",
+    "country": "Schweiz",
+    "region": "Zürich - Zürcher Weinland",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Müller-Thurgau",
+    "wine_color": "weiss",
+    "price_category": "€€€",
+    "description_de": "Innovativ und fruchtig, ein Müller-Thurgau, der das Herz mit moderner Freude erfüllt.",
+    "description_en": "Innovative and fruity, a Müller-Thurgau that fills the heart with modern joy.",
+    "description_fr": "Innovant et fruité, un Müller-Thurgau qui remplit le cœur de joie moderne.",
+    "food_pairings_de": [
+      "Grillgemüse",
+      "Fisch"
+    ],
+    "food_pairings_en": [
+      "Grilled vegetables",
+      "Fish"
+    ],
+    "food_pairings_fr": [
+      "Légumes grillés",
+      "Poisson"
+    ],
+    "created_at": "2025-12-13T05:30:36.394241+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
+  },
+  {
+    "id": "74ba9eb4-9434-4aaa-a9b0-ff358cf93285",
+    "name": "Rätschling Grand Cru 2023",
+    "winery": "Weingut Bachmann",
+    "country": "Schweiz",
+    "region": "Zürich - Stäfa",
+    "appellation": "AOC Zürich",
+    "grape_variety": "Rätschling",
+    "wine_color": "weiss",
+    "price_category": "€€€€",
+    "description_de": "Hoch und rein, ein Grand Cru, der wie ein Gipfelblick die Seele erweitert.",
+    "description_en": "High and pure, a Grand Cru that expands the soul like a summit view.",
+    "description_fr": "Haut et pur, un Grand Cru qui élargit l'âme comme une vue du sommet.",
+    "food_pairings_de": [
+      "Käseplatte",
+      "Leichte Vorspeisen"
+    ],
+    "food_pairings_en": [
+      "Cheese platter",
+      "Light appetizers"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fromages",
+      "Entrées légères"
+    ],
+    "created_at": "2025-12-13T05:30:36.394989+00:00",
+    "source": "Top 50 Zürcher Weine - Sélection des Vins de Zürich 2024, GaultMillau, Falstaff Pinot Noir Trophy 2025, Expovina"
   }
 ]

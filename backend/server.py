@@ -114,6 +114,132 @@ def clear_old_cache_entries() -> int:
         del PAIRING_CACHE[key]
     return len(keys_to_remove)
 
+# ===================== AUTO-ADD RECOMMENDED WINES =====================
+# Automatisch empfohlene Weine zur Datenbank hinzufügen
+
+async def extract_wine_names_from_recommendation(recommendation: str) -> List[str]:
+    """
+    Extrahiert Weinnamen aus der Pairing-Empfehlung.
+    Sucht nach **Weinname** Pattern im Markdown.
+    """
+    # Pattern für fettgedruckte Weinnamen: **Weinname**
+    pattern = r'\*\*([^*]+(?:Château|Tignanello|Barolo|Barbaresco|Champagne|Clos|Domaine|Weingut|Schloss|Maison)[^*]*)\*\*|\*\*([A-Z][^*]{5,60})\*\*'
+    
+    matches = re.findall(r'\*\*([^*]{10,80})\*\*', recommendation)
+    
+    wine_names = []
+    # Filter: Nur echte Weinnamen, keine Überschriften
+    skip_keywords = ['HAUPTEMPFEHLUNG', 'TOP RECOMMENDATION', 'RECOMMANDATION', 
+                     'Alternative', 'Option', 'Weintyp', 'Wine Type', 'Rotwein', 
+                     'Weißwein', 'Schaumwein', 'Sparkling', 'festliche', 'leichterer']
+    
+    for match in matches:
+        # Überschriften und Kategorien überspringen
+        if any(skip in match for skip in skip_keywords):
+            continue
+        # Zu kurze Namen überspringen
+        if len(match) < 10:
+            continue
+        # Bereits gefundene überspringen
+        if match not in wine_names:
+            wine_names.append(match.strip())
+    
+    return wine_names[:6]  # Maximal 6 Weine
+
+async def check_wine_exists(wine_name: str) -> bool:
+    """Prüft ob ein Wein bereits in der Datenbank existiert"""
+    # Normalisiere den Namen für die Suche
+    search_pattern = create_accent_insensitive_pattern(wine_name.split(',')[0].split('(')[0].strip())
+    
+    existing = await db.public_wines.find_one({
+        "name": {"$regex": search_pattern, "$options": "i"}
+    })
+    
+    return existing is not None
+
+async def generate_wine_entry(wine_name: str, dish_context: str = "") -> Optional[dict]:
+    """
+    Generiert einen vollständigen Wein-Eintrag mit Claude.
+    """
+    try:
+        chat = LlmChat(
+            api_key=EMERGENT_LLM_KEY,
+            session_id=str(uuid.uuid4()),
+            system_message="""Du bist ein Wein-Experte. Generiere einen strukturierten Wein-Eintrag im JSON-Format.
+ANTWORTE NUR MIT VALIDEM JSON, KEIN ANDERER TEXT!"""
+        ).with_model("openai", "gpt-5.1")
+        
+        prompt = f"""Erstelle einen Datenbank-Eintrag für diesen Wein: "{wine_name}"
+
+ANTWORTE NUR MIT DIESEM JSON-FORMAT (keine Erklärung, nur JSON):
+{{
+  "name": "Vollständiger Weinname",
+  "winery": "Weingut/Produzent",
+  "grape_variety": "Hauptrebsorte",
+  "region": "Region (z.B. Bordeaux, Toskana, Mosel)",
+  "country": "Land",
+  "year": 2022,
+  "wine_color": "rot/weiß/rosé",
+  "price_category": "€€€",
+  "description_de": "Kurze deutsche Beschreibung (1-2 Sätze, emotionaler Stil)",
+  "description_en": "Short English description",
+  "description_fr": "Courte description française",
+  "food_pairings_de": ["Passende Speise 1", "Passende Speise 2"],
+  "food_pairings_en": ["Food pairing 1", "Food pairing 2"],
+  "food_pairings_fr": ["Accord 1", "Accord 2"]
+}}"""
+
+        response = await chat.send_message(UserMessage(text=prompt))
+        
+        # Parse JSON aus der Antwort
+        json_match = re.search(r'\{[\s\S]*\}', response)
+        if json_match:
+            wine_data = json.loads(json_match.group())
+            
+            # Füge System-Felder hinzu
+            wine_data["id"] = str(uuid.uuid4())
+            wine_data["created_at"] = datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
+            wine_data["updated_at"] = datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
+            wine_data["auto_generated"] = True  # Markierung für automatisch generierte Einträge
+            
+            return wine_data
+        
+        return None
+        
+    except Exception as e:
+        logger.error(f"Error generating wine entry for {wine_name}: {e}")
+        return None
+
+async def auto_add_recommended_wines(recommendation: str, dish: str):
+    """
+    Background-Task: Extrahiert empfohlene Weine und fügt fehlende zur DB hinzu.
+    """
+    try:
+        wine_names = await extract_wine_names_from_recommendation(recommendation)
+        logger.info(f"🍷 Auto-Add: Found {len(wine_names)} wine names in recommendation")
+        
+        added_count = 0
+        for wine_name in wine_names:
+            # Prüfen ob Wein bereits existiert
+            exists = await check_wine_exists(wine_name)
+            
+            if not exists:
+                logger.info(f"🍷 Auto-Add: Generating entry for '{wine_name}'...")
+                wine_entry = await generate_wine_entry(wine_name, dish)
+                
+                if wine_entry:
+                    await db.public_wines.insert_one(wine_entry)
+                    added_count += 1
+                    logger.info(f"✅ Auto-Add: Added '{wine_entry.get('name')}' to database")
+            else:
+                logger.info(f"📌 Auto-Add: '{wine_name}' already exists in database")
+        
+        if added_count > 0:
+            logger.info(f"🎉 Auto-Add: Successfully added {added_count} new wines to database")
+            
+    except Exception as e:
+        logger.error(f"❌ Auto-Add error: {e}")
+
 # Create the main app
 app = FastAPI(title="Wine Pairing API", version="1.0.0")
 

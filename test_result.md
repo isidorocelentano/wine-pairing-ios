@@ -354,11 +354,14 @@ frontend:
 metadata:
   created_by: "main_agent"
   version: "1.0"
-  test_sequence: 2
+  test_sequence: 3
   run_ui: true
   backend_test_completed: true
-  backend_test_results: "18/18 PASSED"
-  backend_test_timestamp: "2025-01-02T12:00:00Z"
+  backend_test_results: "25/25 PASSED"
+  backend_test_timestamp: "2025-01-02T14:30:00Z"
+  data_expansion_verified: true
+  wine_count_verified: 1671
+  new_regions_verified: ["Mosel", "Rheingau", "Pfalz", "Baden", "Nahe", "Ahr", "St. Gallen"]
 
 test_plan:
   current_focus: []

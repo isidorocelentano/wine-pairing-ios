@@ -1793,43 +1793,53 @@ class WinePairingAPITester:
         # 1. Core Health
         self.test_health_endpoint()
         
-        # 2. Wine Pairing AI
-        self.test_pairing_multilingual()
+        # 2. DATA EXPANSION TESTS (846 -> 1671+ wines)
+        print("\n🔥 TESTING DATA EXPANSION (846 -> 1671+ wines)")
+        self.test_public_wines_total_count_expansion()
+        self.test_german_wines_new_regions()
+        self.test_swiss_st_gallen_wines()
+        self.test_public_wines_filters_new_regions()
         
-        # 3. Grape Varieties
+        # 3. Wine Pairing AI (with German dishes)
+        self.test_pairing_multilingual()
+        self.test_german_pairing_rehrucken()
+        
+        # 4. Grape Varieties (should have 140)
         self.test_grape_varieties_list()
         self.test_grape_variety_detail()
         
-        # 4. Blog Posts
+        # 5. Blog Posts (should have 150)
         self.test_blog_posts_list()
         self.test_blog_post_detail()
         
-        # 5. Regional Pairings (Sommelier-Kompass)
+        # 6. Regional Pairings (should have 44)
         self.test_regional_pairings_countries()
         self.test_regional_pairings_greece()
         self.test_regional_pairings_italy()
         
-        # 6. Wine Database
+        # 7. Wine Database (expanded)
         self.test_public_wines_list_basic()
         self.test_public_wines_filters()
         self.test_public_wines_list_country_filter()
         
-        # 7. Community Feed
+        # 8. Community Feed (should have 268)
         self.test_feed_posts_list()
         
-        # 8. Wine Cellar
+        # 9. Wine Cellar
         self.test_get_wines_empty()
         
-        # 9. Favorites
+        # 10. Favorites
         self.test_get_favorites()
         
-        # 10. Backup Endpoints
+        # 11. Backup Endpoints
         self.test_backup_list()
+        self.test_backup_database_endpoint()
         
-        # 11. Sommelier Chat
+        # 12. Sommelier Chat (German)
         self.test_sommelier_chat_multilingual()
+        self.test_sommelier_chat_german_schnitzel()
         
-        # 12. Sitemap
+        # 13. Sitemap
         self.test_sitemap_xml()
         
         print("=" * 80)

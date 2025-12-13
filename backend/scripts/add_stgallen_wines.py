@@ -777,7 +777,7 @@ async def add_stgallen_wines():
             "price_category": wine_data["price_category"],
             "image_url": None,
             "rating": None,
-            "created_at": datetime.now(timezone.utc).isoformat() + "Z"
+            "created_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3] + "Z"
         }
         
         await db.public_wines.insert_one(wine)

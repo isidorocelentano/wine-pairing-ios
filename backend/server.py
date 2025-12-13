@@ -3084,7 +3084,9 @@ async def get_public_wines(
     if country:
         query["country"] = country
     if region:
-        query["region"] = region
+        # Match simplified region (e.g., "Genf" matches "Genf - Anières", "Genf - Satigny", etc.)
+        # Use regex to match region starting with the selected canton/region
+        query["region"] = {"$regex": f"^{re.escape(region)}", "$options": "i"}
     if wine_color:
         query["wine_color"] = wine_color
     if price_category:

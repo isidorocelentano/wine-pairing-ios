@@ -42844,5 +42844,1515 @@
     "image_url": null,
     "rating": null,
     "created_at": "2025-12-13T06:19:39.205Z"
+  },
+  {
+    "id": "5a4bdd3c-d08b-4b9d-922f-c024caded58c",
+    "name": "Im Sonnenschein Riesling GG 2024",
+    "winery": "Ökonomierat Rebholz",
+    "country": "Deutschland",
+    "region": "Pfalz - Siebeldingen",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Ein strahlendes Meisterwerk von Pfirsich, Kräutern und salziger Mineralität – ein Wein, der die Seele in pure, sonnendurchflutete Freiheit taucht (100 Falstaff-Punkte).",
+    "description_en": "A radiant masterpiece of peach, herbs and salty minerality – a wine that immerses the soul in pure, sun-drenched freedom (100 Falstaff points).",
+    "description_fr": "Un chef-d'œuvre radieux de pêche, d'herbes et de minéralité salée – un vin qui plonge l'âme dans une liberté pure et ensoleillée (100 points Falstaff).",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Gegrillter Zander",
+      "Milder Ziegenkäse"
+    ],
+    "food_pairings_en": [
+      "Grilled pike-perch",
+      "Mild goat cheese"
+    ],
+    "food_pairings_fr": [
+      "Sandre grillé",
+      "Fromage de chèvre doux"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.381Z"
+  },
+  {
+    "id": "d765be8a-14b1-426e-aa80-6b3831c5ac53",
+    "name": "Forster Pechstein Riesling GG 2024",
+    "winery": "Bürklin-Wolf",
+    "country": "Deutschland",
+    "region": "Pfalz - Deidesheim",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Tief und vulkanisch, ein Pechstein-Monument von Rauch, Zitrus und unendlicher Länge – ein Tropfen, der das Herz mit biodynamischer Kraft erobert.",
+    "description_en": "Deep and volcanic, a Pechstein monument of smoke, citrus and endless length – a drop that conquers the heart with biodynamic power.",
+    "description_fr": "Profond et volcanique, un monument de Pechstein de fumée, d'agrumes et de longueur infinie – une goutte qui conquiert le cœur avec une force biodynamique.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Hummer",
+      "Reifer Parmesan"
+    ],
+    "food_pairings_en": [
+      "Lobster",
+      "Aged Parmesan"
+    ],
+    "food_pairings_fr": [
+      "Homard",
+      "Parmesan affiné"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.382Z"
+  },
+  {
+    "id": "5932ba4e-209a-4b3c-9598-cfce30ed7506",
+    "name": "Idig Riesling GG 2024",
+    "winery": "A. Christmann",
+    "country": "Deutschland",
+    "region": "Pfalz - Gimmeldingen",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Königlich und präzise, ein Idig der absoluten Perfektion, der die Seele mit salziger Tiefe und Frucht verzaubert.",
+    "description_en": "Royal and precise, an Idig of absolute perfection that enchants the soul with salty depth and fruit.",
+    "description_fr": "Royal et précis, un Idig de perfection absolue qui enchante l'âme avec une profondeur salée et du fruit.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Asiatisches Curry",
+      "Gereifter Gouda"
+    ],
+    "food_pairings_en": [
+      "Asian curry",
+      "Aged Gouda"
+    ],
+    "food_pairings_fr": [
+      "Curry asiatique",
+      "Gouda affiné"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.383Z"
+  },
+  {
+    "id": "3d6d3c85-e630-4396-a40e-5749fd76f5de",
+    "name": "Forster Jesuitengarten Riesling GG 2024",
+    "winery": "Bassermann-Jordan",
+    "country": "Deutschland",
+    "region": "Pfalz - Deidesheim",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Historisch und edel, ein Jesuitengarten-Juwel von Pfirsich und Stein – ein Wein, der das Herz mit aristokratischer Harmonie umfängt.",
+    "description_en": "Historic and noble, a Jesuitengarten jewel of peach and stone – a wine that embraces the heart with aristocratic harmony.",
+    "description_fr": "Historique et noble, un joyau de Jesuitengarten de pêche et de pierre – un vin qui enlace le cœur d'une harmonie aristocratique.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Gegrillter Lachs",
+      "Milde Tomme"
+    ],
+    "food_pairings_en": [
+      "Grilled salmon",
+      "Mild Tomme"
+    ],
+    "food_pairings_fr": [
+      "Saumon grillé",
+      "Tomme douce"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.384Z"
+  },
+  {
+    "id": "2bec30b9-7cd8-4d0f-9a7d-e82b935ee2a2",
+    "name": "Deidesheimer Grainhübel Riesling GG 2024",
+    "winery": "Von Winning",
+    "country": "Deutschland",
+    "region": "Pfalz - Deidesheim",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Explosiv und mineralisch, ein Grainhübel-Feuerwerk von Zitrus und Salz, das die Sinne in Ekstase versetzt.",
+    "description_en": "Explosive and mineral, a Grainhübel firework of citrus and salt that sends the senses into ecstasy.",
+    "description_fr": "Explosif et minéral, un feu d'artifice de Grainhübel d'agrumes et de sel qui met les sens en extase.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Meeresfrüchte",
+      "Sommergemüse"
+    ],
+    "food_pairings_en": [
+      "Seafood",
+      "Summer vegetables"
+    ],
+    "food_pairings_fr": [
+      "Fruits de mer",
+      "Légumes d'été"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.385Z"
+  },
+  {
+    "id": "82e1ccae-b004-43b6-becd-169aa883bd13",
+    "name": "Forster Ungeheuer Riesling GG 2024",
+    "winery": "Acham-Magin",
+    "country": "Deutschland",
+    "region": "Pfalz - Forst",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Mythisch und kraftvoll, ein Ungeheuer der Frucht und Mineralität, das die Seele mit wilder Schönheit bezwingt.",
+    "description_en": "Mythical and powerful, a Monster of fruit and minerality that conquers the soul with wild beauty.",
+    "description_fr": "Mythique et puissant, un Monstre de fruit et de minéralité qui conquiert l'âme avec une beauté sauvage.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Lamm",
+      "Pilzrisotto"
+    ],
+    "food_pairings_en": [
+      "Lamb",
+      "Mushroom risotto"
+    ],
+    "food_pairings_fr": [
+      "Agneau",
+      "Risotto aux champignons"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.386Z"
+  },
+  {
+    "id": "cd492c5d-2fd2-4e32-9fd1-0180f897011e",
+    "name": "Kastanienbusch Riesling GG R 2023",
+    "winery": "Ökonomierat Rebholz",
+    "country": "Deutschland",
+    "region": "Pfalz - Siebeldingen",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Rotboden-Legende, tief und komplex, ein Kastanienbusch der Ewigkeit – ein Wein, der das Herz mit roter Erde und Feuer berührt.",
+    "description_en": "Red soil legend, deep and complex, a Kastanienbusch of eternity – a wine that touches the heart with red earth and fire.",
+    "description_fr": "Légende de sol rouge, profond et complexe, un Kastanienbusch d'éternité – un vin qui touche le cœur avec de la terre rouge et du feu.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Wild",
+      "Dunkles Fleisch"
+    ],
+    "food_pairings_en": [
+      "Game",
+      "Dark meat"
+    ],
+    "food_pairings_fr": [
+      "Gibier",
+      "Viande brune"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.388Z"
+  },
+  {
+    "id": "76b87c45-9771-48cc-9034-c64da6eee6b5",
+    "name": "Kastanienbusch Spätburgunder GG 2024",
+    "winery": "Dr. Wehrheim",
+    "country": "Deutschland",
+    "region": "Pfalz - Birkweiler",
+    "appellation": "Pfalz",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Samten und würzig, ein roter Traum von Kirsche und Gewürz – der König der Pfälzer Roten.",
+    "description_en": "Velvety and spicy, a red dream of cherry and spice – the king of Palatinate reds.",
+    "description_fr": "Velouté et épicé, un rêve rouge de cerise et d'épices – le roi des rouges du Palatinat.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Rehrücken",
+      "Schokolade"
+    ],
+    "food_pairings_en": [
+      "Saddle of venison",
+      "Chocolate"
+    ],
+    "food_pairings_fr": [
+      "Selle de chevreuil",
+      "Chocolat"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.389Z"
+  },
+  {
+    "id": "f4799c00-c795-4f57-9c0d-ea21c1027ab4",
+    "name": "Forster Kirchenstück Riesling GG 2024",
+    "winery": "Von Buhl",
+    "country": "Deutschland",
+    "region": "Pfalz - Forst",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Kirchenwürdig und strahlend, ein Kirchenstück der Noblesse, das die Seele in göttliche Harmonie taucht.",
+    "description_en": "Church-worthy and radiant, a Kirchenstück of nobility that immerses the soul in divine harmony.",
+    "description_fr": "Digne d'une église et radieux, un Kirchenstück de noblesse qui plonge l'âme dans une harmonie divine.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Forelle",
+      "Salat"
+    ],
+    "food_pairings_en": [
+      "Trout",
+      "Salad"
+    ],
+    "food_pairings_fr": [
+      "Truite",
+      "Salade"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.389Z"
+  },
+  {
+    "id": "bf71d733-5b5d-46db-9502-49abab879cb9",
+    "name": "Laumersheimer Kirschgarten Riesling GG 2024",
+    "winery": "Philipp Kuhn",
+    "country": "Deutschland",
+    "region": "Pfalz - Laumersheim",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Aufstrebend und präzise, ein Kirschgarten der Frische und Tiefe, der das Herz mit moderner Eleganz weckt.",
+    "description_en": "Rising and precise, a Kirschgarten of freshness and depth that awakens the heart with modern elegance.",
+    "description_fr": "Montant et précis, un Kirschgarten de fraîcheur et de profondeur qui éveille le cœur avec une élégance moderne.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Vegetarisch",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Vegetarian",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Végétarien",
+      "Fromage"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.391Z"
+  },
+  {
+    "id": "7f11930e-49fa-45b3-862c-2d5019bdd1cd",
+    "name": "Deidesheimer Hohenmorgen Riesling GG 2024",
+    "winery": "Bassermann-Jordan",
+    "country": "Deutschland",
+    "region": "Pfalz - Deidesheim",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Hohenmorgen-adelig und tief, ein Stück Paradies in flüssiger Form.",
+    "description_en": "Hohenmorgen-noble and deep, a piece of paradise in liquid form.",
+    "description_fr": "Hohenmorgen-noble et profond, un morceau de paradis sous forme liquide.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Ente",
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Duck",
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Canard",
+      "Champignons"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.391Z"
+  },
+  {
+    "id": "806b705e-42b7-4af4-a7aa-208dcddf9e43",
+    "name": "Sauvignon Blanc S 2024",
+    "winery": "Ökonomierat Rebholz",
+    "country": "Deutschland",
+    "region": "Pfalz - Siebeldingen",
+    "appellation": "Pfalz",
+    "grape_variety": "Sauvignon Blanc",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Exotisch und intensiv, ein Sauvignon der Weltklasse, der die Seele mit Stachelbeere und Feuer entzündet.",
+    "description_en": "Exotic and intense, a world-class Sauvignon that ignites the soul with gooseberry and fire.",
+    "description_fr": "Exotique et intense, un Sauvignon de classe mondiale qui enflamme l'âme avec de la groseille et du feu.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Ziegenkäse",
+      "Asiatisch"
+    ],
+    "food_pairings_en": [
+      "Goat cheese",
+      "Asian cuisine"
+    ],
+    "food_pairings_fr": [
+      "Fromage de chèvre",
+      "Cuisine asiatique"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.392Z"
+  },
+  {
+    "id": "241c5cc8-1e74-4134-bbe4-e1465f2a8814",
+    "name": "Kirschgarten Spätburgunder GG 2024",
+    "winery": "Knipser",
+    "country": "Deutschland",
+    "region": "Pfalz - Laumersheim",
+    "appellation": "Pfalz",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Rot und leidenschaftlich, ein Kirschgarten der Reife und Samtigkeit.",
+    "description_en": "Red and passionate, a Kirschgarten of maturity and velvetiness.",
+    "description_fr": "Rouge et passionné, un Kirschgarten de maturité et de velouté.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Roastbeef",
+      "BBQ"
+    ],
+    "food_pairings_en": [
+      "Roast beef",
+      "BBQ"
+    ],
+    "food_pairings_fr": [
+      "Rosbif",
+      "BBQ"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.393Z"
+  },
+  {
+    "id": "7b0b1600-5656-465a-8cb6-0511baeada25",
+    "name": "Forster Freundstück Riesling GG 2024",
+    "winery": "Bürklin-Wolf",
+    "country": "Deutschland",
+    "region": "Pfalz - Forst",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Freundschaftlich und tief, ein Freundstück der Harmonie.",
+    "description_en": "Friendly and deep, a Freundstück of harmony.",
+    "description_fr": "Amical et profond, un Freundstück d'harmonie.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Geflügel",
+      "Gemüse"
+    ],
+    "food_pairings_en": [
+      "Poultry",
+      "Vegetables"
+    ],
+    "food_pairings_fr": [
+      "Volaille",
+      "Légumes"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.394Z"
+  },
+  {
+    "id": "099ed666-d633-4b03-91a3-11f1fc58c1c5",
+    "name": "Forster Elster Riesling GG 2024",
+    "winery": "Acham-Magin",
+    "country": "Deutschland",
+    "region": "Pfalz - Forst",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Elster-lebendig und mineralisch, ein Flug der Frische.",
+    "description_en": "Elster-lively and mineral, a flight of freshness.",
+    "description_fr": "Elster-vif et minéral, un vol de fraîcheur.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Meeresfrüchte"
+    ],
+    "food_pairings_en": [
+      "Seafood"
+    ],
+    "food_pairings_fr": [
+      "Fruits de mer"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.395Z"
+  },
+  {
+    "id": "04b8ea89-5113-4ba3-bef1-a1cc880d8bb4",
+    "name": "Pechstein Riesling GG 2024",
+    "winery": "Von Winning",
+    "country": "Deutschland",
+    "region": "Pfalz - Deidesheim",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Vulkanisch und rauchig, ein Pechstein der Intensität.",
+    "description_en": "Volcanic and smoky, a Pechstein of intensity.",
+    "description_fr": "Volcanique et fumé, un Pechstein d'intensité.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Scharfer Thai",
+      "Käse"
+    ],
+    "food_pairings_en": [
+      "Spicy Thai",
+      "Cheese"
+    ],
+    "food_pairings_fr": [
+      "Thaï épicé",
+      "Fromage"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.397Z"
+  },
+  {
+    "id": "2269ebbe-09fb-4258-bf6d-ff0940c23e96",
+    "name": "Im Sonnenschein Weißburgunder GG 2024",
+    "winery": "Ökonomierat Rebholz",
+    "country": "Deutschland",
+    "region": "Pfalz - Siebeldingen",
+    "appellation": "Pfalz",
+    "grape_variety": "Weißburgunder",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Weiß und cremig, ein Sonnenschein der Eleganz.",
+    "description_en": "White and creamy, a Sonnenschein of elegance.",
+    "description_fr": "Blanc et crémeux, un Sonnenschein d'élégance.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Gegrilltes Huhn"
+    ],
+    "food_pairings_en": [
+      "Grilled chicken"
+    ],
+    "food_pairings_fr": [
+      "Poulet grillé"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.398Z"
+  },
+  {
+    "id": "66b7e549-e127-45ad-99f9-5c99d227b478",
+    "name": "Gimmeldinger Mandelgarten Riesling GG 2024",
+    "winery": "A. Christmann",
+    "country": "Deutschland",
+    "region": "Pfalz - Gimmeldingen",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Mandelgarten-duftend und filigran, ein Garten der Poesie.",
+    "description_en": "Mandelgarten-fragrant and delicate, a garden of poetry.",
+    "description_fr": "Mandelgarten-parfumé et délicat, un jardin de poésie.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Salat",
+      "Fisch"
+    ],
+    "food_pairings_en": [
+      "Salad",
+      "Fish"
+    ],
+    "food_pairings_fr": [
+      "Salade",
+      "Poisson"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.399Z"
+  },
+  {
+    "id": "9a2382b6-8371-49ac-95ed-e9af8ded519e",
+    "name": "Kallstadter Saumagen Riesling GG 2024",
+    "winery": "Koehler-Ruprecht",
+    "country": "Deutschland",
+    "region": "Pfalz - Kallstadt",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Saumagen-kraftvoll und langlebig, ein Klassiker der Tradition.",
+    "description_en": "Saumagen-powerful and long-lived, a classic of tradition.",
+    "description_fr": "Saumagen-puissant et longévif, un classique de la tradition.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Schwein",
+      "Fondue"
+    ],
+    "food_pairings_en": [
+      "Pork",
+      "Fondue"
+    ],
+    "food_pairings_fr": [
+      "Porc",
+      "Fondue"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.400Z"
+  },
+  {
+    "id": "f14e4dce-5f32-42dd-941d-3c0f485cdab2",
+    "name": "Cuvée X Rot 2023",
+    "winery": "Knipser",
+    "country": "Deutschland",
+    "region": "Pfalz - Laumersheim",
+    "appellation": "Pfalz",
+    "grape_variety": "Cuvée",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Cuvée-harmonisch und tief, ein X der Leidenschaft.",
+    "description_en": "Cuvée-harmonious and deep, an X of passion.",
+    "description_fr": "Cuvée-harmonieux et profond, un X de passion.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Wild",
+      "Schokolade"
+    ],
+    "food_pairings_en": [
+      "Game",
+      "Chocolate"
+    ],
+    "food_pairings_fr": [
+      "Gibier",
+      "Chocolat"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.401Z"
+  },
+  {
+    "id": "29ac42ab-ccd8-4465-9f54-577d2748a691",
+    "name": "Ruppertsberger Reiterpfad Riesling GG 2024",
+    "winery": "Bassermann-Jordan",
+    "country": "Deutschland",
+    "region": "Pfalz - Ruppertsberg",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Reiterpfad-elegant und mineralisch.",
+    "description_en": "Reiterpfad-elegant and mineral.",
+    "description_fr": "Reiterpfad-élégant et minéral.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Parmesan",
+      "Hummer"
+    ],
+    "food_pairings_en": [
+      "Parmesan",
+      "Lobster"
+    ],
+    "food_pairings_fr": [
+      "Parmesan",
+      "Homard"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.402Z"
+  },
+  {
+    "id": "0d2e05d1-09e3-40df-897d-709f5164c220",
+    "name": "Armand Riesling Kabinett 2024",
+    "winery": "Von Buhl",
+    "country": "Deutschland",
+    "region": "Pfalz - Deidesheim",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Zart und tänzerisch, ein Kabinett der Jugend.",
+    "description_en": "Delicate and dancing, a Kabinett of youth.",
+    "description_fr": "Délicat et dansant, un Kabinett de jeunesse.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Aperitif"
+    ],
+    "food_pairings_en": [
+      "Aperitif"
+    ],
+    "food_pairings_fr": [
+      "Apéritif"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.402Z"
+  },
+  {
+    "id": "46758ee1-3939-4caa-a9cb-e6c43f9c0533",
+    "name": "Birkweiler Kastanienbusch Weißburgunder GG 2024",
+    "winery": "Dr. Wehrheim",
+    "country": "Deutschland",
+    "region": "Pfalz - Birkweiler",
+    "appellation": "Pfalz",
+    "grape_variety": "Weißburgunder",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Weiß und nuanciert, ein Kastanienbusch der Reinheit.",
+    "description_en": "White and nuanced, a Kastanienbusch of purity.",
+    "description_fr": "Blanc et nuancé, un Kastanienbusch de pureté.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Gemüse"
+    ],
+    "food_pairings_en": [
+      "Vegetables"
+    ],
+    "food_pairings_fr": [
+      "Légumes"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.403Z"
+  },
+  {
+    "id": "e0b1da30-d9c2-4785-aaad-3b1148ec6489",
+    "name": "Großkarlbacher Burgweg Riesling GG 2024",
+    "winery": "Philipp Kuhn",
+    "country": "Deutschland",
+    "region": "Pfalz - Großkarlbach",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Burgweg-kraftvoll und tief.",
+    "description_en": "Burgweg-powerful and deep.",
+    "description_fr": "Burgweg-puissant et profond.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Lamm"
+    ],
+    "food_pairings_en": [
+      "Lamb"
+    ],
+    "food_pairings_fr": [
+      "Agneau"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.404Z"
+  },
+  {
+    "id": "903ae386-7a15-4d78-914a-c152082b491e",
+    "name": "Ganz Horn Riesling GG 2024",
+    "winery": "Ökonomierat Rebholz",
+    "country": "Deutschland",
+    "region": "Pfalz - Siebeldingen",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Ganz Horn-integral und biodynamisch.",
+    "description_en": "Ganz Horn-integral and biodynamic.",
+    "description_fr": "Ganz Horn-intégral et biodynamique.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Champignons"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.406Z"
+  },
+  {
+    "id": "31fe5666-dc3e-47e1-9404-cc3189b3b2a6",
+    "name": "Pferdskopf Spätburgunder GG 2024",
+    "winery": "A. Christmann",
+    "country": "Deutschland",
+    "region": "Pfalz - Gimmeldingen",
+    "appellation": "Pfalz",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Pferdskopf-rot und robust.",
+    "description_en": "Pferdskopf-red and robust.",
+    "description_fr": "Pferdskopf-rouge et robuste.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Dunkles Fleisch"
+    ],
+    "food_pairings_en": [
+      "Dark meat"
+    ],
+    "food_pairings_fr": [
+      "Viande brune"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.407Z"
+  },
+  {
+    "id": "e99b97a1-e4a2-4947-b6d1-89f3ba5104df",
+    "name": "Gaisböhl Riesling GG 2024",
+    "winery": "Bürklin-Wolf",
+    "country": "Deutschland",
+    "region": "Pfalz - Ruppertsberg",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Gaisböhl-Monopol und edel.",
+    "description_en": "Gaisböhl-monopole and noble.",
+    "description_fr": "Gaisböhl-monopole et noble.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Krustentiere"
+    ],
+    "food_pairings_en": [
+      "Crustaceans"
+    ],
+    "food_pairings_fr": [
+      "Crustacés"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.408Z"
+  },
+  {
+    "id": "8226baf8-38e3-4eb8-b657-99eed27d92fc",
+    "name": "Mandelpfad Riesling GG 2024",
+    "winery": "Knipser",
+    "country": "Deutschland",
+    "region": "Pfalz - Laumersheim",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Mandelpfad-duftend und intensiv.",
+    "description_en": "Mandelpfad-fragrant and intense.",
+    "description_fr": "Mandelpfad-parfumé et intense.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Asiatisch"
+    ],
+    "food_pairings_en": [
+      "Asian cuisine"
+    ],
+    "food_pairings_fr": [
+      "Cuisine asiatique"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.409Z"
+  },
+  {
+    "id": "1c0652c6-a607-49be-90c0-ceef150a2099",
+    "name": "Kieselberg Riesling GG 2024",
+    "winery": "Von Winning",
+    "country": "Deutschland",
+    "region": "Pfalz - Deidesheim",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Kieselberg-steinig und präzise.",
+    "description_en": "Kieselberg-stony and precise.",
+    "description_fr": "Kieselberg-pierreux et précis.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Fisch"
+    ],
+    "food_pairings_en": [
+      "Fish"
+    ],
+    "food_pairings_fr": [
+      "Poisson"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.410Z"
+  },
+  {
+    "id": "f89a2f07-f2d9-45cc-b0d0-c239238302e3",
+    "name": "Muskateller Trocken 2024",
+    "winery": "Ökonomierat Rebholz",
+    "country": "Deutschland",
+    "region": "Pfalz - Siebeldingen",
+    "appellation": "Pfalz",
+    "grape_variety": "Muskateller",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Muskateller-aromatisch und verlockend.",
+    "description_en": "Muskateller-aromatic and enticing.",
+    "description_fr": "Muskateller-aromatique et séduisant.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Desserts"
+    ],
+    "food_pairings_en": [
+      "Desserts"
+    ],
+    "food_pairings_fr": [
+      "Desserts"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.411Z"
+  },
+  {
+    "id": "fa05f8da-ae6e-43ba-9420-47a9c54f43aa",
+    "name": "Deidesheimer Kalkofen Riesling GG 2024",
+    "winery": "Bassermann-Jordan",
+    "country": "Deutschland",
+    "region": "Pfalz - Deidesheim",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Kalkofen-mineralisch und tief.",
+    "description_en": "Kalkofen-mineral and deep.",
+    "description_fr": "Kalkofen-minéral et profond.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Geflügel"
+    ],
+    "food_pairings_en": [
+      "Poultry"
+    ],
+    "food_pairings_fr": [
+      "Volaille"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.412Z"
+  },
+  {
+    "id": "3df0c27a-d6c5-4249-a2c6-1915b0aebc23",
+    "name": "Kirchenstück Spätburgunder GG 2024",
+    "winery": "Acham-Magin",
+    "country": "Deutschland",
+    "region": "Pfalz - Forst",
+    "appellation": "Pfalz",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Kirchenstück-rot und heilig.",
+    "description_en": "Kirchenstück-red and holy.",
+    "description_fr": "Kirchenstück-rouge et sacré.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Wild"
+    ],
+    "food_pairings_en": [
+      "Game"
+    ],
+    "food_pairings_fr": [
+      "Gibier"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.413Z"
+  },
+  {
+    "id": "66fc8094-7d81-4926-8da0-adef6c1c2573",
+    "name": "Sauvignon Blanc Reserve 2024",
+    "winery": "Philipp Kuhn",
+    "country": "Deutschland",
+    "region": "Pfalz - Laumersheim",
+    "appellation": "Pfalz",
+    "grape_variety": "Sauvignon Blanc",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Sauvignon-exotisch und intensiv.",
+    "description_en": "Sauvignon-exotic and intense.",
+    "description_fr": "Sauvignon-exotique et intense.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Ziegenkäse"
+    ],
+    "food_pairings_en": [
+      "Goat cheese"
+    ],
+    "food_pairings_fr": [
+      "Fromage de chèvre"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.414Z"
+  },
+  {
+    "id": "e28bb940-2ef6-480c-9460-417d0ee16c24",
+    "name": "Mandelberg Spätburgunder GG 2024",
+    "winery": "Dr. Wehrheim",
+    "country": "Deutschland",
+    "region": "Pfalz - Birkweiler",
+    "appellation": "Pfalz",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Mandelberg-würzig und tief.",
+    "description_en": "Mandelberg-spicy and deep.",
+    "description_fr": "Mandelberg-épicé et profond.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Roastbeef"
+    ],
+    "food_pairings_en": [
+      "Roast beef"
+    ],
+    "food_pairings_fr": [
+      "Rosbif"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.415Z"
+  },
+  {
+    "id": "3ecdf1df-5517-43d1-b259-e7598033052a",
+    "name": "Pechstein Riesling Auslese 2023",
+    "winery": "Von Buhl",
+    "country": "Deutschland",
+    "region": "Pfalz - Forst",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Pechstein-süß und rauchig.",
+    "description_en": "Pechstein-sweet and smoky.",
+    "description_fr": "Pechstein-doux et fumé.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Foie gras"
+    ],
+    "food_pairings_en": [
+      "Foie gras"
+    ],
+    "food_pairings_fr": [
+      "Foie gras"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.416Z"
+  },
+  {
+    "id": "5ee1d2dc-fc35-425c-8a30-f59c69250370",
+    "name": "Chardonnay Reserve 2024",
+    "winery": "Ökonomierat Rebholz",
+    "country": "Deutschland",
+    "region": "Pfalz - Siebeldingen",
+    "appellation": "Pfalz",
+    "grape_variety": "Chardonnay",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Chardonnay-cremig und edel.",
+    "description_en": "Chardonnay-creamy and noble.",
+    "description_fr": "Chardonnay-crémeux et noble.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Huhn"
+    ],
+    "food_pairings_en": [
+      "Chicken"
+    ],
+    "food_pairings_fr": [
+      "Poulet"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.417Z"
+  },
+  {
+    "id": "3760eca4-86b9-467d-8af9-ec47f3f3b4dc",
+    "name": "Meerspinne Riesling GG 2024",
+    "winery": "A. Christmann",
+    "country": "Deutschland",
+    "region": "Pfalz - Gimmeldingen",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Meerspinne-mineralisch und wild.",
+    "description_en": "Meerspinne-mineral and wild.",
+    "description_fr": "Meerspinne-minéral et sauvage.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Meeresfrüchte"
+    ],
+    "food_pairings_en": [
+      "Seafood"
+    ],
+    "food_pairings_fr": [
+      "Fruits de mer"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.418Z"
+  },
+  {
+    "id": "c258257c-ba1c-4186-9ad9-8beca451230e",
+    "name": "Steinbuckel Riesling GG 2024",
+    "winery": "Knipser",
+    "country": "Deutschland",
+    "region": "Pfalz - Laumersheim",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Steinbuckel-steil und kraftvoll.",
+    "description_en": "Steinbuckel-steep and powerful.",
+    "description_fr": "Steinbuckel-raide et puissant.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Lamm"
+    ],
+    "food_pairings_en": [
+      "Lamb"
+    ],
+    "food_pairings_fr": [
+      "Agneau"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.419Z"
+  },
+  {
+    "id": "70ffee74-e02d-4d67-a023-df8f6649663d",
+    "name": "Ruppertsberger Gaisböhl Riesling TBA 2023",
+    "winery": "Bürklin-Wolf",
+    "country": "Deutschland",
+    "region": "Pfalz - Ruppertsberg",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Gaisböhl-golden und konzentriert.",
+    "description_en": "Gaisböhl-golden and concentrated.",
+    "description_fr": "Gaisböhl-doré et concentré.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Blauschimmel"
+    ],
+    "food_pairings_en": [
+      "Blue cheese"
+    ],
+    "food_pairings_fr": [
+      "Bleu"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.419Z"
+  },
+  {
+    "id": "36a57695-656a-461e-bf08-d57fe74a72e2",
+    "name": "Königsbacher Ölberg Riesling GG 2024",
+    "winery": "A. Christmann",
+    "country": "Deutschland",
+    "region": "Pfalz - Königsbach",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Ölberg-ölglatt und tief.",
+    "description_en": "Ölberg-oil-smooth and deep.",
+    "description_fr": "Ölberg-lisse comme l'huile et profond.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Parmesan"
+    ],
+    "food_pairings_en": [
+      "Parmesan"
+    ],
+    "food_pairings_fr": [
+      "Parmesan"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.420Z"
+  },
+  {
+    "id": "258988e2-4ae1-4640-8831-eb25db38e453",
+    "name": "Forster Ungeheuer Riesling Spätlese 2024",
+    "winery": "Von Winning",
+    "country": "Deutschland",
+    "region": "Pfalz - Forst",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Ungeheuer-spät und verlockend.",
+    "description_en": "Ungeheuer-late and enticing.",
+    "description_fr": "Ungeheuer-tardif et séduisant.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Scharfer Thai"
+    ],
+    "food_pairings_en": [
+      "Spicy Thai"
+    ],
+    "food_pairings_fr": [
+      "Thaï épicé"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.421Z"
+  },
+  {
+    "id": "b3d8ea5d-adbb-4289-8e4e-0695e793805a",
+    "name": "Siebeldinger Weinberg Riesling GG 2024",
+    "winery": "Ökonomierat Rebholz",
+    "country": "Deutschland",
+    "region": "Pfalz - Siebeldingen",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Weinberg-ehrlich und saftig.",
+    "description_en": "Weinberg-honest and juicy.",
+    "description_fr": "Weinberg-honnête et juteux.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Fisch"
+    ],
+    "food_pairings_en": [
+      "Fish"
+    ],
+    "food_pairings_fr": [
+      "Poisson"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.422Z"
+  },
+  {
+    "id": "f0d10786-889d-4242-88e7-9ba27626e5b7",
+    "name": "Forster Ungeheuer Riesling GG 2024",
+    "winery": "Bassermann-Jordan",
+    "country": "Deutschland",
+    "region": "Pfalz - Forst",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Ungeheuer-mythisch und groß.",
+    "description_en": "Ungeheuer-mythical and grand.",
+    "description_fr": "Ungeheuer-mythique et grandiose.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Krustentiere"
+    ],
+    "food_pairings_en": [
+      "Crustaceans"
+    ],
+    "food_pairings_fr": [
+      "Crustacés"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.423Z"
+  },
+  {
+    "id": "1d193d1f-f637-4d46-b692-db6fca45cb2f",
+    "name": "Kirschgarten Spätburgunder Rosé 2024",
+    "winery": "Philipp Kuhn",
+    "country": "Deutschland",
+    "region": "Pfalz - Laumersheim",
+    "appellation": "Pfalz",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rosé",
+    "year": null,
+    "description_de": "Rosé-zart und sommerlich.",
+    "description_en": "Rosé-delicate and summery.",
+    "description_fr": "Rosé-délicat et estival.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Salate"
+    ],
+    "food_pairings_en": [
+      "Salads"
+    ],
+    "food_pairings_fr": [
+      "Salades"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.424Z"
+  },
+  {
+    "id": "4f55105f-8a87-49e0-a2be-b10880b36ad1",
+    "name": "Enkelswein Riesling Auslese 2023",
+    "winery": "Dr. Wehrheim",
+    "country": "Deutschland",
+    "region": "Pfalz - Birkweiler",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "süsswein",
+    "year": null,
+    "description_de": "Enkelswein-süß und familiär.",
+    "description_en": "Enkelswein-sweet and familial.",
+    "description_fr": "Enkelswein-doux et familial.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Desserts"
+    ],
+    "food_pairings_en": [
+      "Desserts"
+    ],
+    "food_pairings_fr": [
+      "Desserts"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.425Z"
+  },
+  {
+    "id": "25f60a4d-8915-4e06-b6ce-4cf4c9e24537",
+    "name": "Jesuitengarten Riesling Spätlese 2024",
+    "winery": "Acham-Magin",
+    "country": "Deutschland",
+    "region": "Pfalz - Forst",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Jesuitengarten-spät und edel.",
+    "description_en": "Jesuitengarten-late and noble.",
+    "description_fr": "Jesuitengarten-tardif et noble.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Käseplatte"
+    ],
+    "food_pairings_en": [
+      "Cheese platter"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fromages"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.426Z"
+  },
+  {
+    "id": "9b917346-e61a-4ece-bef1-f6ec3673e72f",
+    "name": "Bone Dry Riesling 2024",
+    "winery": "Von Buhl",
+    "country": "Deutschland",
+    "region": "Pfalz - Deidesheim",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Bone Dry-trocken und strahlend.",
+    "description_en": "Bone Dry-dry and radiant.",
+    "description_fr": "Bone Dry-sec et radieux.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Aperitif"
+    ],
+    "food_pairings_en": [
+      "Aperitif"
+    ],
+    "food_pairings_fr": [
+      "Apéritif"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.427Z"
+  },
+  {
+    "id": "59a99071-7639-4a11-9f91-a118371cc477",
+    "name": "Cuvée Privée Rot 2023",
+    "winery": "Knipser",
+    "country": "Deutschland",
+    "region": "Pfalz - Laumersheim",
+    "appellation": "Pfalz",
+    "grape_variety": "Cuvée",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Privée-harmonisch und tief.",
+    "description_en": "Privée-harmonious and deep.",
+    "description_fr": "Privée-harmonieux et profond.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Entrecôte"
+    ],
+    "food_pairings_en": [
+      "Entrecôte"
+    ],
+    "food_pairings_fr": [
+      "Entrecôte"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.428Z"
+  },
+  {
+    "id": "1467fde2-600d-4f10-8c0f-f0ca05facc0e",
+    "name": "Deidesheimer Mäushöhle Riesling GG 2024",
+    "winery": "Bürklin-Wolf",
+    "country": "Deutschland",
+    "region": "Pfalz - Deidesheim",
+    "appellation": "Pfalz",
+    "grape_variety": "Riesling",
+    "wine_color": "weiss",
+    "year": null,
+    "description_de": "Mäushöhle-geheimnisvoll und mineralisch.",
+    "description_en": "Mäushöhle-mysterious and mineral.",
+    "description_fr": "Mäushöhle-mystérieux et minéral.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Pilze"
+    ],
+    "food_pairings_en": [
+      "Mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Champignons"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.429Z"
+  },
+  {
+    "id": "e8d4982d-b28f-45c5-989a-fab214fb2463",
+    "name": "Im Sonnenschein Spätburgunder GG 2024",
+    "winery": "Ökonomierat Rebholz",
+    "country": "Deutschland",
+    "region": "Pfalz - Siebeldingen",
+    "appellation": "Pfalz",
+    "grape_variety": "Spätburgunder",
+    "wine_color": "rot",
+    "year": null,
+    "description_de": "Sonnenschein-rot und warm, ein Abschluss der Pfälzer Lebensfreude.",
+    "description_en": "Sonnenschein-red and warm, a finale of Palatinate joie de vivre.",
+    "description_fr": "Sonnenschein-rouge et chaud, un final de la joie de vivre palatine.",
+    "tasting_notes": null,
+    "food_pairings_de": [
+      "Dunkles Fleisch",
+      "Schokolade"
+    ],
+    "food_pairings_en": [
+      "Dark meat",
+      "Chocolate"
+    ],
+    "food_pairings_fr": [
+      "Viande brune",
+      "Chocolat"
+    ],
+    "alcohol_content": null,
+    "price_category": "€€€€€",
+    "image_url": null,
+    "rating": null,
+    "created_at": "2025-12-13T06:27:25.430Z"
   }
 ]

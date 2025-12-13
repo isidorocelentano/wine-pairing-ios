@@ -172,6 +172,9 @@ backend:
       - working: true
         agent: "testing"
         comment: "✅ Sommelier Chat Multilingual PASSED - Got German response for steak pairing. AI chat integration working with multilingual support."
+      - working: true
+        agent: "testing"
+        comment: "✅ German Sommelier Chat Advanced PASSED - Successfully tested with 'Welchen Wein zum Wiener Schnitzel?' in German. AI provided detailed German response (1748 chars) with proper wine recommendations. German language chat integration fully functional."
 
   - task: "Sitemap XML Generation"
     implemented: true

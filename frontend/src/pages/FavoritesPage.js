@@ -201,7 +201,7 @@ export default function FavoritesPage() {
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {favorites.map((wine) => (
-                    <WineCard key={wine.wine_id} wine={wine} listType="favorites" />
+                    <WineCard key={wine.wine_id} wine={wine} listType="favorites" onMove={moveToList} onRemove={removeWine} />
                   ))}
                 </div>
               )}
@@ -222,7 +222,7 @@ export default function FavoritesPage() {
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {wishlist.map((wine) => (
-                    <WineCard key={wine.wine_id} wine={wine} listType="wishlist" />
+                    <WineCard key={wine.wine_id} wine={wine} listType="wishlist" onMove={moveToList} onRemove={removeWine} />
                   ))}
                 </div>
               )}

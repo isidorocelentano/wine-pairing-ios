@@ -48,7 +48,7 @@ const BlogPage = () => {
     }
   }, [selectedCategory, allPosts.length]);
 
-  // Volltextsuche - durchsucht Titel, Excerpt, Tags und Content
+  // Volltextsuche mit Relevanz-Gewichtung
   const searchPosts = useCallback((query) => {
     if (!query.trim()) {
       setIsSearching(false);
@@ -58,25 +58,58 @@ const BlogPage = () => {
     setIsSearching(true);
     const searchTerms = query.toLowerCase().split(' ').filter(term => term.length > 1);
     
-    const filtered = allPosts.filter(post => {
-      const searchableFields = [
+    // Berechne Relevanz-Score für jeden Post
+    const scoredPosts = allPosts.map(post => {
+      let score = 0;
+      const queryLower = query.toLowerCase();
+      
+      // Hohe Priorität: Titel und Region (direkte Übereinstimmung)
+      const titleFields = [
         post.title || '',
         post.title_en || '',
         post.title_fr || '',
+        post.region || ''
+      ].join(' ').toLowerCase();
+      
+      if (titleFields.includes(queryLower)) {
+        score += 100; // Direkter Match im Titel/Region
+      }
+      
+      // Mittlere Priorität: Tags und Excerpt
+      const tagFields = [
+        ...(post.tags || []),
         post.excerpt || '',
         post.excerpt_en || '',
         post.excerpt_fr || '',
-        post.content || '',
-        post.content_en || '',
-        post.content_fr || '',
-        post.category || '',
-        post.region || '',
-        post.country || '',
-        ...(post.tags || [])
+        post.country || ''
       ].join(' ').toLowerCase();
       
-      return searchTerms.every(term => searchableFields.includes(term));
+      if (tagFields.includes(queryLower)) {
+        score += 50;
+      }
+      
+      // Niedrige Priorität: Content
+      const contentFields = [
+        post.content || '',
+        post.content_en || '',
+        post.content_fr || ''
+      ].join(' ').toLowerCase();
+      
+      // Zähle Vorkommen im Content
+      searchTerms.forEach(term => {
+        if (titleFields.includes(term)) score += 20;
+        if (tagFields.includes(term)) score += 10;
+        const contentMatches = (contentFields.match(new RegExp(term, 'g')) || []).length;
+        score += Math.min(contentMatches, 5); // Max 5 Punkte pro Term aus Content
+      });
+      
+      return { ...post, score };
     });
+    
+    // Filtere und sortiere nach Relevanz
+    const filtered = scoredPosts
+      .filter(post => post.score > 0)
+      .sort((a, b) => b.score - a.score);
     
     setPosts(filtered);
   }, [allPosts]);

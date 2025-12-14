@@ -157,7 +157,7 @@ const BlogPage = () => {
             </div>
             {isSearching && (
               <p className="text-center text-sm text-muted-foreground mt-2">
-                {posts.length} {language === 'de' ? 'Ergebnisse für' : language === 'fr' ? 'résultats pour' : 'results for'} "{searchQuery}"
+                {posts.length} {language === 'de' ? 'Ergebnisse für' : language === 'fr' ? 'résultats pour' : 'results for'} &ldquo;{searchQuery}&rdquo;
               </p>
             )}
           </div>

@@ -108,24 +108,24 @@ class FinalDeploymentTester:
         else:
             self.log_test("Blog Posts Pagination (limit=20)", False, str(response))
         
-        # 2. GET /api/blog/search?q=Piemont - Full-text search
-        success, response = self.make_request('GET', 'blog/search?q=Piemont')
+        # 2. GET /api/blog-search?q=Piemont - Full-text search
+        success, response = self.make_request('GET', 'blog-search?q=Piemont')
         if success:
             results = response if isinstance(response, list) else []
             self.log_test("Blog Search (Piemont)", True, f"Found {len(results)} results for 'Piemont'")
         else:
             self.log_test("Blog Search (Piemont)", False, str(response))
         
-        # 3. GET /api/blog/search?q=Bordeaux - Search test
-        success, response = self.make_request('GET', 'blog/search?q=Bordeaux')
+        # 3. GET /api/blog-search?q=Bordeaux - Search test
+        success, response = self.make_request('GET', 'blog-search?q=Bordeaux')
         if success:
             results = response if isinstance(response, list) else []
             self.log_test("Blog Search (Bordeaux)", True, f"Found {len(results)} results for 'Bordeaux'")
         else:
             self.log_test("Blog Search (Bordeaux)", False, str(response))
         
-        # 4. GET /api/blog/categories - Category list
-        success, response = self.make_request('GET', 'blog/categories')
+        # 4. GET /api/blog-categories - Category list
+        success, response = self.make_request('GET', 'blog-categories')
         if success:
             categories = response if isinstance(response, list) else []
             self.log_test("Blog Categories", True, f"Found {len(categories)} blog categories")

@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { Wine, ArrowRight, Calendar, User, Tag, Loader2 } from 'lucide-react';
+import { Wine, ArrowRight, Calendar, User, Tag, Loader2, Search, X } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { SEO } from '@/components/SEO';
 
@@ -15,9 +16,12 @@ const BlogPage = () => {
   const { t, language } = useLanguage();
   const navigate = useNavigate();
   const [posts, setPosts] = useState([]);
+  const [allPosts, setAllPosts] = useState([]); // Alle Posts für die Suche
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isSearching, setIsSearching] = useState(false);
 
   const fetchCategories = useCallback(async () => {
     try {

@@ -48,71 +48,22 @@ const BlogPage = () => {
     }
   }, [selectedCategory, allPosts.length]);
 
-  // Volltextsuche mit Relevanz-Gewichtung
-  const searchPosts = useCallback((query) => {
-    if (!query.trim()) {
+  // Volltextsuche über Backend-API
+  const searchPosts = useCallback(async (query) => {
+    if (!query.trim() || query.length < 2) {
       setIsSearching(false);
       return;
     }
     
     setIsSearching(true);
-    const searchTerms = query.toLowerCase().split(' ').filter(term => term.length > 1);
-    
-    // Berechne Relevanz-Score für jeden Post
-    const scoredPosts = allPosts.map(post => {
-      let score = 0;
-      const queryLower = query.toLowerCase();
-      
-      // Hohe Priorität: Titel und Region (direkte Übereinstimmung)
-      const titleFields = [
-        post.title || '',
-        post.title_en || '',
-        post.title_fr || '',
-        post.region || ''
-      ].join(' ').toLowerCase();
-      
-      if (titleFields.includes(queryLower)) {
-        score += 100; // Direkter Match im Titel/Region
-      }
-      
-      // Mittlere Priorität: Tags und Excerpt
-      const tagFields = [
-        ...(post.tags || []),
-        post.excerpt || '',
-        post.excerpt_en || '',
-        post.excerpt_fr || '',
-        post.country || ''
-      ].join(' ').toLowerCase();
-      
-      if (tagFields.includes(queryLower)) {
-        score += 50;
-      }
-      
-      // Niedrige Priorität: Content
-      const contentFields = [
-        post.content || '',
-        post.content_en || '',
-        post.content_fr || ''
-      ].join(' ').toLowerCase();
-      
-      // Zähle Vorkommen im Content
-      searchTerms.forEach(term => {
-        if (titleFields.includes(term)) score += 20;
-        if (tagFields.includes(term)) score += 10;
-        const contentMatches = (contentFields.match(new RegExp(term, 'g')) || []).length;
-        score += Math.min(contentMatches, 5); // Max 5 Punkte pro Term aus Content
-      });
-      
-      return { ...post, score };
-    });
-    
-    // Filtere und sortiere nach Relevanz
-    const filtered = scoredPosts
-      .filter(post => post.score > 0)
-      .sort((a, b) => b.score - a.score);
-    
-    setPosts(filtered);
-  }, [allPosts]);
+    try {
+      const response = await axios.get(`${API}/blog-search?q=${encodeURIComponent(query)}`);
+      setPosts(response.data);
+    } catch (error) {
+      console.error('Search error:', error);
+      setPosts([]);
+    }
+  }, []);
 
   // Debounced search
   useEffect(() => {

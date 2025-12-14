@@ -3551,84 +3551,124 @@ app.include_router(api_router)
 
 @app.on_event("startup")
 async def startup_seed_data():
-    """Seed all collections from JSON backup files if they are empty or have wrong data"""
+    """
+    ROBUSTE DATENBANK-INITIALISIERUNG
+    Prüft gegen das Backup-Manifest und stellt sicher, dass ALLE Daten korrekt sind.
+    Version 2.0 - Unzerstörbar
+    """
     
-    print("🚀 Server startup - checking database collections...")
+    print("\n" + "=" * 60)
+    print("🚀 WINE-PAIRING.ONLINE - SERVER STARTUP")
+    print("=" * 60)
     
-    # WICHTIG: Prüfe ob die RICHTIGEN Daten vorhanden sind
+    # Lade das Backup-Manifest für erwartete Werte
+    manifest_path = ROOT_DIR / "data" / "backup_manifest.json"
+    expected = {
+        'blog_posts': 233,
+        'public_wines': 1751,
+        'grape_varieties': 140,
+        'regional_pairings': 44,
+        'dishes': 40,
+        'feed_posts': 268,
+        'wine_database': 494
+    }
+    
+    if manifest_path.exists():
+        try:
+            with open(manifest_path, 'r') as f:
+                manifest = json.load(f)
+                expected = manifest.get('expected', expected)
+                print(f"📋 Manifest Version: {manifest.get('version', 'unknown')}")
+                print(f"   Erstellt: {manifest.get('timestamp', 'unknown')}")
+        except:
+            pass
+    
+    # Prüfe aktuelle Datenbank
+    print("\n🔍 DATENBANK-PRÜFUNG:")
+    
+    checks = {}
+    needs_reseed = False
+    
+    # Blog-Posts mit Kategorie-Check
     blog_count = await db.blog_posts.count_documents({})
     regionen_count = await db.blog_posts.count_documents({"category": "regionen"})
-    regional_pairings_count = await db.regional_pairings.count_documents({})
-    grape_count = await db.grape_varieties.count_documents({})
-    
-    print(f"🔍 Database check:")
-    print(f"   - Blogs: {blog_count} total, {regionen_count} in 'regionen'")
-    print(f"   - Regional Pairings: {regional_pairings_count}")
-    print(f"   - Grape Varieties: {grape_count}")
-    
-    # Wenn IRGENDWAS falsch ist -> komplettes Seeding!
-    needs_full_reseed = (
-        blog_count < 200 or 
-        regionen_count < 80 or 
-        regional_pairings_count < 40 or
-        grape_count < 130
-    )
-    
-    if needs_full_reseed:
-        print("📦 Database has missing/wrong data - performing FULL reseed...")
+    checks['blog_posts'] = blog_count
+    if blog_count < expected['blog_posts'] or regionen_count < 80:
+        needs_reseed = True
+        print(f"   ❌ blog_posts: {blog_count}/{expected['blog_posts']} (regionen: {regionen_count}/84)")
     else:
-        print("✅ Database looks correct - skipping full reseed")
+        print(f"   ✅ blog_posts: {blog_count}/{expected['blog_posts']}")
     
-    # Define all collections to restore from JSON backups
-    collections_to_seed = [
-        ("regional_pairings", "regional_pairings.json"),
-        ("grape_varieties", "grape_varieties.json"),
-        ("blog_posts", "blog_posts.json"),
-        ("dishes", "dishes.json"),
-        ("wine_database", "wine_database.json"),
-        ("public_wines", "public_wines.json"),
-        ("feed_posts", "feed_posts.json"),
-    ]
+    # Alle anderen Collections
+    for col_name in ['public_wines', 'grape_varieties', 'regional_pairings', 'dishes', 'feed_posts', 'wine_database']:
+        count = await db[col_name].count_documents({})
+        checks[col_name] = count
+        exp = expected.get(col_name, 0)
+        
+        # Toleranz von 5% nach unten erlaubt
+        min_expected = int(exp * 0.95)
+        
+        if count < min_expected:
+            needs_reseed = True
+            print(f"   ❌ {col_name}: {count}/{exp}")
+        else:
+            print(f"   ✅ {col_name}: {count}/{exp}")
     
-    for collection_name, json_filename in collections_to_seed:
-        try:
-            count = await db[collection_name].count_documents({})
-            
-            # Reseed wenn: Collection leer ODER full reseed nötig (wegen falscher Blog-Daten)
-            should_seed = count == 0 or needs_full_reseed
-            
-            if should_seed:
-                print(f"🌱 {collection_name}: Seeding from JSON backup...")
+    # Wenn IRGENDETWAS fehlt -> Komplettes Seeding
+    if needs_reseed:
+        print("\n" + "=" * 60)
+        print("📦 DATENBANK WIRD NEU INITIALISIERT...")
+        print("=" * 60)
+        
+        collections_to_seed = [
+            ("regional_pairings", "regional_pairings.json"),
+            ("grape_varieties", "grape_varieties.json"),
+            ("blog_posts", "blog_posts.json"),
+            ("dishes", "dishes.json"),
+            ("wine_database", "wine_database.json"),
+            ("public_wines", "public_wines.json"),
+            ("feed_posts", "feed_posts.json"),
+        ]
+        
+        for collection_name, json_filename in collections_to_seed:
+            try:
+                data_file = ROOT_DIR / "data" / json_filename
                 
-                try:
-                    data_file = ROOT_DIR / "data" / json_filename
+                if data_file.exists():
+                    with open(data_file, 'r', encoding='utf-8') as f:
+                        data = json.load(f)
                     
-                    if data_file.exists():
-                        with open(data_file, 'r', encoding='utf-8') as f:
-                            data = json.load(f)
-                        
-                        if data:
-                            # Lösche alte Daten
-                            await db[collection_name].delete_many({})
-                            # Importiere neue Daten
-                            await db[collection_name].insert_many(data)
-                            print(f"  ✅ Loaded {len(data)} documents into {collection_name}")
-                        else:
-                            print(f"  ⚠️  {json_filename} is empty")
+                    if data:
+                        # IMMER löschen und neu laden
+                        await db[collection_name].delete_many({})
+                        await db[collection_name].insert_many(data)
+                        print(f"   ✅ {collection_name}: {len(data)} Dokumente geladen")
                     else:
-                        print(f"  ⚠️  Backup file not found: {json_filename}")
-                        
-                except Exception as e:
-                    print(f"  ❌ Error loading {collection_name}: {e}")
-            else:
-                print(f"✓ {collection_name}: {count} documents (OK)")
-        except Exception as e:
-            print(f"⚠️  Error checking {collection_name}: {e}")
+                        print(f"   ⚠️ {json_filename} ist leer")
+                else:
+                    print(f"   ❌ Backup-Datei fehlt: {json_filename}")
+                    
+            except Exception as e:
+                print(f"   ❌ {collection_name}: Fehler - {e}")
+    else:
+        print("\n✅ Alle Daten sind korrekt - kein Seeding nötig")
     
-    # Verifiziere nach dem Seeding
-    final_blog_count = await db.blog_posts.count_documents({})
+    # Finale Verifizierung
+    print("\n" + "=" * 60)
+    print("📊 FINALE VERIFIZIERUNG:")
+    final_blog = await db.blog_posts.count_documents({})
     final_regionen = await db.blog_posts.count_documents({"category": "regionen"})
-    print(f"✅ Startup complete! Blogs: {final_blog_count}, Regionen: {final_regionen}")
+    final_pairings = await db.regional_pairings.count_documents({})
+    final_grapes = await db.grape_varieties.count_documents({})
+    final_wines = await db.public_wines.count_documents({})
+    
+    print(f"   Blogs: {final_blog} (Regionen: {final_regionen})")
+    print(f"   Regional Pairings: {final_pairings}")
+    print(f"   Rebsorten: {final_grapes}")
+    print(f"   Weine: {final_wines}")
+    print("=" * 60)
+    print("🍷 SERVER BEREIT!")
+    print("=" * 60 + "\n")
 
 @app.on_event("shutdown")
 async def shutdown_db_client():

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-import { Wine, Utensils, Camera, MessageCircle, BookOpen, Users, Database, Heart } from 'lucide-react';
+import { Wine, Utensils, Camera, MessageCircle, BookOpen, Users, Database, Heart, Map } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";

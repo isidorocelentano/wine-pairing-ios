@@ -1942,11 +1942,293 @@ class WinePairingAPITester:
         
         return self.tests_passed == self.tests_run
 
+    # ===================== FINAL DEPLOYMENT TEST v4 CRITICAL ENDPOINTS =====================
+    
+    def test_final_deployment_v4_core_health(self):
+        """FINAL DEPLOYMENT v4: Test GET /api/ - Core Health"""
+        success, response = self.make_request('GET', '', expected_status=200)
+        if success:
+            message = response.get('message', 'unknown')
+            expected_message = "Wine Pairing API - Ihr virtueller Sommelier"
+            if expected_message in message:
+                self.log_test("FINAL v4: Core Health", True, f"API message: {message}")
+            else:
+                self.log_test("FINAL v4: Core Health", False, f"Unexpected message: {message}")
+                return False
+        else:
+            self.log_test("FINAL v4: Core Health", False, str(response))
+        return success
+
+    def test_final_deployment_v4_blog_system(self):
+        """FINAL DEPLOYMENT v4: Test GET /api/blog?limit=10"""
+        success, response = self.make_request('GET', 'blog?limit=10', expected_status=200)
+        if success:
+            posts = response if isinstance(response, list) else []
+            if len(posts) <= 10:
+                self.log_test("FINAL v4: Blog System", True, f"Found {len(posts)} blog posts (limit 10)")
+            else:
+                self.log_test("FINAL v4: Blog System", False, f"Limit not working: got {len(posts)} posts")
+                return False
+        else:
+            self.log_test("FINAL v4: Blog System", False, str(response))
+        return success
+
+    def test_final_deployment_v4_blog_categories(self):
+        """FINAL DEPLOYMENT v4: Test GET /api/blog-categories (erwarte: regionen=84, rebsorten=144)"""
+        success, response = self.make_request('GET', 'blog-categories', expected_status=200)
+        if success:
+            categories = response if isinstance(response, dict) else {}
+            regionen_count = categories.get('regionen', 0)
+            rebsorten_count = categories.get('rebsorten', 0)
+            
+            # Check expected counts
+            if regionen_count >= 80 and rebsorten_count >= 140:  # Allow some variance
+                self.log_test("FINAL v4: Blog Categories", True, 
+                             f"Categories: regionen={regionen_count}, rebsorten={rebsorten_count}")
+            else:
+                self.log_test("FINAL v4: Blog Categories", False, 
+                             f"Expected regionen≥80, rebsorten≥140, got regionen={regionen_count}, rebsorten={rebsorten_count}")
+                return False
+        else:
+            self.log_test("FINAL v4: Blog Categories", False, str(response))
+        return success
+
+    def test_final_deployment_v4_blog_search(self):
+        """FINAL DEPLOYMENT v4: Test GET /api/blog/search?q=Piemont"""
+        success, response = self.make_request('GET', 'blog/search?q=Piemont', expected_status=200)
+        if success:
+            results = response if isinstance(response, list) else []
+            if len(results) > 0:
+                # Check that results contain Piemont
+                piemont_found = any('piemont' in str(result).lower() for result in results)
+                if piemont_found:
+                    self.log_test("FINAL v4: Blog Search Piemont", True, f"Found {len(results)} results for Piemont")
+                else:
+                    self.log_test("FINAL v4: Blog Search Piemont", False, "No Piemont-related results found")
+                    return False
+            else:
+                self.log_test("FINAL v4: Blog Search Piemont", False, "No search results for Piemont")
+                return False
+        else:
+            self.log_test("FINAL v4: Blog Search Piemont", False, str(response))
+        return success
+
+    def test_final_deployment_v4_regional_pairings(self):
+        """FINAL DEPLOYMENT v4: Test GET /api/regional-pairings (erwarte: 44)"""
+        success, response = self.make_request('GET', 'regional-pairings', expected_status=200)
+        if success:
+            pairings = response if isinstance(response, list) else []
+            expected_count = 44
+            
+            if len(pairings) >= 40:  # Allow some variance
+                self.log_test("FINAL v4: Regional Pairings", True, f"Found {len(pairings)} regional pairings (expected ~{expected_count})")
+            else:
+                self.log_test("FINAL v4: Regional Pairings", False, f"Expected ~{expected_count} pairings, got {len(pairings)}")
+                return False
+        else:
+            self.log_test("FINAL v4: Regional Pairings", False, str(response))
+        return success
+
+    def test_final_deployment_v4_regional_pairings_countries(self):
+        """FINAL DEPLOYMENT v4: Test GET /api/regional-pairings/countries (erwarte: 10 Länder)"""
+        success, response = self.make_request('GET', 'regional-pairings/countries', expected_status=200)
+        if success:
+            countries = response if isinstance(response, list) else []
+            expected_count = 10
+            
+            if len(countries) >= 9:  # Allow some variance
+                self.log_test("FINAL v4: Regional Pairings Countries", True, f"Found {len(countries)} countries (expected ~{expected_count})")
+            else:
+                self.log_test("FINAL v4: Regional Pairings Countries", False, f"Expected ~{expected_count} countries, got {len(countries)}")
+                return False
+        else:
+            self.log_test("FINAL v4: Regional Pairings Countries", False, str(response))
+        return success
+
+    def test_final_deployment_v4_grapes(self):
+        """FINAL DEPLOYMENT v4: Test GET /api/grapes (erwarte: 140)"""
+        success, response = self.make_request('GET', 'grapes', expected_status=200)
+        if success:
+            grapes = response if isinstance(response, list) else []
+            expected_count = 140
+            
+            if len(grapes) >= 130:  # Allow some variance
+                self.log_test("FINAL v4: Grapes", True, f"Found {len(grapes)} grape varieties (expected ~{expected_count})")
+            else:
+                self.log_test("FINAL v4: Grapes", False, f"Expected ~{expected_count} grapes, got {len(grapes)}")
+                return False
+        else:
+            self.log_test("FINAL v4: Grapes", False, str(response))
+        return success
+
+    def test_final_deployment_v4_public_wines(self):
+        """FINAL DEPLOYMENT v4: Test GET /api/public-wines?limit=10 (erwarte: 1751 total)"""
+        success, response = self.make_request('GET', 'public-wines?limit=10', expected_status=200)
+        if success:
+            wines = response if isinstance(response, list) else []
+            
+            if len(wines) <= 10:
+                self.log_test("FINAL v4: Public Wines (limit 10)", True, f"Found {len(wines)} wines with limit 10")
+                
+                # Test total count by getting more wines
+                success2, response2 = self.make_request('GET', 'public-wines?limit=2000', expected_status=200)
+                if success2:
+                    all_wines = response2 if isinstance(response2, list) else []
+                    total_count = len(all_wines)
+                    expected_total = 1751
+                    
+                    if total_count >= 1700:  # Allow some variance
+                        self.log_test("FINAL v4: Public Wines Total Count", True, f"Found {total_count} total wines (expected ~{expected_total})")
+                    else:
+                        self.log_test("FINAL v4: Public Wines Total Count", False, f"Expected ~{expected_total} total wines, got {total_count}")
+                        return False
+            else:
+                self.log_test("FINAL v4: Public Wines (limit 10)", False, f"Limit not working: got {len(wines)} wines")
+                return False
+        else:
+            self.log_test("FINAL v4: Public Wines", False, str(response))
+        return success
+
+    def test_final_deployment_v4_ai_pairing(self):
+        """FINAL DEPLOYMENT v4: Test POST /api/pairing mit {"dish": "Pasta Carbonara", "language": "de"}"""
+        pairing_data = {
+            "dish": "Pasta Carbonara",
+            "language": "de"
+        }
+        
+        success, response = self.make_request('POST', 'pairing', data=pairing_data, expected_status=200)
+        if success:
+            recommendation = response.get('recommendation', '')
+            
+            if len(recommendation) >= 100:  # Ensure substantial recommendation
+                # Check for German language indicators
+                german_indicators = ['wein', 'empfehlung', 'passt', 'rotwein', 'weißwein', 'hauptempfehlung']
+                has_german = any(indicator in recommendation.lower() for indicator in german_indicators)
+                
+                if has_german:
+                    self.log_test("FINAL v4: AI Pairing (German)", True, f"Got German recommendation for Pasta Carbonara ({len(recommendation)} chars)")
+                else:
+                    self.log_test("FINAL v4: AI Pairing (German)", False, "Response doesn't appear to be in German")
+                    return False
+            else:
+                self.log_test("FINAL v4: AI Pairing (German)", False, f"Recommendation too short: {len(recommendation)} chars")
+                return False
+        else:
+            self.log_test("FINAL v4: AI Pairing (German)", False, str(response))
+        return success
+
+    def test_final_deployment_v4_data_counts(self):
+        """FINAL DEPLOYMENT v4: Verify expected data counts from manifest v2.0"""
+        results = {}
+        
+        # Test blog_posts: 233
+        success, response = self.make_request('GET', 'blog?limit=300', expected_status=200)
+        if success:
+            posts = response if isinstance(response, list) else []
+            results['blog_posts'] = len(posts)
+        
+        # Test public_wines: 1751
+        success, response = self.make_request('GET', 'public-wines?limit=2000', expected_status=200)
+        if success:
+            wines = response if isinstance(response, list) else []
+            results['public_wines'] = len(wines)
+        
+        # Test grape_varieties: 140
+        success, response = self.make_request('GET', 'grapes', expected_status=200)
+        if success:
+            grapes = response if isinstance(response, list) else []
+            results['grape_varieties'] = len(grapes)
+        
+        # Test regional_pairings: 44
+        success, response = self.make_request('GET', 'regional-pairings', expected_status=200)
+        if success:
+            pairings = response if isinstance(response, list) else []
+            results['regional_pairings'] = len(pairings)
+        
+        # Test dishes: 40
+        success, response = self.make_request('GET', 'dishes', expected_status=200)
+        if success:
+            dishes = response if isinstance(response, list) else []
+            results['dishes'] = len(dishes)
+        
+        # Test feed_posts: 268
+        success, response = self.make_request('GET', 'feed?limit=300', expected_status=200)
+        if success:
+            feed_posts = response if isinstance(response, list) else []
+            results['feed_posts'] = len(feed_posts)
+        
+        # Test wine_database: 494
+        success, response = self.make_request('GET', 'wine-database?limit=600', expected_status=200)
+        if success:
+            wine_db = response if isinstance(response, list) else []
+            results['wine_database'] = len(wine_db)
+        
+        # Expected counts from manifest v2.0
+        expected = {
+            'blog_posts': 233,
+            'public_wines': 1751,
+            'grape_varieties': 140,
+            'regional_pairings': 44,
+            'dishes': 40,
+            'feed_posts': 268,
+            'wine_database': 494
+        }
+        
+        # Validate counts
+        validation_errors = []
+        for key, expected_count in expected.items():
+            actual_count = results.get(key, 0)
+            # Allow 10% variance for most counts
+            tolerance = max(5, int(expected_count * 0.1))
+            
+            if abs(actual_count - expected_count) > tolerance:
+                validation_errors.append(f"{key}: expected ~{expected_count}, got {actual_count}")
+        
+        if validation_errors:
+            self.log_test("FINAL v4: Data Counts Verification", False, "; ".join(validation_errors))
+            return False
+        else:
+            results_str = ", ".join([f"{k}={v}" for k, v in results.items()])
+            self.log_test("FINAL v4: Data Counts Verification", True, f"All counts within tolerance: {results_str}")
+        
+        return True
+
+    def run_final_deployment_v4_tests(self):
+        """Run FINAL DEPLOYMENT TEST v4 - Critical endpoints only"""
+        print("🚀 FINAL DEPLOYMENT TEST v4 - wine-pairing.online")
+        print(f"🌐 Testing API at: {self.api_url}")
+        print("📊 Backup Status: 2970 Dokumente gesichert")
+        print("=" * 60)
+        
+        # Critical endpoints from review request
+        self.test_final_deployment_v4_core_health()
+        self.test_final_deployment_v4_blog_system()
+        self.test_final_deployment_v4_blog_categories()
+        self.test_final_deployment_v4_blog_search()
+        self.test_final_deployment_v4_regional_pairings()
+        self.test_final_deployment_v4_regional_pairings_countries()
+        self.test_final_deployment_v4_grapes()
+        self.test_final_deployment_v4_public_wines()
+        self.test_final_deployment_v4_ai_pairing()
+        self.test_final_deployment_v4_data_counts()
+        
+        # Print summary
+        print("=" * 60)
+        print(f"🏁 FINAL DEPLOYMENT v4 Tests: {self.tests_passed}/{self.tests_run} passed")
+        
+        if self.tests_passed == self.tests_run:
+            print("🎉 FINAL DEPLOYMENT v4 READY! All critical endpoints PASSED.")
+            return True
+        else:
+            failed = self.tests_run - self.tests_passed
+            print(f"❌ {failed} critical tests FAILED. Deployment NOT ready.")
+            return False
+
 def main():
     """Main test execution"""
     tester = WinePairingAPITester()
-    # Run comprehensive pre-deployment tests as specified in review request
-    success = tester.run_comprehensive_pre_deployment_tests()
+    # Run FINAL DEPLOYMENT TEST v4 as specified in review request
+    success = tester.run_final_deployment_v4_tests()
     return 0 if success else 1
 
 if __name__ == "__main__":

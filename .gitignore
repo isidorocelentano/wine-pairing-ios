@@ -65,3 +65,7 @@ agenthub/agents/youtube/db
 android-sdk/ 
 # Environment files
 frontend/node_modules/.cache/default-development/0.pack
+-e 
+# Environment files
+*.env
+*.env.*

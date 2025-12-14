@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate, useLocation } from "react-router-dom";
-import { Wine, Utensils, MessageCircle, Home, BookOpen, Users, Grape, Heart, Compass, Database } from 'lucide-react';
+import { Wine, Utensils, MessageCircle, Home, BookOpen, Users, Grape, Heart, Compass, Database, Map } from 'lucide-react';
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navigation = () => {
@@ -12,7 +12,7 @@ const Navigation = () => {
   const mainNavItems = [
     { path: '/', icon: Home, labelKey: 'nav_home' },
     { path: '/pairing', icon: Utensils, labelKey: 'nav_pairing' },
-    { path: '/sommelier-kompass', icon: Compass, labelKey: 'regional_nav' },
+    { path: '/sommelier-kompass', icon: Map, labelKey: 'regional_nav' },
     { path: '/grapes', icon: Grape, labelKey: 'nav_grapes' },
     { path: '/wine-database', icon: Database, labelKey: 'nav_wine_database' },
     { path: '/favorites', icon: Heart, labelKey: 'nav_favorites' },

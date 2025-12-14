@@ -2002,8 +2002,8 @@ class WinePairingAPITester:
         return success
 
     def test_final_deployment_v4_blog_search(self):
-        """FINAL DEPLOYMENT v4: Test GET /api/blog/search?q=Piemont"""
-        success, response = self.make_request('GET', 'blog/search?q=Piemont', expected_status=200)
+        """FINAL DEPLOYMENT v4: Test GET /api/blog-search?q=Piemont"""
+        success, response = self.make_request('GET', 'blog-search?q=Piemont', expected_status=200)
         if success:
             results = response if isinstance(response, list) else []
             if len(results) > 0:

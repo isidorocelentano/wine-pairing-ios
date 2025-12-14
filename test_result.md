@@ -426,17 +426,20 @@ frontend:
 metadata:
   created_by: "main_agent"
   version: "1.0"
-  test_sequence: 5
+  test_sequence: 6
   run_ui: true
   backend_test_completed: true
   backend_test_results: "39/39 PASSED"
   backend_test_timestamp: "2025-01-02T15:45:00Z"
   data_expansion_verified: true
-  wine_count_verified: 1765
+  wine_count_verified: 1755
   new_regions_verified: ["Mosel", "Rheingau", "Pfalz", "Baden", "Nahe", "Ahr", "St. Gallen"]
   final_deployment_test_completed: true
   final_deployment_test_results: "14/14 CRITICAL ENDPOINTS PASSED"
   final_deployment_test_timestamp: "2025-01-02T15:45:00Z"
+  final_deployment_v4_completed: true
+  final_deployment_v4_results: "11/11 CRITICAL ENDPOINTS PASSED"
+  final_deployment_v4_timestamp: "2025-01-02T16:30:00Z"
   production_ready: true
   database_backup_verified: true
   database_backup_count: 2970
@@ -445,6 +448,7 @@ metadata:
   wine_database_expansion_verified: true
   ai_features_verified: true
   community_features_verified: true
+  manifest_v2_data_counts_verified: true
 
 test_plan:
   current_focus: []

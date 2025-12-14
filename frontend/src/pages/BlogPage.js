@@ -37,12 +37,77 @@ const BlogPage = () => {
       const params = selectedCategory ? `?category=${selectedCategory}` : '';
       const response = await axios.get(`${API}/blog${params}`);
       setPosts(response.data);
+      // Speichere alle Posts beim ersten Laden
+      if (!selectedCategory && allPosts.length === 0) {
+        setAllPosts(response.data);
+      }
     } catch (error) {
       console.error('Error fetching posts:', error);
     } finally {
       setLoading(false);
     }
-  }, [selectedCategory]);
+  }, [selectedCategory, allPosts.length]);
+
+  // Volltextsuche - durchsucht Titel, Excerpt, Tags und Content
+  const searchPosts = useCallback((query) => {
+    if (!query.trim()) {
+      setIsSearching(false);
+      return;
+    }
+    
+    setIsSearching(true);
+    const searchTerms = query.toLowerCase().split(' ').filter(term => term.length > 1);
+    
+    const filtered = allPosts.filter(post => {
+      const searchableFields = [
+        post.title || '',
+        post.title_en || '',
+        post.title_fr || '',
+        post.excerpt || '',
+        post.excerpt_en || '',
+        post.excerpt_fr || '',
+        post.content || '',
+        post.content_en || '',
+        post.content_fr || '',
+        post.category || '',
+        post.region || '',
+        post.country || '',
+        ...(post.tags || [])
+      ].join(' ').toLowerCase();
+      
+      return searchTerms.every(term => searchableFields.includes(term));
+    });
+    
+    setPosts(filtered);
+  }, [allPosts]);
+
+  // Debounced search
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (searchQuery) {
+        searchPosts(searchQuery);
+      } else if (isSearching) {
+        // Reset to category filter
+        setIsSearching(false);
+        fetchPosts();
+      }
+    }, 300);
+    
+    return () => clearTimeout(timer);
+  }, [searchQuery, searchPosts, isSearching, fetchPosts]);
+
+  // Lade alle Posts für Suche beim Start
+  useEffect(() => {
+    const loadAllPosts = async () => {
+      try {
+        const response = await axios.get(`${API}/blog`);
+        setAllPosts(response.data);
+      } catch (error) {
+        console.error('Error loading all posts:', error);
+      }
+    };
+    loadAllPosts();
+  }, []);
 
   useEffect(() => {
     fetchPosts();

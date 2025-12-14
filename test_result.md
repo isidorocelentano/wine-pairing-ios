@@ -2,7 +2,7 @@
 # PRE-DEPLOYMENT COMPREHENSIVE TEST
 #====================================================================================================
 
-user_problem_statement: "Pre-deployment comprehensive test of all features before production deployment"
+user_problem_statement: "Pre-deployment comprehensive test of all features before production deployment. Latest: Footer & Legal Pages (Kontakt, Impressum, Datenschutz) and Homepage App Description added."
 
 backend:
   - task: "Core API Health & Database Connection"

@@ -237,8 +237,42 @@ const BlogPage = () => {
           ) : posts.length === 0 ? (
             <Card className="bg-secondary/30 border-dashed border-2 border-border">
               <CardContent className="py-16 text-center">
-                <Wine className="h-16 w-16 mx-auto mb-4 text-muted-foreground" strokeWidth={1} />
-                <h3 className="text-xl font-medium mb-2">Keine Artikel gefunden</h3>
+                {isSearching ? (
+                  <>
+                    <Search className="h-16 w-16 mx-auto mb-4 text-muted-foreground" strokeWidth={1} />
+                    <h3 className="text-xl font-medium mb-2">
+                      {language === 'de' ? 'Keine Ergebnisse gefunden' : 
+                       language === 'fr' ? 'Aucun résultat trouvé' : 
+                       'No results found'}
+                    </h3>
+                    <p className="text-muted-foreground text-sm mb-4">
+                      {language === 'de' ? `Keine Artikel für "${searchQuery}" gefunden.` :
+                       language === 'fr' ? `Aucun article trouvé pour "${searchQuery}".` :
+                       `No articles found for "${searchQuery}".`}
+                    </p>
+                    <Button 
+                      variant="outline" 
+                      onClick={() => {
+                        setSearchQuery('');
+                        setIsSearching(false);
+                        fetchPosts();
+                      }}
+                    >
+                      {language === 'de' ? 'Suche zurücksetzen' : 
+                       language === 'fr' ? 'Réinitialiser la recherche' : 
+                       'Reset search'}
+                    </Button>
+                  </>
+                ) : (
+                  <>
+                    <Wine className="h-16 w-16 mx-auto mb-4 text-muted-foreground" strokeWidth={1} />
+                    <h3 className="text-xl font-medium mb-2">
+                      {language === 'de' ? 'Keine Artikel gefunden' : 
+                       language === 'fr' ? 'Aucun article trouvé' : 
+                       'No articles found'}
+                    </h3>
+                  </>
+                )}
               </CardContent>
             </Card>
           ) : (

@@ -4,6 +4,8 @@ import { Wine, Utensils, Camera, MessageCircle, BookOpen, Users, Database, Heart
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
+import AppDescription from "@/components/AppDescription";
+import Footer from "@/components/Footer";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -163,6 +165,12 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
+      {/* App Description Section */}
+      <AppDescription />
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };

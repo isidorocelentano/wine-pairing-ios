@@ -28,7 +28,7 @@ const KontaktPage = () => {
                   </div>
                   <div>
                     <p className="font-medium">MYSYMP AG</p>
-                    <p className="text-muted-foreground">Oberdorfstrasse 18a</p>
+                    <p className="text-muted-foreground">Studenstrasse 14B</p>
                     <p className="text-muted-foreground">CH-6207 Nottwil</p>
                     <p className="text-muted-foreground">Schweiz</p>
                   </div>

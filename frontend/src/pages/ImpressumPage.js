@@ -20,7 +20,7 @@ const ImpressumPage = () => {
                 <h2 className="text-xl font-semibold mb-4">Kontaktdaten</h2>
                 <div className="text-muted-foreground space-y-1">
                   <p className="font-medium text-foreground">MYSYMP AG</p>
-                  <p>Oberdorfstrasse 18a</p>
+                  <p>Studenstrasse 14B</p>
                   <p>6207 Nottwil</p>
                   <p>Schweiz</p>
                   <p className="mt-4">E-Mail: <a href="mailto:info@mysymp.ch" className="hover:text-foreground transition-colors">info@mysymp.ch</a></p>

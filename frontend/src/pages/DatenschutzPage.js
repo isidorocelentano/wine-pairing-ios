@@ -31,7 +31,7 @@ const DatenschutzPage = () => {
                 <div className="text-muted-foreground space-y-2">
                   <p><strong className="text-foreground">Verantwortliche Stelle:</strong></p>
                   <p>MYSYMP AG</p>
-                  <p>Oberdorfstrasse 18a</p>
+                  <p>Studenstrasse 14B</p>
                   <p>6207 Nottwil</p>
                   <p>Schweiz</p>
                   <p className="mt-4">E-Mail: <a href="mailto:info@mysymp.ch" className="text-primary hover:underline">info@mysymp.ch</a></p>

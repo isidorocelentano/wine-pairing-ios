@@ -1784,6 +1784,94 @@ class WinePairingAPITester:
             self.log_test("Delete Wine", False, str(response))
         return success
 
+    def test_critical_endpoints_v5(self):
+        """Test critical endpoints for FINAL TEST v5 as specified in review request"""
+        print("\n🎯 CRITICAL ENDPOINTS TEST v5 - wine-pairing.online")
+        print("=" * 60)
+        
+        # 1. GET /api/ - Health
+        success, response = self.make_request('GET', '', expected_status=200)
+        if success:
+            message = response.get('message', 'unknown')
+            self.log_test("1. GET /api/ - Health", True, f"API message: {message}")
+        else:
+            self.log_test("1. GET /api/ - Health", False, str(response))
+        
+        # 2. GET /api/regional-pairings - Expect 44 pairings
+        success, response = self.make_request('GET', 'regional-pairings', expected_status=200)
+        if success:
+            pairings = response if isinstance(response, list) else []
+            expected_count = 44
+            if len(pairings) == expected_count:
+                self.log_test("2. GET /api/regional-pairings", True, f"Found {len(pairings)} pairings (expected {expected_count})")
+            else:
+                self.log_test("2. GET /api/regional-pairings", False, f"Expected {expected_count} pairings, got {len(pairings)}")
+        else:
+            self.log_test("2. GET /api/regional-pairings", False, str(response))
+        
+        # 3. GET /api/regional-pairings/countries - Expect 10 countries
+        success, response = self.make_request('GET', 'regional-pairings/countries', expected_status=200)
+        if success:
+            countries = response if isinstance(response, list) else []
+            expected_count = 10
+            if len(countries) == expected_count:
+                self.log_test("3. GET /api/regional-pairings/countries", True, f"Found {len(countries)} countries (expected {expected_count})")
+            else:
+                self.log_test("3. GET /api/regional-pairings/countries", False, f"Expected {expected_count} countries, got {len(countries)}")
+        else:
+            self.log_test("3. GET /api/regional-pairings/countries", False, str(response))
+        
+        # 4. GET /api/blog-categories - Expect regionen=84
+        success, response = self.make_request('GET', 'blog-categories', expected_status=200)
+        if success:
+            categories = response if isinstance(response, dict) else {}
+            regionen_count = categories.get('regionen', 0)
+            expected_regionen = 84
+            if regionen_count == expected_regionen:
+                self.log_test("4. GET /api/blog-categories", True, f"regionen={regionen_count} (expected {expected_regionen})")
+            else:
+                self.log_test("4. GET /api/blog-categories", False, f"Expected regionen={expected_regionen}, got regionen={regionen_count}")
+        else:
+            self.log_test("4. GET /api/blog-categories", False, str(response))
+        
+        # 5. GET /api/grapes - Expect 140
+        success, response = self.make_request('GET', 'grapes', expected_status=200)
+        if success:
+            grapes = response if isinstance(response, list) else []
+            expected_count = 140
+            if len(grapes) == expected_count:
+                self.log_test("5. GET /api/grapes", True, f"Found {len(grapes)} grapes (expected {expected_count})")
+            else:
+                self.log_test("5. GET /api/grapes", False, f"Expected {expected_count} grapes, got {len(grapes)}")
+        else:
+            self.log_test("5. GET /api/grapes", False, str(response))
+        
+        # 6. GET /api/public-wines?limit=5 - Load wines
+        success, response = self.make_request('GET', 'public-wines?limit=5', expected_status=200)
+        if success:
+            wines = response if isinstance(response, list) else []
+            if len(wines) <= 5 and len(wines) > 0:
+                self.log_test("6. GET /api/public-wines?limit=5", True, f"Loaded {len(wines)} wines (limit working)")
+            else:
+                self.log_test("6. GET /api/public-wines?limit=5", False, f"Expected 1-5 wines, got {len(wines)}")
+        else:
+            self.log_test("6. GET /api/public-wines?limit=5", False, str(response))
+        
+        # 7. POST /api/pairing with {"dish": "Risotto", "language": "de"}
+        pairing_data = {
+            "dish": "Risotto",
+            "language": "de"
+        }
+        success, response = self.make_request('POST', 'pairing', data=pairing_data, expected_status=200)
+        if success:
+            recommendation = response.get('recommendation', '')
+            if len(recommendation) > 50:
+                self.log_test("7. POST /api/pairing (Risotto, German)", True, f"Got recommendation ({len(recommendation)} chars)")
+            else:
+                self.log_test("7. POST /api/pairing (Risotto, German)", False, f"Recommendation too short: {recommendation}")
+        else:
+            self.log_test("7. POST /api/pairing (Risotto, German)", False, str(response))
+
     def run_comprehensive_pre_deployment_tests(self):
         """Run comprehensive pre-deployment tests as specified in review request"""
         print(f"🚀 PRE-DEPLOYMENT COMPREHENSIVE BACKEND TEST")

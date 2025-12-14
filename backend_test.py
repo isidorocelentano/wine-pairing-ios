@@ -1977,9 +1977,17 @@ class WinePairingAPITester:
         """FINAL DEPLOYMENT v4: Test GET /api/blog-categories (erwarte: regionen=84, rebsorten=144)"""
         success, response = self.make_request('GET', 'blog-categories', expected_status=200)
         if success:
-            categories = response if isinstance(response, dict) else {}
-            regionen_count = categories.get('regionen', 0)
-            rebsorten_count = categories.get('rebsorten', 0)
+            # Response is a list of category objects: [{"category":"rebsorten","count":144}, ...]
+            categories = response if isinstance(response, list) else []
+            
+            # Convert to dict for easier access
+            category_counts = {}
+            for cat in categories:
+                if isinstance(cat, dict) and 'category' in cat and 'count' in cat:
+                    category_counts[cat['category']] = cat['count']
+            
+            regionen_count = category_counts.get('regionen', 0)
+            rebsorten_count = category_counts.get('rebsorten', 0)
             
             # Check expected counts
             if regionen_count >= 80 and rebsorten_count >= 140:  # Allow some variance

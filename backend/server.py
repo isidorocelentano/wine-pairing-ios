@@ -30,6 +30,64 @@ db = client[os.environ.get('DB_NAME', 'wine_pairing_db')]
 # LLM API Key
 EMERGENT_LLM_KEY = os.environ.get('EMERGENT_LLM_KEY', '')
 
+# ===================== DATABASE SEEDING =====================
+# Automatisches Laden der Backup-Daten wenn die Datenbank leer ist
+
+async def seed_database_if_empty():
+    """
+    Prüft ob die Datenbank leer ist und lädt die Backup-Daten.
+    Wird beim Serverstart automatisch ausgeführt.
+    """
+    try:
+        # Prüfe ob blog_posts Collection leer oder mit falschen Daten gefüllt ist
+        blog_count = await db.blog_posts.count_documents({})
+        
+        # Prüfe auch ob die RICHTIGEN Kategorien vorhanden sind
+        regionen_count = await db.blog_posts.count_documents({"category": "regionen"})
+        
+        logging.info(f"🔍 Database check: {blog_count} blog_posts, {regionen_count} in 'regionen' category")
+        
+        # Wenn weniger als 200 Posts ODER keine "regionen" Kategorie -> Seed!
+        if blog_count < 200 or regionen_count == 0:
+            logging.info("📦 Database needs seeding - loading backup data...")
+            
+            backup_dir = ROOT_DIR / 'data'
+            
+            collections_to_seed = {
+                'blog_posts': 'blog_posts.json',
+                'public_wines': 'public_wines.json',
+                'grape_varieties': 'grape_varieties.json',
+                'regional_pairings': 'regional_pairings.json',
+                'dishes': 'dishes.json',
+                'feed_posts': 'feed_posts.json',
+                'wine_database': 'wine_database.json'
+            }
+            
+            for collection_name, filename in collections_to_seed.items():
+                filepath = backup_dir / filename
+                if filepath.exists():
+                    try:
+                        with open(filepath, 'r', encoding='utf-8') as f:
+                            data = json.load(f)
+                        
+                        if data:
+                            # Lösche existierende Daten
+                            await db[collection_name].delete_many({})
+                            # Importiere Backup-Daten
+                            result = await db[collection_name].insert_many(data)
+                            logging.info(f"  ✅ {collection_name}: {len(result.inserted_ids)} documents seeded")
+                    except Exception as e:
+                        logging.error(f"  ❌ {collection_name}: Error - {e}")
+                else:
+                    logging.warning(f"  ⚠️ {collection_name}: Backup file not found at {filepath}")
+            
+            logging.info("🎉 Database seeding completed!")
+        else:
+            logging.info("✅ Database already has correct data - skipping seed")
+            
+    except Exception as e:
+        logging.error(f"❌ Database seeding error: {e}")
+
 # ===================== ACCENT-INSENSITIVE SEARCH HELPER =====================
 # WICHTIG: Diese Funktion muss für alle Suchfunktionen verwendet werden!
 # Problem: "Chateau" muss "Château" finden, "Cotes" muss "Côtes" finden

@@ -63,6 +63,15 @@ const HomePage = () => {
               </Button>
               <Button
                 variant="outline"
+                onClick={() => navigate('/sommelier-kompass')}
+                className="rounded-full px-6 md:px-8 py-5 md:py-6 text-sm font-medium tracking-wide border-primary/30 hover:bg-primary/5"
+                data-testid="cta-kompass"
+              >
+                <Map className="mr-2 h-4 w-4" />
+                {t('regional_nav') || 'Sommelier Kompass'}
+              </Button>
+              <Button
+                variant="outline"
                 onClick={() => navigate('/wine-database')}
                 className="rounded-full px-6 md:px-8 py-5 md:py-6 text-sm font-medium tracking-wide border-primary/30 hover:bg-primary/5"
                 data-testid="cta-wine-database"

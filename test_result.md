@@ -374,7 +374,7 @@ test_plan:
 
 agent_communication:
   - agent: "main"
-    message: "COMPREHENSIVE TEST AFTER MAJOR DATA EXPANSION: Database backup completed with 2807 documents. Major expansion: public_wines grew from 846 to 1671 wines (+825 new wines from St. Gallen, Mosel, Rheingau, Pfalz, Baden, Nahe, Ahr regions). Test priorities: 1) Verify new German regions (Mosel, Rheingau, Pfalz, Baden, Nahe, Ahr) appear in filters 2) Verify St. Gallen wines load correctly 3) Wine database pagination and filtering 4) All core API endpoints 5) Frontend pages load correctly 6) Mobile responsiveness"
+    message: "PRE-DEPLOYMENT COMPREHENSIVE TEST: Full app testing before deployment. Database: 2945 documents (233 blogs, 1726 wines, 140 grape varieties). NEW FEATURES TO TEST: 1) Blog full-text search (/api/blog-search endpoint) 2) Auto-add wines from pairing recommendations 3) 84 region blogs with translations. CORE FEATURES: 4) Wine pairing AI with main recommendation 5) Public wines database with filters 6) Sommelier chat 7) All navigation and pages 8) Mobile responsiveness"
   - agent: "main"
     message: "PRE-DEPLOYMENT COMPREHENSIVE TEST: Please run a full test suite covering ALL features. Database backup completed with 1982 documents (140 grape varieties, 44 regional pairings, 150 blog posts, 846 public wines, 40 dishes, 268 feed posts, 494 wine database entries). Test all API endpoints and verify frontend pages load correctly. Focus on: 1) Core API health 2) Wine pairing AI 3) Sommelier-Kompass with dual wine recommendations 4) Grape varieties 5) Blog posts 6) Wine database filters 7) Community feed 8) Mobile navigation 9) Multilingual support"
   - agent: "testing"

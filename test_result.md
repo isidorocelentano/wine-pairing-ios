@@ -2,7 +2,7 @@
 # PRE-DEPLOYMENT COMPREHENSIVE TEST
 #====================================================================================================
 
-user_problem_statement: "Pre-deployment comprehensive test of all features before production deployment. Latest: Footer & Legal Pages (Kontakt, Impressum, Datenschutz) and Homepage App Description added."
+user_problem_statement: "FINAL PRE-DEPLOYMENT TEST: Footer with marketing section, Legal Pages, Address update (Studenstrasse 14B), removed 'kostenlos' for Freemium. Backup completed: 2970 documents."
 
 backend:
   - task: "Core API Health & Database Connection"

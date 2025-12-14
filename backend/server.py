@@ -3616,7 +3616,22 @@ app.include_router(api_router)
 
 @app.on_event("startup")
 async def startup_seed_data():
-    """Seed all collections from JSON backup files if they are empty"""
+    """Seed all collections from JSON backup files if they are empty or have wrong data"""
+    
+    print("🚀 Server startup - checking database collections...")
+    
+    # WICHTIG: Prüfe ob die RICHTIGEN Blog-Kategorien vorhanden sind
+    # Production hat alte Kategorien wie "rebsorten-portraits", wir brauchen "regionen"
+    blog_count = await db.blog_posts.count_documents({})
+    regionen_count = await db.blog_posts.count_documents({"category": "regionen"})
+    
+    print(f"🔍 Blog check: {blog_count} total posts, {regionen_count} in 'regionen' category")
+    
+    # Wenn weniger als 200 Posts ODER keine "regionen" Kategorie -> komplettes Seeding!
+    needs_full_reseed = blog_count < 200 or regionen_count < 80
+    
+    if needs_full_reseed:
+        print("📦 Database has old/wrong data - performing FULL reseed...")
     
     # Define all collections to restore from JSON backups
     collections_to_seed = [
@@ -3629,13 +3644,15 @@ async def startup_seed_data():
         ("feed_posts", "feed_posts.json"),
     ]
     
-    print("🚀 Server startup - checking database collections...")
-    
     for collection_name, json_filename in collections_to_seed:
         try:
             count = await db[collection_name].count_documents({})
-            if count == 0:
-                print(f"🌱 {collection_name} is empty. Seeding from JSON...")
+            
+            # Reseed wenn: Collection leer ODER full reseed nötig (wegen falscher Blog-Daten)
+            should_seed = count == 0 or needs_full_reseed
+            
+            if should_seed:
+                print(f"🌱 {collection_name}: Seeding from JSON backup...")
                 
                 try:
                     data_file = ROOT_DIR / "data" / json_filename
@@ -3645,21 +3662,27 @@ async def startup_seed_data():
                             data = json.load(f)
                         
                         if data:
+                            # Lösche alte Daten
+                            await db[collection_name].delete_many({})
+                            # Importiere neue Daten
                             await db[collection_name].insert_many(data)
-                            print(f"  ✓ Loaded {len(data)} documents into {collection_name}")
+                            print(f"  ✅ Loaded {len(data)} documents into {collection_name}")
                         else:
                             print(f"  ⚠️  {json_filename} is empty")
                     else:
                         print(f"  ⚠️  Backup file not found: {json_filename}")
                         
                 except Exception as e:
-                    print(f"  ⚠️  Error loading {collection_name}: {e}")
+                    print(f"  ❌ Error loading {collection_name}: {e}")
             else:
-                print(f"✓ {collection_name}: {count} documents")
+                print(f"✓ {collection_name}: {count} documents (OK)")
         except Exception as e:
             print(f"⚠️  Error checking {collection_name}: {e}")
     
-    print("✅ Startup seeding complete!")
+    # Verifiziere nach dem Seeding
+    final_blog_count = await db.blog_posts.count_documents({})
+    final_regionen = await db.blog_posts.count_documents({"category": "regionen"})
+    print(f"✅ Startup complete! Blogs: {final_blog_count}, Regionen: {final_regionen}")
 
 @app.on_event("shutdown")
 async def shutdown_db_client():

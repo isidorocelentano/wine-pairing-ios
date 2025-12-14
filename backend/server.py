@@ -2949,6 +2949,60 @@ async def get_blog_posts(category: Optional[str] = None, limit: int = 20):
             post['updated_at'] = datetime.fromisoformat(post['updated_at'])
     return posts
 
+
+@api_router.get("/blog-search")
+async def search_blog_posts(q: str, limit: int = 50):
+    """Search blog posts by query - searches title, excerpt, tags, region, content"""
+    if not q or len(q) < 2:
+        return []
+    
+    # Suche in mehreren Feldern mit Regex
+    search_regex = {"$regex": q, "$options": "i"}
+    query = {
+        "published": True,
+        "$or": [
+            {"title": search_regex},
+            {"title_en": search_regex},
+            {"title_fr": search_regex},
+            {"excerpt": search_regex},
+            {"excerpt_en": search_regex},
+            {"excerpt_fr": search_regex},
+            {"region": search_regex},
+            {"country": search_regex},
+            {"tags": search_regex},
+            {"content": search_regex},
+            {"content_en": search_regex},
+            {"content_fr": search_regex},
+        ]
+    }
+    
+    # Hole Posts mit Relevanz (Titel-Matches zuerst)
+    posts = await db.blog_posts.find(query, {"_id": 0}).to_list(limit)
+    
+    # Sortiere nach Relevanz (Titel/Region Match zuerst)
+    def relevance_score(post):
+        score = 0
+        q_lower = q.lower()
+        if q_lower in (post.get('title') or '').lower():
+            score += 100
+        if q_lower in (post.get('region') or '').lower():
+            score += 100
+        if q_lower in ' '.join(post.get('tags') or []).lower():
+            score += 50
+        if q_lower in (post.get('excerpt') or '').lower():
+            score += 30
+        return score
+    
+    posts.sort(key=relevance_score, reverse=True)
+    
+    for post in posts:
+        if isinstance(post.get('created_at'), str):
+            post['created_at'] = datetime.fromisoformat(post['created_at'])
+        if isinstance(post.get('updated_at'), str):
+            post['updated_at'] = datetime.fromisoformat(post['updated_at'])
+    
+    return posts
+
 @api_router.get("/blog/{slug}", response_model=BlogPost)
 async def get_blog_post(slug: str):
     """Get a specific blog post by slug"""

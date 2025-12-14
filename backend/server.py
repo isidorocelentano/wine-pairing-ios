@@ -301,13 +301,6 @@ async def auto_add_recommended_wines(recommendation: str, dish: str):
 # Create the main app
 app = FastAPI(title="Wine Pairing API", version="1.0.0")
 
-# Startup event - seed database if empty
-@app.on_event("startup")
-async def startup_event():
-    """Seed database with backup data if empty or missing correct categories"""
-    logging.info("🚀 Server starting - checking database...")
-    await seed_database_if_empty()
-
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
 

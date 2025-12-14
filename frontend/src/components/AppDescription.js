@@ -53,7 +53,7 @@ const AppDescription = () => {
           description: 'Unsere Datenbank wächst organisch durch KI-generierte Empfehlungen. Jede Pairing-Anfrage kann neue, einzigartige Weine in unser System bringen.'
         }
       ],
-      closing: 'wine-pairing.online ist Ihr vertrauenswürdiger Begleiter auf der Reise durch die faszinierende Welt des Weins. Kostenlos, werbefrei und mit Leidenschaft für Qualität entwickelt.',
+      closing: 'wine-pairing.online ist Ihr vertrauenswürdiger Begleiter auf der Reise durch die faszinierende Welt des Weins. Werbefrei und mit Leidenschaft für Qualität entwickelt.',
       cta: 'Ein Projekt von MYSYMP AG – Your Partner for Lifestyle'
     },
     en: {
@@ -103,7 +103,7 @@ const AppDescription = () => {
           description: 'Our database grows organically through AI-generated recommendations. Every pairing request can bring new, unique wines into our system.'
         }
       ],
-      closing: 'wine-pairing.online is your trusted companion on your journey through the fascinating world of wine. Free, ad-free, and developed with a passion for quality.',
+      closing: 'wine-pairing.online is your trusted companion on your journey through the fascinating world of wine. Ad-free and developed with a passion for quality.',
       cta: 'A project by MYSYMP AG – Your Partner for Lifestyle'
     },
     fr: {
@@ -153,7 +153,7 @@ const AppDescription = () => {
           description: 'Notre base de données s\'enrichit organiquement grâce aux recommandations générées par IA. Chaque demande d\'accord peut apporter de nouveaux vins uniques.'
         }
       ],
-      closing: 'wine-pairing.online est votre compagnon de confiance dans votre voyage à travers le monde fascinant du vin. Gratuit, sans publicité et développé avec passion pour la qualité.',
+      closing: 'wine-pairing.online est votre compagnon de confiance dans votre voyage à travers le monde fascinant du vin. Sans publicité et développé avec passion pour la qualité.',
       cta: 'Un projet de MYSYMP AG – Your Partner for Lifestyle'
     }
   };

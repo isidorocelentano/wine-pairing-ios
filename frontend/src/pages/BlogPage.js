@@ -36,16 +36,12 @@ const BlogPage = () => {
       const params = selectedCategory ? `?category=${selectedCategory}` : '';
       const response = await axios.get(`${API}/blog${params}`);
       setPosts(response.data);
-      // Speichere alle Posts beim ersten Laden
-      if (!selectedCategory && allPosts.length === 0) {
-        setAllPosts(response.data);
-      }
     } catch (error) {
       console.error('Error fetching posts:', error);
     } finally {
       setLoading(false);
     }
-  }, [selectedCategory, allPosts.length]);
+  }, [selectedCategory]);
 
   // Volltextsuche über Backend-API
   const searchPosts = useCallback(async (query) => {
@@ -67,10 +63,9 @@ const BlogPage = () => {
   // Debounced search
   useEffect(() => {
     const timer = setTimeout(() => {
-      if (searchQuery) {
+      if (searchQuery && searchQuery.length >= 2) {
         searchPosts(searchQuery);
-      } else if (isSearching) {
-        // Reset to category filter
+      } else if (isSearching && !searchQuery) {
         setIsSearching(false);
         fetchPosts();
       }
@@ -78,19 +73,6 @@ const BlogPage = () => {
     
     return () => clearTimeout(timer);
   }, [searchQuery, searchPosts, isSearching, fetchPosts]);
-
-  // Lade alle Posts für Suche beim Start
-  useEffect(() => {
-    const loadAllPosts = async () => {
-      try {
-        const response = await axios.get(`${API}/blog`);
-        setAllPosts(response.data);
-      } catch (error) {
-        console.error('Error loading all posts:', error);
-      }
-    };
-    loadAllPosts();
-  }, []);
 
   useEffect(() => {
     fetchPosts();

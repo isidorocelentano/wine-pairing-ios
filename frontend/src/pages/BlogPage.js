@@ -163,13 +163,51 @@ const BlogPage = () => {
             </p>
           </header>
 
+          {/* Suchfeld */}
+          <div className="max-w-xl mx-auto mb-6">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Input
+                type="text"
+                placeholder={language === 'de' ? 'Suche nach Weinregionen, Rebsorten, Tipps...' : 
+                            language === 'fr' ? 'Rechercher des régions viticoles, cépages, conseils...' :
+                            'Search wine regions, grape varieties, tips...'}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="pl-10 pr-10 py-5 bg-background/80 backdrop-blur-sm border-border/50 rounded-full text-sm"
+                data-testid="blog-search"
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => {
+                    setSearchQuery('');
+                    setIsSearching(false);
+                    fetchPosts();
+                  }}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 p-1 hover:bg-accent rounded-full transition-colors"
+                >
+                  <X className="h-4 w-4 text-muted-foreground" />
+                </button>
+              )}
+            </div>
+            {isSearching && (
+              <p className="text-center text-sm text-muted-foreground mt-2">
+                {posts.length} {language === 'de' ? 'Ergebnisse für' : language === 'fr' ? 'résultats pour' : 'results for'} "{searchQuery}"
+              </p>
+            )}
+          </div>
+
           {/* Categories */}
           <div className="flex flex-wrap gap-2 justify-center mb-8">
             <Button
-              variant={selectedCategory === null ? 'default' : 'outline'}
+              variant={selectedCategory === null && !isSearching ? 'default' : 'outline'}
               size="sm"
               className="rounded-full"
-              onClick={() => setSelectedCategory(null)}
+              onClick={() => {
+                setSelectedCategory(null);
+                setSearchQuery('');
+                setIsSearching(false);
+              }}
               data-testid="category-all"
             >
               {t('blog_all')}
@@ -177,10 +215,14 @@ const BlogPage = () => {
             {categories.map((cat) => (
               <Button
                 key={cat.category}
-                variant={selectedCategory === cat.category ? 'default' : 'outline'}
+                variant={selectedCategory === cat.category && !isSearching ? 'default' : 'outline'}
                 size="sm"
                 className="rounded-full"
-                onClick={() => setSelectedCategory(cat.category)}
+                onClick={() => {
+                  setSelectedCategory(cat.category);
+                  setSearchQuery('');
+                  setIsSearching(false);
+                }}
                 data-testid={`category-${cat.category}`}
               >
                 {getCategoryLabel(cat.category)} ({cat.count})

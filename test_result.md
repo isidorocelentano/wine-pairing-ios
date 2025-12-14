@@ -2,7 +2,7 @@
 # PRE-DEPLOYMENT COMPREHENSIVE TEST
 #====================================================================================================
 
-user_problem_statement: "FINAL PRE-DEPLOYMENT TEST: Footer with marketing section, Legal Pages, Address update (Studenstrasse 14B), removed 'kostenlos' for Freemium. Backup completed: 2970 documents."
+user_problem_statement: "FINAL TEST v4 - Deployment Readiness Check nach robustem Auto-Seeding v2.0. Backup: 2970 Dokumente."
 
 backend:
   - task: "Core API Health & Database Connection"

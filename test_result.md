@@ -284,6 +284,9 @@ frontend:
       - working: true
         agent: "testing"
         comment: "✅ Blog page loads successfully with blog posts displayed. Blog cards are properly rendered and clickable for navigation to detail pages."
+      - working: true
+        agent: "testing"
+        comment: "✅ CRITICAL NEW SEARCH FEATURE VERIFIED: Search input field visible with placeholder text, Piemont search shows 10 results, Bordeaux search shows 50 results, category filter buttons (6 total including Regionen, Rebsorten), blog cards display correctly (20 cards with images and titles). Minor: X button clear search needs refinement."
 
   - task: "Community Feed Page"
     implemented: true

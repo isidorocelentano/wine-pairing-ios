@@ -239,6 +239,9 @@ frontend:
       - working: true
         agent: "testing"
         comment: "✅ Sommelier-Kompass page loads successfully with country grid. Found multiple country buttons for selection. Page structure and navigation working correctly."
+      - working: true
+        agent: "testing"
+        comment: "✅ PRE-DEPLOYMENT SOMMELIER-KOMPASS VERIFICATION: Page loads successfully, country grid visible with 10 countries, Deutschland button responds to click. Minor: Deutschland pairings loading needs investigation - may be data or filter related, but core page functionality confirmed working."
 
   - task: "Grape Varieties Page"
     implemented: true

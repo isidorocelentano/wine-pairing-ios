@@ -1824,8 +1824,12 @@ class WinePairingAPITester:
         # 4. GET /api/blog-categories - Expect regionen=84
         success, response = self.make_request('GET', 'blog-categories', expected_status=200)
         if success:
-            categories = response if isinstance(response, dict) else {}
-            regionen_count = categories.get('regionen', 0)
+            categories = response if isinstance(response, list) else []
+            regionen_count = 0
+            for category in categories:
+                if category.get('category') == 'regionen':
+                    regionen_count = category.get('count', 0)
+                    break
             expected_regionen = 84
             if regionen_count == expected_regionen:
                 self.log_test("4. GET /api/blog-categories", True, f"regionen={regionen_count} (expected {expected_regionen})")

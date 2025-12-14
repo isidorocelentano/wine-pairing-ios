@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Wine, ArrowRight, Calendar, User, Tag, Loader2, Search, X } from 'lucide-react';
@@ -16,7 +16,6 @@ const BlogPage = () => {
   const { t, language } = useLanguage();
   const navigate = useNavigate();
   const [posts, setPosts] = useState([]);
-  const [allPosts, setAllPosts] = useState([]); // Alle Posts für die Suche
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [loading, setLoading] = useState(true);

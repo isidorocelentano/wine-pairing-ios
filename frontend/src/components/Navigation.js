@@ -12,6 +12,7 @@ const Navigation = () => {
   const mainNavItems = [
     { path: '/', icon: Home, labelKey: 'nav_home' },
     { path: '/pairing', icon: Utensils, labelKey: 'nav_pairing' },
+    { path: '/sommelier-kompass', icon: Compass, labelKey: 'regional_nav' },
     { path: '/grapes', icon: Grape, labelKey: 'nav_grapes' },
     { path: '/wine-database', icon: Database, labelKey: 'nav_wine_database' },
     { path: '/favorites', icon: Heart, labelKey: 'nav_favorites' },
@@ -21,7 +22,6 @@ const Navigation = () => {
 
   // Secondary nav items (visible on larger screens)
   const secondaryNavItems = [
-    { path: '/sommelier-kompass', icon: Compass, labelKey: 'regional_nav' },
     { path: '/cellar', icon: Wine, labelKey: 'nav_cellar' },
     { path: '/blog', icon: BookOpen, labelKey: 'nav_blog' },
   ];

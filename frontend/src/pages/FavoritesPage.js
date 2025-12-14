@@ -12,6 +12,85 @@ import { useLanguage } from '../contexts/LanguageContext';
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
+// Helper function for wine color badges
+const getWineColorBadge = (color) => {
+  const colorMap = {
+    'rotwein': 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300',
+    'weisswein': 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300',
+    'rosé': 'bg-pink-100 text-pink-800 dark:bg-pink-900/30 dark:text-pink-300',
+    'rose': 'bg-pink-100 text-pink-800 dark:bg-pink-900/30 dark:text-pink-300',
+    'orange': 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300',
+    'suesswein': 'bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300',
+    'schaumwein': 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300'
+  };
+  return colorMap[color] || 'bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300';
+};
+
+// WineCard component - defined outside to prevent re-renders
+const WineCard = ({ wine, listType, onMove, onRemove }) => (
+  <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover-lift overflow-hidden">
+    <CardContent className="p-5">
+      <div className="flex items-start justify-between mb-3">
+        <Badge className={getWineColorBadge(wine.wine_color)}>
+          {wine.wine_color}
+        </Badge>
+        <span className="text-xs text-muted-foreground">
+          {new Date(wine.added_at).toLocaleDateString('de-DE')}
+        </span>
+      </div>
+
+      <h3 className="font-bold text-lg mb-1 line-clamp-2 leading-tight">
+        {wine.wine_name}
+      </h3>
+      <p className="text-sm text-muted-foreground mb-3">{wine.winery}</p>
+      
+      <div className="text-xs text-muted-foreground mb-4">
+        📍 {wine.region}, {wine.country}
+      </div>
+
+      <div className="flex gap-2">
+        <Button
+          size="sm"
+          variant="outline"
+          className="flex-1"
+          onClick={() => onMove(wine, listType === 'favorites')}
+        >
+          {listType === 'favorites' ? (
+            <>
+              <Bookmark className="h-4 w-4 mr-2" />
+              Zur Wunschliste
+            </>
+          ) : (
+            <>
+              <Heart className="h-4 w-4 mr-2" />
+              Zu Favoriten
+            </>
+          )}
+        </Button>
+        <Button
+          size="sm"
+          variant="outline"
+          className="text-destructive hover:bg-destructive hover:text-destructive-foreground"
+          onClick={() => onRemove(wine.wine_id, listType)}
+        >
+          <Trash2 className="h-4 w-4" />
+        </Button>
+      </div>
+    </CardContent>
+  </Card>
+);
+
+// EmptyState component - defined outside to prevent re-renders
+const EmptyState = ({ icon: Icon, title, description }) => (
+  <Card className="bg-secondary/30 border-dashed border-2 border-border">
+    <CardContent className="py-16 text-center">
+      <Icon className="h-16 w-16 mx-auto mb-4 text-muted-foreground" strokeWidth={1} />
+      <h3 className="text-xl font-medium mb-2">{title}</h3>
+      <p className="text-muted-foreground">{description}</p>
+    </CardContent>
+  </Card>
+);
+
 export default function FavoritesPage() {
   const { t } = useLanguage();
   const [favorites, setFavorites] = useState([]);

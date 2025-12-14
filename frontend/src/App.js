@@ -26,6 +26,9 @@ import DishAdminPage from "@/pages/DishAdminPage";
 import PairingSeoPage from "@/pages/PairingSeoPage";
 import SeoPairingExplorerPage from "@/pages/SeoPairingExplorerPage";
 import SommelierKompassPage from "@/pages/SommelierKompassPage";
+import KontaktPage from "@/pages/KontaktPage";
+import ImpressumPage from "@/pages/ImpressumPage";
+import DatenschutzPage from "@/pages/DatenschutzPage";
 
 function App() {
   return (
@@ -52,6 +55,9 @@ function App() {
               <Route path="/chat" element={<><ChatPage /><Navigation /></>} />
               <Route path="/blog" element={<><BlogPage /><Navigation /></>} />
               <Route path="/blog/:slug" element={<><BlogPostPage /><Navigation /></>} />
+              <Route path="/kontakt" element={<><KontaktPage /><Navigation /></>} />
+              <Route path="/impressum" element={<><ImpressumPage /><Navigation /></>} />
+              <Route path="/datenschutz" element={<><DatenschutzPage /><Navigation /></>} />
             </Routes>
           </BrowserRouter>
         </div>

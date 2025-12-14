@@ -3555,18 +3555,29 @@ async def startup_seed_data():
     
     print("🚀 Server startup - checking database collections...")
     
-    # WICHTIG: Prüfe ob die RICHTIGEN Blog-Kategorien vorhanden sind
-    # Production hat alte Kategorien wie "rebsorten-portraits", wir brauchen "regionen"
+    # WICHTIG: Prüfe ob die RICHTIGEN Daten vorhanden sind
     blog_count = await db.blog_posts.count_documents({})
     regionen_count = await db.blog_posts.count_documents({"category": "regionen"})
+    regional_pairings_count = await db.regional_pairings.count_documents({})
+    grape_count = await db.grape_varieties.count_documents({})
     
-    print(f"🔍 Blog check: {blog_count} total posts, {regionen_count} in 'regionen' category")
+    print(f"🔍 Database check:")
+    print(f"   - Blogs: {blog_count} total, {regionen_count} in 'regionen'")
+    print(f"   - Regional Pairings: {regional_pairings_count}")
+    print(f"   - Grape Varieties: {grape_count}")
     
-    # Wenn weniger als 200 Posts ODER keine "regionen" Kategorie -> komplettes Seeding!
-    needs_full_reseed = blog_count < 200 or regionen_count < 80
+    # Wenn IRGENDWAS falsch ist -> komplettes Seeding!
+    needs_full_reseed = (
+        blog_count < 200 or 
+        regionen_count < 80 or 
+        regional_pairings_count < 40 or
+        grape_count < 130
+    )
     
     if needs_full_reseed:
-        print("📦 Database has old/wrong data - performing FULL reseed...")
+        print("📦 Database has missing/wrong data - performing FULL reseed...")
+    else:
+        print("✅ Database looks correct - skipping full reseed")
     
     # Define all collections to restore from JSON backups
     collections_to_seed = [

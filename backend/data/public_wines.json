@@ -51034,5 +51034,121 @@
     "created_at": "2025-12-14T13:48:34.679168Z",
     "updated_at": "2025-12-14T13:48:34.679176Z",
     "auto_generated": true
+  },
+  {
+    "name": "Fontana Candida Frascati Superiore Secco DOC",
+    "winery": "Fontana Candida",
+    "grape_variety": "Malvasia (mit Trebbiano und weiteren autochthonen Sorten)",
+    "region": "Lazio, Frascati",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€",
+    "description_de": "Ein frischer, lebendiger Frascati mit Noten von Zitrus, weißen Blüten und einem Hauch Mandel, der den Duft der römischen Hügel im Glas einfängt.",
+    "description_en": "A crisp, lively Frascati with citrus, white blossom and subtle almond notes, capturing the sun-drenched hills around Rome in every sip.",
+    "description_fr": "Un Frascati vif et frais aux notes d’agrumes, de fleurs blanches et d’amande délicate, qui évoque les collines ensoleillées autour de Rome.",
+    "food_pairings_de": [
+      "Spaghetti alle Vongole",
+      "Antipasti mit gegrilltem Gemüse und mildem Käse"
+    ],
+    "food_pairings_en": [
+      "Spaghetti alle vongole",
+      "Antipasti with grilled vegetables and mild cheese"
+    ],
+    "food_pairings_fr": [
+      "Spaghetti alle vongole",
+      "Antipasti de légumes grillés et fromages doux"
+    ],
+    "id": "3bb1530c-3897-4980-aab1-6d028d66990a",
+    "created_at": "2025-12-14T18:48:07.101033Z",
+    "updated_at": "2025-12-14T18:48:07.101042Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Pieropan Soave Classico DOC",
+    "winery": "Pieropan",
+    "grape_variety": "Garganega",
+    "region": "Venetien",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€",
+    "description_de": "Ein lebendiger, mineralischer Soave mit feiner Zitrusfrucht, weißen Blüten und einem Hauch Mandeln, der mit Eleganz und Frische über den Gaumen gleitet.",
+    "description_en": "A vibrant, mineral-driven Soave with bright citrus, white flowers and a hint of almond, offering remarkable freshness and elegance.",
+    "description_fr": "Un Soave vif et minéral aux notes d’agrumes, de fleurs blanches et une touche d’amande, alliant grande fraîcheur et élégance.",
+    "food_pairings_de": [
+      "Spaghetti alle Vongole",
+      "Gegrillter Wolfsbarsch mit Zitrone und Kräutern"
+    ],
+    "food_pairings_en": [
+      "Spaghetti alle vongole",
+      "Grilled sea bass with lemon and herbs"
+    ],
+    "food_pairings_fr": [
+      "Spaghetti alle vongole",
+      "Bar grillé au citron et aux herbes"
+    ],
+    "id": "017c9247-5e9d-4255-937b-562288b9da8d",
+    "created_at": "2025-12-14T18:48:10.186350Z",
+    "updated_at": "2025-12-14T18:48:10.186358Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Verdicchio dei Castelli di Jesi Classico DOC \"Serra del Conte\"",
+    "winery": "Garofoli",
+    "grape_variety": "Verdicchio",
+    "region": "Marken",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€",
+    "description_de": "Lebendig-frischer Verdicchio aus den Hügeln der Castelli di Jesi, mit Noten von Zitrusfrüchten, weißen Blüten und einem salzig-mineralischen Finale, das Lust auf den nächsten Schluck macht.",
+    "description_en": "A vibrant, fresh Verdicchio from the hills of Castelli di Jesi, offering citrus, white flower aromas and a pleasantly salty, mineral finish that invites another sip.",
+    "description_fr": "Verdicchio vif et frais des collines des Castelli di Jesi, aux notes d’agrumes, de fleurs blanches et une finale salée-minérale qui appelle le prochain verre.",
+    "food_pairings_de": [
+      "Spaghetti alle vongole",
+      "Gegrillter Fisch mit Zitronen-Olivenöl"
+    ],
+    "food_pairings_en": [
+      "Spaghetti alle vongole",
+      "Grilled fish with lemon and olive oil"
+    ],
+    "food_pairings_fr": [
+      "Spaghetti alle vongole",
+      "Poisson grillé au citron et à l’huile d’olive"
+    ],
+    "id": "eb5c9e17-4de7-42ce-935b-f03f271d2896",
+    "created_at": "2025-12-14T18:48:14.392209Z",
+    "updated_at": "2025-12-14T18:48:14.392216Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Franciacorta Satèn DOCG",
+    "winery": "Diverse Erzeuger (Stilbezeichnung Satèn)",
+    "grape_variety": "Chardonnay (teils kleiner Anteil Pinot Bianco)",
+    "region": "Franciacorta",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Eleganter, cremiger Schaumwein aus Franciacorta mit feiner Perlage, zarten Zitrusnoten, gelben Früchten und einer seidigen Textur, die lange auf der Zunge nachklingt.",
+    "description_en": "An elegant, creamy Franciacorta with fine bubbles, delicate citrus and stone fruit aromas, and a silky texture that lingers beautifully on the palate.",
+    "description_fr": "Un Franciacorta élégant et crémeux, aux bulles fines, aux notes délicates d’agrumes et de fruits jaunes, avec une texture soyeuse et persistante en bouche.",
+    "food_pairings_de": [
+      "Austern und Meeresfrüchteplatte",
+      "Risotto mit Zitrone oder Meeresfrüchten"
+    ],
+    "food_pairings_en": [
+      "Oysters and mixed seafood platter",
+      "Lemon or seafood risotto"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fruits de mer et huîtres",
+      "Risotto au citron ou aux fruits de mer"
+    ],
+    "id": "b1de468b-ebf4-41f8-a1f0-2a529da1e30a",
+    "created_at": "2025-12-14T18:48:20.004968Z",
+    "updated_at": "2025-12-14T18:48:20.004977Z",
+    "auto_generated": true
   }
 ]

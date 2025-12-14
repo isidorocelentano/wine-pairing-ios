@@ -50860,5 +50860,179 @@
     "created_at": "2025-12-14T10:51:18.797377Z",
     "updated_at": "2025-12-14T10:51:18.797386Z",
     "auto_generated": true
+  },
+  {
+    "name": "Riesling trocken „Von Winning Riesling“",
+    "winery": "Weingut Von Winning",
+    "grape_variety": "Riesling",
+    "region": "Pfalz",
+    "country": "Deutschland",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€",
+    "description_de": "Ein lebendiger, feinwürziger Pfälzer Riesling mit saftiger Zitrusfrucht, reifem Steinobst und klarer Mineralität, der mit rassiger, aber gut eingebundener Säure beeindruckt.",
+    "description_en": "A vibrant dry Riesling from the Pfalz with juicy citrus, ripe stone fruit and a precise mineral backbone, carried by refreshing, well‑integrated acidity.",
+    "description_fr": "Un Riesling sec vif de la Pfalz, aux notes d’agrumes juteux, de fruits à noyau mûrs et à la minéralité précise, soutenu par une acidité fraîche et bien intégrée.",
+    "food_pairings_de": [
+      "Asiatische Gerichte mit leichter Schärfe",
+      "Gebratener oder gedämpfter Fisch mit Zitronenbutter"
+    ],
+    "food_pairings_en": [
+      "Asian dishes with gentle spice",
+      "Pan-fried or steamed fish with lemon butter"
+    ],
+    "food_pairings_fr": [
+      "Plats asiatiques légèrement épicés",
+      "Poisson poêlé ou vapeur avec beurre citronné"
+    ],
+    "id": "2263e798-8b66-4659-9a83-5793814a6b6e",
+    "created_at": "2025-12-14T13:48:04.769371Z",
+    "updated_at": "2025-12-14T13:48:04.769380Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Sancerre Blanc „Domaine Vacheron“",
+    "winery": "Domaine Vacheron",
+    "grape_variety": "Sauvignon Blanc",
+    "region": "Sancerre (Loire)",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Präziser, mineralischer Sancerre mit vibrierender Zitrusfrucht, feiner Kräuterwürze und salziger Länge – puristisch, elegant und glasklar.",
+    "description_en": "A precise, mineral-driven Sancerre with vibrant citrus fruit, subtle herbal notes and a saline, long finish – pure, elegant and crystal clear.",
+    "description_fr": "Sancerre blanc précis et minéral, aux notes d’agrumes vives, de fines herbes et à la finale saline et persistante, d’une grande pureté et élégance.",
+    "food_pairings_de": [
+      "Ziegenkäse (Crottin de Chavignol)",
+      "Austern und andere Meeresfrüchte"
+    ],
+    "food_pairings_en": [
+      "Goat cheese (Crottin de Chavignol)",
+      "Oysters and other seafood"
+    ],
+    "food_pairings_fr": [
+      "Fromage de chèvre (Crottin de Chavignol)",
+      "Huîtres et fruits de mer"
+    ],
+    "id": "83256a9a-46bf-4a4b-8d1d-2196a477b438",
+    "created_at": "2025-12-14T13:48:09.778541Z",
+    "updated_at": "2025-12-14T13:48:09.778551Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Weißburgunder trocken „Dr. Heger Weißer Burgunder“",
+    "winery": "Weingut Dr. Heger",
+    "grape_variety": "Weißburgunder",
+    "region": "Baden",
+    "country": "Deutschland",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Feiner, klarer Weißburgunder aus Baden mit zarter Frucht von Birne und Apfel, unterlegt von nussigen Noten und eleganter Frische – ein beschwingter, aber ernsthafter Speisenbegleiter.",
+    "description_en": "Refined Pinot Blanc from Baden with delicate pear and apple aromas, subtle nuttiness and a vibrant, elegant acidity – a lively yet serious food companion.",
+    "description_fr": "Pinot blanc raffiné du Bade aux arômes délicats de poire et de pomme, avec de légères notes de noisette et une acidité vive et élégante, parfait comme vin de gastronomie.",
+    "food_pairings_de": [
+      "Gebratener Fisch mit Zitronenbutter",
+      "Geflügel in heller Sauce"
+    ],
+    "food_pairings_en": [
+      "Pan-fried fish with lemon butter",
+      "Roast poultry in light cream sauce"
+    ],
+    "food_pairings_fr": [
+      "Poisson poêlé au beurre citronné",
+      "Volaille rôtie avec sauce légère à la crème"
+    ],
+    "id": "132c04b5-68e4-46f1-ba73-c0d4ae6b5d28",
+    "created_at": "2025-12-14T13:48:19.039559Z",
+    "updated_at": "2025-12-14T13:48:19.039568Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Champagne Brut „Pierre Gimonnet & Fils Cuis 1er Cru“",
+    "winery": "Pierre Gimonnet & Fils",
+    "grape_variety": "Chardonnay",
+    "region": "Champagne",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Feiner, spannungsgeladener Blanc de Blancs mit zitrischer Frische, kreidiger Mineralität und eleganter Perlage – ein Champagner voller Finesse und Präzision.",
+    "description_en": "A precise, vibrant Blanc de Blancs Champagne with citrusy freshness, chalky minerality and an elegant mousse, offering great finesse and purity.",
+    "description_fr": "Un Champagne Blanc de Blancs précis et vibrant, à la fraîcheur citronnée, à la minéralité crayeuse et à la mousse élégante, plein de finesse et de pureté.",
+    "food_pairings_de": [
+      "Austern und Meeresfrüchte",
+      "Ziegenkäse oder feine Fischvorspeisen"
+    ],
+    "food_pairings_en": [
+      "Oysters and seafood",
+      "Goat cheese or delicate fish starters"
+    ],
+    "food_pairings_fr": [
+      "Huîtres et fruits de mer",
+      "Fromage de chèvre ou entrées de poisson délicates"
+    ],
+    "id": "c683d1e2-72e5-4c00-ae23-7b2361132730",
+    "created_at": "2025-12-14T13:48:24.708353Z",
+    "updated_at": "2025-12-14T13:48:24.708361Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Roséwein – Empfehlung zu gegrilltem oder mariniertem Lachs",
+    "winery": "Kellerei Beispiel",
+    "grape_variety": "Pinot Noir Rosé",
+    "region": "Pfalz",
+    "country": "Deutschland",
+    "year": 2022,
+    "wine_color": "rosé",
+    "price_category": "€€",
+    "description_de": "Frischer, fruchtbetonter Rosé mit feinen Beerenaromen und zarter Würze, der gegrillten oder marinierten Lachs wunderbar unterstreicht. Lebendige Säure und ein saftiger Nachhall sorgen für sommerliche Leichtigkeit am Gaumen.",
+    "description_en": "A fresh, fruit-driven rosé with delicate berry notes and gentle spice, perfectly complementing grilled or marinated salmon. Lively acidity and a juicy finish bring a summery lightness to the palate.",
+    "description_fr": "Rosé frais et fruité aux délicats arômes de baies et une légère touche épicée, idéal avec du saumon grillé ou mariné. Une acidité vive et une finale juteuse apportent une belle légèreté estivale en bouche.",
+    "food_pairings_de": [
+      "Gegrillter Lachs",
+      "Marinierter Lachs aus dem Ofen"
+    ],
+    "food_pairings_en": [
+      "Grilled salmon",
+      "Oven-baked marinated salmon"
+    ],
+    "food_pairings_fr": [
+      "Saumon grillé",
+      "Saumon mariné au four"
+    ],
+    "id": "1ca20e0e-7a9b-42d1-969d-bb0aae400090",
+    "created_at": "2025-12-14T13:48:30.291594Z",
+    "updated_at": "2025-12-14T13:48:30.291603Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Côtes de Provence Rosé \"Château Minuty M\"",
+    "winery": "Château Minuty",
+    "grape_variety": "Grenache, Cinsault, Syrah",
+    "region": "Côtes de Provence",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "rosé",
+    "price_category": "€€€",
+    "description_de": "Ein eleganter, zart lachsfarbener Provence-Rosé mit Aromen von frischen Erdbeeren, weißen Blüten und einem Hauch Zitrus, der Leichtigkeit und Riviera-Flair ins Glas bringt.",
+    "description_en": "An elegant, pale salmon-hued Provence rosé with notes of fresh strawberries, white flowers and a touch of citrus, capturing the breezy spirit of the Riviera.",
+    "description_fr": "Un rosé de Provence élégant à la robe saumon pâle, aux arômes de fraise fraîche, de fleurs blanches et d’agrumes, évoquant l’art de vivre de la Côte d’Azur.",
+    "food_pairings_de": [
+      "Gegrillter Fisch",
+      "Mediterrane Salate"
+    ],
+    "food_pairings_en": [
+      "Grilled fish",
+      "Mediterranean salads"
+    ],
+    "food_pairings_fr": [
+      "Poisson grillé",
+      "Salades méditerranéennes"
+    ],
+    "id": "6a2c99f0-79b8-4fa8-bcc3-7ab6723808a1",
+    "created_at": "2025-12-14T13:48:34.679168Z",
+    "updated_at": "2025-12-14T13:48:34.679176Z",
+    "auto_generated": true
   }
 ]

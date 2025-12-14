@@ -2,7 +2,7 @@
 # PRE-DEPLOYMENT COMPREHENSIVE TEST
 #====================================================================================================
 
-user_problem_statement: "FINAL TEST v4 - Deployment Readiness Check nach robustem Auto-Seeding v2.0. Backup: 2970 Dokumente."
+user_problem_statement: "FINAL TEST v5 - Sommelier Kompass in Navigation und Homepage hinzugefügt. Backup: 2974 Dokumente."
 
 backend:
   - task: "Core API Health & Database Connection"

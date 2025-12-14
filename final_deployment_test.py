@@ -160,8 +160,8 @@ class FinalDeploymentTester:
         else:
             self.log_test("Franken Region Wines (50)", False, str(response))
         
-        # 3. GET /api/public-wines/filters - Available filters
-        success, response = self.make_request('GET', 'public-wines/filters')
+        # 3. GET /api/public-wines-filters - Available filters
+        success, response = self.make_request('GET', 'public-wines-filters')
         if success:
             filters = response
             countries = filters.get('countries', [])

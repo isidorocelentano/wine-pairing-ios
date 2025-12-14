@@ -296,7 +296,19 @@ const translations = {
     success_label_scanned: 'Etikett erfolgreich gescannt!',
     success_recommendation: 'Empfehlung erhalten!',
     listening: 'Ich höre zu...',
-    voice_not_supported: 'Spracherkennung wird in Ihrem Browser nicht unterstützt'
+    voice_not_supported: 'Spracherkennung wird in Ihrem Browser nicht unterstützt',
+    
+    // Footer
+    footer_rights: 'Alle Rechte vorbehalten.',
+    footer_kontakt: 'Kontakt',
+    footer_datenschutz: 'Datenschutz',
+    footer_impressum: 'Impressum',
+    
+    // Legal Pages
+    kontakt_title: 'Kontakt',
+    kontakt_intro: 'Haben Sie Fragen zu wine-pairing.online? Wir freuen uns über Ihre Nachricht.',
+    impressum_title: 'Impressum',
+    datenschutz_title: 'Datenschutzerklärung'
   },
   en: {
     nav_home: 'Home',
@@ -580,7 +592,19 @@ const translations = {
     success_label_scanned: 'Label scanned successfully!',
     success_recommendation: 'Recommendation received!',
     listening: 'Listening...',
-    voice_not_supported: 'Voice recognition is not supported in your browser'
+    voice_not_supported: 'Voice recognition is not supported in your browser',
+    
+    // Footer
+    footer_rights: 'All rights reserved.',
+    footer_kontakt: 'Contact',
+    footer_datenschutz: 'Privacy',
+    footer_impressum: 'Imprint',
+    
+    // Legal Pages
+    kontakt_title: 'Contact',
+    kontakt_intro: 'Have questions about wine-pairing.online? We look forward to hearing from you.',
+    impressum_title: 'Imprint',
+    datenschutz_title: 'Privacy Policy'
   },
   fr: {
     nav_home: 'Accueil',
@@ -880,7 +904,19 @@ const translations = {
     success_label_scanned: 'Étiquette scannée avec succès!',
     success_recommendation: 'Recommandation reçue!',
     listening: 'J\'écoute...',
-    voice_not_supported: 'La reconnaissance vocale n\'est pas prise en charge par votre navigateur'
+    voice_not_supported: 'La reconnaissance vocale n\'est pas prise en charge par votre navigateur',
+    
+    // Footer
+    footer_rights: 'Tous droits réservés.',
+    footer_kontakt: 'Contact',
+    footer_datenschutz: 'Confidentialité',
+    footer_impressum: 'Mentions légales',
+    
+    // Legal Pages
+    kontakt_title: 'Contact',
+    kontakt_intro: 'Des questions sur wine-pairing.online? Nous nous réjouissons de votre message.',
+    impressum_title: 'Mentions légales',
+    datenschutz_title: 'Politique de confidentialité'
   }
 };
 

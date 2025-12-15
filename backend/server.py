@@ -3676,6 +3676,8 @@ async def startup_seed_data():
             ("wine_database", "wine_database.json"),
             ("public_wines", "public_wines.json"),
             ("feed_posts", "feed_posts.json"),
+            ("seo_pairings", "seo_pairings.json"),
+            ("wines", "wines.json"),
         ]
         
         for collection_name, json_filename in collections_to_seed:

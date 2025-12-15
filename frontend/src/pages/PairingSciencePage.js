@@ -461,12 +461,14 @@ const PairingSciencePage = () => {
           <TabsContent value="dish" className="space-y-6">
             <div className="text-center mb-8">
               <h2 className="text-2xl font-semibold mb-2">
-                {lang === 'de' ? '6 Gericht-Variablen' : '6 Dish Variables'}
+                {lang === 'de' ? '6 Gericht-Variablen' : lang === 'en' ? '6 Dish Variables' : '6 Variables du plat'}
               </h2>
               <p className="text-muted-foreground">
                 {lang === 'de' 
                   ? 'Jedes Gericht wird in seine dominanten Komponenten zerlegt.'
-                  : 'Each dish is broken down into its dominant components.'}
+                  : lang === 'en'
+                  ? 'Each dish is broken down into its dominant components.'
+                  : 'Chaque plat est décomposé en ses composants dominants.'}
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -478,26 +480,26 @@ const PairingSciencePage = () => {
                         <variable.icon className={`h-5 w-5 ${variable.color}`} />
                       </div>
                       <CardTitle className="text-lg">
-                        {lang === 'de' ? variable.name : variable.name_en}
+                        {variable.name[lang] || variable.name.en}
                       </CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-3">
                     <p className="text-sm text-muted-foreground">
-                      {variable.description}
+                      {variable.description[lang] || variable.description.en}
                     </p>
                     <div className="flex flex-wrap gap-1">
-                      {variable.scale.map((s, i) => (
+                      {(variable.scale[lang] || variable.scale.en).map((s, i) => (
                         <Badge key={i} variant="outline" className="text-xs">
                           {s}
                         </Badge>
                       ))}
                     </div>
                     <div className="p-2 bg-secondary/50 rounded text-xs font-mono">
-                      {variable.rule}
+                      {variable.rule[lang] || variable.rule.en}
                     </div>
                     <p className="text-xs text-primary font-medium">
-                      → {variable.example}
+                      → {variable.example[lang] || variable.example.en}
                     </p>
                   </CardContent>
                 </Card>

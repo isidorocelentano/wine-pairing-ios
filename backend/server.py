@@ -1503,9 +1503,16 @@ WICHTIG:
 # ===================== SOMMELIER CHAT =====================
 
 @api_router.post("/chat", response_model=ChatResponse)
-async def sommelier_chat(request: ChatRequest):
+async def sommelier_chat(request: ChatRequest, http_request: Request):
     """Chat with the virtual sommelier"""
     try:
+        # Check user limits
+        user = await get_current_user(http_request)
+        allowed, message = await check_limit(user, "chat")
+        
+        if not allowed:
+            raise HTTPException(status_code=429, detail=message)
+        
         session_id = request.session_id or str(uuid.uuid4())
         
         # Get language-specific system message
@@ -1534,6 +1541,10 @@ async def sommelier_chat(request: ChatRequest):
             "timestamp": datetime.now(timezone.utc).isoformat()
         }
         await db.chats.insert_one(chat_doc)
+        
+        # Increment usage counter
+        if user:
+            await increment_usage(user, "chat")
         
         return ChatResponse(response=response, session_id=session_id)
         

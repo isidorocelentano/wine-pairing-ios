@@ -283,6 +283,45 @@ logger = logging.getLogger(__name__)
 
 # ===================== MODELS =====================
 
+# ===================== AUTH & USER MODELS =====================
+class User(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    user_id: str
+    email: str
+    name: str
+    picture: Optional[str] = None
+    plan: str = "basic"  # "basic" or "pro"
+    subscription_id: Optional[str] = None
+    subscription_status: Optional[str] = None  # "active", "cancelled", "expired"
+    subscription_end_date: Optional[datetime] = None
+    usage: Dict[str, Any] = Field(default_factory=lambda: {
+        "pairing_requests_today": 0,
+        "chat_messages_today": 0,
+        "last_usage_date": None
+    })
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+class UserSession(BaseModel):
+    user_id: str
+    session_token: str
+    expires_at: datetime
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+class PaymentTransaction(BaseModel):
+    transaction_id: str = Field(default_factory=lambda: f"txn_{uuid.uuid4().hex[:12]}")
+    user_id: str
+    email: str
+    session_id: str
+    plan: str  # "pro_monthly" or "pro_yearly"
+    amount: float
+    currency: str
+    payment_status: str = "pending"  # "pending", "paid", "failed", "expired"
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+class CheckoutRequest(BaseModel):
+    plan: str  # "pro_monthly" or "pro_yearly"
+    origin_url: str
+
 class Wine(BaseModel):
     model_config = ConfigDict(extra="ignore")
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))

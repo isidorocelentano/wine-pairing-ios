@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useDarkMode } from "@/contexts/DarkModeContext";
+import UserMenu from "@/components/UserMenu";
 
 const LanguageSelector = () => {
   const { language, setLanguage, languageNames, languages } = useLanguage();
@@ -11,6 +12,9 @@ const LanguageSelector = () => {
 
   return (
     <div className="fixed top-4 right-4 z-50 flex items-center gap-2" data-testid="language-selector">
+      {/* User Menu */}
+      <UserMenu />
+      
       {/* Dark Mode Toggle */}
       <Button
         variant="outline"

@@ -2,7 +2,7 @@
 # PRE-DEPLOYMENT COMPREHENSIVE TEST
 #====================================================================================================
 
-user_problem_statement: "FINAL TEST v5 - Sommelier Kompass in Navigation und Homepage hinzugefügt. Backup: 2974 Dokumente."
+user_problem_statement: "CRITICAL FIX - Homepage crash behoben (language undefined error in HomePage.js). Link zur Pairing Science Seite hinzugefügt. Alle Seiten getestet: Homepage, Blog, Pairing, Pairing Science."
 
 backend:
   - task: "Core API Health & Database Connection"

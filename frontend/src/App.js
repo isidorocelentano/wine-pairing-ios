@@ -62,6 +62,8 @@ function App() {
                 <Route path="/seo/pairings" element={<><SeoPairingExplorerPage /><Navigation /></>} />
                 <Route path="/feed" element={<><FeedPage /><Navigation /></>} />
                 <Route path="/sommelier-kompass" element={<><SommelierKompassPage /><Navigation /></>} />
+                <Route path="/pairing-science" element={<><PairingSciencePage /><Navigation /></>} />
+                <Route path="/wie-wir-pairen" element={<><PairingSciencePage /><Navigation /></>} />
                 <Route path="/chat" element={<><ChatPage /><Navigation /></>} />
                 <Route path="/blog" element={<><BlogPage /><Navigation /></>} />
                 <Route path="/blog/:slug" element={<><BlogPostPage /><Navigation /></>} />

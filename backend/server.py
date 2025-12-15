@@ -1975,6 +1975,52 @@ async def get_regions(country: str):
     return regions
 
 
+# ===================== SEO PAIRINGS ENDPOINTS =====================
+
+@api_router.get("/seo-pairings")
+async def get_seo_pairings(
+    limit: int = 50,
+    offset: int = 0,
+    category: Optional[str] = None,
+    region: Optional[str] = None
+):
+    """Get programmatic SEO pairings for landing pages"""
+    query = {}
+    
+    if category:
+        query["dish.category"] = category
+    if region:
+        query["wine.region"] = {"$regex": region, "$options": "i"}
+    
+    pairings = await db.seo_pairings.find(query, {"_id": 0}).skip(offset).limit(limit).to_list(limit)
+    total = await db.seo_pairings.count_documents(query)
+    
+    return {
+        "pairings": pairings,
+        "total": total,
+        "limit": limit,
+        "offset": offset
+    }
+
+@api_router.get("/seo-pairings/categories")
+async def get_seo_pairing_categories():
+    """Get all dish categories with counts"""
+    pipeline = [
+        {"$group": {"_id": "$dish.category", "count": {"$sum": 1}}},
+        {"$sort": {"count": -1}}
+    ]
+    categories = await db.seo_pairings.aggregate(pipeline).to_list(100)
+    return [{"category": c["_id"], "count": c["count"]} for c in categories if c["_id"]]
+
+@api_router.get("/seo-pairings/{slug}")
+async def get_seo_pairing(slug: str):
+    """Get a specific SEO pairing by slug"""
+    pairing = await db.seo_pairings.find_one({"slug": slug}, {"_id": 0})
+    if not pairing:
+        raise HTTPException(status_code=404, detail="Pairing not found")
+    return pairing
+
+
 # ===================== GRAPE VARIETY ENDPOINTS =====================
 
 @api_router.get("/grapes", response_model=List[GrapeVariety])

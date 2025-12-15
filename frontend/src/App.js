@@ -64,13 +64,14 @@ function App() {
                 <Route path="/blog" element={<><BlogPage /><Navigation /></>} />
                 <Route path="/blog/:slug" element={<><BlogPostPage /><Navigation /></>} />
                 <Route path="/kontakt" element={<><KontaktPage /><Navigation /></>} />
-              <Route path="/impressum" element={<><ImpressumPage /><Navigation /></>} />
-              <Route path="/datenschutz" element={<><DatenschutzPage /><Navigation /></>} />
-            </Routes>
-          </BrowserRouter>
-        </div>
-      </LanguageProvider>
-    </DarkModeProvider>
+                <Route path="/impressum" element={<><ImpressumPage /><Navigation /></>} />
+                <Route path="/datenschutz" element={<><DatenschutzPage /><Navigation /></>} />
+              </Routes>
+            </BrowserRouter>
+          </div>
+        </LanguageProvider>
+      </DarkModeProvider>
+    </HelmetProvider>
   );
 }
 

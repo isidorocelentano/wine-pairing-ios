@@ -3616,7 +3616,9 @@ async def startup_seed_data():
         'regional_pairings': 44,
         'dishes': 40,
         'feed_posts': 268,
-        'wine_database': 494
+        'wine_database': 494,
+        'seo_pairings': 500,
+        'wines': 11
     }
     
     if manifest_path.exists():

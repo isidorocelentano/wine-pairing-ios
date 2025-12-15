@@ -632,6 +632,13 @@ const PairingPage = () => {
               <div className="mt-8 pt-6 border-t border-border/50">
                 <Link 
                   to="/wie-wir-pairen"
+                  state={{ 
+                    pairing: {
+                      dish: result.dish,
+                      recommendation: result.recommendation,
+                      why_explanation: result.why_explanation
+                    }
+                  }}
                   className="block p-4 md:p-5 rounded-xl bg-gradient-to-r from-primary/5 via-accent/5 to-primary/10 border border-primary/20 hover:border-primary/40 transition-all group"
                 >
                   <div className="flex items-center gap-4">
@@ -640,14 +647,14 @@ const PairingPage = () => {
                     </div>
                     <div className="flex-1">
                       <p className="font-medium text-sm md:text-base text-primary">
-                        {language === 'de' ? 'Warum diese Empfehlung?' : language === 'en' ? 'Why this recommendation?' : 'Pourquoi cette recommandation?'}
+                        {language === 'de' ? `Warum passt das zu "${result.dish}"?` : language === 'en' ? `Why does this match "${result.dish}"?` : `Pourquoi ça correspond à "${result.dish}"?`}
                       </p>
                       <p className="text-xs md:text-sm text-muted-foreground mt-0.5">
                         {language === 'de' 
-                          ? 'Entdecken Sie die Wissenschaft hinter unseren 12 Pairing-Variablen →' 
+                          ? 'Analyse basierend auf unseren 12 Pairing-Variablen ansehen →' 
                           : language === 'en' 
-                          ? 'Discover the science behind our 12 pairing variables →'
-                          : 'Découvrez la science derrière nos 12 variables d\'accord →'}
+                          ? 'View analysis based on our 12 pairing variables →'
+                          : 'Voir l\'analyse basée sur nos 12 variables d\'accord →'}
                       </p>
                     </div>
                   </div>

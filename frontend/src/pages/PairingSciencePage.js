@@ -253,53 +253,68 @@ const PairingSciencePage = () => {
       example: { de: 'Pasta mit Parmesan → Sangiovese', en: 'Pasta with Parmesan → Sangiovese', fr: 'Pâtes au Parmesan → Sangiovese' }
     }
   ];
-      example: 'Pasta mit Parmesan → Sangiovese (fruchtig, wenig Tannin)'
-    }
-  ];
 
   // Pairing-Regeln
   const pairingRules = [
     {
-      name: 'Fett braucht Säure',
-      name_en: 'Fat Needs Acid',
+      name: { de: 'Fett braucht Säure', en: 'Fat Needs Acid', fr: 'Le gras a besoin d\'acidité' },
       icon: '⚖️',
-      description: 'Säure schneidet durch Fett und erfrischt den Gaumen. Ein fettreiches Gericht braucht einen Wein mit lebendiger Säure.',
-      example: 'Schweinebauch + Riesling Spätlese'
+      description: {
+        de: 'Säure schneidet durch Fett und erfrischt den Gaumen. Ein fettreiches Gericht braucht einen Wein mit lebendiger Säure.',
+        en: 'Acid cuts through fat and refreshes the palate. A fatty dish needs a wine with lively acidity.',
+        fr: 'L\'acidité coupe le gras et rafraîchit le palais. Un plat gras a besoin d\'un vin à l\'acidité vive.'
+      },
+      example: { de: 'Schweinebauch + Riesling', en: 'Pork belly + Riesling', fr: 'Poitrine de porc + Riesling' }
     },
     {
-      name: 'Tannin liebt Protein',
-      name_en: 'Tannin Loves Protein',
+      name: { de: 'Tannin liebt Protein', en: 'Tannin Loves Protein', fr: 'Le tanin aime les protéines' },
       icon: '🥩',
-      description: 'Tannine binden an Proteine und werden dadurch weicher. Rotes Fleisch "zähmt" aggressive Tannine.',
-      example: 'Ribeye Steak + Cabernet Sauvignon'
+      description: {
+        de: 'Tannine binden an Proteine und werden dadurch weicher. Rotes Fleisch "zähmt" aggressive Tannine.',
+        en: 'Tannins bind to proteins and become softer. Red meat "tames" aggressive tannins.',
+        fr: 'Les tanins se lient aux protéines et s\'adoucissent. La viande rouge "apprivoise" les tanins agressifs.'
+      },
+      example: { de: 'Ribeye Steak + Cabernet', en: 'Ribeye Steak + Cabernet', fr: 'Entrecôte + Cabernet' }
     },
     {
-      name: 'Süße schlägt Schärfe',
-      name_en: 'Sweet Beats Spice',
+      name: { de: 'Süße schlägt Schärfe', en: 'Sweet Beats Spice', fr: 'Le sucré bat l\'épicé' },
       icon: '🌶️',
-      description: 'Restzucker mildert Schärfe. Bei scharfen Gerichten: leicht süße Weine mit niedriger Alkohol.',
-      example: 'Thai Curry + Gewürztraminer (halbtrocken)'
+      description: {
+        de: 'Restzucker mildert Schärfe. Bei scharfen Gerichten: leicht süße Weine mit niedriger Alkohol.',
+        en: 'Residual sugar softens spice. For spicy dishes: slightly sweet wines with low alcohol.',
+        fr: 'Le sucre résiduel adoucit le piquant. Pour les plats épicés: vins légèrement sucrés avec peu d\'alcool.'
+      },
+      example: { de: 'Thai Curry + Gewürztraminer', en: 'Thai Curry + Gewürztraminer', fr: 'Curry thaï + Gewürztraminer' }
     },
     {
-      name: 'Gleiches zu Gleichem',
-      name_en: 'Like with Like',
+      name: { de: 'Gleiches zu Gleichem', en: 'Like with Like', fr: 'Semblable avec semblable' },
       icon: '🔄',
-      description: 'Körper und Intensität müssen harmonieren. Leichte Gerichte zu leichten Weinen, kräftige zu kräftigen.',
-      example: 'Sashimi + Champagner (beide leicht)'
+      description: {
+        de: 'Körper und Intensität müssen harmonieren. Leichte Gerichte zu leichten Weinen, kräftige zu kräftigen.',
+        en: 'Body and intensity must harmonize. Light dishes with light wines, robust with robust.',
+        fr: 'Le corps et l\'intensité doivent être en harmonie. Plats légers avec vins légers, corsés avec corsés.'
+      },
+      example: { de: 'Sashimi + Champagner', en: 'Sashimi + Champagne', fr: 'Sashimi + Champagne' }
     },
     {
-      name: 'Regional denken',
-      name_en: 'Think Regional',
+      name: { de: 'Regional denken', en: 'Think Regional', fr: 'Penser régional' },
       icon: '🌍',
-      description: 'Was zusammen wächst, passt zusammen. Regionale Küche mit regionalen Weinen ist selten falsch.',
-      example: 'Ossobuco + Barolo (beide Norditalien)'
+      description: {
+        de: 'Was zusammen wächst, passt zusammen. Regionale Küche mit regionalen Weinen ist selten falsch.',
+        en: 'What grows together, goes together. Regional cuisine with regional wines is rarely wrong.',
+        fr: 'Ce qui pousse ensemble va ensemble. Cuisine régionale avec vins régionaux, rarement un mauvais choix.'
+      },
+      example: { de: 'Ossobuco + Barolo', en: 'Ossobuco + Barolo', fr: 'Ossobuco + Barolo' }
     },
     {
-      name: 'Wein süßer als Dessert',
-      name_en: 'Wine Sweeter Than Dessert',
+      name: { de: 'Wein süßer als Dessert', en: 'Wine Sweeter Than Dessert', fr: 'Vin plus sucré que le dessert' },
       icon: '🍰',
-      description: 'Bei Desserts muss der Wein immer süßer sein, sonst wirkt er bitter und säuerlich.',
-      example: 'Crème Brûlée + Sauternes'
+      description: {
+        de: 'Bei Desserts muss der Wein immer süßer sein, sonst wirkt er bitter und säuerlich.',
+        en: 'With desserts, the wine must always be sweeter, otherwise it tastes bitter and sour.',
+        fr: 'Avec les desserts, le vin doit toujours être plus sucré, sinon il paraît amer et acide.'
+      },
+      example: { de: 'Crème Brûlée + Sauternes', en: 'Crème Brûlée + Sauternes', fr: 'Crème brûlée + Sauternes' }
     }
   ];
 

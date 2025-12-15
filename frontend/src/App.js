@@ -50,7 +50,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<><SEO /><HomePage /><Navigation /></>} />
                 <Route path="/pairing" element={<><PairingPage /><Navigation /></>} />
-                <Route path="/pairing/:slug" element={<><PairingSeoPage /><Navigation /></>} />
+                <Route path="/pairing/:slug" element={<><DynamicPairingPage /><Navigation /></>} />
                 <Route path="/grapes" element={<><GrapesPage /><Navigation /></>} />
                 <Route path="/grapes/:slug" element={<><GrapeDetailPage /><Navigation /></>} />
                 <Route path="/wine-database" element={<><WineDatabasePage /><Navigation /></>} />

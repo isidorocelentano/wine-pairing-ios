@@ -18,7 +18,11 @@ import Footer from '@/components/Footer';
  */
 const PairingSciencePage = () => {
   const { language } = useLanguage();
+  const location = useLocation();
   const [activeExample, setActiveExample] = useState(0);
+  
+  // Check if we have a current pairing from the pairing page
+  const currentPairing = location.state?.pairing || null;
 
   // Wein-Variablen
   const wineVariables = [

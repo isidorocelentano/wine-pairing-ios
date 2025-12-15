@@ -90,6 +90,53 @@ const BlogPostPage = () => {
 
   if (!post) return null;
 
+  // Extract FAQs from content if present
+  const extractFAQs = () => {
+    const content = getLocalizedContent(post);
+    if (!content) return [];
+    
+    const faqMatch = content.match(/FAQ|Häufig gestellte Fragen|Frequently Asked/i);
+    if (!faqMatch) return [];
+    
+    const faqs = [];
+    const lines = content.split('\n');
+    let inFAQ = false;
+    let currentQuestion = '';
+    
+    for (const line of lines) {
+      if (line.match(/FAQ|Häufig gestellte Fragen/i)) {
+        inFAQ = true;
+        continue;
+      }
+      if (inFAQ) {
+        if (line.startsWith('**') && line.includes('?')) {
+          if (currentQuestion) {
+            faqs.push({ question: currentQuestion, answer: '' });
+          }
+          currentQuestion = line.replace(/\*\*/g, '').trim();
+        } else if (currentQuestion && line.trim()) {
+          const lastFaq = faqs[faqs.length - 1];
+          if (lastFaq) {
+            lastFaq.answer += ' ' + line.trim();
+          } else {
+            faqs.push({ question: currentQuestion, answer: line.trim() });
+            currentQuestion = '';
+          }
+        }
+      }
+    }
+    return faqs.slice(0, 5); // Max 5 FAQs
+  };
+
+  const faqs = extractFAQs();
+
+  // Breadcrumb items
+  const breadcrumbItems = [
+    { name: 'Home', url: 'https://wine-pairing.online/' },
+    { name: 'Blog', url: 'https://wine-pairing.online/blog' },
+    { name: getLocalizedTitle(post), url: `https://wine-pairing.online/blog/${slug}`, isLast: true }
+  ];
+
   // Convert markdown-like content to HTML
   const renderContent = (content) => {
     return content

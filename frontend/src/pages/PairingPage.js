@@ -634,6 +634,32 @@ const PairingPage = () => {
                   </div>
                 </div>
               )}
+              
+              {/* Pairing Science CTA - After Results */}
+              <div className="mt-8 pt-6 border-t border-border/50">
+                <Link 
+                  to="/wie-wir-pairen"
+                  className="block p-4 md:p-5 rounded-xl bg-gradient-to-r from-primary/5 via-accent/5 to-primary/10 border border-primary/20 hover:border-primary/40 transition-all group"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/15 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/25 transition-colors">
+                      <Beaker className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="font-medium text-sm md:text-base text-primary">
+                        {language === 'de' ? 'Warum diese Empfehlung?' : language === 'en' ? 'Why this recommendation?' : 'Pourquoi cette recommandation?'}
+                      </p>
+                      <p className="text-xs md:text-sm text-muted-foreground mt-0.5">
+                        {language === 'de' 
+                          ? 'Entdecken Sie die Wissenschaft hinter unseren 12 Pairing-Variablen →' 
+                          : language === 'en' 
+                          ? 'Discover the science behind our 12 pairing variables →'
+                          : 'Découvrez la science derrière nos 12 variables d\'accord →'}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              </div>
             </CardContent>
           </Card>
         )}

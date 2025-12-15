@@ -389,22 +389,24 @@ const PairingSciencePage = () => {
         <Breadcrumb 
           items={[
             { name: 'Home', url: 'https://wine-pairing.online/' },
-            { name: lang === 'de' ? 'Wie wir pairen' : 'How We Pair', url: 'https://wine-pairing.online/pairing-science', isLast: true }
+            { name: lang === 'de' ? 'Wie wir pairen' : lang === 'en' ? 'How We Pair' : 'Comment nous accordons', url: 'https://wine-pairing.online/pairing-science', isLast: true }
           ]}
         />
 
         {/* Hero Section */}
         <header className="text-center mb-12 md:mb-16">
           <Badge className="mb-4 bg-primary/10 text-primary">
-            {lang === 'de' ? 'Die Wissenschaft des Genusses' : 'The Science of Taste'}
+            {lang === 'de' ? 'Die Wissenschaft des Genusses' : lang === 'en' ? 'The Science of Taste' : 'La science du goût'}
           </Badge>
           <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
-            {lang === 'de' ? 'Wie wir das perfekte Pairing finden' : 'How We Find the Perfect Pairing'}
+            {lang === 'de' ? 'Wie wir das perfekte Pairing finden' : lang === 'en' ? 'How We Find the Perfect Pairing' : 'Comment nous trouvons l\'accord parfait'}
           </h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             {lang === 'de' 
               ? 'Unser KI-Sommelier analysiert 12 Schlüsselvariablen – 6 für den Wein, 6 für das Gericht – um wissenschaftlich fundierte Empfehlungen zu liefern.'
-              : 'Our AI sommelier analyzes 12 key variables – 6 for wine, 6 for food – to deliver scientifically grounded recommendations.'}
+              : lang === 'en'
+              ? 'Our AI sommelier analyzes 12 key variables – 6 for wine, 6 for food – to deliver scientifically grounded recommendations.'
+              : 'Notre sommelier IA analyse 12 variables clés – 6 pour le vin, 6 pour le plat – pour fournir des recommandations scientifiquement fondées.'}
           </p>
         </header>
 
@@ -413,11 +415,11 @@ const PairingSciencePage = () => {
           <TabsList className="grid w-full grid-cols-3 max-w-md mx-auto">
             <TabsTrigger value="wine" className="flex items-center gap-2">
               <Wine className="h-4 w-4" />
-              <span className="hidden sm:inline">{lang === 'de' ? 'Wein' : 'Wine'}</span>
+              <span className="hidden sm:inline">{lang === 'de' ? 'Wein' : lang === 'en' ? 'Wine' : 'Vin'}</span>
             </TabsTrigger>
             <TabsTrigger value="dish" className="flex items-center gap-2">
               <Utensils className="h-4 w-4" />
-              <span className="hidden sm:inline">{lang === 'de' ? 'Gericht' : 'Dish'}</span>
+              <span className="hidden sm:inline">{lang === 'de' ? 'Gericht' : lang === 'en' ? 'Dish' : 'Plat'}</span>
             </TabsTrigger>
             <TabsTrigger value="rules" className="flex items-center gap-2">
               <Beaker className="h-4 w-4" />

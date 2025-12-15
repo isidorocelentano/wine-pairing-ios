@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 
 const HomePage = () => {
   const navigate = useNavigate();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <div className="min-h-screen pb-20 md:pb-24" data-testid="home-page">

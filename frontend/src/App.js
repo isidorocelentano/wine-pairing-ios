@@ -5,6 +5,7 @@ import { Toaster } from 'sonner';
 import { HelmetProvider } from 'react-helmet-async';
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { DarkModeProvider } from "@/contexts/DarkModeContext";
+import { AuthProvider } from "@/contexts/AuthContext";
 import { SEO } from "@/components/SEO";
 import { OrganizationSchema, WebSiteSchema, SommelierServiceSchema } from "@/components/SEOSchemas";
 
@@ -33,46 +34,56 @@ import SommelierKompassPage from "@/pages/SommelierKompassPage";
 import KontaktPage from "@/pages/KontaktPage";
 import ImpressumPage from "@/pages/ImpressumPage";
 import DatenschutzPage from "@/pages/DatenschutzPage";
+import AuthCallbackPage from "@/pages/AuthCallbackPage";
+import SubscriptionPage from "@/pages/SubscriptionPage";
+import SubscriptionSuccessPage from "@/pages/SubscriptionSuccessPage";
 
 function App() {
   return (
     <HelmetProvider>
       <DarkModeProvider>
         <LanguageProvider>
-          <div className="App" data-testid="wine-pairing-app">
-            {/* Global SEO Schemas */}
-            <OrganizationSchema />
-            <WebSiteSchema />
-            <SommelierServiceSchema />
-            
-            <Toaster position="top-center" richColors />
-            <BrowserRouter>
-              <LanguageSelector />
-              <Routes>
-                <Route path="/" element={<><SEO /><HomePage /><Navigation /></>} />
-                <Route path="/pairing" element={<><PairingPage /><Navigation /></>} />
-                <Route path="/pairing/:slug" element={<><DynamicPairingPage /><Navigation /></>} />
-                <Route path="/grapes" element={<><GrapesPage /><Navigation /></>} />
-                <Route path="/grapes/:slug" element={<><GrapeDetailPage /><Navigation /></>} />
-                <Route path="/wine-database" element={<><WineDatabasePage /><Navigation /></>} />
-                <Route path="/favorites" element={<><FavoritesPage /><Navigation /></>} />
-                <Route path="/cellar" element={<><CellarPage /><Navigation /></>} />
-                <Route path="/admin/grapes" element={<><GrapeAdminPage /><Navigation /></>} />
-                <Route path="/admin/dishes" element={<><DishAdminPage /><Navigation /></>} />
-                <Route path="/seo/pairings" element={<><SeoPairingExplorerPage /><Navigation /></>} />
-                <Route path="/feed" element={<><FeedPage /><Navigation /></>} />
-                <Route path="/sommelier-kompass" element={<><SommelierKompassPage /><Navigation /></>} />
-                <Route path="/pairing-science" element={<><PairingSciencePage /><Navigation /></>} />
-                <Route path="/wie-wir-pairen" element={<><PairingSciencePage /><Navigation /></>} />
-                <Route path="/chat" element={<><ChatPage /><Navigation /></>} />
-                <Route path="/blog" element={<><BlogPage /><Navigation /></>} />
-                <Route path="/blog/:slug" element={<><BlogPostPage /><Navigation /></>} />
-                <Route path="/kontakt" element={<><KontaktPage /><Navigation /></>} />
-                <Route path="/impressum" element={<><ImpressumPage /><Navigation /></>} />
-                <Route path="/datenschutz" element={<><DatenschutzPage /><Navigation /></>} />
-              </Routes>
-            </BrowserRouter>
-          </div>
+          <AuthProvider>
+            <div className="App" data-testid="wine-pairing-app">
+              {/* Global SEO Schemas */}
+              <OrganizationSchema />
+              <WebSiteSchema />
+              <SommelierServiceSchema />
+              
+              <Toaster position="top-center" richColors />
+              <BrowserRouter>
+                <LanguageSelector />
+                <Routes>
+                  <Route path="/" element={<><SEO /><HomePage /><Navigation /></>} />
+                  <Route path="/pairing" element={<><PairingPage /><Navigation /></>} />
+                  <Route path="/pairing/:slug" element={<><DynamicPairingPage /><Navigation /></>} />
+                  <Route path="/grapes" element={<><GrapesPage /><Navigation /></>} />
+                  <Route path="/grapes/:slug" element={<><GrapeDetailPage /><Navigation /></>} />
+                  <Route path="/wine-database" element={<><WineDatabasePage /><Navigation /></>} />
+                  <Route path="/favorites" element={<><FavoritesPage /><Navigation /></>} />
+                  <Route path="/cellar" element={<><CellarPage /><Navigation /></>} />
+                  <Route path="/admin/grapes" element={<><GrapeAdminPage /><Navigation /></>} />
+                  <Route path="/admin/dishes" element={<><DishAdminPage /><Navigation /></>} />
+                  <Route path="/seo/pairings" element={<><SeoPairingExplorerPage /><Navigation /></>} />
+                  <Route path="/feed" element={<><FeedPage /><Navigation /></>} />
+                  <Route path="/sommelier-kompass" element={<><SommelierKompassPage /><Navigation /></>} />
+                  <Route path="/pairing-science" element={<><PairingSciencePage /><Navigation /></>} />
+                  <Route path="/wie-wir-pairen" element={<><PairingSciencePage /><Navigation /></>} />
+                  <Route path="/chat" element={<><ChatPage /><Navigation /></>} />
+                  <Route path="/blog" element={<><BlogPage /><Navigation /></>} />
+                  <Route path="/blog/:slug" element={<><BlogPostPage /><Navigation /></>} />
+                  <Route path="/kontakt" element={<><KontaktPage /><Navigation /></>} />
+                  <Route path="/impressum" element={<><ImpressumPage /><Navigation /></>} />
+                  <Route path="/datenschutz" element={<><DatenschutzPage /><Navigation /></>} />
+                  {/* Auth & Subscription Routes */}
+                  <Route path="/auth/callback" element={<AuthCallbackPage />} />
+                  <Route path="/subscription" element={<><SubscriptionPage /><Navigation /></>} />
+                  <Route path="/subscription/success" element={<SubscriptionSuccessPage />} />
+                  <Route path="/subscription/cancel" element={<><SubscriptionPage /><Navigation /></>} />
+                </Routes>
+              </BrowserRouter>
+            </div>
+          </AuthProvider>
         </LanguageProvider>
       </DarkModeProvider>
     </HelmetProvider>

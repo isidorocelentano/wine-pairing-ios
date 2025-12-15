@@ -985,9 +985,16 @@ async def toggle_favorite(wine_id: str):
 # ===================== AI PAIRING ENDPOINTS =====================
 
 @api_router.post("/pairing", response_model=PairingResponse)
-async def get_wine_pairing(request: PairingRequest):
+async def get_wine_pairing(request: PairingRequest, http_request: Request):
     """Get AI-powered wine pairing recommendation with caching"""
     try:
+        # Check user limits
+        user = await get_current_user(http_request)
+        allowed, message = await check_limit(user, "pairing")
+        
+        if not allowed:
+            raise HTTPException(status_code=429, detail=message)
+        
         # Check cache first (only for requests without cellar, dish_id, or 4D parameters)
         # These are "simple" requests that can be cached
         is_cacheable = (

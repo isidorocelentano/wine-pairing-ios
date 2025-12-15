@@ -140,74 +140,119 @@ const PairingSciencePage = () => {
   const dishVariables = [
     {
       id: 'fat',
-      name: 'Fett-Index',
-      name_en: 'Fat Index',
+      name: { de: 'Fett-Index', en: 'Fat Index', fr: 'Indice de gras' },
       icon: Droplets,
       color: 'text-yellow-600',
       bgColor: 'bg-yellow-600/10',
-      scale: ['Mager', 'Mittel', 'Fettig', 'Sehr Reichhaltig'],
-      description: 'Je höher der Fett-Index, desto höher muss die Säure oder das Tannin des Weins sein.',
-      rule: 'Fett-Index ≥ Hoch → Säure-Index ≥ Mittel',
-      example: 'Sahnesauce → Sauvignon Blanc (hohe Säure)'
+      scale: {
+        de: ['Mager', 'Mittel', 'Fettig', 'Sehr Reichhaltig'],
+        en: ['Lean', 'Medium', 'Fatty', 'Very Rich'],
+        fr: ['Maigre', 'Moyen', 'Gras', 'Très riche']
+      },
+      description: {
+        de: 'Je höher der Fett-Index, desto höher muss die Säure oder das Tannin des Weins sein.',
+        en: 'The higher the fat index, the higher the wine\'s acidity or tannin must be.',
+        fr: 'Plus l\'indice de gras est élevé, plus l\'acidité ou les tanins du vin doivent être élevés.'
+      },
+      rule: { de: 'Fett-Index ≥ Hoch → Säure-Index ≥ Mittel', en: 'Fat Index ≥ High → Acidity ≥ Medium', fr: 'Indice gras ≥ Élevé → Acidité ≥ Moyen' },
+      example: { de: 'Sahnesauce → Sauvignon Blanc', en: 'Cream sauce → Sauvignon Blanc', fr: 'Sauce crème → Sauvignon Blanc' }
     },
     {
       id: 'sauce',
-      name: 'Sauce/Basis',
-      name_en: 'Sauce Base',
+      name: { de: 'Sauce/Basis', en: 'Sauce Base', fr: 'Base de sauce' },
       icon: Thermometer,
       color: 'text-orange-500',
       bgColor: 'bg-orange-500/10',
-      scale: ['Vinaigrette', 'Sahne', 'Braune Sauce', 'Süß-Sauer', 'Keine'],
-      description: 'DIE Hauptinteraktion! Die Sauce bestimmt mehr als das Protein selbst.',
-      rule: 'Sahne-Sauce → Körper ≥ Mittel',
-      example: 'Béarnaise → Chardonnay (cremig, vollmundig)'
+      scale: {
+        de: ['Vinaigrette', 'Sahne', 'Braune Sauce', 'Süß-Sauer', 'Keine'],
+        en: ['Vinaigrette', 'Cream', 'Brown Sauce', 'Sweet-Sour', 'None'],
+        fr: ['Vinaigrette', 'Crème', 'Sauce brune', 'Aigre-doux', 'Aucune']
+      },
+      description: {
+        de: 'DIE Hauptinteraktion! Die Sauce bestimmt mehr als das Protein selbst.',
+        en: 'THE main interaction! The sauce determines more than the protein itself.',
+        fr: 'L\'interaction principale! La sauce détermine plus que la protéine elle-même.'
+      },
+      rule: { de: 'Sahne-Sauce → Körper ≥ Mittel', en: 'Cream Sauce → Body ≥ Medium', fr: 'Sauce crème → Corps ≥ Moyen' },
+      example: { de: 'Béarnaise → Chardonnay', en: 'Béarnaise → Chardonnay', fr: 'Béarnaise → Chardonnay' }
     },
     {
       id: 'protein',
-      name: 'Protein-Intensität',
-      name_en: 'Protein Intensity',
+      name: { de: 'Protein-Intensität', en: 'Protein Intensity', fr: 'Intensité protéique' },
       icon: Utensils,
       color: 'text-red-500',
       bgColor: 'bg-red-500/10',
-      scale: ['Fisch (Mager)', 'Geflügel', 'Schwein', 'Rind', 'Wild'],
-      description: 'Steuert den nötigen Tannin-Index und Körper des Weins.',
-      rule: 'Protein = Wild → Tannin ≥ Mittel',
-      example: 'Wildschwein → Barolo (hohe Tannine)'
+      scale: {
+        de: ['Fisch (Mager)', 'Geflügel', 'Schwein', 'Rind', 'Wild'],
+        en: ['Fish (Lean)', 'Poultry', 'Pork', 'Beef', 'Game'],
+        fr: ['Poisson (Maigre)', 'Volaille', 'Porc', 'Bœuf', 'Gibier']
+      },
+      description: {
+        de: 'Steuert den nötigen Tannin-Index und Körper des Weins.',
+        en: 'Controls the required tannin index and body of the wine.',
+        fr: 'Contrôle l\'indice de tanin et le corps du vin nécessaires.'
+      },
+      rule: { de: 'Protein = Wild → Tannin ≥ Mittel', en: 'Protein = Game → Tannin ≥ Medium', fr: 'Protéine = Gibier → Tanin ≥ Moyen' },
+      example: { de: 'Wildschwein → Barolo', en: 'Wild Boar → Barolo', fr: 'Sanglier → Barolo' }
     },
     {
       id: 'aroma_dish',
-      name: 'Dominante Aromen',
-      name_en: 'Dominant Aromas',
+      name: { de: 'Dominante Aromen', en: 'Dominant Aromas', fr: 'Arômes dominants' },
       icon: Leaf,
       color: 'text-green-600',
       bgColor: 'bg-green-600/10',
-      scale: ['Erde (Pilze)', 'Würzig (Curry)', 'Kräuter', 'Rauch (BBQ)'],
-      description: 'Komplementär oder kongruent: Gleiche oder ergänzende Aromen verstärken das Erlebnis.',
-      rule: 'Erde-Aromen → Wein mit Erde-Noten',
-      example: 'Trüffel-Pasta → Nebbiolo (erdig)'
+      scale: {
+        de: ['Erde (Pilze)', 'Würzig (Curry)', 'Kräuter', 'Rauch (BBQ)'],
+        en: ['Earth (Mushrooms)', 'Spicy (Curry)', 'Herbs', 'Smoke (BBQ)'],
+        fr: ['Terre (Champignons)', 'Épicé (Curry)', 'Herbes', 'Fumé (BBQ)']
+      },
+      description: {
+        de: 'Komplementär oder kongruent: Gleiche oder ergänzende Aromen verstärken das Erlebnis.',
+        en: 'Complementary or congruent: Same or complementary aromas enhance the experience.',
+        fr: 'Complémentaire ou congruent: les mêmes arômes ou des arômes complémentaires améliorent l\'expérience.'
+      },
+      rule: { de: 'Erde-Aromen → Wein mit Erde-Noten', en: 'Earth aromas → Wine with earth notes', fr: 'Arômes terreux → Vin aux notes terreuses' },
+      example: { de: 'Trüffel-Pasta → Nebbiolo', en: 'Truffle Pasta → Nebbiolo', fr: 'Pâtes aux truffes → Nebbiolo' }
     },
     {
       id: 'cooking',
-      name: 'Garmethode',
-      name_en: 'Cooking Method',
+      name: { de: 'Garmethode', en: 'Cooking Method', fr: 'Méthode de cuisson' },
       icon: Flame,
       color: 'text-amber-500',
       bgColor: 'bg-amber-500/10',
-      scale: ['Pochiert', 'Gedämpft', 'Gebraten', 'Gegrillt'],
-      description: 'Grillen/Braten erzeugt Röstaromen, die gut zu Weinen mit Holzeinfluss passen.',
-      rule: 'Gegrillt → Holzeinfluss ≥ Subtil',
-      example: 'BBQ Ribs → Zinfandel (kräftiger Holzausbau)'
+      scale: {
+        de: ['Pochiert', 'Gedämpft', 'Gebraten', 'Gegrillt'],
+        en: ['Poached', 'Steamed', 'Pan-fried', 'Grilled'],
+        fr: ['Poché', 'Vapeur', 'Poêlé', 'Grillé']
+      },
+      description: {
+        de: 'Grillen/Braten erzeugt Röstaromen, die gut zu Weinen mit Holzeinfluss passen.',
+        en: 'Grilling/frying creates roasted aromas that pair well with oaked wines.',
+        fr: 'Griller/frire crée des arômes grillés qui s\'accordent bien avec les vins boisés.'
+      },
+      rule: { de: 'Gegrillt → Holzeinfluss ≥ Subtil', en: 'Grilled → Oak ≥ Subtle', fr: 'Grillé → Bois ≥ Subtil' },
+      example: { de: 'BBQ Ribs → Zinfandel', en: 'BBQ Ribs → Zinfandel', fr: 'Côtes BBQ → Zinfandel' }
     },
     {
       id: 'umami',
-      name: 'Umami-Index',
-      name_en: 'Umami Index',
+      name: { de: 'Umami-Index', en: 'Umami Index', fr: 'Indice umami' },
       icon: Gauge,
       color: 'text-purple-600',
       bgColor: 'bg-purple-600/10',
-      scale: ['Niedrig', 'Mittel', 'Hoch'],
-      description: 'Achtung: Hohes Umami (Parmesan, Sojasauce) macht Weine oft bitter. Benötigt mehr Frucht.',
-      rule: 'Umami = Hoch → Tannin ≤ Mittel',
+      scale: {
+        de: ['Niedrig', 'Mittel', 'Hoch'],
+        en: ['Low', 'Medium', 'High'],
+        fr: ['Faible', 'Moyen', 'Élevé']
+      },
+      description: {
+        de: 'Achtung: Hohes Umami (Parmesan, Sojasauce) macht Weine oft bitter. Benötigt mehr Frucht.',
+        en: 'Caution: High umami (Parmesan, soy sauce) often makes wines bitter. Needs more fruit.',
+        fr: 'Attention: un umami élevé (Parmesan, sauce soja) rend souvent les vins amers. Nécessite plus de fruit.'
+      },
+      rule: { de: 'Umami = Hoch → Tannin ≤ Mittel', en: 'Umami = High → Tannin ≤ Medium', fr: 'Umami = Élevé → Tanin ≤ Moyen' },
+      example: { de: 'Pasta mit Parmesan → Sangiovese', en: 'Pasta with Parmesan → Sangiovese', fr: 'Pâtes au Parmesan → Sangiovese' }
+    }
+  ];
       example: 'Pasta mit Parmesan → Sangiovese (fruchtig, wenig Tannin)'
     }
   ];

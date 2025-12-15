@@ -1,6 +1,6 @@
 {
   "timestamp": "2025-12-14T18:42:29.637811",
-  "version": "2.0",
+  "version": "2.1",
   "collections": {
     "blog_posts": 233,
     "public_wines": 1751,
@@ -8,7 +8,8 @@
     "regional_pairings": 44,
     "dishes": 40,
     "feed_posts": 268,
-    "wine_database": 494
+    "wine_database": 494,
+    "seo_pairings": 500
   },
   "expected": {
     "blog_posts": 233,
@@ -17,6 +18,7 @@
     "regional_pairings": 44,
     "dishes": 40,
     "feed_posts": 268,
-    "wine_database": 494
+    "wine_database": 494,
+    "seo_pairings": 500
   }
 }

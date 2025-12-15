@@ -120,6 +120,46 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Pairing Science Highlight Card */}
+      <section className="py-8 md:py-12 px-4 md:px-12 lg:px-24">
+        <div className="container mx-auto max-w-4xl">
+          <Card 
+            className="bg-gradient-to-r from-primary/10 via-accent/10 to-primary/5 border-primary/20 hover:border-primary/40 transition-all cursor-pointer group"
+            onClick={() => navigate('/wie-wir-pairen')}
+            data-testid="pairing-science-card"
+          >
+            <CardContent className="p-6 md:p-8">
+              <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6">
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/30 transition-colors">
+                  <Beaker className="w-7 h-7 md:w-8 md:h-8 text-primary" strokeWidth={1.5} />
+                </div>
+                <div className="flex-1 space-y-2">
+                  <h3 className="text-lg md:text-xl font-semibold text-primary">
+                    {language === 'de' ? 'Wissenschaftlich fundiertes Pairing' : language === 'en' ? 'Science-Based Pairing' : 'Accords scientifiques'}
+                  </h3>
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                    {language === 'de' 
+                      ? 'Entdecken Sie unsere 12 Schlüsselvariablen – 6 für den Wein, 6 für das Gericht – die das Geheimnis des perfekten Pairings enthüllen.' 
+                      : language === 'en' 
+                      ? 'Discover our 12 key variables – 6 for wine, 6 for food – that reveal the secret of perfect pairing.'
+                      : 'Découvrez nos 12 variables clés – 6 pour le vin, 6 pour le plat – qui révèlent le secret de l\'accord parfait.'}
+                  </p>
+                </div>
+                <div className="flex-shrink-0">
+                  <Button 
+                    variant="outline" 
+                    className="rounded-full border-primary/30 hover:bg-primary hover:text-primary-foreground group-hover:border-primary transition-all"
+                  >
+                    {language === 'de' ? 'Methodik entdecken' : language === 'en' ? 'Discover Method' : 'Découvrir'}
+                    <span className="ml-2">→</span>
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {/* Philosophy Section */}
       <section className="py-16 md:py-24 px-4 md:px-12 lg:px-24">
         <div className="container mx-auto">

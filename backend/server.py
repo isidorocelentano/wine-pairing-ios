@@ -3658,6 +3658,392 @@ async def download_all_backups():
     return all_data
 
 
+# ===================== AUTHENTICATION & SUBSCRIPTION ENDPOINTS =====================
+
+async def get_current_user(request: Request) -> Optional[User]:
+    """Get current user from session token (cookie or header)"""
+    # Try cookie first
+    session_token = request.cookies.get("session_token")
+    
+    # Fallback to Authorization header
+    if not session_token:
+        auth_header = request.headers.get("Authorization")
+        if auth_header and auth_header.startswith("Bearer "):
+            session_token = auth_header[7:]
+    
+    if not session_token:
+        return None
+    
+    # Find session
+    session_doc = await db.user_sessions.find_one(
+        {"session_token": session_token},
+        {"_id": 0}
+    )
+    
+    if not session_doc:
+        return None
+    
+    # Check expiry
+    expires_at = session_doc["expires_at"]
+    if isinstance(expires_at, str):
+        expires_at = datetime.fromisoformat(expires_at)
+    if expires_at.tzinfo is None:
+        expires_at = expires_at.replace(tzinfo=timezone.utc)
+    if expires_at < datetime.now(timezone.utc):
+        return None
+    
+    # Get user
+    user_doc = await db.users.find_one(
+        {"user_id": session_doc["user_id"]},
+        {"_id": 0}
+    )
+    
+    if not user_doc:
+        return None
+    
+    return User(**user_doc)
+
+async def reset_daily_usage_if_needed(user: User) -> User:
+    """Reset daily usage counters if it's a new day"""
+    today = datetime.now(timezone.utc).date().isoformat()
+    last_date = user.usage.get("last_usage_date")
+    
+    if last_date != today:
+        # New day - reset counters
+        user.usage = {
+            "pairing_requests_today": 0,
+            "chat_messages_today": 0,
+            "last_usage_date": today
+        }
+        await db.users.update_one(
+            {"user_id": user.user_id},
+            {"$set": {"usage": user.usage}}
+        )
+    
+    return user
+
+async def check_limit(user: Optional[User], limit_type: str) -> tuple[bool, str]:
+    """Check if user has reached their limit. Returns (allowed, message)"""
+    if user is None:
+        # Anonymous user - use basic limits
+        plan = "basic"
+        usage_count = 0
+    else:
+        user = await reset_daily_usage_if_needed(user)
+        plan = user.plan
+        if limit_type == "pairing":
+            usage_count = user.usage.get("pairing_requests_today", 0)
+        elif limit_type == "chat":
+            usage_count = user.usage.get("chat_messages_today", 0)
+        else:
+            usage_count = 0
+    
+    limits = FREEMIUM_LIMITS[plan]
+    
+    if limit_type == "pairing":
+        limit = limits["pairing_requests_per_day"]
+        if usage_count >= limit:
+            return False, f"Tageslimit erreicht ({int(limit)} Anfragen). Upgrade auf Pro für unbegrenzte Nutzung!"
+    elif limit_type == "chat":
+        limit = limits["chat_messages_per_day"]
+        if usage_count >= limit:
+            return False, f"Tageslimit erreicht ({int(limit)} Nachrichten). Upgrade auf Pro für unbegrenzte Nutzung!"
+    elif limit_type == "cellar":
+        limit = limits["max_cellar_wines"]
+        if user:
+            cellar_count = await db.wines.count_documents({"user_id": user.user_id})
+        else:
+            cellar_count = await db.wines.count_documents({})
+        if cellar_count >= limit:
+            return False, f"Maximale Anzahl Weine erreicht ({int(limit)}). Upgrade auf Pro für unbegrenzten Keller!"
+    
+    return True, ""
+
+async def increment_usage(user: User, usage_type: str):
+    """Increment usage counter for user"""
+    if usage_type == "pairing":
+        field = "usage.pairing_requests_today"
+    elif usage_type == "chat":
+        field = "usage.chat_messages_today"
+    else:
+        return
+    
+    await db.users.update_one(
+        {"user_id": user.user_id},
+        {
+            "$inc": {field: 1},
+            "$set": {"usage.last_usage_date": datetime.now(timezone.utc).date().isoformat()}
+        }
+    )
+
+# Auth endpoints
+@api_router.post("/auth/session")
+async def process_session(request: Request, response: Response):
+    """Process session_id from Google OAuth and create session"""
+    body = await request.json()
+    session_id = body.get("session_id")
+    
+    if not session_id:
+        raise HTTPException(status_code=400, detail="session_id required")
+    
+    # Exchange session_id for user data
+    async with httpx.AsyncClient() as client:
+        auth_response = await client.get(
+            "https://demobackend.emergentagent.com/auth/v1/env/oauth/session-data",
+            headers={"X-Session-ID": session_id}
+        )
+    
+    if auth_response.status_code != 200:
+        raise HTTPException(status_code=401, detail="Invalid session")
+    
+    auth_data = auth_response.json()
+    email = auth_data.get("email")
+    name = auth_data.get("name")
+    picture = auth_data.get("picture")
+    session_token = auth_data.get("session_token")
+    
+    # Check if user exists
+    existing_user = await db.users.find_one({"email": email}, {"_id": 0})
+    
+    if existing_user:
+        user_id = existing_user["user_id"]
+        # Update user data
+        await db.users.update_one(
+            {"user_id": user_id},
+            {"$set": {"name": name, "picture": picture}}
+        )
+    else:
+        # Create new user
+        user_id = f"user_{uuid.uuid4().hex[:12]}"
+        new_user = {
+            "user_id": user_id,
+            "email": email,
+            "name": name,
+            "picture": picture,
+            "plan": "basic",
+            "subscription_id": None,
+            "subscription_status": None,
+            "usage": {
+                "pairing_requests_today": 0,
+                "chat_messages_today": 0,
+                "last_usage_date": None
+            },
+            "created_at": datetime.now(timezone.utc)
+        }
+        await db.users.insert_one(new_user)
+    
+    # Create session
+    expires_at = datetime.now(timezone.utc) + timedelta(days=7)
+    await db.user_sessions.delete_many({"user_id": user_id})  # Remove old sessions
+    await db.user_sessions.insert_one({
+        "user_id": user_id,
+        "session_token": session_token,
+        "expires_at": expires_at,
+        "created_at": datetime.now(timezone.utc)
+    })
+    
+    # Get full user data
+    user_doc = await db.users.find_one({"user_id": user_id}, {"_id": 0})
+    
+    # Set cookie
+    response.set_cookie(
+        key="session_token",
+        value=session_token,
+        httponly=True,
+        secure=True,
+        samesite="none",
+        path="/",
+        max_age=7 * 24 * 60 * 60  # 7 days
+    )
+    
+    return user_doc
+
+@api_router.get("/auth/me")
+async def get_current_user_endpoint(request: Request):
+    """Get current authenticated user"""
+    user = await get_current_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Not authenticated")
+    
+    user = await reset_daily_usage_if_needed(user)
+    return user.model_dump()
+
+@api_router.post("/auth/logout")
+async def logout(request: Request, response: Response):
+    """Logout user and clear session"""
+    user = await get_current_user(request)
+    if user:
+        await db.user_sessions.delete_many({"user_id": user.user_id})
+    
+    response.delete_cookie("session_token", path="/")
+    return {"message": "Logged out"}
+
+# Subscription endpoints
+@api_router.post("/subscription/checkout")
+async def create_checkout_session(checkout_req: CheckoutRequest, request: Request):
+    """Create Stripe checkout session for subscription"""
+    user = await get_current_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    
+    if checkout_req.plan not in SUBSCRIPTION_PLANS:
+        raise HTTPException(status_code=400, detail="Invalid plan")
+    
+    plan = SUBSCRIPTION_PLANS[checkout_req.plan]
+    
+    # Create success/cancel URLs
+    success_url = f"{checkout_req.origin_url}/subscription/success?session_id={{CHECKOUT_SESSION_ID}}"
+    cancel_url = f"{checkout_req.origin_url}/subscription/cancel"
+    
+    # Initialize Stripe
+    host_url = str(request.base_url)
+    webhook_url = f"{host_url}api/webhook/stripe"
+    stripe_checkout = StripeCheckout(api_key=STRIPE_API_KEY, webhook_url=webhook_url)
+    
+    # Create checkout session
+    checkout_request = CheckoutSessionRequest(
+        amount=plan["price"],
+        currency=plan["currency"],
+        success_url=success_url,
+        cancel_url=cancel_url,
+        metadata={
+            "user_id": user.user_id,
+            "email": user.email,
+            "plan": checkout_req.plan
+        }
+    )
+    
+    session = await stripe_checkout.create_checkout_session(checkout_request)
+    
+    # Create payment transaction record
+    await db.payment_transactions.insert_one({
+        "transaction_id": f"txn_{uuid.uuid4().hex[:12]}",
+        "user_id": user.user_id,
+        "email": user.email,
+        "session_id": session.session_id,
+        "plan": checkout_req.plan,
+        "amount": plan["price"],
+        "currency": plan["currency"],
+        "payment_status": "pending",
+        "created_at": datetime.now(timezone.utc)
+    })
+    
+    return {"url": session.url, "session_id": session.session_id}
+
+@api_router.get("/subscription/status/{session_id}")
+async def get_subscription_status(session_id: str, request: Request):
+    """Check subscription payment status"""
+    user = await get_current_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    
+    # Find transaction
+    transaction = await db.payment_transactions.find_one(
+        {"session_id": session_id, "user_id": user.user_id},
+        {"_id": 0}
+    )
+    
+    if not transaction:
+        raise HTTPException(status_code=404, detail="Transaction not found")
+    
+    # If already processed, return cached status
+    if transaction["payment_status"] in ["paid", "failed", "expired"]:
+        return transaction
+    
+    # Check with Stripe
+    host_url = str(request.base_url)
+    webhook_url = f"{host_url}api/webhook/stripe"
+    stripe_checkout = StripeCheckout(api_key=STRIPE_API_KEY, webhook_url=webhook_url)
+    
+    status = await stripe_checkout.get_checkout_status(session_id)
+    
+    # Update transaction
+    new_status = status.payment_status
+    await db.payment_transactions.update_one(
+        {"session_id": session_id},
+        {"$set": {"payment_status": new_status}}
+    )
+    
+    # If paid, upgrade user
+    if new_status == "paid":
+        plan = transaction["plan"]
+        if "yearly" in plan:
+            end_date = datetime.now(timezone.utc) + timedelta(days=365)
+        else:
+            end_date = datetime.now(timezone.utc) + timedelta(days=30)
+        
+        await db.users.update_one(
+            {"user_id": user.user_id},
+            {"$set": {
+                "plan": "pro",
+                "subscription_id": session_id,
+                "subscription_status": "active",
+                "subscription_end_date": end_date
+            }}
+        )
+    
+    transaction["payment_status"] = new_status
+    return transaction
+
+@api_router.get("/subscription/plans")
+async def get_subscription_plans():
+    """Get available subscription plans"""
+    return {
+        "plans": SUBSCRIPTION_PLANS,
+        "limits": {
+            "basic": FREEMIUM_LIMITS["basic"],
+            "pro": {k: "unlimited" if v == float('inf') else v for k, v in FREEMIUM_LIMITS["pro"].items()}
+        }
+    }
+
+@api_router.post("/webhook/stripe")
+async def stripe_webhook(request: Request):
+    """Handle Stripe webhooks"""
+    body = await request.body()
+    signature = request.headers.get("Stripe-Signature")
+    
+    try:
+        host_url = str(request.base_url)
+        webhook_url = f"{host_url}api/webhook/stripe"
+        stripe_checkout = StripeCheckout(api_key=STRIPE_API_KEY, webhook_url=webhook_url)
+        
+        webhook_response = await stripe_checkout.handle_webhook(body, signature)
+        
+        if webhook_response.payment_status == "paid":
+            session_id = webhook_response.session_id
+            metadata = webhook_response.metadata
+            
+            # Update transaction
+            await db.payment_transactions.update_one(
+                {"session_id": session_id},
+                {"$set": {"payment_status": "paid"}}
+            )
+            
+            # Upgrade user
+            user_id = metadata.get("user_id")
+            plan = metadata.get("plan", "pro_monthly")
+            
+            if "yearly" in plan:
+                end_date = datetime.now(timezone.utc) + timedelta(days=365)
+            else:
+                end_date = datetime.now(timezone.utc) + timedelta(days=30)
+            
+            await db.users.update_one(
+                {"user_id": user_id},
+                {"$set": {
+                    "plan": "pro",
+                    "subscription_id": session_id,
+                    "subscription_status": "active",
+                    "subscription_end_date": end_date
+                }}
+            )
+        
+        return {"status": "ok"}
+    except Exception as e:
+        logger.error(f"Webhook error: {e}")
+        return {"status": "error", "message": str(e)}
+
+
 # Include the router AFTER middleware
 app.include_router(api_router)
 

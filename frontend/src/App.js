@@ -2,9 +2,11 @@ import React from 'react';
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from 'sonner';
+import { HelmetProvider } from 'react-helmet-async';
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { DarkModeProvider } from "@/contexts/DarkModeContext";
 import { SEO } from "@/components/SEO";
+import { OrganizationSchema, WebSiteSchema, SommelierServiceSchema } from "@/components/SEOSchemas";
 
 // Layout Components
 import LanguageSelector from "@/components/LanguageSelector";

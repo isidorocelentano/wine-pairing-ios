@@ -33,6 +33,30 @@ db = client[os.environ.get('DB_NAME', 'wine_pairing_db')]
 # LLM API Key
 EMERGENT_LLM_KEY = os.environ.get('EMERGENT_LLM_KEY', '')
 
+# Stripe API Key
+STRIPE_API_KEY = os.environ.get('STRIPE_API_KEY', '')
+
+# ===================== FREEMIUM CONFIGURATION =====================
+FREEMIUM_LIMITS = {
+    "basic": {
+        "pairing_requests_per_day": 5,
+        "chat_messages_per_day": 5,
+        "max_cellar_wines": 10,
+        "max_favorites": 10
+    },
+    "pro": {
+        "pairing_requests_per_day": float('inf'),
+        "chat_messages_per_day": float('inf'),
+        "max_cellar_wines": float('inf'),
+        "max_favorites": float('inf')
+    }
+}
+
+SUBSCRIPTION_PLANS = {
+    "pro_monthly": {"price": 4.99, "currency": "eur", "interval": "month"},
+    "pro_yearly": {"price": 39.99, "currency": "eur", "interval": "year"}
+}
+
 # ===================== ACCENT-INSENSITIVE SEARCH HELPER =====================
 # WICHTIG: Diese Funktion muss für alle Suchfunktionen verwendet werden!
 # Problem: "Chateau" muss "Château" finden, "Cotes" muss "Côtes" finden

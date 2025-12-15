@@ -222,14 +222,14 @@ const CellarPage = () => {
     <div className="min-h-screen pb-20 md:pb-24 relative" data-testid="cellar-page">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1561906814-23da9a8bfee0?auto=format&fit=crop&w=1920&q=80)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
-        }}
+        className="fixed inset-0 z-0 pointer-events-none"
+        aria-hidden="true"
       >
+        <img 
+          src="https://images.unsplash.com/photo-1561906814-23da9a8bfee0?auto=format&fit=crop&w=1920&q=80"
+          alt=""
+          className="w-full h-full object-cover"
+        />
         {/* Dark overlay for readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background/95"></div>
       </div>

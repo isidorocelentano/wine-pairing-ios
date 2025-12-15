@@ -219,8 +219,23 @@ const CellarPage = () => {
   };
 
   return (
-    <div className="min-h-screen pb-20 md:pb-24 pt-6 md:pt-8 px-4 md:px-12 lg:px-24" data-testid="cellar-page">
-      <div className="container mx-auto">
+    <div className="min-h-screen pb-20 md:pb-24 relative" data-testid="cellar-page">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: 'url(https://images.unsplash.com/photo-1561906814-23da9a8bfee0?auto=format&fit=crop&w=1920&q=80)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background/95"></div>
+      </div>
+      
+      <div className="relative z-10 pt-6 md:pt-8 px-4 md:px-12 lg:px-24">
+        <div className="container mx-auto">
         
         {/* Hero Slogan */}
         <div className="mb-8 md:mb-12 text-center">

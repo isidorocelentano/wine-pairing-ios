@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "wiener-schnitzel-alois-lageder-pinot-noir",
+    "dish": {
+      "name_de": "Wiener Schnitzel",
+      "name_en": "Wiener Schnitzel",
+      "name_fr": "Escalope viennoise",
+      "cuisine": "Österreichisch",
+      "category": "Fleisch",
+      "keywords": [
+        "Kalb",
+        "paniert",
+        "Zitrone"
+      ]
+    },
+    "wine": {
+      "name": "Alois Lageder Pinot noir",
+      "region": "Südtirol",
+      "country": "Italien",
+      "color": "Rotwein",
+      "grape": "Pinot Noir",
+      "description_de": "Elegante Finesse der Alpen. Sanft, mit klaren Noten von roten Beeren",
+      "description_en": "Kirsche, Himbeere",
+      "description_fr": "Elegant finesse of the Alps. Gentle, with clear notes of red berries (cherry, raspberry"
+    },
+    "pairing_description": {
+      "de": "Zu Wiener Schnitzel empfehlen wir diesen exzellenten Rotwein aus Südtirol. Die Kombination ist ein Klassiker der gehobenen Küche.",
+      "en": "For Wiener Schnitzel, we recommend this excellent wine from Südtirol. This combination is a classic of fine dining.",
+      "fr": "Pour Escalope viennoise, nous recommandons cet excellent vin de Südtirol. Cette combinaison est un classique de la gastronomie."
+    },
+    "seo": {
+      "title_de": "Wiener Schnitzel & Alois Lageder Pinot noir - Perfektes Wein-Pairing",
+      "title_en": "Wiener Schnitzel & Alois Lageder Pinot noir - Perfect Wine Pairing",
+      "title_fr": "Escalope viennoise & Alois Lageder Pinot noir - Accord Parfait",
+      "description_de": "Entdecken Sie warum Alois Lageder Pinot noir der ideale Weinbegleiter für Wiener Schnitzel ist. Unser Sommelier erklärt die perfekte Kombination.",
+      "description_en": "Discover why Alois Lageder Pinot noir is the ideal wine pairing for Wiener Schnitzel. Our sommelier explains the perfect combination.",
+      "description_fr": "Découvrez pourquoi Alois Lageder Pinot noir est l'accord parfait pour Escalope viennoise. Notre sommelier explique cette combinaison idéale.",
+      "keywords": [
+        "Kalb",
+        "paniert",
+        "Zitrone",
+        "Alois Lageder Pinot noir",
+        "Südtirol",
+        "Italien"
+      ]
+    },
+    "url": "https://wine-pairing.online/pairing/wiener-schnitzel-alois-lageder-pinot-noir",
+    "created_at": "2025-12-15T07:29:29.775889+00:00",
+    "auto_generated": true,
+    "_id": 

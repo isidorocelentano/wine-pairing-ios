@@ -3677,7 +3677,11 @@ async def startup_seed_data():
             ("public_wines", "public_wines.json"),
             ("feed_posts", "feed_posts.json"),
             ("seo_pairings", "seo_pairings.json"),
-            ("wines", "wines.json"),
+        ]
+        
+        # USER-GENERATED COLLECTIONS - NUR laden wenn LEER (nie überschreiben!)
+        user_collections = [
+            ("wines", "wines.json"),  # Persönlicher Weinkeller
         ]
         
         for collection_name, json_filename in collections_to_seed:
@@ -3689,7 +3693,7 @@ async def startup_seed_data():
                         data = json.load(f)
                     
                     if data:
-                        # IMMER löschen und neu laden
+                        # System-Daten: IMMER löschen und neu laden
                         await db[collection_name].delete_many({})
                         await db[collection_name].insert_many(data)
                         print(f"   ✅ {collection_name}: {len(data)} Dokumente geladen")
@@ -3697,6 +3701,33 @@ async def startup_seed_data():
                         print(f"   ⚠️ {json_filename} ist leer")
                 else:
                     print(f"   ❌ Backup-Datei fehlt: {json_filename}")
+                    
+            except Exception as e:
+                print(f"   ❌ {collection_name}: Fehler - {e}")
+        
+        # User-Collections: NUR wenn komplett leer (erste Installation)
+        for collection_name, json_filename in user_collections:
+            try:
+                existing_count = await db[collection_name].count_documents({})
+                
+                if existing_count == 0:
+                    # Collection ist leer -> Initial-Daten laden
+                    data_file = ROOT_DIR / "data" / json_filename
+                    
+                    if data_file.exists():
+                        with open(data_file, 'r', encoding='utf-8') as f:
+                            data = json.load(f)
+                        
+                        if data:
+                            await db[collection_name].insert_many(data)
+                            print(f"   ✅ {collection_name}: {len(data)} Initial-Dokumente geladen (USER-DATA)")
+                        else:
+                            print(f"   ⚠️ {json_filename} ist leer")
+                    else:
+                        print(f"   ⚠️ {json_filename} nicht gefunden - leere Collection")
+                else:
+                    # Collection hat bereits Daten -> NICHT überschreiben!
+                    print(f"   🔒 {collection_name}: {existing_count} Dokumente vorhanden (USER-DATA geschützt)")
                     
             except Exception as e:
                 print(f"   ❌ {collection_name}: Fehler - {e}")

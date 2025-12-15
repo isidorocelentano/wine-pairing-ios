@@ -455,6 +455,88 @@ const PairingSciencePage = () => {
           </TabsContent>
         </Tabs>
 
+        {/* Current Pairing Analysis - If coming from pairing page */}
+        {currentPairing && (
+          <section className="mt-12 space-y-6">
+            <div className="text-center">
+              <Badge className="mb-4 bg-green-500/20 text-green-600">
+                {lang === 'de' ? 'Ihre aktuelle Analyse' : 'Your Current Analysis'}
+              </Badge>
+              <h2 className="text-2xl md:text-3xl font-semibold mb-2">
+                {lang === 'de' ? `Warum diese Weine zu "${currentPairing.dish}" passen` : `Why These Wines Match "${currentPairing.dish}"`}
+              </h2>
+            </div>
+            
+            <Card className="bg-gradient-to-r from-primary/5 via-accent/5 to-primary/10 border-primary/30 max-w-4xl mx-auto">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                    <Utensils className="h-5 w-5 text-primary" />
+                  </div>
+                  {currentPairing.dish}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {/* Why Explanation */}
+                {currentPairing.why_explanation && (
+                  <div className="p-4 bg-background/50 rounded-lg">
+                    <h4 className="font-medium text-sm mb-2 flex items-center gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-green-500" />
+                      {lang === 'de' ? 'Wissenschaftliche Begründung:' : 'Scientific Reasoning:'}
+                    </h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
+                      {currentPairing.why_explanation}
+                    </p>
+                  </div>
+                )}
+                
+                {/* Key Pairing Factors */}
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                  <div className="p-3 bg-background/50 rounded-lg text-center">
+                    <Droplets className="h-5 w-5 text-yellow-500 mx-auto mb-1" />
+                    <p className="text-xs text-muted-foreground">Säure-Balance</p>
+                    <p className="text-sm font-medium">{lang === 'de' ? 'Analysiert' : 'Analyzed'}</p>
+                  </div>
+                  <div className="p-3 bg-background/50 rounded-lg text-center">
+                    <Leaf className="h-5 w-5 text-red-700 mx-auto mb-1" />
+                    <p className="text-xs text-muted-foreground">Tannin-Match</p>
+                    <p className="text-sm font-medium">{lang === 'de' ? 'Analysiert' : 'Analyzed'}</p>
+                  </div>
+                  <div className="p-3 bg-background/50 rounded-lg text-center">
+                    <Scale className="h-5 w-5 text-purple-500 mx-auto mb-1" />
+                    <p className="text-xs text-muted-foreground">Körper-Balance</p>
+                    <p className="text-sm font-medium">{lang === 'de' ? 'Analysiert' : 'Analyzed'}</p>
+                  </div>
+                  <div className="p-3 bg-background/50 rounded-lg text-center">
+                    <Thermometer className="h-5 w-5 text-orange-500 mx-auto mb-1" />
+                    <p className="text-xs text-muted-foreground">Fett-Index</p>
+                    <p className="text-sm font-medium">{lang === 'de' ? 'Bewertet' : 'Evaluated'}</p>
+                  </div>
+                  <div className="p-3 bg-background/50 rounded-lg text-center">
+                    <Flame className="h-5 w-5 text-amber-500 mx-auto mb-1" />
+                    <p className="text-xs text-muted-foreground">Garmethode</p>
+                    <p className="text-sm font-medium">{lang === 'de' ? 'Berücksichtigt' : 'Considered'}</p>
+                  </div>
+                  <div className="p-3 bg-background/50 rounded-lg text-center">
+                    <Gauge className="h-5 w-5 text-purple-600 mx-auto mb-1" />
+                    <p className="text-xs text-muted-foreground">Umami-Level</p>
+                    <p className="text-sm font-medium">{lang === 'de' ? 'Geprüft' : 'Checked'}</p>
+                  </div>
+                </div>
+                
+                <div className="text-center pt-4">
+                  <Link to="/pairing">
+                    <Button variant="outline" className="rounded-full">
+                      <Utensils className="mr-2 h-4 w-4" />
+                      {lang === 'de' ? 'Neues Pairing starten' : 'Start New Pairing'}
+                    </Button>
+                  </Link>
+                </div>
+              </CardContent>
+            </Card>
+          </section>
+        )}
+
         {/* Interactive Examples Section */}
         <section className="mt-16 space-y-8">
           <div className="text-center">

@@ -423,7 +423,7 @@ const PairingSciencePage = () => {
             </TabsTrigger>
             <TabsTrigger value="rules" className="flex items-center gap-2">
               <Beaker className="h-4 w-4" />
-              <span className="hidden sm:inline">{lang === 'de' ? 'Regeln' : 'Rules'}</span>
+              <span className="hidden sm:inline">{lang === 'de' ? 'Regeln' : lang === 'en' ? 'Rules' : 'Règles'}</span>
             </TabsTrigger>
           </TabsList>
 

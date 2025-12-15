@@ -227,6 +227,13 @@ const PairingPage = () => {
           <p className="text-muted-foreground max-w-xl mx-auto text-sm md:text-base">
             {t('pairing_description')}
           </p>
+          <Link 
+            to="/wie-wir-pairen" 
+            className="inline-flex items-center gap-2 mt-4 text-sm text-primary hover:text-primary/80 transition-colors"
+          >
+            <Beaker className="w-4 h-4" />
+            {language === 'de' ? 'Unsere Pairing-Methodik entdecken' : language === 'en' ? 'Discover our pairing methodology' : 'Découvrir notre méthodologie'}
+          </Link>
         </header>
 
         <Card className="bg-card/50 backdrop-blur-sm border-border/50 mb-6 md:mb-8">

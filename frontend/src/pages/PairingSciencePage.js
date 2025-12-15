@@ -526,12 +526,14 @@ const PairingSciencePage = () => {
           <TabsContent value="rules" className="space-y-6">
             <div className="text-center mb-8">
               <h2 className="text-2xl font-semibold mb-2">
-                {lang === 'de' ? 'Die goldenen Pairing-Regeln' : 'The Golden Pairing Rules'}
+                {lang === 'de' ? 'Die goldenen Pairing-Regeln' : lang === 'en' ? 'The Golden Pairing Rules' : 'Les règles d\'or de l\'accord'}
               </h2>
               <p className="text-muted-foreground">
                 {lang === 'de' 
                   ? 'Von Sommeliers über Jahrhunderte entwickelt und von der Wissenschaft bestätigt.'
-                  : 'Developed by sommeliers over centuries and confirmed by science.'}
+                  : lang === 'en'
+                  ? 'Developed by sommeliers over centuries and confirmed by science.'
+                  : 'Développées par les sommeliers au fil des siècles et confirmées par la science.'}
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -540,13 +542,13 @@ const PairingSciencePage = () => {
                   <CardContent className="pt-6">
                     <div className="text-3xl mb-3">{rule.icon}</div>
                     <h3 className="font-semibold text-lg mb-2">
-                      {lang === 'de' ? rule.name : rule.name_en}
+                      {rule.name[lang] || rule.name.en}
                     </h3>
                     <p className="text-sm text-muted-foreground mb-3">
-                      {rule.description}
+                      {rule.description[lang] || rule.description.en}
                     </p>
                     <Badge variant="secondary" className="text-xs">
-                      {rule.example}
+                      {rule.example[lang] || rule.example.en}
                     </Badge>
                   </CardContent>
                 </Card>

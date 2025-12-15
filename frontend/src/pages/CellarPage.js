@@ -221,6 +221,28 @@ const CellarPage = () => {
   return (
     <div className="min-h-screen pb-20 md:pb-24 pt-6 md:pt-8 px-4 md:px-12 lg:px-24" data-testid="cellar-page">
       <div className="container mx-auto">
+        
+        {/* Hero Slogan */}
+        <div className="mb-8 md:mb-12 text-center">
+          <div className="inline-block relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 blur-3xl opacity-50"></div>
+            <blockquote className="relative text-lg md:text-2xl lg:text-3xl font-light italic text-foreground/90 leading-relaxed max-w-4xl mx-auto px-4">
+              <span className="text-primary/60 text-4xl md:text-5xl font-serif">"</span>
+              {language === 'de' 
+                ? 'Nicht nur Wein, sondern die perfekte Kombination – für dich, aus deinem Keller, mit deinem Geschmack.'
+                : language === 'en'
+                ? 'Not just wine, but the perfect combination – for you, from your cellar, tailored to your taste.'
+                : 'Pas seulement du vin, mais la combinaison parfaite – pour vous, de votre cave, selon vos goûts.'}
+              <span className="text-primary/60 text-4xl md:text-5xl font-serif">"</span>
+            </blockquote>
+            <div className="mt-4 flex items-center justify-center gap-3">
+              <div className="h-px w-12 bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
+              <Wine className="h-5 w-5 text-primary/60" />
+              <div className="h-px w-12 bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
+            </div>
+          </div>
+        </div>
+
         <header className="flex flex-col gap-4 mb-6 md:mb-8">
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
             <div>

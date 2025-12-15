@@ -28,75 +28,111 @@ const PairingSciencePage = () => {
   const wineVariables = [
     {
       id: 'acidity',
-      name: 'Säure',
-      name_en: 'Acidity',
+      name: { de: 'Säure', en: 'Acidity', fr: 'Acidité' },
       icon: Droplets,
       color: 'text-yellow-500',
       bgColor: 'bg-yellow-500/10',
-      scale: ['Niedrig', 'Mittel', 'Hoch', 'Sehr Hoch'],
-      description: 'Essentiell, um Fett zu "schneiden" und Frische zu verleihen. Hohe Säure passt zu fettreichen Speisen.',
-      description_en: 'Essential for cutting through fat and adding freshness. High acidity pairs with rich, fatty dishes.',
-      example: 'Riesling (Hoch) → Schweinebraten mit Sahnesauce'
+      scale: { 
+        de: ['Niedrig', 'Mittel', 'Hoch', 'Sehr Hoch'],
+        en: ['Low', 'Medium', 'High', 'Very High'],
+        fr: ['Faible', 'Moyen', 'Élevé', 'Très élevé']
+      },
+      description: {
+        de: 'Essentiell, um Fett zu "schneiden" und Frische zu verleihen. Hohe Säure passt zu fettreichen Speisen.',
+        en: 'Essential for cutting through fat and adding freshness. High acidity pairs with rich, fatty dishes.',
+        fr: 'Essentielle pour couper le gras et apporter de la fraîcheur. Une acidité élevée accompagne les plats riches.'
+      },
+      example: { de: 'Riesling (Hoch) → Schweinebraten', en: 'Riesling (High) → Pork Roast', fr: 'Riesling (Élevé) → Rôti de porc' }
     },
     {
       id: 'tannin',
-      name: 'Tannin',
-      name_en: 'Tannin',
+      name: { de: 'Tannin', en: 'Tannin', fr: 'Tanin' },
       icon: Leaf,
       color: 'text-red-700',
       bgColor: 'bg-red-700/10',
-      scale: ['Keine', 'Gering', 'Mittel', 'Hoch'],
-      description: 'Steuert das Pairing mit Proteinen. Hohe Tannine brauchen Fett und Eiweiß, um weich zu wirken.',
-      description_en: 'Controls pairing with proteins. High tannins need fat and protein to soften.',
-      example: 'Cabernet Sauvignon (Hoch) → Ribeye Steak'
+      scale: {
+        de: ['Keine', 'Gering', 'Mittel', 'Hoch'],
+        en: ['None', 'Low', 'Medium', 'High'],
+        fr: ['Aucun', 'Faible', 'Moyen', 'Élevé']
+      },
+      description: {
+        de: 'Steuert das Pairing mit Proteinen. Hohe Tannine brauchen Fett und Eiweiß, um weich zu wirken.',
+        en: 'Controls pairing with proteins. High tannins need fat and protein to soften.',
+        fr: 'Contrôle l\'accord avec les protéines. Les tanins élevés ont besoin de gras et de protéines.'
+      },
+      example: { de: 'Cabernet Sauvignon (Hoch) → Ribeye Steak', en: 'Cabernet Sauvignon (High) → Ribeye Steak', fr: 'Cabernet Sauvignon (Élevé) → Entrecôte' }
     },
     {
       id: 'sweetness',
-      name: 'Restzucker',
-      name_en: 'Sweetness',
+      name: { de: 'Restzucker', en: 'Sweetness', fr: 'Sucre résiduel' },
       icon: CircleDot,
       color: 'text-pink-500',
       bgColor: 'bg-pink-500/10',
-      scale: ['Trocken', 'Halbtrocken', 'Lieblich', 'Süß'],
-      description: 'Der Wein muss immer süßer sein als das Dessert, sonst wirkt er bitter und flach.',
-      description_en: 'Wine must always be sweeter than dessert, otherwise it tastes bitter and flat.',
-      example: 'Sauternes (Süß) → Crème Brûlée'
+      scale: {
+        de: ['Trocken', 'Halbtrocken', 'Lieblich', 'Süß'],
+        en: ['Dry', 'Off-dry', 'Semi-sweet', 'Sweet'],
+        fr: ['Sec', 'Demi-sec', 'Moelleux', 'Doux']
+      },
+      description: {
+        de: 'Der Wein muss immer süßer sein als das Dessert, sonst wirkt er bitter und flach.',
+        en: 'Wine must always be sweeter than dessert, otherwise it tastes bitter and flat.',
+        fr: 'Le vin doit toujours être plus sucré que le dessert, sinon il paraît amer et plat.'
+      },
+      example: { de: 'Sauternes (Süß) → Crème Brûlée', en: 'Sauternes (Sweet) → Crème Brûlée', fr: 'Sauternes (Doux) → Crème brûlée' }
     },
     {
       id: 'body',
-      name: 'Körper',
-      name_en: 'Body',
+      name: { de: 'Körper', en: 'Body', fr: 'Corps' },
       icon: Scale,
       color: 'text-purple-500',
       bgColor: 'bg-purple-500/10',
-      scale: ['Leicht', 'Mittel', 'Vollmundig'],
-      description: 'Stellt sicher, dass Wein und Speise sich nicht gegenseitig überwältigen. Gleichgewicht ist der Schlüssel.',
-      description_en: 'Ensures wine and food don\'t overpower each other. Balance is key.',
-      example: 'Pinot Noir (Mittel) → Entenbrust'
+      scale: {
+        de: ['Leicht', 'Mittel', 'Vollmundig'],
+        en: ['Light', 'Medium', 'Full-bodied'],
+        fr: ['Léger', 'Moyen', 'Corsé']
+      },
+      description: {
+        de: 'Stellt sicher, dass Wein und Speise sich nicht gegenseitig überwältigen. Gleichgewicht ist der Schlüssel.',
+        en: 'Ensures wine and food don\'t overpower each other. Balance is key.',
+        fr: 'Garantit que le vin et le plat ne se dominent pas mutuellement. L\'équilibre est essentiel.'
+      },
+      example: { de: 'Pinot Noir (Mittel) → Entenbrust', en: 'Pinot Noir (Medium) → Duck Breast', fr: 'Pinot Noir (Moyen) → Magret de canard' }
     },
     {
       id: 'aroma',
-      name: 'Aromen',
-      name_en: 'Aromas',
+      name: { de: 'Aromen', en: 'Aromas', fr: 'Arômes' },
       icon: Beaker,
       color: 'text-green-500',
       bgColor: 'bg-green-500/10',
-      scale: ['Frucht', 'Erde', 'Würze', 'Holz', 'Blumen'],
-      description: 'Harmonisches Aroma-Pairing: Erdige Weine zu Pilzen, fruchtige Weine zu leichten Gerichten.',
-      description_en: 'Harmonious aroma pairing: Earthy wines with mushrooms, fruity wines with light dishes.',
-      example: 'Burgunder (Erde) → Pilzrisotto'
+      scale: {
+        de: ['Frucht', 'Erde', 'Würze', 'Holz', 'Blumen'],
+        en: ['Fruit', 'Earth', 'Spice', 'Oak', 'Floral'],
+        fr: ['Fruit', 'Terre', 'Épices', 'Bois', 'Floral']
+      },
+      description: {
+        de: 'Harmonisches Aroma-Pairing: Erdige Weine zu Pilzen, fruchtige Weine zu leichten Gerichten.',
+        en: 'Harmonious aroma pairing: Earthy wines with mushrooms, fruity wines with light dishes.',
+        fr: 'Accord aromatique harmonieux: vins terreux avec champignons, vins fruités avec plats légers.'
+      },
+      example: { de: 'Burgunder (Erde) → Pilzrisotto', en: 'Burgundy (Earth) → Mushroom Risotto', fr: 'Bourgogne (Terre) → Risotto aux champignons' }
     },
     {
       id: 'oak',
-      name: 'Holzeinfluss',
-      name_en: 'Oak Influence',
+      name: { de: 'Holzeinfluss', en: 'Oak Influence', fr: 'Influence du bois' },
       icon: Flame,
       color: 'text-amber-600',
       bgColor: 'bg-amber-600/10',
-      scale: ['Kein', 'Subtil', 'Kräftig'],
-      description: 'Geröstete Aromen vom Barrique passen perfekt zu gegrilltem oder geröstetem Fleisch.',
-      description_en: 'Toasted aromas from barrique pair perfectly with grilled or roasted meat.',
-      example: 'Oaked Chardonnay → Gegrillter Lachs'
+      scale: {
+        de: ['Kein', 'Subtil', 'Kräftig'],
+        en: ['None', 'Subtle', 'Strong'],
+        fr: ['Aucun', 'Subtil', 'Prononcé']
+      },
+      description: {
+        de: 'Geröstete Aromen vom Barrique passen perfekt zu gegrilltem oder geröstetem Fleisch.',
+        en: 'Toasted aromas from barrique pair perfectly with grilled or roasted meat.',
+        fr: 'Les arômes grillés de la barrique s\'accordent parfaitement avec les viandes grillées ou rôties.'
+      },
+      example: { de: 'Oaked Chardonnay → Gegrillter Lachs', en: 'Oaked Chardonnay → Grilled Salmon', fr: 'Chardonnay boisé → Saumon grillé' }
     }
   ];
 

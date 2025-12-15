@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { 
   Wine, Utensils, Beaker, Scale, Thermometer, Droplets, 
   Flame, Leaf, ChevronRight, CheckCircle2, XCircle,

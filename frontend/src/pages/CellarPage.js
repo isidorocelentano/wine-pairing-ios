@@ -600,6 +600,7 @@ const CellarPage = () => {
             </DialogContent>
           </Dialog>
         )}
+        </div>
       </div>
     </div>
   );

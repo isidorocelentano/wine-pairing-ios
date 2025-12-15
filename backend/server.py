@@ -3648,7 +3648,7 @@ async def startup_seed_data():
         print(f"   ✅ blog_posts: {blog_count}/{expected['blog_posts']}")
     
     # Alle anderen Collections
-    for col_name in ['public_wines', 'grape_varieties', 'regional_pairings', 'dishes', 'feed_posts', 'wine_database']:
+    for col_name in ['public_wines', 'grape_varieties', 'regional_pairings', 'dishes', 'feed_posts', 'wine_database', 'seo_pairings', 'wines']:
         count = await db[col_name].count_documents({})
         checks[col_name] = count
         exp = expected.get(col_name, 0)

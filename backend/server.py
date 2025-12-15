@@ -3647,8 +3647,8 @@ async def startup_seed_data():
     else:
         print(f"   ✅ blog_posts: {blog_count}/{expected['blog_posts']}")
     
-    # Alle anderen Collections
-    for col_name in ['public_wines', 'grape_varieties', 'regional_pairings', 'dishes', 'feed_posts', 'wine_database', 'seo_pairings', 'wines']:
+    # Alle anderen Collections (System-Daten)
+    for col_name in ['public_wines', 'grape_varieties', 'regional_pairings', 'dishes', 'feed_posts', 'wine_database', 'seo_pairings']:
         count = await db[col_name].count_documents({})
         checks[col_name] = count
         exp = expected.get(col_name, 0)
@@ -3661,6 +3661,10 @@ async def startup_seed_data():
             print(f"   ❌ {col_name}: {count}/{exp}")
         else:
             print(f"   ✅ {col_name}: {count}/{exp}")
+    
+    # User-Collections separat prüfen (triggern KEIN Reseed)
+    wines_count = await db.wines.count_documents({})
+    print(f"   🔒 wines (User-Keller): {wines_count} Flaschen")
     
     # Wenn IRGENDETWAS fehlt -> Komplettes Seeding
     if needs_reseed:

@@ -7,6 +7,8 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { SEO } from '@/components/SEO';
+import Breadcrumb from '@/components/Breadcrumb';
+import { ArticleSchema, FAQSchema } from '@/components/SEOSchemas';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;

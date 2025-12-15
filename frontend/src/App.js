@@ -27,6 +27,7 @@ import GrapeAdminPage from "@/pages/GrapeAdminPage";
 import DishAdminPage from "@/pages/DishAdminPage";
 import PairingSeoPage from "@/pages/PairingSeoPage";
 import SeoPairingExplorerPage from "@/pages/SeoPairingExplorerPage";
+import DynamicPairingPage from "@/pages/DynamicPairingPage";
 import SommelierKompassPage from "@/pages/SommelierKompassPage";
 import KontaktPage from "@/pages/KontaktPage";
 import ImpressumPage from "@/pages/ImpressumPage";

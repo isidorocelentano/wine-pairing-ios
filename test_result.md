@@ -2,7 +2,7 @@
 # PRE-DEPLOYMENT COMPREHENSIVE TEST
 #====================================================================================================
 
-user_problem_statement: "CRITICAL FIX - Homepage crash behoben (language undefined error in HomePage.js). Link zur Pairing Science Seite hinzugefügt. Alle Seiten getestet: Homepage, Blog, Pairing, Pairing Science."
+user_problem_statement: "PRE-DEPLOYMENT COMPREHENSIVE TEST v6 - Backup erstellt. Testing: 1) Alle Seiten laden 2) Datenbank-Counts korrekt 3) Alle Dateien für Deployment vorhanden 4) Dynamische Pairing Science Analyse 5) Mobile Navigation"
 
 backend:
   - task: "Core API Health & Database Connection"

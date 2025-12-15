@@ -57,7 +57,13 @@ const Footer = () => {
             <div className="text-sm text-muted-foreground">
               © {currentYear} MYSYMP AG. {t('footer_rights') || 'Alle Rechte vorbehalten.'}
             </div>
-            <nav className="flex items-center gap-6">
+            <nav className="flex items-center gap-4 md:gap-6 flex-wrap justify-center">
+              <Link 
+                to="/wie-wir-pairen" 
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {language === 'de' ? 'Wie wir pairen' : language === 'en' ? 'How We Pair' : 'Notre Méthode'}
+              </Link>
               <Link 
                 to="/kontakt" 
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"

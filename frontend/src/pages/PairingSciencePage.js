@@ -414,12 +414,14 @@ const PairingSciencePage = () => {
           <TabsContent value="wine" className="space-y-6">
             <div className="text-center mb-8">
               <h2 className="text-2xl font-semibold mb-2">
-                {lang === 'de' ? '6 Wein-Variablen' : '6 Wine Variables'}
+                {lang === 'de' ? '6 Wein-Variablen' : lang === 'en' ? '6 Wine Variables' : '6 Variables du vin'}
               </h2>
               <p className="text-muted-foreground">
                 {lang === 'de' 
                   ? 'Diese Attribute bestimmen, wie ein Wein mit Speisen interagiert.'
-                  : 'These attributes determine how a wine interacts with food.'}
+                  : lang === 'en' 
+                  ? 'These attributes determine how a wine interacts with food.'
+                  : 'Ces attributs déterminent comment un vin interagit avec les aliments.'}
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -431,23 +433,23 @@ const PairingSciencePage = () => {
                         <variable.icon className={`h-5 w-5 ${variable.color}`} />
                       </div>
                       <CardTitle className="text-lg">
-                        {lang === 'de' ? variable.name : variable.name_en}
+                        {variable.name[lang] || variable.name.en}
                       </CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-3">
                     <p className="text-sm text-muted-foreground">
-                      {lang === 'de' ? variable.description : variable.description_en}
+                      {variable.description[lang] || variable.description.en}
                     </p>
                     <div className="flex flex-wrap gap-1">
-                      {variable.scale.map((s, i) => (
+                      {(variable.scale[lang] || variable.scale.en).map((s, i) => (
                         <Badge key={i} variant="outline" className="text-xs">
                           {s}
                         </Badge>
                       ))}
                     </div>
                     <p className="text-xs text-primary font-medium">
-                      → {variable.example}
+                      → {variable.example[lang] || variable.example.en}
                     </p>
                   </CardContent>
                 </Card>

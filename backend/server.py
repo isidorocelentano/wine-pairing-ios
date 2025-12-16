@@ -1062,6 +1062,9 @@ async def get_wine_pairing(request: PairingRequest, http_request: Request):
         cellar_matches = None
         cellar_context = ""
         
+        # DEBUG: Log the use_cellar value
+        print(f"DEBUG: use_cellar = {request.use_cellar}")
+        
         if request.use_cellar:
             query = {}
             if request.wine_type_filter:

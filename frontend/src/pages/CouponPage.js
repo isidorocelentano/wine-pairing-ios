@@ -3,14 +3,14 @@ import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/card'
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { AlertCircle, CheckCircle, Gift } from 'lucide-react';
-import { AuthContext } from '../contexts/AuthContext';
+import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
 const CouponPage = () => {
   const [couponCode, setCouponCode] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState(null);
-  const { user, refreshUser } = useContext(AuthContext);
+  const { user, refreshUser } = useAuth();
   const navigate = useNavigate();
 
   const handleRedeem = async (e) => {

@@ -4439,27 +4439,32 @@ async def startup_seed_data():
                 print(f"   ❌ {collection_name}: Fehler - {e}")
         
         # User-Collections: NUR wenn komplett leer (erste Installation)
+        # Diese Collections werden NIEMALS überschrieben wenn sie Daten enthalten!
         for collection_name, json_filename in user_collections:
             try:
                 existing_count = await db[collection_name].count_documents({})
                 
                 if existing_count == 0:
-                    # Collection ist leer -> Initial-Daten laden
-                    data_file = ROOT_DIR / "data" / json_filename
-                    
-                    if data_file.exists():
-                        with open(data_file, 'r', encoding='utf-8') as f:
-                            data = json.load(f)
+                    # Collection ist leer -> Initial-Daten laden (wenn Backup vorhanden)
+                    if json_filename:
+                        data_file = ROOT_DIR / "data" / json_filename
                         
-                        if data:
-                            await db[collection_name].insert_many(data)
-                            print(f"   ✅ {collection_name}: {len(data)} Initial-Dokumente geladen (USER-DATA)")
+                        if data_file.exists():
+                            with open(data_file, 'r', encoding='utf-8') as f:
+                                data = json.load(f)
+                            
+                            if data:
+                                await db[collection_name].insert_many(data)
+                                print(f"   ✅ {collection_name}: {len(data)} Initial-Dokumente geladen (USER-DATA)")
+                            else:
+                                print(f"   ⚠️ {json_filename} ist leer - leere Collection erstellt")
                         else:
-                            print(f"   ⚠️ {json_filename} ist leer")
+                            print(f"   ⚠️ {json_filename} nicht gefunden - leere Collection")
                     else:
-                        print(f"   ⚠️ {json_filename} nicht gefunden - leere Collection")
+                        # Keine Backup-Datei -> Collection bleibt leer (wird von App gefüllt)
+                        print(f"   ⚠️ {collection_name}: leer (wird dynamisch gefüllt)")
                 else:
-                    # Collection hat bereits Daten -> NICHT überschreiben!
+                    # Collection hat bereits Daten -> NIEMALS überschreiben!
                     print(f"   🔒 {collection_name}: {existing_count} Dokumente vorhanden (USER-DATA geschützt)")
                     
             except Exception as e:

@@ -4540,4 +4540,7 @@ async def startup_seed_data():
 
 @app.on_event("shutdown")
 async def shutdown_db_client():
+    # Stoppe automatischen Backup-Task
+    await stop_backup_task()
+    # Schließe MongoDB-Verbindung
     client.close()

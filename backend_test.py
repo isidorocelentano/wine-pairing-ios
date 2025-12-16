@@ -2234,6 +2234,14 @@ class WinePairingAPITester:
         self.test_regional_pairings_italy_no_local_wines()
         self.test_regional_pairings_exotic_discovery_content()
         
+        # Backup System Verification Tests (Critical for Data Loss Prevention)
+        print("\n💾 Testing Backup System Verification...")
+        self.test_backup_status_api()
+        self.test_user_data_counts_api()
+        self.test_create_backup_api()
+        self.test_core_user_data_verification()
+        self.test_auth_system_still_works()
+        
         # Cleanup
         self.test_delete_wine()
         

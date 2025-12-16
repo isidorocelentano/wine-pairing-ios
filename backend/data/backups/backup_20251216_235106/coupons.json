@@ -1,0 +1,1002 @@
+[
+  {
+    "code": "WINE-T1H2-61SI-ADHF",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.406970+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-XK4M-M8QJ-5X7R",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.406997+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-JZH7-76MW-9X07",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407017+00:00",
+    "used": true,
+    "used_by": "test@winepairing.com",
+    "used_at": "2025-12-16T14:48:47.035893+00:00"
+  },
+  {
+    "code": "WINE-NMLE-FPS5-VDLU",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407033+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-JK9E-89QM-I217",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407047+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-B8RZ-2P7L-LRH4",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407068+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-FPDK-7DI6-IPTC",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407087+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-Y7Y3-4YJU-Z0LH",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407106+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-LMRX-PBWA-OFGZ",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407125+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-WB45-ETJL-1TLV",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407146+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-C4TW-XKC6-DHCC",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407168+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-5EMS-9B2L-5LFR",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407183+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-CJ1H-4I3C-K0X6",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407197+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-NKQJ-MBG3-GLWF",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407216+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-SA20-3K1X-B8MC",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407229+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-QX5S-QMXB-YVWZ",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407245+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-SXFF-F44S-XLEE",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407260+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-169D-T0UT-N9FB",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407290+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-64WT-T9NI-CAM3",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407303+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-2TFV-6AFS-7YDK",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407319+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-ZO8W-V4T7-RFOH",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407334+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-WYV4-ML31-VSNA",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407353+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-PHDF-G4Z2-SZ27",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407371+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-ZJAO-VRO3-FBD0",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407388+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-YGPY-1P4N-NULU",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407414+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-B9NG-24U4-K2T6",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407429+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-9CGW-PFGB-YVZD",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407445+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-MA39-M4LH-8HK3",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407465+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-OG86-OSD4-0NVA",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407480+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-3FQA-1LPM-3831",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407503+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-GWXP-OEDP-XTAX",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407520+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-33EC-MRK6-R76B",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407538+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-3BJQ-HWWI-39YV",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407554+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-NK94-OP64-FV0M",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407572+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-3TFV-ITR8-P35F",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407586+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-UPHK-9B85-0C23",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407600+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-3IEF-4A9K-PQ6T",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407616+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-7VFW-NSSF-9PM9",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407634+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-QQEI-Q3FW-TP19",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407654+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-I121-UGG5-D96H",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407672+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-ENDS-6LKE-ER3X",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407692+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-0VZW-3YF6-7OXY",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407708+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-668E-K99E-YHED",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407723+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-SJJP-T88M-Y2KL",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407744+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-EE80-3FH5-JV57",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407762+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-9FS7-9AMR-Y6CO",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407779+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-JGXL-N4NA-EPA3",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407796+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-2NHY-JLFJ-PFDD",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407814+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-42LV-EZDZ-2024",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407833+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-4HX4-K1FQ-QW64",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407847+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-TTE2-UW37-VY79",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407868+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-5Z0S-D1L3-JWCS",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407888+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-7V0F-WQIG-QMVE",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407902+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-CD86-GD57-J8JQ",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407919+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-M1M0-F48U-UFGM",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407938+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-E2UQ-M1FK-AKZG",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407954+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-42X4-V83I-YTBW",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407974+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-QF0W-BK3U-EZS9",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.407990+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-G1IV-A6EQ-MXUY",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408006+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-XX04-Q3UU-4ILF",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408021+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-43U2-HJIJ-29T9",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408037+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-D4Z0-TAH8-V0BZ",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408052+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-QVJQ-U0GW-56ZS",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408067+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-0BFO-WK0Z-5YM0",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408083+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-W61D-QC9E-YIDP",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408100+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-ZCQC-YRUM-RA2W",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408117+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-5EW3-CG9G-354H",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408135+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-4VI3-WQ2D-VC75",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408150+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-C05R-794D-YG3I",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408168+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-N138-LRRM-EGLO",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408183+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-FKXY-4W7L-XUHU",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408198+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-3G9Y-61Y0-BAUG",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408217+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-5VMQ-4A4M-KFKZ",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408236+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-L06Y-9F5E-DGVJ",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408254+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-VXMM-Y0VS-XD1J",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408282+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-B2YG-ACH9-2YF6",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408298+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-UF93-E74R-FU8H",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408313+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-BQ2B-YY68-22RH",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408331+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-DWAH-1898-VZMM",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408348+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-WXSA-ONYE-TX8F",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408364+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-G9JH-FJSH-UN35",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408382+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-YNWC-V4AO-2HD5",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408410+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-Y0RF-L2SR-AYGV",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408425+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-TXJB-L3P9-C6TU",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408440+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-HYSO-S5BU-UNLL",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408459+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-S1BN-8PW2-07BX",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408478+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-UMDJ-X7LG-WGZM",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408498+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-MDVB-SNR4-YFYG",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408515+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-LO94-BPLN-OK6U",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408532+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-J8TQ-N2PS-ZTBX",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408557+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-2LOK-6VPB-6043",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408574+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-I9MY-KSH9-ME19",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408593+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-B7TK-A4MC-BLOY",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408612+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-5929-VLO1-ZPNF",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408627+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-XD1T-RJW1-9P7Y",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408644+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-06PK-HTFK-O2CG",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408660+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-7WWW-ALMH-OH7B",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408675+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-H884-KPQJ-RGTA",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408688+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-JHF0-PSBB-QXSZ",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408711+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  },
+  {
+    "code": "WINE-FH81-LKBF-Y33W",
+    "type": "early_adopter_pro",
+    "duration_months": 12,
+    "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
+    "created_at": "2025-12-16T14:42:18.408728+00:00",
+    "used": false,
+    "used_by": null,
+    "used_at": null
+  }
+]

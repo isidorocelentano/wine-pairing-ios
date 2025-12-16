@@ -1171,9 +1171,7 @@ async def get_wine_pairing(request: PairingRequest, http_request: Request):
                 # Fallback: keep full response as recommendation
                 why_explanation = None
 
-        # Find matching wines from cellar
-        if request.use_cellar and wines:
-            cellar_matches = [{"id": w["id"], "name": w["name"], "type": w["type"]} for w in wines[:5]]
+        # cellar_matches wird jetzt direkt im use_cellar Block gesetzt (siehe oben)
         
         pairing = PairingResponse(
             dish=request.dish,

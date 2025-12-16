@@ -1286,7 +1286,7 @@ def generate_hreflang_links(base_url: str, path: str) -> str:
 async def sitemap_index():
     """Sitemap index pointing to all sub-sitemaps"""
     base_url = os.environ.get("FRONTEND_BASE_URL").rstrip("/")
-    api_base = base_url.replace("wine-pairing.online", "wine-pairing.online/api")
+    api_base = base_url + "/api"
     
     xml = f"""<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

@@ -54,7 +54,7 @@ const SubscriptionPage = () => {
 
   const handleSubscribe = async (planId) => {
     if (!isAuthenticated) {
-      loginWithGoogle();
+      navigate('/login');
       return;
     }
 

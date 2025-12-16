@@ -4171,13 +4171,22 @@ async def stripe_webhook(request: Request):
 async def get_backup_status():
     """
     Gibt den aktuellen Backup-Status zurück.
-    Zeigt alle verfügbaren Backups und aktuelle Daten-Counts.
+    Zeigt alle verfügbaren Backups, aktuelle Daten-Counts und Auto-Backup-Status.
     """
     global backup_manager
     if not backup_manager:
         raise HTTPException(status_code=503, detail="Backup-Manager nicht initialisiert")
     
-    return await backup_manager.get_backup_status()
+    status = await backup_manager.get_backup_status()
+    
+    # Füge Auto-Backup-Informationen hinzu
+    status['auto_backup'] = {
+        'enabled': getattr(backup_manager, '_auto_backup_running', False),
+        'interval_hours': 6,
+        'next_backup': await backup_manager.get_next_backup_time()
+    }
+    
+    return status
 
 
 @api_router.post("/backup/create")

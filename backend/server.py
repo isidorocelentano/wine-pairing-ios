@@ -4450,6 +4450,32 @@ async def startup_seed_data():
                     
             except Exception as e:
                 print(f"   ❌ {collection_name}: Fehler - {e}")
+        
+        # System-Collections: Immer laden wenn leer (Gutscheine etc.)
+        for collection_name, json_filename in system_collections:
+            try:
+                existing_count = await db[collection_name].count_documents({})
+                
+                if existing_count == 0:
+                    # Collection ist leer -> System-Daten laden
+                    data_file = ROOT_DIR / "data" / json_filename
+                    
+                    if data_file.exists():
+                        with open(data_file, 'r', encoding='utf-8') as f:
+                            data = json.load(f)
+                        
+                        if data:
+                            await db[collection_name].insert_many(data)
+                            print(f"   ✅ {collection_name}: {len(data)} System-Dokumente geladen")
+                        else:
+                            print(f"   ⚠️ {json_filename} ist leer")
+                    else:
+                        print(f"   ⚠️ {json_filename} nicht gefunden - leere Collection")
+                else:
+                    print(f"   ✅ {collection_name}: {existing_count} Dokumente bereits vorhanden")
+                    
+            except Exception as e:
+                print(f"   ❌ {collection_name}: Fehler - {e}")
     else:
         print("\n✅ Alle Daten sind korrekt - kein Seeding nötig")
     

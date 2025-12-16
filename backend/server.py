@@ -3699,41 +3699,32 @@ async def download_all_backups():
 # ===================== AUTHENTICATION & SUBSCRIPTION ENDPOINTS =====================
 
 async def get_current_user(request: Request) -> Optional[User]:
-    """Get current user from session token (cookie or header)"""
+    """Get current user from JWT token (cookie or header)"""
     # Try cookie first
-    session_token = request.cookies.get("session_token")
+    token = request.cookies.get("session_token")
     
     # Fallback to Authorization header
-    if not session_token:
+    if not token:
         auth_header = request.headers.get("Authorization")
         if auth_header and auth_header.startswith("Bearer "):
-            session_token = auth_header[7:]
+            token = auth_header[7:]
     
-    if not session_token:
+    if not token:
         return None
     
-    # Find session
-    session_doc = await db.user_sessions.find_one(
-        {"session_token": session_token},
-        {"_id": 0}
-    )
-    
-    if not session_doc:
+    # Decode JWT token
+    payload = decode_jwt_token(token)
+    if not payload:
         return None
     
-    # Check expiry
-    expires_at = session_doc["expires_at"]
-    if isinstance(expires_at, str):
-        expires_at = datetime.fromisoformat(expires_at)
-    if expires_at.tzinfo is None:
-        expires_at = expires_at.replace(tzinfo=timezone.utc)
-    if expires_at < datetime.now(timezone.utc):
+    user_id = payload.get("user_id")
+    if not user_id:
         return None
     
-    # Get user
+    # Get user from database
     user_doc = await db.users.find_one(
-        {"user_id": session_doc["user_id"]},
-        {"_id": 0}
+        {"user_id": user_id},
+        {"_id": 0, "password_hash": 0}  # Exclude password
     )
     
     if not user_doc:

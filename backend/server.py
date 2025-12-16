@@ -4398,6 +4398,11 @@ async def startup_seed_data():
             ("wines", "wines.json"),  # Persönlicher Weinkeller
         ]
         
+        # SYSTEM COLLECTIONS - Immer laden wenn leer
+        system_collections = [
+            ("coupons", "coupons.json"),  # Gutschein-Codes
+        ]
+        
         for collection_name, json_filename in collections_to_seed:
             try:
                 data_file = ROOT_DIR / "data" / json_filename

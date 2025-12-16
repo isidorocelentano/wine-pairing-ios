@@ -4225,10 +4225,15 @@ async def create_checkout_session(
 @api_router.post("/coupon/redeem", response_model=CouponResponse)
 async def redeem_coupon(
     coupon_request: CouponRequest,
-    current_user: dict = Depends(verify_jwt_token)
+    request: Request
 ):
     """Redeem a coupon code"""
     try:
+        # Get current user from session cookie
+        current_user = await get_current_user(request)
+        if not current_user:
+            raise HTTPException(status_code=401, detail="Anmeldung erforderlich")
+            
         coupon_code = coupon_request.code.upper().strip()
         
         # Find coupon in database
@@ -4251,7 +4256,7 @@ async def redeem_coupon(
         
         # Update user plan
         await db.users.update_one(
-            {"id": current_user["id"]},
+            {"id": current_user.id},
             {
                 "$set": {
                     "plan": "pro",
@@ -4268,7 +4273,7 @@ async def redeem_coupon(
             {
                 "$set": {
                     "used": True,
-                    "used_by": current_user["email"],
+                    "used_by": current_user.email,
                     "used_at": datetime.now(timezone.utc).isoformat()
                 }
             }
@@ -4281,6 +4286,8 @@ async def redeem_coupon(
             expires_at=expires_at
         )
         
+    except HTTPException:
+        raise
     except Exception as e:
         print(f"Coupon redemption error: {e}")
         raise HTTPException(status_code=500, detail=f"Fehler beim Einlösen: {str(e)}")

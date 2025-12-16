@@ -1285,7 +1285,7 @@ def generate_hreflang_links(base_url: str, path: str) -> str:
 @api_router.get("/sitemap.xml")
 async def sitemap_index():
     """Sitemap index pointing to all sub-sitemaps"""
-    base_url = os.environ.get("FRONTEND_BASE_URL", "https://wine-pairing.online").rstrip("/")
+    base_url = os.environ.get("FRONTEND_BASE_URL").rstrip("/")
     api_base = base_url.replace("wine-pairing.online", "wine-pairing.online/api")
     
     xml = f"""<?xml version="1.0" encoding="UTF-8"?>
@@ -1307,7 +1307,7 @@ async def sitemap_index():
 @api_router.get("/sitemap-pages.xml")
 async def sitemap_pages():
     """Main sitemap for static pages with hreflang support"""
-    base_url = os.environ.get("FRONTEND_BASE_URL", "https://wine-pairing.online").rstrip("/")
+    base_url = os.environ.get("FRONTEND_BASE_URL").rstrip("/")
     
     urls = []
     for page in MULTILINGUAL_PAGES:
@@ -1332,7 +1332,7 @@ async def sitemap_pages():
 @api_router.get("/sitemap-pairings.xml")
 async def sitemap_pairings():
     """Sitemap for SEO pairing pages with hreflang support"""
-    base_url = os.environ.get("FRONTEND_BASE_URL", "https://wine-pairing.online").rstrip("/")
+    base_url = os.environ.get("FRONTEND_BASE_URL").rstrip("/")
     live_items = [item for item in PAIRING_SITEMAP_ITEMS if item.get("status") == "LIVE"]
 
     urls = []
@@ -1359,7 +1359,7 @@ async def sitemap_pairings():
 @api_router.get("/sitemap-kompass.xml")
 async def sitemap_kompass():
     """Sitemap for Sommelier-Kompass country pages with hreflang support"""
-    base_url = os.environ.get("FRONTEND_BASE_URL", "https://wine-pairing.online").rstrip("/")
+    base_url = os.environ.get("FRONTEND_BASE_URL").rstrip("/")
     
     # Get all countries from database
     countries = await db.regional_pairings.distinct("country")

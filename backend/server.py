@@ -4458,42 +4458,46 @@ async def startup_seed_data():
     print(f"   🔒 wines (User-Keller): {wines_count} Flaschen")
     print(f"   🔒 users (Benutzerkonten): {users_count} Konten")
     
-    # Wenn IRGENDETWAS fehlt -> Komplettes Seeding
+    # Wenn IRGENDETWAS fehlt -> Prüfe und lade nur LEERE Collections
     if needs_reseed:
         print("\n" + "=" * 60)
-        print("📦 DATENBANK WIRD NEU INITIALISIERT...")
+        print("📦 DATENBANK-CHECK - NUR LEERE COLLECTIONS WERDEN GEFÜLLT")
         print("=" * 60)
         
-        collections_to_seed = [
-            ("regional_pairings", "regional_pairings.json"),
-            ("grape_varieties", "grape_varieties.json"),
-            ("blog_posts", "blog_posts.json"),
-            ("dishes", "dishes.json"),
-            ("wine_database", "wine_database.json"),
-            ("public_wines", "public_wines.json"),
-            ("feed_posts", "feed_posts.json"),
-            ("seo_pairings", "seo_pairings.json"),
+        # ALLE Collections die geschützt werden sollen
+        # NIEMALS werden existierende Daten überschrieben!
+        all_protected_collections = [
+            # Content-Collections (Weindatenbank, Blogs, etc.)
+            ("regional_pairings", "regional_pairings.json"),   # Sommelier-Kompass
+            ("grape_varieties", "grape_varieties.json"),       # Rebsorten
+            ("blog_posts", "blog_posts.json"),                 # Blogs
+            ("dishes", "dishes.json"),                         # Gerichte
+            ("wine_database", "wine_database.json"),           # Wein-Datenbank
+            ("public_wines", "public_wines.json"),             # Öffentliche Weine
+            ("feed_posts", "feed_posts.json"),                 # Community Feed
+            ("seo_pairings", "seo_pairings.json"),             # SEO-Pairings
+            # User-Collections
+            ("wines", "wines.json"),                           # Persönlicher Weinkeller
+            ("users", "users.json"),                           # Benutzerkonten
+            ("pairings", "pairings.json"),                     # Pairing-History
+            ("chats", "chats.json"),                           # Chat-Verläufe
+            ("wine_favorites", "wine_favorites.json"),         # Favoriten
+            ("payment_transactions", "payment_transactions.json"),  # Zahlungen
+            # System-Collections
+            ("coupons", "coupons.json"),                       # Gutschein-Codes
         ]
         
-        # USER-GENERATED COLLECTIONS - NUR laden wenn LEER (nie überschreiben!)
-        # KRITISCH: Diese Collections enthalten User-Daten und dürfen NIEMALS gelöscht werden!
-        user_collections = [
-            ("wines", "wines.json"),          # Persönlicher Weinkeller
-            ("users", "users.json"),          # Benutzerkonten - NIEMALS überschreiben!
-            ("pairings", None),               # Pairing-History der Benutzer
-            ("chats", None),                  # Chat-Verläufe
-            ("wine_favorites", None),         # Benutzer-Favoriten
-            ("user_sessions", None),          # Session-Daten
-            ("payment_transactions", None),   # Zahlungstransaktionen
-        ]
-        
-        # SYSTEM COLLECTIONS - Immer laden wenn leer
-        system_collections = [
-            ("coupons", "coupons.json"),  # Gutschein-Codes
-        ]
-        
-        for collection_name, json_filename in collections_to_seed:
+        for collection_name, json_filename in all_protected_collections:
             try:
+                # KRITISCH: Prüfe ob Collection bereits Daten hat
+                existing_count = await db[collection_name].count_documents({})
+                
+                if existing_count > 0:
+                    # Collection hat Daten -> NIEMALS überschreiben!
+                    print(f"   🔒 {collection_name}: {existing_count} Dokumente GESCHÜTZT")
+                    continue
+                
+                # Collection ist leer -> Aus Backup laden
                 data_file = ROOT_DIR / "data" / json_filename
                 
                 if data_file.exists():
@@ -4501,12 +4505,10 @@ async def startup_seed_data():
                         data = json.load(f)
                     
                     if data:
-                        # System-Daten: IMMER löschen und neu laden
-                        await db[collection_name].delete_many({})
                         await db[collection_name].insert_many(data)
-                        print(f"   ✅ {collection_name}: {len(data)} Dokumente geladen")
+                        print(f"   ✅ {collection_name}: {len(data)} Dokumente aus Backup geladen")
                     else:
-                        print(f"   ⚠️ {json_filename} ist leer")
+                        print(f"   ⚠️ {json_filename} ist leer - Collection bleibt leer")
                 else:
                     print(f"   ❌ Backup-Datei fehlt: {json_filename}")
                     

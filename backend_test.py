@@ -2557,12 +2557,43 @@ class WinePairingAPITester:
             print(f"❌ {failed} critical tests FAILED. Deployment NOT ready.")
             return False
 
+    def run_backup_verification_tests(self):
+        """Run only backup system verification tests"""
+        print("💾 Starting Backup System Verification Tests")
+        print("=" * 50)
+        
+        # Core backup system tests
+        self.test_backup_status_api()
+        self.test_user_data_counts_api()
+        self.test_create_backup_api()
+        self.test_core_user_data_verification()
+        self.test_auth_system_still_works()
+        
+        # Print results
+        print("\n" + "=" * 50)
+        print(f"💾 Backup System Verification Results")
+        print(f"Tests Run: {self.tests_run}")
+        print(f"Tests Passed: {self.tests_passed}")
+        print(f"Tests Failed: {self.tests_run - self.tests_passed}")
+        print(f"Success Rate: {(self.tests_passed/self.tests_run)*100:.1f}%")
+        
+        return self.tests_passed == self.tests_run
+
+
 def main():
     """Main test execution"""
-    tester = WinePairingAPITester()
-    # Run FINAL DEPLOYMENT TEST v4 as specified in review request
-    success = tester.run_final_deployment_v4_tests()
-    return 0 if success else 1
+    import sys
+    
+    # Check if we should run only backup tests
+    if len(sys.argv) > 1 and sys.argv[1] == "backup":
+        tester = WinePairingAPITester()
+        success = tester.run_backup_verification_tests()
+        return 0 if success else 1
+    else:
+        tester = WinePairingAPITester()
+        # Run FINAL DEPLOYMENT TEST v4 as specified in review request
+        success = tester.run_final_deployment_v4_tests()
+        return 0 if success else 1
 
 if __name__ == "__main__":
     sys.exit(main())

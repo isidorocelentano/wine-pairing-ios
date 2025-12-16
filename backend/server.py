@@ -3814,87 +3814,134 @@ async def increment_usage(user: User, usage_type: str):
         }
     )
 
-# Auth endpoints
-@api_router.post("/auth/session")
-async def process_session(request: Request, response: Response):
-    """Process session_id from Google OAuth and create session"""
-    body = await request.json()
-    session_id = body.get("session_id")
-    
-    if not session_id:
-        raise HTTPException(status_code=400, detail="session_id required")
-    
-    # Exchange session_id for user data
-    async with httpx.AsyncClient() as client:
-        auth_response = await client.get(
-            "https://demobackend.emergentagent.com/auth/v1/env/oauth/session-data",
-            headers={"X-Session-ID": session_id}
-        )
-    
-    if auth_response.status_code != 200:
-        raise HTTPException(status_code=401, detail="Invalid session")
-    
-    auth_data = auth_response.json()
-    email = auth_data.get("email")
-    name = auth_data.get("name")
-    picture = auth_data.get("picture")
-    session_token = auth_data.get("session_token")
-    
-    # Check if user exists
-    existing_user = await db.users.find_one({"email": email}, {"_id": 0})
-    
-    if existing_user:
-        user_id = existing_user["user_id"]
-        # Update user data
-        await db.users.update_one(
-            {"user_id": user_id},
-            {"$set": {"name": name, "picture": picture}}
-        )
-    else:
-        # Create new user
-        user_id = f"user_{uuid.uuid4().hex[:12]}"
-        new_user = {
-            "user_id": user_id,
-            "email": email,
-            "name": name,
-            "picture": picture,
-            "plan": "basic",
-            "subscription_id": None,
-            "subscription_status": None,
-            "usage": {
-                "pairing_requests_today": 0,
-                "chat_messages_today": 0,
-                "last_usage_date": None
-            },
-            "created_at": datetime.now(timezone.utc)
-        }
-        await db.users.insert_one(new_user)
-    
-    # Create session
-    expires_at = datetime.now(timezone.utc) + timedelta(days=7)
-    await db.user_sessions.delete_many({"user_id": user_id})  # Remove old sessions
-    await db.user_sessions.insert_one({
+# Auth endpoints - JWT Email/Password
+
+def hash_password(password: str) -> str:
+    """Hash password using bcrypt"""
+    return bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
+
+def verify_password(password: str, hashed: str) -> bool:
+    """Verify password against hash"""
+    return bcrypt.checkpw(password.encode('utf-8'), hashed.encode('utf-8'))
+
+def create_jwt_token(user_id: str, email: str) -> str:
+    """Create JWT token"""
+    payload = {
         "user_id": user_id,
-        "session_token": session_token,
-        "expires_at": expires_at,
-        "created_at": datetime.now(timezone.utc)
-    })
+        "email": email,
+        "exp": datetime.now(timezone.utc) + timedelta(days=JWT_EXPIRY_DAYS),
+        "iat": datetime.now(timezone.utc)
+    }
+    return jwt.encode(payload, JWT_SECRET, algorithm=JWT_ALGORITHM)
+
+def decode_jwt_token(token: str) -> Optional[dict]:
+    """Decode and verify JWT token"""
+    try:
+        payload = jwt.decode(token, JWT_SECRET, algorithms=[JWT_ALGORITHM])
+        return payload
+    except jwt.ExpiredSignatureError:
+        return None
+    except jwt.InvalidTokenError:
+        return None
+
+@api_router.post("/auth/register")
+async def register_user(req: RegisterRequest, response: Response):
+    """Register a new user with email and password"""
+    # Validate email format
+    if not re.match(r"[^@]+@[^@]+\.[^@]+", req.email):
+        raise HTTPException(status_code=400, detail="Ungültige E-Mail-Adresse")
     
-    # Get full user data
-    user_doc = await db.users.find_one({"user_id": user_id}, {"_id": 0})
+    # Check password strength
+    if len(req.password) < 6:
+        raise HTTPException(status_code=400, detail="Passwort muss mindestens 6 Zeichen haben")
+    
+    # Check if email exists
+    existing = await db.users.find_one({"email": req.email.lower()})
+    if existing:
+        raise HTTPException(status_code=400, detail="Diese E-Mail ist bereits registriert")
+    
+    # Create user
+    user_id = f"user_{uuid.uuid4().hex[:12]}"
+    hashed_pw = hash_password(req.password)
+    
+    new_user = {
+        "user_id": user_id,
+        "email": req.email.lower(),
+        "name": req.name,
+        "password_hash": hashed_pw,
+        "picture": None,
+        "plan": "basic",
+        "subscription_id": None,
+        "subscription_status": None,
+        "usage": {
+            "pairing_requests_today": 0,
+            "chat_messages_today": 0,
+            "last_usage_date": None
+        },
+        "created_at": datetime.now(timezone.utc)
+    }
+    await db.users.insert_one(new_user)
+    
+    # Create JWT token
+    token = create_jwt_token(user_id, req.email.lower())
     
     # Set cookie
     response.set_cookie(
         key="session_token",
-        value=session_token,
+        value=token,
         httponly=True,
         secure=True,
         samesite="none",
         path="/",
-        max_age=7 * 24 * 60 * 60  # 7 days
+        max_age=JWT_EXPIRY_DAYS * 24 * 60 * 60
     )
     
-    return user_doc
+    # Return user (without password)
+    return {
+        "user_id": user_id,
+        "email": req.email.lower(),
+        "name": req.name,
+        "plan": "basic",
+        "message": "Registrierung erfolgreich!"
+    }
+
+@api_router.post("/auth/login")
+async def login_user(req: LoginRequest, response: Response):
+    """Login with email and password"""
+    # Find user
+    user = await db.users.find_one({"email": req.email.lower()})
+    
+    if not user:
+        raise HTTPException(status_code=401, detail="E-Mail oder Passwort falsch")
+    
+    # Check password
+    if not verify_password(req.password, user.get("password_hash", "")):
+        raise HTTPException(status_code=401, detail="E-Mail oder Passwort falsch")
+    
+    # Create JWT token
+    token = create_jwt_token(user["user_id"], user["email"])
+    
+    # Set cookie
+    response.set_cookie(
+        key="session_token",
+        value=token,
+        httponly=True,
+        secure=True,
+        samesite="none",
+        path="/",
+        max_age=JWT_EXPIRY_DAYS * 24 * 60 * 60
+    )
+    
+    # Return user (without password)
+    return {
+        "user_id": user["user_id"],
+        "email": user["email"],
+        "name": user["name"],
+        "picture": user.get("picture"),
+        "plan": user.get("plan", "basic"),
+        "usage": user.get("usage", {}),
+        "message": "Anmeldung erfolgreich!"
+    }
 
 @api_router.get("/auth/me")
 async def get_current_user_endpoint(request: Request):

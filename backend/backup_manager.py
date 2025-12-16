@@ -51,7 +51,7 @@ class BackupManager:
     - blog_posts, public_wines, grape_varieties, etc.
     """
     
-    # KRITISCH: Diese Collections enthalten User-Daten und werden NIEMALS überschrieben!
+    # KRITISCH: Diese Collections enthalten User-Daten
     USER_COLLECTIONS = [
         'users',
         'wines',
@@ -62,8 +62,8 @@ class BackupManager:
         'payment_transactions',
     ]
     
-    # System-Collections können bei Bedarf neu geladen werden
-    SYSTEM_COLLECTIONS = [
+    # Content-Collections (werden ebenfalls geschützt!)
+    CONTENT_COLLECTIONS = [
         'blog_posts',
         'public_wines',
         'grape_varieties',
@@ -74,6 +74,10 @@ class BackupManager:
         'seo_pairings',
         'coupons',
     ]
+    
+    # ALLE Collections werden geschützt - nur LEERE werden aus Backup gefüllt
+    # Dies ist der neue Standard seit Version 3.0
+    ALL_PROTECTED_COLLECTIONS = USER_COLLECTIONS + CONTENT_COLLECTIONS
     
     def __init__(self, db: AsyncIOMotorDatabase, data_dir: Path):
         self.db = db

@@ -4401,9 +4401,9 @@ async def startup_seed_data():
     print("🚀 WINE-PAIRING.ONLINE - SERVER STARTUP")
     print("=" * 60)
     
-    # Initialisiere Backup-Manager
-    backup_manager = BackupManager(db, ROOT_DIR / "data")
-    print("📦 Backup-Manager initialisiert")
+    # Initialisiere Backup-Manager mit automatischem Backup-Task
+    backup_manager = await create_startup_backup(db, ROOT_DIR / "data")
+    print("📦 Backup-Manager initialisiert (Auto-Backup alle 6 Stunden)")
     
     # Lade das Backup-Manifest für erwartete Werte
     manifest_path = ROOT_DIR / "data" / "backup_manifest.json"

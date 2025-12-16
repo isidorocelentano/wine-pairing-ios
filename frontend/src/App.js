@@ -76,7 +76,7 @@ function App() {
                   <Route path="/impressum" element={<><ImpressumPage /><Navigation /></>} />
                   <Route path="/datenschutz" element={<><DatenschutzPage /><Navigation /></>} />
                   {/* Auth & Subscription Routes */}
-                  <Route path="/auth/callback" element={<AuthCallbackPage />} />
+                  <Route path="/login" element={<LoginPage />} />
                   <Route path="/subscription" element={<><SubscriptionPage /><Navigation /></>} />
                   <Route path="/subscription/success" element={<SubscriptionSuccessPage />} />
                   <Route path="/subscription/cancel" element={<><SubscriptionPage /><Navigation /></>} />

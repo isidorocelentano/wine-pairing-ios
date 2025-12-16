@@ -1,26 +1,23 @@
 {
-  "timestamp": "2025-12-15T22:30:00.000000",
-  "version": "2.2",
-  "collections": {
-    "blog_posts": 233,
-    "public_wines": 1751,
-    "grape_varieties": 140,
-    "regional_pairings": 44,
-    "dishes": 40,
-    "feed_posts": 268,
-    "wine_database": 494,
-    "seo_pairings": 500,
-    "wines": 11
-  },
+  "version": "3.0",
+  "timestamp": "2025-12-16T22:54:19.289073+00:00",
+  "last_backup": "/app/backend/data/backups/backup_20251216_225418",
   "expected": {
+    "users": 8,
+    "wines": 11,
+    "pairings": 132,
+    "chats": 23,
+    "wine_favorites": 1,
+    "user_sessions": 0,
+    "payment_transactions": 3,
     "blog_posts": 233,
-    "public_wines": 1751,
+    "public_wines": 1821,
     "grape_varieties": 140,
     "regional_pairings": 44,
     "dishes": 40,
     "feed_posts": 268,
     "wine_database": 494,
     "seo_pairings": 500,
-    "wines": 11
+    "coupons": 100
   }
 }

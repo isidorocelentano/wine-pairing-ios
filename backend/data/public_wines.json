@@ -51150,5 +51150,1922 @@
     "created_at": "2025-12-14T18:48:20.004968Z",
     "updated_at": "2025-12-14T18:48:20.004977Z",
     "auto_generated": true
+  },
+  {
+    "name": "Gavi dei Gavi DOCG La Scolca \"Black Label\"",
+    "winery": "La Scolca",
+    "grape_variety": "Cortese",
+    "region": "Gavi, Piemont",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Ein eleganter, vibrierender Gavi mit zitrischer Frische, feiner Mineralität und salziger Länge – wie eine Meeresbrise im Glas. Präzise, trocken und doch mit verführerischer Fülle am Gaumen.",
+    "description_en": "An elegant, vibrant Gavi with citrusy freshness, fine minerality and a salty finish – like a sea breeze in the glass. Precise, dry and yet seductively textured on the palate.",
+    "description_fr": "Un Gavi élégant et vibrant, à la fraîcheur citronnée, à la minéralité fine et à la finale saline – comme une brise marine dans le verre. Sec, précis et délicieusement structuré en bouche.",
+    "food_pairings_de": [
+      "Austern und andere Meeresfrüchte",
+      "Vitello tonnato"
+    ],
+    "food_pairings_en": [
+      "Oysters and mixed seafood",
+      "Vitello tonnato"
+    ],
+    "food_pairings_fr": [
+      "Huîtres et fruits de mer",
+      "Vitello tonnato"
+    ],
+    "id": "a3ae2de3-8ac5-4dea-a79b-5057440a921c",
+    "created_at": "2025-12-14T19:58:54.435327Z",
+    "updated_at": "2025-12-14T19:58:54.435334Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Chablis AOC",
+    "winery": "Domaine William Fèvre",
+    "grape_variety": "Chardonnay",
+    "region": "Burgund",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Ein straffer, mineralischer Chablis mit kristallklarer Säure, frischer Zitrusfrucht und feiner Salzigkeit – wie eine Meeresbrise im Glas.",
+    "description_en": "A tense, mineral-driven Chablis with crisp acidity, bright citrus fruit and a delicate saline edge, like a sea breeze in your glass.",
+    "description_fr": "Un Chablis tendu et minéral, à l’acidité vive, aux notes d’agrumes et à une subtile touche saline, comme une brise marine dans le verre.",
+    "food_pairings_de": [
+      "Austern und andere Meeresfrüchte",
+      "Gegrillter Fisch mit Zitrone"
+    ],
+    "food_pairings_en": [
+      "Oysters and mixed seafood",
+      "Grilled fish with lemon"
+    ],
+    "food_pairings_fr": [
+      "Huîtres et fruits de mer",
+      "Poisson grillé au citron"
+    ],
+    "id": "abf138fb-688a-4e79-ad74-e29919588b5e",
+    "created_at": "2025-12-14T19:58:58.363922Z",
+    "updated_at": "2025-12-14T19:58:58.363929Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Fontana Candida Frascati Superiore DOCG",
+    "winery": "Fontana Candida",
+    "grape_variety": "Malvasia (mit Trebbiano und lokalen Sorten)",
+    "region": "Lazio, Frascati",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€",
+    "description_de": "Ein lebendiger, sonnendurchfluteter Weißwein aus den Hügeln rund um Rom, mit Noten von Zitrusfrüchten, weißen Blüten und einem salzigen Hauch Mineralität. Am Gaumen wirkt er frisch, elegant und herrlich trinkanimierend.",
+    "description_en": "A bright, sun‑kissed white from the hills around Rome, offering citrus, white flower and a touch of salty minerality. On the palate it is fresh, elegant and irresistibly drinkable.",
+    "description_fr": "Un blanc lumineux et ensoleillé des collines autour de Rome, aux notes d’agrumes, de fleurs blanches et d’une légère minéralité saline. En bouche, il est frais, élégant et terriblement gourmand.",
+    "food_pairings_de": [
+      "Spaghetti alle Vongole",
+      "Geflügel in Zitronensauce"
+    ],
+    "food_pairings_en": [
+      "Spaghetti alle vongole",
+      "Lemon roast chicken"
+    ],
+    "food_pairings_fr": [
+      "Spaghetti alle vongole",
+      "Poulet rôti au citron"
+    ],
+    "id": "b0826edd-7fda-4d9e-8623-47f5fe7b3d89",
+    "created_at": "2025-12-15T09:53:56.530252Z",
+    "updated_at": "2025-12-15T09:53:56.530260Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Wieninger Wiener Gemischter Satz DAC",
+    "winery": "Weingut Wieninger",
+    "grape_variety": "Gemischter Satz (u. a. Grüner Veltliner, Riesling, Welschriesling)",
+    "region": "Wien",
+    "country": "Österreich",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Ein lebendiger, vielschichtiger Wiener Gemischter Satz mit duftiger Frucht, feiner Würze und erfrischender Säure – wie ein Spaziergang durch Wiener Weinberge im Glas.",
+    "description_en": "A lively and multi-layered Wiener Gemischter Satz with fragrant fruit, delicate spice and refreshing acidity, capturing the charm of Vienna’s vineyards in a glass.",
+    "description_fr": "Un Wiener Gemischter Satz vif et complexe, aux arômes fruités et épicés, soutenu par une acidité rafraîchissante, qui évoque le charme des vignobles viennois dans le verre.",
+    "food_pairings_de": [
+      "Wiener Schnitzel mit Kartoffelsalat",
+      "Leichte Fischgerichte und Gemüse risotto"
+    ],
+    "food_pairings_en": [
+      "Wiener schnitzel with potato salad",
+      "Light fish dishes and vegetable risotto"
+    ],
+    "food_pairings_fr": [
+      "Escalope viennoise avec salade de pommes de terre",
+      "Plats de poisson légers et risotto aux légumes"
+    ],
+    "id": "9d1fe451-479e-4e75-80ef-7d86294091a8",
+    "created_at": "2025-12-15T09:54:40.471450Z",
+    "updated_at": "2025-12-15T09:54:40.471458Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Grüner Veltliner Federspiel „Terrassen“",
+    "winery": "Domäne Wachau",
+    "grape_variety": "Grüner Veltliner",
+    "region": "Wachau",
+    "country": "Österreich",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€",
+    "description_de": "Ein lebendiger, präziser Grüner Veltliner mit saftiger Frische, zarter Würze und klarer Mineralität, der die Terrassenlagen der Wachau eindrucksvoll widerspiegelt.",
+    "description_en": "A vibrant and precise Grüner Veltliner with juicy freshness, gentle spice and clear minerality, authentically reflecting the terraced vineyards of the Wachau.",
+    "description_fr": "Un Grüner Veltliner vif et précis, doté d’une fraîcheur juteuse, d’épices délicates et d’une minéralité nette, qui exprime avec élégance les terrasses de la Wachau.",
+    "food_pairings_de": [
+      "Wiener Schnitzel mit Kartoffelsalat",
+      "Gebratener Zander mit Kräutern und Zitrone"
+    ],
+    "food_pairings_en": [
+      "Wiener schnitzel with potato salad",
+      "Pan-fried pike-perch with herbs and lemon"
+    ],
+    "food_pairings_fr": [
+      "Escalope viennoise avec salade de pommes de terre",
+      "Sandre poêlé aux herbes et au citron"
+    ],
+    "id": "791add4c-dcc9-4bb4-ba9d-8bc661a57d2c",
+    "created_at": "2025-12-15T09:54:47.977577Z",
+    "updated_at": "2025-12-15T09:54:47.977586Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Grüner Veltliner „Löss“",
+    "winery": "Fred Loimer",
+    "grape_variety": "Grüner Veltliner",
+    "region": "Kamptal",
+    "country": "Österreich",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€",
+    "description_de": "Ein straffer, präziser Grüner Veltliner aus Lössböden, der mit spritziger Frische, saftiger Frucht und typischem Pfefferl begeistert.",
+    "description_en": "A precise and vibrant Grüner Veltliner from loess soils, offering crisp freshness, juicy fruit and the variety’s signature spicy kick.",
+    "description_fr": "Un Grüner Veltliner précis et vif issu de sols de loess, avec une fraîcheur croquante, des fruits juteux et une touche épicée typique.",
+    "food_pairings_de": [
+      "Wiener Schnitzel mit Kartoffelsalat",
+      "Gebratenes Zanderfilet mit Gemüse"
+    ],
+    "food_pairings_en": [
+      "Wiener schnitzel with potato salad",
+      "Pan-fried pike-perch with vegetables"
+    ],
+    "food_pairings_fr": [
+      "Escalope viennoise avec salade de pommes de terre",
+      "Filet de sandre poêlé avec légumes"
+    ],
+    "id": "a4087f77-88af-4bec-8ac5-cf098d3e064c",
+    "created_at": "2025-12-15T09:54:53.081491Z",
+    "updated_at": "2025-12-15T09:54:53.081499Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Brut Sekt Reserve",
+    "winery": "Schlumberger",
+    "grape_variety": "Chardonnay, Pinot Noir, Welschriesling (Cuvée)",
+    "region": "Österreichischer Sekt",
+    "country": "Österreich",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€",
+    "description_de": "Feinperliger, eleganter Brut-Sekt mit Noten von grünem Apfel, Zitrus und zarter Brioche, der mit seiner lebendigen Frische ein festliches Prickeln auf der Zunge hinterlässt.",
+    "description_en": "Elegant Austrian Brut sparkling wine with fine bubbles and aromas of green apple, citrus and delicate brioche, offering a lively and refreshing finish.",
+    "description_fr": "Vin effervescent autrichien Brut, élégant et finement pétillant, aux arômes de pomme verte, d’agrumes et de brioche délicate, avec une finale vive et rafraîchissante.",
+    "food_pairings_de": [
+      "Austern und Meeresfrüchte",
+      "Canapés und leichte Vorspeisen"
+    ],
+    "food_pairings_en": [
+      "Oysters and seafood",
+      "Canapés and light appetizers"
+    ],
+    "food_pairings_fr": [
+      "Huîtres et fruits de mer",
+      "Canapés et entrées légères"
+    ],
+    "id": "2b617ded-1411-4a2b-a14b-b803654adab3",
+    "created_at": "2025-12-15T09:54:59.061733Z",
+    "updated_at": "2025-12-15T09:54:59.061741Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Zweigelt Rosé „Klassik“",
+    "winery": "Weingut R&A Pfaffl",
+    "grape_variety": "Zweigelt",
+    "region": "Weinviertel",
+    "country": "Österreich",
+    "year": 2022,
+    "wine_color": "rosé",
+    "price_category": "€€",
+    "description_de": "Ein frischer, fruchtbetonter Zweigelt Rosé mit saftigen Beerenaromen, zarter Würze und animierendem Trinkfluss – perfekt für sonnige Momente. Lebendige Säure und feine Eleganz machen ihn zum unkomplizierten Genuss.",
+    "description_en": "A fresh, fruit-driven Zweigelt rosé with juicy berry aromas, subtle spice and an invigorating finish, perfect for sunny moments. Lively acidity and elegance make it an easy-drinking pleasure.",
+    "description_fr": "Un rosé de Zweigelt frais et fruité, aux arômes de baies juteuses, avec une légère note épicée et une finale vive, parfait pour les moments ensoleillés. Son acidité fraîche et son élégance en font un vin très accessible.",
+    "food_pairings_de": [
+      "Sommerliche Salate mit Beeren oder Ziegenkäse",
+      "Gegrilltes Gemüse und leichte Pasta-Gerichte"
+    ],
+    "food_pairings_en": [
+      "Summer salads with berries or goat cheese",
+      "Grilled vegetables and light pasta dishes"
+    ],
+    "food_pairings_fr": [
+      "Salades d’été avec baies ou fromage de chèvre",
+      "Légumes grillés et plats de pâtes légers"
+    ],
+    "id": "704bd273-8a1e-4eb4-8782-8cb0331fe62d",
+    "created_at": "2025-12-15T09:55:08.235838Z",
+    "updated_at": "2025-12-15T09:55:08.235846Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Domaine Weinbach Riesling Réserve Personnelle",
+    "winery": "Domaine Weinbach",
+    "grape_variety": "Riesling",
+    "region": "Elsass",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Ein hochfeiner, tiefgründiger Riesling aus dem Elsass mit vibrierender Säure, reifer Zitrusfrucht und mineralischer Spannung, der Länge und Eleganz perfekt vereint.",
+    "description_en": "A refined, profound Alsace Riesling with vibrant acidity, ripe citrus fruit and intense minerality, offering impressive length and elegance.",
+    "description_fr": "Un Riesling d’Alsace raffiné et profond, à l’acidité vibrante, aux agrumes mûrs et à la minéralité intense, offrant une grande longueur et beaucoup d’élégance.",
+    "food_pairings_de": [
+      "Gedämpfter oder gegrillter Fisch mit Zitrusbutter",
+      "Asiatische Küche mit leichter Schärfe (z. B. Thai-Curry)"
+    ],
+    "food_pairings_en": [
+      "Steamed or grilled fish with citrus butter",
+      "Lightly spicy Asian dishes (e.g. Thai curry)"
+    ],
+    "food_pairings_fr": [
+      "Poisson vapeur ou grillé au beurre citronné",
+      "Cuisine asiatique légèrement épicée (par exemple curry thaï)"
+    ],
+    "id": "5de911fe-cf2e-4e3e-afb9-5f7a1726415d",
+    "created_at": "2025-12-15T10:20:55.283562Z",
+    "updated_at": "2025-12-15T10:20:55.283570Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Weingut Wittmann Chardonnay Gutswein Rheinhessen",
+    "winery": "Weingut Wittmann",
+    "grape_variety": "Chardonnay",
+    "region": "Rheinhessen",
+    "country": "Deutschland",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€",
+    "description_de": "Feiner, klarer Chardonnay aus biodynamischem Anbau mit saftiger gelber Frucht, zarter Cremigkeit und einer lebendigen Säure, die elegant und trinkanimierend wirkt.",
+    "description_en": "A precise, organically crafted Chardonnay from Rheinhessen with juicy stone fruit, subtle creaminess and vibrant acidity, offering a fresh and elegant drinking experience.",
+    "description_fr": "Un Chardonnay précis et biologique de Rheinhessen, aux arômes de fruits jaunes juteux, avec une légère onctuosité et une acidité vive pour une finale élégante et fraîche.",
+    "food_pairings_de": [
+      "Gebratener Fisch mit Zitronenbutter",
+      "Pasta mit Sahnesauce und Gemüse"
+    ],
+    "food_pairings_en": [
+      "Pan-fried fish with lemon butter",
+      "Pasta with cream sauce and vegetables"
+    ],
+    "food_pairings_fr": [
+      "Poisson poêlé au beurre citronné",
+      "Pâtes à la sauce crémeuse et légumes"
+    ],
+    "id": "5bfe19ac-e62b-44ab-a744-41400d33c893",
+    "created_at": "2025-12-15T10:20:59.709264Z",
+    "updated_at": "2025-12-15T10:20:59.709272Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Trimbach Pinot Gris Réserve",
+    "winery": "Maison Trimbach",
+    "grape_variety": "Pinot Gris",
+    "region": "Elsass",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Ein eleganter, kraftvoller Pinot Gris aus dem Elsass mit feiner Rauchigkeit, reifer Frucht und einer lebendigen, trockenen Art, die lange am Gaumen nachhallt.",
+    "description_en": "An elegant and powerful Alsatian Pinot Gris with subtle smoky notes, ripe fruit and a vibrant, dry finish that lingers on the palate.",
+    "description_fr": "Un Pinot Gris d’Alsace élégant et racé, aux notes fumées délicates, fruits mûrs et finale vive et sèche qui s’étire en longueur.",
+    "food_pairings_de": [
+      "Gänseleberterrine",
+      "Kalbsrahmgeschnetzeltes"
+    ],
+    "food_pairings_en": [
+      "Foie gras terrine",
+      "Veal in cream sauce"
+    ],
+    "food_pairings_fr": [
+      "Terrine de foie gras",
+      "Escalope de veau à la crème"
+    ],
+    "id": "faab2f1c-4b3a-4f52-a247-947f5caa6122",
+    "created_at": "2025-12-15T10:21:02.436685Z",
+    "updated_at": "2025-12-15T10:21:02.436693Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Champagne Louis Roederer Brut Premier",
+    "winery": "Louis Roederer",
+    "grape_variety": "Pinot Noir, Chardonnay, Pinot Meunier",
+    "region": "Champagne",
+    "country": "Frankreich",
+    "year": 2019,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Feinperliger Champagner mit eleganter Frische, zarter Brioche-Note und einer lebendigen Mineralität, die jeden Moment sofort festlich macht.",
+    "description_en": "Fine and persistent bubbles, citrus and apple aromas with hints of brioche, all wrapped in a precise, vibrant and elegant Champagne style.",
+    "description_fr": "Bulles fines et persistantes, arômes d’agrumes et de pomme avec des notes de brioche, portés par une bouche vibrante, précise et élégante.",
+    "food_pairings_de": [
+      "Austern und Meeresfrüchteplatte",
+      "Kaviar oder feine Canapés"
+    ],
+    "food_pairings_en": [
+      "Oysters and seafood platter",
+      "Caviar or elegant canapés"
+    ],
+    "food_pairings_fr": [
+      "Huîtres et plateau de fruits de mer",
+      "Caviar ou canapés raffinés"
+    ],
+    "id": "7e429a31-88b9-4693-b7a8-bb51c4c6d6ea",
+    "created_at": "2025-12-15T10:21:05.741009Z",
+    "updated_at": "2025-12-15T10:21:05.741017Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Domaines Ott Château de Selle Rosé",
+    "winery": "Domaines Ott",
+    "grape_variety": "Cinsault, Grenache, Syrah, Mourvèdre",
+    "region": "Côtes de Provence",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "rosé",
+    "price_category": "€€€",
+    "description_de": "Ein ikonischer Provence-Rosé mit zarter Lachsfarbe, der feine rote Beeren, Zitrusnoten und eine elegante Mineralität zu einem frischen, edlen Gesamterlebnis vereint.",
+    "description_en": "An iconic Provence rosé with a pale salmon hue, offering delicate red berries, citrus notes and refined minerality in a fresh, elegant style.",
+    "description_fr": "Un rosé emblématique de Provence à la robe saumon pâle, aux arômes délicats de petits fruits rouges, d’agrumes et à la minéralité raffinée, frais et élégant.",
+    "food_pairings_de": [
+      "Gegrillter Fisch mit Kräutern",
+      "Provenzalische Gemüse- und Antipasti-Platten"
+    ],
+    "food_pairings_en": [
+      "Grilled herb-marinated fish",
+      "Provençal vegetable and antipasti platters"
+    ],
+    "food_pairings_fr": [
+      "Poisson grillé aux herbes",
+      "Assortiments de légumes provençaux et antipasti"
+    ],
+    "id": "9f1406e0-6ee5-45bc-8ede-877b106184d7",
+    "created_at": "2025-12-15T10:21:10.802981Z",
+    "updated_at": "2025-12-15T10:21:10.802989Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Riesling Kamptal DAC Kabinett trocken",
+    "winery": "Weingut Bründlmayer",
+    "grape_variety": "Riesling",
+    "region": "Kamptal",
+    "country": "Österreich",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Präziser, trockener Riesling aus dem Kamptal mit kühler Zitrusfrucht, feiner Kräuterwürze und kristallklarer Säure – leichtfüßig und doch tiefgründig. Ein eleganter Speisenbegleiter, der Frische und Mineralität gekonnt vereint.",
+    "description_en": "A precise dry Riesling from Kamptal with cool citrus notes, subtle herbal spice and crystal-clear acidity – light on its feet yet remarkably deep. An elegant food companion combining freshness and minerality.",
+    "description_fr": "Un Riesling sec précis du Kamptal, aux notes d’agrumes frais, de fines herbes et à l’acidité cristalline – léger mais profond. Un compagnon de table élégant qui marie fraîcheur et minéralité.",
+    "food_pairings_de": [
+      "Gebratener Zander mit Gemüse",
+      "Asiatische Gerichte mit leichter Schärfe"
+    ],
+    "food_pairings_en": [
+      "Pan-fried pike-perch with vegetables",
+      "Lightly spicy Asian dishes"
+    ],
+    "food_pairings_fr": [
+      "Sandre poêlé avec légumes",
+      "Plats asiatiques légèrement épicés"
+    ],
+    "id": "2536ee17-f641-4976-9e89-4ed656281ca6",
+    "created_at": "2025-12-15T10:26:34.787262Z",
+    "updated_at": "2025-12-15T10:26:34.787270Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Welschriesling „Vom Stein“",
+    "winery": "Weingut Prieler",
+    "grape_variety": "Welschriesling",
+    "region": "Burgenland",
+    "country": "Österreich",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€",
+    "description_de": "Ein kristallklarer, spannungsgeladener Welschriesling mit kühler Steinmineralität, vibrierender Säure und saftigen Zitrus- und Apfelnoten – geradlinig, präzise und erfrischend.",
+    "description_en": "A crystal-clear, tension-driven Welschriesling with cool stony minerality, vibrant acidity and juicy citrus and apple notes – precise, linear and refreshingly dry.",
+    "description_fr": "Un Welschriesling cristallin et tendu, marqué par une minéralité pierreuse, une acidité vive et des notes juteuses d’agrumes et de pomme, sec, précis et rafraîchissant.",
+    "food_pairings_de": [
+      "Backhendl mit Erdäpfelsalat",
+      "Zanderfilet mit Zitronenbutter",
+      "Gemischter Vorspeisenteller mit Antipasti und Frischkäse"
+    ],
+    "food_pairings_en": [
+      "Crispy fried chicken with potato salad",
+      "Pike-perch fillet with lemon butter",
+      "Mixed antipasti and fresh cheese platter"
+    ],
+    "food_pairings_fr": [
+      "Poulet frit croustillant avec salade de pommes de terre",
+      "Filet de sandre au beurre citronné",
+      "Assiette d’antipasti et fromages frais"
+    ],
+    "id": "0b56320e-df6b-42ce-9e11-fe8af41c945a",
+    "created_at": "2025-12-15T10:26:42.559385Z",
+    "updated_at": "2025-12-15T10:26:42.559392Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Zweigelt „Klassik“",
+    "winery": "Weingut Sepp Moser",
+    "grape_variety": "Zweigelt",
+    "region": "Kremstal",
+    "country": "Österreich",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Saftiger, fruchtbetonter Zweigelt mit viel Kirsche, feiner Würze und eleganter Frische – unkompliziert, trinkanimierend und typisch österreichisch.",
+    "description_en": "Juicy, fruit-driven Zweigelt bursting with cherry, gentle spice and lively freshness – elegant, easy-drinking and authentically Austrian.",
+    "description_fr": "Zweigelt juteux et fruité, dominé par la cerise, quelques notes épicées et une belle fraîcheur – élégant, facile à boire et typiquement autrichien.",
+    "food_pairings_de": [
+      "Wiener Schnitzel mit Kartoffelsalat",
+      "Grillhuhn oder gegrilltes Gemüse"
+    ],
+    "food_pairings_en": [
+      "Wiener schnitzel with potato salad",
+      "Grilled chicken or roasted vegetables"
+    ],
+    "food_pairings_fr": [
+      "Escalope viennoise avec salade de pommes de terre",
+      "Poulet grillé ou légumes rôtis"
+    ],
+    "id": "63ddff1a-6d9a-4f06-80d1-81be06fa275b",
+    "created_at": "2025-12-15T10:26:45.611689Z",
+    "updated_at": "2025-12-15T10:26:45.611696Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Chianti Classico DOCG",
+    "winery": "Klassische Erzeuger der Chianti-Classico-Zone",
+    "grape_variety": "Sangiovese (mit traditionellen lokalen Rebsorten)",
+    "region": "Chianti Classico, Toskana",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein charaktervoller, trockener Chianti Classico mit leuchtender Kirschfrucht, feiner Würze und lebendiger Säure – elegant, vielschichtig und typisch toskanisch.",
+    "description_en": "A characterful, dry Chianti Classico showing bright cherry fruit, subtle spice and vibrant acidity, offering a refined and authentically Tuscan profile.",
+    "description_fr": "Un Chianti Classico sec et expressif, aux arômes de cerise, d’épices fines et à l’acidité vive, élégant et typique de la Toscane.",
+    "food_pairings_de": [
+      "Bistecca alla Fiorentina",
+      "Pasta mit Tomaten- oder Ragù-Sauce"
+    ],
+    "food_pairings_en": [
+      "Grilled steak or Florentine beef",
+      "Pasta with tomato or meat ragù"
+    ],
+    "food_pairings_fr": [
+      "Bistecca alla Fiorentina (steak grillé à la florentine)",
+      "Pâtes à la sauce tomate ou au ragù de viande"
+    ],
+    "id": "63ef93fd-829b-48d0-b22d-63ef777c3a04",
+    "created_at": "2025-12-15T10:27:27.214159Z",
+    "updated_at": "2025-12-15T10:27:27.214166Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Barbera d’Asti DOCG",
+    "winery": "Diverse Erzeuger",
+    "grape_variety": "Barbera",
+    "region": "Asti, Piemont",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Ein lebendiger, fruchtbetonter Barbera mit saftiger Kirsche, feiner Würze und frischer Säure, der pure piemontesische Lebensfreude ins Glas bringt.",
+    "description_en": "A vibrant, fruit-driven Barbera bursting with juicy cherry, subtle spice and lively acidity, capturing the spirit of Piedmont in every sip.",
+    "description_fr": "Un Barbera vif et gourmand, aux arômes de cerise juteuse, d’épices fines et à l’acidité fraîche, qui exprime pleinement le charme du Piémont.",
+    "food_pairings_de": [
+      "Pasta mit Tomatensauce",
+      "Gegrillte italienische Wurst (Salsiccia)"
+    ],
+    "food_pairings_en": [
+      "Pasta with tomato sauce",
+      "Grilled Italian sausage"
+    ],
+    "food_pairings_fr": [
+      "Pâtes à la sauce tomate",
+      "Saucisse italienne grillée"
+    ],
+    "id": "0fd3d3ea-6677-4808-bfe9-32469500ddc8",
+    "created_at": "2025-12-15T10:27:29.612186Z",
+    "updated_at": "2025-12-15T10:27:29.612194Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Montepulciano d’Abruzzo DOC",
+    "winery": "Diverse Erzeuger",
+    "grape_variety": "Montepulciano",
+    "region": "Abruzzen",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Saftiger, dunkelfruchtiger Rotwein aus den Abruzzen mit Noten von Kirsche und Pflaume, sanften Tanninen und einem Hauch Kräuterwürze – perfekt für entspannte Abende mit italienischer Küche.",
+    "description_en": "Juicy, dark-fruited red from Abruzzo with notes of cherry and plum, soft tannins and a touch of herbal spice – an easy‑drinking classic for everyday Italian meals.",
+    "description_fr": "Rouge juteux et gourmand des Abruzzes, aux arômes de cerise, de prune et d’épices douces, avec des tanins souples et une belle fraîcheur, idéal pour accompagner une cuisine italienne conviviale.",
+    "food_pairings_de": [
+      "Pasta mit Tomaten- oder Ragù-Sauce",
+      "Pizza mit Salami oder Salsiccia"
+    ],
+    "food_pairings_en": [
+      "Pasta with tomato or ragù sauce",
+      "Pizza with salami or sausage"
+    ],
+    "food_pairings_fr": [
+      "Pâtes à la sauce tomate ou ragù",
+      "Pizza au salami ou à la saucisse italienne"
+    ],
+    "id": "f53ff597-228f-412d-b263-d6f447f4e9a3",
+    "created_at": "2025-12-15T10:27:36.123748Z",
+    "updated_at": "2025-12-15T10:27:36.123755Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Lambrusco di Sorbara Secco",
+    "winery": "Traditioneller Erzeuger aus Sorbara",
+    "grape_variety": "Lambrusco di Sorbara",
+    "region": "Emilia-Romagna",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Frischer, trockener Lambrusco mit feiner Perlage, duftigen roten Fruchtaromen und lebendiger Säure – ein fröhlicher Genuss aus der Emilia-Romagna.",
+    "description_en": "A fresh, dry Lambrusco with fine bubbles, vibrant red fruit aromas and lively acidity, capturing the joyful spirit of Emilia-Romagna.",
+    "description_fr": "Un Lambrusco sec et frais aux bulles fines, arômes de fruits rouges et acidité vive, exprimant tout le caractère joyeux de l’Émilie-Romagne.",
+    "food_pairings_de": [
+      "Antipasti mit Salumi und Parmigiano Reggiano",
+      "Pizza Margherita oder Prosciutto"
+    ],
+    "food_pairings_en": [
+      "Antipasti with cured meats and Parmigiano Reggiano",
+      "Margherita or prosciutto pizza"
+    ],
+    "food_pairings_fr": [
+      "Antipasti de charcuterie et Parmigiano Reggiano",
+      "Pizza Margherita ou au prosciutto"
+    ],
+    "id": "bf9a3194-aa28-4492-b749-28e332736beb",
+    "created_at": "2025-12-15T10:27:39.324822Z",
+    "updated_at": "2025-12-15T10:27:39.324830Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Tinto Pesquera Crianza, Ribera del Duero",
+    "winery": "Bodegas Alejandro Fernández - Tinto Pesquera",
+    "grape_variety": "Tempranillo (Tinto Fino)",
+    "region": "Ribera del Duero",
+    "country": "Spanien",
+    "year": 2020,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Kräftiger, seidiger Tempranillo mit reifer dunkler Frucht, feiner Vanillewürze und eleganten Tanninen – ein klassischer Ribera mit viel Tiefgang und spanischem Temperament.",
+    "description_en": "A powerful yet silky Tempranillo showing ripe dark fruit, hints of vanilla and spice, with polished tannins and a long, intense finish.",
+    "description_fr": "Tempranillo puissant mais soyeux, aux arômes de fruits noirs mûrs, de vanille et d’épices, avec des tanins fins et une finale longue et intense.",
+    "food_pairings_de": [
+      "Gegrilltes Lammkotelett",
+      "Geschmorte Rinderschulter"
+    ],
+    "food_pairings_en": [
+      "Grilled lamb chops",
+      "Braised beef shoulder"
+    ],
+    "food_pairings_fr": [
+      "Côtelettes d’agneau grillées",
+      "Paleron de boeuf braisé"
+    ],
+    "id": "3bde1161-bf55-4cee-9a85-7f61213a536c",
+    "created_at": "2025-12-15T10:27:52.233753Z",
+    "updated_at": "2025-12-15T10:27:52.233762Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Ricasoli Brolio Chianti Classico",
+    "winery": "Barone Ricasoli",
+    "grape_variety": "Sangiovese",
+    "region": "Chianti Classico, Toskana",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein charaktervoller Chianti Classico mit saftiger Kirsche, feiner Würze und eleganter Frische – typisch Toskana und wunderbar authentisch.",
+    "description_en": "A characterful Chianti Classico with juicy cherry fruit, subtle spice and elegant freshness, capturing the authentic spirit of Tuscany.",
+    "description_fr": "Un Chianti Classico de caractère aux notes de cerise juteuse, d’épices fines et d’une fraîcheur élégante, fidèle à l’esprit authentique de la Toscane.",
+    "food_pairings_de": [
+      "Pasta mit Tomaten- oder Ragù-Sauce",
+      "Gegrilltes oder geschmortes Rindfleisch"
+    ],
+    "food_pairings_en": [
+      "Pasta with tomato or ragù sauce",
+      "Grilled or braised beef"
+    ],
+    "food_pairings_fr": [
+      "Pâtes à la sauce tomate ou au ragù",
+      "Bœuf grillé ou braisé"
+    ],
+    "id": "eefcb58f-58e0-487d-a07d-5946f9c75ef3",
+    "created_at": "2025-12-15T10:27:55.651925Z",
+    "updated_at": "2025-12-15T10:27:55.651932Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Champagne Bollinger Special Cuvée Brut",
+    "winery": "Champagne Bollinger",
+    "grape_variety": "Pinot Noir, Chardonnay, Pinot Meunier",
+    "region": "Champagne",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€€",
+    "description_de": "Ein ikonischer Champagner mit intensiver Mousse, Toast- und Brioche-Noten, reifer Frucht und beeindruckender Finesse – kraftvoll, elegant und endlos lang im Nachhall.",
+    "description_en": "An iconic Champagne with fine, persistent mousse, layers of brioche and toasted notes, ripe orchard fruit and remarkable finesse, combining power with true elegance.",
+    "description_fr": "Un Champagne iconique à la mousse fine et persistante, mêlant notes de brioche et de toast, fruits mûrs et une grande finesse, alliant puissance et élégance.",
+    "food_pairings_de": [
+      "Austern und Meeresfrüchteplatte",
+      "Geflügel oder Kalbsrücken mit heller Sauce"
+    ],
+    "food_pairings_en": [
+      "Oysters and mixed seafood platter",
+      "Roast poultry or veal with a light cream sauce"
+    ],
+    "food_pairings_fr": [
+      "Huîtres et plateau de fruits de mer",
+      "Volaille rôtie ou veau sauce légère"
+    ],
+    "id": "acd86595-04a2-486e-91e1-60c1d6512054",
+    "created_at": "2025-12-15T10:28:02.735837Z",
+    "updated_at": "2025-12-15T10:28:02.735845Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Catena Zapata Malbec Mendoza",
+    "winery": "Bodega Catena Zapata",
+    "grape_variety": "Malbec",
+    "region": "Mendoza",
+    "country": "Argentinien",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein kraftvoller, zugleich eleganter Malbec aus den Höhenlagen Mendozas, mit dunkler Beerenfrucht, feiner Würze und seidig reifen Tanninen. Er verbindet argentinische Wärme mit beeindruckender Frische und Länge.",
+    "description_en": "A powerful yet elegant high-altitude Malbec from Mendoza, showing dark berry fruit, subtle spice and silky ripe tannins. It combines Argentine warmth with remarkable freshness and length.",
+    "description_fr": "Un Malbec de haute altitude puissant et élégant de Mendoza, aux arômes de fruits noirs, d’épices fines et de tanins soyeux. Il marie la chaleur argentine à une belle fraîcheur et une longue finale.",
+    "food_pairings_de": [
+      "Rindersteak vom Grill",
+      "Geschmorte Lammkeule"
+    ],
+    "food_pairings_en": [
+      "Grilled beef steak",
+      "Braised lamb shank"
+    ],
+    "food_pairings_fr": [
+      "Steak de bœuf grillé",
+      "Souris d’agneau braisée"
+    ],
+    "id": "c291d861-44b9-40e2-b0cf-7e18d8380eb3",
+    "created_at": "2025-12-15T10:28:05.445769Z",
+    "updated_at": "2025-12-15T10:28:05.445777Z",
+    "auto_generated": true
+  },
+  {
+    "name": "G.D. Vajra Dolcetto d’Alba DOC",
+    "winery": "G.D. Vajra",
+    "grape_variety": "Dolcetto",
+    "region": "Piemont",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Saftiger, dunkelfruchtiger Dolcetto mit Noten von Schwarzkirsche, Veilchen und einem Hauch Mandel, der mit seiner lebendigen Frische und feinen Gerbstoffen pure Trinkfreude bietet.",
+    "description_en": "Juicy, dark-fruited Dolcetto bursting with black cherry, violets and a touch of almond, carried by fresh acidity and fine tannins for effortless drinking pleasure.",
+    "description_fr": "Dolcetto juteux aux arômes de cerise noire, violette et une pointe d’amande, soutenu par une belle fraîcheur et des tanins fins pour un plaisir de boire immédiat.",
+    "food_pairings_de": [
+      "Pasta mit Tomatensugo",
+      "Pizza mit Salami oder Salsiccia"
+    ],
+    "food_pairings_en": [
+      "Pasta with tomato sauce",
+      "Pizza with salami or salsiccia"
+    ],
+    "food_pairings_fr": [
+      "Pâtes à la sauce tomate",
+      "Pizza au salami ou salsiccia"
+    ],
+    "id": "eab37e37-7d98-429a-b115-b10a05ac3e01",
+    "created_at": "2025-12-15T10:29:33.242163Z",
+    "updated_at": "2025-12-15T10:29:33.242171Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Le Fraghe Bardolino Classico DOC",
+    "winery": "Le Fraghe",
+    "grape_variety": "Corvina, Rondinella",
+    "region": "Venetien",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Ein duftiger, heller Rotwein vom Gardasee mit frischer Kirschfrucht, feiner Würze und unglaublich trinkanimierender Leichtigkeit.",
+    "description_en": "A fragrant, light red from Lake Garda, bursting with fresh cherry fruit, gentle spice and an irresistibly easy‑drinking character.",
+    "description_fr": "Un rouge léger et parfumé du lac de Garde, aux arômes de cerise fraîche, d’épices fines et à la buvabilité irrésistible.",
+    "food_pairings_de": [
+      "Antipasti mit Salami und mildem Käse",
+      "Pasta mit Tomatensauce"
+    ],
+    "food_pairings_en": [
+      "Antipasti with salami and mild cheese",
+      "Pasta with tomato sauce"
+    ],
+    "food_pairings_fr": [
+      "Antipasti avec salami et fromages doux",
+      "Pâtes à la sauce tomate"
+    ],
+    "id": "6b93996f-6b3a-4c50-b65b-515d4779b256",
+    "created_at": "2025-12-15T10:29:35.499842Z",
+    "updated_at": "2025-12-15T10:29:35.499849Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Vermentino di Sardegna DOC \"Costamolino\"",
+    "winery": "Argiolas",
+    "grape_variety": "Vermentino",
+    "region": "Sardinien",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€",
+    "description_de": "Ein frischer, mediterraner Vermentino von Sardinien mit Zitrusfrüchten, weißen Blüten und einem salzigen Hauch Meeresbrise – lebendig, saftig und wunderbar trinkanimierend.",
+    "description_en": "A fresh, Mediterranean Vermentino from Sardinia with citrus, white flowers and a salty sea-breeze note – lively, juicy and highly drinkable.",
+    "description_fr": "Un Vermentino de Sardaigne frais et méditerranéen, aux notes d’agrumes, de fleurs blanches et une touche saline rappelant la mer, vif, juteux et très gourmand.",
+    "food_pairings_de": [
+      "Gegrillter Fisch mit Zitrone",
+      "Spaghetti alle Vongole"
+    ],
+    "food_pairings_en": [
+      "Grilled fish with lemon",
+      "Spaghetti alle vongole"
+    ],
+    "food_pairings_fr": [
+      "Poisson grillé au citron",
+      "Spaghetti alle vongole"
+    ],
+    "id": "391c59ba-9d03-4cc1-b928-11612a1a1556",
+    "created_at": "2025-12-15T10:29:37.857439Z",
+    "updated_at": "2025-12-15T10:29:37.857446Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Sancerre AOC Blanc, Domaine Vacheron",
+    "winery": "Domaine Vacheron",
+    "grape_variety": "Sauvignon Blanc",
+    "region": "Loire, Sancerre",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Ein präziser, mineralischer Sancerre mit vibrierender Zitrusfrische, Noten von weißen Blüten und einem langen, salzigen Finale – purer Loire-Charme im Glas.",
+    "description_en": "A precise, mineral-driven Sancerre with vibrant citrus notes, white flowers and a long, saline finish – pure Loire elegance in the glass.",
+    "description_fr": "Un Sancerre précis et minéral, aux notes d’agrumes vifs, de fleurs blanches et à la finale longue et saline, incarnant l’élégance de la Loire.",
+    "food_pairings_de": [
+      "Austern und Meeresfrüchteplatte",
+      "Ziegenkäse (z.B. Crottin de Chavignol)"
+    ],
+    "food_pairings_en": [
+      "Fresh oysters and seafood platter",
+      "Goat cheese (e.g. Crottin de Chavignol)"
+    ],
+    "food_pairings_fr": [
+      "Huîtres et plateau de fruits de mer",
+      "Fromage de chèvre (par ex. Crottin de Chavignol)"
+    ],
+    "id": "134de17f-fce1-4cf3-b604-de1ffd03ac54",
+    "created_at": "2025-12-15T10:46:43.643684Z",
+    "updated_at": "2025-12-15T10:46:43.643692Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Crémant de Loire Brut",
+    "winery": "Bouvet-Ladubay",
+    "grape_variety": "Chenin Blanc",
+    "region": "Loire",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€",
+    "description_de": "Ein lebhafter, feinperliger Crémant aus der Loire mit frischer Zitrusfrucht, zarten Apfelnoten und einem Hauch Brioche, der jeden Moment in einen festlichen Anlass verwandelt.",
+    "description_en": "A vibrant, fine-bubbled Crémant from the Loire with fresh citrus, delicate apple notes and a hint of brioche, perfect for turning any occasion into a celebration.",
+    "description_fr": "Un Crémant de Loire vif aux bulles fines, marqué par des notes d’agrumes, de pomme délicate et une touche de brioche, idéal pour célébrer chaque instant.",
+    "food_pairings_de": [
+      "Austern und Meeresfrüchte-Platte",
+      "Ziegenkäse aus der Loire"
+    ],
+    "food_pairings_en": [
+      "Oysters and seafood platter",
+      "Goat cheese from the Loire Valley"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fruits de mer",
+      "Fromage de chèvre de la vallée de la Loire"
+    ],
+    "id": "33493125-4c45-4ae9-9551-d678ff0608c1",
+    "created_at": "2025-12-15T10:46:46.966398Z",
+    "updated_at": "2025-12-15T10:46:46.966406Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Weingut Knipser „Kalkmergel“ Weißburgunder & Chardonnay",
+    "winery": "Weingut Knipser",
+    "grape_variety": "Weißburgunder & Chardonnay",
+    "region": "Pfalz",
+    "country": "Deutschland",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Ein charaktervoller Pfälzer Burgunder-Cuvée mit feiner Cremigkeit, gelber Frucht und salziger Kalk-Mineralik, der gleichermaßen Eleganz und Kraft verbindet.",
+    "description_en": "A characterful Pfalz Burgundy blend with fine creaminess, yellow stone fruit and salty chalky minerality, combining elegance with subtle power.",
+    "description_fr": "Un assemblage de Bourgogne de la Pfalz au caractère marqué, offrant une texture crémeuse, des fruits jaunes et une minéralité crayeuse et saline, alliant élégance et finesse.",
+    "food_pairings_de": [
+      "Gebratener Fisch mit Zitronenbutter",
+      "Geflügel in Rahmsauce"
+    ],
+    "food_pairings_en": [
+      "Pan-fried fish with lemon butter",
+      "Creamy poultry dishes"
+    ],
+    "food_pairings_fr": [
+      "Poisson poêlé au beurre citronné",
+      "Volaille à la crème"
+    ],
+    "id": "b46f4fde-dbf7-43ea-8aba-924354b41745",
+    "created_at": "2025-12-15T10:47:05.601304Z",
+    "updated_at": "2025-12-15T10:47:05.601313Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Domaine Ferret Pouilly-Fuissé",
+    "winery": "Domaine Ferret",
+    "grape_variety": "Chardonnay",
+    "region": "Pouilly-Fuissé, Burgund",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Ein eleganter, mineralischer Pouilly-Fuissé mit feiner Cremigkeit, Noten von reifer Zitrusfrucht, weißem Pfirsich und einem Hauch gerösteter Haselnuss. Am Gaumen dicht und präzise mit langer, salziger Frische im Abgang.",
+    "description_en": "An elegant, mineral-driven Pouilly-Fuissé with creamy texture, ripe citrus and white peach notes, complemented by hints of toasted hazelnut. Concentrated yet precise on the palate, finishing long and saline.",
+    "description_fr": "Un Pouilly-Fuissé élégant et minéral, à la texture crémeuse, aux notes d’agrumes mûrs, de pêche blanche et de noisette grillée. Bouche concentrée, précise, avec une finale longue et saline.",
+    "food_pairings_de": [
+      "Gegrillter Steinbutt oder Wolfsbarsch",
+      "Geflügel in Sahnesauce oder Morchelsauce"
+    ],
+    "food_pairings_en": [
+      "Grilled turbot or sea bass",
+      "Roast chicken with cream or morel sauce"
+    ],
+    "food_pairings_fr": [
+      "Turbot ou bar grillé",
+      "Volaille rôtie à la crème ou aux morilles"
+    ],
+    "id": "c7bd2525-b1c8-403d-9cc7-017a138a91fe",
+    "created_at": "2025-12-15T10:47:10.400461Z",
+    "updated_at": "2025-12-15T10:47:10.400468Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Weingut Franz Hirtzberger Grüner Veltliner Smaragd „Rotes Tor“ Wachau",
+    "winery": "Weingut Franz Hirtzberger",
+    "grape_variety": "Grüner Veltliner",
+    "region": "Wachau",
+    "country": "Österreich",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Kraftvoller, vielschichtiger Grüner Veltliner aus der Wachau mit dichtem Körper, reifer Steinfrucht, würzigem Pfeffer und einer salzigen Mineralität, die lange nachhallt.",
+    "description_en": "Powerful and complex Grüner Veltliner from the Wachau with ripe stone fruit, white pepper spice and a long, salty-mineral finish.",
+    "description_fr": "Grüner Veltliner puissant et complexe de la Wachau, aux arômes de fruits à noyau mûrs, de poivre blanc et à la finale longue et salinement minérale.",
+    "food_pairings_de": [
+      "Wiener Schnitzel mit Erdäpfelsalat",
+      "Gebratener Zander mit Kräutern und Gemüse"
+    ],
+    "food_pairings_en": [
+      "Wiener schnitzel with potato salad",
+      "Pan-fried pike-perch with herbs and vegetables"
+    ],
+    "food_pairings_fr": [
+      "Escalope viennoise avec salade de pommes de terre",
+      "Sandre poêlé aux herbes et légumes"
+    ],
+    "id": "b46e4540-20cb-4f50-8f50-7677179296f5",
+    "created_at": "2025-12-15T10:47:14.192488Z",
+    "updated_at": "2025-12-15T10:47:14.192496Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Domaines Ott \"BY.OTT\" Côtes de Provence Rosé",
+    "winery": "Domaines Ott",
+    "grape_variety": "Grenache, Cinsault, Syrah",
+    "region": "Côtes de Provence",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "rosé",
+    "price_category": "€€€",
+    "description_de": "Feiner, eleganter Provence-Rosé mit zarten Aromen von Erdbeeren, weißen Blüten und Zitruszeste – leicht, frisch und sommerlich verspielt.",
+    "description_en": "An elegant Provence rosé with delicate notes of strawberry, white flowers and citrus zest, offering a light, fresh and beautifully poised finish.",
+    "description_fr": "Un rosé de Provence élégant aux notes délicates de fraise, de fleurs blanches et d'agrumes, frais, léger et parfaitement équilibré.",
+    "food_pairings_de": [
+      "Gegrillter Fisch",
+      "Mediterrane Antipasti"
+    ],
+    "food_pairings_en": [
+      "Grilled fish",
+      "Mediterranean appetizers"
+    ],
+    "food_pairings_fr": [
+      "Poisson grillé",
+      "Antipasti méditerranéens"
+    ],
+    "id": "18702aa0-248a-4903-b37b-0b75ff7721e1",
+    "created_at": "2025-12-15T10:47:18.938037Z",
+    "updated_at": "2025-12-15T10:47:18.938044Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Riesling Kabinett trocken",
+    "winery": "Weingut Wittmann",
+    "grape_variety": "Riesling",
+    "region": "Rheinhessen",
+    "country": "Deutschland",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Feingliedriger, straff trockener Riesling mit vibrierender Zitrusfrucht, kühler Kräuterwürze und salziger Mineralität – kristallklar und hochpräzise.",
+    "description_en": "A finely etched, dry Riesling with vibrant citrus fruit, cool herbal notes and salty minerality, offering crystal-clear precision and impressive freshness.",
+    "description_fr": "Riesling sec et ciselé, aux arômes d’agrumes vifs, de fines notes herbacées et d’une minéralité salée, d’une grande pureté et fraîcheur.",
+    "food_pairings_de": [
+      "Gebratener Zander mit Zitronenbutter",
+      "Asiatische Gerichte mit leichter Schärfe"
+    ],
+    "food_pairings_en": [
+      "Pan-fried pike-perch with lemon butter",
+      "Lightly spicy Asian dishes"
+    ],
+    "food_pairings_fr": [
+      "Sandre poêlé au beurre citronné",
+      "Plats asiatiques légèrement épicés"
+    ],
+    "id": "918785f1-651e-4af6-bf2f-ad634bef8751",
+    "created_at": "2025-12-15T10:47:34.045534Z",
+    "updated_at": "2025-12-15T10:47:34.045542Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Grüner Veltliner „Loess“",
+    "winery": "Weingut Bründlmayer",
+    "grape_variety": "Grüner Veltliner",
+    "region": "Kamptal",
+    "country": "Österreich",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€",
+    "description_de": "Ein präziser, pfeffriger Grüner Veltliner mit saftiger Frische, zarten Zitrus- und Apfelnoten und feiner Mineralität, der sofort Trinkfreude bereitet.",
+    "description_en": "A precise, peppery Grüner Veltliner with juicy freshness, delicate citrus and apple notes, and fine minerality, offering instant drinking pleasure.",
+    "description_fr": "Un Grüner Veltliner précis et poivré, à la fraîcheur juteuse, aux délicates notes d’agrumes et de pomme, soutenu par une fine minéralité et un charme immédiat.",
+    "food_pairings_de": [
+      "Wiener Schnitzel",
+      "Gebratener Zander mit Kräutern"
+    ],
+    "food_pairings_en": [
+      "Wiener schnitzel",
+      "Pan-fried pike-perch with herbs"
+    ],
+    "food_pairings_fr": [
+      "Escalope viennoise (schnitzel)",
+      "Sandre poêlé aux herbes"
+    ],
+    "id": "669d996a-bd60-49ec-8e13-1862fc5572a6",
+    "created_at": "2025-12-15T10:47:37.695430Z",
+    "updated_at": "2025-12-15T10:47:37.695437Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Crémant d’Alsace Brut",
+    "winery": "Pierre Sparr",
+    "grape_variety": "Pinot Blanc, Pinot Auxerrois, Riesling (Cuvée)",
+    "region": "Alsace",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€",
+    "description_de": "Feinperliger Crémant aus dem Elsass mit frischer Zitrusfrucht, zarten Brioche-Noten und lebendiger Eleganz – perfekt für besondere Momente und spontane Feiern.",
+    "description_en": "A fine-bubbled Crémant from Alsace with fresh citrus aromas, subtle brioche notes and lively elegance, ideal for celebrations and aperitifs.",
+    "description_fr": "Crémant d’Alsace aux bulles fines, arômes d’agrumes frais et délicates notes briochées, d’une élégante vivacité, parfait pour l’apéritif et les grandes occasions.",
+    "food_pairings_de": [
+      "Austern und Meeresfrüchteplatte",
+      "Canapés und Blätterteiggebäck"
+    ],
+    "food_pairings_en": [
+      "Oysters and seafood platter",
+      "Canapés and puff pastry bites"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fruits de mer",
+      "Canapés et feuilletés apéritifs"
+    ],
+    "id": "9cf03927-7619-4cba-924d-6cae63f03730",
+    "created_at": "2025-12-15T10:47:42.287187Z",
+    "updated_at": "2025-12-15T10:47:42.287194Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Domaine Faiveley Bourgogne Pinot Noir",
+    "winery": "Domaine Faiveley",
+    "grape_variety": "Pinot Noir",
+    "region": "Bourgogne",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein eleganter Bourgogne Pinot Noir mit feiner Kirschfrucht, zarten Gewürznoten und seidigen Tanninen – leichtfüßig, aber mit bemerkenswerter Tiefe und Finesse.",
+    "description_en": "An elegant Bourgogne Pinot Noir showing pure cherry fruit, subtle spice and silky tannins, offering a light-footed yet surprisingly deep and refined character.",
+    "description_fr": "Un Bourgogne Pinot Noir élégant, marqué par des arômes de cerise fraîche, de fines épices et des tanins soyeux, alliant finesse et belle profondeur.",
+    "food_pairings_de": [
+      "Coq au Vin",
+      "Gegrilltes Hähnchen mit Kräutern"
+    ],
+    "food_pairings_en": [
+      "Roast chicken with herbs",
+      "Mushroom risotto"
+    ],
+    "food_pairings_fr": [
+      "Poulet rôti aux herbes",
+      "Risotto aux champignons"
+    ],
+    "id": "0bbd3ba4-d550-4a0e-9bb9-7a945ac5b8f1",
+    "created_at": "2025-12-15T10:48:12.685564Z",
+    "updated_at": "2025-12-15T10:48:12.685572Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Weingut Bernhard Huber Spätburgunder Alte Reben Baden",
+    "winery": "Weingut Bernhard Huber",
+    "grape_variety": "Spätburgunder",
+    "region": "Baden",
+    "country": "Deutschland",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein finessenreicher Spätburgunder aus alten Reben mit kühler Eleganz, feiner Kirschfrucht und zarten Röstaromen, der die badische Burgundertradition auf höchstem Niveau verkörpert. Am Gaumen straff, seidig und tiefgründig mit langem, mineralischem Nachhall.",
+    "description_en": "A refined Pinot Noir from old vines showing cool-climate elegance, delicate cherry fruit and subtle toasty notes, capturing Baden’s Burgundian style at a very high level. The palate is tense, silky and deep with a long, mineral finish.",
+    "description_fr": "Un Spätburgunder de vieilles vignes raffiné, aux arômes de cerise, d’épices fines et de notes toastées discrètes, qui exprime avec élégance le style bourguignon du Baden. En bouche, il est tendu, soyeux et profond, avec une finale longue et minérale.",
+    "food_pairings_de": [
+      "Gebratene Entenbrust mit Kirschjus",
+      "Kalbsrücken oder Rinderfilet rosa gebraten"
+    ],
+    "food_pairings_en": [
+      "Roasted duck breast with cherry jus",
+      "Medium-rare beef or veal tenderloin"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard rôti avec jus de cerise",
+      "Filet de bœuf ou de veau rosé"
+    ],
+    "id": "0be826e1-e016-4480-8f87-b0bd0bc53045",
+    "created_at": "2025-12-15T10:48:20.319737Z",
+    "updated_at": "2025-12-15T10:48:20.319745Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Domaine Drouhin Oregon Pinot Noir",
+    "winery": "Domaine Drouhin Oregon",
+    "grape_variety": "Pinot Noir",
+    "region": "Willamette Valley",
+    "country": "USA",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein eleganter, seidig strukturierter Pinot Noir aus dem kühlen Willamette Valley mit roten Beeren, feiner Würze und einer raffinierten, fast burgundischen Finesse.",
+    "description_en": "An elegant, silky Pinot Noir from Oregon’s cool Willamette Valley, showing bright red fruit, subtle spice and a refined, Burgundy-like finesse.",
+    "description_fr": "Un Pinot Noir élégant et soyeux de la fraîche Willamette Valley, aux arômes de fruits rouges, d’épices délicates et à la finesse rappelant la Bourgogne.",
+    "food_pairings_de": [
+      "Gebratenes Hähnchen mit Kräutern",
+      "Lachs vom Grill"
+    ],
+    "food_pairings_en": [
+      "Herb-roasted chicken",
+      "Grilled salmon"
+    ],
+    "food_pairings_fr": [
+      "Poulet rôti aux herbes",
+      "Saumon grillé"
+    ],
+    "id": "0ab54b05-83d3-412e-b106-a432e223ea60",
+    "created_at": "2025-12-15T10:48:23.879439Z",
+    "updated_at": "2025-12-15T10:48:23.879446Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Weingut Künstler Hochheimer Riesling trocken",
+    "winery": "Weingut Künstler",
+    "grape_variety": "Riesling",
+    "region": "Rheingau",
+    "country": "Deutschland",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€",
+    "description_de": "Ein präziser, mineralischer Riesling aus Hochheim mit saftiger Zitrusfrucht, kühler Kräuterwürze und kristallklarer Säure – elegant, geradlinig und animierend trocken.",
+    "description_en": "A precise, mineral-driven Riesling from Hochheim with juicy citrus fruit, cool herbal notes and crystal-clear acidity, offering an elegant, bone-dry and refreshing style.",
+    "description_fr": "Un Riesling précis et minéral de Hochheim, aux notes d’agrumes juteux, de fines herbes fraîches et à l’acidité cristalline, sec, élégant et très rafraîchissant.",
+    "food_pairings_de": [
+      "Gebratener Zander mit Zitronenbutter",
+      "Asiatische Gerichte mit leichter Schärfe (z. B. Thai-Curry)"
+    ],
+    "food_pairings_en": [
+      "Pan-fried pike-perch with lemon butter",
+      "Lightly spicy Asian dishes (e.g. Thai curry)"
+    ],
+    "food_pairings_fr": [
+      "Sandre poêlé au beurre citronné",
+      "Plats asiatiques légèrement épicés (par ex. curry thaï)"
+    ],
+    "id": "3217c375-ec7d-486b-961e-ea44b874edbd",
+    "created_at": "2025-12-15T10:48:29.951482Z",
+    "updated_at": "2025-12-15T10:48:29.951489Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Dr. Loosen Riesling „Blue Slate“ Kabinett, Mosel",
+    "winery": "Weingut Dr. Loosen",
+    "grape_variety": "Riesling",
+    "region": "Mosel",
+    "country": "Deutschland",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€",
+    "description_de": "Ein verspielter, feinfruchtiger Mosel-Riesling mit zitrischer Frische, saftiger Süße und der typischen, rauchig-mineralischen Schiefernote. Leicht im Alkohol, aber intensiv im Charakter – wie ein kühler Windhauch über blauem Schiefer.",
+    "description_en": "A playful, finely fruity Mosel Riesling with vibrant citrus, delicate sweetness and the signature smoky-slate minerality. Light in alcohol yet full of character, it feels like a cool breeze over blue slate.",
+    "description_fr": "Un Riesling de la Moselle vif et délicatement fruité, aux notes d’agrumes, à la douceur subtile et à la minéralité fumée typique du schiste bleu. Léger en alcool mais riche en caractère, comme une brise fraîche sur la roche ardoisière.",
+    "food_pairings_de": [
+      "Asiatische Küche mit leichter Schärfe (z.B. Thai-Curry)",
+      "Leichte Gerichte mit Fisch oder Meeresfrüchten"
+    ],
+    "food_pairings_en": [
+      "Spicy Asian dishes (e.g. Thai curry)",
+      "Light fish or seafood dishes"
+    ],
+    "food_pairings_fr": [
+      "Cuisine asiatique légèrement épicée (par ex. curry thaï)",
+      "Plats légers de poisson ou de fruits de mer"
+    ],
+    "id": "b38b81ae-65a9-479d-b537-e21636fb4f6a",
+    "created_at": "2025-12-15T10:48:45.318605Z",
+    "updated_at": "2025-12-15T10:48:45.318614Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Dönnhoff Riesling „Tonschiefer“ trocken, Nahe",
+    "winery": "Weingut Dönnhoff",
+    "grape_variety": "Riesling",
+    "region": "Nahe",
+    "country": "Deutschland",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Dieser trockene Riesling von den Tonschieferböden der Nahe verbindet rauchige Mineralität mit saftiger Zitrusfrucht und kühler Kräuterwürze – präzise, elegant und lang anhaltend. Ein charakterstarker Terroirwein mit vibrierender Frische.",
+    "description_en": "This dry Riesling from the slate-clay soils of the Nahe shows smoky minerality, vibrant citrus fruit and cool herbal notes – precise, elegant and long on the palate. A characterful terroir wine with striking freshness.",
+    "description_fr": "Ce Riesling sec issu des sols de schistes argileux de la Nahe offre une minéralité fumée, des notes d’agrumes vives et une touche d’herbes fraîches – précis, élégant et persistant. Un vin de terroir au profil tendu et rafraîchissant.",
+    "food_pairings_de": [
+      "Gegrillter Fisch mit Zitronen-Butter",
+      "Asiatische Küche mit leichter Schärfe (z.B. Thai-Curry)"
+    ],
+    "food_pairings_en": [
+      "Grilled fish with lemon butter",
+      "Lightly spicy Asian dishes (e.g. Thai curry)"
+    ],
+    "food_pairings_fr": [
+      "Poisson grillé au beurre citronné",
+      "Cuisine asiatique légèrement épicée (par ex. curry thaï)"
+    ],
+    "id": "5f34cb2a-659f-44c2-b3d2-db443804f45b",
+    "created_at": "2025-12-15T10:48:58.728200Z",
+    "updated_at": "2025-12-15T10:48:58.728207Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Trimbach Gewürztraminer, Alsace AOC",
+    "winery": "Maison Trimbach",
+    "grape_variety": "Gewürztraminer",
+    "region": "Alsace",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Ein aromatischer, trockener Gewürztraminer mit Noten von Litschi, Rosenblüten und exotischen Gewürzen, straff und elegant statt süßlich-schwer. Perfekt für alle, die Würze und Finesse im Glas lieben.",
+    "description_en": "An aromatic, dry Gewürztraminer with notes of lychee, rose petals and exotic spice, showing a firm, elegant structure rather than lush sweetness.",
+    "description_fr": "Un Gewurztraminer sec et aromatique aux notes de litchi, de pétales de rose et d’épices exotiques, avec une structure tendue et élégante plutôt qu’une douceur opulente.",
+    "food_pairings_de": [
+      "Würzige asiatische Küche (Thai-Curry, vietnamesische Gerichte)",
+      "Münsterkäse oder anderer kräftiger Weichkäse"
+    ],
+    "food_pairings_en": [
+      "Spicy Asian dishes (Thai curry, Vietnamese cuisine)",
+      "Munster cheese or other strong soft cheeses"
+    ],
+    "food_pairings_fr": [
+      "Cuisine asiatique épicée (curry thaï, cuisine vietnamienne)",
+      "Fromage Munster ou autres fromages à pâte molle puissants"
+    ],
+    "id": "ae79702a-664b-4f87-bbdf-1bfcf473a298",
+    "created_at": "2025-12-15T10:49:05.544923Z",
+    "updated_at": "2025-12-15T10:49:05.544932Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Schloss Gobelsburg Grüner Veltliner Sekt Brut, Kamptal",
+    "winery": "Schloss Gobelsburg",
+    "grape_variety": "Grüner Veltliner",
+    "region": "Kamptal",
+    "country": "Österreich",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Feinperliger, eleganter Grüner Veltliner Sekt mit zarten Zitrusnoten, frischem Apfel und einem Hauch weißem Pfeffer, der lebendig und doch edel am Gaumen schwebt.",
+    "description_en": "Fine and elegant Grüner Veltliner sparkling wine with delicate citrus, fresh apple and a touch of white pepper, offering a vibrant yet refined palate.",
+    "description_fr": "Vin effervescent de Grüner Veltliner fin et élégant, aux notes d’agrumes délicats, de pomme fraîche et une touche de poivre blanc, avec une bouche vive et raffinée.",
+    "food_pairings_de": [
+      "Austern und Meeresfrüchte",
+      "Österreichischer Tafelspitz"
+    ],
+    "food_pairings_en": [
+      "Oysters and seafood",
+      "Light veal dishes"
+    ],
+    "food_pairings_fr": [
+      "Huîtres et fruits de mer",
+      "Plats de veau légers"
+    ],
+    "id": "e12f6482-750e-4dde-a1fe-bec6e4bc85ff",
+    "created_at": "2025-12-15T10:49:13.995026Z",
+    "updated_at": "2025-12-15T10:49:13.995033Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Château Minuty \"M de Minuty\" Rosé, Côtes de Provence",
+    "winery": "Château Minuty",
+    "grape_variety": "Grenache, Cinsault, Syrah",
+    "region": "Côtes de Provence",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "rosé",
+    "price_category": "€€€",
+    "description_de": "Ein eleganter, lachsfarbener Provence-Rosé mit zarten Aromen von roten Beeren, weißen Blüten und Zitrus, der Leichtigkeit und Sommerfeeling ins Glas bringt.",
+    "description_en": "An elegant, pale Provence rosé with delicate notes of red berries, white flowers and citrus, capturing pure summer freshness in the glass.",
+    "description_fr": "Un rosé de Provence pâle et élégant aux notes délicates de fruits rouges, de fleurs blanches et d’agrumes, qui évoque toute la fraîcheur de l’été.",
+    "food_pairings_de": [
+      "Gegrillter Fisch und Meeresfrüchte",
+      "Mediterrane Salate und Antipasti"
+    ],
+    "food_pairings_en": [
+      "Grilled fish and seafood",
+      "Mediterranean salads and antipasti"
+    ],
+    "food_pairings_fr": [
+      "Poissons et fruits de mer grillés",
+      "Salades méditerranéennes et antipasti"
+    ],
+    "id": "c228ba67-ac0f-43b1-8a95-a256a0ee35b6",
+    "created_at": "2025-12-15T10:49:17.964911Z",
+    "updated_at": "2025-12-15T10:49:17.964919Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Château Léoville-Poyferré, Saint-Julien",
+    "winery": "Château Léoville-Poyferré",
+    "grape_variety": "Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot",
+    "region": "Bordeaux",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein kraftvoller, zugleich seidiger Bordeaux mit tiefdunkler Frucht, edlen Röstaromen und enormer Finesse – Saint-Julien in seiner elegantesten Form.",
+    "description_en": "A powerful yet silky Bordeaux, showing dark fruit, fine oak spice and remarkable finesse – Saint-Julien at its most elegant.",
+    "description_fr": "Un Bordeaux puissant et soyeux, aux fruits noirs profonds, aux épices boisées fines et à la grande finesse – l’élégance de Saint-Julien à son sommet.",
+    "food_pairings_de": [
+      "Rinderfilet mit Rotweinjus",
+      "Geschmorte Lammkeule mit Kräutern"
+    ],
+    "food_pairings_en": [
+      "Beef tenderloin with red wine jus",
+      "Slow-braised herb-crusted lamb shoulder"
+    ],
+    "food_pairings_fr": [
+      "Filet de bœuf sauce au vin rouge",
+      "Épaule d’agneau braisée aux herbes"
+    ],
+    "id": "4de73783-5a87-443d-8faa-8408c64ef359",
+    "created_at": "2025-12-15T10:49:31.394554Z",
+    "updated_at": "2025-12-15T10:49:31.394561Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Herdade do Mouchão Tinto",
+    "winery": "Herdade do Mouchão",
+    "grape_variety": "Alicante Bouschet",
+    "region": "Alentejo",
+    "country": "Portugal",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein tief dunkler, charakterstarker Rotwein aus dem Herzen des Alentejo mit reifer schwarzer Frucht, Würze und kraftvoller Struktur – authentisch, sinnlich und lang anhaltend.",
+    "description_en": "A deeply colored, characterful red from the heart of Alentejo, showing ripe black fruit, spicy notes and a powerful structure with a long, lingering finish.",
+    "description_fr": "Un rouge profond et de caractère du cœur de l’Alentejo, aux arômes de fruits noirs mûrs, d’épices et à la structure puissante, avec une finale longue et persistante.",
+    "food_pairings_de": [
+      "Geschmorte Lammkeule",
+      "Portugiesischer Eintopf (Cozido)"
+    ],
+    "food_pairings_en": [
+      "Braised lamb shank",
+      "Slow-cooked beef stew"
+    ],
+    "food_pairings_fr": [
+      "Souris d’agneau braisée",
+      "Ragoût de bœuf mijoté"
+    ],
+    "id": "aba4254b-1f8b-41a2-b1aa-97500b60e1ca",
+    "created_at": "2025-12-15T10:49:35.103425Z",
+    "updated_at": "2025-12-15T10:49:35.103432Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Bollinger La Grande Année Champagne",
+    "winery": "Champagne Bollinger",
+    "grape_variety": "Pinot Noir & Chardonnay",
+    "region": "Champagne",
+    "country": "Frankreich",
+    "year": 2014,
+    "wine_color": "weiß",
+    "price_category": "€€€€",
+    "description_de": "Ein großer Jahrgangs-Champagner mit tiefer, briocheartiger Aromatik, feiner Perlage und kraftvoller Eleganz – ein Wein für echte Gänsehautmomente.",
+    "description_en": "A majestic vintage Champagne with brioche notes, fine mousse and layered complexity, combining power, precision and long‑lasting elegance.",
+    "description_fr": "Un grand Champagne millésimé aux notes de brioche, à la bulle fine et à la structure profonde, alliant puissance, précision et élégance persistante.",
+    "food_pairings_de": [
+      "Austern und Kaviar",
+      "Gebratener Hummer mit Butter und Zitrone"
+    ],
+    "food_pairings_en": [
+      "Oysters and caviar",
+      "Butter-poached lobster with lemon"
+    ],
+    "food_pairings_fr": [
+      "Huîtres et caviar",
+      "Homard rôti au beurre et citron"
+    ],
+    "id": "30a0061a-d050-40a6-8e13-960014841d92",
+    "created_at": "2025-12-15T10:49:39.008681Z",
+    "updated_at": "2025-12-15T10:49:39.008689Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Domaine de la Romanée-Conti Corton Grand Cru",
+    "winery": "Domaine de la Romanée-Conti",
+    "grape_variety": "Pinot Noir",
+    "region": "Burgund (Corton Grand Cru)",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein rarer, tiefgründiger Grand Cru mit nobler Frucht, feinen Gewürznoten und einer beeindruckenden, fast schwebenden Eleganz am Gaumen.",
+    "description_en": "A rare and profound Grand Cru with noble red fruit, fine spice and an impressively weightless elegance on the palate.",
+    "description_fr": "Un Grand Cru rare et profond, aux fruits rouges nobles, aux épices délicates et à l’élégance aérienne en bouche.",
+    "food_pairings_de": [
+      "Reh- oder Hirschrücken mit Pilzen",
+      "Taube oder Perlhuhn mit Trüffeljus"
+    ],
+    "food_pairings_en": [
+      "Roast venison or deer with wild mushrooms",
+      "Pigeon or guinea fowl with truffle jus"
+    ],
+    "food_pairings_fr": [
+      "Noisettes de chevreuil aux champignons sauvages",
+      "Pigeon rôti ou pintade au jus de truffe"
+    ],
+    "id": "ac53a8c1-4567-4bee-9b85-9a6b3fd9930f",
+    "created_at": "2025-12-15T10:49:43.295503Z",
+    "updated_at": "2025-12-15T10:49:43.295511Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Wittmann Chardonnay trocken",
+    "winery": "Weingut Wittmann",
+    "grape_variety": "Chardonnay",
+    "region": "Rheinhessen",
+    "country": "Deutschland",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€",
+    "description_de": "Frisch, saftig und klar strukturiert: Ein Chardonnay ohne oder mit nur wenig Holz, der mit kühler Frucht, feiner Cremigkeit und salziger Mineralität begeistert.",
+    "description_en": "Fresh, juicy and precisely structured: a Chardonnay with no or very little oak, showing cool fruit, fine creaminess and a saline mineral finish.",
+    "description_fr": "Frais, juteux et bien structuré : un Chardonnay sans ou avec très peu de bois, aux arômes de fruit croquant, légère onctuosité et finale minérale salée.",
+    "food_pairings_de": [
+      "Gegrillter Fisch mit Zitrone",
+      "Pasta mit Sahnesauce und Gemüse"
+    ],
+    "food_pairings_en": [
+      "Grilled fish with lemon",
+      "Pasta with creamy vegetable sauce"
+    ],
+    "food_pairings_fr": [
+      "Poisson grillé au citron",
+      "Pâtes à la sauce crémeuse aux légumes"
+    ],
+    "id": "77e27274-63fb-4051-bd58-f7e995de6a78",
+    "created_at": "2025-12-15T17:10:20.256499Z",
+    "updated_at": "2025-12-15T17:10:20.256508Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Château Minuty M de Minuty Rosé",
+    "winery": "Château Minuty",
+    "grape_variety": "Grenache, Cinsault, Syrah",
+    "region": "Côtes de Provence",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "rosé",
+    "price_category": "€€€",
+    "description_de": "Duftiger Provence-Rosé mit zarten Aromen von Erdbeeren, weißen Blüten und Zitrusfrüchten – leichtfüßig, salzig-frisch und wie gemacht für lange Sommerabende.",
+    "description_en": "Fragrant Provence rosé with delicate notes of strawberry, white flowers and citrus, offering a light, crisp and gently saline finish – perfect for warm summer nights.",
+    "description_fr": "Rosé de Provence parfumé aux notes délicates de fraise, de fleurs blanches et d’agrumes, avec une bouche légère, fraîche et subtilement saline, idéal pour les soirées d’été.",
+    "food_pairings_de": [
+      "Gegrillter Fisch mit Kräutern",
+      "Provenzalische Gemüse- und Antipasti-Platte"
+    ],
+    "food_pairings_en": [
+      "Grilled herb-marinated fish",
+      "Mediterranean vegetable and antipasti platter"
+    ],
+    "food_pairings_fr": [
+      "Poisson grillé aux herbes",
+      "Assortiment de légumes méditerranéens et antipasti"
+    ],
+    "id": "29663c59-69a6-440a-b339-dc132c55ce9a",
+    "created_at": "2025-12-15T17:10:26.920070Z",
+    "updated_at": "2025-12-15T17:10:26.920078Z",
+    "auto_generated": true
+  },
+  {
+    "name": "J. Hofstätter Pinot Bianco \"Barthenau\"",
+    "winery": "Weingut J. Hofstätter",
+    "grape_variety": "Pinot Bianco (Weißburgunder)",
+    "region": "Südtirol",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Ein charaktervoller Südtiroler Weißburgunder von alten Lagen in Barthenau: dicht, mineralisch und elegant, mit feinem Schmelz und langem, salzig-frischem Finale.",
+    "description_en": "A characterful Pinot Bianco from South Tyrol’s Barthenau vineyards: dense yet elegant, with bright minerality, fine creaminess and a long, salty-fresh finish.",
+    "description_fr": "Un Pinot Bianco de caractère issu des vignes de Barthenau en Haut-Adige : concentré et élégant, à la minéralité marquée, une texture crémeuse et une finale longue et saline.",
+    "food_pairings_de": [
+      "Gebratener Zander mit Zitronenbutter",
+      "Risotto mit grünem Spargel"
+    ],
+    "food_pairings_en": [
+      "Pan-fried pike-perch with lemon butter",
+      "Risotto with green asparagus"
+    ],
+    "food_pairings_fr": [
+      "Sandre poêlé au beurre citronné",
+      "Risotto aux asperges vertes"
+    ],
+    "id": "ff8ed96e-1d81-4f4d-9ad2-e65fe7c661a2",
+    "created_at": "2025-12-15T17:16:49.746524Z",
+    "updated_at": "2025-12-15T17:16:49.746533Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Planeta \"Cometa\" Fiano Sicilia DOC",
+    "winery": "Planeta",
+    "grape_variety": "Fiano",
+    "region": "Sizilien",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Ein eleganter, mediterraner Weißwein mit Aromen von Zitrusfrüchten, weißen Blüten und Kräutern, der am Gaumen cremig, mineralisch und wunderbar lang wirkt. Ein sizilianischer Fiano mit großer Finesse und salziger Frische.",
+    "description_en": "An elegant Mediterranean white wine with aromas of citrus, white flowers and herbs, offering a creamy yet mineral palate and a long, savory finish. A Sicilian Fiano of great finesse and salty freshness.",
+    "description_fr": "Un vin blanc méditerranéen élégant aux arômes d’agrumes, de fleurs blanches et d’herbes, avec une bouche crémeuse, minérale et une finale longue. Un Fiano sicilien d’une grande finesse et d’une fraîcheur saline.",
+    "food_pairings_de": [
+      "Gegrillter Fisch mit Zitronen-Olivenöl",
+      "Meeresfrüchte-Pasta"
+    ],
+    "food_pairings_en": [
+      "Grilled fish with lemon and olive oil",
+      "Seafood pasta"
+    ],
+    "food_pairings_fr": [
+      "Poisson grillé au citron et huile d’olive",
+      "Pâtes aux fruits de mer"
+    ],
+    "id": "480f0fa6-f8ac-45fe-9e04-2e52c93d3206",
+    "created_at": "2025-12-15T17:16:57.503130Z",
+    "updated_at": "2025-12-15T17:16:57.503138Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Livio Felluga Friulano Colli Orientali del Friuli DOC",
+    "winery": "Livio Felluga",
+    "grape_variety": "Friulano",
+    "region": "Friaul-Julisch Venetien",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Ein eleganter, vielschichtiger Friulano mit Aromen von gelben Früchten, Mandeln und frischen Kräutern, der am Gaumen cremig, aber zugleich lebendig und mineralisch wirkt. Ein charaktervoller Weißwein, der die Seele des Friauls eindrucksvoll in jede Flasche bringt.",
+    "description_en": "An elegant, layered Friulano with notes of yellow stone fruit, almond and fresh herbs, offering a creamy yet vibrant, mineral-driven palate. A characterful white that captures the soul of Friuli in every sip.",
+    "description_fr": "Un Friulano élégant et complexe aux arômes de fruits jaunes, d’amande et d’herbes fraîches, avec une bouche à la fois crémeuse, vive et minérale. Un blanc de caractère qui exprime magnifiquement l’âme du Frioul.",
+    "food_pairings_de": [
+      "Prosciutto San Daniele",
+      "Risotto mit Kräutern und Spargel"
+    ],
+    "food_pairings_en": [
+      "Prosciutto San Daniele",
+      "Herb and asparagus risotto"
+    ],
+    "food_pairings_fr": [
+      "Prosciutto San Daniele",
+      "Risotto aux herbes et aux asperges"
+    ],
+    "id": "ee84f7a4-8128-4df9-823c-babf10306e5a",
+    "created_at": "2025-12-15T17:17:02.876710Z",
+    "updated_at": "2025-12-15T17:17:02.876718Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Vietti Barbera d’Asti \"Tre Vigne\"",
+    "winery": "Vietti",
+    "grape_variety": "Barbera",
+    "region": "Piemont",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Saftig, lebendig und voller roter Frucht – dieser Barbera d’Asti „Tre Vigne“ vereint Eleganz, Trinkfluss und den unverwechselbaren Charakter des Piemonts im Glas.",
+    "description_en": "Juicy and vibrant with bright red fruit, this Barbera d’Asti \"Tre Vigne\" delivers elegance, freshness and a pure expression of Piedmont terroir.",
+    "description_fr": "Juteux et vif avec de beaux arômes de fruits rouges, ce Barbera d’Asti \"Tre Vigne\" allie fraîcheur, élégance et expression authentique du terroir du Piémont.",
+    "food_pairings_de": [
+      "Pasta mit Tomaten- oder Ragù-Sauce",
+      "Pizza mit Salami oder Pilzen"
+    ],
+    "food_pairings_en": [
+      "Pasta with tomato or ragù sauce",
+      "Pizza with salami or mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Pâtes à la sauce tomate ou ragù",
+      "Pizza au salami ou aux champignons"
+    ],
+    "id": "ef7c86f1-d0bb-40be-899c-f29d7e021811",
+    "created_at": "2025-12-15T17:17:09.315468Z",
+    "updated_at": "2025-12-15T17:17:09.315478Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Grüner Veltliner „Loiserberg“",
+    "winery": "Weingut Fred Loimer",
+    "grape_variety": "Grüner Veltliner",
+    "region": "Kamptal",
+    "country": "Österreich",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Ein präziser, mineralischer Grüner Veltliner vom Loiserberg mit saftiger Frische, zarter Würze und eleganter Struktur – lebendig, klar und nachhaltig am Gaumen.",
+    "description_en": "A precise, mineral-driven Grüner Veltliner from Loiserberg, offering juicy freshness, delicate spice and an elegant structure with a long, vibrant finish.",
+    "description_fr": "Un Grüner Veltliner précis et minéral du Loiserberg, avec une fraîcheur juteuse, des notes épicées délicates et une structure élégante à la finale longue et vibrante.",
+    "food_pairings_de": [
+      "Wiener Schnitzel mit Kartoffelsalat",
+      "Gebratener Zander mit Gemüse"
+    ],
+    "food_pairings_en": [
+      "Wiener schnitzel with potato salad",
+      "Pan-fried pike-perch with vegetables"
+    ],
+    "food_pairings_fr": [
+      "Escalope viennoise avec salade de pommes de terre",
+      "Sandre poêlé avec légumes"
+    ],
+    "id": "3162e44a-c3ba-49f5-ad0d-9272e64050cd",
+    "created_at": "2025-12-15T17:18:04.285697Z",
+    "updated_at": "2025-12-15T17:18:04.285706Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Riesling „Kabinett trocken“",
+    "winery": "Weingut Künstler",
+    "grape_variety": "Riesling",
+    "region": "Rheingau",
+    "country": "Deutschland",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€",
+    "description_de": "Ein kristallklarer, feinmineralischer Riesling mit zitroniger Frische, zarter Kräuterwürze und eleganter Leichtigkeit, der typisch für das Rheingau ist. Straff, animierend und herrlich trinkfreudig.",
+    "description_en": "A crystal-clear, finely mineral Rheingau Riesling with vibrant citrus notes, subtle herbal spice and an elegant lightness. Precise, refreshing and extremely drinkable.",
+    "description_fr": "Un Riesling du Rheingau cristallin et minéral, aux notes d’agrumes vives, avec une légère touche herbacée et une grande finesse. Précis, rafraîchissant et très facile à boire.",
+    "food_pairings_de": [
+      "Gebratener Zander mit Zitronenbutter",
+      "Leichter Spargelsalat mit Vinaigrette"
+    ],
+    "food_pairings_en": [
+      "Pan-fried zander with lemon butter",
+      "Light asparagus salad with vinaigrette"
+    ],
+    "food_pairings_fr": [
+      "Sandre poêlé au beurre citronné",
+      "Salade légère d’asperges à la vinaigrette"
+    ],
+    "id": "0be45ded-d968-48b0-818b-03db7b0db466",
+    "created_at": "2025-12-15T17:18:09.594739Z",
+    "updated_at": "2025-12-15T17:18:09.594748Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Brut Reserve",
+    "winery": "Schlumberger",
+    "grape_variety": "Welschriesling, Chardonnay, Pinot Blanc",
+    "region": "Wien",
+    "country": "Österreich",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€",
+    "description_de": "Feinperliger, eleganter Sekt aus Österreich mit frischer Apfelfrucht, zarten Zitrusnoten und cremiger Textur – ideal für festliche Momente. Die harmonische Säure und das feine Mousseux sorgen für einen lebendigen, doch ausgewogenen Trinkgenuss.",
+    "description_en": "A fine Austrian sparkling wine with delicate mousse, fresh apple and citrus aromas, and a creamy texture. Lively acidity and well‑balanced fruit make it a perfect choice for celebrations and refined aperitifs.",
+    "description_fr": "Un vin effervescent autrichien élégant, aux bulles fines, arômes de pomme fraîche et d’agrumes, avec une texture crémeuse. Son acidité vive et son équilibre en font un choix idéal pour l’apéritif et les moments de fête.",
+    "food_pairings_de": [
+      "Austern und andere Meeresfrüchte",
+      "Canapés und feine Vorspeisen"
+    ],
+    "food_pairings_en": [
+      "Oysters and seafood",
+      "Canapés and light appetizers"
+    ],
+    "food_pairings_fr": [
+      "Huîtres et fruits de mer",
+      "Canapés et entrées légères"
+    ],
+    "id": "b3eb76ae-4db1-42e8-b059-33a8e32f0cda",
+    "created_at": "2025-12-15T17:18:20.444438Z",
+    "updated_at": "2025-12-15T17:18:20.444446Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Rosé „Heideboden“",
+    "winery": "Zantho",
+    "grape_variety": "Zweigelt, Blaufränkisch",
+    "region": "Neusiedlersee, Burgenland",
+    "country": "Österreich",
+    "year": 2022,
+    "wine_color": "rosé",
+    "price_category": "€€",
+    "description_de": "Ein frischer, fruchtbetonter Rosé aus dem Heideboden mit saftigen Beerenaromen, feiner Würze und animierender Säure – perfekt für sonnige Momente. Leichtfüßig und doch charaktervoll, bringt er das pannonische Klima mit jedem Schluck ins Glas.",
+    "description_en": "A fresh, fruit-driven rosé from the Heideboden with juicy berry aromas, a hint of spice and lively acidity – perfect for sunny moments. Light on its feet yet full of character, it captures the warm Pannonian climate in every sip.",
+    "description_fr": "Un rosé frais et gourmand du Heideboden, aux arômes de baies juteuses, une fine note épicée et une acidité vive – idéal pour les moments ensoleillés. Léger mais plein de caractère, il reflète le climat pannonien dans chaque gorgée.",
+    "food_pairings_de": [
+      "Gegrilltes Gemüse",
+      "Sommerliche Salate mit Ziegenkäse"
+    ],
+    "food_pairings_en": [
+      "Grilled vegetables",
+      "Summer salads with goat cheese"
+    ],
+    "food_pairings_fr": [
+      "Légumes grillés",
+      "Salades estivales au fromage de chèvre"
+    ],
+    "id": "d121f6a9-413e-4ea3-8d6d-41b754142553",
+    "created_at": "2025-12-15T17:18:25.149120Z",
+    "updated_at": "2025-12-15T17:18:25.149128Z",
+    "auto_generated": true
+  },
+  {
+    "name": "G.D. Vajra Dolcetto d’Alba",
+    "winery": "G.D. Vajra",
+    "grape_variety": "Dolcetto",
+    "region": "Piemont",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Saftiger, purpurner Dolcetto mit dunkelbeeriger Frucht, Veilchentönen und feiner Würze – ein charaktervoller Piemontese für pure Trinkfreude. Frische Säure und sanfte Tannine machen ihn zum perfekten Alltagswein mit Charme.",
+    "description_en": "Juicy, purple Dolcetto from Piedmont with dark berry fruit, violets and gentle spice, offering straightforward, joyful drinking. Fresh acidity and soft tannins make it an inviting everyday red.",
+    "description_fr": "Dolcetto juteux et pourpre du Piémont, aux notes de fruits noirs, de violette et d’épices délicates, offrant un plaisir immédiat. Son acidité fraîche et ses tanins souples en font un rouge accessible et gourmand.",
+    "food_pairings_de": [
+      "Pasta mit Salsiccia-Tomatensauce",
+      "Antipasti-Platte mit Salami und gereiftem Käse"
+    ],
+    "food_pairings_en": [
+      "Pasta with sausage and tomato ragù",
+      "Charcuterie and aged cheese platter"
+    ],
+    "food_pairings_fr": [
+      "Pâtes à la saucisse et sauce tomate",
+      "Assiette de charcuterie et fromages affinés"
+    ],
+    "id": "fa631d21-1e9e-4a5c-9a33-9d0e1a6f78f7",
+    "created_at": "2025-12-15T17:20:27.992566Z",
+    "updated_at": "2025-12-15T17:20:27.992574Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Gavi dei Gavi DOCG",
+    "winery": "La Scolca",
+    "grape_variety": "Cortese",
+    "region": "Gavi, Piemont",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Ein ikonischer Gavi di Gavi mit kristallklarer Frische, zitrischer Aromatik und salziger Mineralität – wie eine kühle Brise vom Ligurischen Meer im Glas. Elegant, präzise und dabei wunderbar trinkig.",
+    "description_en": "An iconic Gavi di Gavi with crystal-clear freshness, citrus-driven aromas and a salty minerality, like a cool sea breeze in the glass. Elegant, precise and effortlessly drinkable.",
+    "description_fr": "Un Gavi di Gavi emblématique, à la fraîcheur cristalline, aux arômes d’agrumes et à la minéralité saline, comme une brise marine dans le verre. Élégant, précis et d’une grande buvabilité.",
+    "food_pairings_de": [
+      "Spaghetti alle Vongole",
+      "Vitello tonnato"
+    ],
+    "food_pairings_en": [
+      "Spaghetti alle vongole",
+      "Grilled sea bass with lemon"
+    ],
+    "food_pairings_fr": [
+      "Spaghetti alle vongole",
+      "Bar grillé au citron"
+    ],
+    "id": "70c29d77-05a0-4ca8-b55a-c35ce2f299a5",
+    "created_at": "2025-12-16T22:42:37.387989Z",
+    "updated_at": "2025-12-16T22:42:37.387997Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Château Brane-Cantenac, Margaux",
+    "winery": "Château Brane-Cantenac",
+    "grape_variety": "Cabernet Sauvignon-dominierte Cuvée",
+    "region": "Bordeaux",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein klassischer Margaux mit feiner Cassisfrucht, zarter Floralik und seidig gewobenem Tannin – elegant, tief und mit langem, noblem Nachhall.",
+    "description_en": "A classic Margaux showing pure cassis, floral notes and silky tannins, combining depth and finesse with a long, refined finish.",
+    "description_fr": "Un Margaux classique aux arômes de cassis, de fleurs et d’épices fines, avec des tanins soyeux et une finale longue et élégante.",
+    "food_pairings_de": [
+      "Entrecôte vom Rind mit Kräuterbutter",
+      "Lammkarree mit Kräuterkruste"
+    ],
+    "food_pairings_en": [
+      "Ribeye steak with herb butter",
+      "Herb-crusted rack of lamb"
+    ],
+    "food_pairings_fr": [
+      "Entrecôte grillée au beurre aux herbes",
+      "Carré d’agneau en croûte d’herbes"
+    ],
+    "id": "08dcf518-d9f8-4789-88aa-f3fcd6026a91",
+    "created_at": "2025-12-16T22:45:24.994580Z",
+    "updated_at": "2025-12-16T22:45:24.994588Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Jean Grivot Vosne-Romanée",
+    "winery": "Domaine Jean Grivot",
+    "grape_variety": "Pinot Noir",
+    "region": "Burgund, Vosne-Romanée",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein raffinierter Pinot Noir aus Vosne-Romanée mit tiefer, sinnlicher Frucht, feinen Gewürznoten und seidigen Tanninen, der Eleganz und Finesse in jedem Schluck vereint.",
+    "description_en": "A refined Vosne-Romanée Pinot Noir with deep, sensual fruit, delicate spice and silky tannins, showing remarkable elegance and finesse.",
+    "description_fr": "Un Pinot Noir raffiné de Vosne-Romanée, aux fruits profonds et sensuels, aux épices délicates et aux tanins soyeux, qui exprime une grande élégance et finesse.",
+    "food_pairings_de": [
+      "Geflügel wie Ente oder Perlhuhn",
+      "Kalbsrücken mit Pilzen"
+    ],
+    "food_pairings_en": [
+      "Roast duck or guinea fowl",
+      "Veal loin with mushrooms"
+    ],
+    "food_pairings_fr": [
+      "Canard rôti ou pintade",
+      "Filet de veau aux champignons"
+    ],
+    "id": "25eda796-71f6-4b05-8091-ea65e7471567",
+    "created_at": "2025-12-16T22:45:28.881508Z",
+    "updated_at": "2025-12-16T22:45:28.881516Z",
+    "auto_generated": true
+  },
+  {
+    "name": "La Scolca Gavi dei Gavi DOCG",
+    "winery": "La Scolca",
+    "grape_variety": "Cortese",
+    "region": "Piemont",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Ein ikonischer Gavi: kristallklare Zitrusfrucht, zarte Blütennoten und eine salzige Mineralität, die an Meeresbrise erinnert – elegant, kühl und mit langem Nachhall.",
+    "description_en": "An iconic Gavi with crystal-clear citrus fruit, delicate floral notes and salty minerality, delivering a cool, elegant palate and a long, precise finish.",
+    "description_fr": "Un Gavi iconique aux arômes d’agrumes purs, de fleurs délicates et à la minéralité saline, offrant une bouche fraîche, élégante et une finale longue et précise.",
+    "food_pairings_de": [
+      "Carpaccio vom Wolfsbarsch (Crudo)",
+      "Spaghetti alle Vongole"
+    ],
+    "food_pairings_en": [
+      "Sea bass crudo or carpaccio",
+      "Spaghetti alle vongole"
+    ],
+    "food_pairings_fr": [
+      "Carpaccio de bar cru",
+      "Spaghetti alle vongole aux palourdes"
+    ],
+    "id": "673a0367-fa85-4225-b8a8-8dc963c57cc0",
+    "created_at": "2025-12-16T22:52:09.245297Z",
+    "updated_at": "2025-12-16T22:52:09.245307Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Prosecco Superiore Conegliano-Valdobbiadene Brut",
+    "winery": "Kellerei aus Conegliano-Valdobbiadene",
+    "grape_variety": "Glera",
+    "region": "Conegliano-Valdobbiadene Prosecco Superiore DOCG",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€",
+    "description_de": "Feinperliger Prosecco Superiore mit zarten Aromen von grünen Äpfeln, Birne und weißen Blüten, lebendig-frisch und belebend am Gaumen. Ideal für alle, die elegante Spritzigkeit und italienische Lebensfreude im Glas suchen.",
+    "description_en": "Elegant Prosecco Superiore with fine bubbles and notes of green apple, pear and white flowers, crisp and refreshing on the palate. A lively sparkling wine that captures the spirit of Italian aperitivo moments.",
+    "description_fr": "Prosecco Superiore élégant aux bulles fines, marqué par des arômes de pomme verte, de poire et de fleurs blanches, vif et rafraîchissant en bouche. Un effervescent idéal pour l’apéritif à l’italienne.",
+    "food_pairings_de": [
+      "Antipasti-Platte mit Prosciutto und Grissini",
+      "Leichte Fischgerichte und Meeresfrüchte"
+    ],
+    "food_pairings_en": [
+      "Antipasti platter with cured meats and olives",
+      "Light fish dishes and seafood"
+    ],
+    "food_pairings_fr": [
+      "Assortiment d’antipasti avec charcuterie italienne",
+      "Plats de poisson légers et fruits de mer"
+    ],
+    "id": "d7e5be44-79fa-44dd-88cc-3e5fb8ba35b4",
+    "created_at": "2025-12-16T22:52:14.333267Z",
+    "updated_at": "2025-12-16T22:52:14.333276Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Cerasuolo d’Abruzzo Rosato",
+    "winery": "Diverse Produzenten",
+    "grape_variety": "Montepulciano d’Abruzzo",
+    "region": "Abruzzen",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "rosé",
+    "price_category": "€€",
+    "description_de": "Leuchtend kirschfarbener Rosato aus den Abruzzen mit saftiger Kirschfrucht, frischer Säure und einem Hauch von Kräutern – sommerlich, lebendig und charaktervoll.",
+    "description_en": "Bright cherry-colored rosato from Abruzzo with juicy red fruit, vibrant acidity and a hint of herbs, delivering a lively and refreshing Mediterranean character.",
+    "description_fr": "Rosé d’Abruzzes à la robe cerise brillante, aux arômes de fruits rouges juteux, d’herbes fines et à l’acidité fraîche, pour une bouche vive et gourmande.",
+    "food_pairings_de": [
+      "Antipasti-Platte mit italienischen Wurst- und Käsespezialitäten",
+      "Gegrillter Fisch oder Meeresfrüchte"
+    ],
+    "food_pairings_en": [
+      "Antipasti platter with cured meats and cheese",
+      "Grilled fish or seafood dishes"
+    ],
+    "food_pairings_fr": [
+      "Assortiment d’antipasti italiens (charcuteries et fromages)",
+      "Poisson grillé ou fruits de mer"
+    ],
+    "id": "6a6f4b84-4c86-473b-8102-bcb740452623",
+    "created_at": "2025-12-16T22:52:20.158049Z",
+    "updated_at": "2025-12-16T22:52:20.158057Z",
+    "auto_generated": true
   }
 ]

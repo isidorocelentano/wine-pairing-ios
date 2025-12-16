@@ -25,9 +25,9 @@
     "duration_months": 12,
     "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
     "created_at": "2025-12-16T14:42:18.407017+00:00",
-    "used": false,
-    "used_by": null,
-    "used_at": null
+    "used": true,
+    "used_by": "test@winepairing.com",
+    "used_at": "2025-12-16T14:48:47.035893+00:00"
   },
   {
     "code": "WINE-NMLE-FPS5-VDLU",

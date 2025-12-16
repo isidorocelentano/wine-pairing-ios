@@ -37,6 +37,7 @@ import DatenschutzPage from "@/pages/DatenschutzPage";
 import LoginPage from "@/pages/LoginPage";
 import SubscriptionPage from "@/pages/SubscriptionPage";
 import SubscriptionSuccessPage from "@/pages/SubscriptionSuccessPage";
+import CouponPage from "@/pages/CouponPage";
 
 function App() {
   return (

@@ -296,8 +296,12 @@ class BackupManager:
         for col in self.USER_COLLECTIONS:
             status['user_data_counts'][col] = await self.db[col].count_documents({})
         
-        for col in self.SYSTEM_COLLECTIONS:
+        for col in self.CONTENT_COLLECTIONS:
             status['system_data_counts'][col] = await self.db[col].count_documents({})
+        
+        # Zeige an, dass ALLE Collections geschützt sind
+        status['protection_status'] = "ALL_PROTECTED"
+        status['protection_note'] = "Alle Collections werden geschützt - nur LEERE werden aus Backup gefüllt"
         
         return status
     

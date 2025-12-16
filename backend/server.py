@@ -3623,10 +3623,24 @@ async def get_public_wines_filters(country: Optional[str] = None, region: Option
 
 
 # Add CORS middleware BEFORE including router (critical for proper request handling)
+# Get allowed origins - if wildcard, use specific origins for credentials support
+cors_origins_env = os.environ.get('CORS_ORIGINS', '*')
+if cors_origins_env == '*':
+    # Default allowed origins for credentials
+    allowed_origins = [
+        "http://localhost:3000",
+        "https://localhost:3000",
+        "https://sommelier-kompass.preview.emergentagent.com",
+        "https://wine-pairing.online",
+        "https://www.wine-pairing.online"
+    ]
+else:
+    allowed_origins = cors_origins_env.split(',')
+
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
-    allow_origins=os.environ.get('CORS_ORIGINS', '*').split(','),
+    allow_origins=allowed_origins,
     allow_methods=["*"],
     allow_headers=["*"],
 )

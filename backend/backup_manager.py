@@ -309,9 +309,10 @@ class BackupManager:
         
         return status
     
-    async def cleanup_old_backups(self, keep_count: int = 5) -> int:
+    async def cleanup_old_backups(self, keep_count: int = 10) -> int:
         """
         Löscht alte Backups, behält die neuesten `keep_count`.
+        Standard: 10 Backups behalten (ca. 2.5 Tage bei 6-Stunden-Intervall)
         """
         if not self.backup_dir.exists():
             return 0
@@ -332,14 +333,80 @@ class BackupManager:
                 logger.error(f"❌ Konnte Backup nicht löschen: {backup.name} - {e}")
         
         return deleted
+    
+    async def start_auto_backup_task(self):
+        """
+        Startet den automatischen Backup-Task.
+        Erstellt alle 6 Stunden ein vollständiges Backup.
+        """
+        self._auto_backup_running = True
+        logger.info(f"⏰ Automatisches Backup gestartet (alle {BACKUP_INTERVAL_SECONDS // 3600} Stunden)")
+        
+        while self._auto_backup_running:
+            try:
+                # Warte das Intervall ab
+                await asyncio.sleep(BACKUP_INTERVAL_SECONDS)
+                
+                if not self._auto_backup_running:
+                    break
+                
+                # Erstelle Backup
+                logger.info("⏰ Automatisches periodisches Backup wird erstellt...")
+                await self.create_full_backup()
+                
+                # Cleanup alte Backups
+                await self.cleanup_old_backups(keep_count=10)
+                
+                logger.info("✅ Automatisches Backup abgeschlossen")
+                
+            except asyncio.CancelledError:
+                logger.info("⏰ Automatisches Backup wurde gestoppt")
+                break
+            except Exception as e:
+                logger.error(f"❌ Fehler beim automatischen Backup: {e}")
+                # Warte 1 Stunde bei Fehler, dann erneut versuchen
+                await asyncio.sleep(3600)
+    
+    def stop_auto_backup(self):
+        """Stoppt den automatischen Backup-Task"""
+        self._auto_backup_running = False
+        logger.info("⏰ Automatisches Backup wird gestoppt...")
+    
+    async def get_next_backup_time(self) -> Optional[str]:
+        """Gibt die geschätzte Zeit des nächsten automatischen Backups zurück"""
+        if hasattr(self, '_auto_backup_running') and self._auto_backup_running:
+            # Finde das neueste Backup
+            if self.backup_dir.exists():
+                backups = sorted(
+                    [d for d in self.backup_dir.iterdir() if d.is_dir() and d.name.startswith('backup_')],
+                    reverse=True
+                )
+                if backups:
+                    # Parse timestamp aus Backup-Name
+                    latest = backups[0].name  # z.B. "backup_20251216_231600"
+                    try:
+                        ts_str = latest.replace('backup_', '')
+                        last_backup = datetime.strptime(ts_str, '%Y%m%d_%H%M%S')
+                        next_backup = last_backup + timedelta(seconds=BACKUP_INTERVAL_SECONDS)
+                        return next_backup.isoformat()
+                    except:
+                        pass
+        return None
+
+
+# Globale Referenz auf den Backup-Task
+_backup_task: Optional[asyncio.Task] = None
 
 
 async def create_startup_backup(db: AsyncIOMotorDatabase, data_dir: Path) -> BackupManager:
     """
     Factory-Funktion für den BackupManager.
-    Erstellt automatisch ein Backup beim Server-Start.
+    Erstellt automatisch ein Backup beim Server-Start und startet den Auto-Backup-Task.
     """
+    global _backup_task
+    
     manager = BackupManager(db, data_dir)
+    manager._auto_backup_running = False
     
     # Erstelle automatisches Backup beim Start
     try:
@@ -348,12 +415,27 @@ async def create_startup_backup(db: AsyncIOMotorDatabase, data_dir: Path) -> Bac
     except Exception as e:
         logger.error(f"⚠️ Startup-Backup fehlgeschlagen: {e}")
     
-    # Cleanup alte Backups (behalte die letzten 5)
+    # Cleanup alte Backups (behalte die letzten 10)
     try:
-        deleted = await manager.cleanup_old_backups(keep_count=5)
+        deleted = await manager.cleanup_old_backups(keep_count=10)
         if deleted > 0:
             logger.info(f"🗑️ {deleted} alte Backups gelöscht")
     except Exception as e:
         logger.error(f"⚠️ Backup-Cleanup fehlgeschlagen: {e}")
     
+    # Starte automatischen Backup-Task im Hintergrund
+    _backup_task = asyncio.create_task(manager.start_auto_backup_task())
+    
     return manager
+
+
+async def stop_backup_task():
+    """Stoppt den Backup-Task beim Server-Shutdown"""
+    global _backup_task
+    if _backup_task and not _backup_task.done():
+        _backup_task.cancel()
+        try:
+            await _backup_task
+        except asyncio.CancelledError:
+            pass
+        logger.info("⏰ Backup-Task gestoppt")

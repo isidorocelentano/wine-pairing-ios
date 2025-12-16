@@ -4161,6 +4161,17 @@ async def stripe_webhook(request: Request):
         return {"status": "error", "message": str(e)}
 
 
+# ===================== COUPON SYSTEM MODELS =====================
+
+class CouponRequest(BaseModel):
+    code: str
+
+class CouponResponse(BaseModel):
+    success: bool
+    message: str
+    plan_upgraded_to: Optional[str] = None
+    expires_at: Optional[datetime] = None
+
 # ===================== STRIPE ENDPOINTS =====================
 
 @api_router.get("/subscription-plans")

@@ -38,13 +38,32 @@ Das Backup-System schützt **ALLE** Daten vor Datenverlust bei Deployments.
 | `seo_pairings` | 📄 SEO-Pairings |
 | `coupons` | 📄 Gutschein-Codes |
 
+## Automatische Backups (v3.1)
+
+**ALLE 6 STUNDEN** wird automatisch ein vollständiges Backup erstellt!
+
+- Backups werden beim Server-Start und dann alle 6 Stunden erstellt
+- Die letzten 10 Backups werden aufbewahrt (ca. 2.5 Tage)
+- Ältere Backups werden automatisch gelöscht
+
 ## API Endpoints
 
 ### GET /api/backup/status
-Zeigt den aktuellen Backup-Status und alle verfügbaren Backups.
+Zeigt den aktuellen Backup-Status, alle verfügbaren Backups und Auto-Backup-Info.
+
+**Beispiel-Response:**
+```json
+{
+  "auto_backup": {
+    "enabled": true,
+    "interval_hours": 6,
+    "next_backup": "2025-12-17T05:19:57"
+  }
+}
+```
 
 ### POST /api/backup/create
-Erstellt ein neues Backup.
+Erstellt ein neues Backup manuell.
 - `?user_data_only=true` - Nur User-Daten sichern (schneller)
 - `?user_data_only=false` - Vollständiges Backup (default)
 

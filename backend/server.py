@@ -3870,7 +3870,7 @@ async def verify_jwt_token(request: Request) -> dict:
         raise HTTPException(status_code=401, detail="Ungültiger Token")
     
     # Get user data
-    user = await db.users.find_one({"id": payload["user_id"]}, {"_id": 0})
+    user = await db.users.find_one({"user_id": payload["user_id"]}, {"_id": 0})
     if not user:
         raise HTTPException(status_code=401, detail="User nicht gefunden")
     

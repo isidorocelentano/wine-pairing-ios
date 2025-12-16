@@ -438,6 +438,21 @@ frontend:
         agent: "testing"
         comment: "✅ APP DESCRIPTION SECTION TEST PASSED: Section visible on homepage with title 'Entdecken Sie wine-pairing.online', all 8 feature cards displayed correctly (KI-Weinpairing, Virtueller Sommelier, Umfangreiche Weindatenbank, Rebsorten-Lexikon, Mein Weinkeller, Favoriten & Community, Wein-Blog, Ständig wachsend). Complete feature showcase working perfectly."
 
+  - task: "Email/Password Authentication System"
+    implemented: true
+    working: false
+    file: "LoginPage.js, AuthContext.js, UserMenu.js, SubscriptionPage.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Test new Email/Password Authentication System including login page UI, registration flow, login flow, user menu, and subscription page"
+      - working: false
+        agent: "testing"
+        comment: "🔐 AUTHENTICATION SYSTEM PARTIALLY WORKING: ✅ UI Components: Login page with wine icon, 'Willkommen' title, Anmelden/Registrieren tabs, email/password fields, registration form with name/email/password/confirm fields, subscription page with 3 pricing cards (Basic/Kostenlos, Pro Monatlich/4,99€, Pro Jährlich/39,99€), user menu showing 'Anmelden' button when not authenticated ✅ Backend Implementation: Complete auth endpoints (/api/auth/register, /api/auth/login, /api/auth/me, /api/auth/logout) with JWT tokens, bcrypt password hashing, MongoDB user storage ❌ CRITICAL ISSUE: CORS policy blocking frontend (localhost:3000) from connecting to production backend URL (https://sommelier-kompass.preview.emergentagent.com) when using credentials. Authentication requests fail with 'Access-Control-Allow-Origin header must not be wildcard when credentials mode is include'. System is fully implemented but requires backend CORS configuration fix for proper testing and functionality."
+
 metadata:
   created_by: "main_agent"
   version: "1.0"

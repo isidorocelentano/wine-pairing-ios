@@ -4384,12 +4384,17 @@ async def startup_seed_data():
     """
     ROBUSTE DATENBANK-INITIALISIERUNG
     Prüft gegen das Backup-Manifest und stellt sicher, dass ALLE Daten korrekt sind.
-    Version 2.0 - Unzerstörbar
+    Version 3.0 - Mit automatischem Backup-System
     """
+    global backup_manager
     
     print("\n" + "=" * 60)
     print("🚀 WINE-PAIRING.ONLINE - SERVER STARTUP")
     print("=" * 60)
+    
+    # Initialisiere Backup-Manager
+    backup_manager = BackupManager(db, ROOT_DIR / "data")
+    print("📦 Backup-Manager initialisiert")
     
     # Lade das Backup-Manifest für erwartete Werte
     manifest_path = ROOT_DIR / "data" / "backup_manifest.json"

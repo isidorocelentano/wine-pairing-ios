@@ -4161,6 +4161,56 @@ async def stripe_webhook(request: Request):
         return {"status": "error", "message": str(e)}
 
 
+# ===================== STRIPE ENDPOINTS =====================
+
+@api_router.get("/subscription-plans")
+async def get_subscription_plans():
+    """Get available subscription plans"""
+    return SUBSCRIPTION_PLANS
+
+@api_router.post("/create-checkout-session")
+async def create_checkout_session(
+    request: dict,
+    current_user: dict = Depends(verify_jwt_token)
+):
+    """Create Stripe checkout session"""
+    try:
+        plan = request.get("plan")
+        if not plan or plan not in SUBSCRIPTION_PLANS:
+            raise HTTPException(status_code=400, detail="Invalid plan")
+            
+        plan_info = SUBSCRIPTION_PLANS[plan]
+        
+        # Create Stripe checkout session
+        stripe_checkout = StripeCheckout(api_key=STRIPE_API_KEY)
+        
+        checkout_request = CheckoutSessionRequest(
+            mode="subscription",
+            success_url="http://localhost:3000/subscription/success",
+            cancel_url="http://localhost:3000/subscription/cancel",
+            line_items=[{
+                "price_data": {
+                    "currency": plan_info["currency"],
+                    "product_data": {
+                        "name": f"Wine Pairing Pro - {plan_info['interval'].title()}"
+                    },
+                    "unit_amount": int(plan_info["price"] * 100),
+                    "recurring": {
+                        "interval": plan_info["interval"]
+                    }
+                },
+                "quantity": 1
+            }],
+            customer_email=current_user["email"]
+        )
+        
+        response = await stripe_checkout.create_checkout_session(checkout_request)
+        return {"checkout_url": response.url}
+        
+    except Exception as e:
+        print(f"Stripe error: {e}")
+        raise HTTPException(status_code=500, detail=f"Stripe error: {str(e)}")
+
 # Include the router AFTER middleware
 app.include_router(api_router)
 

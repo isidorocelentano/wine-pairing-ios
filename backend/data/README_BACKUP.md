@@ -1,10 +1,18 @@
-# 📦 Wine-Pairing Backup System
+# 📦 Wine-Pairing Backup System v3.0
 
 ## Übersicht
 
-Das Backup-System schützt alle Benutzerdaten vor Datenverlust bei Deployments.
+Das Backup-System schützt **ALLE** Daten vor Datenverlust bei Deployments.
 
-## Geschützte User-Collections (werden NIEMALS überschrieben)
+⚠️ **WICHTIG:** Seit Version 3.0 werden **ALLE Collections geschützt** - nicht nur User-Daten!
+
+## Schutz-Mechanismus
+
+**REGEL:** Existierende Daten werden **NIEMALS** überschrieben!
+- Nur **komplett leere** Collections werden aus dem Backup gefüllt
+- Collections mit Daten bleiben **immer** unverändert
+
+## Geschützte Collections (ALLE)
 
 | Collection | Beschreibung |
 |------------|--------------|

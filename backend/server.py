@@ -37,6 +37,11 @@ EMERGENT_LLM_KEY = os.environ.get('EMERGENT_LLM_KEY', '')
 # Stripe API Key
 STRIPE_API_KEY = os.environ.get('STRIPE_API_KEY', '')
 
+# JWT Secret Key
+JWT_SECRET = os.environ.get('JWT_SECRET', 'wine-pairing-secret-key-change-in-production-2025')
+JWT_ALGORITHM = "HS256"
+JWT_EXPIRY_DAYS = 7
+
 # ===================== FREEMIUM CONFIGURATION =====================
 FREEMIUM_LIMITS = {
     "basic": {

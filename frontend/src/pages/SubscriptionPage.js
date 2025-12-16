@@ -3,9 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Crown, Check, Wine, MessageSquare, Heart, Database, Loader2 } from 'lucide-react';
+import { Crown, Check, Wine, MessageSquare, Heart, Database, Loader2, Gift, AlertCircle, CheckCircle } from 'lucide-react';
 
 const API_URL = process.env.REACT_APP_BACKEND_URL;
 

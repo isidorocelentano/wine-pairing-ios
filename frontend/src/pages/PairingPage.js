@@ -207,8 +207,6 @@ const PairingPage = () => {
         sweetness,
         spice,
       });
-      console.log('Pairing Response:', response.data);
-      console.log('Cellar Matches:', response.data.cellar_matches);
       setResult(response.data);
       fetchHistory();
       toast.success(t('success_recommendation'));

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wine-Pairing.Online - Präsentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .presentation {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .slide {
+            background: white;
+            margin: 20px 0;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .slide h1 {
+            color: #8B0000;
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 3px solid #8B0000;
+            padding-bottom: 10px;
+        }
+        
+        .slide h2 {
+            color: #8B0000;
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .slide h3 {
+            color: #333;
+            font-size: 1.8em;
+            margin: 20px 0 10px 0;
+            border-left: 5px solid #8B0000;
+            padding-left: 15px;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 20px 0;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #8B0000;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .feature-card h4 {
+            color: #8B0000;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        
+        .feature-card p {
+            color: #666;
+            font-size: 1em;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        
+        .comparison-table th {
+            background: #8B0000;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 3em;
+            font-weight: bold;
+            color: #8B0000;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 1.2em;
+            color: #666;
+            margin-top: 10px;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #ffd700 0%, #ffd700 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .logo {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .wine-icon {
+            font-size: 4em;
+            color: #8B0000;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        li:before {
+            content: "🍷";
+            position: absolute;
+            left: 0;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #8B0000, #DC143C);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .cta-section h3 {
+            color: white;
+            border: none;
+            padding: 0;
+            margin-bottom: 15px;
+        }
+        
+        .button {
+            display: inline-block;
+            background: white;
+            color: #8B0000;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .button:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .slide {
+                padding: 20px;
+                margin: 10px 0;
+            }
+            
+            .slide h1 {
+                font-size: 2em;
+            }
+            
+            .slide h2 {
+                font-size: 1.8em;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation">
+        
+        <!-- Slide 1: Titel -->
+        <div class="slide">
+            <div class="wine-icon">🍷</div>
+            <h1>Wine-Pairing.Online</h1>
+            <div class="highlight">
+                Ihr intelligenter AI-Sommelier für perfekte Wein-Pairing-Erlebnisse
+            </div>
+            <p style="text-align: center; font-size: 1.2em; margin-top: 30px;">
+                Eine revolutionäre Plattform, die Wissenschaft, Künstliche Intelligenz und Weinleidenschaft vereint
+            </p>
+            <p style="text-align: center; color: #666; margin-top: 20px;">
+                Live auf: <strong>wine-pairing.online</strong>
+            </p>
+        </div>
+
+        <!-- Slide 2: Problem & Lösung -->
+        <div class="slide">
+            <h2>Das Problem</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>❓ Unsicherheit bei Wein-Auswahl</h4>
+                    <p>Millionen Menschen sind überfordert bei der Wahl des richtigen Weins zu ihrem Essen</p>
+                </div>
+                <div class="feature-card">
+                    <h4>💸 Teure Fehlkäufe</h4>
+                    <p>Falsche Wein-Entscheidungen führen zu Enttäuschung und Geldverschwendung</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📚 Komplexes Wein-Wissen</h4>
+                    <p>Traditionelles Wein-Lernen ist zeitaufwändig und schwer zugänglich</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🍽️ Verpasste Genusserlebnisse</h4>
+                    <p>Ohne perfekte Pairings bleibt das kulinarische Potenzial unausgeschöpft</p>
+                </div>
+            </div>
+            
+            <div class="highlight">
+                <h3 style="margin-bottom: 15px;">Unsere Lösung</h3>
+                Ein AI-gesteuerter Sommelier, der wissenschaftlich fundierte, personalisierte Wein-Empfehlungen in Sekunden liefert
+            </div>
+        </div>
+
+        <!-- Slide 3: Kernfeatures -->
+        <div class="slide">
+            <h2>🚀 Kernfeatures</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>🤖 AI-Powered Pairing</h4>
+                    <p>GPT-5.1 Integration für intelligente, wissenschaftlich fundierte Wein-Empfehlungen basierend auf Geschmacksprofilen und Aromen</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🏺 Digitaler Weinkeller</h4>
+                    <p>Verwalten Sie Ihre Weinsammlung digital mit Fotos, Notizen, Bewertungen und Inventar-Tracking</p>
+                </div>
+                <div class="feature-card">
+                    <h4>💬 24/7 Sommelier-Chat</h4>
+                    <p>Persönlicher AI-Sommelier "Claude" beantwortet alle Wein-Fragen in Echtzeit, mehrsprachig</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📚 Wein-Wissensportal</h4>
+                    <p>Umfassende Datenbank mit 1.800+ Weinen, 140+ Rebsorten und 230+ Fachartikeln</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🔬 Wissenschaftliche Analyse</h4>
+                    <p>Detaillierte Erklärungen zu Säure-Balance, Tannin-Struktur und Aromakompatibilität</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🌍 Multi-Language & Mobile</h4>
+                    <p>Verfügbar auf Deutsch, Englisch, Französisch - responsiv für alle Geräte</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Freemium Model -->
+        <div class="slide">
+            <h2>💎 Freemium-Geschäftsmodell</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Basic (Kostenlos)</th>
+                        <th>Pro (4,99€/Monat)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Pairing-Anfragen</strong></td>
+                        <td>5 pro Tag</td>
+                        <td>♾️ Unbegrenzt</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Chat mit Sommelier</strong></td>
+                        <td>5 Nachrichten/Tag</td>
+                        <td>♾️ Unbegrenzt</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Digitaler Weinkeller</strong></td>
+                        <td>Max. 10 Weine</td>
+                        <td>♾️ Unbegrenzt</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Favoriten</strong></td>
+                        <td>Max. 10</td>
+                        <td>♾️ Unbegrenzt</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Priority Support</strong></td>
+                        <td>❌</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Wissenschaftliche Analyse</strong></td>
+                        <td>Basis</td>
+                        <td>Detailliert</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="highlight">
+                🎁 <strong>Early Adopter Bonus:</strong> 100 Gutscheine für 1 Jahr kostenlosen Pro-Zugang!
+            </div>
+        </div>
+
+        <!-- Slide 5: Zahlen & Fakten -->
+        <div class="slide">
+            <h2>📊 Beeindruckende Zahlen</h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-number">1.800+</span>
+                    <span class="stat-label">Weine in der Datenbank</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">140+</span>
+                    <span class="stat-label">Rebsorten erfasst</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">230+</span>
+                    <span class="stat-label">Fachartikel & Guides</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">44</span>
+                    <span class="stat-label">Regionale Spezialitäten</span>
+                </div>
+            </div>
+            
+            <h3>Technische Excellence</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>⚡ Performance</h4>
+                    <p>FastAPI + React Stack für blitzschnelle Ladezeiten</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🔐 Sicherheit</h4>
+                    <p>JWT-Authentication, SSL-gesichert, GDPR-konform</p>
+                </div>
+                <div class="feature-card">
+                    <h4>💳 Payments</h4>
+                    <p>Stripe-Integration für sichere Zahlungsabwicklung</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🌐 Global</h4>
+                    <p>Cloudflare CDN für weltweite Verfügbarkeit</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Zielgruppen -->
+        <div class="slide">
+            <h2>🎯 Unsere Zielgruppen</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>🍽️ Hobby-Köche (40%)</h4>
+                    <p><strong>25-45 Jahre, mittleres Einkommen</strong><br>
+                    Suchen einfache, verlässliche Wein-Empfehlungen für Alltagsgerichte. Wollen ohne Fachwissen bessere Entscheidungen treffen.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🍷 Wein-Enthusiasten (30%)</h4>
+                    <p><strong>30-60 Jahre, höheres Einkommen</strong><br>
+                    Interessiert an wissenschaftlichen Analysen, seltenen Weinen und dem Ausbau ihrer digitalen Sammlung.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>👨‍🍳 Gastronomieprofis (20%)</h4>
+                    <p><strong>Restaurants, Hotels, Catering</strong><br>
+                    Nutzen die Plattform für Menu-Planung, Personalschulung und Umsatzsteigerung durch bessere Empfehlungen.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🎓 Wein-Neulinge (10%)</h4>
+                    <p><strong>21-35 Jahre, lerninteressiert</strong><br>
+                    Möchten durch AI-gestützte Erklärungen lernen und ihre erste Weinsammlung systematisch aufbauen.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Konkurrenzvorteile -->
+        <div class="slide">
+            <h2>🏆 Warum wir gewinnen</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>🔬 Wissenschaftlich fundiert</h4>
+                    <p>Echte Pairing-Wissenschaft mit Säure-Balance und Aromakompatibilität, nicht nur subjektive Meinungen</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🤖 Modernste AI-Technologie</h4>
+                    <p>GPT-5.1 Integration - immer aktuell, lernend und verbessernd</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🇩🇪 Deutsche Lokalisierung</h4>
+                    <p>Fokus auf EU-Markt mit lokalen Weinen, Gerichten und Geschmackspräferenzen</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🏗️ Komplette Ecosystem-Lösung</h4>
+                    <p>Pairing + Keller + Learning + Community - alles in einer Plattform</p>
+                </div>
+                <div class="feature-card">
+                    <h4>💰 Zugängliches Freemium</h4>
+                    <p>Jeder kann kostenlos starten - keine Barrieren für neue Nutzer</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📱 Mobile-First Design</h4>
+                    <p>Perfekt optimiert für die Nutzung beim Kochen und Einkaufen</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Roadmap -->
+        <div class="slide">
+            <h2>🚀 Roadmap 2026</h2>
+            
+            <h3>Q1 2026 - Zahlungen & Social Login</h3>
+            <ul>
+                <li>PayPal-Integration als zweite Zahlungsoption</li>
+                <li>Google Social Login für einfachere Registrierung</li>
+                <li>Erweiterte Analytics für Nutzerverhalten</li>
+            </ul>
+            
+            <h3>Q2 2026 - Mobile & AR</h3>
+            <ul>
+                <li>Native Mobile Apps (iOS & Android)</li>
+                <li>AR Weinetikett-Scanner für Produkterkennung</li>
+                <li>Community Features und User-Generated Content</li>
+                <li>Video-Kurse mit Sommelier-Experten</li>
+            </ul>
+            
+            <h3>Q3 2026 - Marketplace & Partnerships</h3>
+            <ul>
+                <li>Integration mit Wein-Onlineshops</li>
+                <li>Restaurant-Partnerships für Menu-Integration</li>
+                <li>Wein-Events und Tasting-Buchungen</li>
+                <li>B2B-Dashboard für Gastronomiebetriebe</li>
+            </ul>
+        </div>
+
+        <!-- Slide 9: Business Case -->
+        <div class="slide">
+            <h2>💰 Business Case</h2>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-number">€2.3Mrd</span>
+                    <span class="stat-label">Deutscher Weinmarkt 2024</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">15%</span>
+                    <span class="stat-label">Jährliches Wachstum Digital Wine</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">8.2Mio</span>
+                    <span class="stat-label">Deutsche Weintrinker</span>
+                </div>
+            </div>
+            
+            <h3>Geschäftsmodell-Prognose (3 Jahre)</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>Jahr 1: Markteinführung</h4>
+                    <p><strong>Ziel:</strong> 10.000 registrierte Nutzer<br>
+                    <strong>Conversion:</strong> 8% zu Pro (800 Nutzer)<br>
+                    <strong>MRR:</strong> €4.000 | <strong>ARR:</strong> €48.000</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Jahr 2: Wachstum</h4>
+                    <p><strong>Ziel:</strong> 50.000 registrierte Nutzer<br>
+                    <strong>Conversion:</strong> 12% zu Pro (6.000 Nutzer)<br>
+                    <strong>MRR:</strong> €30.000 | <strong>ARR:</strong> €360.000</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Jahr 3: Skalierung</h4>
+                    <p><strong>Ziel:</strong> 200.000 registrierte Nutzer<br>
+                    <strong>Conversion:</strong> 15% zu Pro (30.000 Nutzer)<br>
+                    <strong>MRR:</strong> €150.000 | <strong>ARR:</strong> €1.8Mio</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Call to Action -->
+        <div class="slide">
+            <div class="cta-section">
+                <h2 style="color: white; margin-bottom: 30px;">🚀 Bereit für den Start!</h2>
+                
+                <h3>Testen Sie wine-pairing.online noch heute</h3>
+                <p style="font-size: 1.2em; margin: 20px 0;">
+                    Entdecken Sie, wie AI und Wissenschaft das perfekte Wein-Erlebnis schaffen
+                </p>
+                
+                <div style="margin: 30px 0;">
+                    <a href="https://wine-pairing.online" class="button" target="_blank">🍷 Jetzt kostenlos testen</a>
+                    <a href="https://wine-pairing.online/subscription" class="button" target="_blank">💎 Pro-Version upgraden</a>
+                </div>
+                
+                <div class="highlight" style="background: white; color: #333; margin: 30px 0;">
+                    <h3 style="color: #8B0000;">🎁 Exklusiv für Early Adopters</h3>
+                    <p style="font-size: 1.1em;">
+                        100 Gutscheine für <strong>1 Jahr kostenlosen Pro-Zugang</strong><br>
+                        Format: <code>WINE-XXXX-XXXX-XXXX</code>
+                    </p>
+                </div>
+                
+                <p style="font-size: 1em; opacity: 0.9;">
+                    📧 Kontakt: info@wine-pairing.online<br>
+                    🌐 Live-Demo: wine-pairing.online<br>
+                    📱 Mobile optimiert | 🔒 GDPR-konform | 💳 Sichere Zahlungen
+                </p>
+            </div>
+        </div>
+
+    </div>
+    
+    <script>
+        // Simple presentation navigation (optional)
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowDown' || e.key === ' ') {
+                window.scrollBy(0, window.innerHeight);
+                e.preventDefault();
+            } else if (e.key === 'ArrowUp') {
+                window.scrollBy(0, -window.innerHeight);
+                e.preventDefault();
+            }
+        });
+        
+        // Smooth scrolling
+        document.documentElement.style.scrollBehavior = 'smooth';
+    </script>
+</body>
+</html>

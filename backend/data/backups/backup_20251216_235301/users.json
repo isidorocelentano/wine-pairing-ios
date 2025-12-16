@@ -1,0 +1,157 @@
+[
+  {
+    "user_id": "user_4915b0e35f5d",
+    "email": "test@winepairing.de",
+    "name": "Test User",
+    "password_hash": "$2b$12$11Hks19TXLMLFJNhKcxt5O/TQnj7gCfhlpK2P7Tq6Juy8TgRgzDjO",
+    "picture": null,
+    "plan": "basic",
+    "subscription_id": null,
+    "subscription_status": null,
+    "usage": {
+      "pairing_requests_today": 0,
+      "chat_messages_today": 0,
+      "last_usage_date": null
+    },
+    "created_at": "2025-12-16T10:29:10.582000"
+  },
+  {
+    "user_id": "user_6dd3cac89d32",
+    "email": "isicel@bluewin.ch",
+    "name": "ISICEL",
+    "password_hash": "$2b$12$C/fDInlO1rj8/VnQ.b0n5uDPbPg78ZjM3Sgj3c6kqFI47WgN8mwtq",
+    "picture": null,
+    "plan": "basic",
+    "subscription_id": null,
+    "subscription_status": null,
+    "usage": {
+      "pairing_requests_today": 2,
+      "chat_messages_today": 0,
+      "last_usage_date": "2025-12-16"
+    },
+    "created_at": "2025-12-16T11:00:47.469000"
+  },
+  {
+    "user_id": "user_5509d9df556d",
+    "email": "test@winepairing.com",
+    "name": "Test User",
+    "password_hash": "$2b$12$9SJGhazePTdP9TZEcnhWl./eFF0BXKk8TGEvC3CWR8hFijETMYHpm",
+    "picture": null,
+    "plan": "pro",
+    "subscription_id": null,
+    "subscription_status": null,
+    "usage": {
+      "pairing_requests_today": 0,
+      "chat_messages_today": 0,
+      "last_usage_date": "2025-12-16"
+    },
+    "created_at": "2025-12-16T14:14:12.087000",
+    "coupon_code": "WINE-JZH7-76MW-9X07",
+    "plan_expires_at": "2026-12-16T14:48:47.035360+00:00",
+    "upgraded_via": "coupon"
+  },
+  {
+    "user_id": "user_1685956c33d1",
+    "email": "basic@test.com",
+    "name": "Basic User",
+    "password_hash": "$2b$12$r0NN97tjq95oA/FNi37oleCdEIAZaClJufkgXvOrrROwgBvWxTxBW",
+    "picture": null,
+    "plan": "basic",
+    "subscription_id": null,
+    "subscription_status": null,
+    "usage": {
+      "pairing_requests_today": 0,
+      "chat_messages_today": 0,
+      "last_usage_date": "2025-12-16"
+    },
+    "created_at": "2025-12-16T15:19:48.293000"
+  },
+  {
+    "user_id": "1e9fb2c5-9b9b-4b91-bd59-cd486ee0d873",
+    "email": "bugfix_test_dd92f7@test.com",
+    "name": "Bugfix Test User",
+    "hashed_password": "$2b$12$/uiwnwj6EnlLt1KFDUAUwOokMjwN6y5AeWjKdn0wcXvAtUxmuVrEK",
+    "plan": "basic",
+    "created_at": "2025-12-16T22:41:09.014903+00:00"
+  },
+  {
+    "user_id": "user_e80f2ddcc0ed",
+    "email": "testuser_20251216_224326@winepairing.de",
+    "name": "Test User Bugfix",
+    "password_hash": "$2b$12$yvnQ3ox.ZwCTR2TqcbHmqeHnBmYYbzicPNTJGGQ12gay99JaA76sa",
+    "picture": null,
+    "plan": "basic",
+    "subscription_id": null,
+    "subscription_status": null,
+    "usage": {
+      "pairing_requests_today": 0,
+      "chat_messages_today": 0,
+      "last_usage_date": null
+    },
+    "created_at": "2025-12-16T22:43:27.025000"
+  },
+  {
+    "user_id": "user_20e4f9ca032c",
+    "email": "bugfixtest_20251216_224511@winepairing.de",
+    "name": "Bugfix Test User",
+    "password_hash": "$2b$12$qVNOV51mfpLuv4.KqLp9YOv7/pIDiTUELb5jZ1QCWg3NPDAUcgnsC",
+    "picture": null,
+    "plan": "basic",
+    "subscription_id": null,
+    "subscription_status": null,
+    "usage": {
+      "pairing_requests_today": 0,
+      "chat_messages_today": 0,
+      "last_usage_date": null
+    },
+    "created_at": "2025-12-16T22:45:11.977000"
+  },
+  {
+    "user_id": "user_6256ad3b88c9",
+    "email": "bugfixtest_20251216_224547@winepairing.de",
+    "name": "Bugfix Test User",
+    "password_hash": "$2b$12$e9yGpzGwhHr3Rs0l2ekxcuO.Z.8Hg8eHJohPtD0o31U38.y6OupUm",
+    "picture": null,
+    "plan": "basic",
+    "subscription_id": null,
+    "subscription_status": null,
+    "usage": {
+      "pairing_requests_today": 0,
+      "chat_messages_today": 0,
+      "last_usage_date": null
+    },
+    "created_at": "2025-12-16T22:45:48.229000"
+  },
+  {
+    "user_id": "user_02a671ffaba1",
+    "email": "backup_test_1765925962@example.com",
+    "name": "Backup Test User",
+    "password_hash": "$2b$12$bnR5KFHMrjkOGsS0/GAXpOWxhSP..F/VC..cV5X4Y3XIEkjmk2rhC",
+    "picture": null,
+    "plan": "basic",
+    "subscription_id": null,
+    "subscription_status": null,
+    "usage": {
+      "pairing_requests_today": 0,
+      "chat_messages_today": 0,
+      "last_usage_date": null
+    },
+    "created_at": "2025-12-16T22:59:23.232000"
+  },
+  {
+    "user_id": "user_a80af2572764",
+    "email": "backup_test_1765925983@example.com",
+    "name": "Backup Test User",
+    "password_hash": "$2b$12$X0BhvZ4UZVjFfwZjzlg.y.zaGU0ti54kbIdIXiev9QORjiCwvwM4q",
+    "picture": null,
+    "plan": "basic",
+    "subscription_id": null,
+    "subscription_status": null,
+    "usage": {
+      "pairing_requests_today": 0,
+      "chat_messages_today": 0,
+      "last_usage_date": null
+    },
+    "created_at": "2025-12-16T22:59:44.122000"
+  }
+]

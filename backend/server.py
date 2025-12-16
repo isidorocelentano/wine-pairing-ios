@@ -108,14 +108,18 @@ def create_accent_insensitive_pattern(search_term: str) -> str:
 PAIRING_CACHE: Dict[str, Dict[str, Any]] = {}
 CACHE_TTL = 86400  # 24 hours in seconds
 
-def get_cache_key(dish: str, language: str, wine_type_filter: Optional[str] = None) -> str:
+def get_cache_key(dish: str, language: str, wine_type_filter: Optional[str] = None, use_cellar: bool = False) -> str:
     """Generate a unique cache key for a pairing request"""
     # Normalize dish name: lowercase, strip whitespace
     normalized_dish = dish.lower().strip()
-    # Create a unique key based on dish, language, and optional wine type filter
+    # Create a unique key based on dish, language, wine type filter, AND use_cellar
     key_parts = [normalized_dish, language]
     if wine_type_filter and wine_type_filter != 'all':
         key_parts.append(wine_type_filter)
+    # WICHTIG: use_cellar muss im Cache-Key sein, sonst werden gecachte Empfehlungen
+    # ohne Keller-Weine auch für use_cellar=true zurückgegeben!
+    if use_cellar:
+        key_parts.append("cellar")
     key_string = "|".join(key_parts)
     return hashlib.md5(key_string.encode()).hexdigest()
 

@@ -2,19 +2,20 @@
 WINE-PAIRING BACKUP MANAGER
 ===========================
 Automatisches Backup-System für alle MongoDB Collections.
-Version 3.0 - Verhindert Datenverlust bei Deployments.
+Version 3.1 - Mit automatischer regelmäßiger Aktualisierung.
 
 Funktionen:
 - Automatisches Backup beim Server-Start
+- AUTOMATISCHE REGELMÄSSIGE BACKUPS (alle 6 Stunden)
 - Manuelles Backup über API
 - Wiederherstellung aus Backup
-- Schutz von User-Daten vor Überschreibung
+- Schutz von ALLEN Daten vor Überschreibung
 """
 
 import asyncio
 import json
 import os
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Dict, List, Optional, Any
 from motor.motor_asyncio import AsyncIOMotorDatabase
@@ -22,6 +23,9 @@ from bson import ObjectId
 import logging
 
 logger = logging.getLogger(__name__)
+
+# Backup-Intervall in Sekunden (6 Stunden = 21600 Sekunden)
+BACKUP_INTERVAL_SECONDS = 6 * 60 * 60  # 6 Stunden
 
 
 class MongoJSONEncoder(json.JSONEncoder):

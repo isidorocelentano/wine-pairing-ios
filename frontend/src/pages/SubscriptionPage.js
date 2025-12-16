@@ -249,8 +249,8 @@ const SubscriptionPage = () => {
                 ? 'Melden Sie sich an, um zu upgraden'
                 : 'Sign in to upgrade'}
             </p>
-            <Button onClick={loginWithGoogle}>
-              {lang === 'de' ? 'Mit Google anmelden' : 'Sign in with Google'}
+            <Button onClick={() => navigate('/login')}>
+              {lang === 'de' ? 'Anmelden / Registrieren' : 'Sign in / Register'}
             </Button>
           </div>
         )}

@@ -88,6 +88,43 @@ const SubscriptionPage = () => {
     }
   };
 
+  const handleCouponRedeem = async (e) => {
+    e.preventDefault();
+    
+    if (!isAuthenticated) {
+      navigate('/login');
+      return;
+    }
+
+    setCouponLoading(true);
+    setCouponResult(null);
+
+    try {
+      const response = await fetch(`${API_URL}/api/coupon/redeem`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ code: couponCode.trim() }),
+      });
+
+      const data = await response.json();
+      setCouponResult(data);
+
+      if (data.success) {
+        // Refresh user data to show new plan
+        await refreshUser();
+        setCouponCode('');
+      }
+    } catch (error) {
+      setCouponResult({
+        success: false,
+        message: 'Fehler beim Einlösen des Gutscheins'
+      });
+    } finally {
+      setCouponLoading(false);
+    }
+  };
+
   const lang = language || 'de';
   const isPro = user?.plan === 'pro';
 

@@ -6,7 +6,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
 from pathlib import Path
-from pydantic import BaseModel, Field, ConfigDict
+from pydantic import BaseModel, Field, ConfigDict, EmailStr
 from typing import List, Optional, Dict, Any
 import uuid
 from datetime import datetime, timezone, timedelta
@@ -20,7 +20,8 @@ import time
 import subprocess
 import asyncio
 import unicodedata
-import httpx
+import bcrypt
+import jwt
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')

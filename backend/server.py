@@ -4380,8 +4380,11 @@ async def startup_seed_data():
             print(f"   ✅ {col_name}: {count}/{exp}")
     
     # User-Collections separat prüfen (triggern KEIN Reseed)
+    # KRITISCH: Diese Collections werden NIEMALS überschrieben!
     wines_count = await db.wines.count_documents({})
+    users_count = await db.users.count_documents({})
     print(f"   🔒 wines (User-Keller): {wines_count} Flaschen")
+    print(f"   🔒 users (Benutzerkonten): {users_count} Konten")
     
     # Wenn IRGENDETWAS fehlt -> Komplettes Seeding
     if needs_reseed:

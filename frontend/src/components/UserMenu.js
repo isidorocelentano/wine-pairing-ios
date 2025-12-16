@@ -12,10 +12,10 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { User, LogOut, Crown, Settings, CreditCard } from 'lucide-react';
+import { User, LogOut, Crown, CreditCard } from 'lucide-react';
 
 const UserMenu = () => {
-  const { user, isAuthenticated, isPro, loginWithGoogle, logout, getRemainingUsage } = useAuth();
+  const { user, isAuthenticated, isPro, logout, getRemainingUsage } = useAuth();
   const { language } = useLanguage();
   const navigate = useNavigate();
   const lang = language || 'de';
@@ -25,12 +25,12 @@ const UserMenu = () => {
       <Button 
         variant="outline" 
         size="sm" 
-        onClick={loginWithGoogle}
-        className="gap-2"
+        onClick={() => navigate('/login')}
+        className="gap-2 bg-background/80 backdrop-blur-sm"
       >
         <User className="h-4 w-4" />
         <span className="hidden sm:inline">
-          {lang === 'de' ? 'Anmelden' : 'Sign in'}
+          {lang === 'de' ? 'Anmelden' : lang === 'en' ? 'Sign in' : 'Connexion'}
         </span>
       </Button>
     );
@@ -42,7 +42,7 @@ const UserMenu = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="sm" className="gap-2 px-2">
+        <Button variant="ghost" size="sm" className="gap-2 px-2 bg-background/80 backdrop-blur-sm">
           {user?.picture ? (
             <img 
               src={user.picture} 
@@ -51,7 +51,9 @@ const UserMenu = () => {
             />
           ) : (
             <div className="h-7 w-7 rounded-full bg-primary/20 flex items-center justify-center">
-              <User className="h-4 w-4 text-primary" />
+              <span className="text-xs font-medium text-primary">
+                {user?.name?.charAt(0)?.toUpperCase() || 'U'}
+              </span>
             </div>
           )}
           {isPro && (

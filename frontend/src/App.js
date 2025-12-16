@@ -34,7 +34,7 @@ import SommelierKompassPage from "@/pages/SommelierKompassPage";
 import KontaktPage from "@/pages/KontaktPage";
 import ImpressumPage from "@/pages/ImpressumPage";
 import DatenschutzPage from "@/pages/DatenschutzPage";
-import AuthCallbackPage from "@/pages/AuthCallbackPage";
+import LoginPage from "@/pages/LoginPage";
 import SubscriptionPage from "@/pages/SubscriptionPage";
 import SubscriptionSuccessPage from "@/pages/SubscriptionSuccessPage";
 

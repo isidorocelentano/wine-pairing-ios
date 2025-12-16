@@ -53067,5 +53067,1629 @@
     "created_at": "2025-12-16T22:52:20.158049Z",
     "updated_at": "2025-12-16T22:52:20.158057Z",
     "auto_generated": true
+  },
+  {
+    "name": "La Scolca Gavi dei Gavi Black Label",
+    "winery": "La Scolca",
+    "grape_variety": "Cortese",
+    "region": "Gavi, Piemont",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Ein ikonischer Gavi di Gavi mit kristallklarer Frische, Zitrusnoten, weißen Blüten und einem salzigen, mineralischen Finale, das an Meerbrise erinnert. Elegant, präzise und perfekt für alle, die charakterstarken Weißwein lieben.",
+    "description_en": "An iconic Gavi di Gavi showing crystalline freshness, citrus and white flower aromas, wrapped in a salty, mineral finish. Elegant, precise and vibrant, this is a benchmark Italian white.",
+    "description_fr": "Un Gavi di Gavi iconique, d’une fraîcheur cristalline, aux notes d’agrumes et de fleurs blanches, soutenu par une finale saline et minérale. Élégant, précis et vibrant, c’est une référence parmi les blancs italiens.",
+    "food_pairings_de": [
+      "Gegrillter Fisch und Meeresfrüchte",
+      "Vitello tonnato"
+    ],
+    "food_pairings_en": [
+      "Grilled fish and seafood",
+      "Vitello tonnato"
+    ],
+    "food_pairings_fr": [
+      "Poisson grillé et fruits de mer",
+      "Vitello tonnato"
+    ],
+    "id": "89ca5b8e-cfa6-4d43-bb4f-834c5498ef93",
+    "created_at": "2025-12-16T23:23:18.375289Z",
+    "updated_at": "2025-12-16T23:23:18.375296Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Château Lafite Rothschild Pauillac 2016",
+    "winery": "Château Lafite Rothschild",
+    "grape_variety": "Cabernet Sauvignon",
+    "region": "Bordeaux, Pauillac",
+    "country": "Frankreich",
+    "year": 2016,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein ikonischer Pauillac mit edler Cassis-Frucht, feinen Zedernnoten und seidig-präzisen Tanninen – kraftvoll, tiefgründig und von großer Finesse. Ein legendärer Bordeaux mit beeindruckendem Reifepotenzial.",
+    "description_en": "An iconic Pauillac with refined cassis fruit, cedar notes and silky, precise tannins – powerful yet beautifully elegant. A legendary Bordeaux with impressive ageing potential.",
+    "description_fr": "Un Pauillac iconique aux arômes de cassis, de cèdre et de tanins soyeux et précis – à la fois puissant et d’une grande finesse. Un grand Bordeaux doté d’un remarquable potentiel de garde.",
+    "food_pairings_de": [
+      "Rinderfilet mit Kräuterkruste",
+      "Geschmorte Lammkeule"
+    ],
+    "food_pairings_en": [
+      "Herb-crusted beef fillet",
+      "Braised lamb shank"
+    ],
+    "food_pairings_fr": [
+      "Filet de bœuf en croûte d’herbes",
+      "Souris d’agneau braisée"
+    ],
+    "id": "b75650b7-bda4-42c6-9132-afb25631f00f",
+    "created_at": "2025-12-16T23:26:21.690136Z",
+    "updated_at": "2025-12-16T23:26:21.690143Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Weitere passende Kellerweine (Hauscuvée)",
+    "winery": "Kellerei Muster",
+    "grape_variety": "Cuvée aus Riesling und Weißburgunder",
+    "region": "Pfalz",
+    "country": "Deutschland",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€",
+    "description_de": "Ein harmonischer Kellerwein mit frischer Frucht, zarter Würze und elegantem Schmelz – wie gemacht für gesellige Abende und unkomplizierten Trinkgenuss.",
+    "description_en": "A harmonious cellar cuvée with fresh fruit, gentle spice and a smooth texture, perfect for relaxed evenings and easy everyday enjoyment.",
+    "description_fr": "Une cuvée de cave harmonieuse aux arômes de fruits frais, d’épices délicates et à la texture soyeuse, idéale pour des moments conviviaux au quotidien.",
+    "food_pairings_de": [
+      "Flammkuchen mit Speck und Zwiebeln",
+      "Gebratenes Hühnchen mit Kräutern"
+    ],
+    "food_pairings_en": [
+      "Tarte flambée with bacon and onions",
+      "Roast herb chicken"
+    ],
+    "food_pairings_fr": [
+      "Flammekueche au lard et aux oignons",
+      "Poulet rôti aux herbes"
+    ],
+    "id": "a92abf5d-b00a-4346-8a02-0bfe58eb63d8",
+    "created_at": "2025-12-16T23:26:25.582817Z",
+    "updated_at": "2025-12-16T23:26:25.582825Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Kanonkop Paul Sauer 2017",
+    "winery": "Kanonkop Wine Estate",
+    "grape_variety": "Cabernet Sauvignon, Merlot, Cabernet Franc",
+    "region": "Stellenbosch",
+    "country": "Südafrika",
+    "year": 2017,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ikonischer Bordeaux-Blend vom Kap mit tiefdunkler Frucht, edler Würze und samtigen Tanninen – kraftvoll, komplex und doch erstaunlich elegant.",
+    "description_en": "Iconic Cape Bordeaux blend with dark fruit, refined spice and velvety tannins, showing great power, depth and remarkable elegance.",
+    "description_fr": "Assemblage bordelais emblématique du Cap, aux fruits noirs profonds, épices raffinées et tanins veloutés, puissant mais d’une grande élégance.",
+    "food_pairings_de": [
+      "Rinderfilet oder Ribeye-Steak vom Grill",
+      "Lammkarree mit Kräuterkruste"
+    ],
+    "food_pairings_en": [
+      "Grilled ribeye or beef tenderloin",
+      "Herb-crusted rack of lamb"
+    ],
+    "food_pairings_fr": [
+      "Côte de bœuf grillée",
+      "Carré d’agneau en croûte d’herbes"
+    ],
+    "id": "eede9dd6-c273-48af-9bc7-322261ca8476",
+    "created_at": "2025-12-16T23:26:31.075746Z",
+    "updated_at": "2025-12-16T23:26:31.075755Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Château Phélan Ségur Saint-Estèphe",
+    "winery": "Château Phélan Ségur",
+    "grape_variety": "Cabernet Sauvignon, Merlot",
+    "region": "Bordeaux (St-Estèphe)",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein tiefgründiger, klassischer Saint-Estèphe mit dunkler Frucht, feinen Röstaromen und straffer, dennoch seidiger Struktur – kraftvoll und elegant zugleich.",
+    "description_en": "A profound, classic Saint-Estèphe with dark fruit, subtle oak spice and firm yet silky tannins, combining power with refined elegance.",
+    "description_fr": "Un Saint-Estèphe profond et classique, marqué par des fruits noirs, des notes boisées délicates et des tanins fermes mais soyeux, alliant puissance et élégance.",
+    "food_pairings_de": [
+      "Entrecôte mit Kräuterbutter",
+      "Geschmorte Lammkeule"
+    ],
+    "food_pairings_en": [
+      "Ribeye steak with herb butter",
+      "Slow-braised lamb shank"
+    ],
+    "food_pairings_fr": [
+      "Entrecôte grillée au beurre maître d'hôtel",
+      "Souris d'agneau braisée"
+    ],
+    "id": "4bb6a7b7-7620-43e1-b1b7-765641fe86b0",
+    "created_at": "2025-12-16T23:26:38.577218Z",
+    "updated_at": "2025-12-16T23:26:38.577225Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Côte-Rôtie",
+    "winery": "E. Guigal",
+    "grape_variety": "Syrah (mit kleinem Viognier-Anteil)",
+    "region": "Nördliche Rhône",
+    "country": "Frankreich",
+    "year": 2020,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein vielschichtiger, seidiger Côte-Rôtie mit dunkler Frucht, feiner Würze und eleganter Rauchnote – kraftvoll und doch präzise, mit großem Reifepotenzial.",
+    "description_en": "A complex, silky Côte-Rôtie showing dark fruit, subtle spice and refined smokiness – powerful yet precise, with impressive aging potential.",
+    "description_fr": "Un Côte-Rôtie complexe et soyeux, marqué par des fruits noirs, des épices fines et une élégante touche fumée – à la fois puissant et précis, avec un grand potentiel de garde.",
+    "food_pairings_de": [
+      "Lammkarree mit Kräuterkruste",
+      "Geschmorte Rinderbäckchen"
+    ],
+    "food_pairings_en": [
+      "Herb-crusted rack of lamb",
+      "Braised beef cheeks"
+    ],
+    "food_pairings_fr": [
+      "Carré d'agneau en croûte d'herbes",
+      "Joues de bœuf braisées"
+    ],
+    "id": "4ed49acd-3bcf-4193-9583-1d728e58684d",
+    "created_at": "2025-12-16T23:28:07.892681Z",
+    "updated_at": "2025-12-16T23:28:07.892689Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Bollinger La Grande Année Brut",
+    "winery": "Champagne Bollinger",
+    "grape_variety": "Pinot Noir & Chardonnay",
+    "region": "Champagne",
+    "country": "Frankreich",
+    "year": 2014,
+    "wine_color": "weiß",
+    "price_category": "€€€€",
+    "description_de": "Ein kraftvoller, zugleich präziser Prestige-Champagner mit feiner Perlage, Noten von gerösteten Nüssen, Brioche und reifer Zitrusfrucht, der Eleganz und Tiefe meisterhaft vereint. Ein Wein für große Momente und Feinschmecker, die Komplexität lieben.",
+    "description_en": "A powerful yet precise prestige Champagne with fine mousse, layers of toasted nuts, brioche and ripe citrus, combining remarkable depth with elegance. Crafted for special occasions and lovers of complex, gastronomic wines.",
+    "description_fr": "Un champagne de prestige puissant et précis, à la bulle fine, aux notes de fruits mûrs, de brioche et de fruits secs, alliant grande profondeur et élégance. Un vin de gastronomie pour les moments d’exception.",
+    "food_pairings_de": [
+      "Hummer mit Butter und Zitrone",
+      "Gebratene Jakobsmuscheln auf Blumenkohlpüree"
+    ],
+    "food_pairings_en": [
+      "Lobster with butter and lemon",
+      "Seared scallops on cauliflower purée"
+    ],
+    "food_pairings_fr": [
+      "Homard au beurre citronné",
+      "Noix de Saint-Jacques poêlées sur purée de chou-fleur"
+    ],
+    "id": "ba9948bf-c6cc-49e7-8f38-5d7bb98c929f",
+    "created_at": "2025-12-16T23:28:13.227656Z",
+    "updated_at": "2025-12-16T23:28:13.227663Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Barolo “Castiglione”",
+    "winery": "Vietti",
+    "grape_variety": "Nebbiolo",
+    "region": "Piemont",
+    "country": "Italien",
+    "year": 2019,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Kraftvoller, vielschichtiger Barolo mit duftigen Rosen- und Veilchennoten, dunkler Kirsche, Gewürzen und straffem, aber feinem Tannin – ein Charakterwein mit großer Tiefe und Eleganz.",
+    "description_en": "Powerful and complex Barolo showing roses, dark cherry, spice and firm yet fine-grained tannins – a characterful wine with impressive depth and elegance.",
+    "description_fr": "Barolo puissant et complexe aux notes de rose, de cerise noire et d’épices, soutenu par des tanins fermes mais élégants – un vin de caractère, profond et raffiné.",
+    "food_pairings_de": [
+      "Geschmorte Rinderbäckchen",
+      "Trüffelrisotto"
+    ],
+    "food_pairings_en": [
+      "Braised beef cheeks",
+      "Truffle risotto"
+    ],
+    "food_pairings_fr": [
+      "Joues de bœuf braisées",
+      "Risotto aux truffes"
+    ],
+    "id": "b9f6ae2b-51bb-4c38-bac2-cab2de8c5e4f",
+    "created_at": "2025-12-16T23:28:17.767049Z",
+    "updated_at": "2025-12-16T23:28:17.767057Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Château Batailley Pauillac, Bordeaux",
+    "winery": "Château Batailley",
+    "grape_variety": "Cabernet Sauvignon-dominierte Cuvée",
+    "region": "Pauillac, Bordeaux",
+    "country": "Frankreich",
+    "year": 2020,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein kraftvoller Pauillac-Klassiker mit dunkler Beerenfrucht, Zedernholz und feinen Tanninen – elegant, tief und mit großem Reifepotenzial. Ein Wein, der den Charakter des Médoc mit jeder Nuance im Glas spürbar macht.",
+    "description_en": "A powerful, classic Pauillac with dark berry fruit, cedar notes and fine-grained tannins, offering great depth and aging potential. This is a structured yet elegant Médoc wine with impressive length.",
+    "description_fr": "Un Pauillac classique et puissant, aux arômes de fruits noirs, de cèdre et de tanins fins, doté d’une grande profondeur et d’un beau potentiel de garde. Un vin structuré mais élégant, à la finale persistante.",
+    "food_pairings_de": [
+      "Entrecôte vom Rind mit Rotweinsauce",
+      "Lammkarree mit Kräuterkruste"
+    ],
+    "food_pairings_en": [
+      "Rib-eye steak with red wine jus",
+      "Herb-crusted rack of lamb"
+    ],
+    "food_pairings_fr": [
+      "Entrecôte grillée avec jus au vin rouge",
+      "Carré d’agneau en croûte d’herbes"
+    ],
+    "id": "c05927c2-0154-4935-8dc4-021cbe183892",
+    "created_at": "2025-12-16T23:28:50.499198Z",
+    "updated_at": "2025-12-16T23:28:50.499206Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Catena Zapata Malbec Argentino, Mendoza",
+    "winery": "Bodega Catena Zapata",
+    "grape_variety": "Malbec",
+    "region": "Mendoza",
+    "country": "Argentinien",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein opulenter, tiefdunkler Malbec mit reifen Brombeer- und Pflaumenaromen, umrahmt von Veilchen, Kakao und feiner Würze – kraftvoll, sinnlich und zugleich elegant.",
+    "description_en": "An opulent, deeply colored Malbec showing ripe blackberry and plum, layered with violets, cocoa and spice – powerful, sensual and remarkably elegant.",
+    "description_fr": "Un Malbec opulent et profond aux arômes de mûre et de prune bien mûres, rehaussés de violette, de cacao et d’épices, à la fois puissant, sensuel et élégant.",
+    "food_pairings_de": [
+      "Rindersteak vom Grill",
+      "Geschmorte Lammkeule"
+    ],
+    "food_pairings_en": [
+      "Grilled beef steak",
+      "Braised lamb shank"
+    ],
+    "food_pairings_fr": [
+      "Steak de bœuf grillé",
+      "Souris ou jarret d’agneau braisé"
+    ],
+    "id": "738ef72b-57e4-4891-a40f-d9062d74a39a",
+    "created_at": "2025-12-16T23:28:54.514829Z",
+    "updated_at": "2025-12-16T23:28:54.514836Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Pio Cesare Barolo DOCG",
+    "winery": "Pio Cesare",
+    "grape_variety": "Nebbiolo",
+    "region": "Piemont, Barolo",
+    "country": "Italien",
+    "year": 2019,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein kraftvoller, zugleich eleganter Barolo mit viel Tiefe, reifen roten Früchten, Rosenblättern und feinen Gewürznoten, getragen von markanten, aber edlen Tanninen. Ein Wein für große Momente und lange Abende.",
+    "description_en": "A powerful yet elegant Barolo showing deep red fruit, roses and subtle spice, supported by firm, polished tannins and vibrant acidity. A classic, age-worthy expression of Nebbiolo.",
+    "description_fr": "Un Barolo puissant et élégant, aux arômes de fruits rouges mûrs, de rose et d’épices fines, soutenu par des tanins fermes mais raffinés. Une grande cuvée de garde, emblématique du Nebbiolo.",
+    "food_pairings_de": [
+      "Geschmorte Rinderbäckchen",
+      "Tagliatelle mit Trüffel"
+    ],
+    "food_pairings_en": [
+      "Braised beef cheeks",
+      "Tagliatelle with truffle"
+    ],
+    "food_pairings_fr": [
+      "Joues de bœuf braisées",
+      "Tagliatelles aux truffes"
+    ],
+    "id": "2adbb840-3cda-421b-a596-24fd3971a544",
+    "created_at": "2025-12-16T23:29:45.707696Z",
+    "updated_at": "2025-12-16T23:29:45.707703Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Domaine de la Janasse Côtes du Rhône Réserve",
+    "winery": "Domaine de la Janasse",
+    "grape_variety": "Grenache-Syrah-Mourvèdre-Cuvée",
+    "region": "Côtes du Rhône",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Ein kraftvoller, dennoch eleganter Côtes du Rhône mit dunkler Frucht, würzigen Kräutern der Garrigue und einem langen, seidigen Finale – pure südfranzösische Lebensfreude im Glas.",
+    "description_en": "A powerful yet refined Côtes du Rhône, bursting with dark berry fruit, garrigue spices and a long, silky finish – a true taste of the southern Rhône.",
+    "description_fr": "Un Côtes du Rhône puissant et élégant, aux arômes de fruits noirs, d’herbes de garrigue et aux tanins soyeux, avec une finale longue et harmonieuse.",
+    "food_pairings_de": [
+      "Lammkoteletts mit Kräutern der Provence",
+      "Geschmorte Rinderbäckchen"
+    ],
+    "food_pairings_en": [
+      "Herb-crusted lamb chops",
+      "Slow-braised beef cheeks"
+    ],
+    "food_pairings_fr": [
+      "Côtes d’agneau aux herbes de Provence",
+      "Joues de bœuf braisées"
+    ],
+    "id": "27ee0593-0ab5-4928-9d5d-784e4ac52153",
+    "created_at": "2025-12-16T23:29:50.091906Z",
+    "updated_at": "2025-12-16T23:29:50.091914Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Bordeaux Réserve Douce",
+    "winery": "Château des Douces",
+    "grape_variety": "Merlot-dominierte Cuvée",
+    "region": "Bordeaux",
+    "country": "Frankreich",
+    "year": 2016,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein feiner, gereifter Bordeaux aus der weicheren Fraktion mit seidigen Tanninen, reifer Frucht und zarten Würznoten – harmonisch, rund und wunderbar zugänglich.",
+    "description_en": "A fine, matured Bordeaux from the softer side, offering silky tannins, ripe fruit and subtle spice for a harmonious, approachable style.",
+    "description_fr": "Un Bordeaux fin et évolué, dans un style souple, aux tanins soyeux, aux fruits mûrs et aux épices délicates, harmonieux et très accessible.",
+    "food_pairings_de": [
+      "Kalbsrücken mit Kräuterkruste",
+      "Geschmorte Lammkeule"
+    ],
+    "food_pairings_en": [
+      "Herb-crusted veal roast",
+      "Slow-braised lamb shank"
+    ],
+    "food_pairings_fr": [
+      "Rôti de veau en croûte d'herbes",
+      "Souris d'agneau braisée"
+    ],
+    "id": "0d0b6bcc-a5d3-41f1-9dff-172f4be84fa4",
+    "created_at": "2025-12-16T23:30:41.423072Z",
+    "updated_at": "2025-12-16T23:30:41.423080Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Château Haut-Marbuzet Saint-Estèphe",
+    "winery": "Château Haut-Marbuzet",
+    "grape_variety": "Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot",
+    "region": "Bordeaux (Saint-Estèphe)",
+    "country": "Frankreich",
+    "year": 2020,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein kraftvoller, sinnlicher Bordeaux mit dunkler Frucht, feiner Würze und samtigen Tanninen – zugleich klassisch und verführerisch. Ein Wein, der mit jedem Schluck an Tiefe und Eleganz gewinnt.",
+    "description_en": "A powerful yet seductive Saint-Estèphe, layered with dark berries, spice and velvety tannins. A classic Bordeaux with impressive depth and lingering elegance.",
+    "description_fr": "Un Saint-Estèphe puissant et séducteur, aux arômes de fruits noirs, d’épices et aux tanins veloutés. Un Bordeaux classique, profond et d’une grande élégance en finale.",
+    "food_pairings_de": [
+      "Entrecôte vom Rind mit Kräuterbutter",
+      "Lammkarree mit Knoblauch und Rosmarin"
+    ],
+    "food_pairings_en": [
+      "Grilled ribeye steak with herb butter",
+      "Roast rack of lamb with garlic and rosemary"
+    ],
+    "food_pairings_fr": [
+      "Entrecôte grillée au beurre maître d’hôtel",
+      "Carré d’agneau rôti à l’ail et au romarin"
+    ],
+    "id": "f4b083e6-4252-41a6-83a5-9ebc5f28baaa",
+    "created_at": "2025-12-16T23:30:46.216887Z",
+    "updated_at": "2025-12-16T23:30:46.216894Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Château Moulin Riche Saint-Julien",
+    "winery": "Château Moulin Riche",
+    "grape_variety": "Cabernet Sauvignon, Merlot, Petit Verdot",
+    "region": "Bordeaux (Saint-Julien)",
+    "country": "Frankreich",
+    "year": 2020,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein eleganter Saint-Julien mit dunkelbeeriger Frucht, feinen Röstaromen und seidig strukturierten Tanninen – kraftvoll, aber stets nobel und ausgewogen.",
+    "description_en": "An elegant Saint-Julien with dark berry fruit, subtle toast notes and silky tannins, offering a refined balance of power and finesse.",
+    "description_fr": "Un Saint-Julien élégant aux arômes de fruits noirs, de notes toastées et de tanins soyeux, alliant puissance maîtrisée et grande finesse.",
+    "food_pairings_de": [
+      "Entrecôte vom Rind mit Kräuterbutter",
+      "Geschmorte Lammkeule mit Rosmarin"
+    ],
+    "food_pairings_en": [
+      "Ribeye steak with herb butter",
+      "Slow-braised lamb shank with rosemary"
+    ],
+    "food_pairings_fr": [
+      "Entrecôte grillée au beurre maître d'hôtel",
+      "Souris d’agneau confite au romarin"
+    ],
+    "id": "0b1f9942-de8c-4a1e-945a-46cd38907476",
+    "created_at": "2025-12-16T23:30:51.821920Z",
+    "updated_at": "2025-12-16T23:30:51.821928Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Nicht für Wiener Schnitzel empfehlen würde ich aus deinem Keller",
+    "winery": "Fiktives Weingut Kellerweis",
+    "grape_variety": "Cuvée aus Cabernet Sauvignon & Syrah",
+    "region": "Pfalz",
+    "country": "Deutschland",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Ein kraftvoll-würziger Rotwein mit dunkler Frucht, spürbaren Tanninen und rauchigen Noten – eher ein Charakterkopf als ein Schmeichler am Gaumen.",
+    "description_en": "A powerful, spicy red with dark fruit, firm tannins and smoky notes – more of a character wine than an easy sipper.",
+    "description_fr": "Un rouge puissant et épicé aux fruits noirs, tanins fermes et notes fumées – un vin de caractère plutôt qu’un charmeur facile.",
+    "food_pairings_de": [
+      "Gegrilltes Rindfleisch",
+      "Würzige Lammkoteletts"
+    ],
+    "food_pairings_en": [
+      "Grilled beef",
+      "Spicy lamb chops"
+    ],
+    "food_pairings_fr": [
+      "Bœuf grillé",
+      "Côtelettes d’agneau épicées"
+    ],
+    "id": "ae4489e1-5a10-400e-b0cb-227aaf99279c",
+    "created_at": "2025-12-16T23:30:59.292368Z",
+    "updated_at": "2025-12-16T23:30:59.292375Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Allgemeine Empfehlungen (falls du zusätzlich etwas einkaufst)",
+    "winery": "Unbekannt",
+    "grape_variety": "Cuvée",
+    "region": "Unbekannt",
+    "country": "Unbekannt",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€",
+    "description_de": "Ein unkomplizierter, vielseitiger Begleiter für unterschiedlichste Gelegenheiten, der sich harmonisch an viele Speisen anpasst. Ideal, wenn du dir ohne lange Suche etwas Passendes ins Glas holen möchtest.",
+    "description_en": "An easygoing, versatile wine that matches a wide range of dishes, perfect when you want something reliable without overthinking it.",
+    "description_fr": "Un vin polyvalent et agréable, qui accompagne facilement de nombreux plats, idéal lorsque vous voulez quelque chose de fiable sans trop réfléchir.",
+    "food_pairings_de": [
+      "Pasta mit leichter Gemüsesauce",
+      "Gemischte Antipasti-Platte"
+    ],
+    "food_pairings_en": [
+      "Pasta with light vegetable sauce",
+      "Mixed antipasti platter"
+    ],
+    "food_pairings_fr": [
+      "Pâtes aux légumes légers",
+      "Assortiment d'antipasti"
+    ],
+    "id": "7d0ee771-7b22-42be-9280-fc79534e8c8a",
+    "created_at": "2025-12-16T23:31:03.789237Z",
+    "updated_at": "2025-12-16T23:31:03.789245Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Grüner Veltliner „Loiser Berg“",
+    "winery": "Weingut Loimer",
+    "grape_variety": "Grüner Veltliner",
+    "region": "Kamptal",
+    "country": "Österreich",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Ein präziser, kühler Grüner Veltliner mit saftiger Zitrusfrucht, würzigem Pfeffer und mineralischer Frische, der den Loiser Berg glasklar ins Glas übersetzt.",
+    "description_en": "A precise, cool-climate Grüner Veltliner with juicy citrus fruit, white pepper spice and vibrant minerality, capturing the character of the Loiser Berg in the glass.",
+    "description_fr": "Un Grüner Veltliner précis et frais, aux notes d’agrumes juteux, de poivre blanc et à la minéralité vibrante, qui exprime fidèlement le terroir de Loiser Berg.",
+    "food_pairings_de": [
+      "Wiener Schnitzel mit Kartoffelsalat",
+      "Gegrillter Zander mit Gemüse"
+    ],
+    "food_pairings_en": [
+      "Wiener schnitzel with potato salad",
+      "Grilled pike-perch with vegetables"
+    ],
+    "food_pairings_fr": [
+      "Escalope viennoise avec salade de pommes de terre",
+      "Sandre grillé aux légumes"
+    ],
+    "id": "6f609d70-0252-4660-ae00-3f3fac541141",
+    "created_at": "2025-12-16T23:31:25.796753Z",
+    "updated_at": "2025-12-16T23:31:25.796761Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Welschriesling „Steirische Klassik“",
+    "winery": "Weingut Tement",
+    "grape_variety": "Welschriesling",
+    "region": "Südsteiermark",
+    "country": "Österreich",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€",
+    "description_de": "Glasklarer, animierender Welschriesling aus der Südsteiermark mit zitrischer Frische, knackiger Säure und feiner Kräuterwürze – ein puristischer Botschafter der Steirischen Klassik.",
+    "description_en": "Crystal-clear, vibrant Welschriesling from Southern Styria with citrus-driven freshness, crisp acidity and subtle herbal notes – a pure expression of the Styrian classic style.",
+    "description_fr": "Welschriesling limpide et vif de Styrie du Sud, marqué par des notes d’agrumes, une acidité croquante et une fine touche herbacée – une expression pure du style classique styrien.",
+    "food_pairings_de": [
+      "Steirischer Backhendlsalat mit Kürbiskernöl",
+      "Leichte Fischgerichte und frische Blattsalate"
+    ],
+    "food_pairings_en": [
+      "Crispy fried chicken salad with pumpkin seed oil",
+      "Light fish dishes and fresh green salads"
+    ],
+    "food_pairings_fr": [
+      "Salade de poulet frit à la mode styrienne avec huile de pépin de courge",
+      "Poissons légers et salades vertes fraîches"
+    ],
+    "id": "007cd888-65f5-4df1-8a98-54b29188b79c",
+    "created_at": "2025-12-16T23:31:31.605266Z",
+    "updated_at": "2025-12-16T23:31:31.605273Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Château Branaire-Ducru, Saint-Julien",
+    "winery": "Château Branaire-Ducru",
+    "grape_variety": "Cabernet Sauvignon",
+    "region": "Bordeaux",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein eleganter, fein strukturierter Saint-Julien mit dichter Cassisfrucht, kühlen Grafitnoten und seidig ausgereiftem Tannin – kraftvoll, aber stets präzise und nobel. Ein klassischer Médoc mit großer Finesse und beeindruckendem Reifepotenzial.",
+    "description_en": "An elegant and finely structured Saint-Julien, showing pure cassis fruit, graphite notes and silky ripe tannins – powerful yet precise and noble. A classic Médoc with great finesse and impressive ageing potential.",
+    "description_fr": "Un Saint-Julien élégant et finement structuré, aux arômes purs de cassis, de graphite et aux tanins mûrs et soyeux – puissant mais précis et noble. Un grand classique du Médoc doté d’un beau potentiel de garde.",
+    "food_pairings_de": [
+      "Entrecôte vom Rind mit Kräuterbutter",
+      "Lammkarree mit Rosmarin und Knoblauch"
+    ],
+    "food_pairings_en": [
+      "Ribeye steak with herb butter",
+      "Roast rack of lamb with rosemary and garlic"
+    ],
+    "food_pairings_fr": [
+      "Entrecôte grillée au beurre aux herbes",
+      "Carré d’agneau rôti au romarin et à l’ail"
+    ],
+    "id": "cedf88bf-ccb9-4988-a10e-229a134f3cf8",
+    "created_at": "2025-12-16T23:41:47.374672Z",
+    "updated_at": "2025-12-16T23:41:47.374679Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Marchesi Antinori \"Tignanello\" Toscana IGT",
+    "winery": "Marchesi Antinori",
+    "grape_variety": "Sangiovese (mit Cabernet Sauvignon & Cabernet Franc)",
+    "region": "Toskana",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ikonischer Supertoskaner mit tiefer Frucht, feiner Würze und seidigen Tanninen – kraftvoll, zugleich elegant und unglaublich langlebig.",
+    "description_en": "Iconic Super Tuscan with deep fruit, fine spice and silky tannins – powerful yet refined, with impressive aging potential.",
+    "description_fr": "Super Toscan emblématique aux fruits profonds, aux épices fines et aux tanins soyeux – puissant, raffiné et taillé pour la garde.",
+    "food_pairings_de": [
+      "Bistecca alla Fiorentina",
+      "Geschmorte Lammhaxe mit Rosmarin"
+    ],
+    "food_pairings_en": [
+      "Bistecca alla Fiorentina",
+      "Braised lamb shank with rosemary"
+    ],
+    "food_pairings_fr": [
+      "Bistecca alla Fiorentina",
+      "Souris d’agneau braisée au romarin"
+    ],
+    "id": "7911393b-feca-4cde-8213-a078342b9764",
+    "created_at": "2025-12-16T23:41:51.610900Z",
+    "updated_at": "2025-12-16T23:41:51.610908Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Paul Jaboulet Aîné \"Les Jalets\" Crozes-Hermitage",
+    "winery": "Paul Jaboulet Aîné",
+    "grape_variety": "Syrah",
+    "region": "Crozes-Hermitage, Rhône",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein charmanter Crozes-Hermitage mit dunkler Frucht, Pfefferwürze und seidigen Tanninen – saftig, elegant und mit typischer Rhône-Finesse.",
+    "description_en": "A charming Crozes-Hermitage with dark fruit, peppery spice and silky tannins – juicy, elegant and distinctly Rhône in character.",
+    "description_fr": "Un Crozes-Hermitage charmeur aux fruits noirs, notes poivrées et tanins soyeux, alliant jutosité, élégance et authenticité rhodanienne.",
+    "food_pairings_de": [
+      "Lammkoteletts mit Kräutern der Provence",
+      "Geschmorte Rinderschulter"
+    ],
+    "food_pairings_en": [
+      "Herb-crusted lamb chops",
+      "Braised beef shoulder"
+    ],
+    "food_pairings_fr": [
+      "Côtelettes d’agneau aux herbes de Provence",
+      "Paleron de bœuf braisé"
+    ],
+    "id": "a17e4912-90d0-4097-86c2-ae276cbd951a",
+    "created_at": "2025-12-16T23:41:56.542000Z",
+    "updated_at": "2025-12-16T23:41:56.542008Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Bollinger Special Cuvée Brut Champagne",
+    "winery": "Champagne Bollinger",
+    "grape_variety": "Pinot Noir, Chardonnay, Meunier",
+    "region": "Champagne",
+    "country": "Frankreich",
+    "year": 0,
+    "wine_color": "weiß",
+    "price_category": "€€€€",
+    "description_de": "Ein ikonischer Champagner mit intensiver Brioche-Note, reifen Äpfeln und feinster Perlage – kraftvoll, elegant und herrlich tiefgründig.",
+    "description_en": "An iconic Champagne with rich brioche aromas, ripe apple notes and an exceptionally fine mousse—powerful, elegant and deeply complex.",
+    "description_fr": "Un Champagne iconique aux arômes de brioche, de pomme mûre et à la bulle très fine, à la fois puissant, élégant et d’une grande complexité.",
+    "food_pairings_de": [
+      "Austern und Meeresfrüchteplatte",
+      "Gebratener Steinbutt mit Beurre Blanc"
+    ],
+    "food_pairings_en": [
+      "Oysters and seafood platter",
+      "Roasted turbot with beurre blanc"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fruits de mer",
+      "Turbot rôti sauce beurre blanc"
+    ],
+    "id": "ab6b172e-b7bd-4971-831e-fd92c6a879a6",
+    "created_at": "2025-12-16T23:42:02.982790Z",
+    "updated_at": "2025-12-16T23:42:02.982798Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Pinot Noir \"Sanford & Benedict Vineyard\", Sta. Rita Hills",
+    "winery": "Sanford Winery",
+    "grape_variety": "Pinot Noir",
+    "region": "Sta. Rita Hills, Santa Barbara County, California",
+    "country": "USA",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein eleganter Pinot Noir aus der kühlen Sta.-Rita-Hills-Lage Sanford & Benedict: duftig, feinwürzig und seidig, mit roten Beeren, zarter Mineralität und langem, vibrierendem Nachhall.",
+    "description_en": "An elegant Pinot Noir from the cool-climate Sanford & Benedict Vineyard in Sta. Rita Hills, offering fragrant red berries, subtle spice, fine minerality and a long, silky finish.",
+    "description_fr": "Un Pinot Noir élégant du vignoble frais Sanford & Benedict à Sta. Rita Hills, avec des arômes de fruits rouges, d’épices fines, une belle minéralité et une finale longue et soyeuse.",
+    "food_pairings_de": [
+      "Gebratene Entenbrust mit Kirschreduktion",
+      "Gegrillter Lachs mit Kräutern"
+    ],
+    "food_pairings_en": [
+      "Roast duck breast with cherry reduction",
+      "Grilled salmon with herbs"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard rôti aux cerises",
+      "Saumon grillé aux herbes"
+    ],
+    "id": "4d09ac5c-f3c9-4fae-9291-58cf375468fd",
+    "created_at": "2025-12-16T23:42:07.151105Z",
+    "updated_at": "2025-12-16T23:42:07.151112Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Brunello di Montalcino DOCG",
+    "winery": "Biondi-Santi",
+    "grape_variety": "Sangiovese (Brunello)",
+    "region": "Toskana",
+    "country": "Italien",
+    "year": 2018,
+    "wine_color": "rot",
+    "price_category": "€€€€€",
+    "description_de": "Ikonischer Brunello mit kühler Eleganz, feiner Säure und straffer Tanninstruktur, der in der Tiefe rote Früchte, Tabak und erdige Würze entfaltet. Ein stillvoller, langlebiger Klassiker aus Montalcino.",
+    "description_en": "An iconic Brunello showing cool elegance, vivid acidity and firm tannins, unfolding layers of red fruit, tobacco and earthy spice. A refined, long-lived classic from Montalcino.",
+    "description_fr": "Brunello emblématique à l’élégance fraîche, aux tanins fermes et à l’acidité vive, exprimant fruits rouges, tabac et notes terreuses. Un grand classique raffiné et taillé pour la garde.",
+    "food_pairings_de": [
+      "Bistecca alla Fiorentina",
+      "Wildschweinragout mit Polenta"
+    ],
+    "food_pairings_en": [
+      "Dry-aged ribeye steak",
+      "Slow-braised wild boar ragout"
+    ],
+    "food_pairings_fr": [
+      "Côte de bœuf grillée",
+      "Ragoût de sanglier braisé lentement"
+    ],
+    "id": "a169a4a6-6add-4bdb-b12e-3e05de686a89",
+    "created_at": "2025-12-16T23:42:36.505078Z",
+    "updated_at": "2025-12-16T23:42:36.505085Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Côte-Rôtie",
+    "winery": "E. Guigal",
+    "grape_variety": "Syrah",
+    "region": "Nördliche Rhône",
+    "country": "Frankreich",
+    "year": 2020,
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Ein kraftvoller, doch seidig-eleganter Côte-Rôtie mit dunklen Früchten, feiner Würze und einem Hauch Veilchen, der lange am Gaumen nachklingt.",
+    "description_en": "A powerful yet silky Côte-Rôtie with dark fruit, fine spice and a touch of violet that lingers beautifully on the palate.",
+    "description_fr": "Un Côte-Rôtie puissant mais soyeux, aux fruits noirs, aux épices délicates et à une légère note de violette qui persiste en bouche.",
+    "food_pairings_de": [
+      "Entrecôte mit Kräuterbutter",
+      "Geschmorte Lammkeule"
+    ],
+    "food_pairings_en": [
+      "Ribeye steak with herb butter",
+      "Braised lamb shank"
+    ],
+    "food_pairings_fr": [
+      "Entrecôte aux herbes",
+      "Souris d’agneau braisée"
+    ],
+    "id": "12498761-2098-4984-8893-c71c4afd1373",
+    "created_at": "2025-12-16T23:42:40.083875Z",
+    "updated_at": "2025-12-16T23:42:40.083882Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Barbaresco DOCG",
+    "winery": "Produttori del Barbaresco",
+    "grape_variety": "Nebbiolo",
+    "region": "Piemont",
+    "country": "Italien",
+    "year": 2020,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein klassischer Barbaresco mit betörenden Noten von roten Beeren, Rosenblättern und feiner Würze, getragen von eleganten Tanninen und großer Finesse.",
+    "description_en": "A benchmark Barbaresco showing red berry, rose petal and subtle spice notes, framed by fine tannins and remarkable elegance.",
+    "description_fr": "Un Barbaresco de référence aux arômes de petits fruits rouges, de pétales de rose et d’épices fines, avec des tanins élégants et une grande finesse.",
+    "food_pairings_de": [
+      "Trüffelrisotto",
+      "Geschmorte Kalbsbäckchen"
+    ],
+    "food_pairings_en": [
+      "Truffle risotto",
+      "Braised veal cheeks"
+    ],
+    "food_pairings_fr": [
+      "Risotto aux truffes",
+      "Joues de veau braisées"
+    ],
+    "id": "32340677-2e5a-48ad-ac23-1d5fad5ba89d",
+    "created_at": "2025-12-16T23:42:43.776804Z",
+    "updated_at": "2025-12-16T23:42:43.776812Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Château Lafite Rothschild Pauillac 2016",
+    "winery": "Château Lafite Rothschild",
+    "grape_variety": "Cabernet Sauvignon-dominierte Cuvée",
+    "region": "Bordeaux, Pauillac",
+    "country": "Frankreich",
+    "year": 2016,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein aristokratischer Pauillac mit kühler Cassisfrucht, feinen Zedernnoten und seidig-tiefem Tannin – kraftvoll, aber von großer Eleganz und beeindruckender Länge. Ein großer Bordeaux-Klassiker mit enormem Reifepotenzial.",
+    "description_en": "An aristocratic Pauillac with cool cassis fruit, fine cedar notes and silky, deep tannins – powerful yet supremely elegant and long. A great Bordeaux classic with outstanding ageing potential.",
+    "description_fr": "Un Pauillac aristocratique aux arômes de cassis frais, de cèdre et de tanins soyeux et profonds – puissant, d’une grande élégance et à la finale très persistante. Un grand classique de Bordeaux au potentiel de garde remarquable.",
+    "food_pairings_de": [
+      "Gebratener Lammrücken mit Kräuterkruste",
+      "Rinderfilet mit Trüffeljus"
+    ],
+    "food_pairings_en": [
+      "Roast rack of lamb with herb crust",
+      "Beef tenderloin with truffle jus"
+    ],
+    "food_pairings_fr": [
+      "Carré d’agneau rôti en croûte d’herbes",
+      "Filet de bœuf au jus de truffe"
+    ],
+    "id": "a406099f-443f-41df-bde7-cf143e5aabde",
+    "created_at": "2025-12-16T23:43:22.156478Z",
+    "updated_at": "2025-12-16T23:43:22.156485Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Castello di Ama Chianti Classico Gran Selezione",
+    "winery": "Castello di Ama",
+    "grape_variety": "Sangiovese",
+    "region": "Toskana",
+    "country": "Italien",
+    "year": 2020,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein kraftvoller, eleganter Chianti Classico Gran Selezione mit dunklen Kirscharomen, feiner Würze und seidigen Tanninen, der die Magie der toskanischen Hügel im Glas einfängt.",
+    "description_en": "A powerful yet refined Chianti Classico Gran Selezione, bursting with dark cherry, floral notes and spice, wrapped in silky tannins and vibrant Tuscan freshness.",
+    "description_fr": "Un Chianti Classico Gran Selezione puissant et élégant, aux arômes de cerise noire, d’épices fines et de fleurs, soutenu par des tanins soyeux et une fraîcheur vibrante.",
+    "food_pairings_de": [
+      "Bistecca alla Fiorentina vom Grill",
+      "Geschmorte Lammkeule mit Kräutern"
+    ],
+    "food_pairings_en": [
+      "Grilled Bistecca alla Fiorentina",
+      "Braised lamb shank with herbs"
+    ],
+    "food_pairings_fr": [
+      "Bistecca alla Fiorentina grillée",
+      "Souris d’agneau braisée aux herbes"
+    ],
+    "id": "14c34aae-273c-41a1-b95c-f558cd76fe4f",
+    "created_at": "2025-12-16T23:44:01.462767Z",
+    "updated_at": "2025-12-16T23:44:01.462775Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Côte-Rôtie „Brune et Blonde de Guigal“",
+    "winery": "E. Guigal",
+    "grape_variety": "Syrah",
+    "region": "Nördliche Rhône (Côte-Rôtie)",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein sinnlicher, vielschichtiger Côte-Rôtie mit dunklen Beeren, Veilchen, feiner Würze und seidigen Tanninen – elegant, tief und lang anhaltend. Ein Klassiker der nördlichen Rhône, der Kraft und Finesse auf eindrucksvolle Weise vereint.",
+    "description_en": "A sensual, layered Côte-Rôtie showing dark berries, violets, subtle spice and silky tannins. A classic northern Rhône wine combining depth, power and great finesse.",
+    "description_fr": "Un Côte-Rôtie sensuel et complexe, aux arômes de fruits noirs, de violette, d’épices fines et de tanins soyeux. Un grand classique du nord de la vallée du Rhône, alliant puissance et élégance.",
+    "food_pairings_de": [
+      "Entenbrust mit Rotweinsauce",
+      "Lammkarree mit Kräuterkruste"
+    ],
+    "food_pairings_en": [
+      "Roasted duck breast with red wine sauce",
+      "Herb-crusted rack of lamb"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard rôti sauce au vin rouge",
+      "Carré d’agneau en croûte d’herbes"
+    ],
+    "id": "30c2f3ae-92ce-4384-8203-ff83dac710d1",
+    "created_at": "2025-12-16T23:44:05.049370Z",
+    "updated_at": "2025-12-16T23:44:05.049378Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Pinot Noir „Sanford Sta. Rita Hills“",
+    "winery": "Sanford Winery",
+    "grape_variety": "Pinot Noir",
+    "region": "Sta. Rita Hills, Santa Barbara County, Kalifornien",
+    "country": "USA",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein eleganter Pinot Noir aus den kühlen Lagen der Sta. Rita Hills mit lebendiger Frische, duftigen roten Beeren und einem Hauch von Gewürzen – seidig, präzise und lang anhaltend.",
+    "description_en": "An elegant Pinot Noir from the cool Sta. Rita Hills, showing vibrant red berries, floral spice and fine texture with a long, refined finish.",
+    "description_fr": "Un Pinot Noir élégant des fraîches Sta. Rita Hills, aux arômes de fruits rouges vifs, d’épices délicates et de tanins soyeux, avec une finale longue et raffinée.",
+    "food_pairings_de": [
+      "Gegrilltes Lammkarree mit Kräutern",
+      "Gebratene Entenbrust mit Kirschreduktion"
+    ],
+    "food_pairings_en": [
+      "Herb-crusted lamb rack",
+      "Roast duck breast with cherry reduction"
+    ],
+    "food_pairings_fr": [
+      "Carré d’agneau aux herbes",
+      "Magret de canard rôti sauce aux cerises"
+    ],
+    "id": "408b265e-76e8-4a2b-8676-4ea24fa84836",
+    "created_at": "2025-12-16T23:44:08.877314Z",
+    "updated_at": "2025-12-16T23:44:08.877322Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Barolo “Cannubi”",
+    "winery": "Paolo Scavino",
+    "grape_variety": "Nebbiolo",
+    "region": "Piemont",
+    "country": "Italien",
+    "year": 2019,
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Ein kraftvoller, tiefgründiger Barolo vom berühmten Cannubi-Hügel, mit betörenden Noten von Rosen, Teer, roten Früchten und feinkörnigen Tanninen – elegant, strukturiert und mit großem Reifepotenzial.",
+    "description_en": "A powerful, profound Barolo from the famous Cannubi hill, showing enchanting notes of roses, tar, red fruits and fine-grained tannins – elegant, structured and built for long aging.",
+    "description_fr": "Un Barolo puissant et profond issu de la célèbre colline de Cannubi, avec des notes envoûtantes de rose, de goudron, de fruits rouges et des tanins fins – élégant, structuré et taillé pour une longue garde.",
+    "food_pairings_de": [
+      "Brasato al Barolo (Schmorbraten)",
+      "Tagliatelle mit Trüffel"
+    ],
+    "food_pairings_en": [
+      "Braised beef or veal in red wine",
+      "Tagliatelle with truffle"
+    ],
+    "food_pairings_fr": [
+      "Rôti de bœuf braisé au vin rouge",
+      "Tagliatelles aux truffes"
+    ],
+    "id": "d70f39d9-ddbf-41e6-bd2a-24ae801b884c",
+    "created_at": "2025-12-16T23:44:50.836352Z",
+    "updated_at": "2025-12-16T23:44:50.836380Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Champagne Bollinger La Grande Année Brut",
+    "winery": "Champagne Bollinger",
+    "grape_variety": "Pinot Noir & Chardonnay",
+    "region": "Champagne",
+    "country": "Frankreich",
+    "year": 2014,
+    "wine_color": "weiß",
+    "price_category": "€€€€",
+    "description_de": "Ikonischer Jahrgangschampagner mit großer Tiefe: feinste Perlage, Noten von gerösteten Haselnüssen, Brioche, Zitrus und reifen gelben Früchten, getragen von präziser Säure und cremiger Textur.",
+    "description_en": "Iconic vintage Champagne with fine, persistent bubbles, layers of toasted nuts, brioche, citrus and ripe stone fruits, framed by vibrant acidity and a creamy, powerful structure.",
+    "description_fr": "Champagne millésimé iconique aux bulles fines et persistantes, offrant des notes de fruits mûrs, d’agrumes, de brioche et de fruits secs, porté par une acidité vive et une texture ample et crémeuse.",
+    "food_pairings_de": [
+      "Austern und Kaviar",
+      "Gebratener Steinbutt oder Hummer mit Butter-Sauce"
+    ],
+    "food_pairings_en": [
+      "Oysters and caviar",
+      "Roast turbot or lobster with butter sauce"
+    ],
+    "food_pairings_fr": [
+      "Huîtres et caviar",
+      "Turbot rôti ou homard au beurre"
+    ],
+    "id": "0eb6dfc8-99d3-4a2d-b62a-f4613685c160",
+    "created_at": "2025-12-16T23:44:55.679777Z",
+    "updated_at": "2025-12-16T23:44:55.679784Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Meursault 1er Cru \"Les Charmes\"",
+    "winery": "Domaine Jean-Marc Roulot",
+    "grape_variety": "Chardonnay",
+    "region": "Burgund, Meursault 1er Cru",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Ein hochfeiner Meursault 1er Cru mit glasklarer Mineralität, zarter Holzwürze und großer Tiefe – präzise, lebendig und gleichzeitig ungemein elegant.",
+    "description_en": "A refined Meursault Premier Cru with crystalline minerality, subtle oak and great depth – precise, vibrant and profoundly elegant.",
+    "description_fr": "Un Meursault Premier Cru d’une grande finesse, à la minéralité cristalline, au boisé subtil et à la profondeur remarquable – précis, vibrant et très élégant.",
+    "food_pairings_de": [
+      "Gebratener Steinbutt mit Beurre blanc",
+      "Geflügel in Rahmsauce"
+    ],
+    "food_pairings_en": [
+      "Roasted turbot with beurre blanc",
+      "Creamy poultry dishes"
+    ],
+    "food_pairings_fr": [
+      "Turbot rôti beurre blanc",
+      "Volaille à la crème"
+    ],
+    "id": "9381cb70-4183-4ee2-bc1b-829505f66c2a",
+    "created_at": "2025-12-16T23:44:59.237046Z",
+    "updated_at": "2025-12-16T23:44:59.237054Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Joseph Drouhin Côte de Beaune Pinot Noir",
+    "winery": "Maison Joseph Drouhin",
+    "grape_variety": "Pinot Noir",
+    "region": "Burgund (Côte de Beaune)",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Feingliedriger Burgunder mit duftigen roten Früchten, zarter Würze und einer eleganten, seidigen Struktur – ein Pinot Noir voller Finesse und burgundischer Noblesse.",
+    "description_en": "Delicate Burgundy Pinot Noir with bright red fruit, subtle spice and a silky, elegant texture, showing pure finesse and classic Côte de Beaune charm.",
+    "description_fr": "Pinot Noir de Bourgogne délicat aux arômes de fruits rouges, d’épices fines et à la texture soyeuse, exprimant toute l’élégance classique de la Côte de Beaune.",
+    "food_pairings_de": [
+      "Coq au Vin",
+      "Gebratene Entenbrust mit Kirschsauce"
+    ],
+    "food_pairings_en": [
+      "Roast duck breast with cherry sauce",
+      "Coq au Vin"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard rôti aux cerises",
+      "Bœuf bourguignon léger"
+    ],
+    "id": "344e596d-1ff2-43e8-8be8-58d7c8a2f780",
+    "created_at": "2025-12-16T23:45:42.585703Z",
+    "updated_at": "2025-12-16T23:45:42.585711Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Château Lafite Rothschild 2016 Pauillac",
+    "winery": "Château Lafite Rothschild",
+    "grape_variety": "Cabernet Sauvignon",
+    "region": "Bordeaux (Pauillac)",
+    "country": "Frankreich",
+    "year": 2016,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein ikonischer Pauillac von großer Finesse: tiefgründig, nobel und konzentriert, mit präziser Struktur, Cassis, Zedernholz und endlos langem Nachhall. Ein emotionaler Weinmoment für besondere Augenblicke und große Geduld im Keller.",
+    "description_en": "An iconic Pauillac of great finesse: deep, noble and concentrated, with precise structure, cassis, cedar and an endlessly long finish. A truly emotional wine for unforgettable occasions and long-term cellaring.",
+    "description_fr": "Un Pauillac iconique d’une grande finesse : profond, noble et concentré, avec une structure précise, des notes de cassis, de cèdre et une finale interminable. Un vin d’émotion pour les grands moments et la garde prolongée.",
+    "food_pairings_de": [
+      "Rinderfilet oder Entrecôte mit Kräuterkruste",
+      "Geschmorte Lammkeule mit Rosmarin und Knoblauch"
+    ],
+    "food_pairings_en": [
+      "Beef tenderloin or ribeye with herb crust",
+      "Slow-braised lamb shank with rosemary and garlic"
+    ],
+    "food_pairings_fr": [
+      "Filet de bœuf ou côte de bœuf en croûte d’herbes",
+      "Souris d’agneau braisée au romarin et à l’ail"
+    ],
+    "id": "278f1aa4-a1b3-4035-a03d-9f25395978e2",
+    "created_at": "2025-12-16T23:47:00.177821Z",
+    "updated_at": "2025-12-16T23:47:00.177831Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Weitere passende Weine aus deinem Keller",
+    "winery": "Hausauswahl des Kellers",
+    "grape_variety": "Cuvée aus verschiedenen Rebsorten",
+    "region": "Europäische Spitzenlagen",
+    "country": "Europa",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Eine sorgfältig kuratierte Auswahl weiterer passender Weine aus deinem Keller – harmonisch abgestimmt auf genussvolle Abende und besondere Momente.",
+    "description_en": "A carefully curated selection of additional wines from your cellar, perfectly tuned for indulgent evenings and special occasions.",
+    "description_fr": "Une sélection soigneusement composée de vins supplémentaires de votre cave, parfaitement adaptée aux soirées gourmandes et aux moments d’exception.",
+    "food_pairings_de": [
+      "Feine Käseplatte mit Hart- und Weichkäse",
+      "Mediterrane Tapas und Antipasti"
+    ],
+    "food_pairings_en": [
+      "Fine cheese board with hard and soft cheeses",
+      "Mediterranean tapas and antipasti"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fromages fins, pâtes dures et molles",
+      "Tapas et antipasti méditerranéens"
+    ],
+    "id": "db201f88-a0dc-442e-88b1-ef6371f3872c",
+    "created_at": "2025-12-16T23:47:04.014281Z",
+    "updated_at": "2025-12-16T23:47:04.014294Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Château Larose-Trintaudon Haut-Médoc Cru Bourgeois",
+    "winery": "Château Larose-Trintaudon",
+    "grape_variety": "Cabernet Sauvignon & Merlot",
+    "region": "Bordeaux, Haut-Médoc",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Ein klassischer Haut-Médoc mit dunkler Frucht, feiner Würze und eleganten Tanninen – kraftvoll, aber zugänglich, und wie geschaffen für genussvolle Abende.",
+    "description_en": "A classic Haut-Médoc showing dark berry fruit, subtle spice and fine-grained tannins – structured yet approachable, ideal for relaxed evenings.",
+    "description_fr": "Un Haut-Médoc classique aux fruits noirs, aux épices délicates et aux tanins élégants, à la fois structuré et abordable, parfait pour les moments de partage.",
+    "food_pairings_de": [
+      "Entrecôte oder Rindersteak vom Grill",
+      "Geschmorte Lammkeule mit Kräutern"
+    ],
+    "food_pairings_en": [
+      "Grilled ribeye or beef steak",
+      "Slow-braised herb-crusted lamb shoulder"
+    ],
+    "food_pairings_fr": [
+      "Entrecôte de bœuf grillée",
+      "Épaule d’agneau braisée aux herbes"
+    ],
+    "id": "1769948c-7e50-478f-8e37-a9d4d1b71133",
+    "created_at": "2025-12-16T23:47:25.527078Z",
+    "updated_at": "2025-12-16T23:47:25.527085Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Bollinger Special Cuvée Champagne",
+    "winery": "Champagne Bollinger",
+    "grape_variety": "Pinot Noir, Chardonnay, Pinot Meunier",
+    "region": "Champagne",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Ein ikonischer Champagner mit dichter Perlage, Aromen von reifen Äpfeln, Brioche und Nüssen – kraftvoll, komplex und zugleich elegant. Ein festlicher Wein für große Momente und genussvolle Abende.",
+    "description_en": "An iconic Champagne with fine, persistent bubbles and aromas of ripe apple, brioche and roasted nuts—powerful, complex and elegantly balanced. A true classic for celebrations and special occasions.",
+    "description_fr": "Un Champagne iconique aux bulles fines et persistantes, aux arômes de pomme mûre, de brioche et de fruits secs – puissant, complexe et parfaitement équilibré. Un grand classique pour les moments d’exception.",
+    "food_pairings_de": [
+      "Austern und Meeresfrüchteplatte",
+      "Geflügel mit Trüffel oder Pilzrisotto"
+    ],
+    "food_pairings_en": [
+      "Oysters and mixed seafood platter",
+      "Roast poultry with truffle or mushroom risotto"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fruits de mer et huîtres",
+      "Volaille rôtie aux truffes ou risotto aux champignons"
+    ],
+    "id": "791dae9d-af39-476f-be09-044fc67398da",
+    "created_at": "2025-12-16T23:47:30.157132Z",
+    "updated_at": "2025-12-16T23:47:30.157139Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Etwas kräftiger und moderner (New World)",
+    "winery": "Imaginary Cellars",
+    "grape_variety": "Cabernet Sauvignon",
+    "region": "Central Valley",
+    "country": "Chile",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein kräftiger, moderner New-World-Rotwein mit saftiger Frucht, reifen Tanninen und einem Hauch von Vanille und Rauch im Abgang.",
+    "description_en": "A powerful, modern New World red wine with juicy dark fruit, ripe tannins and a touch of vanilla and smoke on the finish.",
+    "description_fr": "Un vin rouge du Nouveau Monde, puissant et moderne, aux fruits noirs juteux, tanins mûrs et une touche de vanille et de fumée en finale.",
+    "food_pairings_de": [
+      "Gegrilltes Rindfleisch",
+      "BBQ-Rippchen"
+    ],
+    "food_pairings_en": [
+      "Grilled beef",
+      "BBQ ribs"
+    ],
+    "food_pairings_fr": [
+      "Boeuf grillé",
+      "Côtes de porc BBQ"
+    ],
+    "id": "d54b84d4-b690-4dfd-aa42-758370ec47fc",
+    "created_at": "2025-12-16T23:47:33.200523Z",
+    "updated_at": "2025-12-16T23:47:33.200531Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Caymus Cabernet Sauvignon Napa Valley",
+    "winery": "Caymus Vineyards",
+    "grape_variety": "Cabernet Sauvignon",
+    "region": "Napa Valley",
+    "country": "USA",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein opulenter Napa-Cabernet mit dichter, dunkler Frucht, sanften Tanninen und üppiger, fast cremiger Textur – ein Wein, der sofort begeistert und lange nachhallt.",
+    "description_en": "An opulent Napa Cabernet bursting with ripe dark fruit, velvety tannins and a plush, almost creamy texture that is both powerful and irresistibly smooth.",
+    "description_fr": "Un Cabernet de Napa opulent, débordant de fruits noirs mûrs, aux tanins veloutés et à la texture presque crémeuse, puissant mais d’une grande douceur.",
+    "food_pairings_de": [
+      "Rindersteak vom Grill",
+      "Geschmorte Lammkeule"
+    ],
+    "food_pairings_en": [
+      "Grilled ribeye steak",
+      "Braised lamb shank"
+    ],
+    "food_pairings_fr": [
+      "Entrecôte grillée",
+      "Souris d’agneau braisée"
+    ],
+    "id": "a89b123b-3975-4863-a0a0-2af31cfcc02d",
+    "created_at": "2025-12-16T23:47:36.051433Z",
+    "updated_at": "2025-12-16T23:47:36.051440Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Bernkasteler Doctor Spätburgunder GG",
+    "winery": "Weingut Dr. H. Thanisch",
+    "grape_variety": "Spätburgunder",
+    "region": "Mosel",
+    "country": "Deutschland",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein eleganter, kühler Spätburgunder aus der legendären Lage Bernkasteler Doctor, geprägt von feiner roter Frucht, nobler Würze und zarter Schiefermineralität. Finessenreich, seidig und tiefgründig, mit langem, präzisem Nachhall.",
+    "description_en": "An elegant, cool-climate Pinot Noir from the legendary Bernkasteler Doctor vineyard, marked by delicate red fruit, subtle spice and fine slate-driven minerality. Silky, refined and deep, with a long and precise finish.",
+    "description_fr": "Un Pinot Noir d’un climat frais provenant du célèbre vignoble Bernkasteler Doctor, aux arômes de fruits rouges délicats, d’épices fines et d’une minéralité schisteuse élégante. Un vin soyeux, raffiné et profond, à la finale longue et précise.",
+    "food_pairings_de": [
+      "Kalbsrücken mit Kräutern",
+      "Entenbrust mit Kirschjus"
+    ],
+    "food_pairings_en": [
+      "Herb-crusted veal loin",
+      "Roast duck breast with cherry jus"
+    ],
+    "food_pairings_fr": [
+      "Carré de veau aux herbes",
+      "Magret de canard sauce aux cerises"
+    ],
+    "id": "17f98d0d-539b-4ee5-9f6d-2cc098cf3fdb",
+    "created_at": "2025-12-16T23:50:04.011135Z",
+    "updated_at": "2025-12-16T23:50:04.011144Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Nuits-Saint-Georges Rouge",
+    "winery": "Domaine Robert Chevillon",
+    "grape_variety": "Pinot Noir",
+    "region": "Burgund",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein kraftvoller, doch fein gezeichneter Nuits-Saint-Georges mit dunkler Kirschfrucht, würzigem Tiefgang und seidigen Tanninen, der die Essenz des nördlichen Côte de Nuits einfängt.",
+    "description_en": "A vibrant yet structured Nuits-Saint-Georges, showing dark cherry, subtle spice and silky tannins, capturing the character of the northern Côte de Nuits.",
+    "description_fr": "Un Nuits-Saint-Georges vibrant et structuré, aux notes de cerise noire, d’épices délicates et de tanins soyeux, exprimant parfaitement le caractère de la Côte de Nuits.",
+    "food_pairings_de": [
+      "Coq au Vin",
+      "Kalbsrücken mit Pilzragout"
+    ],
+    "food_pairings_en": [
+      "Roast duck with cherries",
+      "Veal loin with mushroom ragout"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard rôti",
+      "Filet de veau aux champignons"
+    ],
+    "id": "0de60247-a07a-499c-aa2c-8a727386acb6",
+    "created_at": "2025-12-16T23:50:12.509941Z",
+    "updated_at": "2025-12-16T23:50:12.509948Z",
+    "auto_generated": true
+  },
+  {
+    "name": "André Brunel Châteauneuf-du-Pape Les Cailloux",
+    "winery": "Domaine André Brunel",
+    "grape_variety": "Grenache (mit Syrah, Mourvèdre & Cinsault)",
+    "region": "Châteauneuf-du-Pape, Rhône",
+    "country": "Frankreich",
+    "year": 2020,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein kraftvoller, zugleich geschliffener Châteauneuf-du-Pape mit üppiger dunkler Frucht, warmen Kräutern der Garrigue und feinwürzigem, lang anhaltendem Finale.",
+    "description_en": "A powerful yet polished Châteauneuf-du-Pape, showing ripe dark fruit, Provençal herbs and a long, spicy finish with remarkable elegance.",
+    "description_fr": "Un Châteauneuf-du-Pape puissant et raffiné, aux arômes de fruits noirs mûrs, d’herbes provençales et une finale longue et épicée d’une grande élégance.",
+    "food_pairings_de": [
+      "Geschmorte Lammkeule mit Kräutern der Provence",
+      "Wildragout oder Rehbraten"
+    ],
+    "food_pairings_en": [
+      "Herb-crusted roast lamb",
+      "Game stew or roasted venison"
+    ],
+    "food_pairings_fr": [
+      "Gigot d’agneau rôti aux herbes de Provence",
+      "Civet de gibier ou rôti de chevreuil"
+    ],
+    "id": "64bb2d69-6d19-49b1-b56a-836a6c03ddc8",
+    "created_at": "2025-12-16T23:51:38.208152Z",
+    "updated_at": "2025-12-16T23:51:38.208161Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Volnay 1er Cru",
+    "winery": "Domaine Marquis d’Angerville",
+    "grape_variety": "Pinot Noir",
+    "region": "Burgund",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein eleganter, fein gewobener Volnay 1er Cru mit duftiger Kirschfrucht, zarter Würze und seidig strukturierten Tanninen – kraftvoll und doch tänzerisch leicht.",
+    "description_en": "An elegant, finely textured Volnay 1er Cru with fragrant red cherry fruit, subtle spice and silky tannins, combining graceful lightness with impressive depth.",
+    "description_fr": "Un Volnay 1er Cru élégant et aérien, aux arômes de cerise rouge, d’épices fines et de tanins soyeux, alliant finesse, précision et belle profondeur.",
+    "food_pairings_de": [
+      "Coq au Vin mit Wurzelgemüse",
+      "Kalbsrücken mit Kräutern und Pilzragout"
+    ],
+    "food_pairings_en": [
+      "Roast chicken with herbs and root vegetables",
+      "Veal loin with mushrooms and thyme"
+    ],
+    "food_pairings_fr": [
+      "Poulet rôti aux herbes et légumes racines",
+      "Noix de veau aux champignons et au thym"
+    ],
+    "id": "be6f7ec6-9945-451e-9a98-be4506737f6f",
+    "created_at": "2025-12-16T23:52:16.519213Z",
+    "updated_at": "2025-12-16T23:52:16.519221Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Guigal Côte-Rôtie Brune et Blonde",
+    "winery": "E. Guigal",
+    "grape_variety": "Syrah",
+    "region": "Rhône (Côte-Rôtie)",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein kraftvoller, seidiger Côte-Rôtie mit dunkler Frucht, feiner Würze und eleganter Rauchigkeit – ein sinnlicher Klassiker von den Hängen über der Rhône.",
+    "description_en": "A powerful yet silky Côte-Rôtie with dark fruit, spicy notes and refined smokiness, showcasing the timeless elegance of the northern Rhône.",
+    "description_fr": "Un Côte-Rôtie puissant et soyeux, aux fruits noirs, aux épices fines et à la subtile touche fumée, exprimant toute l’élégance du nord de la Vallée du Rhône.",
+    "food_pairings_de": [
+      "Gegrilltes Rindersteak",
+      "Geschmorte Lammkeule"
+    ],
+    "food_pairings_en": [
+      "Grilled ribeye steak",
+      "Braised lamb shank"
+    ],
+    "food_pairings_fr": [
+      "Côte de bœuf grillée",
+      "Souris d’agneau braisée"
+    ],
+    "id": "450488d4-2d5f-43b8-a6c7-2f8ca3f62ff1",
+    "created_at": "2025-12-16T23:54:12.257617Z",
+    "updated_at": "2025-12-16T23:54:12.257625Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Penfolds Bin 389 Cabernet Shiraz, South Australia",
+    "winery": "Penfolds",
+    "grape_variety": "Cabernet Sauvignon, Shiraz",
+    "region": "South Australia",
+    "country": "Australien",
+    "year": 2021,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein kraftvoller, vielschichtiger Australier mit dunkler Beerenfrucht, feiner Würze und edler Eichenholznote – intensiv, strukturiert und doch geschliffen elegant.",
+    "description_en": "A powerful, layered Australian red showing dark berry fruit, spice and classy oak, with impressive structure and refined elegance.",
+    "description_fr": "Un rouge australien puissant et complexe, aux arômes de fruits noirs, d’épices et de chêne raffiné, offrant une belle structure et une élégance maîtrisée.",
+    "food_pairings_de": [
+      "Rindersteak vom Grill",
+      "Lammkarree mit Kräuterkruste"
+    ],
+    "food_pairings_en": [
+      "Grilled ribeye steak",
+      "Herb-crusted rack of lamb"
+    ],
+    "food_pairings_fr": [
+      "Entrecôte grillée",
+      "Carré d’agneau en croûte d’herbes"
+    ],
+    "id": "9e6ba789-611e-4125-a4ef-249e5c8ccbb5",
+    "created_at": "2025-12-16T23:54:15.928802Z",
+    "updated_at": "2025-12-16T23:54:15.928810Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Rioja Reserva (Stil: Modern, z.B. La Rioja Alta Viña Ardanza, CVNE Reserva)",
+    "winery": "Diverse Erzeuger (La Rioja Alta, CVNE u.a.)",
+    "grape_variety": "Tempranillo",
+    "region": "Rioja",
+    "country": "Spanien",
+    "year": 2018,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Moderner Rioja Reserva mit saftiger Frucht, feiner Würze und seidigen Tanninen – kraftvoll, aber elegant, mit einem Hauch Vanille und mediterranen Kräutern. Ein charaktervoller Spanier, der Trinkfreude und Tiefe perfekt verbindet.",
+    "description_en": "Modern-style Rioja Reserva showing ripe red fruit, gentle spice and silky tannins, combining power with elegance. Notes of vanilla and dried herbs lead to a long, harmonious finish.",
+    "description_fr": "Rioja Reserva de style moderne, aux fruits rouges mûrs, aux épices délicates et aux tanins soyeux. Puissant mais élégant, avec des notes de vanille et d’herbes sèches et une finale longue et harmonieuse.",
+    "food_pairings_de": [
+      "Lammkoteletts mit Rosmarinkartoffeln",
+      "Geschmorte Rinderbäckchen"
+    ],
+    "food_pairings_en": [
+      "Grilled lamb chops with rosemary potatoes",
+      "Braised beef cheeks"
+    ],
+    "food_pairings_fr": [
+      "Côtelettes d’agneau grillées aux pommes de terre au romarin",
+      "Joues de bœuf braisées"
+    ],
+    "id": "16565e82-8cb6-496c-8a5f-9f0d5859cd3e",
+    "created_at": "2025-12-16T23:55:25.898409Z",
+    "updated_at": "2025-12-16T23:55:25.898418Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Pinot Noir „Baden Spätburgunder“",
+    "winery": "Weingut Bernhard Huber",
+    "grape_variety": "Pinot Noir (Spätburgunder)",
+    "region": "Baden",
+    "country": "Deutschland",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein eleganter, feinwürziger Spätburgunder aus Baden mit zarter Kirschfrucht, kühler Mineralität und seidig-feinem Tannin – filigran und doch tiefgründig. Perfekt für alle, die burgundische Finesse mit deutscher Präzision lieben.",
+    "description_en": "An elegant Baden Pinot Noir with delicate cherry fruit, cool minerality and silky tannins – filigree yet profound. A fine choice for lovers of Burgundian finesse and German precision.",
+    "description_fr": "Un Pinot Noir élégant de Bade, aux notes délicates de cerise, à la minéralité fraîche et aux tannins soyeux – fin et profond à la fois. Idéal pour les amateurs de finesse bourguignonne et de précision allemande.",
+    "food_pairings_de": [
+      "Coq au Vin mit Speck und Pilzen",
+      "Gebratene Entenbrust mit Kirschjus"
+    ],
+    "food_pairings_en": [
+      "Roast duck breast with cherry jus",
+      "Coq au vin with mushrooms and bacon"
+    ],
+    "food_pairings_fr": [
+      "Magret de canard rôti avec jus de cerise",
+      "Coq au vin aux champignons et lardons"
+    ],
+    "id": "b93baef0-abcd-4db4-a235-6b21f927ab8c",
+    "created_at": "2025-12-16T23:56:09.620592Z",
+    "updated_at": "2025-12-16T23:56:09.620601Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Guigal Côtes du Rhône Rouge",
+    "winery": "E. Guigal",
+    "grape_variety": "Grenache, Syrah, Mourvèdre",
+    "region": "Côtes du Rhône",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Saftiger, würziger Rhône-Klassiker mit dunklen Beeren, feiner Kräuterwürze und seidigen Tanninen – ein zugänglicher Rotwein mit südlicher Wärme und viel Charme.",
+    "description_en": "Juicy and spicy Rhône red with dark berry fruit, subtle herbal notes and silky tannins – a generous, sun-drenched wine that remains easy-drinking and elegant.",
+    "description_fr": "Rouge du Rhône juteux et épicé, aux arômes de fruits noirs, d’herbes méditerranéennes et de tannins soyeux – un vin chaleureux, gourmand et très accessible.",
+    "food_pairings_de": [
+      "Gegrilltes Lammkotelett mit Kräutern der Provence",
+      "Ratatouille oder mediterranes Gemüse aus dem Ofen"
+    ],
+    "food_pairings_en": [
+      "Grilled lamb chops with Provençal herbs",
+      "Ratatouille or roasted Mediterranean vegetables"
+    ],
+    "food_pairings_fr": [
+      "Côtelettes d’agneau grillées aux herbes de Provence",
+      "Ratatouille ou légumes méditerranéens rôtis"
+    ],
+    "id": "341ea258-154d-4cfb-8046-866198ded7a7",
+    "created_at": "2025-12-16T23:56:14.214659Z",
+    "updated_at": "2025-12-16T23:56:14.214667Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Champagne Rosé Brut",
+    "winery": "Billecart-Salmon",
+    "grape_variety": "Pinot Noir, Chardonnay, Pinot Meunier",
+    "region": "Champagne",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "rosé",
+    "price_category": "€€€€",
+    "description_de": "Feinster Rosé-Champagner mit zarter Lachsfarbe, filigraner Perlage und duftigen Aromen von roten Beeren, Zitrus und Brioche – elegant, verspielt und unglaublich verführerisch.",
+    "description_en": "A refined rosé Champagne with delicate salmon hue, fine bubbles and seductive notes of red berries, citrus and brioche – effortlessly elegant and charmingly vibrant.",
+    "description_fr": "Un champagne rosé raffiné à la robe saumon délicate, bulles fines et arômes séduisants de fruits rouges, d’agrume et de brioche, d’une élégance aérienne et vibrante.",
+    "food_pairings_de": [
+      "Austern und Meeresfrüchte",
+      "Tatar vom Lachs oder Thunfisch"
+    ],
+    "food_pairings_en": [
+      "Oysters and seafood",
+      "Salmon or tuna tartare"
+    ],
+    "food_pairings_fr": [
+      "Huîtres et fruits de mer",
+      "Tartare de saumon ou de thon"
+    ],
+    "id": "b5ccb4d4-53c3-456d-a7b1-32123935f792",
+    "created_at": "2025-12-16T23:56:18.606896Z",
+    "updated_at": "2025-12-16T23:56:18.606905Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Soave Classico DOC “Calvarino”",
+    "winery": "Pieropan",
+    "grape_variety": "Garganega",
+    "region": "Venetien",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Ein eleganter, mineralischer Soave mit Zitrusfrische, feiner Kräuterwürze und salziger Länge – ein Weißwein voller Finesse und Spannung.",
+    "description_en": "An elegant, mineral-driven Soave with bright citrus notes, subtle herbal spice and a salty finish – a white wine of great finesse and tension.",
+    "description_fr": "Un Soave élégant et minéral, aux notes d’agrumes vifs, de fines herbes et une finale saline – un vin blanc d’une grande finesse et tension.",
+    "food_pairings_de": [
+      "Spaghetti alle Vongole",
+      "Gegrillter Fisch mit Zitronen-Olivenöl"
+    ],
+    "food_pairings_en": [
+      "Spaghetti alle vongole",
+      "Grilled fish with lemon and olive oil"
+    ],
+    "food_pairings_fr": [
+      "Spaghetti alle vongole",
+      "Poisson grillé au citron et huile d’olive"
+    ],
+    "id": "3e7b089a-0568-40bf-bc08-f5f4d85cecbb",
+    "created_at": "2025-12-16T23:57:57.782959Z",
+    "updated_at": "2025-12-16T23:57:57.782967Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Verdicchio dei Castelli di Jesi Classico Superiore",
+    "winery": "Bucci",
+    "grape_variety": "Verdicchio",
+    "region": "Marche",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€",
+    "description_de": "Ein eleganter Verdicchio mit feiner Zitrusfrische, saftiger Struktur und salziger Mineralität, der am Gaumen lange nachhallt.",
+    "description_en": "An elegant Verdicchio with bright citrus notes, juicy texture and saline minerality, offering impressive length on the palate.",
+    "description_fr": "Un Verdicchio élégant aux notes d’agrumes, à la texture juteuse et à la minéralité saline, avec une belle longueur en bouche.",
+    "food_pairings_de": [
+      "Gegrillter Fisch",
+      "Spaghetti alle Vongole"
+    ],
+    "food_pairings_en": [
+      "Grilled fish",
+      "Spaghetti alle vongole"
+    ],
+    "food_pairings_fr": [
+      "Poisson grillé",
+      "Spaghetti alle vongole"
+    ],
+    "id": "234f2bc4-6dce-481c-8b4e-291cd63b3928",
+    "created_at": "2025-12-16T23:58:00.118380Z",
+    "updated_at": "2025-12-16T23:58:00.118389Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Frascati Superiore",
+    "winery": "Fontana Candida",
+    "grape_variety": "Malvasia (mit Trebbiano und lokalen Rebsorten)",
+    "region": "Lazio",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€",
+    "description_de": "Ein frischer, lebhafter Frascati mit Noten von Zitrusfrüchten, weißen Blüten und einem Hauch Mandeln, der Sonne und Leichtigkeit ins Glas bringt.",
+    "description_en": "A crisp, vibrant Frascati with citrus, white blossom and subtle almond notes, capturing the sunny, easy-drinking spirit of the Roman hills.",
+    "description_fr": "Un Frascati frais et vif aux arômes d’agrumes, de fleurs blanches et d’amande délicate, qui évoque la douceur ensoleillée des collines romaines.",
+    "food_pairings_de": [
+      "Spaghetti alle Vongole",
+      "Bruschetta mit Tomaten und Basilikum"
+    ],
+    "food_pairings_en": [
+      "Spaghetti alle vongole",
+      "Caprese salad"
+    ],
+    "food_pairings_fr": [
+      "Spaghetti aux palourdes",
+      "Salade caprese"
+    ],
+    "id": "095952ed-0310-4b40-a562-e3c82705b1a1",
+    "created_at": "2025-12-16T23:58:03.572472Z",
+    "updated_at": "2025-12-16T23:58:03.572480Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Franciacorta Satèn DOCG",
+    "winery": "Ca’ del Bosco",
+    "grape_variety": "Chardonnay",
+    "region": "Franciacorta, Lombardei",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€€",
+    "description_de": "Feinperliger, cremiger Franciacorta mit eleganten Zitrus- und Brioche-Noten, der mit seidiger Textur und langem, mineralischem Finale verführt.",
+    "description_en": "An elegant, creamy Franciacorta with fine mousse, bright citrus and subtle brioche notes, finishing long and beautifully mineral.",
+    "description_fr": "Franciacorta élégant et crémeux, aux bulles fines, marqué par des notes d’agrumes et de brioche, avec une finale longue et minérale.",
+    "food_pairings_de": [
+      "Austern und Meeresfrüchte-Platte",
+      "Risotto mit Jakobsmuscheln"
+    ],
+    "food_pairings_en": [
+      "Oysters and mixed seafood platter",
+      "Scallop risotto"
+    ],
+    "food_pairings_fr": [
+      "Plateau de fruits de mer",
+      "Risotto aux noix de Saint-Jacques"
+    ],
+    "id": "2c778ffa-1ced-414d-8ca0-42f118949539",
+    "created_at": "2025-12-16T23:58:07.102310Z",
+    "updated_at": "2025-12-16T23:58:07.102319Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Langhe Nebbiolo DOC",
+    "winery": "Produttori del Barbaresco",
+    "grape_variety": "Nebbiolo",
+    "region": "Piemont",
+    "country": "Italien",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Saftiger, duftiger Nebbiolo mit roten Beeren, Rosenblüten und feiner Würze – ein kleiner Barbaresco im Alltagstempo, elegant und doch voller Charakter.",
+    "description_en": "Juicy, fragrant Nebbiolo with red berries, rose petals and gentle spice – an everyday ‘mini Barbaresco’ that is both elegant and full of character.",
+    "description_fr": "Nebbiolo juteux et aromatique aux notes de fruits rouges, de pétales de rose et d’épices fines – un « petit Barbaresco » du quotidien, élégant et plein de caractère.",
+    "food_pairings_de": [
+      "Tagliatelle mit Trüffel oder Pilzen",
+      "Ossobuco oder geschmorte Kalbsbäckchen"
+    ],
+    "food_pairings_en": [
+      "Tagliatelle with truffle or wild mushrooms",
+      "Ossobuco or braised veal cheeks"
+    ],
+    "food_pairings_fr": [
+      "Tagliatelles aux truffes ou aux champignons sauvages",
+      "Osso buco ou joues de veau braisées"
+    ],
+    "id": "8954ab2e-b627-4c39-8b37-3ee1610c7d94",
+    "created_at": "2025-12-16T23:58:10.752322Z",
+    "updated_at": "2025-12-16T23:58:10.752330Z",
+    "auto_generated": true
   }
 ]

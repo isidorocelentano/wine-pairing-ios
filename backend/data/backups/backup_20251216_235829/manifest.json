@@ -1,7 +1,7 @@
 {
   "version": "3.0",
-  "timestamp": "2025-12-16T23:19:57.498757+00:00",
-  "backup_dir": "/app/backend/data/backups/backup_20251216_231957",
+  "timestamp": "2025-12-16T23:58:29.920746+00:00",
+  "backup_dir": "/app/backend/data/backups/backup_20251216_235829",
   "collections": {
     "users": {
       "count": 10,
@@ -14,7 +14,7 @@
       "is_user_data": true
     },
     "pairings": {
-      "count": 132,
+      "count": 156,
       "file": "pairings.json",
       "is_user_data": true
     },
@@ -44,7 +44,7 @@
       "is_user_data": false
     },
     "public_wines": {
-      "count": 1821,
+      "count": 1877,
       "file": "public_wines.json",
       "is_user_data": false
     },

@@ -101,7 +101,7 @@ class BackupManager:
             'collections': {}
         }
         
-        all_collections = self.USER_COLLECTIONS + self.SYSTEM_COLLECTIONS
+        all_collections = self.ALL_PROTECTED_COLLECTIONS
         
         logger.info(f"📦 Erstelle Backup: {backup_path}")
         

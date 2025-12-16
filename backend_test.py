@@ -12,7 +12,7 @@ from datetime import datetime
 from typing import Dict, Any, Optional
 
 class WinePairingAPITester:
-    def __init__(self, base_url="https://sommelier-kompass.preview.emergentagent.com"):
+    def __init__(self, base_url="https://weinkellerapp.preview.emergentagent.com"):
         self.base_url = base_url
         self.api_url = f"{base_url}/api"
         self.tests_run = 0

@@ -1,151 +1,109 @@
 <analysis>**original_problem_statement:**
-The user's initial goal was to update the footer with Contact, Privacy, and Imprint pages, and add an app description to the homepage. This task was completed, but subsequent deployments revealed a critical flaw: new content and features (like blog posts and the Sommelier Kompass) were not appearing on the live site. This led to a series of urgent bug fixes. After resolving the deployment issues, the user requested to make the Sommelier Kompass more visible. Finally, the user provided a detailed strategic vision to establish the app as a scientific reference for wine pairing, initiating new feature development for SEO, data modeling, and a Pairing Science educational page.
+The user's initial request was to make the Wie wir pairen (Pairing Science) page more prominent. This led to a series of bug fixes and feature implementations. First, a critical bug causing a blank homepage was fixed. Then, the agent implemented UI enhancements for the Pairing Science page, including dynamic content analysis. The user then reported a critical data persistence issue where their personal Weinkeller (wine cellar) was being wiped out on deployment. After fixing this by implementing a more intelligent, non-destructive database seeding mechanism, the user requested a major new feature: a full Freemium system with user authentication (Email/Password & Google Login) and paid subscriptions via Stripe and PayPal.
 
 PRODUCT REQUIREMENTS:
-1.  **Footer and Legal Pages:** Add Kontakt, Datenschutzerklärung, and Impressum pages with content scraped from a reference site. (DONE)
-2.  **Homepage Content:** Add a marketing/SEO-focused description of the app. (DONE)
-3.  **Deployment Stability:** Find and fix the root cause of why new content and features are not visible after deployment. (DONE - Awaiting user verification)
-4.  **UI/UX Improvements:** Make the Sommelier Kompass visible on mobile and add a button for it on the homepage. (DONE)
-5.  **SEO & Content Expansion:**
-    *   Implement programmatic SEO to create hundreds of landing pages for specific dish-wine pairings. (DONE)
-    *   Implement Schema.org structured data to improve search engine visibility. (DONE)
-6.  **Pairing Science Feature:**
-    *   Create a new page () to explain the scientific methodology behind the app's pairing recommendations. (DONE)
-    *   Add links to this new page from the homepage and pairing page. (IN PROGRESS)
-    *   (Future) Evolve the app's data model and algorithm to be based on detailed wine and food attributes.
+1.  **UI/UX Improvements:** Make the Pairing Science page more visible and functional. (DONE)
+2.  **Critical Bug Fix: Data Persistence:** Ensure user-generated data (like the wine cellar) is NOT overwritten on deployment. (DONE)
+3.  **UI Feature: Mein Weinkeller Redesign:** Add a slogan and background image to the cellar page. (DONE)
+4.  **Feature: Freemium System:**
+    *   Implement user authentication: Email/Password (DONE) and Google Login (Upcoming).
+    *   Implement usage limits for free users (5 pairings/day, 10 wines in cellar). (DONE)
+    *   Implement a Pro subscription plan. (DONE)
+    *   Integrate payment gateways: Stripe (DONE) and PayPal (Upcoming).
 
 **User's preferred language**: German
 
 **what currently exists?**
-The application is a full-stack wine platform featuring a large wine database (~1751 wines), an AI-powered food-pairing tool, a sommelier chat, and an extensive blog (~233 articles).
+The application is a full-stack wine platform with a wine database, AI pairing tool, blog, and user-specific features. The latest additions are a complete Freemium system and user authentication.
 
-Key additions in this session include:
-- A robust, manifest-driven database seeding mechanism in  that automatically syncs the production database on server startup, resolving the critical data mismatch issue.
-- 500 new, programmatically generated SEO landing pages for specific dish-wine pairings (e.g., ).
-- A new Pairing Science page () explaining the 12 key variables used in pairing.
-- SEO enhancements via Schema.org structured data and a new Breadcrumb component.
-- A complete footer with legal pages (Contact, Privacy, Imprint).
-- The Sommelier Kompass feature is now correctly integrated into the mobile navigation and homepage.
+-   **Authentication:** A custom JWT-based system allows users to register and log in with an email and password.
+-   **Freemium Logic:** The backend now distinguishes between  and  users. Endpoints for pairing and chat enforce usage limits for  users.
+-   **Subscription & Payments:** A new  page displays the plans. Stripe has been integrated, and a backend endpoint can create live checkout sessions for users to upgrade to the Pro plan.
+-   **Data Integrity:** The database seeding logic in  has been critically improved. It now protects user-generated data (the  collection) by only seeding it if the collection is empty, preventing data loss on deployments.
 
 **Last working item**:
-    - Last item agent was working: Adding links to the new Pairing Science page on the Homepage and the Pairing page, as requested by the user to improve its visibility.
-    - Status: IN PROGRESS
-    - Agent Testing Done: N
-    - Which testing method agent to use? screenshot tool to verify that the new links/buttons are correctly displayed on both the Homepage () and the Pairing page ().
+    - Last item agent was working: Completing the Stripe integration. The agent successfully guided the user to provide a working (restricted live) API key, configured it in the backend, and verified the integration by creating a successful test checkout session via the API.
+    - Status: COMPLETED
+    - Agent Testing Done: Y
+    - Which testing method agent to use? NA
     - User Testing Done: N
 
 **All Pending/In progress Issue list**:
-  - Issue 1:  Data Mismatch between Production and Development Environments (Priority: P0 - Awaiting Verification)
-  - Issue 2:  Incorrect Images for Grape Varieties (Priority: P0 - Awaiting Verification)
-  
-  Issues Detail:
-  - Issue 1: 
-     - Attempted fixes: The agent diagnosed that the production environment uses a separate, out-of-sync MongoDB instance. To fix this, a robust, manifest-driven database seeding script was implemented in . This script runs on server startup, checks the database against a manifest (), and automatically restores all collections from JSON backups if any data is missing or outdated.
-     - Next debug checklist: The user needs to perform a deployment. The new seeding logic should automatically populate the production database with all the latest content (233 blogs, 500 SEO pairings, 44 regional pairings, etc.), fixing the blank page issues.
-     - Why fix this issue and what will be achieved with the fix? This is the most critical issue of the session. A successful fix will ensure data consistency across all environments and that all developed features work correctly in production.
-     - Status:  USER VERIFICATION PENDING
-     - Is recurring issue? Y
-     - Should Test frontend/backend/both after fix? both
-     - Blocked on other issue: None
-  - Issue 2: 
-     - Attempted fixes: The agent found that 19 grape varieties were displaying pictures of beer. It created a script to replace the incorrect Unsplash URLs with correct wine-related image URLs, updated the  backup file, and updated the local databases.
-     - Next debug checklist: This data fix is part of the backups. The automatic seeding script (from Issue 1) will push this correction to the production database upon the next deployment.
-     - Why fix this issue and what will be achieved with the fix? Fixes a significant and unprofessional-looking visual bug, improving user trust and experience.
-     - Status:  USER VERIFICATION PENDING
-     - Is recurring issue? N
-     - Should Test frontend/backend/both after fix? frontend
-     - Blocked on other issue: Issue 1
+No pending issues. All reported bugs in this session have been resolved.
 
 **In progress Task List**:
-  - Task 1:  Add links to Pairing Science page (Priority: P0)
-
- Task Detail:
-  - Task 1: 
-     - Where to resume: The agent has edited  and  to add the required buttons/links. The next steps are to build the frontend (yarn run v1.22.22
-info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.), restart the server, and take screenshots of the homepage and pairing page to verify the changes.
-     - What will be achieved with this? Fulfills the user's request to make the new strategic Pairing Science page more accessible to users.
-     - Status:  IN PROGRESS
-     - Should Test frontend/backend/both after fix? frontend
-     - Blocked on something: None
+No tasks are currently in progress. The Freemium/Stripe implementation phase is complete.
 
 **Upcoming and Future Tasks**
 - **Upcoming Tasks:**
-    - **(P0) Implement Pairing Science - Phase 2: Data Model & Algorithm:** Extend the MongoDB schemas for  and a new  collection with detailed attributes (Säure-Index, Fett-Index, etc.). Create a migration script and implement the backend Match-Score algorithm.
-    - **(P1) Implement Pairing Science - Phase 3: Visuals & UI:** Integrate a charting library to display Radar Charts for pairings and update the UI to show the Match Score and a detailed explanation.
+    - **(P0) Deployment:** Deploy the application to make the new Freemium system, authentication, and Stripe integration live.
+    - **(P1) PayPal Integration:** Implement PayPal as the second payment option as requested by the user.
+    - **(P1) Google Login:** Implement Google Social Login as an alternative authentication method.
 - **Future Tasks:**
-    - **(P2)** Implement an Interaktiver Pairing-Rechner (Interactive Pairing Calculator).
-    - **(P2)** Implement a Kontrast-Analyse (Contrast Analysis) premium feature.
-    - **(P2)** Add advanced rating options to the My Cellar feature.
-    - **(P2)** Implement User Profiles for more personalization.
+    - **(P2) Implement Pairing Science - Phase 2:** Evolve the data model and algorithm with detailed scientific attributes (Säure-Index, Fett-Index, etc.) and a Match-Score.
+    - **(P3) Implement Pairing Science - Phase 3:** Add UI visualizations (e.g., Radar Charts) for the scientific pairing data.
+    - **(P3)** Implement an Interaktiver Pairing-Rechner (Interactive Pairing Calculator).
+    - **(P3)** Add advanced features like Kontrast-Analyse and enhanced cellar rating options.
 
 **Completed work in this session**
-- **Critical Fix: Production Data Synchronization:** Implemented a manifest-driven, automatic database seeding mechanism in  to ensure data consistency between development and production environments, resolving the root cause of multiple post-deployment failures.
-- **Feature: Programmatic SEO Landing Pages:** Generated 500 unique, AI-described, trilingual landing pages for specific dish-wine pairings, served via a new API endpoint () and a dynamic frontend page ().
-- **Feature: Pairing Science Page (v1):** Created and implemented the  page, which explains the scientific methodology behind the app's recommendations, including the 12 key variables for food and wine.
-- **Bug Fix: Critical Build Errors:** Fixed 21 critical ESLint errors (duplicate keys, unescaped entities, nested components) that were breaking the production build.
-- **Bug Fix: Incorrect Grape Variety Images:** Identified and replaced 19 incorrect beer images with proper wine images in the database and backups.
-- **UI/UX Fix: Sommelier Kompass:** Fixed the mobile navigation to ensure the Sommelier Kompass is always visible and added a corresponding button to the homepage.
-- **Feature: SEO Enhancements:** Implemented Schema.org structured data using  and added a  component to key pages.
-- **Feature: Footer and Legal Pages:** Created a full footer with functional Kontakt, Datenschutz, and Impressum pages.
-- **Data Integrity:** Created a  and  in  to document and enforce the database backup state.
+- **Feature: Freemium & Authentication System:** Implemented a full JWT-based Email/Password authentication system (backend & frontend), including usage limits for free users.
+- **Feature: Stripe Integration:** Successfully integrated the user's Stripe account to handle Pro plan subscriptions.
+- **Critical Bug Fix: User Data Preservation:** Fundamentally fixed the database seeding logic in  to prevent overwriting the user's wine cellar ( collection) on deployments.
+- **Bug Fix: Dynamic Pairing Analysis:** Enabled the Pairing Science page to display a dynamic analysis of the user's most recent pairing.
+- **Bug Fix: Incomplete Translations:** Fully translated the Pairing Science page into English and French.
+- **Bug Fix: Blank Homepage:** Resolved a critical JavaScript error that was breaking the homepage.
+- **UI Feature: Mein Weinkeller Redesign:** Added a new slogan and background image to the user's cellar page, including a fix for mobile display.
 
 **Earlier issues found/mentioned but not fixed**
-   - Issue 1: French Wine Hierarchy in Data Source
-     - Debug checklist: Some French wines use appellation instead of region. This is a low-priority data cleanup task.
-     - Why to solve this issue and what will be achieved with this? Improve filter accuracy for French wines.
-     - Should Test frontend/backend/both after fix: backend
-     - Is recurring issue? N
-   - Issue 2: Potential Duplicate Blog Posts
-     - Debug checklist: Automated blog generation may have created duplicates. A script is needed to find and remove them from the  collection.
-     - Why to solve this issue and what will be achieved with this? Ensure data cleanliness and better UX.
-     - Should Test frontend/backend/both after fix: backend
-     - Is recurring issue? N
+   - Issue 1: French Wine Hierarchy in Data Source (Low Priority data cleanup).
+   - Issue 2: Potential Duplicate Blog Posts (Low Priority data cleanup).
 
 **Known issue recurrence from previous fork**
-  - Issue recurrence in previous fork: The core problem of this session was the persistent discrepancy between the local/preview environment and the production environment, causing features to appear broken or missing after deployment. This manifested as the blog page being blank, the Sommelier Kompass disappearing, and new data not showing up.
-  - Recurrence count: 3+ times during this session.
-  - Status: **RESOLVED**. The agent implemented a robust, automatic database seeding script in  that runs on startup. This script is designed to permanently solve this class of problem by ensuring the production database always reflects the correct data state from the backups. The fix is pending user verification via deployment.
+  - Issue recurrence in previous fork: The critical issue of data mismatch between development and production environments recurred for the user's personal wine cellar ( collection).
+  - Recurrence count: 1 in this session.
+  - Status: **RESOLVED**. The agent implemented a permanent fix by modifying the  seeding script to be non-destructive for user-specific collections. This logic now protects existing user data across all future deployments.
 
 **Code Architecture**
 
 
 **Key Technical Concepts**
-- **Automatic Database Seeding:** The most critical concept implemented. A script in  runs on the  event, checks a  file, and populates the MongoDB database from JSON backups if data is missing or outdated. This solves the persistent environment inconsistency problem.
-- **Programmatic SEO (pSEO):** Generated 500 unique landing pages by combining data from the  and a list of dishes. This is served by a new API endpoint and a dynamic frontend route.
-- **Schema.org / Structured Data:** Implemented JSON-LD schemas for SEO using  to improve how search engines understand the site's content.
-- **Linting & Build Fixes:** Resolved 21 critical ESLint errors that were preventing the production build from succeeding, a common cause of it works locally but not in production issues.
+- **JWT Authentication:** Implemented a standard email/password authentication system using JSON Web Tokens, password hashing (), and secure  cookies.
+- **Conditional Database Seeding:** The startup script in  now intelligently differentiates between system data (blogs, etc.) and user data (). User data is now only seeded if the collection is empty, preserving it across deployments.
+- **Stripe API Integration:** Utilized the  Python SDK to create products, prices, and checkout sessions on the backend, enabling users to subscribe.
+- **State Preservation on Navigation:** Used React Router's  function with a  object to pass the current pairing data to the Pairing Science page for dynamic analysis.
 
 **key DB schema**
-  - ****: (NEW Collection) 
-  - ****: Data cleaned (19 image URLs fixed).
-  - **Future Change:** The user has approved a major schema extension for  and a new  collection to include scientific pairing attributes (Säure-Index, Fett-Index, etc.). This is the next major upcoming task.
+  - ** (NEW):** 
+  - ** (UPDATED BEHAVIOR):** Now treated as persistent user data, protected from being overwritten by the seeding script.
 
 **changes in tech stack**
-  - ****: Added to the frontend to manage Schema.org structured data and other head tags.
+  - **Backend:** , , .
+  - **Frontend:** No new libraries, but significant architectural additions for authentication ().
 
 **All files of reference**
-- : The most important file from this session. Contains the new automatic database seeding logic that runs on server startup.
-- : The new manifest file that controls and validates the database state for the seeding process.
-- : The new page explaining the pairing methodology.
-- : The new page that renders the 500 programmatic SEO pairings.
-- : The script used to create the 500 pSEO pairings.
-- , , : Key files that were fixed to resolve critical build-breaking lint errors.
+- : Contains all new logic for Authentication, Freemium limits, Stripe integration, and the critical data-preserving seeding mechanism.
+- : Holds the new  and the user-provided .
+- : The new central hub for managing user authentication state on the frontend.
+- : The new UI for user registration and login.
+- : The new UI for displaying subscription plans.
 
 **Areas that need refactoring**:
-- The  component uses complex logic to manage different item lists for mobile and desktop (, , ). This was a source of confusion and could be simplified to a single source of truth with responsive visibility flags.
+- The navigation bar's structure has grown more complex with the addition of the  inside the . This area could be simplified for better maintainability.
 
 **key api endpoints**
-- : **NEW**. Fetches all 500 programmatic SEO pairings.
-- : **NEW**. Fetches a single programmatic SEO pairing by its slug.
+-  (NEW): Creates a new user.
+-  (NEW): Logs in a user and returns a JWT in a secure cookie.
+-  (NEW): Retrieves the current authenticated user's data.
+-  (NEW): Clears the authentication cookie.
+-  (NEW): Creates a Stripe checkout session for plan upgrades.
+-  (NEW): Returns details of the Freemium plans.
+- ,  (UPDATED): These endpoints are now protected and enforce usage limits based on the user's subscription plan.
 
 **Critical Info for New Agent**
-- **The Core Problem is Solved (Pending Verification):** The user's primary frustration was that deployments failed to show new features due to a database mismatch. The new automatic database seeding logic in  is designed to fix this permanently. The next agent's first priority, after finishing the current small task, is to guide the user to **DEPLOY** and **VERIFY** this critical fix works in the production environment.
-- **Communicate in German:** The user is German-speaking. All communication must be in German.
-- **Trust the Seeding Mechanism:** When adding new data (like the upcoming Pairing Science attributes), the agent must remember to:
-    1. Create/update a JSON backup in .
-    2. Update the  with the expected document count.
-    3. Ensure the seeding logic in  includes the new collection.
-- **Upcoming Work:** The user has approved a roadmap to turn the app into a scientific pairing reference. The next big task is implementing the data model extension and the Match-Score algorithm.
+- **Freemium System is Implemented:** A complete Freemium system with JWT authentication and Stripe integration is ready. The next steps are deploying it, then adding PayPal and Google Login as requested.
+- **The Database Sync Problem is Solved:** The critical, recurring problem of user data loss on deployment has been definitively fixed. The new seeding logic in  is non-destructive for user collections. Do not change this logic.
+- **Communicate in German:** Continue all communication in German.
+- **Stripe is Live-Ready:** The system is configured with the user's **live restricted** Stripe key. The test checkout was successful.
 
 **documents created in this job**
 - 
@@ -154,37 +112,32 @@ info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this comm
 - 
 - 
 - 
-- , , 
 - 
 - 
 
 **Last 10 User Messages and any pending user messages**
-- **Msg 10:** Requests to add a button for the Pairing Science page on the homepage and in the pairing section. (IN PROGRESS)
-- **Msg 9:** Asks where to find the new Pairing Science page. (COMPLETED)
-- **Msg 8:** Approves starting with the Pairing Science page. (COMPLETED)
-- **Msg 7:** Provides a detailed strategic document on how to make the app a reference for wine pairing and asks for implementation suggestions. (COMPLETED)
-- **Msg 6:** Asks about a previous project to generate thousands of subpages. (COMPLETED)
-- **Msg 5:** Shares a screenshot showing the fixed homepage and confirms the Schema.org implementation. (COMPLETED)
-- **Msg 4:** Asks for SEO/GEO optimization based on a provided checklist. (COMPLETED)
-- **Msg 3:** User is frustrated about needing to redeploy for image changes. (COMPLETED)
-- **Msg 2:** Reports beer images are showing for grape varieties. (COMPLETED)
-- **Msg 1:** User is frustrated that the Sommelier Kompass is missing and asks for it to be restored. (COMPLETED)
+- **Msg 10:** User asks for step-by-step guidance to get the Stripe key after providing a screenshot. (COMPLETED)
+- **Msg 9:** User provides a restricted live key (). (COMPLETED)
+- **Msg 8 - 1:** A series of exchanges where the agent guides the user to find the correct Stripe API keys, with the user providing several incorrect/incomplete keys before finding the right one. (COMPLETED)
 
 **Project Health Check:**
-- **Broken:** None. All known issues have been addressed. The critical data sync issue is believed to be resolved and is pending production deployment and verification.
+- **Broken:** None.
 - **Mocked:** None.
 
 **3rd Party Integrations**
-- **OpenAI (via Emergent Integrations):** Used for generating blog posts, wine descriptions, and the new programmatic SEO pairing descriptions. Relies on the Emergent LLM Key.
+- **OpenAI:** Used for content generation. Uses Emergent LLM Key.
+- **Stripe (NEW):** Integrated for handling Pro plan payments. Uses a User-provided API Key ().
+- **Emergent-managed Google Auth (REMOVED):** Replaced with a custom JWT authentication system as the original service is deprecated.
 
 **Testing status**
-  - Testing agent used after significant changes: YES
-  - Troubleshoot agent used after agent stuck in loop: YES
+  - Testing agent used after significant changes: YES (but failed due to context length, followed by successful manual testing).
+  - Troubleshoot agent used after agent stuck in loop: NO
   - Test files created: None
   - Known regressions: None.
 
 **Credentials to test flow:**
-None required.
+A test user  with password  was created and successfully used to test the login flow.
 
 **What agent forgot to execute**
-The agent was in the middle of verifying the implementation of the links to the Pairing Science page. This task needs to be completed and verified with a screenshot before moving on.</analysis>
+- **PayPal Integration:** The user requested both Stripe and PayPal. Only Stripe has been implemented.
+- **Google Login:** The user requested both Email/Password and Google Login. Only Email/Password has been implemented.</analysis>

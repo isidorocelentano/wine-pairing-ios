@@ -1040,11 +1040,13 @@ async def get_wine_pairing(request: PairingRequest, http_request: Request):
         )
         
         cache_key = None
-        if is_cacheable:
-            cache_key = get_cache_key(request.dish, request.language, request.wine_type_filter)
+        # WICHTIG: use_cellar Anfragen sollten NICHT gecacht werden, da sie dynamische Keller-Inhalte haben
+        # Stattdessen: Separate Cache-Keys für use_cellar und non-use_cellar
+        if is_cacheable and not request.use_cellar:
+            cache_key = get_cache_key(request.dish, request.language, request.wine_type_filter, request.use_cellar)
             cached_result = get_cached_pairing(cache_key)
             if cached_result:
-                # Return cached result immediately
+                # Return cached result immediately (nur für non-cellar Anfragen)
                 return PairingResponse(
                     dish=request.dish,
                     recommendation=cached_result['recommendation'],

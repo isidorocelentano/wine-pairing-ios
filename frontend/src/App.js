@@ -81,6 +81,7 @@ function App() {
                   <Route path="/subscription" element={<><SubscriptionPage /><Navigation /></>} />
                   <Route path="/subscription/success" element={<SubscriptionSuccessPage />} />
                   <Route path="/subscription/cancel" element={<><SubscriptionPage /><Navigation /></>} />
+                  <Route path="/coupon" element={<><CouponPage /><Navigation /></>} />
                 </Routes>
               </BrowserRouter>
             </div>

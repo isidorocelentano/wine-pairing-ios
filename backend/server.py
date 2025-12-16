@@ -43,6 +43,9 @@ JWT_SECRET = os.environ.get('JWT_SECRET')
 JWT_ALGORITHM = "HS256"
 JWT_EXPIRY_DAYS = 7
 
+# Backup Manager (wird beim Startup initialisiert)
+backup_manager: BackupManager = None
+
 # ===================== FREEMIUM CONFIGURATION =====================
 FREEMIUM_LIMITS = {
     "basic": {

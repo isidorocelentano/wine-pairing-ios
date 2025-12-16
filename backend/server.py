@@ -1073,7 +1073,8 @@ async def get_wine_pairing(request: PairingRequest, http_request: Request):
         
         if request.use_cellar:
             query = {}
-            if request.wine_type_filter:
+            # WICHTIG: "all" bedeutet ALLE Weintypen, also keine Filterung
+            if request.wine_type_filter and request.wine_type_filter != "all":
                 query["type"] = request.wine_type_filter
             
             cellar_wines = await db.wines.find(query, {"_id": 0, "image_base64": 0}).to_list(100)

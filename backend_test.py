@@ -992,9 +992,13 @@ class WinePairingAPITester:
             self.log_test("Auth System (Login)", False, f"Login failed: {login_response}")
             return False
         
-        # Validate login response
-        if 'access_token' not in login_response:
-            self.log_test("Auth System (Login)", False, f"Login missing access_token: {login_response}")
+        # Validate login response (should contain user info, token is set as cookie)
+        if 'user_id' not in login_response:
+            self.log_test("Auth System (Login)", False, f"Login missing user_id: {login_response}")
+            return False
+        
+        if 'email' not in login_response:
+            self.log_test("Auth System (Login)", False, f"Login missing email: {login_response}")
             return False
         
         self.log_test("Auth System Still Works", True, 

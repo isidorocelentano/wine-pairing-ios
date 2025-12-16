@@ -165,6 +165,87 @@ const SubscriptionPage = () => {
           </div>
         )}
 
+        {/* Coupon Redemption Section */}
+        {isAuthenticated && !isPro && (
+          <div className="mb-8 max-w-lg mx-auto">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Gift className="h-5 w-5" />
+                  {lang === 'de' ? 'Gutschein einlösen' : lang === 'en' ? 'Redeem Coupon' : 'Utiliser un coupon'}
+                </CardTitle>
+                <CardDescription>
+                  {lang === 'de' 
+                    ? 'Haben Sie einen Early Adopter Gutschein? Lösen Sie ihn hier ein für 1 Jahr kostenlosen Pro-Zugang.'
+                    : lang === 'en'
+                    ? 'Have an Early Adopter coupon? Redeem it here for 1 year of free Pro access.'
+                    : 'Avez-vous un coupon Early Adopter? Utilisez-le ici pour 1 an d\'accès Pro gratuit.'}
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleCouponRedeem} className="space-y-4">
+                  <div>
+                    <Input
+                      type="text"
+                      placeholder="z.B. WINE-XXXX-XXXX-XXXX"
+                      value={couponCode}
+                      onChange={(e) => setCouponCode(e.target.value.toUpperCase())}
+                      className="text-center text-lg font-mono"
+                      disabled={couponLoading}
+                    />
+                  </div>
+                  
+                  <Button 
+                    type="submit" 
+                    className="w-full" 
+                    disabled={couponLoading || !couponCode.trim()}
+                  >
+                    {couponLoading ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        {lang === 'de' ? 'Wird eingelöst...' : 'Redeeming...'}
+                      </>
+                    ) : (
+                      lang === 'de' ? 'Gutschein einlösen' : 'Redeem Coupon'
+                    )}
+                  </Button>
+                </form>
+
+                {couponResult && (
+                  <div className={`mt-4 p-4 rounded-lg ${
+                    couponResult.success 
+                      ? 'bg-green-50 border border-green-200' 
+                      : 'bg-red-50 border border-red-200'
+                  }`}>
+                    <div className={`flex items-start gap-2 ${
+                      couponResult.success ? 'text-green-700' : 'text-red-700'
+                    }`}>
+                      {couponResult.success ? (
+                        <CheckCircle className="h-5 w-5 mt-0.5 flex-shrink-0" />
+                      ) : (
+                        <AlertCircle className="h-5 w-5 mt-0.5 flex-shrink-0" />
+                      )}
+                      <div>
+                        <p className="font-medium">
+                          {couponResult.success ? 'Erfolg!' : 'Fehler'}
+                        </p>
+                        <p className="text-sm mt-1">
+                          {couponResult.message}
+                        </p>
+                        {couponResult.success && couponResult.expires_at && (
+                          <p className="text-sm mt-2">
+                            {lang === 'de' ? 'Gültig bis:' : 'Valid until:'} {new Date(couponResult.expires_at).toLocaleDateString('de-DE')}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          </div>
+        )}
+
         {/* Pricing Cards */}
         <div className="grid md:grid-cols-3 gap-6">
           {/* Basic Plan */}

@@ -1075,12 +1075,10 @@ async def get_wine_pairing(request: PairingRequest, http_request: Request):
                 query["type"] = request.wine_type_filter
             
             cellar_wines = await db.wines.find(query, {"_id": 0, "image_base64": 0}).to_list(100)
-            print(f"DEBUG: Found {len(cellar_wines)} wines in cellar")
             
             if cellar_wines:
-                # Setze cellar_matches direkt hier!
+                # Setze cellar_matches für die API-Response
                 cellar_matches = [{"id": w["id"], "name": w["name"], "type": w["type"]} for w in cellar_wines[:5]]
-                print(f"DEBUG: cellar_matches = {cellar_matches}")
                 
                 # Translate cellar context based on language
                 if request.language == "en":

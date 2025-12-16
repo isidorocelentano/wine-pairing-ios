@@ -4401,8 +4401,10 @@ async def startup_seed_data():
         ]
         
         # USER-GENERATED COLLECTIONS - NUR laden wenn LEER (nie überschreiben!)
+        # KRITISCH: Diese Collections enthalten User-Daten und dürfen NIEMALS gelöscht werden!
         user_collections = [
             ("wines", "wines.json"),  # Persönlicher Weinkeller
+            ("users", "users.json"),  # Benutzerkonten - NIEMALS überschreiben!
         ]
         
         # SYSTEM COLLECTIONS - Immer laden wenn leer

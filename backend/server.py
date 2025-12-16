@@ -3858,6 +3858,24 @@ def decode_jwt_token(token: str) -> Optional[dict]:
     except jwt.InvalidTokenError:
         return None
 
+async def verify_jwt_token(request: Request) -> dict:
+    """Verify JWT token from Authorization header"""
+    auth_header = request.headers.get("Authorization")
+    if not auth_header or not auth_header.startswith("Bearer "):
+        raise HTTPException(status_code=401, detail="Token fehlt")
+    
+    token = auth_header.split(" ")[1]
+    payload = decode_jwt_token(token)
+    if not payload:
+        raise HTTPException(status_code=401, detail="Ungültiger Token")
+    
+    # Get user data
+    user = await db.users.find_one({"id": payload["user_id"]}, {"_id": 0})
+    if not user:
+        raise HTTPException(status_code=401, detail="User nicht gefunden")
+    
+    return user
+
 @api_router.post("/auth/register")
 async def register_user(req: RegisterRequest, response: Response):
     """Register a new user with email and password"""

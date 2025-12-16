@@ -15,6 +15,9 @@ const SubscriptionPage = () => {
   const { language } = useLanguage();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(null);
+  const [couponCode, setCouponCode] = useState('');
+  const [couponLoading, setCouponLoading] = useState(false);
+  const [couponResult, setCouponResult] = useState(null);
 
   const plans = {
     basic: {

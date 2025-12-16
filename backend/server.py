@@ -1070,8 +1070,14 @@ async def get_wine_pairing(request: PairingRequest, http_request: Request):
             if request.wine_type_filter:
                 query["type"] = request.wine_type_filter
             
-            wines = await db.wines.find(query, {"_id": 0, "image_base64": 0}).to_list(100)
-            if wines:
+            cellar_wines = await db.wines.find(query, {"_id": 0, "image_base64": 0}).to_list(100)
+            print(f"DEBUG: Found {len(cellar_wines)} wines in cellar")
+            
+            if cellar_wines:
+                # Setze cellar_matches direkt hier!
+                cellar_matches = [{"id": w["id"], "name": w["name"], "type": w["type"]} for w in cellar_wines[:5]]
+                print(f"DEBUG: cellar_matches = {cellar_matches}")
+                
                 # Translate cellar context based on language
                 if request.language == "en":
                     cellar_context = "\n\nThe customer has the following wines in the cellar:\n"
@@ -1080,7 +1086,7 @@ async def get_wine_pairing(request: PairingRequest, http_request: Request):
                 else:
                     cellar_context = "\n\nDer Kunde hat folgende Weine im Keller:\n"
                 
-                for w in wines:
+                for w in cellar_wines:
                     cellar_context += f"- {w['name']} ({w['type']})"
                     if w.get('region'):
                         if request.language == "en":

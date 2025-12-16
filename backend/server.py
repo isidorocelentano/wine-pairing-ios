@@ -328,6 +328,16 @@ class CheckoutRequest(BaseModel):
     plan: str  # "pro_monthly" or "pro_yearly"
     origin_url: str
 
+# Auth Request Models
+class RegisterRequest(BaseModel):
+    email: str
+    password: str
+    name: str
+
+class LoginRequest(BaseModel):
+    email: str
+    password: str
+
 class Wine(BaseModel):
     model_config = ConfigDict(extra="ignore")
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))

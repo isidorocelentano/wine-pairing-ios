@@ -22,6 +22,7 @@ import asyncio
 import unicodedata
 import bcrypt
 import jwt
+from backup_manager import BackupManager, create_startup_backup
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')

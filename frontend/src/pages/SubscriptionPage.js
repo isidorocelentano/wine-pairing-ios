@@ -10,7 +10,7 @@ import { Crown, Check, Wine, MessageSquare, Heart, Database, Loader2 } from 'luc
 const API_URL = process.env.REACT_APP_BACKEND_URL;
 
 const SubscriptionPage = () => {
-  const { user, isAuthenticated, loginWithGoogle, refreshUser } = useAuth();
+  const { user, isAuthenticated, refreshUser } = useAuth();
   const { language } = useLanguage();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(null);

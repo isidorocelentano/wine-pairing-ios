@@ -4256,7 +4256,7 @@ async def redeem_coupon(
         
         # Update user plan
         await db.users.update_one(
-            {"id": current_user.id},
+            {"user_id": current_user.user_id},
             {
                 "$set": {
                     "plan": "pro",

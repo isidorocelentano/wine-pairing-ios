@@ -34,37 +34,57 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const loginWithGoogle = useCallback(() => {
-    // Redirect to Emergent OAuth
-    const currentUrl = window.location.origin;
-    const callbackUrl = `${currentUrl}/auth/callback`;
-    const oauthUrl = `https://demobackend.emergentagent.com/auth/v1/env/oauth/google?callback_url=${encodeURIComponent(callbackUrl)}`;
-    window.location.href = oauthUrl;
-  }, []);
-
-  const handleOAuthCallback = useCallback(async (sessionId) => {
+  const register = useCallback(async (email, password, name) => {
     try {
       setLoading(true);
       setError(null);
       
-      const response = await fetch(`${API_URL}/api/auth/session`, {
+      const response = await fetch(`${API_URL}/api/auth/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
-        body: JSON.stringify({ session_id: sessionId })
+        body: JSON.stringify({ email, password, name })
       });
       
+      const data = await response.json();
+      
       if (!response.ok) {
-        throw new Error('Authentication failed');
+        throw new Error(data.detail || 'Registrierung fehlgeschlagen');
       }
       
-      const userData = await response.json();
-      setUser(userData);
-      return true;
+      setUser(data);
+      return { success: true };
     } catch (err) {
-      console.error('OAuth callback error:', err);
       setError(err.message);
-      return false;
+      return { success: false, error: err.message };
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  const login = useCallback(async (email, password) => {
+    try {
+      setLoading(true);
+      setError(null);
+      
+      const response = await fetch(`${API_URL}/api/auth/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ email, password })
+      });
+      
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.detail || 'Anmeldung fehlgeschlagen');
+      }
+      
+      setUser(data);
+      return { success: true };
+    } catch (err) {
+      setError(err.message);
+      return { success: false, error: err.message };
     } finally {
       setLoading(false);
     }
@@ -96,7 +116,7 @@ export const AuthProvider = ({ children }) => {
     const limits = {
       pairing: { used: user.usage?.pairing_requests_today || 0, limit: 5 },
       chat: { used: user.usage?.chat_messages_today || 0, limit: 5 },
-      cellar: { used: 0, limit: 10 }, // Will be fetched separately
+      cellar: { used: 0, limit: 10 },
       favorites: { used: 0, limit: 10 }
     };
     
@@ -110,11 +130,12 @@ export const AuthProvider = ({ children }) => {
     error,
     isAuthenticated: !!user,
     isPro,
-    loginWithGoogle,
-    handleOAuthCallback,
+    register,
+    login,
     logout,
     refreshUser,
-    getRemainingUsage
+    getRemainingUsage,
+    clearError: () => setError(null)
   };
 
   return (

@@ -3639,7 +3639,7 @@ if cors_origins_env == '*':
     allowed_origins = [
         "http://localhost:3000",
         "https://localhost:3000",
-        "https://weinkellerapp.preview.emergentagent.com",
+        "https://winedata-fix.preview.emergentagent.com",
         "https://wine-pairing.online",
         "https://www.wine-pairing.online"
     ]
@@ -4403,8 +4403,13 @@ async def startup_seed_data():
         # USER-GENERATED COLLECTIONS - NUR laden wenn LEER (nie überschreiben!)
         # KRITISCH: Diese Collections enthalten User-Daten und dürfen NIEMALS gelöscht werden!
         user_collections = [
-            ("wines", "wines.json"),  # Persönlicher Weinkeller
-            ("users", "users.json"),  # Benutzerkonten - NIEMALS überschreiben!
+            ("wines", "wines.json"),          # Persönlicher Weinkeller
+            ("users", "users.json"),          # Benutzerkonten - NIEMALS überschreiben!
+            ("pairings", None),               # Pairing-History der Benutzer
+            ("chats", None),                  # Chat-Verläufe
+            ("wine_favorites", None),         # Benutzer-Favoriten
+            ("user_sessions", None),          # Session-Daten
+            ("payment_transactions", None),   # Zahlungstransaktionen
         ]
         
         # SYSTEM COLLECTIONS - Immer laden wenn leer

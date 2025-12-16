@@ -3206,7 +3206,7 @@ async def get_blog_categories():
 @api_router.get("/sitemap")
 async def get_sitemap():
     """Generate sitemap data for SEO"""
-    base_url = "https://wine-pairing.online"
+    base_url = os.environ.get("FRONTEND_BASE_URL").rstrip("/")
     
     # Static pages
     pages = [

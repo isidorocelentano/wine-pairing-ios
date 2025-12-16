@@ -14,15 +14,29 @@ Das Backup-System schützt **ALLE** Daten vor Datenverlust bei Deployments.
 
 ## Geschützte Collections (ALLE)
 
+### User-Collections
 | Collection | Beschreibung |
 |------------|--------------|
-| `users` | Benutzerkonten, Passwörter, Abo-Status |
-| `wines` | Persönlicher Weinkeller |
-| `pairings` | Pairing-Historie |
-| `chats` | Chat-Verläufe mit dem Sommelier |
-| `wine_favorites` | Favorisierte Weine |
-| `user_sessions` | Aktive Sessions |
-| `payment_transactions` | Zahlungshistorie |
+| `users` | 🔒 Benutzerkonten, Passwörter, Abo-Status |
+| `wines` | 🔒 Persönlicher Weinkeller |
+| `pairings` | 🔒 Pairing-Historie |
+| `chats` | 🔒 Chat-Verläufe mit dem Sommelier |
+| `wine_favorites` | 🔒 Favorisierte Weine |
+| `user_sessions` | 🔒 Aktive Sessions |
+| `payment_transactions` | 🔒 Zahlungshistorie |
+
+### Content-Collections
+| Collection | Beschreibung |
+|------------|--------------|
+| `public_wines` | 📄 Weindatenbank (1821 Weine) |
+| `grape_varieties` | 📄 Rebsorten (140 Sorten) |
+| `blog_posts` | 📄 Blog-Artikel (233 Beiträge) |
+| `feed_posts` | 📄 Community Feed (268 Posts) |
+| `regional_pairings` | 📄 Sommelier-Kompass (44 Pairings) |
+| `dishes` | 📄 Gerichte-Datenbank |
+| `wine_database` | 📄 Erweiterte Wein-DB |
+| `seo_pairings` | 📄 SEO-Pairings |
+| `coupons` | 📄 Gutschein-Codes |
 
 ## API Endpoints
 

@@ -788,8 +788,221 @@ class WinePairingAPITester:
             self.log_test("Sommelier Chat German (Schnitzel)", False, str(response))
         return success
 
+    # ===================== BACKUP SYSTEM VERIFICATION TESTS =====================
+    
+    def test_backup_status_api(self):
+        """Test GET /api/backup/status - Verify backup system status"""
+        success, response = self.make_request('GET', 'backup/status', expected_status=200)
+        if success:
+            # Validate response structure
+            required_fields = ['backups', 'user_data_counts', 'system_data_counts']
+            missing_fields = [field for field in required_fields if field not in response]
+            if missing_fields:
+                self.log_test("Backup Status API", False, f"Missing required fields: {missing_fields}")
+                return False
+            
+            # Check backups array
+            backups = response.get('backups', [])
+            if not isinstance(backups, list):
+                self.log_test("Backup Status API", False, f"backups should be array, got {type(backups)}")
+                return False
+            
+            if len(backups) == 0:
+                self.log_test("Backup Status API", False, "No backups found - expected at least 1 backup")
+                return False
+            
+            # Check user_data_counts
+            user_data_counts = response.get('user_data_counts', {})
+            expected_user_collections = ['users', 'wines', 'pairings', 'chats', 'wine_favorites', 'user_sessions', 'payment_transactions']
+            missing_user_collections = [col for col in expected_user_collections if col not in user_data_counts]
+            if missing_user_collections:
+                self.log_test("Backup Status API", False, f"Missing user collections: {missing_user_collections}")
+                return False
+            
+            # Check system_data_counts
+            system_data_counts = response.get('system_data_counts', {})
+            expected_system_collections = ['blog_posts', 'public_wines', 'grape_varieties', 'regional_pairings', 'feed_posts']
+            found_system_collections = [col for col in expected_system_collections if col in system_data_counts]
+            if len(found_system_collections) < 3:  # At least 3 system collections should exist
+                self.log_test("Backup Status API", False, f"Too few system collections found: {found_system_collections}")
+                return False
+            
+            self.log_test("Backup Status API", True, 
+                         f"Found {len(backups)} backups, {len(user_data_counts)} user collections, {len(system_data_counts)} system collections")
+        else:
+            self.log_test("Backup Status API", False, str(response))
+        return success
+
+    def test_user_data_counts_api(self):
+        """Test GET /api/backup/user-data-counts - Verify user data counts"""
+        success, response = self.make_request('GET', 'backup/user-data-counts', expected_status=200)
+        if success:
+            # Validate response structure
+            required_fields = ['timestamp', 'user_data_counts', 'total_user_documents']
+            missing_fields = [field for field in required_fields if field not in response]
+            if missing_fields:
+                self.log_test("User Data Counts API", False, f"Missing required fields: {missing_fields}")
+                return False
+            
+            # Check timestamp format
+            timestamp = response.get('timestamp')
+            if not isinstance(timestamp, str) or len(timestamp) < 10:
+                self.log_test("User Data Counts API", False, f"Invalid timestamp format: {timestamp}")
+                return False
+            
+            # Check user_data_counts
+            user_data_counts = response.get('user_data_counts', {})
+            
+            # Verify expected user data counts based on requirements
+            users_count = user_data_counts.get('users', 0)
+            wines_count = user_data_counts.get('wines', 0)
+            pairings_count = user_data_counts.get('pairings', 0)
+            
+            if users_count < 8:
+                self.log_test("User Data Counts API", False, f"Expected 8+ users, got {users_count}")
+                return False
+            
+            if wines_count < 11:
+                self.log_test("User Data Counts API", False, f"Expected 11+ wines, got {wines_count}")
+                return False
+            
+            if pairings_count < 100:
+                self.log_test("User Data Counts API", False, f"Expected 100+ pairings, got {pairings_count}")
+                return False
+            
+            # Check total_user_documents
+            total_user_documents = response.get('total_user_documents', 0)
+            if total_user_documents <= 0:
+                self.log_test("User Data Counts API", False, f"total_user_documents should be > 0, got {total_user_documents}")
+                return False
+            
+            self.log_test("User Data Counts API", True, 
+                         f"Users: {users_count}, Wines: {wines_count}, Pairings: {pairings_count}, Total: {total_user_documents}")
+        else:
+            self.log_test("User Data Counts API", False, str(response))
+        return success
+
+    def test_create_backup_api(self):
+        """Test POST /api/backup/create?user_data_only=true - Create user data backup"""
+        success, response = self.make_request('POST', 'backup/create?user_data_only=true', expected_status=200)
+        if success:
+            # Validate response structure
+            required_fields = ['success', 'backup_dir', 'collections']
+            missing_fields = [field for field in required_fields if field not in response]
+            if missing_fields:
+                self.log_test("Create Backup API", False, f"Missing required fields: {missing_fields}")
+                return False
+            
+            # Check success status
+            if not response.get('success'):
+                self.log_test("Create Backup API", False, f"Backup creation failed: {response}")
+                return False
+            
+            # Check backup_dir path
+            backup_dir = response.get('backup_dir')
+            if not backup_dir or not isinstance(backup_dir, str):
+                self.log_test("Create Backup API", False, f"Invalid backup_dir: {backup_dir}")
+                return False
+            
+            # Check collections with counts
+            collections = response.get('collections', {})
+            if not isinstance(collections, dict):
+                self.log_test("Create Backup API", False, f"collections should be dict, got {type(collections)}")
+                return False
+            
+            # Verify user collections are included
+            expected_user_collections = ['users', 'wines', 'pairings']
+            found_user_collections = [col for col in expected_user_collections if col in collections]
+            if len(found_user_collections) < 3:
+                self.log_test("Create Backup API", False, f"Missing user collections in backup: {expected_user_collections}")
+                return False
+            
+            # Check that collections have counts
+            for col_name, col_info in collections.items():
+                if not isinstance(col_info, dict) or 'count' not in col_info:
+                    self.log_test("Create Backup API", False, f"Collection {col_name} missing count info")
+                    return False
+            
+            total_collections = len(collections)
+            self.log_test("Create Backup API", True, 
+                         f"Backup created successfully - {total_collections} collections backed up to {backup_dir}")
+        else:
+            self.log_test("Create Backup API", False, str(response))
+        return success
+
+    def test_core_user_data_verification(self):
+        """Test core user data collections have expected data"""
+        # Test users collection
+        success_users, users_response = self.make_request('GET', 'backup/user-data-counts', expected_status=200)
+        if not success_users:
+            self.log_test("Core User Data Verification", False, f"Could not get user data counts: {users_response}")
+            return False
+        
+        user_data_counts = users_response.get('user_data_counts', {})
+        
+        # Verify users collection (8 accounts)
+        users_count = user_data_counts.get('users', 0)
+        if users_count < 8:
+            self.log_test("Core User Data Verification", False, f"Users collection: expected 8+, got {users_count}")
+            return False
+        
+        # Verify wines collection (11 wines)
+        wines_count = user_data_counts.get('wines', 0)
+        if wines_count < 11:
+            self.log_test("Core User Data Verification", False, f"Wines collection: expected 11+, got {wines_count}")
+            return False
+        
+        # Verify pairings collection (100+ pairings)
+        pairings_count = user_data_counts.get('pairings', 0)
+        if pairings_count < 100:
+            self.log_test("Core User Data Verification", False, f"Pairings collection: expected 100+, got {pairings_count}")
+            return False
+        
+        self.log_test("Core User Data Verification", True, 
+                     f"All core collections verified - Users: {users_count}, Wines: {wines_count}, Pairings: {pairings_count}")
+        return True
+
+    def test_auth_system_still_works(self):
+        """Test that auth system is still functional after backup implementation"""
+        # Test user registration
+        register_data = {
+            "email": f"backup_test_{int(datetime.now().timestamp())}@example.com",
+            "password": "SecurePassword123!",
+            "name": "Backup Test User"
+        }
+        
+        success_register, register_response = self.make_request('POST', 'auth/register', data=register_data, expected_status=200)
+        if not success_register:
+            self.log_test("Auth System (Register)", False, f"Registration failed: {register_response}")
+            return False
+        
+        # Validate registration response
+        if 'user_id' not in register_response:
+            self.log_test("Auth System (Register)", False, f"Registration missing user_id: {register_response}")
+            return False
+        
+        # Test user login
+        login_data = {
+            "email": register_data["email"],
+            "password": register_data["password"]
+        }
+        
+        success_login, login_response = self.make_request('POST', 'auth/login', data=login_data, expected_status=200)
+        if not success_login:
+            self.log_test("Auth System (Login)", False, f"Login failed: {login_response}")
+            return False
+        
+        # Validate login response
+        if 'access_token' not in login_response:
+            self.log_test("Auth System (Login)", False, f"Login missing access_token: {login_response}")
+            return False
+        
+        self.log_test("Auth System Still Works", True, 
+                     f"Registration and login successful for user: {register_data['email']}")
+        return True
+
     def test_backup_database_endpoint(self):
-        """Test backup database endpoint"""
+        """Test backup database endpoint (legacy compatibility)"""
         success, response = self.make_request('GET', 'backup-database', expected_status=200)
         if success:
             # Should return some kind of success message or backup info

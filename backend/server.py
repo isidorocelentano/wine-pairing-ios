@@ -276,6 +276,15 @@ async def auto_add_recommended_wines(recommendation: str, dish: str):
 # Create the main app
 app = FastAPI(title="Wine Pairing API", version="1.0.0")
 
+# Add CORS middleware for production deployment
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # In production, this will be configured properly
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
 

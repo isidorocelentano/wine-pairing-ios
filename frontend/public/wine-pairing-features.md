@@ -114,6 +114,20 @@ Favoriten verwalten → Verkostungsnotizen
 
 ---
 
+## 💰 Business Case
+
+### 🌍 **Globaler Weinmarkt (2024)**
+| Region | Verbrauch | Pro-Kopf (Liter) | Marktvolumen |
+|--------|-----------|-------------------|--------------|
+| **Weltweit** | 214.2 Mio. hl | ~27.5 l/Jahr | €280+ Mrd. |
+| **EU** | 103.6 Mio. hl | ~35 l/Jahr | €78.5 Mrd. |
+| **DACH-Region** | ~28 Mio. hl | **~25 l/Jahr** | **€12+ Mrd.** |
+
+### 🇩🇪 **DACH-Region Details (2024)**
+- **Deutschland:** 17.8 Mio. hl | 22.2 l/Kopf | €9.2 Mrd. Marktvolumen
+- **Österreich:** ~2.5 Mio. hl | 28.6 l/Kopf | €1.8 Mrd. Marktvolumen  
+- **Schweiz:** ~0.6 Mio. hl | 35 l/Kopf | €1.2 Mrd. Marktvolumen
+
 ## 📊 **Erfolgs-Metriken**
 
 ### 🗄️ **Content-Umfang**

@@ -140,13 +140,14 @@ class SimpleBugfixTester:
         """Test coupon system is functional (new feature)"""
         success, response = self.make_request('GET', 'coupon/stats', expected_status=200)
         if success:
-            # Check response structure
-            if 'total_coupons' in response and 'active_coupons' in response:
-                total_coupons = response.get('total_coupons', 0)
-                active_coupons = response.get('active_coupons', 0)
-                self.log_test("Coupon System Functional", True, f"Total: {total_coupons}, Active: {active_coupons}")
+            # Check response structure - actual fields are 'total', 'used', 'unused', 'usage_rate'
+            if 'total' in response and 'unused' in response:
+                total_coupons = response.get('total', 0)
+                unused_coupons = response.get('unused', 0)
+                used_coupons = response.get('used', 0)
+                self.log_test("Coupon System Functional", True, f"Total: {total_coupons}, Used: {used_coupons}, Unused: {unused_coupons}")
             else:
-                self.log_test("Coupon System Functional", False, "Missing coupon stats fields")
+                self.log_test("Coupon System Functional", False, f"Unexpected coupon stats structure: {response}")
                 return False
         else:
             self.log_test("Coupon System Functional", False, str(response))

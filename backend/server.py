@@ -4165,6 +4165,69 @@ async def stripe_webhook(request: Request):
         return {"status": "error", "message": str(e)}
 
 
+# ===================== BACKUP SYSTEM ENDPOINTS =====================
+
+@api_router.get("/backup/status")
+async def get_backup_status():
+    """
+    Gibt den aktuellen Backup-Status zurück.
+    Zeigt alle verfügbaren Backups und aktuelle Daten-Counts.
+    """
+    global backup_manager
+    if not backup_manager:
+        raise HTTPException(status_code=503, detail="Backup-Manager nicht initialisiert")
+    
+    return await backup_manager.get_backup_status()
+
+
+@api_router.post("/backup/create")
+async def create_backup(background_tasks: BackgroundTasks, user_data_only: bool = False):
+    """
+    Erstellt ein neues Backup.
+    
+    Args:
+        user_data_only: Wenn True, werden nur User-Daten gesichert (schneller)
+    """
+    global backup_manager
+    if not backup_manager:
+        raise HTTPException(status_code=503, detail="Backup-Manager nicht initialisiert")
+    
+    try:
+        if user_data_only:
+            result = await backup_manager.backup_user_data_only()
+        else:
+            result = await backup_manager.create_full_backup()
+        
+        return {
+            "success": True,
+            "message": "Backup erfolgreich erstellt",
+            "backup_dir": result.get('backup_dir'),
+            "timestamp": result.get('timestamp'),
+            "collections": result.get('collections', {})
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Backup fehlgeschlagen: {str(e)}")
+
+
+@api_router.get("/backup/user-data-counts")
+async def get_user_data_counts():
+    """
+    Gibt die aktuellen Counts aller User-Daten Collections zurück.
+    Nützlich für Quick-Health-Checks.
+    """
+    counts = {}
+    user_collections = ['users', 'wines', 'pairings', 'chats', 'wine_favorites', 'payment_transactions']
+    
+    for col in user_collections:
+        counts[col] = await db[col].count_documents({})
+    
+    return {
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "user_data_counts": counts,
+        "total_user_documents": sum(counts.values())
+    }
+
+
 # ===================== COUPON SYSTEM MODELS =====================
 
 class CouponRequest(BaseModel):

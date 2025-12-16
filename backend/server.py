@@ -4222,6 +4222,86 @@ async def create_checkout_session(
         print(f"Stripe error: {e}")
         raise HTTPException(status_code=500, detail=f"Stripe error: {str(e)}")
 
+@api_router.post("/coupon/redeem", response_model=CouponResponse)
+async def redeem_coupon(
+    coupon_request: CouponRequest,
+    current_user: dict = Depends(verify_jwt_token)
+):
+    """Redeem a coupon code"""
+    try:
+        coupon_code = coupon_request.code.upper().strip()
+        
+        # Find coupon in database
+        coupon = await db.coupons.find_one({"code": coupon_code}, {"_id": 0})
+        
+        if not coupon:
+            return CouponResponse(
+                success=False,
+                message="Gutschein-Code nicht gefunden"
+            )
+        
+        if coupon.get("used", False):
+            return CouponResponse(
+                success=False,
+                message="Gutschein-Code bereits verwendet"
+            )
+        
+        # Calculate expiry date
+        expires_at = datetime.now(timezone.utc) + timedelta(days=365)  # 1 Jahr
+        
+        # Update user plan
+        await db.users.update_one(
+            {"id": current_user["id"]},
+            {
+                "$set": {
+                    "plan": "pro",
+                    "plan_expires_at": expires_at.isoformat(),
+                    "upgraded_via": "coupon",
+                    "coupon_code": coupon_code
+                }
+            }
+        )
+        
+        # Mark coupon as used
+        await db.coupons.update_one(
+            {"code": coupon_code},
+            {
+                "$set": {
+                    "used": True,
+                    "used_by": current_user["email"],
+                    "used_at": datetime.now(timezone.utc).isoformat()
+                }
+            }
+        )
+        
+        return CouponResponse(
+            success=True,
+            message="Gutschein erfolgreich eingelöst! Sie haben jetzt 1 Jahr kostenlosen Pro-Zugang.",
+            plan_upgraded_to="pro",
+            expires_at=expires_at
+        )
+        
+    except Exception as e:
+        print(f"Coupon redemption error: {e}")
+        raise HTTPException(status_code=500, detail=f"Fehler beim Einlösen: {str(e)}")
+
+@api_router.get("/coupon/stats")
+async def get_coupon_stats():
+    """Get coupon statistics (admin only)"""
+    try:
+        total_coupons = await db.coupons.count_documents({})
+        used_coupons = await db.coupons.count_documents({"used": True})
+        unused_coupons = total_coupons - used_coupons
+        
+        return {
+            "total": total_coupons,
+            "used": used_coupons,
+            "unused": unused_coupons,
+            "usage_rate": round((used_coupons / total_coupons * 100), 2) if total_coupons > 0 else 0
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
 # Include the router AFTER middleware
 app.include_router(api_router)
 

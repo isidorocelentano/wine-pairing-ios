@@ -3583,15 +3583,28 @@ async def get_public_wines(
         query["country"] = country
     if region:
         # =================================================================
-        # REGION FILTER FIX: Match simplified region names
+        # REGION FILTER FIX: Match in multiple fields
         # =================================================================
-        # When user selects "Genf" from dropdown, we need to find ALL wines
-        # from Genf sub-regions: "Genf - Anières", "Genf - Satigny", etc.
+        # Wines can have region info in different fields:
+        # - region: "Barbaresco", "Südtirol"
+        # - appellation: "Barbaresco DOCG", "Alto Adige"
+        # - anbaugebiet: some imports use this field
         # 
-        # Solution: Use regex "^Genf" to match any region starting with "Genf"
-        # This works because Swiss wines are stored as "Kanton - Unterregion"
+        # Solution: Search in all region-related fields with $or
         # =================================================================
-        query["region"] = {"$regex": f"^{re.escape(region)}", "$options": "i"}
+        region_regex = {"$regex": f"^{re.escape(region)}", "$options": "i"}
+        query["$or"] = query.get("$or", []) + [
+            {"region": region_regex},
+            {"appellation": region_regex},
+            {"anbaugebiet": region_regex}
+        ]
+        # If there's already an $or from search, we need to handle it differently
+        if "search" not in str(query):
+            query["$or"] = [
+                {"region": region_regex},
+                {"appellation": region_regex},
+                {"anbaugebiet": region_regex}
+            ]
     if wine_color:
         query["wine_color"] = wine_color
     if price_category:

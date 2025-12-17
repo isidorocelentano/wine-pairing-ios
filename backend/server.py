@@ -358,6 +358,7 @@ class LoginRequest(BaseModel):
 class Wine(BaseModel):
     model_config = ConfigDict(extra="ignore")
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    user_id: str  # WICHTIG: Verknüpfung zum Benutzer - jeder User hat seinen eigenen Weinkeller
     name: str
     type: str  # rot, weiss, rose, schaumwein
     region: Optional[str] = None

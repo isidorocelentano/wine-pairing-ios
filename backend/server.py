@@ -998,9 +998,14 @@ async def get_wines(
     return wines
 
 @api_router.get("/wines/{wine_id}", response_model=Wine)
-async def get_wine(wine_id: str):
-    """Get a specific wine by ID"""
-    wine = await db.wines.find_one({"id": wine_id}, {"_id": 0})
+async def get_wine(wine_id: str, request: Request):
+    """Get a specific wine by ID (must belong to current user)"""
+    user = await get_current_user_optional(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Bitte melden Sie sich an")
+    
+    # Wein muss dem User gehören
+    wine = await db.wines.find_one({"id": wine_id, "user_id": user.user_id}, {"_id": 0})
     if not wine:
         raise HTTPException(status_code=404, detail="Wein nicht gefunden")
     if isinstance(wine.get('created_at'), str):

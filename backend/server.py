@@ -4548,6 +4548,23 @@ async def startup_seed_data():
     backup_manager = await create_startup_backup(db, ROOT_DIR / "data")
     print("📦 Backup-Manager initialisiert (Auto-Backup alle 6 Stunden)")
     
+    # ===================================================================
+    # WICHTIG: Datenbank-Indizes für Performance erstellen
+    # ===================================================================
+    print("\n🔧 ERSTELLE DATENBANK-INDIZES...")
+    try:
+        # Index für Weinkeller - KRITISCH für Multi-User-Skalierung
+        await db.wines.create_index("user_id")
+        print("   ✅ Index 'user_id' auf 'wines' Collection erstellt")
+        
+        # Index für User-Suche
+        await db.users.create_index("user_id", unique=True)
+        await db.users.create_index("email", unique=True)
+        print("   ✅ Index 'user_id' und 'email' auf 'users' Collection erstellt")
+        
+    except Exception as e:
+        print(f"   ⚠️ Index-Erstellung: {e} (Index existiert möglicherweise bereits)")
+    
     # Lade das Backup-Manifest für erwartete Werte
     manifest_path = ROOT_DIR / "data" / "backup_manifest.json"
     expected = {

@@ -3760,17 +3760,30 @@ async def get_public_wines_filters(country: Optional[str] = None, region: Option
     
     # Get all distinct values
     countries = await db.public_wines.distinct("country", {})
-    raw_regions = await db.public_wines.distinct("region", {"country": country} if country and country != 'all' else {})
+    
+    # Get regions from multiple fields
+    country_filter = {"country": country} if country and country != 'all' else {}
+    raw_regions = await db.public_wines.distinct("region", country_filter)
+    raw_appellations = await db.public_wines.distinct("appellation", country_filter)
+    
     appellations = await db.public_wines.distinct("appellation", query)
     colors = await db.public_wines.distinct("wine_color")
     price_categories = await db.public_wines.distinct("price_category")
     grape_varieties = await db.public_wines.distinct("grape_variety")
     
-    # Simplify regions - extract just the canton/main region
+    # Combine regions and appellations for the filter dropdown
+    # This ensures "Barbaresco" appears even if it's only in appellation field
     simplified_regions = set()
     for r in raw_regions:
-        if r and r != 'Unbekannt':
+        if r and r != 'Unbekannt' and r.strip():
             simplified_regions.add(simplify_region(r))
+    
+    # Also add major appellations as region options (like Barbaresco, Barolo, Chianti)
+    for a in raw_appellations:
+        if a and a != 'Unbekannt' and a.strip():
+            # Only add short appellation names (not full DOCG names)
+            if len(a) < 30 and 'DOCG' not in a and 'DOC' not in a:
+                simplified_regions.add(a)
     
     # Build hierarchy map
     hierarchy = {}

@@ -1142,7 +1142,11 @@ async def get_wine_pairing(request: PairingRequest, http_request: Request):
         cellar_context = ""
         
         if request.use_cellar:
-            query = {}
+            # User muss eingeloggt sein für Keller-Empfehlungen
+            if not user:
+                raise HTTPException(status_code=401, detail="Bitte melden Sie sich an, um Empfehlungen aus Ihrem Weinkeller zu erhalten")
+            
+            query = {"user_id": user.user_id}  # NUR Weine des Users
             # WICHTIG: "all" bedeutet ALLE Weintypen, also keine Filterung
             if request.wine_type_filter and request.wine_type_filter != "all":
                 query["type"] = request.wine_type_filter

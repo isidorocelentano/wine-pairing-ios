@@ -381,6 +381,7 @@ class WineCreate(BaseModel):
     notes: Optional[str] = None  # Personal user notes
     image_base64: Optional[str] = None
     quantity: Optional[int] = 1
+    # user_id wird vom Backend gesetzt, nicht vom Client
 
 class WineUpdate(BaseModel):
     name: Optional[str] = None

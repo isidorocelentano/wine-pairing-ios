@@ -242,10 +242,16 @@ const PairingPage = () => {
         spice,
       });
       setResult(response.data);
+      setShowUpgradePrompt(false);
       fetchHistory();
       toast.success(t('success_recommendation'));
     } catch (error) {
-      toast.error(t('error_general'));
+      // Check if it's a limit error (429)
+      if (error.response?.status === 429 || error.response?.data?.detail?.includes('Tageslimit')) {
+        setShowUpgradePrompt(true);
+      } else {
+        toast.error(t('error_general'));
+      }
       console.error('Pairing error:', error);
     } finally {
       setLoading(false);

@@ -207,7 +207,7 @@ const CellarPage = () => {
 
   const handleUpdateWine = async () => {
     try {
-      await axios.put(`${API}/wines/${editingWine.id}`, {
+      await authAxios.put(`${API}/wines/${editingWine.id}`, {
         name: editingWine.name,
         type: editingWine.type,
         region: editingWine.region || null,

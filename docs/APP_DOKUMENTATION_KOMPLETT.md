@@ -338,7 +338,7 @@ Upgrade auf Pro-Plan via Stripe.
 
 | Collection | Anzahl | Beschreibung | Wachstum |
 |------------|--------|--------------|----------|
-| `public_wines` | 7,069 | Öffentliche Weine | 📈 Dynamisch |
+| `public_wines` | 7,078 | Öffentliche Weine | 📈 Dynamisch |
 | `wine_database` | 494 | Erweiterte Wein-Infos | Statisch |
 | `grape_varieties` | 313 | Rebsorten | Statisch |
 | `regional_pairings` | 1,652 | Sommelier Kompass | Statisch |

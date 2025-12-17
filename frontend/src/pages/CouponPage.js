@@ -26,7 +26,7 @@ const CouponPage = () => {
     setResult(null);
 
     try {
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/coupon/redeem`, {
+      const response = await fetch(`${API_URL}/api/coupon/redeem`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

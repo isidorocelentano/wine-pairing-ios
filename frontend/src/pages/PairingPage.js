@@ -61,12 +61,46 @@ const PairingPage = () => {
   const [spice, setSpice] = useState(null);
 
   const [history, setHistory] = useState([]);
+  const [selectedWineDetail, setSelectedWineDetail] = useState(null);
+  const [loadingWineDetail, setLoadingWineDetail] = useState(false);
   
-  // Handle wine card click - go directly to wine database
-  const handleWineClick = (wine) => {
-    // Extract the main wine name (before parentheses or commas)
-    const searchTerm = wine.name.split('(')[0].split(',')[0].trim();
-    navigate(`/wine-database?search=${encodeURIComponent(searchTerm)}`);
+  // Handle wine card click - show wine detail inline instead of navigating away
+  const handleWineClick = async (wine) => {
+    setLoadingWineDetail(true);
+    try {
+      // Search for wine in database
+      const searchTerm = wine.name.split('(')[0].split(',')[0].trim();
+      const response = await axios.get(`${API}/public-wines?search=${encodeURIComponent(searchTerm)}&limit=1`);
+      
+      if (response.data && response.data.length > 0) {
+        setSelectedWineDetail(response.data[0]);
+      } else {
+        // Wenn nicht in DB, zeige die Pairing-Info
+        setSelectedWineDetail({
+          name: wine.name,
+          description_de: wine.description || wine.reason,
+          description_en: wine.description || wine.reason,
+          description_fr: wine.description || wine.reason,
+          grape: wine.grape || '',
+          region: wine.region || '',
+          notInDatabase: true
+        });
+      }
+    } catch (error) {
+      console.error('Error loading wine detail:', error);
+      setSelectedWineDetail({
+        name: wine.name,
+        description_de: wine.description || wine.reason,
+        notInDatabase: true
+      });
+    } finally {
+      setLoadingWineDetail(false);
+    }
+  };
+  
+  // Back to results
+  const handleBackToResults = () => {
+    setSelectedWineDetail(null);
   };
   
   useEffect(() => {

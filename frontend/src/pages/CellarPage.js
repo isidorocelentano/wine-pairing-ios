@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import axios from "axios";
 import { toast } from 'sonner';
-import { Wine, Camera, Upload, X, Loader2, Plus, Trash2, Star, Edit, Minus } from 'lucide-react';
+import { Wine, Camera, Upload, X, Loader2, Plus, Trash2, Star, Edit, Minus, LogIn } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -10,7 +10,14 @@ import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogDescription } from "@/components/ui/dialog";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useAuth } from "@/contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 import { API_URL, API } from "@/config/api";
+
+// Axios instance mit credentials für auth
+const authAxios = axios.create({
+  withCredentials: true
+});
 
 const CellarPage = () => {
   const { t, language } = useLanguage();

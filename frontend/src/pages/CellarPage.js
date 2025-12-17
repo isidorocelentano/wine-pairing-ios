@@ -235,6 +235,56 @@ const CellarPage = () => {
     return labels[type] || type;
   };
 
+  // Auth Loading State
+  if (authLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <Loader2 className="h-8 w-8 animate-spin text-primary" />
+      </div>
+    );
+  }
+
+  // Not authenticated - show login prompt
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen pb-20 md:pb-24 relative" data-testid="cellar-page">
+        <div className="fixed inset-0 z-0 pointer-events-none" aria-hidden="true">
+          <img 
+            src="https://images.unsplash.com/photo-1561906814-23da9a8bfee0?auto=format&fit=crop&w=1920&q=80"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background/95"></div>
+        </div>
+        
+        <div className="relative z-10 pt-6 md:pt-8 px-4 md:px-12 lg:px-24">
+          <div className="container mx-auto max-w-lg">
+            <Card className="mt-20 p-8 text-center">
+              <Wine className="h-16 w-16 mx-auto text-primary/60 mb-6" />
+              <h1 className="text-2xl font-semibold mb-4">
+                {language === 'de' ? 'Ihr persönlicher Weinkeller' : language === 'en' ? 'Your Personal Wine Cellar' : 'Votre Cave Personnelle'}
+              </h1>
+              <p className="text-muted-foreground mb-6">
+                {language === 'de' 
+                  ? 'Melden Sie sich an, um Ihre Weinsammlung zu verwalten und personalisierte Empfehlungen zu erhalten.'
+                  : language === 'en'
+                  ? 'Sign in to manage your wine collection and get personalized recommendations.'
+                  : 'Connectez-vous pour gérer votre collection de vins et obtenir des recommandations personnalisées.'}
+              </p>
+              <Button 
+                onClick={() => navigate('/login')}
+                className="rounded-full px-8 py-6"
+              >
+                <LogIn className="mr-2 h-5 w-5" />
+                {language === 'de' ? 'Anmelden' : language === 'en' ? 'Sign In' : 'Se connecter'}
+              </Button>
+            </Card>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen pb-20 md:pb-24 relative" data-testid="cellar-page">
       {/* Background Image */}

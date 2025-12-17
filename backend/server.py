@@ -2039,14 +2039,22 @@ async def get_feed_stats():
 
 # ===================== REGIONAL PAIRINGS ENDPOINTS =====================
 
-@api_router.get("/regional-pairings", response_model=List[RegionalPairing])
+class RegionalPairingsResponse(BaseModel):
+    """Response model for paginated regional pairings"""
+    pairings: List[RegionalPairing]
+    total: int
+    has_more: bool
+
+
+@api_router.get("/regional-pairings")
 async def get_regional_pairings(
     country: Optional[str] = None,
     region: Optional[str] = None,
     search: Optional[str] = None,
-    limit: int = 50
+    limit: int = 50,
+    skip: int = 0
 ):
-    """Get regional wine pairings with filters"""
+    """Get regional wine pairings with filters and pagination"""
     query = {}
     
     if country:
@@ -2061,8 +2069,17 @@ async def get_regional_pairings(
             {"wine_name": {"$regex": accent_pattern, "$options": "i"}}
         ]
     
-    pairings = await db.regional_pairings.find(query, {"_id": 0}).limit(limit).to_list(limit)
-    return pairings
+    # Hole Gesamtanzahl
+    total = await db.regional_pairings.count_documents(query)
+    
+    # Hole paginierte Ergebnisse
+    pairings = await db.regional_pairings.find(query, {"_id": 0}).skip(skip).limit(limit).to_list(limit)
+    
+    return {
+        "pairings": pairings,
+        "total": total,
+        "has_more": (skip + len(pairings)) < total
+    }
 
 
 @api_router.get("/regional-pairings/countries")

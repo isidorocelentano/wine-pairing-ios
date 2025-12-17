@@ -1058,11 +1058,18 @@ async def update_wine(wine_id: str, wine_update: WineUpdate, request: Request):
     return updated
 
 @api_router.delete("/wines/{wine_id}")
-async def delete_wine(wine_id: str):
-    """Remove a wine from the cellar"""
-    result = await db.wines.delete_one({"id": wine_id})
+async def delete_wine(wine_id: str, request: Request):
+    """Remove a wine from the user's cellar (must belong to current user)"""
+    user = await get_current_user_optional(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Bitte melden Sie sich an")
+    
+    # Nur Weine des Users können gelöscht werden
+    result = await db.wines.delete_one({"id": wine_id, "user_id": user.user_id})
     if result.deleted_count == 0:
-        raise HTTPException(status_code=404, detail="Wein nicht gefunden")
+        raise HTTPException(status_code=404, detail="Wein nicht gefunden oder gehört nicht Ihnen")
+    
+    logger.info(f"🗑️ Wine {wine_id} deleted from cellar of user {user.user_id}")
     return {"message": "Wein erfolgreich gelöscht"}
 
 @api_router.post("/wines/{wine_id}/favorite")

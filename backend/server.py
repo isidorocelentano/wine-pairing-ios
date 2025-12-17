@@ -3888,6 +3888,10 @@ async def get_excel_download_links():
         })
     
     return {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "total_documents": total,
+        "downloads": links
+    }
 
 
 @api_router.get("/docs/download")

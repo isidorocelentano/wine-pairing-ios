@@ -50,6 +50,12 @@ const CellarPage = () => {
   }, [wines]);
 
   const fetchWines = useCallback(async () => {
+    // Nicht laden wenn nicht eingeloggt
+    if (!isAuthenticated) {
+      setLoading(false);
+      return;
+    }
+    
     try {
       const params = [];
       if (filter !== 'all') {
@@ -59,14 +65,18 @@ const CellarPage = () => {
         params.push('in_stock_only=true');
       }
       const query = params.length ? `?${params.join('&')}` : '';
-      const response = await axios.get(`${API}/wines${query}`);
+      const response = await authAxios.get(`${API}/wines${query}`);
       setWines(response.data);
     } catch (error) {
-      toast.error(t('error_general'));
+      if (error.response?.status === 401) {
+        toast.error(t('error_login_required') || 'Bitte melden Sie sich an');
+      } else {
+        toast.error(t('error_general'));
+      }
     } finally {
       setLoading(false);
     }
-  }, [filter, inStockOnly, t]);
+  }, [filter, inStockOnly, t, isAuthenticated]);
 
 
   useEffect(() => {

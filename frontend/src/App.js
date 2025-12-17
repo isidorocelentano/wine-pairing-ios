@@ -63,6 +63,7 @@ function App() {
                   <Route path="/wine-database" element={<><WineDatabasePage /><Navigation /></>} />
                   <Route path="/favorites" element={<><FavoritesPage /><Navigation /></>} />
                   <Route path="/cellar" element={<><CellarPage /><Navigation /></>} />
+                  <Route path="/weinkeller" element={<><CellarPage /><Navigation /></>} />
                   <Route path="/admin/grapes" element={<><GrapeAdminPage /><Navigation /></>} />
                   <Route path="/admin/dishes" element={<><DishAdminPage /><Navigation /></>} />
                   <Route path="/seo/pairings" element={<><SeoPairingExplorerPage /><Navigation /></>} />

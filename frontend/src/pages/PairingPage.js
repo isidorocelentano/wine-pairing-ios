@@ -472,8 +472,8 @@ const PairingPage = () => {
           </CardContent>
         </Card>
 
-        {/* Result */}
-        {result && (
+        {/* Result - hidden when wine detail is shown */}
+        {result && !selectedWineDetail && (
           <Card className="pairing-card border-border/50 mb-6 md:mb-8 animate-fade-in-up" data-testid="pairing-result">
             <CardHeader>
               <div className="flex items-center gap-3">

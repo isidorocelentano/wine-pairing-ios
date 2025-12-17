@@ -4463,6 +4463,7 @@ async def startup_seed_data():
         ('chats', 'chats.json'),
         ('wine_favorites', 'wine_favorites.json'),
         ('payment_transactions', 'payment_transactions.json'),
+        ('regional_pairings', 'regional_pairings.json'),  # Sommelier-Kompass Gerichte
     ]
     
     for collection_name, backup_file in user_data_collections:

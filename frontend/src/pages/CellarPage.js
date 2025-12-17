@@ -127,7 +127,7 @@ const CellarPage = () => {
     }
 
     try {
-      await axios.post(`${API}/wines`, {
+      await authAxios.post(`${API}/wines`, {
         ...newWine,
         year: newWine.year ? parseInt(newWine.year) : null,
         quantity: newWine.quantity ? parseInt(newWine.quantity, 10) : 1,

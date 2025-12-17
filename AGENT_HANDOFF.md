@@ -9,7 +9,7 @@
 ### Datenbank-Statistik:
 | Collection | Anzahl | Beschreibung |
 |------------|--------|--------------|
-| `public_wines` | 7,066 | Öffentliche Wein-Datenbank (wächst dynamisch) |
+| `public_wines` | 7,069 | Öffentliche Wein-Datenbank (wächst dynamisch) |
 | `wine_database` | 494 | Erweiterte Wein-Infos |
 | `grape_varieties` | 313 | Rebsorten-Lexikon |
 | `regional_pairings` | 1,652 | Sommelier Kompass |
@@ -20,7 +20,7 @@
 | `users` | ~20 | Benutzerkonten |
 | `wines` | ~40 | Persönliche Weinkeller (user_id!) |
 | `coupons` | 100 | Gutscheine |
-| **GESAMT** | **~10,900** | |
+| **GESAMT** | **~10,729** | |
 
 ---
 
@@ -129,4 +129,4 @@ Der Benutzer kommuniziert auf **DEUTSCH**. Alle Antworten auf Deutsch!
 
 ---
 
-*Letzte Aktualisierung: 17.12.2025 20:25 UTC*
+*Letzte Aktualisierung: 17.12.2025 20:29 UTC*

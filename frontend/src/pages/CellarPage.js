@@ -21,6 +21,8 @@ const authAxios = axios.create({
 
 const CellarPage = () => {
   const { t, language } = useLanguage();
+  const { user, isAuthenticated, loading: authLoading } = useAuth();
+  const navigate = useNavigate();
   const [wines, setWines] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('all');

@@ -937,6 +937,29 @@ def get_sommelier_system(language: str = "de") -> str:
         return SOMMELIER_SYSTEM_FR
     return SOMMELIER_SYSTEM_DE
 
+# ===================== HEALTH CHECK ENDPOINT =====================
+
+@api_router.get("/health")
+async def health_check():
+    """
+    Health check endpoint for Kubernetes/deployment monitoring.
+    Returns the current status of the application and database connectivity.
+    """
+    try:
+        # Check database connectivity
+        await db.command("ping")
+        db_status = "connected"
+    except Exception as e:
+        db_status = f"error: {str(e)}"
+    
+    return {
+        "status": "healthy",
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "database": db_status,
+        "version": "3.1"
+    }
+
+
 # ===================== WINE CELLAR ENDPOINTS =====================
 
 @api_router.get("/")

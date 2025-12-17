@@ -4442,13 +4442,52 @@ async def startup_seed_data():
     """
     ROBUSTE DATENBANK-INITIALISIERUNG
     Prüft gegen das Backup-Manifest und stellt sicher, dass ALLE Daten korrekt sind.
-    Version 3.0 - Mit automatischem Backup-System
+    Version 3.1 - Mit automatischer User-Daten-Wiederherstellung
     """
     global backup_manager
     
     print("\n" + "=" * 60)
     print("🚀 WINE-PAIRING.ONLINE - SERVER STARTUP")
     print("=" * 60)
+    
+    # ===================================================================
+    # KRITISCH: User-Daten aus Backup wiederherstellen wenn DB leer ist!
+    # Dies stellt sicher, dass bei einem Deployment die Daten erhalten bleiben.
+    # ===================================================================
+    print("\n🔐 PRÜFE USER-DATEN...")
+    
+    user_data_collections = [
+        ('users', 'users.json'),
+        ('wines', 'wines.json'),
+        ('pairings', 'pairings.json'),
+        ('chats', 'chats.json'),
+        ('wine_favorites', 'wine_favorites.json'),
+        ('payment_transactions', 'payment_transactions.json'),
+    ]
+    
+    for collection_name, backup_file in user_data_collections:
+        try:
+            count = await db[collection_name].count_documents({})
+            backup_path = ROOT_DIR / "data" / backup_file
+            
+            if count == 0 and backup_path.exists():
+                # Collection ist leer aber Backup existiert -> WIEDERHERSTELLEN!
+                with open(backup_path, 'r', encoding='utf-8') as f:
+                    backup_data = json.load(f)
+                
+                if backup_data and len(backup_data) > 0:
+                    await db[collection_name].insert_many(backup_data)
+                    print(f"   🔄 {collection_name}: {len(backup_data)} Einträge aus Backup wiederhergestellt!")
+                else:
+                    print(f"   ⚠️ {collection_name}: Backup leer")
+            elif count > 0:
+                print(f"   ✅ {collection_name}: {count} Einträge vorhanden")
+            else:
+                print(f"   ⚠️ {collection_name}: leer (kein Backup vorhanden)")
+        except Exception as e:
+            print(f"   ❌ {collection_name}: Fehler - {e}")
+    
+    print()
     
     # Initialisiere Backup-Manager mit automatischem Backup-Task
     backup_manager = await create_startup_backup(db, ROOT_DIR / "data")

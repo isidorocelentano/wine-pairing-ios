@@ -10,7 +10,7 @@ import json
 from typing import Dict, Any, Optional
 
 class ComprehensiveDeploymentTester:
-    def __init__(self, base_url="https://winedata-fix.preview.emergentagent.com"):
+    def __init__(self, base_url="https://persist-data-2.preview.emergentagent.com"):
         self.base_url = base_url
         self.api_url = f"{base_url}/api"
         self.tests_run = 0

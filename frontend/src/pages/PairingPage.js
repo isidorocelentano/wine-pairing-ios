@@ -76,22 +76,58 @@ const PairingPage = () => {
       if (response.data && response.data.length > 0) {
         setSelectedWineDetail(response.data[0]);
       } else {
-        // Wenn nicht in DB, zeige die Pairing-Info
-        setSelectedWineDetail({
+        // Wein nicht in DB - zeige Pairing-Info UND füge zur DB hinzu
+        const wineDetail = {
           name: wine.name,
-          description_de: wine.description || wine.reason,
-          description_en: wine.description || wine.reason,
-          description_fr: wine.description || wine.reason,
+          description_de: wine.description || wine.reason || `${wine.name} - Ein ausgezeichneter Wein, empfohlen von Claude für dieses Gericht.`,
+          description_en: wine.description || wine.reason || `${wine.name} - An excellent wine, recommended by Claude for this dish.`,
+          description_fr: wine.description || wine.reason || `${wine.name} - Un excellent vin, recommandé par Claude pour ce plat.`,
           grape: wine.grape || '',
           region: wine.region || '',
-          notInDatabase: true
-        });
+          country: wine.country || '',
+          color: wine.type || '',
+          notInDatabase: true,
+          addingToDatabase: true
+        };
+        setSelectedWineDetail(wineDetail);
+        
+        // Automatisch zur Datenbank hinzufügen
+        try {
+          const addResponse = await axios.post(`${API}/public-wines/auto-add`, {
+            name: wine.name,
+            grape: wine.grape || '',
+            region: wine.region || '',
+            country: wine.country || '',
+            color: wine.type || '',
+            description_de: wineDetail.description_de,
+            description_en: wineDetail.description_en,
+            description_fr: wineDetail.description_fr,
+            source: 'claude_pairing_recommendation'
+          });
+          
+          if (addResponse.data) {
+            // Update mit DB-Eintrag
+            setSelectedWineDetail(prev => ({
+              ...prev,
+              ...addResponse.data,
+              notInDatabase: false,
+              addingToDatabase: false,
+              justAdded: true
+            }));
+          }
+        } catch (addError) {
+          console.log('Could not auto-add wine:', addError);
+          setSelectedWineDetail(prev => ({
+            ...prev,
+            addingToDatabase: false
+          }));
+        }
       }
     } catch (error) {
       console.error('Error loading wine detail:', error);
       setSelectedWineDetail({
         name: wine.name,
-        description_de: wine.description || wine.reason,
+        description_de: wine.description || wine.reason || `${wine.name} - Empfohlen von Claude.`,
         notInDatabase: true
       });
     } finally {

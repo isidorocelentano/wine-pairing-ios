@@ -697,8 +697,112 @@ const PairingPage = () => {
           </Card>
         )}
 
+        {/* Wine Detail View - shown when a wine is clicked */}
+        {selectedWineDetail && (
+          <Card className="border-2 border-primary/30 shadow-lg">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-3">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={handleBackToResults}
+                  className="rounded-full"
+                >
+                  <ArrowLeft className="h-4 w-4 mr-1" />
+                  {language === 'de' ? 'Zurück' : language === 'fr' ? 'Retour' : 'Back'}
+                </Button>
+              </div>
+              <CardTitle className="text-xl md:text-2xl mt-3">{selectedWineDetail.name}</CardTitle>
+              {selectedWineDetail.winery && (
+                <CardDescription className="text-base">{selectedWineDetail.winery}</CardDescription>
+              )}
+            </CardHeader>
+            <CardContent className="space-y-4">
+              {/* Wine Info Badges */}
+              <div className="flex flex-wrap gap-2">
+                {selectedWineDetail.country && (
+                  <Badge variant="outline" className="flex items-center gap-1">
+                    <MapPin className="h-3 w-3" />
+                    {selectedWineDetail.country}
+                  </Badge>
+                )}
+                {selectedWineDetail.region && (
+                  <Badge variant="outline">{selectedWineDetail.region}</Badge>
+                )}
+                {selectedWineDetail.grape && (
+                  <Badge variant="secondary" className="flex items-center gap-1">
+                    <Grape className="h-3 w-3" />
+                    {selectedWineDetail.grape}
+                  </Badge>
+                )}
+                {selectedWineDetail.vintage && (
+                  <Badge variant="secondary">{selectedWineDetail.vintage}</Badge>
+                )}
+                {selectedWineDetail.color && (
+                  <Badge 
+                    className={
+                      selectedWineDetail.color.toLowerCase().includes('rot') ? 'bg-red-900/80 text-white' :
+                      selectedWineDetail.color.toLowerCase().includes('weiss') || selectedWineDetail.color.toLowerCase().includes('white') ? 'bg-amber-100 text-amber-900' :
+                      selectedWineDetail.color.toLowerCase().includes('ros') ? 'bg-pink-200 text-pink-900' :
+                      'bg-secondary'
+                    }
+                  >
+                    {selectedWineDetail.color}
+                  </Badge>
+                )}
+                {selectedWineDetail.rating && (
+                  <Badge variant="default" className="bg-primary">
+                    ⭐ {selectedWineDetail.rating}
+                  </Badge>
+                )}
+              </div>
+              
+              {/* Description */}
+              <div className="prose prose-sm max-w-none">
+                <p className="text-muted-foreground leading-relaxed">
+                  {language === 'de' ? selectedWineDetail.description_de :
+                   language === 'fr' ? (selectedWineDetail.description_fr || selectedWineDetail.description_de) :
+                   (selectedWineDetail.description_en || selectedWineDetail.description_de)}
+                </p>
+              </div>
+              
+              {/* Not in Database Notice */}
+              {selectedWineDetail.notInDatabase && (
+                <div className="p-3 bg-muted/50 rounded-lg text-sm text-muted-foreground">
+                  {language === 'de' ? 'ℹ️ Dieser Wein wurde von Claude empfohlen und ist noch nicht in unserer Datenbank.' :
+                   language === 'fr' ? 'ℹ️ Ce vin a été recommandé par Claude et n\'est pas encore dans notre base de données.' :
+                   'ℹ️ This wine was recommended by Claude and is not yet in our database.'}
+                </div>
+              )}
+              
+              {/* Actions */}
+              <div className="flex flex-wrap gap-2 pt-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => {
+                    const searchTerm = selectedWineDetail.name.split('(')[0].split(',')[0].trim();
+                    navigate(`/wine-database?search=${encodeURIComponent(searchTerm)}`);
+                  }}
+                >
+                  <ExternalLink className="h-4 w-4 mr-1" />
+                  {language === 'de' ? 'In Datenbank suchen' : language === 'fr' ? 'Rechercher' : 'Search in Database'}
+                </Button>
+                <Button
+                  variant="default"
+                  size="sm"
+                  onClick={handleBackToResults}
+                >
+                  <ArrowLeft className="h-4 w-4 mr-1" />
+                  {language === 'de' ? 'Zurück zu Ergebnissen' : language === 'fr' ? 'Retour aux résultats' : 'Back to Results'}
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
         {/* History */}
-        {history.length > 0 && (
+        {history.length > 0 && !selectedWineDetail && (
           <div>
             <h3 className="text-base md:text-lg font-medium mb-3 md:mb-4">{t('pairing_history')}</h3>
             <div className="space-y-3">

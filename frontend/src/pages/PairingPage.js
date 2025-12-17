@@ -479,8 +479,72 @@ const PairingPage = () => {
           </CardContent>
         </Card>
 
+        {/* Upgrade Prompt - shown when limit reached */}
+        {showUpgradePrompt && (
+          <Card className="border-2 border-primary/50 bg-gradient-to-br from-primary/5 via-background to-accent/5 mb-6 md:mb-8 animate-fade-in-up">
+            <CardContent className="p-6 md:p-8 text-center">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+                <Crown className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl md:text-2xl font-semibold mb-2">
+                {language === 'de' ? 'Tageslimit erreicht' : 
+                 language === 'fr' ? 'Limite quotidienne atteinte' : 
+                 'Daily Limit Reached'}
+              </h3>
+              <p className="text-muted-foreground mb-6 max-w-md mx-auto">
+                {language === 'de' ? 'Sie haben heute bereits 5 Pairing-Anfragen gemacht. Upgraden Sie auf Pro für unbegrenzte Weinempfehlungen!' : 
+                 language === 'fr' ? 'Vous avez déjà fait 5 demandes de pairing aujourd\'hui. Passez à Pro pour des recommandations illimitées !' : 
+                 'You\'ve already made 5 pairing requests today. Upgrade to Pro for unlimited wine recommendations!'}
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 max-w-lg mx-auto text-left">
+                <div className="flex items-center gap-2 text-sm">
+                  <Sparkles className="w-4 h-4 text-primary" />
+                  <span>{language === 'de' ? 'Unbegrenzte Pairings' : language === 'fr' ? 'Pairings illimités' : 'Unlimited pairings'}</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <Sparkles className="w-4 h-4 text-primary" />
+                  <span>{language === 'de' ? 'Unbegrenzter Chat' : language === 'fr' ? 'Chat illimité' : 'Unlimited chat'}</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <Sparkles className="w-4 h-4 text-primary" />
+                  <span>{language === 'de' ? 'Unbegrenzter Weinkeller' : language === 'fr' ? 'Cave illimitée' : 'Unlimited cellar'}</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <Sparkles className="w-4 h-4 text-primary" />
+                  <span>{language === 'de' ? 'Priority Support' : language === 'fr' ? 'Support prioritaire' : 'Priority support'}</span>
+                </div>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <Button 
+                  onClick={() => navigate('/subscription')}
+                  className="rounded-full px-8"
+                  size="lg"
+                >
+                  <Crown className="w-4 h-4 mr-2" />
+                  {language === 'de' ? 'Auf Pro upgraden' : language === 'fr' ? 'Passer à Pro' : 'Upgrade to Pro'}
+                </Button>
+                <Button 
+                  variant="outline"
+                  onClick={() => setShowUpgradePrompt(false)}
+                  className="rounded-full"
+                >
+                  {language === 'de' ? 'Später' : language === 'fr' ? 'Plus tard' : 'Later'}
+                </Button>
+              </div>
+              
+              <p className="text-xs text-muted-foreground mt-4">
+                {language === 'de' ? 'Ab nur 4,99€/Monat • Jederzeit kündbar' : 
+                 language === 'fr' ? 'À partir de 4,99€/mois • Annulable à tout moment' : 
+                 'From only €4.99/month • Cancel anytime'}
+              </p>
+            </CardContent>
+          </Card>
+        )}
+
         {/* Result - hidden when wine detail is shown */}
-        {result && !selectedWineDetail && (
+        {result && !selectedWineDetail && !showUpgradePrompt && (
           <Card className="pairing-card border-border/50 mb-6 md:mb-8 animate-fade-in-up" data-testid="pairing-result">
             <CardHeader>
               <div className="flex items-center gap-3">

@@ -3968,6 +3968,23 @@ async def download_documentation():
     )
 
 
+@api_router.get("/docs/download-md")
+async def download_documentation_markdown():
+    """Download the complete app documentation as Markdown file"""
+    from fastapi.responses import FileResponse
+    
+    doc_path = Path("/app/docs/APP_DOKUMENTATION_KOMPLETT.md")
+    
+    if not doc_path.exists():
+        raise HTTPException(status_code=404, detail="Dokumentation nicht gefunden")
+    
+    return FileResponse(
+        path=str(doc_path),
+        media_type="text/markdown",
+        filename="Wine_Pairing_App_Dokumentation.md"
+    )
+
+
 # ===================== AUTHENTICATION & SUBSCRIPTION ENDPOINTS =====================
 
 async def get_current_user(request: Request) -> Optional[User]:

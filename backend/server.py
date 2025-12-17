@@ -1037,17 +1037,22 @@ async def create_wine(wine_data: WineCreate, request: Request):
     return wine
 
 @api_router.put("/wines/{wine_id}", response_model=Wine)
-async def update_wine(wine_id: str, wine_update: WineUpdate):
-    """Update a wine in the cellar"""
-    existing = await db.wines.find_one({"id": wine_id}, {"_id": 0})
+async def update_wine(wine_id: str, wine_update: WineUpdate, request: Request):
+    """Update a wine in the user's cellar (must belong to current user)"""
+    user = await get_current_user_optional(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Bitte melden Sie sich an")
+    
+    # Wein muss dem User gehören
+    existing = await db.wines.find_one({"id": wine_id, "user_id": user.user_id}, {"_id": 0})
     if not existing:
-        raise HTTPException(status_code=404, detail="Wein nicht gefunden")
+        raise HTTPException(status_code=404, detail="Wein nicht gefunden oder gehört nicht Ihnen")
     
     update_data = {k: v for k, v in wine_update.model_dump().items() if v is not None}
     if update_data:
-        await db.wines.update_one({"id": wine_id}, {"$set": update_data})
+        await db.wines.update_one({"id": wine_id, "user_id": user.user_id}, {"$set": update_data})
     
-    updated = await db.wines.find_one({"id": wine_id}, {"_id": 0})
+    updated = await db.wines.find_one({"id": wine_id, "user_id": user.user_id}, {"_id": 0})
     if isinstance(updated.get('created_at'), str):
         updated['created_at'] = datetime.fromisoformat(updated['created_at'])
     return updated

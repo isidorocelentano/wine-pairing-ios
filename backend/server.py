@@ -977,7 +977,7 @@ async def get_wines(
 ):
     """Get wines from the user's personal cellar (requires authentication)"""
     # User muss eingeloggt sein für Weinkeller-Zugriff
-    user = await get_current_user_optional(request)
+    user = await get_current_user(request)
     if not user:
         raise HTTPException(status_code=401, detail="Bitte melden Sie sich an, um Ihren Weinkeller zu sehen")
     
@@ -1000,7 +1000,7 @@ async def get_wines(
 @api_router.get("/wines/{wine_id}", response_model=Wine)
 async def get_wine(wine_id: str, request: Request):
     """Get a specific wine by ID (must belong to current user)"""
-    user = await get_current_user_optional(request)
+    user = await get_current_user(request)
     if not user:
         raise HTTPException(status_code=401, detail="Bitte melden Sie sich an")
     
@@ -1015,7 +1015,7 @@ async def get_wine(wine_id: str, request: Request):
 @api_router.post("/wines", response_model=Wine)
 async def create_wine(wine_data: WineCreate, request: Request):
     """Add a new wine to the user's personal cellar"""
-    user = await get_current_user_optional(request)
+    user = await get_current_user(request)
     if not user:
         raise HTTPException(status_code=401, detail="Bitte melden Sie sich an, um Weine zu speichern")
     
@@ -1039,7 +1039,7 @@ async def create_wine(wine_data: WineCreate, request: Request):
 @api_router.put("/wines/{wine_id}", response_model=Wine)
 async def update_wine(wine_id: str, wine_update: WineUpdate, request: Request):
     """Update a wine in the user's cellar (must belong to current user)"""
-    user = await get_current_user_optional(request)
+    user = await get_current_user(request)
     if not user:
         raise HTTPException(status_code=401, detail="Bitte melden Sie sich an")
     
@@ -1060,7 +1060,7 @@ async def update_wine(wine_id: str, wine_update: WineUpdate, request: Request):
 @api_router.delete("/wines/{wine_id}")
 async def delete_wine(wine_id: str, request: Request):
     """Remove a wine from the user's cellar (must belong to current user)"""
-    user = await get_current_user_optional(request)
+    user = await get_current_user(request)
     if not user:
         raise HTTPException(status_code=401, detail="Bitte melden Sie sich an")
     
@@ -1075,7 +1075,7 @@ async def delete_wine(wine_id: str, request: Request):
 @api_router.post("/wines/{wine_id}/favorite")
 async def toggle_favorite(wine_id: str, request: Request):
     """Toggle favorite status of a wine (must belong to current user)"""
-    user = await get_current_user_optional(request)
+    user = await get_current_user(request)
     if not user:
         raise HTTPException(status_code=401, detail="Bitte melden Sie sich an")
     

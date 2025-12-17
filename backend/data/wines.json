@@ -577,5 +577,35 @@
     "quantity": 6,
     "is_favorite": false,
     "created_at": "2025-12-17T17:57:14.123706+00:00"
+  },
+  {
+    "id": "3eca7c38-8e61-4652-82d1-7de37f59e5b8",
+    "user_id": "user_6dd3cac89d32",
+    "name": "Château Lanessan Haut-Médoc Cru Bourgeois",
+    "type": "rot",
+    "region": "Haut-Médoc, Bordeaux",
+    "year": 2020,
+    "grape": "Cabernet Sauvignon, Merlot, Petit Verdot",
+    "description": "Ein klassischer Bordeaux mit dunkler Frucht, feinen Tanninen und eleganter Würze, der Kraft und Finesse harmonisch vereint.",
+    "notes": "",
+    "image_base64": null,
+    "quantity": 1,
+    "is_favorite": false,
+    "created_at": "2025-12-17T20:59:15.825285+00:00"
+  },
+  {
+    "id": "a6673947-5265-467e-b716-52f95aed4f9d",
+    "user_id": "user_6dd3cac89d32",
+    "name": "Sancerre Blanc „Domaine Vacheron“",
+    "type": "weiß",
+    "region": "Sancerre (Loire)",
+    "year": 2022,
+    "grape": "Sauvignon Blanc",
+    "description": "Präziser, mineralischer Sancerre mit vibrierender Zitrusfrucht, feiner Kräuterwürze und salziger Länge – puristisch, elegant und glasklar.",
+    "notes": "",
+    "image_base64": null,
+    "quantity": 1,
+    "is_favorite": false,
+    "created_at": "2025-12-17T21:50:46.299626+00:00"
   }
 ]

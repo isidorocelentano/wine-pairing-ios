@@ -21,11 +21,11 @@
     "name": "ISICEL",
     "password_hash": "$2b$12$C/fDInlO1rj8/VnQ.b0n5uDPbPg78ZjM3Sgj3c6kqFI47WgN8mwtq",
     "picture": null,
-    "plan": "basic",
+    "plan": "pro",
     "subscription_id": null,
     "subscription_status": null,
     "usage": {
-      "pairing_requests_today": 4,
+      "pairing_requests_today": 8,
       "chat_messages_today": 0,
       "last_usage_date": "2025-12-17"
     },

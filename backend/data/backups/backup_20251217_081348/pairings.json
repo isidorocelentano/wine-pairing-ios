@@ -1514,5 +1514,141 @@
     "why_explanation": "**Warum dieses Pairing funktioniert:**  \nDie Carbonara ist reichhaltig durch Eigelb, Guanciale und Pecorino – ein Weißwein mit mittlerem Körper und leichter Cremigkeit (z.B. Soave, Verdicchio) bietet genügend Substanz, ohne zu erschlagen. Die Frische (Säure) wirkt wie ein Spritzer Zitrone und schneidet durch Fett und Salz, sodass das Gericht leichter wirkt. Süße spielt kaum eine Rolle: trocken ausgebaute Weine verhindern, dass das salzige, umami-betonte Gericht schwer oder plump wirkt. Die würzigen Noten aus Guanciale und Pfeffer werden von den leicht nussigen, kräutrigen Aromen der Weine aufgegriffen, ohne zu dominieren. Die BRÜCKE entsteht vor allem über Textur (cremige Sauce – leicht cremiger Wein) und die salzig-nussigen Komponenten (Pecorino – mineralisch/nussige Weißweine).",
     "cellar_matches": null,
     "created_at": "2025-12-16T23:57:54.310655+00:00"
+  },
+  {
+    "id": "9fffa3d6-a75b-41b4-8c58-cba9d7a9cf24",
+    "dish": "Schnitzel",
+    "recommendation": "1. **🍷 HAUPTEMPFEHLUNG**\n\nZu klassischem Schnitzel (Wiener Art, Kalb oder Schwein, in Butterschmalz gebraten) passt stilistisch klar ein frischer, heller Weißwein – deine großen, dichten Rotweine wären dazu schade und wirken schnell zu schwer. Ideal sind schlanke Weine mit guter Säure und wenig Tannin, die Fett und Panade „abschneiden“ und das Gericht nicht überdecken.\n\n**Bester Weintyp:** Weißwein (alternativ sehr leichter, gekühlter Rotwein)\n\n**Aus deinem Keller (Vorsicht!)**  \nKeiner deiner Weine ist eigentlich für Schnitzel ideal – sie sind allesamt kraftvolle, tanninreiche Rotweine, die besser zu kräftigem Rind/Lamm passen. Wenn du unbedingt etwas aus dem Keller nehmen möchtest, dann am ehesten:\n\n- **Château Haut-Marbuzet (Bordeaux, Merlot-betont)** – im Vergleich zur restlichen Auswahl am zugänglichsten, Merlot-Anteil bringt etwas weichere Frucht; stark gekühlt (15–16 °C) und nur, wenn das Schnitzel sehr kräftig (z.B. mit Pilzrahmsoße) serviert wird.  \n- **Château Margaux** – nur, wenn es ein ausgesprochen festlicher Anlass ist und du bewusst „zu groß“ zum Schnitzel trinken willst; geschliffen, fein, aber für ein simples Schnitzel stilistisch Overkill.  \n- **Château Moulin Riche (Saint-Julien)** – straff und cabernet-betont, aber mit eleganter Frucht; kühl servieren und nur, wenn es dir mehr um den Wein als um das perfekte Food-Pairing geht.\n\n**Ehrliche Empfehlung: Für ein wirklich stimmiges Schnitzel-Pairing würde ich deine Keller-Schätze für andere Gerichte aufsparen und einen passenden Weißwein extra besorgen.**\n\n**Allgemeine Weißwein-Empfehlungen (ideal zu Schnitzel):**\n- **Grüner Veltliner Smaragd, z.B. FX Pichler „Loibner Berg“ (Wachau)** – pfeffrige Würze, straffe Säure, genug Körper für die Panade, klassische Schnitzel-Kombi.  \n- **Riesling Federspiel / Kabinett trocken, z.B. Schloss Gobelsburg Riesling oder Dönnhoff Riesling trocken** – zitrische Frische, mineralisch, belebt das Gericht und bleibt schön schlank.  \n- **Weißburgunder / Pinot Bianco, z.B. Cantina Terlan Pinot Bianco oder Dr. Heger Weißburgunder** – cremiger, nussiger, begleitet Panade und Butterschmalz sehr harmonisch ohne zu dominieren.\n\n2. **Alternative Optionen:**\n\n**Schaumwein (für festliche Anlässe):**\n- **Brut Nature / Extra Brut Champagner, z.B. Pierre Peters „Cuvée de Réserve“ Blanc de Blancs** – messerscharfe Säure und feine Perlage schneiden durch das Fett, Hefe-Noten passen schön zur Panade.  \n\n**Leichter Rotwein (wenn unbedingt Rot sein soll):**\n- **Zweigelt klassisch, z.B. Weingut Netzl „Carnuntum“** – wenig Tannin, rote Kirsche, leicht gekühlt (14–15 °C) kann er zu einem Schweineschnitzel funktionieren.  \n- **Blaufränkisch mittelgewichtig, z.B. Moric Blaufränkisch „Hausmarke“** – frische Säure, keine überbordende Holzwürze; nur leicht gekühlt und eher zur herzhaften Version (z.B. mit Kartoffelsalat und Speck).  \n\n---",
+    "why_explanation": "**Warum dieses Pairing funktioniert**\n\nSchnitzel ist reichhaltig durch Panade und Fett, aber im Eigengeschmack relativ mild – deshalb braucht es Weine mit ausreichend Frische (Säure), aber nicht zu viel Struktur (Tannin). Ein Grüner Veltliner oder Riesling bringt genau diese Frische, die die Reichhaltigkeit „aufräumt“, ohne das Gericht zu erschlagen. Süße sollte niedrig bleiben (trocken), damit das Gericht nicht schwer wirkt und die Zitrus-/Apfelaromen den Zitronenspritzer auf dem Schnitzel spiegeln. Leichte Pfeffer- oder Kräuterwürze (v.a. beim Veltliner) findet sich auch in der Panade und im Fleisch wieder – das ist die aromatische BRÜCKE, die Wein und Schnitzel harmonisch verbindet.",
+    "cellar_matches": [
+      {
+        "id": "09e7f440-b954-412a-83b2-cfce17053335",
+        "name": "Château Lafite Rothschild",
+        "type": "rot"
+      },
+      {
+        "id": "f60f89de-9ef3-454b-ae04-b602e9bea395",
+        "name": "Kanonkop Paul Sauer",
+        "type": "rot"
+      },
+      {
+        "id": "326552ca-990f-4d44-817a-d5daa4baae4b",
+        "name": "André Brunel Châteauneuf-du-Pape Les Cailloux",
+        "type": "rot"
+      },
+      {
+        "id": "836c9377-5356-4406-ad7b-3e90bd77316c",
+        "name": "Test Barolo",
+        "type": "rot"
+      },
+      {
+        "id": "9c82070e-0dd7-4667-83a1-c889fc9d02d0",
+        "name": "2. Château Haut-Marbuzet",
+        "type": "rot"
+      }
+    ],
+    "created_at": "2025-12-16T23:59:03.860619+00:00"
+  },
+  {
+    "id": "2b49e527-17fb-4ba4-8a45-107f0d99af13",
+    "dish": "Minestrone ",
+    "recommendation": "1. **🍷 HAUPTEMPFEHLUNG**\n\nMinestrone ist ein aromatischer, aber eher leichter Gemüse‑/Bohneneintopf mit Tomate und Kräutern – dafür eignen sich mittelkräftige, nicht zu tanninbetonte Rotweine oder saftige Italiener ideal.\n\n**Bester Weintyp:** Rotwein (mittelkräftig, mit Frische)\n\nAus deinem Keller würde ich – falls du unbedingt etwas aus deinem Bestand nehmen möchtest – eher die „zugänglichsten“ und nicht die größten Kaliber öffnen, auch wenn sie eigentlich etwas zu nobel sind für Minestrone:\n\n- **Château Haut-Marbuzet (St‑Estèphe)** – Merlot-Anteil bringt rundere Frucht und weichere Tannine, passt besser zu Gemüse und Bohnen als sehr strenge Cabernets.  \n- **Château Moulin Riche (Saint-Julien)** – tendenziell etwas geschmeidiger und fruchtbetonter, wenn du eine klassische Bordeaux-Note zur Suppe magst.  \n- **Château Phélan Ségur (St‑Estèphe)** – nur, wenn du die Minestrone kräftig und tomatenlastig kochst; seine Struktur kann den Eintopf begleiten, ist aber schon am oberen Limit für das Gericht.\n\n**Allgemeine Empfehlungen (besser passend als Stil):**\n- **Chianti Classico (Sangiovese)** – rote Kirsche, hohe Säure, Kräuterwürze – stilistisch wie gemacht für eine tomatige Minestrone.  \n- **Dolcetto d’Alba** – saftig, wenig Tannin, dunkle Frucht, sehr gut zu Bohnen und Gemüse ohne den Teller zu „erschlagen“.  \n- **Barbera d’Asti / d’Alba** – viel Säure, wenig Tannin, kirschige Frucht: hält das Gericht frisch und greift die Tomatenaromen auf.\n\n2. **Alternative Optionen:**\n\n**Schaumwein (für festliche Anlässe):**\n- **Franciacorta Satèn** – cremige Perlage und feine Säure, gibt der eher rustikalen Suppe einen eleganten Rahmen, ohne sie zu dominieren.\n\n**Weißwein (wenn du es leichter magst):**\n- **Vernaccia di San Gimignano** – trockener, kräuterwürziger Weißwein aus der Toskana; seine Frische und leichte Mandelnote passen sehr schön zu Gemüse, Kräutern und Olivenöl in der Minestrone.\n\n---",
+    "why_explanation": "Warum dieses Pairing funktioniert: Minestrone ist von mittlerer Reichhaltigkeit (Gemüse, Bohnen, etwas Öl), daher sollten die Weine nicht zu wuchtig oder alkoholstark sein – Chianti, Dolcetto, Barbera und die „weicheren“ Bordeaux decken das gut ab. Die Frische kommt aus der Säure: sie balanciert die Tomate und macht den Eintopf lebendiger. Süße spielt im Gericht kaum eine Rolle, daher sind trockene, fruchtbetonte Weine ideal, die nur die Illusion von Süße durch Frucht bieten. Bei der Würze verbinden sich italienische Kräuter (Oregano, Thymian, Basilikum) sehr gut mit der Kräuterwürze von Sangiovese oder Barbera – ebenso mit der dezenten Würze eines Merlot‑betonten Bordeaux. Die BRÜCKE ist hier klar: Tomatenfrische + Kräuter im Teller treffen auf frische Säure + rote Frucht + Kräuterwürze im Wein, wodurch Gericht und Wein sich gegenseitig ergänzen, ohne sich zu überlagern.",
+    "cellar_matches": [
+      {
+        "id": "09e7f440-b954-412a-83b2-cfce17053335",
+        "name": "Château Lafite Rothschild",
+        "type": "rot"
+      },
+      {
+        "id": "f60f89de-9ef3-454b-ae04-b602e9bea395",
+        "name": "Kanonkop Paul Sauer",
+        "type": "rot"
+      },
+      {
+        "id": "326552ca-990f-4d44-817a-d5daa4baae4b",
+        "name": "André Brunel Châteauneuf-du-Pape Les Cailloux",
+        "type": "rot"
+      },
+      {
+        "id": "836c9377-5356-4406-ad7b-3e90bd77316c",
+        "name": "Test Barolo",
+        "type": "rot"
+      },
+      {
+        "id": "9c82070e-0dd7-4667-83a1-c889fc9d02d0",
+        "name": "2. Château Haut-Marbuzet",
+        "type": "rot"
+      }
+    ],
+    "created_at": "2025-12-17T05:33:30.841148+00:00"
+  },
+  {
+    "id": "4c00ef16-db29-416e-a5f0-dab1ee46efff",
+    "dish": "Risotto ",
+    "recommendation": "1. **🍷 HAUPTEMPFEHLUNG**\n\nBei Risotto kommt es stark auf die Art des Risottos an. Da du nur Rotweine im Keller hast, eignen sich besonders cremige, kräftigere oder pilz-/fleischbasierte Risotti. Zu solchen Varianten passen strukturierte, elegante Rotweine aus deinem Keller am besten.\n\n**Bester Weintyp:** Rotwein (für z.B. Pilz‑, Trüffel‑, Parmesan‑ oder Rinder-Ragout-Risotto)\n- **Château Margaux (rot), Cabernet-dominiert** – Sehr feine Tannine, hohe Eleganz und florale Noten; passt hervorragend zu einem edlen Pilz- oder Trüffelrisotto, weil die Struktur den Schmelz des Risottos trägt, ohne zu erschlagen.  \n- **Château Lafite Rothschild 2016 (rot)** – Straff, präzise, mit kühler Frucht und großer Tiefe; ideal zu einem intensiven Risotto mit gereiftem Parmesan oder Kalbsfond-Basis, wenn du ein besonders nobles Pairing möchtest.  \n- **Château Haut-Marbuzet (rot), Merlot-betont** – Mehr Schmelz und Fülle, geschmeidigere Tannine; sehr gut zu cremigen Risotti mit Pilzen, Speck/Pancetta oder kräftigem Käse, weil Merlot die Cremigkeit schön aufgreift.\n\n---\n\n2. **Alternative Optionen:**\n\n**Schaumwein (für festliche Anlässe):**\n- **Champagner Blanc de Blancs (Brut)** – Die feine Säure und Perlage schneiden durch die Cremigkeit des Risottos und heben es an; besonders gut zu Zitronen-, Kräuter- oder Meeresfrüchte-Risotto.\n\n**Weißwein (allgemeine Empfehlung, nicht aus deinem Keller):**\n- **Gavi di Gavi (Cortese, Piemont)** – Frisch, zitrisch, aber mit genug Körper für cremiges Risotto, ideal zu Gemüse- oder Zitronenrisotto.  \n- **Chardonnay aus dem Burgund (z.B. Meursault oder Puligny-Montrachet)** – Buttrig, nussig und strukturiert; perfekt zu klassischem Risotto alla Parmigiana oder mit Meeresfrüchten.  \n- **Soave Classico (Garganega, z.B. Pieropan Soave Classico)** – Dezent fruchtig, leicht nussig, mit guter Säure; schön zu Pilz- oder Kräuterrisotto.\n\nWenn du ein eher leichtes Gemüse- oder Zitronenrisotto planst, würde ich nicht zu deinen großen Bordeaux greifen, sondern lieber einen passenden Weiß- oder Schaumwein besorgen. Für Pilz-, Fleisch- oder Trüffelrisotto hingegen sind **Château Margaux**, **Lafite** und **Haut-Marbuzet** aus deinem Keller die stimmigsten Optionen.\n\n---",
+    "why_explanation": "Warum dieses Pairing funktioniert: Risotto ist reichhaltig und cremig, daher braucht es entweder einen Wein mit genügend Struktur und Tannin (bei kräftigen Risotti) oder mit frischer Säure (bei leichten Varianten), um nicht „unterzugehen“. Deine Bordeaux (Margaux, Lafite, Haut-Marbuzet) besitzen genug Reichhaltigkeit und Tiefe, um mit Pilz-, Trüffel- oder Fleischrisotto mitzuhalten, ohne durch übertriebene Süße zu stören. Die Frische (Säure) sorgt dafür, dass der Gaumen zwischen den Bissen wiederbelebt wird. Die Würze der Weine – Tabak, Zedernholz, erdige und kräutrige Noten – spiegelt die würzigen, umami­betonten Aromen von Fond, Parmesan und Pilzen wider. Die BRÜCKE entsteht durch gemeinsame Aromen von Erde, Nussigkeit und Umami (Parmesan, Pilze, reduzierter Fond auf der Speiseseite vs. Holz, Gewürze und reife Frucht auf der Weinseite).",
+    "cellar_matches": [
+      {
+        "id": "09e7f440-b954-412a-83b2-cfce17053335",
+        "name": "Château Lafite Rothschild",
+        "type": "rot"
+      },
+      {
+        "id": "f60f89de-9ef3-454b-ae04-b602e9bea395",
+        "name": "Kanonkop Paul Sauer",
+        "type": "rot"
+      },
+      {
+        "id": "326552ca-990f-4d44-817a-d5daa4baae4b",
+        "name": "André Brunel Châteauneuf-du-Pape Les Cailloux",
+        "type": "rot"
+      },
+      {
+        "id": "836c9377-5356-4406-ad7b-3e90bd77316c",
+        "name": "Test Barolo",
+        "type": "rot"
+      },
+      {
+        "id": "9c82070e-0dd7-4667-83a1-c889fc9d02d0",
+        "name": "2. Château Haut-Marbuzet",
+        "type": "rot"
+      }
+    ],
+    "created_at": "2025-12-17T05:36:44.061684+00:00"
+  },
+  {
+    "id": "fc8dbd0d-5f69-4adc-9c71-c75d7f0ddd2d",
+    "dish": "Spaghetti ",
+    "recommendation": "1. **🍷 HAUPTEMPFEHLUNG**\n\nFür Spaghetti kommt es stark auf die Sauce an – ich gehe von einer klassischen tomatenbasierten oder Bolognese-Sauce aus. Dann passen strukturierte, aber nicht zu alte Rotweine mit guter Säure und mittlerem Körper perfekt.\n\n**Bester Weintyp:** Rotwein  \n- **Château Haut-Marbuzet (Bordeaux, hoher Merlot-Anteil)** – Merlot bringt Saftigkeit und Frucht, der Cabernet Rückgrat; ideal zu Tomate/Bolognese, ohne den Teller zu erschlagen.  \n- **Château Moulin Riche (Bordeaux, Cabernet-dominiert, Saint-Julien)** – Präzise Struktur, rote und dunkle Frucht, passt hervorragend zu intensiven Tomaten- und Fleischsaucen.  \n- **André Brunel Châteauneuf-du-Pape Les Cailloux** – Südliche Würze, Kräuter (Garrigue) und reife Frucht sind genial zu würziger Pasta (z.B. mit Salsiccia, Kräutern, Pecorino).\n\n2. **Alternative Optionen:**\n\n**Schaumwein (für festliche Anlässe):**\n- **Brut-Champagner oder hochwertiger Franciacorta** – Die frische Säure und die Perlage schneiden schön durch Öl und Käse, besonders bei Spaghetti aglio e olio oder Vongole.\n\n**Weitere Rotwein-Option (aus deinem Keller):**\n- **Kanonkop Paul Sauer (Stellenbosch, 2017)** – Wenn die Sauce reich und fleischig ist (Ragù alla Bolognese), trägt die dichte Frucht und feine Holzwürze das Gericht sehr gut; aber eher für einen „großen“ Pasta-Abend, nicht für ein ganz schlichtes Tomatengericht.\n\n**Allgemeine Empfehlungen (wenn du etwas anderes öffnen willst):**\n- **Chianti Classico (Sangiovese)** – Kirschfrucht, hohe Säure, etwas Kräuterwürze – der klassische Partner für Tomaten-Spaghetti.  \n- **Barbera d’Asti oder Barbera d’Alba** – Viel Säure, saftige rote Frucht, wenig Tannin; super zu jeder tomatigen Pasta und auch zu Pizza.  \n- **Montepulciano d’Abruzzo** – Weicher, fruchtbetonter Italiener mit genug Körper für Fleischsaucen, aber ohne zu schwer zu sein.\n\n---",
+    "why_explanation": "**Warum dieses Pairing funktioniert**  \nDie Spaghetti mit Tomaten- oder Fleischsauce haben eine mittlere bis hohe Reichhaltigkeit (Öl, eventuell Fleisch, Käse), dazu frische Säure aus der Tomate und oft eine gewisse Kräuterwürze. Deine ausgewählten Bordeaux und der Châteauneuf-du-Pape bieten genug Reichhaltigkeit (Alkohol, Körper, teilweise Holz) um mit Sauce und Käse mitzuhalten, ohne zu wuchtig zu sein. Die spürbare Frische (Säure) im Bordeaux balanciert die Tomatensäure und wirkt wie ein Spritzer Zitrone im Gericht. Süße spielt in beiden Fällen keine Rolle – trockene Weine sind hier ideal, damit weder Tomate noch Salz „metallisch“ wirken. Die Würze der Weine (Kräuter, Pfeffer, Zedernholz) spiegelt die Kräuter und Gewürze der Sauce – diese BRÜCKE macht, dass Wein und Pasta wie ein gemeinsames Aromabild wirken statt wie zwei getrennte Komponenten.",
+    "cellar_matches": [
+      {
+        "id": "09e7f440-b954-412a-83b2-cfce17053335",
+        "name": "Château Lafite Rothschild",
+        "type": "rot"
+      },
+      {
+        "id": "f60f89de-9ef3-454b-ae04-b602e9bea395",
+        "name": "Kanonkop Paul Sauer",
+        "type": "rot"
+      },
+      {
+        "id": "326552ca-990f-4d44-817a-d5daa4baae4b",
+        "name": "André Brunel Châteauneuf-du-Pape Les Cailloux",
+        "type": "rot"
+      },
+      {
+        "id": "836c9377-5356-4406-ad7b-3e90bd77316c",
+        "name": "Test Barolo",
+        "type": "rot"
+      },
+      {
+        "id": "9c82070e-0dd7-4667-83a1-c889fc9d02d0",
+        "name": "2. Château Haut-Marbuzet",
+        "type": "rot"
+      }
+    ],
+    "created_at": "2025-12-17T05:38:26.997929+00:00"
   }
 ]

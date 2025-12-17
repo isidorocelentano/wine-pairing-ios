@@ -873,12 +873,31 @@ const PairingPage = () => {
                 </p>
               </div>
               
+              {/* Adding to Database Status */}
+              {selectedWineDetail.addingToDatabase && (
+                <div className="p-3 bg-primary/10 rounded-lg text-sm flex items-center gap-2">
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                  {language === 'de' ? 'Wein wird zur Datenbank hinzugefügt...' :
+                   language === 'fr' ? 'Ajout du vin à la base de données...' :
+                   'Adding wine to database...'}
+                </div>
+              )}
+              
+              {/* Just Added Success */}
+              {selectedWineDetail.justAdded && (
+                <div className="p-3 bg-green-500/10 border border-green-500/30 rounded-lg text-sm text-green-700 dark:text-green-400">
+                  {language === 'de' ? '✅ Dieser Wein wurde gerade zur Datenbank hinzugefügt!' :
+                   language === 'fr' ? '✅ Ce vin vient d\'être ajouté à la base de données !' :
+                   '✅ This wine was just added to the database!'}
+                </div>
+              )}
+              
               {/* Not in Database Notice */}
-              {selectedWineDetail.notInDatabase && (
+              {selectedWineDetail.notInDatabase && !selectedWineDetail.justAdded && !selectedWineDetail.addingToDatabase && (
                 <div className="p-3 bg-muted/50 rounded-lg text-sm text-muted-foreground">
-                  {language === 'de' ? 'ℹ️ Dieser Wein wurde von Claude empfohlen und ist noch nicht in unserer Datenbank.' :
-                   language === 'fr' ? 'ℹ️ Ce vin a été recommandé par Claude et n\'est pas encore dans notre base de données.' :
-                   'ℹ️ This wine was recommended by Claude and is not yet in our database.'}
+                  {language === 'de' ? 'ℹ️ Dieser Wein wurde von Claude empfohlen.' :
+                   language === 'fr' ? 'ℹ️ Ce vin a été recommandé par Claude.' :
+                   'ℹ️ This wine was recommended by Claude.'}
                 </div>
               )}
               

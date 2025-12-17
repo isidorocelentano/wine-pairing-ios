@@ -307,7 +307,15 @@ const SommelierKompassPage = () => {
               {hasActiveFilters && (
                 <div className="mt-4 flex items-center justify-between">
                   <p className="text-sm text-muted-foreground">
-                    {pairings.length} {t('regional_results')}
+                    {totalPairings > 0 ? (
+                      language === 'en' 
+                        ? `${totalPairings} dishes found`
+                        : language === 'fr'
+                        ? `${totalPairings} plats trouvés`
+                        : `${totalPairings} Gerichte gefunden`
+                    ) : (
+                      `${pairings.length} ${t('regional_results')}`
+                    )}
                   </p>
                   <Button variant="outline" size="sm" onClick={clearFilters}>
                     <X className="w-4 h-4 mr-2" />

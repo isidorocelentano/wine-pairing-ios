@@ -173,7 +173,7 @@ const CellarPage = () => {
 
   const handleToggleFavorite = async (wineId) => {
     try {
-      await axios.post(`${API}/wines/${wineId}/favorite`);
+      await authAxios.post(`${API}/wines/${wineId}/favorite`);
       fetchWines();
     } catch (error) {
       toast.error(t('error_general'));
@@ -182,7 +182,7 @@ const CellarPage = () => {
 
   const handleDeleteWine = async (wineId) => {
     try {
-      await axios.delete(`${API}/wines/${wineId}`);
+      await authAxios.delete(`${API}/wines/${wineId}`);
       toast.success(t('success_wine_deleted'));
       fetchWines();
     } catch (error) {

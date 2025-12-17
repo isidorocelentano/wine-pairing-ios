@@ -1073,14 +1073,19 @@ async def delete_wine(wine_id: str, request: Request):
     return {"message": "Wein erfolgreich gelöscht"}
 
 @api_router.post("/wines/{wine_id}/favorite")
-async def toggle_favorite(wine_id: str):
-    """Toggle favorite status of a wine"""
-    wine = await db.wines.find_one({"id": wine_id}, {"_id": 0})
+async def toggle_favorite(wine_id: str, request: Request):
+    """Toggle favorite status of a wine (must belong to current user)"""
+    user = await get_current_user_optional(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Bitte melden Sie sich an")
+    
+    # Wein muss dem User gehören
+    wine = await db.wines.find_one({"id": wine_id, "user_id": user.user_id}, {"_id": 0})
     if not wine:
-        raise HTTPException(status_code=404, detail="Wein nicht gefunden")
+        raise HTTPException(status_code=404, detail="Wein nicht gefunden oder gehört nicht Ihnen")
     
     new_status = not wine.get('is_favorite', False)
-    await db.wines.update_one({"id": wine_id}, {"$set": {"is_favorite": new_status}})
+    await db.wines.update_one({"id": wine_id, "user_id": user.user_id}, {"$set": {"is_favorite": new_status}})
     return {"is_favorite": new_status}
 
 # ===================== AI PAIRING ENDPOINTS =====================

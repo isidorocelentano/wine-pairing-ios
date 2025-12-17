@@ -1,7 +1,7 @@
 {
   "version": "3.0",
-  "timestamp": "2025-12-17T10:14:48.622109+00:00",
-  "backup_dir": "/app/backend/data/backups/backup_20251217_101448",
+  "timestamp": "2025-12-17T16:50:26.950518+00:00",
+  "backup_dir": "/app/backend/data/backups/backup_20251217_165026",
   "collections": {
     "users": {
       "count": 11,

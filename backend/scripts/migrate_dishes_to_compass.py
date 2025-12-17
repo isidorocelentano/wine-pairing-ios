@@ -114,7 +114,7 @@ async def classify_dishes_with_claude(dishes: list, llm: LlmChat) -> list:
 Antworte im JSON-Format."""
 
     try:
-        response = await llm.send_async(UserMessage(prompt))
+        response = await llm.send_message(UserMessage(prompt))
         
         # Parse JSON aus Response
         response_text = response.strip()

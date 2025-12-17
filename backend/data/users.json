@@ -13,7 +13,7 @@
       "chat_messages_today": 0,
       "last_usage_date": null
     },
-    "created_at": "2025-12-16T10:29:10.582000"
+    "created_at": "2025-12-16 10:29:10.582000"
   },
   {
     "user_id": "user_6dd3cac89d32",
@@ -29,7 +29,7 @@
       "chat_messages_today": 0,
       "last_usage_date": "2025-12-17"
     },
-    "created_at": "2025-12-16T11:00:47.469000"
+    "created_at": "2025-12-16 11:00:47.469000"
   },
   {
     "user_id": "user_5509d9df556d",
@@ -45,7 +45,7 @@
       "chat_messages_today": 0,
       "last_usage_date": "2025-12-16"
     },
-    "created_at": "2025-12-16T14:14:12.087000",
+    "created_at": "2025-12-16 14:14:12.087000",
     "coupon_code": "WINE-JZH7-76MW-9X07",
     "plan_expires_at": "2026-12-16T14:48:47.035360+00:00",
     "upgraded_via": "coupon"
@@ -64,7 +64,7 @@
       "chat_messages_today": 0,
       "last_usage_date": "2025-12-16"
     },
-    "created_at": "2025-12-16T15:19:48.293000"
+    "created_at": "2025-12-16 15:19:48.293000"
   },
   {
     "user_id": "1e9fb2c5-9b9b-4b91-bd59-cd486ee0d873",
@@ -88,7 +88,7 @@
       "chat_messages_today": 0,
       "last_usage_date": null
     },
-    "created_at": "2025-12-16T22:43:27.025000"
+    "created_at": "2025-12-16 22:43:27.025000"
   },
   {
     "user_id": "user_20e4f9ca032c",
@@ -104,7 +104,7 @@
       "chat_messages_today": 0,
       "last_usage_date": null
     },
-    "created_at": "2025-12-16T22:45:11.977000"
+    "created_at": "2025-12-16 22:45:11.977000"
   },
   {
     "user_id": "user_6256ad3b88c9",
@@ -120,7 +120,7 @@
       "chat_messages_today": 0,
       "last_usage_date": null
     },
-    "created_at": "2025-12-16T22:45:48.229000"
+    "created_at": "2025-12-16 22:45:48.229000"
   },
   {
     "user_id": "user_02a671ffaba1",
@@ -136,7 +136,7 @@
       "chat_messages_today": 0,
       "last_usage_date": null
     },
-    "created_at": "2025-12-16T22:59:23.232000"
+    "created_at": "2025-12-16 22:59:23.232000"
   },
   {
     "user_id": "user_a80af2572764",
@@ -152,7 +152,7 @@
       "chat_messages_today": 0,
       "last_usage_date": null
     },
-    "created_at": "2025-12-16T22:59:44.122000"
+    "created_at": "2025-12-16 22:59:44.122000"
   },
   {
     "user_id": "user_a5b5e7e33975",
@@ -168,6 +168,150 @@
       "chat_messages_today": 0,
       "last_usage_date": null
     },
-    "created_at": "2025-12-17T07:53:40.621000"
+    "created_at": "2025-12-17 07:53:40.621000"
+  },
+  {
+    "user_id": "user_1d1e6ff595d6",
+    "email": "cellartest@test.com",
+    "name": "Cellar Test User",
+    "password_hash": "$2b$12$7CiO0OIpisvBu3glCGdru.WuE1lIHJnZ1tZJ7IFfXQpmt1AFVxdtS",
+    "picture": null,
+    "plan": "basic",
+    "subscription_id": null,
+    "subscription_status": null,
+    "usage": {
+      "pairing_requests_today": 0,
+      "chat_messages_today": 0,
+      "last_usage_date": "2025-12-17"
+    },
+    "created_at": "2025-12-17 16:54:44.679000"
+  },
+  {
+    "user_id": "user_06d274e62997",
+    "email": "otheruser@test.com",
+    "name": "Other User",
+    "password_hash": "$2b$12$PZgqhlBaY4ZZqIFPfS8Zve4mmLcUrHbWcvA9XMpPYrCqXGTwQIoFi",
+    "picture": null,
+    "plan": "basic",
+    "subscription_id": null,
+    "subscription_status": null,
+    "usage": {
+      "pairing_requests_today": 0,
+      "chat_messages_today": 0,
+      "last_usage_date": null
+    },
+    "created_at": "2025-12-17 16:55:05.171000"
+  },
+  {
+    "user_id": "user_aec980bcf47a",
+    "email": "multitest_a_1765990707@test.com",
+    "name": "Multi Test User A",
+    "password_hash": "$2b$12$8G1kLJDm1wdcp529fEWiFOb95ZhI6vdUd92foS9j2i8s1flE5.Jq2",
+    "picture": null,
+    "plan": "basic",
+    "subscription_id": null,
+    "subscription_status": null,
+    "usage": {
+      "pairing_requests_today": 0,
+      "chat_messages_today": 0,
+      "last_usage_date": null
+    },
+    "created_at": "2025-12-17 16:58:27.625000"
+  },
+  {
+    "user_id": "user_64b17c3b4c06",
+    "email": "multitest_b_1765990707@test.com",
+    "name": "Multi Test User B",
+    "password_hash": "$2b$12$5BvrNoNPvTXUoFR.OB2a6ukUp2G6vDxFAeTtWwaK9TWzXIgUyz5e2",
+    "picture": null,
+    "plan": "basic",
+    "subscription_id": null,
+    "subscription_status": null,
+    "usage": {
+      "pairing_requests_today": 0,
+      "chat_messages_today": 0,
+      "last_usage_date": null
+    },
+    "created_at": "2025-12-17 16:58:28.195000"
+  },
+  {
+    "user_id": "user_c72f1922cca5",
+    "email": "multitest_a_1765990822@test.com",
+    "name": "Multi Test User A",
+    "password_hash": "$2b$12$pYi8zzm/vs.bM6KdJ18kMOl6gH5VrRTfMuc9shOR/paig7KWR0u6G",
+    "picture": null,
+    "plan": "basic",
+    "subscription_id": null,
+    "subscription_status": null,
+    "usage": {
+      "pairing_requests_today": 1,
+      "chat_messages_today": 0,
+      "last_usage_date": "2025-12-17"
+    },
+    "created_at": "2025-12-17 17:00:22.581000"
+  },
+  {
+    "user_id": "user_0f2f4dff03c9",
+    "email": "multitest_b_1765990822@test.com",
+    "name": "Multi Test User B",
+    "password_hash": "$2b$12$QA4i9fzcyCfyn8QJybJUguglo3.vpY7UhxqQfaDQ52uWCcRHm/M42",
+    "picture": null,
+    "plan": "basic",
+    "subscription_id": null,
+    "subscription_status": null,
+    "usage": {
+      "pairing_requests_today": 1,
+      "chat_messages_today": 0,
+      "last_usage_date": "2025-12-17"
+    },
+    "created_at": "2025-12-17 17:00:23.083000"
+  },
+  {
+    "user_id": "user_69e407d30f8d",
+    "email": "hans.mueller@test.com",
+    "name": "Hans Müller",
+    "password_hash": "$2b$12$1xIhRo1nTXhtpH7l8nsHKunGteYqzUpvTIosVlcnz3drKxhH/uu4K",
+    "picture": null,
+    "plan": "basic",
+    "subscription_id": null,
+    "subscription_status": null,
+    "usage": {
+      "pairing_requests_today": 0,
+      "chat_messages_today": 0,
+      "last_usage_date": "2025-12-17"
+    },
+    "created_at": "2025-12-17 17:56:38.878000"
+  },
+  {
+    "user_id": "user_2f26a3a0d45a",
+    "email": "maria.rossi@test.com",
+    "name": "Maria Rossi",
+    "password_hash": "$2b$12$LQ6HUAVdcchILuKREf2gJ.k9W0bHQKXbvrJ9ge46wBOyE2oWJ.cs.",
+    "picture": null,
+    "plan": "basic",
+    "subscription_id": null,
+    "subscription_status": null,
+    "usage": {
+      "pairing_requests_today": 0,
+      "chat_messages_today": 0,
+      "last_usage_date": "2025-12-17"
+    },
+    "created_at": "2025-12-17 17:57:00.309000"
+  },
+  {
+    "user_id": "user_bd49e3ad4e7b",
+    "email": "pierre.dubois@test.com",
+    "name": "Pierre Dubois",
+    "password_hash": "$2b$12$QxZFkIKVccws97noYhm7IO0Psi95cBcUu/DgBt1cUFAfdkdkMYD.a",
+    "picture": null,
+    "plan": "basic",
+    "subscription_id": null,
+    "subscription_status": null,
+    "usage": {
+      "pairing_requests_today": 0,
+      "chat_messages_today": 0,
+      "last_usage_date": "2025-12-17"
+    },
+    "created_at": "2025-12-17 17:57:13.604000"
   }
 ]

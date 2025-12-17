@@ -1,0 +1,84 @@
+{
+  "created_at": "2025-12-17T19:34:04.279226",
+  "version": "3.1",
+  "collections": {
+    "public_wines": {
+      "count": 1889,
+      "verified": true,
+      "file": "public_wines.json"
+    },
+    "wine_database": {
+      "count": 494,
+      "verified": true,
+      "file": "wine_database.json"
+    },
+    "grape_varieties": {
+      "count": 140,
+      "verified": true,
+      "file": "grape_varieties.json"
+    },
+    "regional_pairings": {
+      "count": 1652,
+      "verified": true,
+      "file": "regional_pairings.json"
+    },
+    "blog_posts": {
+      "count": 233,
+      "verified": true,
+      "file": "blog_posts.json"
+    },
+    "feed_posts": {
+      "count": 268,
+      "verified": true,
+      "file": "feed_posts.json"
+    },
+    "dishes": {
+      "count": 40,
+      "verified": true,
+      "file": "dishes.json"
+    },
+    "seo_pairings": {
+      "count": 500,
+      "verified": true,
+      "file": "seo_pairings.json"
+    },
+    "coupons": {
+      "count": 100,
+      "verified": true,
+      "file": "coupons.json"
+    },
+    "users": {
+      "count": 20,
+      "verified": true,
+      "file": "users.json"
+    },
+    "wines": {
+      "count": 40,
+      "verified": true,
+      "file": "wines.json"
+    },
+    "pairings": {
+      "count": 162,
+      "verified": true,
+      "file": "pairings.json"
+    },
+    "chats": {
+      "count": 23,
+      "verified": true,
+      "file": "chats.json"
+    },
+    "wine_favorites": {
+      "count": 1,
+      "verified": true,
+      "file": "wine_favorites.json"
+    },
+    "payment_transactions": {
+      "count": 3,
+      "verified": true,
+      "file": "payment_transactions.json"
+    }
+  },
+  "verification": "SUCCESS",
+  "total_documents": 5565,
+  "errors": []
+}

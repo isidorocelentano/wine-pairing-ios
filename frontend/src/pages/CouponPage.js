@@ -5,6 +5,7 @@ import { Input } from '../components/ui/input';
 import { AlertCircle, CheckCircle, Gift } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import { API_URL } from '../config/api';
 
 const CouponPage = () => {
   const [couponCode, setCouponCode] = useState('');

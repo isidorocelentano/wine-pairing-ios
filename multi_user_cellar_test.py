@@ -74,28 +74,27 @@ class MultiUserCellarTester:
         except Exception as e:
             return False, {"error": str(e)}
 
-    def register_user(self, email: str, password: str, name: str) -> tuple[bool, str]:
-        """Register a new user and return success status and token"""
+    def register_user(self, email: str, password: str, name: str, session: requests.Session) -> bool:
+        """Register a new user and login with session to get cookies"""
         register_data = {
             "email": email,
             "password": password,
             "name": name
         }
         
-        success, response = self.make_request('POST', 'auth/register', data=register_data, expected_status=200)
+        success, response = self.make_request('POST', 'auth/register', data=register_data, expected_status=200, session=session)
         if success and 'user_id' in response:
-            # Now login to get token
+            # Now login to get session cookie
             login_data = {
                 "email": email,
                 "password": password
             }
-            login_success, login_response = self.make_request('POST', 'auth/login', data=login_data, expected_status=200)
+            login_success, login_response = self.make_request('POST', 'auth/login', data=login_data, expected_status=200, session=session)
             if login_success:
-                # Token is typically set as cookie, but let's check if it's in response
-                token = login_response.get('token') or login_response.get('access_token')
-                return True, token
+                # Cookie should now be set in the session
+                return True
         
-        return False, None
+        return False
 
     def test_1_authentication_required(self):
         """Test that wine endpoints require authentication"""

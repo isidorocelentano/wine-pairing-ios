@@ -1,0 +1,1447 @@
+[
+  {
+    "id": "0afb400c-5b06-4af3-b7a2-73af42234563",
+    "slug": "cheeseburger",
+    "name_de": "Cheeseburger",
+    "name_en": "Cheeseburger",
+    "name_fr": "Cheeseburger",
+    "country": "usa",
+    "region": "kalifornien",
+    "trend_cuisines": [
+      "streetfood",
+      "amerikanisch"
+    ],
+    "bestseller_category": "burger",
+    "protein": "rind",
+    "intensity": "kräftig",
+    "cooking_method": "gebraten",
+    "sauce_base": "jus",
+    "fat_level": "hoch",
+    "acid_level": "mittel",
+    "sweetness_level": "trocken",
+    "spice_level": "leicht",
+    "key_aromas": [
+      "röstnoten",
+      "umami",
+      "käse",
+      "zwiebel",
+      "tomate"
+    ],
+    "texture": [
+      "saftig",
+      "zart",
+      "knusprig",
+      "cremig"
+    ],
+    "created_at": "2025-12-07T15:15:14.005118+00:00"
+  },
+  {
+    "id": "f1c9f539-8b26-4088-8bb6-1795cef60ae4",
+    "slug": "classic-burger",
+    "name_de": "Classic Burger",
+    "name_en": "Classic Burger",
+    "name_fr": "Burger classique",
+    "country": "usa",
+    "region": "kalifornien",
+    "trend_cuisines": [
+      "streetfood",
+      "amerikanisch"
+    ],
+    "bestseller_category": "burger",
+    "protein": "rind",
+    "intensity": "mittel",
+    "cooking_method": "gegrillt",
+    "sauce_base": "butter",
+    "fat_level": "mittel",
+    "acid_level": "mittel",
+    "sweetness_level": "trocken",
+    "spice_level": "leicht",
+    "key_aromas": [
+      "röstnoten",
+      "umami",
+      "buttrig",
+      "zwiebelig",
+      "kräuter"
+    ],
+    "texture": [
+      "saftig",
+      "zart",
+      "knusprig"
+    ],
+    "created_at": "2025-12-07T15:15:15.245603+00:00"
+  },
+  {
+    "id": "990c77f9-6da5-4d71-b9e7-cf06b1204dc0",
+    "slug": "pizza-margherita",
+    "name_de": "Pizza Margherita",
+    "name_en": "Pizza Margherita",
+    "name_fr": "Pizza Margherita",
+    "country": "italien",
+    "region": "kampanien",
+    "trend_cuisines": [
+      "pizzeria",
+      "italienisch"
+    ],
+    "bestseller_category": "pizza",
+    "protein": "vegetarisch",
+    "intensity": "mittel",
+    "cooking_method": "gebacken",
+    "sauce_base": "tomate",
+    "fat_level": "mittel",
+    "acid_level": "mittel",
+    "sweetness_level": "trocken",
+    "spice_level": "keine",
+    "key_aromas": [
+      "tomatig",
+      "käse",
+      "kräuter",
+      "hefeteig",
+      "umami"
+    ],
+    "texture": [
+      "knusprig",
+      "saftig",
+      "zart"
+    ],
+    "created_at": "2025-12-07T15:15:18.075724+00:00"
+  },
+  {
+    "id": "34f537d7-f993-4fd1-b0b5-3fb8cec875af",
+    "slug": "pizza-salami",
+    "name_de": "Pizza Salami",
+    "name_en": "Salami Pizza",
+    "name_fr": "Pizza au salami",
+    "country": "italien",
+    "region": "kampanien",
+    "trend_cuisines": [
+      "pizzeria",
+      "italienisch"
+    ],
+    "bestseller_category": "pizza",
+    "protein": "schwein",
+    "intensity": "mittel",
+    "cooking_method": "gebacken",
+    "sauce_base": "tomate",
+    "fat_level": "mittel",
+    "acid_level": "mittel",
+    "sweetness_level": "trocken",
+    "spice_level": "leicht",
+    "key_aromas": [
+      "tomatig",
+      "käse",
+      "würzig",
+      "röstnoten",
+      "kräuter"
+    ],
+    "texture": [
+      "knusprig",
+      "saftig",
+      "zart",
+      "leicht_ölig"
+    ],
+    "created_at": "2025-12-07T15:15:21.536926+00:00"
+  },
+  {
+    "id": "50098d00-7a2f-4d17-99cd-6e3b04b923e4",
+    "slug": "spaghetti-bolognese",
+    "name_de": "Spaghetti Bolognese",
+    "name_en": "Spaghetti Bolognese",
+    "name_fr": "Spaghetti à la bolognaise",
+    "country": "italien",
+    "region": "emilia-romagna",
+    "trend_cuisines": [
+      "trattoria",
+      "italienisch"
+    ],
+    "bestseller_category": "pasta",
+    "protein": "rind",
+    "intensity": "mittel",
+    "cooking_method": "geschmort",
+    "sauce_base": "tomate",
+    "fat_level": "mittel",
+    "acid_level": "mittel",
+    "sweetness_level": "trocken",
+    "spice_level": "leicht",
+    "key_aromas": [
+      "umami",
+      "kräuter",
+      "tomatig",
+      "röstnoten"
+    ],
+    "texture": [
+      "saftig",
+      "zart",
+      "leicht_sämig"
+    ],
+    "created_at": "2025-12-07T15:15:25.385045+00:00"
+  },
+  {
+    "id": "2f6d4fc2-0a59-40b5-a4d2-656a1c69f28b",
+    "slug": "spaghetti-carbonara",
+    "name_de": "Spaghetti Carbonara",
+    "name_en": "Spaghetti Carbonara",
+    "name_fr": "Spaghetti à la carbonara",
+    "country": "italien",
+    "region": "latium",
+    "trend_cuisines": [
+      "trattoria",
+      "italienisch"
+    ],
+    "bestseller_category": "pasta",
+    "protein": "schwein",
+    "intensity": "mittel",
+    "cooking_method": "gebraten",
+    "sauce_base": "sahne",
+    "fat_level": "hoch",
+    "acid_level": "niedrig",
+    "sweetness_level": "trocken",
+    "spice_level": "leicht",
+    "key_aromas": [
+      "speck",
+      "pfeffer",
+      "käse",
+      "umami",
+      "röstnoten"
+    ],
+    "texture": [
+      "cremig",
+      "al_dente",
+      "zart"
+    ],
+    "created_at": "2025-12-07T15:15:28.001959+00:00"
+  },
+  {
+    "id": "0a211ffa-7862-42b6-acc2-9dbdb605a9c8",
+    "slug": "rinderfilet-mit-rotwein-jus",
+    "name_de": "Rinderfilet mit Rotwein-Jus",
+    "name_en": "Beef Tenderloin with Red Wine Jus",
+    "name_fr": "Filet de bœuf au jus de vin rouge",
+    "country": "frankreich",
+    "region": "bordeaux",
+    "trend_cuisines": [
+      "fine_dining",
+      "französisch"
+    ],
+    "bestseller_category": "steak",
+    "protein": "rind",
+    "intensity": "kräftig",
+    "cooking_method": "gebraten",
+    "sauce_base": "jus",
+    "fat_level": "mittel",
+    "acid_level": "mittel",
+    "sweetness_level": "trocken",
+    "spice_level": "leicht",
+    "key_aromas": [
+      "röstnoten",
+      "umami",
+      "würzig",
+      "rotwein",
+      "kräuter"
+    ],
+    "texture": [
+      "zart",
+      "saftig",
+      "sämig"
+    ],
+    "created_at": "2025-12-07T15:15:30.807548+00:00"
+  },
+  {
+    "id": "61e76666-cf82-4f46-b092-3d2380973b6a",
+    "slug": "ribeye-steak-vom-grill",
+    "name_de": "Ribeye Steak vom Grill",
+    "name_en": "Grilled Ribeye Steak",
+    "name_fr": "Entrecôte grillée",
+    "country": "usa",
+    "region": "texas",
+    "trend_cuisines": [
+      "bbq",
+      "steakhouse"
+    ],
+    "bestseller_category": "steak",
+    "protein": "rind",
+    "intensity": "kräftig",
+    "cooking_method": "gegrillt",
+    "sauce_base": "jus",
+    "fat_level": "hoch",
+    "acid_level": "niedrig",
+    "sweetness_level": "trocken",
+    "spice_level": "mittel",
+    "key_aromas": [
+      "röstnoten",
+      "rauchig",
+      "umami",
+      "pfeffer",
+      "fleischig"
+    ],
+    "texture": [
+      "zart",
+      "saftig",
+      "faserig",
+      "leicht_knusprig"
+    ],
+    "created_at": "2025-12-07T15:15:32.446194+00:00"
+  },
+  {
+    "id": "08ed3482-6782-44d0-9b50-d3dafcdbde27",
+    "slug": "lachsfilet-mit-zitronen-butter-sauce",
+    "name_de": "Lachsfilet mit Zitronen-Butter-Sauce",
+    "name_en": "Salmon Fillet with Lemon Butter Sauce",
+    "name_fr": "Filet de saumon à la sauce beurre citron",
+    "country": "international",
+    "region": "international",
+    "trend_cuisines": [
+      "brasserie",
+      "europäisch"
+    ],
+    "bestseller_category": "fisch",
+    "protein": "lachs",
+    "intensity": "mittel",
+    "cooking_method": "gebraten",
+    "sauce_base": "butter",
+    "fat_level": "hoch",
+    "acid_level": "mittel",
+    "sweetness_level": "trocken",
+    "spice_level": "keine",
+    "key_aromas": [
+      "buttrig",
+      "zitronig",
+      "kräuter",
+      "umami"
+    ],
+    "texture": [
+      "zart",
+      "saftig",
+      "cremig",
+      "fein"
+    ],
+    "created_at": "2025-12-07T15:15:34.064510+00:00"
+  },
+  {
+    "id": "07a999eb-2252-4b93-b1d0-9b6918d03011",
+    "slug": "fish-and-chips",
+    "name_de": "Fish and Chips",
+    "name_en": "Fish and Chips",
+    "name_fr": "Fish and Chips",
+    "country": "uk",
+    "region": "england",
+    "trend_cuisines": [
+      "streetfood",
+      "britisch"
+    ],
+    "bestseller_category": "fisch",
+    "protein": "weißer_fisch",
+    "intensity": "mittel",
+    "cooking_method": "frittiert",
+    "sauce_base": "keine",
+    "fat_level": "hoch",
+    "acid_level": "mittel",
+    "sweetness_level": "trocken",
+    "spice_level": "leicht",
+    "key_aromas": [
+      "röstnoten",
+      "malzig",
+      "salzig",
+      "zitronig",
+      "umami"
+    ],
+    "texture": [
+      "knusprig",
+      "saftig",
+      "weich"
+    ],
+    "created_at": "2025-12-07T15:15:36.180928+00:00"
+  },
+  {
+    "id": "8f430614-229e-458c-bf24-cf530da84569",
+    "slug": "caesar-salad-mit-huhn",
+    "name_de": "Caesar Salad mit Huhn",
+    "name_en": "Chicken Caesar Salad",
+    "name_fr": "Salade César au poulet",
+    "country": "usa",
+    "region": "kalifornien",
+    "trend_cuisines": [
+      "bistro",
+      "amerikanisch"
+    ],
+    "bestseller_category": "salat",
+    "protein": "geflügel",
+    "intensity": "mittel",
+    "cooking_method": "gebraten",
+    "sauce_base": "sahne",
+    "fat_level": "mittel",
+    "acid_level": "mittel",
+    "sweetness_level": "trocken",
+    "spice_level": "keine",
+    "key_aromas": [
+      "umami",
+      "knoblauch",
+      "zitronig",
+      "würzig",
+      "parmesan",
+      "salzig"
+    ],
+    "texture": [
+      "knackig",
+      "zart",
+      "saftig",
+      "cremig"
+    ],
+    "created_at": "2025-12-07T15:15:39.746249+00:00"
+  },
+  {
+    "id": "b5ac9801-8568-431c-9189-b288078755ac",
+    "slug": "sushi-mix",
+    "name_de": "Sushi Mix",
+    "name_en": "Sushi Mix",
+    "name_fr": "Assortiment de sushi",
+    "country": "japan",
+    "region": "tokio",
+    "trend_cuisines": [
+      "sushi",
+      "asiatisch",
+      "streetfood"
+    ],
+    "bestseller_category": "sushi",
+    "protein": "weißer_fisch",
+    "intensity": "leicht",
+    "cooking_method": "roh",
+    "sauce_base": "soja",
+    "fat_level": "mittel",
+    "acid_level": "mittel",
+    "sweetness_level": "trocken",
+    "spice_level": "leicht",
+    "key_aromas": [
+      "meer",
+      "umami",
+      "reisig",
+      "algen",
+      "sojasauce",
+      "ingwer"
+    ],
+    "texture": [
+      "zart",
+      "saftig",
+      "weich",
+      "klebrig"
+    ],
+    "created_at": "2025-12-07T15:15:42.723479+00:00"
+  },
+  {
+    "id": "2d07b451-074e-4491-a4e8-e5e5a073dbda",
+    "slug": "ramen-mit-schweinebauch",
+    "name_de": "Ramen mit Schweinebauch",
+    "name_en": "Ramen with Pork Belly",
+    "name_fr": "Ramen au porc braisé",
+    "country": "japan",
+    "region": "tokyo",
+    "trend_cuisines": [
+      "japanisch",
+      "asiatisch",
+      "streetfood"
+    ],
+    "bestseller_category": "nudelsuppe",
+    "protein": "schwein",
+    "intensity": "kräftig",
+    "cooking_method": "geschmort",
+    "sauce_base": "brühe",
+    "fat_level": "hoch",
+    "acid_level": "niedrig",
+    "sweetness_level": "trocken",
+    "spice_level": "leicht",
+    "key_aromas": [
+      "umami",
+      "röstnoten",
+      "soja",
+      "würzig",
+      "fleischig",
+      "zwiebelig"
+    ],
+    "texture": [
+      "saftig",
+      "zart",
+      "ölig",
+      "suppig"
+    ],
+    "created_at": "2025-12-07T15:15:45.023564+00:00"
+  },
+  {
+    "id": "ca569f24-8879-4808-8850-8f72799da7ca",
+    "slug": "pad-thai-mit-garnelen",
+    "name_de": "Pad Thai mit Garnelen",
+    "name_en": "Pad Thai with Shrimp",
+    "name_fr": "Pad Thaï aux crevettes",
+    "country": "thailand",
+    "region": "zentralthailand",
+    "trend_cuisines": [
+      "thai",
+      "asiatisch",
+      "streetfood"
+    ],
+    "bestseller_category": "nudelsuppe",
+    "protein": "meeresfrüchte",
+    "intensity": "mittel",
+    "cooking_method": "gebraten",
+    "sauce_base": "soja",
+    "fat_level": "mittel",
+    "acid_level": "mittel",
+    "sweetness_level": "leicht_süß",
+    "spice_level": "leicht",
+    "key_aromas": [
+      "umami",
+      "erdnuss",
+      "limette",
+      "knoblauch",
+      "sojasauce",
+      "röstnoten",
+      "frühlingszwiebel"
+    ],
+    "texture": [
+      "saftig",
+      "leicht_knusprig",
+      "bissfest",
+      "cremig"
+    ],
+    "created_at": "2025-12-07T15:15:48.131222+00:00"
+  },
+  {
+    "id": "2ff3c623-3b72-4b97-b97b-afef0b3b76c6",
+    "slug": "gruenes-thai-curry-mit-huhn",
+    "name_de": "Grünes Thai-Curry mit Huhn",
+    "name_en": "Green Thai Chicken Curry",
+    "name_fr": "Curry vert thaï au poulet",
+    "country": "thailand",
+    "region": "zentral-thailand",
+    "trend_cuisines": [
+      "thai",
+      "asiatisch"
+    ],
+    "bestseller_category": "curry",
+    "protein": "geflügel",
+    "intensity": "kräftig",
+    "cooking_method": "wok",
+    "sauce_base": "kokosmilch",
+    "fat_level": "mittel",
+    "acid_level": "mittel",
+    "sweetness_level": "leicht_süß",
+    "spice_level": "dominant",
+    "key_aromas": [
+      "kokos",
+      "zitronengras",
+      "kräuter",
+      "chili",
+      "limette",
+      "umami"
+    ],
+    "texture": [
+      "cremig",
+      "saftig",
+      "zart"
+    ],
+    "created_at": "2025-12-07T15:15:51.920113+00:00"
+  },
+  {
+    "id": "7f13169b-98ab-47bb-9ccd-966fcfd3cef3",
+    "slug": "indisches-butter-chicken",
+    "name_de": "Indisches Butter Chicken",
+    "name_en": "Indian Butter Chicken",
+    "name_fr": "Poulet au beurre indien",
+    "country": "indien",
+    "region": "punjab",
+    "trend_cuisines": [
+      "indisch",
+      "asiatisch"
+    ],
+    "bestseller_category": "curry",
+    "protein": "geflügel",
+    "intensity": "kräftig",
+    "cooking_method": "geschmort",
+    "sauce_base": "butter",
+    "fat_level": "hoch",
+    "acid_level": "mittel",
+    "sweetness_level": "leicht_süß",
+    "spice_level": "mittel",
+    "key_aromas": [
+      "butterig",
+      "tomatig",
+      "gewürze",
+      "rahmig",
+      "umami"
+    ],
+    "texture": [
+      "zart",
+      "cremig",
+      "saftig"
+    ],
+    "created_at": "2025-12-07T15:15:54.140431+00:00"
+  },
+  {
+    "id": "6a9584d4-9eaf-44e6-851e-aac42d4fa843",
+    "slug": "tacos-al-pastor",
+    "name_de": "Tacos al Pastor",
+    "name_en": "Tacos al Pastor",
+    "name_fr": "Tacos al Pastor",
+    "country": "mexiko",
+    "region": "mexiko-stadt",
+    "trend_cuisines": [
+      "streetfood",
+      "mexikanisch"
+    ],
+    "bestseller_category": "burger",
+    "protein": "schwein",
+    "intensity": "mittel",
+    "cooking_method": "gegrillt",
+    "sauce_base": "keine",
+    "fat_level": "mittel",
+    "acid_level": "mittel",
+    "sweetness_level": "leicht_süß",
+    "spice_level": "mittel",
+    "key_aromas": [
+      "röstnoten",
+      "gewürze",
+      "ananas",
+      "zitronig",
+      "umami",
+      "zwiebel"
+    ],
+    "texture": [
+      "saftig",
+      "zart",
+      "leicht_knusprig",
+      "frisch"
+    ],
+    "created_at": "2025-12-07T15:15:56.819235+00:00"
+  },
+  {
+    "id": "4dd2cb97-4f75-4885-9fb6-1ba67363eeae",
+    "slug": "falafel-bowl",
+    "name_de": "Falafel Bowl",
+    "name_en": "Falafel Bowl",
+    "name_fr": "Bol de falafels",
+    "country": "orient",
+    "region": "levant",
+    "trend_cuisines": [
+      "bowl",
+      "orientalisch",
+      "streetfood"
+    ],
+    "bestseller_category": "bowl",
+    "protein": "vegan",
+    "intensity": "mittel",
+    "cooking_method": "gebraten",
+    "sauce_base": "vinaigrette",
+    "fat_level": "mittel",
+    "acid_level": "mittel",
+    "sweetness_level": "trocken",
+    "spice_level": "leicht",
+    "key_aromas": [
+      "kräuter",
+      "kreuzkümmel",
+      "sesam",
+      "zitronig",
+      "knoblauch",
+      "gemüse"
+    ],
+    "texture": [
+      "knusprig",
+      "saftig",
+      "cremig",
+      "körnig"
+    ],
+    "created_at": "2025-12-07T15:15:59.533803+00:00"
+  },
+  {
+    "id": "659a72b7-2775-4517-b0a5-2fa7efb22e22",
+    "slug": "vegane-buddha-bowl",
+    "name_de": "Vegane Buddha Bowl",
+    "name_en": "Vegan Buddha Bowl",
+    "name_fr": "Buddha bowl végane",
+    "country": "international",
+    "region": "international",
+    "trend_cuisines": [
+      "bowl",
+      "vegan",
+      "healthy"
+    ],
+    "bestseller_category": "bowl",
+    "protein": "vegan",
+    "intensity": "mittel",
+    "cooking_method": "gebraten",
+    "sauce_base": "vinaigrette",
+    "fat_level": "mittel",
+    "acid_level": "mittel",
+    "sweetness_level": "trocken",
+    "spice_level": "leicht",
+    "key_aromas": [
+      "gemüse",
+      "nussig",
+      "kräuter",
+      "zitronig",
+      "umami"
+    ],
+    "texture": [
+      "knackig",
+      "cremig",
+      "körnig",
+      "saftig"
+    ],
+    "created_at": "2025-12-07T15:16:03.114822+00:00"
+  },
+  {
+    "id": "aca3dd24-7258-4ac9-9caa-c36f3d7e3a5b",
+    "slug": "pizza-prosciutto-e-funghi",
+    "name_de": "Pizza Prosciutto e Funghi",
+    "name_en": "Pizza with Ham and Mushrooms",
+    "name_fr": "Pizza jambon champignons",
+    "country": "italien",
+    "region": "kampanien",
+    "trend_cuisines": [
+      "pizzeria",
+      "italienisch"
+    ],
+    "bestseller_category": "pizza",
+    "protein": "schwein",
+    "intensity": "mittel",
+    "cooking_method": "gebacken",
+    "sauce_base": "tomate",
+    "fat_level": "mittel",
+    "acid_level": "mittel",
+    "sweetness_level": "trocken",
+    "spice_level": "keine",
+    "key_aromas": [
+      "tomatig",
+      "umami",
+      "kräuter",
+      "röstnoten",
+      "pilze",
+      "schinken"
+    ],
+    "texture": [
+      "knusprig",
+      "saftig",
+      "zart",
+      "leicht_cremig"
+    ],
+    "created_at": "2025-12-07T15:16:06.122665+00:00"
+  },
+  {
+    "id": "502619c2-b905-4595-89cc-d95522f712a2",
+    "slug": "coq-au-vin",
+    "name_de": "Coq au Vin",
+    "name_en": "Coq au Vin",
+    "name_fr": "Coq au Vin",
+    "country": "frankreich",
+    "region": "burgund",
+    "trend_cuisines": [
+      "klassisch",
+      "französisch"
+    ],
+    "bestseller_category": "curry",
+    "protein": "geflügel",
+    "intensity": "kräftig",
+    "cooking_method": "geschmort",
+    "sauce_base": "jus",
+    "fat_level": "mittel",
+    "acid_level": "mittel",
+    "sweetness_level": "trocken",
+    "spice_level": "leicht",
+    "key_aromas": [
+      "röstnoten",
+      "kräuter",
+      "erdig",
+      "umami",
+      "weinig"
+    ],
+    "texture": [
+      "zart",
+      "saftig",
+      "sämig"
+    ],
+    "created_at": "2025-12-07T15:16:07.501200+00:00"
+  },
+  {
+    "id": "ca10dc80-8b14-4155-8db0-907675ca8729",
+    "slug": "boeuf-bourguignon",
+    "name_de": "Boeuf Bourguignon",
+    "name_en": "Beef Bourguignon",
+    "name_fr": "Boeuf Bourguignon",
+    "country": "frankreich",
+    "region": "burgund",
+    "trend_cuisines": [
+      "klassisch",
+      "französisch"
+    ],
+    "bestseller_category": "steak",
+    "protein": "rind",
+    "intensity": "kräftig",
+    "cooking_method": "geschmort",
+    "sauce_base": "jus",
+    "fat_level": "mittel",
+    "acid_level": "mittel",
+    "sweetness_level": "trocken",
+    "spice_level": "leicht",
+    "key_aromas": [
+      "röstnoten",
+      "umami",
+      "kräuter",
+      "erdig",
+      "rotwein"
+    ],
+    "texture": [
+      "zart",
+      "saftig",
+      "dicht",
+      "sämig"
+    ],
+    "created_at": "2025-12-07T15:16:10.638462+00:00"
+  },
+  {
+    "id": "6c200bd4-53ac-4342-938d-7a7223fb5589",
+    "slug": "paella-mit-meeresfruechten",
+    "name_de": "Paella mit Meeresfrüchten",
+    "name_en": "Seafood Paella",
+    "name_fr": "Paella aux fruits de mer",
+    "country": "spanien",
+    "region": "valencia",
+    "trend_cuisines": [
+      "mediterran",
+      "spanisch",
+      "streetfood"
+    ],
+    "bestseller_category": "bowl",
+    "protein": "meeresfrüchte",
+    "intensity": "mittel",
+    "cooking_method": "gebraten",
+    "sauce_base": "brühe",
+    "fat_level": "mittel",
+    "acid_level": "niedrig",
+    "sweetness_level": "trocken",
+    "spice_level": "leicht",
+    "key_aromas": [
+      "umami",
+      "kräuter",
+      "röstnoten",
+      "paprika",
+      "meerig",
+      "knoblauch"
+    ],
+    "texture": [
+      "körnig",
+      "saftig",
+      "zart",
+      "leicht_bissfest"
+    ],
+    "created_at": "2025-12-07T15:16:13.391589+00:00"
+  },
+  {
+    "id": "d013fae7-6378-462b-b742-62e344c0fca1",
+    "slug": "tapas-auswahl",
+    "name_de": "Tapas-Auswahl",
+    "name_en": "Assorted Tapas Platter",
+    "name_fr": "Assortiment de tapas",
+    "country": "spanien",
+    "region": "spanien",
+    "trend_cuisines": [
+      "sharing",
+      "spanisch",
+      "streetfood"
+    ],
+    "bestseller_category": "salat",
+    "protein": "gemüse",
+    "intensity": "mittel",
+    "cooking_method": "gebraten",
+    "sauce_base": "keine",
+    "fat_level": "mittel",
+    "acid_level": "mittel",
+    "sweetness_level": "trocken",
+    "spice_level": "leicht",
+    "key_aromas": [
+      "röstnoten",
+      "kräuter",
+      "umami",
+      "knoblauch",
+      "nussig"
+    ],
+    "texture": [
+      "knusprig",
+      "saftig",
+      "cremig"
+    ],
+    "created_at": "2025-12-07T15:16:14.899227+00:00"
+  },
+  {
+    "id": "bbd58f94-4911-473c-875c-9348042f4b23",
+    "slug": "schweinsbraten-mit-knoedeln",
+    "name_de": "Schweinsbraten mit Knödeln",
+    "name_en": "Roast Pork with Dumplings",
+    "name_fr": "Rôti de porc avec quenelles",
+    "country": "deutschland",
+    "region": "bayern",
+    "trend_cuisines": [
+      "hausmannskost",
+      "deutsch",
+      "traditionell"
+    ],
+    "bestseller_category": "pasta",
+    "protein": "schwein",
+    "intensity": "kräftig",
+    "cooking_method": "geschmort",
+    "sauce_base": "jus",
+    "fat_level": "hoch",
+    "acid_level": "niedrig",
+    "sweetness_level": "trocken",
+    "spice_level": "leicht",
+    "key_aromas": [
+      "röstnoten",
+      "fleischig",
+      "kräuter",
+      "zwiebelig",
+      "umami"
+    ],
+    "texture": [
+      "zart",
+      "saftig",
+      "sämig",
+      "weich"
+    ],
+    "created_at": "2025-12-07T15:16:16.588870+00:00"
+  },
+  {
+    "id": "1e3c8c67-7c25-4684-8253-3e9a2c9a8a69",
+    "slug": "wiener-schnitzel-mit-kartoffelsalat",
+    "name_de": "Wiener Schnitzel mit Kartoffelsalat",
+    "name_en": "Wiener Schnitzel with Potato Salad",
+    "name_fr": "Escalope viennoise avec salade de pommes de terre",
+    "country": "österreich",
+    "region": "wien",
+    "trend_cuisines": [
+      "klassisch",
+      "hausmannskost"
+    ],
+    "bestseller_category": "steak",
+    "protein": "geflügel",
+    "intensity": "mittel",
+    "cooking_method": "frittiert",
+    "sauce_base": "keine",
+    "fat_level": "mittel",
+    "acid_level": "mittel",
+    "sweetness_level": "trocken",
+    "spice_level": "keine",
+    "key_aromas": [
+      "buttrig",
+      "röstnoten",
+      "kartoffel",
+      "kräuter",
+      "zitronig"
+    ],
+    "texture": [
+      "knusprig",
+      "zart",
+      "saftig",
+      "cremig"
+    ],
+    "created_at": "2025-12-07T15:16:19.541044+00:00"
+  },
+  {
+    "id": "a87a4c20-728c-4ac2-bddc-db08dade43ac",
+    "slug": "moussaka",
+    "name_de": "Moussaka",
+    "name_en": "Moussaka",
+    "name_fr": "Moussaka",
+    "country": "griechenland",
+    "region": "attika",
+    "trend_cuisines": [
+      "mediterran",
+      "griechisch"
+    ],
+    "bestseller_category": "pasta",
+    "protein": "lamm",
+    "intensity": "kräftig",
+    "cooking_method": "gebacken",
+    "sauce_base": "sahne",
+    "fat_level": "hoch",
+    "acid_level": "niedrig",
+    "sweetness_level": "trocken",
+    "spice_level": "leicht",
+    "key_aromas": [
+      "röstnoten",
+      "tomatig",
+      "würzig",
+      "kräuter",
+      "umami",
+      "muskat"
+    ],
+    "texture": [
+      "cremig",
+      "zart",
+      "saftig",
+      "weich",
+      "leicht_knusprig"
+    ],
+    "created_at": "2025-12-07T15:16:21.322847+00:00"
+  },
+  {
+    "id": "ad534d1c-76cc-4143-a741-a87dc7ee1bb7",
+    "slug": "pho-bo",
+    "name_de": "Pho Bo",
+    "name_en": "Pho Bo (Vietnamese Beef Noodle Soup)",
+    "name_fr": "Pho Bo (soupe vietnamienne de nouilles au bœuf)",
+    "country": "vietnam",
+    "region": "hanoi",
+    "trend_cuisines": [
+      "streetfood",
+      "asiatisch"
+    ],
+    "bestseller_category": "nudelsuppe",
+    "protein": "rind",
+    "intensity": "mittel",
+    "cooking_method": "brühe",
+    "sauce_base": "brühe",
+    "fat_level": "mittel",
+    "acid_level": "mittel",
+    "sweetness_level": "trocken",
+    "spice_level": "leicht",
+    "key_aromas": [
+      "umami",
+      "kräuter",
+      "zimt",
+      "anis",
+      "rindfleisch",
+      "würzig"
+    ],
+    "texture": [
+      "saftig",
+      "zart",
+      "brühehaft"
+    ],
+    "created_at": "2025-12-07T15:16:23.036697+00:00"
+  },
+  {
+    "id": "4521c1a8-a79e-449c-8b16-442657b14b1d",
+    "slug": "koreanisches-bibimbap",
+    "name_de": "Koreanisches Bibimbap",
+    "name_en": "Korean Bibimbap",
+    "name_fr": "Bibimbap coréen",
+    "country": "korea",
+    "region": "seoul",
+    "trend_cuisines": [
+      "koreanisch",
+      "asiatisch",
+      "bowl"
+    ],
+    "bestseller_category": "bowl",
+    "protein": "gemüse",
+    "intensity": "mittel",
+    "cooking_method": "gebraten",
+    "sauce_base": "soja",
+    "fat_level": "mittel",
+    "acid_level": "mittel",
+    "sweetness_level": "trocken",
+    "spice_level": "mittel",
+    "key_aromas": [
+      "umami",
+      "röstnoten",
+      "sesam",
+      "gemüse",
+      "chili",
+      "knoblauch"
+    ],
+    "texture": [
+      "knusprig",
+      "saftig",
+      "cremig",
+      "körnig"
+    ],
+    "created_at": "2025-12-07T15:16:25.133583+00:00"
+  },
+  {
+    "id": "fe7889ea-7c7b-4cfd-9842-9d2bf1eed471",
+    "slug": "mapo-tofu",
+    "name_de": "Mapo Tofu",
+    "name_en": "Mapo Tofu",
+    "name_fr": "Mapo Tofu",
+    "country": "china",
+    "region": "sichuan",
+    "trend_cuisines": [
+      "scharf",
+      "asiatisch",
+      "streetfood"
+    ],
+    "bestseller_category": "bowl",
+    "protein": "vegan",
+    "intensity": "kräftig",
+    "cooking_method": "geschmort",
+    "sauce_base": "soja",
+    "fat_level": "mittel",
+    "acid_level": "niedrig",
+    "sweetness_level": "trocken",
+    "spice_level": "dominant",
+    "key_aromas": [
+      "umami",
+      "scharf",
+      "pfeffrig",
+      "röstnoten",
+      "zwiebelig",
+      "knoblauch"
+    ],
+    "texture": [
+      "zart",
+      "saftig",
+      "sämig"
+    ],
+    "created_at": "2025-12-07T15:16:28.555201+00:00"
+  },
+  {
+    "id": "0f8d977d-c20f-4c09-b908-9972c47a265e",
+    "slug": "kung-pao-chicken",
+    "name_de": "Kung Pao Huhn",
+    "name_en": "Kung Pao Chicken",
+    "name_fr": "Poulet Kung Pao",
+    "country": "china",
+    "region": "sichuan",
+    "trend_cuisines": [
+      "asiatisch",
+      "chinesisch",
+      "streetfood"
+    ],
+    "bestseller_category": "salat",
+    "protein": "geflügel",
+    "intensity": "kräftig",
+    "cooking_method": "gebraten",
+    "sauce_base": "soja",
+    "fat_level": "mittel",
+    "acid_level": "mittel",
+    "sweetness_level": "leicht_süß",
+    "spice_level": "mittel",
+    "key_aromas": [
+      "umami",
+      "erdnuss",
+      "röstnoten",
+      "chili",
+      "knoblauch",
+      "ingwer"
+    ],
+    "texture": [
+      "saftig",
+      "knusprig",
+      "bissfest"
+    ],
+    "created_at": "2025-12-07T15:16:30.095096+00:00"
+  },
+  {
+    "id": "e80cf092-9fc5-49e7-9f21-446a2b419a23",
+    "slug": "bbq-ribs",
+    "name_de": "BBQ-Rippchen",
+    "name_en": "BBQ Ribs",
+    "name_fr": "Côtes de porc BBQ",
+    "country": "usa",
+    "region": "texas",
+    "trend_cuisines": [
+      "bbq",
+      "streetfood"
+    ],
+    "bestseller_category": "steak",
+    "protein": "schwein",
+    "intensity": "kräftig",
+    "cooking_method": "gegrillt",
+    "sauce_base": "jus",
+    "fat_level": "hoch",
+    "acid_level": "mittel",
+    "sweetness_level": "leicht_süß",
+    "spice_level": "mittel",
+    "key_aromas": [
+      "rauchig",
+      "umami",
+      "röstnoten",
+      "karamellisiert",
+      "würzig"
+    ],
+    "texture": [
+      "zart",
+      "saftig",
+      "klebrig",
+      "leicht_knusprig"
+    ],
+    "created_at": "2025-12-07T15:16:32.721486+00:00"
+  },
+  {
+    "id": "87da6909-5e94-4308-bb67-b73b6a415ccb",
+    "slug": "mac-and-cheese",
+    "name_de": "Mac and Cheese",
+    "name_en": "Mac and Cheese",
+    "name_fr": "Mac and Cheese",
+    "country": "usa",
+    "region": "keine",
+    "trend_cuisines": [
+      "comfort_food"
+    ],
+    "bestseller_category": "pasta",
+    "protein": "vegetarisch",
+    "intensity": "kräftig",
+    "cooking_method": "gebacken",
+    "sauce_base": "sahne",
+    "fat_level": "hoch",
+    "acid_level": "niedrig",
+    "sweetness_level": "trocken",
+    "spice_level": "keine",
+    "key_aromas": [
+      "käse",
+      "buttrig",
+      "röstnoten",
+      "umami"
+    ],
+    "texture": [
+      "cremig",
+      "weich",
+      "knusprig"
+    ],
+    "created_at": "2025-12-07T15:16:34.444534+00:00"
+  },
+  {
+    "id": "fc18b2e6-268c-4fe2-8f39-f53f15488368",
+    "slug": "argentinisches-asado",
+    "name_de": "Argentinisches Asado",
+    "name_en": "Argentinian Asado",
+    "name_fr": "Asado argentinien",
+    "country": "argentinien",
+    "region": "pampa",
+    "trend_cuisines": [
+      "bbq",
+      "lateinamerikanisch",
+      "streetfood"
+    ],
+    "bestseller_category": "steak",
+    "protein": "rind",
+    "intensity": "kräftig",
+    "cooking_method": "gegrillt",
+    "sauce_base": "keine",
+    "fat_level": "mittel",
+    "acid_level": "niedrig",
+    "sweetness_level": "trocken",
+    "spice_level": "leicht",
+    "key_aromas": [
+      "röstnoten",
+      "rauchig",
+      "fleischig",
+      "kräuter",
+      "umami"
+    ],
+    "texture": [
+      "saftig",
+      "zart",
+      "leicht_kräftig",
+      "faserig"
+    ],
+    "created_at": "2025-12-07T15:16:37.081730+00:00"
+  },
+  {
+    "id": "eef0e462-1ca9-43db-b859-9491df78ff0b",
+    "slug": "ceviche",
+    "name_de": "Ceviche",
+    "name_en": "Ceviche",
+    "name_fr": "Ceviche",
+    "country": "peru",
+    "region": "lima",
+    "trend_cuisines": [
+      "seafood",
+      "lateinamerikanisch"
+    ],
+    "bestseller_category": "fisch",
+    "protein": "weißer_fisch",
+    "intensity": "mittel",
+    "cooking_method": "roh",
+    "sauce_base": "vinaigrette",
+    "fat_level": "niedrig",
+    "acid_level": "hoch",
+    "sweetness_level": "trocken",
+    "spice_level": "mittel",
+    "key_aromas": [
+      "zitronig",
+      "kräuter",
+      "umami",
+      "zwiebelig",
+      "mineralisch"
+    ],
+    "texture": [
+      "zart",
+      "saftig",
+      "frisch",
+      "leicht_bissfest"
+    ],
+    "created_at": "2025-12-07T15:16:38.562449+00:00"
+  },
+  {
+    "id": "a2c614e7-4b12-417d-a6bc-613cb28bd7a1",
+    "slug": "gemuese-lasagne",
+    "name_de": "Gemüse-Lasagne",
+    "name_en": "Vegetable Lasagna",
+    "name_fr": "Lasagnes aux légumes",
+    "country": "italien",
+    "region": "emilia-romagna",
+    "trend_cuisines": [
+      "vegetarisch",
+      "italienisch"
+    ],
+    "bestseller_category": "pasta",
+    "protein": "gemüse",
+    "intensity": "mittel",
+    "cooking_method": "gebacken",
+    "sauce_base": "tomate",
+    "fat_level": "mittel",
+    "acid_level": "mittel",
+    "sweetness_level": "trocken",
+    "spice_level": "keine",
+    "key_aromas": [
+      "tomatig",
+      "kräuter",
+      "käse",
+      "umami"
+    ],
+    "texture": [
+      "cremig",
+      "saftig",
+      "weich",
+      "überbacken"
+    ],
+    "created_at": "2025-12-07T15:16:41.718007+00:00"
+  },
+  {
+    "id": "6f5f61f5-cef3-4f2e-9b65-6b3e88a8ca4d",
+    "slug": "kichererbsen-curry",
+    "name_de": "Kichererbsen-Curry",
+    "name_en": "Chickpea Curry",
+    "name_fr": "Curry de pois chiches",
+    "country": "indien",
+    "region": "keine",
+    "trend_cuisines": [
+      "indisch",
+      "vegan"
+    ],
+    "bestseller_category": "curry",
+    "protein": "vegan",
+    "intensity": "mittel",
+    "cooking_method": "geschmort",
+    "sauce_base": "kokosmilch",
+    "fat_level": "mittel",
+    "acid_level": "niedrig",
+    "sweetness_level": "trocken",
+    "spice_level": "mittel",
+    "key_aromas": [
+      "gewürze",
+      "kurkuma",
+      "kreuzkümmel",
+      "knoblauch",
+      "ingwer",
+      "tomatig"
+    ],
+    "texture": [
+      "sämig",
+      "leicht_cremig",
+      "stückig"
+    ],
+    "created_at": "2025-12-07T15:16:44.550022+00:00"
+  },
+  {
+    "id": "7db72696-2d32-46a3-9d79-1bdffc7eb308",
+    "slug": "gegrilltes-gemuese-mit-halloumi",
+    "name_de": "Gegrilltes Gemüse mit Halloumi",
+    "name_en": "Grilled Vegetables with Halloumi",
+    "name_fr": "Légumes grillés avec halloumi",
+    "country": "griechenland",
+    "region": "kreta",
+    "trend_cuisines": [
+      "vegetarisch",
+      "mediterran"
+    ],
+    "bestseller_category": "salat",
+    "protein": "gemüse",
+    "intensity": "mittel",
+    "cooking_method": "gegrillt",
+    "sauce_base": "keine",
+    "fat_level": "mittel",
+    "acid_level": "mittel",
+    "sweetness_level": "trocken",
+    "spice_level": "leicht",
+    "key_aromas": [
+      "röstnoten",
+      "kräuter",
+      "würzig",
+      "gemüseig"
+    ],
+    "texture": [
+      "knusprig",
+      "fest",
+      "saftig"
+    ],
+    "created_at": "2025-12-07T15:16:47.951213+00:00"
+  },
+  {
+    "id": "9af5ed38-7c24-446a-a7f6-b395daae9166",
+    "slug": "streetfood-burger-testland",
+    "name_de": "Streetfood Burger",
+    "name_en": "Streetfood Burger",
+    "name_fr": "Burger Streetfood",
+    "country": "testland",
+    "region": "zentral",
+    "trend_cuisines": [
+      "streetfood",
+      "fusion"
+    ],
+    "bestseller_category": "burger",
+    "protein": "rind",
+    "intensity": "kräftig",
+    "cooking_method": "gegrillt",
+    "sauce_base": "jus",
+    "fat_level": "hoch",
+    "acid_level": "mittel",
+    "sweetness_level": "trocken",
+    "spice_level": "mittel",
+    "key_aromas": [
+      "röstnoten",
+      "umami",
+      "zwiebelig",
+      "kräuter",
+      "leicht_rauchig"
+    ],
+    "texture": [
+      "saftig",
+      "zart",
+      "knusprig"
+    ],
+    "created_at": "2025-12-07T15:22:02.403169+00:00"
+  },
+  {
+    "id": "1be81e90-6320-44b0-841f-07646e21d644",
+    "slug": "test-dish-extended",
+    "name_de": "Testgericht Extended",
+    "name_en": "Test Dish Extended",
+    "name_fr": "Plat test étendu",
+    "country": "usa",
+    "region": "kalifornien",
+    "trend_cuisines": [
+      "fusion",
+      "modern"
+    ],
+    "bestseller_category": "bowl",
+    "protein": "geflügel",
+    "intensity": "mittel",
+    "cooking_method": "gebraten",
+    "sauce_base": "soja",
+    "fat_level": "mittel",
+    "acid_level": "mittel",
+    "sweetness_level": "leicht_süß",
+    "spice_level": "leicht",
+    "key_aromas": [
+      "röstnoten",
+      "umami",
+      "zitronig",
+      "kräuter",
+      "nussig"
+    ],
+    "texture": [
+      "saftig",
+      "knusprig",
+      "cremig"
+    ],
+    "created_at": "2025-12-07T15:26:06.179151+00:00"
+  }
+]

@@ -3590,21 +3590,25 @@ async def get_public_wines(
         # - appellation: "Barbaresco DOCG", "Alto Adige"
         # - anbaugebiet: some imports use this field
         # 
-        # Solution: Search in all region-related fields with $or
+        # Solution: Search in all region-related fields
         # =================================================================
-        region_regex = {"$regex": f"^{re.escape(region)}", "$options": "i"}
-        query["$or"] = query.get("$or", []) + [
+        region_regex = {"$regex": re.escape(region), "$options": "i"}
+        region_conditions = [
             {"region": region_regex},
             {"appellation": region_regex},
             {"anbaugebiet": region_regex}
         ]
-        # If there's already an $or from search, we need to handle it differently
-        if "search" not in str(query):
-            query["$or"] = [
-                {"region": region_regex},
-                {"appellation": region_regex},
-                {"anbaugebiet": region_regex}
+        
+        # Combine with existing $or if present (from search)
+        if "$or" in query:
+            # Wrap existing query in $and with region conditions
+            existing_or = query.pop("$or")
+            query["$and"] = [
+                {"$or": existing_or},
+                {"$or": region_conditions}
             ]
+        else:
+            query["$or"] = region_conditions
     if wine_color:
         query["wine_color"] = wine_color
     if price_category:

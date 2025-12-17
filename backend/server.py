@@ -4953,6 +4953,33 @@ async def startup_seed_data():
     print(f"   Weine (DB): {final_wines}")
     print(f"   Weinkeller: {final_cellar}")
     print(f"   SEO Pairings: {final_seo}")
+    
+    # ===================================================================
+    # AGENT HANDOFF: Aktualisiere Statistiken für nächsten Agenten
+    # ===================================================================
+    try:
+        handoff_path = ROOT_DIR.parent / "AGENT_HANDOFF.md"
+        if handoff_path.exists():
+            import re
+            from datetime import datetime, timezone as tz
+            
+            with open(handoff_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+            
+            # Aktualisiere Datum
+            now = datetime.now(tz.utc).strftime('%d.%m.%Y %H:%M UTC')
+            content = re.sub(
+                r'\*Letzte Aktualisierung:.*\*',
+                f'*Letzte Aktualisierung: {now}*',
+                content
+            )
+            
+            with open(handoff_path, 'w', encoding='utf-8') as f:
+                f.write(content)
+            print("\n   📋 AGENT_HANDOFF.md aktualisiert")
+    except Exception as e:
+        print(f"\n   ⚠️ AGENT_HANDOFF.md Update fehlgeschlagen: {e}")
+    
     print("=" * 60)
     print("🍷 SERVER BEREIT!")
     print("=" * 60 + "\n")

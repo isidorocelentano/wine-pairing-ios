@@ -129,10 +129,9 @@ class MultiUserCellarTester:
         # Register User A
         timestamp = int(datetime.now().timestamp())
         user_a_email = f"multitest_a_{timestamp}@test.com"
-        success_a, token_a = self.register_user(user_a_email, "password123", "Multi Test User A")
+        success_a = self.register_user(user_a_email, "password123", "Multi Test User A", self.user_a_session)
         
         if success_a:
-            self.user_a_token = token_a
             self.log_test("Register User A", True, f"Email: {user_a_email}")
         else:
             self.log_test("Register User A", False, "Registration failed")
@@ -140,10 +139,9 @@ class MultiUserCellarTester:
         
         # Register User B
         user_b_email = f"multitest_b_{timestamp}@test.com"
-        success_b, token_b = self.register_user(user_b_email, "password123", "Multi Test User B")
+        success_b = self.register_user(user_b_email, "password123", "Multi Test User B", self.user_b_session)
         
         if success_b:
-            self.user_b_token = token_b
             self.log_test("Register User B", True, f"Email: {user_b_email}")
         else:
             self.log_test("Register User B", False, "Registration failed")

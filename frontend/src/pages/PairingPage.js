@@ -63,6 +63,7 @@ const PairingPage = () => {
   const [history, setHistory] = useState([]);
   const [selectedWineDetail, setSelectedWineDetail] = useState(null);
   const [loadingWineDetail, setLoadingWineDetail] = useState(false);
+  const [showUpgradePrompt, setShowUpgradePrompt] = useState(false);
   
   // Handle wine card click - show wine detail inline instead of navigating away
   const handleWineClick = async (wine) => {

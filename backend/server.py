@@ -3966,10 +3966,6 @@ async def download_documentation():
             "Content-Disposition": "attachment; filename=Wine_Pairing_App_Dokumentation.xlsx"
         }
     )
-        "generated_at": datetime.now(timezone.utc).isoformat(),
-        "total_documents": total,
-        "downloads": links
-    }
 
 
 # ===================== AUTHENTICATION & SUBSCRIPTION ENDPOINTS =====================

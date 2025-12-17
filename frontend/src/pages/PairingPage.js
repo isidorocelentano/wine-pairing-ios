@@ -814,6 +814,7 @@ const PairingPage = () => {
                   onClick={() => {
                     // Beim Klick letzte Empfehlung wieder anzeigen
                     setDish(item.dish);
+                    setSelectedWineDetail(null); // Reset wine detail view
                     setResult({
                       dish: item.dish,
                       recommendation: item.recommendation,

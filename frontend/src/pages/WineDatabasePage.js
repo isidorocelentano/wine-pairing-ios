@@ -540,7 +540,18 @@ const WineDatabasePage = () => {
       {selectedWine && (
         <Dialog open={!!selectedWine} onOpenChange={() => setSelectedWine(null)}>
           <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-            <DialogHeader>
+            {/* Zurück Button */}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setSelectedWine(null)}
+              className="absolute left-4 top-4 rounded-full"
+            >
+              <ArrowLeft className="h-4 w-4 mr-1" />
+              {language === 'de' ? 'Zurück' : language === 'fr' ? 'Retour' : 'Back'}
+            </Button>
+            
+            <DialogHeader className="pt-8">
               <DialogTitle className="text-2xl">{selectedWine.name}</DialogTitle>
               <DialogDescription className="text-base">{selectedWine.winery}</DialogDescription>
             </DialogHeader>

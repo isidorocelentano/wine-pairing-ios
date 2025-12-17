@@ -77,39 +77,67 @@ const SommelierKompassPage = () => {
     }
   };
 
-  const fetchPairings = async () => {
-    setLoading(true);
+  const fetchPairings = async (loadMore = false) => {
+    if (loadMore) {
+      setLoadingMore(true);
+    } else {
+      setLoading(true);
+    }
+    
     try {
-      const params = {};
+      const params = {
+        limit: ITEMS_PER_PAGE,
+        skip: loadMore ? pairings.length : 0
+      };
       if (selectedCountry) params.country = selectedCountry;
       if (selectedRegion) params.region = selectedRegion;
       if (searchQuery.trim()) params.search = searchQuery.trim();
 
       console.log('Fetching pairings with params:', params);
       const response = await axios.get(`${API}/regional-pairings`, { params });
-      console.log('Received pairings:', response.data.length);
       
-      setPairings(response.data || []);
+      const { pairings: newPairings, total, has_more } = response.data;
+      console.log(`Received ${newPairings.length} pairings, total: ${total}, has_more: ${has_more}`);
+      
+      if (loadMore) {
+        // Append to existing pairings
+        setPairings(prev => [...prev, ...newPairings]);
+      } else {
+        // Replace pairings
+        setPairings(newPairings || []);
+      }
+      
+      setTotalPairings(total);
+      setHasMore(has_more);
       
       // Extract country data from first pairing if country is selected
-      if (response.data && response.data.length > 0 && selectedCountry) {
-        const firstPairing = response.data[0];
+      if (newPairings && newPairings.length > 0 && selectedCountry && !loadMore) {
+        const firstPairing = newPairings[0];
         setCountryData({
           intro: firstPairing.country_intro,
           intro_en: firstPairing.country_intro_en,
           intro_fr: firstPairing.country_intro_fr,
           image_url: firstPairing.country_image_url
         });
-      } else {
+      } else if (!loadMore) {
         setCountryData(null);
       }
     } catch (error) {
       console.error('Error fetching pairings:', error);
       console.error('Error details:', error.response?.data || error.message);
-      setPairings([]);
+      if (!loadMore) {
+        setPairings([]);
+        setTotalPairings(0);
+        setHasMore(false);
+      }
     } finally {
       setLoading(false);
+      setLoadingMore(false);
     }
+  };
+  
+  const loadMorePairings = () => {
+    fetchPairings(true);
   };
 
   const clearFilters = () => {

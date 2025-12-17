@@ -1,20 +1,20 @@
 {
   "version": "3.0",
-  "timestamp": "2025-12-17T05:32:49.371947+00:00",
-  "backup_dir": "/app/backend/data/backups/backup_20251217_053249",
+  "timestamp": "2025-12-17T09:26:17.437885+00:00",
+  "backup_dir": "/app/backend/data/backups/backup_20251217_092617",
   "collections": {
     "users": {
-      "count": 10,
+      "count": 11,
       "file": "users.json",
       "is_user_data": true
     },
     "wines": {
-      "count": 11,
+      "count": 13,
       "file": "wines.json",
       "is_user_data": true
     },
     "pairings": {
-      "count": 157,
+      "count": 160,
       "file": "pairings.json",
       "is_user_data": true
     },
@@ -44,7 +44,7 @@
       "is_user_data": false
     },
     "public_wines": {
-      "count": 1878,
+      "count": 1882,
       "file": "public_wines.json",
       "is_user_data": false
     },
@@ -54,7 +54,7 @@
       "is_user_data": false
     },
     "regional_pairings": {
-      "count": 44,
+      "count": 1652,
       "file": "regional_pairings.json",
       "is_user_data": false
     },

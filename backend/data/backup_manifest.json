@@ -1,14 +1,23 @@
 {
-  "version": "3.1",
-  "timestamp": "2025-12-17T09:25:56.373839+00:00",
-  "note": "Backup f\u00fcr Deployment-Persistenz",
-  "collections": {
-    "users": true,
-    "wines": true,
-    "pairings": true,
-    "chats": true,
-    "wine_favorites": true,
-    "payment_transactions": true,
-    "regional_pairings": true
+  "version": "3.0",
+  "timestamp": "2025-12-17T09:26:17.437885+00:00",
+  "last_backup": "/app/backend/data/backups/backup_20251217_092617",
+  "expected": {
+    "users": 11,
+    "wines": 13,
+    "pairings": 160,
+    "chats": 23,
+    "wine_favorites": 1,
+    "user_sessions": 0,
+    "payment_transactions": 3,
+    "blog_posts": 233,
+    "public_wines": 1882,
+    "grape_varieties": 140,
+    "regional_pairings": 1652,
+    "dishes": 40,
+    "feed_posts": 268,
+    "wine_database": 494,
+    "seo_pairings": 500,
+    "coupons": 100
   }
 }

@@ -1013,12 +1013,27 @@ async def get_wine(wine_id: str, request: Request):
     return wine
 
 @api_router.post("/wines", response_model=Wine)
-async def create_wine(wine_data: WineCreate):
-    """Add a new wine to the cellar"""
-    wine = Wine(**wine_data.model_dump())
+async def create_wine(wine_data: WineCreate, request: Request):
+    """Add a new wine to the user's personal cellar"""
+    user = await get_current_user_optional(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Bitte melden Sie sich an, um Weine zu speichern")
+    
+    # Check cellar limit for basic users
+    allowed, message = await check_limit(user, "cellar")
+    if not allowed:
+        raise HTTPException(status_code=403, detail=message)
+    
+    # Erstelle Wine mit user_id
+    wine_dict = wine_data.model_dump()
+    wine_dict["user_id"] = user.user_id  # WICHTIG: Verknüpfung zum User
+    wine = Wine(**wine_dict)
+    
     doc = wine.model_dump()
     doc['created_at'] = doc['created_at'].isoformat()
     await db.wines.insert_one(doc)
+    
+    logger.info(f"🍷 Wine '{wine.name}' added to cellar of user {user.user_id}")
     return wine
 
 @api_router.put("/wines/{wine_id}", response_model=Wine)

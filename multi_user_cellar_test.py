@@ -16,8 +16,8 @@ class MultiUserCellarTester:
         self.api_url = f"{base_url}/api"
         self.tests_run = 0
         self.tests_passed = 0
-        self.user_a_token = None
-        self.user_b_token = None
+        self.user_a_session = requests.Session()
+        self.user_b_session = requests.Session()
         self.user_a_wine_id = None
         self.user_b_wine_id = None
 

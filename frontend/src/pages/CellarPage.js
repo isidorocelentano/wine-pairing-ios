@@ -150,7 +150,7 @@ const CellarPage = () => {
     setUpdatingQuantity(wineId);
     
     try {
-      await axios.put(`${API}/wines/${wineId}`, {
+      await authAxios.put(`${API}/wines/${wineId}`, {
         ...wine,
         quantity: newQuantity,
       });

@@ -127,6 +127,19 @@ Der Benutzer kommuniziert auf **DEUTSCH**. Alle Antworten auf Deutsch!
 - Excel/Word/MD Export-Endpoints erstellt
 - Vollständige App-Dokumentation erstellt
 
+### 17.12.2025 (Abend):
+- **Pairing-Seite UX verbessert:**
+  - Zurück-Button: Wein-Details inline anzeigen statt wegnavigieren
+  - Auto-Add: Neue Weine werden automatisch zur DB hinzugefügt
+  - Upgrade-Prompt: Bei Limit-Erreichen schöne Upgrade-Karte statt Fehler
+- **Weindatenbank Filter gefixt:**
+  - Filter sucht jetzt in region, appellation UND anbaugebiet
+  - Barbaresco und andere Appellationen werden gefunden
+  - Tippfehler "Barabaresco" korrigiert
+- **Zum Weinkeller hinzufügen gefixt:**
+  - Auth-Credentials werden jetzt mitgesendet
+  - Zurück-Button im Wein-Detail-Dialog hinzugefügt
+
 ---
 
-*Letzte Aktualisierung: 17.12.2025 21:51 UTC*
+*Letzte Aktualisierung: 17.12.2025 21:10 UTC*

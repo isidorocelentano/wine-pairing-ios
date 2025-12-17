@@ -54836,5 +54836,208 @@
     "created_at": "2025-12-17T05:38:32.254708Z",
     "updated_at": "2025-12-17T05:38:32.254716Z",
     "auto_generated": true
+  },
+  {
+    "name": "Château Margaux 2015, Margaux",
+    "winery": "Château Margaux",
+    "grape_variety": "Cabernet Sauvignon-Cuvée",
+    "region": "Bordeaux",
+    "country": "Frankreich",
+    "year": 2015,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein ikonischer Bordeaux von großer Finesse: seidige Tannine, tiefe Frucht, florale Eleganz und ein endloser Abgang machen diesen Jahrgang zu einem sinnlichen Erlebnis.",
+    "description_en": "An iconic Bordeaux of great finesse, with silky tannins, deep dark fruit, floral elegance and a remarkably long, refined finish.",
+    "description_fr": "Un Bordeaux iconique d’une grande finesse, aux tanins soyeux, aux fruits noirs profonds, marqué par une élégance florale et une finale remarquablement longue.",
+    "food_pairings_de": [
+      "Rinderfilet mit Trüffeljus",
+      "Lammsattel mit Kräuterkruste"
+    ],
+    "food_pairings_en": [
+      "Beef fillet with truffle jus",
+      "Herb-crusted rack of lamb"
+    ],
+    "food_pairings_fr": [
+      "Filet de bœuf au jus de truffe",
+      "Carré d’agneau en croûte d’herbes"
+    ],
+    "id": "b8d2d97f-0793-4365-a423-6c9ba687d64e",
+    "created_at": "2025-12-17T17:00:46.321937Z",
+    "updated_at": "2025-12-17T17:00:46.321948Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Test Wine 2 Rot",
+    "winery": "Test Winery",
+    "grape_variety": "Cuvée aus roten Rebsorten",
+    "region": "Test Region",
+    "country": "Unbekannt",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Ein zugänglicher, fruchtbetonter Rotwein aus der Test Region mit weichen Tanninen und harmonischer Struktur – ideal für entspannte Abende. Saftige Beerenaromen und ein Hauch Würze verleihen ihm Charme und Trinkfluss.",
+    "description_en": "An approachable, fruit-driven red wine from Test Region with soft tannins and a harmonious structure, perfect for relaxed evenings. Juicy berry aromas and a touch of spice make it easy and pleasant to drink.",
+    "description_fr": "Un vin rouge accessible et fruité de la région Test, aux tanins souples et à la structure harmonieuse, idéal pour les moments de détente. Des arômes de baies juteuses et une légère note épicée le rendent très agréable à boire.",
+    "food_pairings_de": [
+      "Pasta mit Tomatensauce",
+      "Gegrilltes Gemüse"
+    ],
+    "food_pairings_en": [
+      "Pasta with tomato sauce",
+      "Grilled vegetables"
+    ],
+    "food_pairings_fr": [
+      "Pâtes à la sauce tomate",
+      "Légumes grillés"
+    ],
+    "id": "67a6ee6d-7d24-45ad-b3f5-8f6af273e66d",
+    "created_at": "2025-12-17T17:01:04.692400Z",
+    "updated_at": "2025-12-17T17:01:04.692409Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Barolo Brunate 2018",
+    "winery": "Verschiedene Erzeuger (Lagenwein Brunate)",
+    "grape_variety": "Nebbiolo",
+    "region": "Piemonte",
+    "country": "Italien",
+    "year": 2018,
+    "wine_color": "rot",
+    "price_category": "€€€",
+    "description_de": "Ein kraftvoller, vielschichtiger Barolo aus der Spitzenlage Brunate mit feinen Rosen- und Teernoten, reifen roten Früchten und straffer, doch edler Tanninstruktur. Lang, würzig und tiefgründig – ein Wein mit großem Reifepotenzial.",
+    "description_en": "A powerful, complex Barolo from the top Brunate vineyard, showing rose and tar notes, ripe red fruit and firm yet refined tannins. Long, spicy and profound, with excellent aging potential.",
+    "description_fr": "Un Barolo puissant et complexe issu du cru prestigieux Brunate, aux notes de rose, de goudron, de fruits rouges mûrs et de tanins fermes mais élégants. Long en bouche, épicé et profond, avec un grand potentiel de garde.",
+    "food_pairings_de": [
+      "Geschmorte Rinderbäckchen",
+      "Rehrücken mit Polenta"
+    ],
+    "food_pairings_en": [
+      "Braised beef cheeks",
+      "Roast venison with polenta"
+    ],
+    "food_pairings_fr": [
+      "Joues de bœuf braisées",
+      "Rôti de chevreuil avec polenta"
+    ],
+    "id": "84323009-a768-458f-9a34-8f95bc2606fd",
+    "created_at": "2025-12-17T17:01:11.812881Z",
+    "updated_at": "2025-12-17T17:01:11.812890Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Test Wine 3 (rot), Test Region",
+    "winery": "Weingut Testkeller",
+    "grape_variety": "Cuvée aus roten Rebsorten",
+    "region": "Test Region",
+    "country": "Unbekannt",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€",
+    "description_de": "Ein charaktervoller Rotwein aus der Test Region mit harmonischer Frucht, sanften Tanninen und einem angenehm weichen Nachhall.",
+    "description_en": "A characterful red wine from Test Region with harmonious fruit, soft tannins and a pleasantly smooth finish.",
+    "description_fr": "Un vin rouge de caractère de la région Test, aux fruits harmonieux, tanins souples et une finale agréablement veloutée.",
+    "food_pairings_de": [
+      "Gegrilltes Rindfleisch",
+      "Mediterrane Gemüsepfanne"
+    ],
+    "food_pairings_en": [
+      "Grilled beef",
+      "Mediterranean vegetable dishes"
+    ],
+    "food_pairings_fr": [
+      "Boeuf grillé",
+      "Légumes méditerranéens rôtis"
+    ],
+    "id": "d6331445-16e1-42a2-bf72-f3b7c5371b55",
+    "created_at": "2025-12-17T17:01:15.561758Z",
+    "updated_at": "2025-12-17T17:01:15.561767Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Bordeaux Grand Cru Classé",
+    "winery": "Château Léoville-Barton / Château Pichon Baron",
+    "grape_variety": "Cabernet Sauvignon, Merlot, Cabernet Franc",
+    "region": "Bordeaux (Médoc, Pauillac/Saint-Julien)",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Ein kraftvoller, tiefgründiger Bordeaux Grand Cru Classé mit dichter, dunkler Frucht, feiner Eichenwürze und straffen, edlen Tanninen – ein Wein mit großer Eleganz und beeindruckendem Reifepotenzial.",
+    "description_en": "A powerful and profound Bordeaux Grand Cru Classé with dark fruit, fine oak spice and firm, noble tannins, showing great elegance and impressive ageing potential.",
+    "description_fr": "Un Bordeaux Grand Cru Classé puissant et profond, aux fruits noirs concentrés, aux fines notes boisées et aux tanins fermes et nobles, offrant une grande élégance et un remarquable potentiel de garde.",
+    "food_pairings_de": [
+      "Rinderfilet oder Entrecôte vom Grill",
+      "Geschmorte Lammkeule mit Kräutern"
+    ],
+    "food_pairings_en": [
+      "Grilled ribeye or beef tenderloin",
+      "Slow-braised lamb shank with herbs"
+    ],
+    "food_pairings_fr": [
+      "Entrecôte de bœuf grillée",
+      "Souris ou gigot d’agneau braisé aux herbes"
+    ],
+    "id": "93b5d369-ac96-4117-b548-ebc1d0410ad4",
+    "created_at": "2025-12-17T17:01:20.807462Z",
+    "updated_at": "2025-12-17T17:01:20.807472Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Château Léoville Barton, Saint-Julien",
+    "winery": "Château Léoville Barton",
+    "grape_variety": "Cabernet Sauvignon-dominierte Cuvée",
+    "region": "Bordeaux, Saint-Julien",
+    "country": "Frankreich",
+    "year": 2020,
+    "wine_color": "rot",
+    "price_category": "€€€€",
+    "description_de": "Ein zutiefst klassischer Saint-Julien mit dichter, dunkler Frucht, straffer Struktur und nobler Holzveredelung – kraftvoll, präzise und mit großem Reifepotenzial.",
+    "description_en": "A classically styled Saint-Julien with concentrated dark fruit, firm tannins and refined oak, combining power, elegance and impressive aging potential.",
+    "description_fr": "Un Saint-Julien classique, aux fruits noirs concentrés, tanins fermes et boisé raffiné, alliant puissance, élégance et grand potentiel de garde.",
+    "food_pairings_de": [
+      "Entrecôte oder Rinderfilet vom Grill",
+      "Geschmorte Lammkeule mit Kräutern"
+    ],
+    "food_pairings_en": [
+      "Grilled ribeye or beef tenderloin",
+      "Slow-braised lamb shoulder with herbs"
+    ],
+    "food_pairings_fr": [
+      "Côte de bœuf grillée",
+      "Épaule d’agneau confite aux herbes"
+    ],
+    "id": "58f009b3-c08c-4737-b97b-05846b4c00e8",
+    "created_at": "2025-12-17T17:01:33.205740Z",
+    "updated_at": "2025-12-17T17:01:33.205749Z",
+    "auto_generated": true
+  },
+  {
+    "name": "Champagne Blanc de Noirs Grand Cru",
+    "winery": "Egly-Ouriet / Benoît Lahaye (Beispielerzeuger)",
+    "grape_variety": "Pinot Noir",
+    "region": "Champagne",
+    "country": "Frankreich",
+    "year": 2022,
+    "wine_color": "weiß",
+    "price_category": "€€€",
+    "description_de": "Ein kraftvoller, sinnlicher Blanc de Noirs aus 100 % Pinot Noir: reife rote Früchte, Brioche und eine tiefe Mineralität treffen auf eine vibrierende, salzige Frische – Champagner zum Genießen und Meditieren.",
+    "description_en": "A powerful and sensual Blanc de Noirs from 100% Pinot Noir, combining ripe red fruit, brioche notes and deep minerality with vibrant, saline freshness – Champagne for both contemplation and celebration.",
+    "description_fr": "Un Blanc de Noirs puissant et sensuel, 100 % Pinot Noir : fruits rouges mûrs, notes de brioche et minéralité profonde, portés par une fraîcheur saline vibrante – un Champagne de gastronomie et de méditation.",
+    "food_pairings_de": [
+      "Jakobsmuscheln auf Blumenkohlpüree",
+      "Geflügel mit Trüffel oder Pilzrahmsauce"
+    ],
+    "food_pairings_en": [
+      "Scallops with cauliflower purée",
+      "Roast poultry with truffle or creamy mushroom sauce"
+    ],
+    "food_pairings_fr": [
+      "Saint-Jacques sur purée de chou-fleur",
+      "Volaille rôtie à la truffe ou sauce aux champignons"
+    ],
+    "id": "8f89a79f-9b99-4294-a801-a30520d554ab",
+    "created_at": "2025-12-17T17:01:38.722391Z",
+    "updated_at": "2025-12-17T17:01:38.722400Z",
+    "auto_generated": true
   }
 ]

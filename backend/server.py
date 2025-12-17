@@ -3826,6 +3826,74 @@ async def download_all_backups():
     return all_data
 
 
+@api_router.get("/export/excel/{collection_name}")
+async def export_collection_excel(collection_name: str):
+    """Export a collection as Excel file for download"""
+    import pandas as pd
+    from io import BytesIO
+    
+    valid_collections = [
+        'public_wines', 'wine_database', 'grape_varieties', 'regional_pairings',
+        'blog_posts', 'feed_posts', 'dishes', 'seo_pairings', 'coupons'
+    ]
+    
+    if collection_name not in valid_collections:
+        raise HTTPException(status_code=400, detail=f"Collection nicht verfügbar. Gültig: {valid_collections}")
+    
+    try:
+        docs = await db[collection_name].find({}, {'_id': 0}).to_list(None)
+        if not docs:
+            raise HTTPException(status_code=404, detail="Collection ist leer")
+        
+        df = pd.DataFrame(docs)
+        
+        # Excel in Memory erstellen
+        output = BytesIO()
+        df.to_excel(output, index=False, engine='openpyxl')
+        output.seek(0)
+        
+        from fastapi.responses import StreamingResponse
+        
+        return StreamingResponse(
+            output,
+            media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            headers={
+                "Content-Disposition": f"attachment; filename={collection_name}.xlsx"
+            }
+        )
+    except Exception as e:
+        logger.error(f"Excel export error: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@api_router.get("/export/excel-links")
+async def get_excel_download_links():
+    """Get all Excel download links with current counts"""
+    collections = [
+        'public_wines', 'wine_database', 'grape_varieties', 'regional_pairings',
+        'blog_posts', 'feed_posts', 'dishes', 'seo_pairings', 'coupons'
+    ]
+    
+    links = []
+    total = 0
+    
+    for coll in collections:
+        count = await db[coll].count_documents({})
+        total += count
+        links.append({
+            "collection": coll,
+            "count": count,
+            "excel_url": f"/api/export/excel/{coll}",
+            "json_url": f"/api/backup/download/{coll}.json"
+        })
+    
+    return {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "total_documents": total,
+        "downloads": links
+    }
+
+
 # ===================== AUTHENTICATION & SUBSCRIPTION ENDPOINTS =====================
 
 async def get_current_user(request: Request) -> Optional[User]:

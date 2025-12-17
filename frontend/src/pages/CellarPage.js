@@ -102,7 +102,7 @@ const CellarPage = () => {
   const handleScanLabel = async (imageBase64) => {
     setScanning(true);
     try {
-      const response = await axios.post(`${API}/scan-label`, { image_base64: imageBase64 });
+      const response = await authAxios.post(`${API}/scan-label`, { image_base64: imageBase64 });
       setNewWine((prev) => ({
         ...prev,
         ...response.data,

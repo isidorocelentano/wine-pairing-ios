@@ -3623,6 +3623,59 @@ async def get_public_wine_detail(wine_id: str):
     return wine
 
 
+class AutoAddWineRequest(BaseModel):
+    """Request model for auto-adding wines from Claude recommendations"""
+    name: str
+    grape: Optional[str] = None
+    region: Optional[str] = None
+    country: Optional[str] = None
+    color: Optional[str] = None
+    description_de: Optional[str] = None
+    description_en: Optional[str] = None
+    description_fr: Optional[str] = None
+    source: Optional[str] = "claude_recommendation"
+
+
+@api_router.post("/public-wines/auto-add")
+async def auto_add_wine_from_recommendation(request: AutoAddWineRequest):
+    """
+    Automatisch einen Wein zur öffentlichen Datenbank hinzufügen.
+    Wird aufgerufen wenn Claude einen Wein empfiehlt, der noch nicht in der DB ist.
+    """
+    # Prüfe ob Wein bereits existiert
+    existing = await db.public_wines.find_one({
+        "name": {"$regex": f"^{request.name}$", "$options": "i"}
+    })
+    
+    if existing:
+        # Wein existiert bereits - gib ihn zurück
+        existing.pop('_id', None)
+        return existing
+    
+    # Neuen Wein erstellen
+    new_wine = {
+        "id": str(uuid.uuid4()),
+        "name": request.name,
+        "grape": request.grape or "",
+        "region": request.region or "",
+        "country": request.country or "",
+        "color": request.color or "",
+        "description_de": request.description_de or f"{request.name} - Ein von Claude empfohlener Wein.",
+        "description_en": request.description_en or f"{request.name} - A wine recommended by Claude.",
+        "description_fr": request.description_fr or f"{request.name} - Un vin recommandé par Claude.",
+        "source": request.source,
+        "auto_added": True,
+        "created_at": datetime.now(timezone.utc).isoformat()
+    }
+    
+    await db.public_wines.insert_one(new_wine)
+    new_wine.pop('_id', None)
+    
+    logger.info(f"🍷 Auto-added wine to database: {request.name}")
+    
+    return new_wine
+
+
 # ==============================================================================
 # REGION SIMPLIFICATION FIX (Dezember 2024)
 # ==============================================================================

@@ -3888,6 +3888,80 @@ async def get_excel_download_links():
         })
     
     return {
+
+
+@api_router.get("/docs/download")
+async def download_documentation():
+    """Download the complete app documentation as Excel"""
+    import pandas as pd
+    from io import BytesIO
+    
+    # Lade Dokumentation
+    doc_path = ROOT_DIR / "docs" / "APP_DOKUMENTATION_KOMPLETT.md"
+    if not doc_path.exists():
+        doc_path = Path("/app/docs/APP_DOKUMENTATION_KOMPLETT.md")
+    
+    if not doc_path.exists():
+        raise HTTPException(status_code=404, detail="Dokumentation nicht gefunden")
+    
+    # Erstelle Excel mit mehreren Sheets
+    output = BytesIO()
+    
+    with pd.ExcelWriter(output, engine='openpyxl') as writer:
+        # Sheet 1: Übersicht
+        overview_data = {
+            'Metrik': ['Weine', 'Rebsorten', 'Sommelier Kompass', 'Blog-Artikel', 'Community Feed', 'Sprachen', 'Stand'],
+            'Wert': ['7,066 (wächst dynamisch)', '313', '1,652 Gerichte', '233', '268 Beiträge', 'DE, EN, FR', '17.12.2025']
+        }
+        pd.DataFrame(overview_data).to_excel(writer, sheet_name='Übersicht', index=False)
+        
+        # Sheet 2: Features
+        features_data = {
+            'Feature': ['Pairing', 'Weinkeller', 'Chat', 'Rebsorten-Lexikon', 'Wein-Datenbank', 'Sommelier Kompass', 'Community Feed', 'Blog'],
+            'Route': ['/pairing', '/cellar', '/chat', '/grapes', '/wine-database', '/sommelier-kompass', '/feed', '/blog'],
+            'Zugriff Basic': ['5/Tag', '10 Weine', '5/Tag', 'Unbegrenzt', 'Unbegrenzt', 'Unbegrenzt', 'Unbegrenzt', 'Unbegrenzt'],
+            'Zugriff Pro': ['Unbegrenzt', 'Unbegrenzt', 'Unbegrenzt', 'Unbegrenzt', 'Unbegrenzt', 'Unbegrenzt', 'Unbegrenzt', 'Unbegrenzt']
+        }
+        pd.DataFrame(features_data).to_excel(writer, sheet_name='Features', index=False)
+        
+        # Sheet 3: API Endpoints
+        api_data = {
+            'Methode': ['POST', 'POST', 'POST', 'GET', 'POST', 'GET', 'POST', 'PUT', 'DELETE', 'GET', 'GET', 'GET', 'GET'],
+            'Endpoint': ['/api/auth/register', '/api/auth/login', '/api/pairing', '/api/chat', '/api/wines', '/api/wines', '/api/wines', '/api/wines/{id}', '/api/wines/{id}', '/api/public-wines', '/api/grape-varieties', '/api/regional-pairings', '/api/export/excel/{collection}'],
+            'Beschreibung': ['Registrieren', 'Einloggen', 'Weinempfehlung', 'Chat', 'Wein hinzufügen', 'Eigene Weine', 'Wein hinzufügen', 'Bearbeiten', 'Löschen', 'Wein-Datenbank', 'Rebsorten', 'Sommelier Kompass', 'Excel-Export']
+        }
+        pd.DataFrame(api_data).to_excel(writer, sheet_name='API Endpoints', index=False)
+        
+        # Sheet 4: Datenbank
+        db_data = {
+            'Collection': ['public_wines', 'wine_database', 'grape_varieties', 'regional_pairings', 'blog_posts', 'feed_posts', 'dishes', 'seo_pairings', 'users', 'wines', 'coupons'],
+            'Anzahl': ['7,066', '494', '313', '1,652', '233', '268', '40', '500', '~20', '~40', '100'],
+            'Beschreibung': ['Öffentliche Weine', 'Erweiterte Wein-Infos', 'Rebsorten', 'Sommelier Kompass', 'Blog-Artikel', 'Community Feed', 'Gerichte', 'SEO Pairings', 'Benutzer', 'Persönliche Weinkeller', 'Gutscheine'],
+            'Wachstum': ['Dynamisch (KI)', 'Statisch', 'Statisch', 'Statisch', 'Manuell', 'User-generiert', 'Statisch', 'Statisch', 'User-generiert', 'User-generiert', 'Manuell']
+        }
+        pd.DataFrame(db_data).to_excel(writer, sheet_name='Datenbank', index=False)
+        
+        # Sheet 5: Preise
+        pricing_data = {
+            'Plan': ['Basic', 'Pro Monatlich', 'Pro Jährlich'],
+            'Preis': ['Kostenlos', '4,99€/Monat', '39,99€/Jahr'],
+            'Pairing/Tag': ['5', 'Unbegrenzt', 'Unbegrenzt'],
+            'Chat/Tag': ['5', 'Unbegrenzt', 'Unbegrenzt'],
+            'Weinkeller': ['Max. 10', 'Unbegrenzt', 'Unbegrenzt'],
+            'Favoriten': ['Max. 10', 'Unbegrenzt', 'Unbegrenzt']
+        }
+        pd.DataFrame(pricing_data).to_excel(writer, sheet_name='Preise', index=False)
+    
+    output.seek(0)
+    
+    from fastapi.responses import StreamingResponse
+    return StreamingResponse(
+        output,
+        media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        headers={
+            "Content-Disposition": "attachment; filename=Wine_Pairing_App_Dokumentation.xlsx"
+        }
+    )
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "total_documents": total,
         "downloads": links

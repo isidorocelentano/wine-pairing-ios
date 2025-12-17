@@ -969,9 +969,20 @@ async def root():
     return {"message": "Wine Pairing API - Ihr virtueller Sommelier"}
 
 @api_router.get("/wines", response_model=List[Wine])
-async def get_wines(type_filter: Optional[str] = None, favorites_only: bool = False, in_stock_only: bool = False):
-    """Get all wines from the cellar"""
-    query = {}
+async def get_wines(
+    request: Request,
+    type_filter: Optional[str] = None, 
+    favorites_only: bool = False, 
+    in_stock_only: bool = False
+):
+    """Get wines from the user's personal cellar (requires authentication)"""
+    # User muss eingeloggt sein für Weinkeller-Zugriff
+    user = await get_current_user_optional(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Bitte melden Sie sich an, um Ihren Weinkeller zu sehen")
+    
+    # Query NUR für Weine des aktuellen Users
+    query = {"user_id": user.user_id}
     if type_filter:
         query["type"] = type_filter
     if favorites_only:

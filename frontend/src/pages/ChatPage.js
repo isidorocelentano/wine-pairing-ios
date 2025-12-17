@@ -9,8 +9,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { useLanguage } from "@/contexts/LanguageContext";
 import VoiceInputButton from "@/components/VoiceInputButton";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+import { API_URL as BACKEND_URL, API } from '@/config/api';
 
 const ChatPage = () => {
   const { t, language } = useLanguage();

@@ -9,8 +9,7 @@ import { toast } from 'sonner';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '../contexts/LanguageContext';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+import { API_URL as BACKEND_URL, API } from '@/config/api';
 
 // Helper function for wine color badges
 const getWineColorBadge = (color) => {

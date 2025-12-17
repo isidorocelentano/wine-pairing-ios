@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Crown, Check, Wine, MessageSquare, Heart, Database, Loader2, Gift, AlertCircle, CheckCircle } from 'lucide-react';
 
-const API_URL = process.env.REACT_APP_BACKEND_URL;
+import { API_URL, API } from '@/config/api';
 
 const SubscriptionPage = () => {
   const { user, isAuthenticated, refreshUser } = useAuth();

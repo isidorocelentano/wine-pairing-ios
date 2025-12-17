@@ -8,8 +8,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Loader2, RefreshCw, PlusCircle } from 'lucide-react';
 import { toast } from 'sonner';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+import { API_URL as BACKEND_URL, API } from '@/config/api';
 
 const DishAdminPage = () => {
   const { t } = useLanguage();

@@ -10,8 +10,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import Breadcrumb from '@/components/Breadcrumb';
 import Footer from '@/components/Footer';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+import { API_URL as BACKEND_URL, API } from '@/config/api';
 
 const DynamicPairingPage = () => {
   const { slug } = useParams();

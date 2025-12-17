@@ -10,8 +10,7 @@ import { SEO } from '@/components/SEO';
 import Breadcrumb from '@/components/Breadcrumb';
 import { ArticleSchema, FAQSchema } from '@/components/SEOSchemas';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+import { API_URL as BACKEND_URL, API } from '@/config/api';
 
 const BlogPostPage = () => {
   const { slug } = useParams();

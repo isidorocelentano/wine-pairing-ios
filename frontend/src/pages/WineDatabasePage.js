@@ -166,17 +166,23 @@ const WineDatabasePage = () => {
     try {
       await axios.post(`${API}/wines`, {
         name: wine.name,
-        type: wine.wine_color,
-        region: wine.region,
-        year: wine.year,
-        grape: wine.grape_variety,
+        type: wine.wine_color || wine.color || 'rot',
+        region: wine.region || '',
+        year: wine.year || wine.vintage || null,
+        grape: wine.grape_variety || wine.grape || '',
         description: getDescription(wine),  // Use description in current language
         notes: ''  // Empty notes for user to fill in later
+      }, {
+        withCredentials: true  // WICHTIG: Sendet Auth-Cookie für user_id
       });
       toast.success('Wein wurde zum Keller hinzugefügt!');
     } catch (error) {
       console.error('Error adding to cellar:', error);
-      toast.error('Fehler beim Hinzufügen');
+      if (error.response?.status === 401) {
+        toast.error('Bitte melden Sie sich an, um Weine zu speichern');
+      } else {
+        toast.error('Fehler beim Hinzufügen');
+      }
     }
   };
 

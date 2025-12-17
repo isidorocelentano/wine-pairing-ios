@@ -3985,6 +3985,97 @@ async def download_documentation_markdown():
     )
 
 
+@api_router.get("/docs/download-word")
+async def download_documentation_word():
+    """Download the complete app documentation as Word document"""
+    from docx import Document
+    from docx.shared import Inches, Pt
+    from docx.enum.text import WD_ALIGN_PARAGRAPH
+    from io import BytesIO
+    import re
+    
+    doc_path = Path("/app/docs/APP_DOKUMENTATION_KOMPLETT.md")
+    
+    if not doc_path.exists():
+        raise HTTPException(status_code=404, detail="Dokumentation nicht gefunden")
+    
+    # Lese Markdown
+    with open(doc_path, 'r', encoding='utf-8') as f:
+        md_content = f.read()
+    
+    # Erstelle Word-Dokument
+    doc = Document()
+    
+    # Titel
+    title = doc.add_heading('WINE PAIRING APP', 0)
+    title.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    
+    subtitle = doc.add_paragraph('Vollständige Dokumentation')
+    subtitle.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    
+    doc.add_paragraph(f'Stand: 17. Dezember 2025')
+    doc.add_paragraph(f'Domain: https://wine-pairing.online')
+    doc.add_paragraph('---')
+    
+    # Parse Markdown und füge zum Word-Dokument hinzu
+    lines = md_content.split('\n')
+    current_table = []
+    in_table = False
+    
+    for line in lines:
+        line = line.strip()
+        
+        # Skip leere Zeilen
+        if not line:
+            if in_table and current_table:
+                # Tabelle beenden
+                in_table = False
+                current_table = []
+            continue
+        
+        # Überschriften
+        if line.startswith('# '):
+            doc.add_heading(line[2:].replace('📖 ', '').replace('📊 ', ''), level=1)
+        elif line.startswith('## '):
+            doc.add_heading(line[3:].replace('💳 ', '').replace('🏠 ', '').replace('📚 ', '').replace('🔐 ', '').replace('🤖 ', '').replace('💾 ', '').replace('🌐 ', '').replace('🔌 ', '').replace('🚀 ', '').replace('📋 ', '').replace('📥 ', ''), level=2)
+        elif line.startswith('### '):
+            doc.add_heading(line[4:].replace('🍷 ', '').replace('🍇 ', '').replace('🧭 ', '').replace('👥 ', '').replace('📝 ', '').replace('❤️ ', '').replace('💬 ', '').replace('🎟️ ', ''), level=3)
+        elif line.startswith('---'):
+            doc.add_paragraph('─' * 50)
+        elif line.startswith('|') and '|' in line[1:]:
+            # Tabellen-Zeile - als Text einfügen
+            cells = [c.strip() for c in line.split('|')[1:-1]]
+            if cells and not all(c.replace('-', '').replace(':', '') == '' for c in cells):
+                doc.add_paragraph('  │  '.join(cells))
+        elif line.startswith('- '):
+            # Liste
+            doc.add_paragraph(line[2:], style='List Bullet')
+        elif line.startswith('**') and line.endswith('**'):
+            # Fett
+            p = doc.add_paragraph()
+            p.add_run(line.replace('**', '')).bold = True
+        else:
+            # Normaler Text
+            clean_line = re.sub(r'\*\*(.*?)\*\*', r'\1', line)  # Remove bold markers
+            clean_line = re.sub(r'`(.*?)`', r'\1', clean_line)  # Remove code markers
+            if clean_line and not clean_line.startswith('```'):
+                doc.add_paragraph(clean_line)
+    
+    # Speichere in BytesIO
+    output = BytesIO()
+    doc.save(output)
+    output.seek(0)
+    
+    from fastapi.responses import StreamingResponse
+    return StreamingResponse(
+        output,
+        media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        headers={
+            "Content-Disposition": "attachment; filename=Wine_Pairing_App_Dokumentation.docx"
+        }
+    )
+
+
 # ===================== AUTHENTICATION & SUBSCRIPTION ENDPOINTS =====================
 
 async def get_current_user(request: Request) -> Optional[User]:

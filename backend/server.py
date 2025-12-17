@@ -400,18 +400,26 @@ from pydantic import field_validator
 from typing import Union
 
 class WineDatabaseEntry(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
     name: str
-    winery: str
-    country: str
-    region: str
+    winery: Optional[str] = ""
+    country: Optional[str] = ""
+    region: Optional[str] = ""
     appellation: Optional[str] = None
-    grape_variety: str  # Primary grape
-    wine_color: str  # weiss, rose, rot, suesswein, schaumwein
+    
+    # Support both field naming conventions (grape_variety/grape, wine_color/color)
+    grape_variety: Optional[str] = None
+    grape: Optional[str] = None  # Alternative field name from import
+    wine_color: Optional[str] = None
+    color: Optional[str] = None  # Alternative field name from import
+    
     year: Optional[int] = None
+    vintage: Optional[int] = None  # Alternative field name
 
     # Multilingual descriptions
-    description_de: str  # Emotional description in German (master)
+    description_de: Optional[str] = ""
     description_en: Optional[str] = None
     description_fr: Optional[str] = None
 
@@ -424,10 +432,18 @@ class WineDatabaseEntry(BaseModel):
     food_pairings_fr: Optional[List[str]] = []
 
     alcohol_content: Optional[float] = None
-    price_category: Optional[str] = None  # budget, mid-range, premium, luxury
+    alcohol: Optional[float] = None  # Alternative
+    price_category: Optional[str] = None
+    price: Optional[float] = None  # Alternative
     image_url: Optional[str] = None
     rating: Optional[float] = None
-    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    classification: Optional[str] = None
+    style: Optional[str] = None
+    taste: Optional[str] = None
+    source: Optional[str] = None
+    auto_added: Optional[bool] = None
+    imported_at: Optional[str] = None
+    created_at: Optional[datetime] = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 class PairingRequest(BaseModel):
     dish: str

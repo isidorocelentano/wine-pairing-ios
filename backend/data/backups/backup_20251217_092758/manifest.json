@@ -1,7 +1,7 @@
 {
   "version": "3.0",
-  "timestamp": "2025-12-17T08:13:48.075560+00:00",
-  "backup_dir": "/app/backend/data/backups/backup_20251217_081348",
+  "timestamp": "2025-12-17T09:27:58.051384+00:00",
+  "backup_dir": "/app/backend/data/backups/backup_20251217_092758",
   "collections": {
     "users": {
       "count": 11,
@@ -54,7 +54,7 @@
       "is_user_data": false
     },
     "regional_pairings": {
-      "count": 44,
+      "count": 1652,
       "file": "regional_pairings.json",
       "is_user_data": false
     },

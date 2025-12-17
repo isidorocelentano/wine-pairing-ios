@@ -18,6 +18,12 @@ const SommelierKompassPage = () => {
   const [regions, setRegions] = useState([]);
   const [pairings, setPairings] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
+  
+  // Pagination
+  const [totalPairings, setTotalPairings] = useState(0);
+  const [hasMore, setHasMore] = useState(false);
+  const ITEMS_PER_PAGE = 50;
   
   // Filters
   const [selectedCountry, setSelectedCountry] = useState('');

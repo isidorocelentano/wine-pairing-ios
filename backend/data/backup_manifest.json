@@ -1,11 +1,11 @@
 {
   "version": "3.0",
-  "timestamp": "2025-12-17T20:28:58.360677+00:00",
-  "last_backup": "/app/backend/data/backups/backup_20251217_202858",
+  "timestamp": "2025-12-17T20:29:34.642534+00:00",
+  "last_backup": "/app/backend/data/backups/backup_20251217_202934",
   "expected": {
     "users": 20,
     "wines": 40,
-    "pairings": 163,
+    "pairings": 164,
     "chats": 23,
     "wine_favorites": 1,
     "user_sessions": 0,

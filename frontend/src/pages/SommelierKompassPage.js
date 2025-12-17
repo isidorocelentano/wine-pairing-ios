@@ -398,6 +398,48 @@ const SommelierKompassPage = () => {
                 </Card>
               ))}
             </div>
+            
+            {/* Load More Button */}
+            {hasMore && (
+              <div className="mt-8 text-center">
+                <p className="text-sm text-muted-foreground mb-4">
+                  {language === 'en' 
+                    ? `Showing ${pairings.length} of ${totalPairings} dishes` 
+                    : language === 'fr'
+                    ? `Affichage de ${pairings.length} sur ${totalPairings} plats`
+                    : `${pairings.length} von ${totalPairings} Gerichten angezeigt`}
+                </p>
+                <Button 
+                  onClick={loadMorePairings} 
+                  disabled={loadingMore}
+                  variant="outline"
+                  className="rounded-full px-8"
+                >
+                  {loadingMore ? (
+                    <>
+                      <div className="h-4 w-4 mr-2 animate-spin rounded-full border-2 border-solid border-current border-r-transparent"></div>
+                      {language === 'en' ? 'Loading...' : language === 'fr' ? 'Chargement...' : 'Laden...'}
+                    </>
+                  ) : (
+                    <>
+                      {language === 'en' ? 'Load more dishes' : language === 'fr' ? 'Charger plus de plats' : 'Weitere Gerichte laden'}
+                    </>
+                  )}
+                </Button>
+              </div>
+            )}
+            
+            {/* All loaded message */}
+            {!hasMore && pairings.length > 0 && totalPairings > ITEMS_PER_PAGE && (
+              <p className="mt-8 text-center text-sm text-muted-foreground">
+                {language === 'en' 
+                  ? `All ${totalPairings} dishes loaded` 
+                  : language === 'fr'
+                  ? `Tous les ${totalPairings} plats chargés`
+                  : `Alle ${totalPairings} Gerichte geladen`}
+              </p>
+            )}
+            </>
           )}
         </div>
       </div>

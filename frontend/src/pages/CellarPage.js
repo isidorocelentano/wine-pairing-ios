@@ -309,13 +309,13 @@ const CellarPage = () => {
           <div className="inline-block relative">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 blur-3xl opacity-50"></div>
             <blockquote className="relative text-lg md:text-2xl lg:text-3xl font-light italic text-foreground/90 leading-relaxed max-w-4xl mx-auto px-4">
-              <span className="text-primary/60 text-4xl md:text-5xl font-serif">"</span>
+              <span className="text-primary/60 text-4xl md:text-5xl font-serif">&ldquo;</span>
               {language === 'de' 
                 ? 'Nicht nur Wein, sondern die perfekte Kombination – für dich, aus deinem Keller, mit deinem Geschmack.'
                 : language === 'en'
                 ? 'Not just wine, but the perfect combination – for you, from your cellar, tailored to your taste.'
                 : 'Pas seulement du vin, mais la combinaison parfaite – pour vous, de votre cave, selon vos goûts.'}
-              <span className="text-primary/60 text-4xl md:text-5xl font-serif">"</span>
+              <span className="text-primary/60 text-4xl md:text-5xl font-serif">&rdquo;</span>
             </blockquote>
             <div className="mt-4 flex items-center justify-center gap-3">
               <div className="h-px w-12 bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>

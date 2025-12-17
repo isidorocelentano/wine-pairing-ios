@@ -34,24 +34,23 @@ class MultiUserCellarTester:
             print(f"   Details: {details}")
 
     def make_request(self, method: str, endpoint: str, data: Optional[Dict] = None, 
-                    expected_status: int = 200, auth_token: Optional[str] = None) -> tuple[bool, Dict]:
-        """Make HTTP request with optional authentication"""
+                    expected_status: int = 200, session: Optional[requests.Session] = None) -> tuple[bool, Dict]:
+        """Make HTTP request with optional session for authentication"""
         url = f"{self.api_url}/{endpoint}"
         headers = {'Content-Type': 'application/json'}
         
-        # Add authentication if token provided
-        if auth_token:
-            headers['Authorization'] = f'Bearer {auth_token}'
+        # Use provided session or default requests
+        req_session = session or requests
         
         try:
             if method == 'GET':
-                response = requests.get(url, headers=headers, timeout=30)
+                response = req_session.get(url, headers=headers, timeout=30)
             elif method == 'POST':
-                response = requests.post(url, json=data, headers=headers, timeout=30)
+                response = req_session.post(url, json=data, headers=headers, timeout=30)
             elif method == 'PUT':
-                response = requests.put(url, json=data, headers=headers, timeout=30)
+                response = req_session.put(url, json=data, headers=headers, timeout=30)
             elif method == 'DELETE':
-                response = requests.delete(url, headers=headers, timeout=30)
+                response = req_session.delete(url, headers=headers, timeout=30)
             else:
                 return False, {"error": f"Unsupported method: {method}"}
 

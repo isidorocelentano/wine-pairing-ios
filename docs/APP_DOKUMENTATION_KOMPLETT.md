@@ -1,7 +1,7 @@
 # 📖 WINE PAIRING APP - Vollständige Dokumentation
 
 **Stand:** 18. Dezember 2025  
-**Version:** 1.1 (Datenbereinigung)  
+**Version:** 1.2 (Rebsorten-Update & D/A/CH Bereinigung)  
 **Domain:** https://wine-pairing.online
 
 ---
@@ -10,15 +10,33 @@
 
 | Metrik | Wert |
 |--------|------|
-| **Weine** | 7,084 (wächst dynamisch) |
-| **Rebsorten** | 313 |
-| **Sommelier Kompass** | 1,652 Gerichte |
+| **Weine** | 7,090 (wächst dynamisch) |
+| **Rebsorten** | 313 (alle mit Bildern & Slugs) |
+| **Sommelier Kompass** | 1,895 Gerichte |
 | **Blog-Artikel** | 233 |
-| **Community Feed** | 268 Beiträge |
+| **Community Feed** | 269 Beiträge |
 | **Sprachen** | DE, EN, FR |
 | **Monetarisierung** | Freemium + Stripe |
 
-### 🆕 Letzte Änderung (18.12.2025):
+### 🆕 Letzte Änderung (18.12.2025 - Version 1.2):
+
+**Rebsorten-Lexikon komplett überarbeitet:**
+- ✅ 313 Rebsorten mit hochwertigen Weinbildern (verifizierte Unsplash-URLs)
+- ✅ 173 fehlende URL-Slugs generiert (Navigation funktioniert jetzt)
+- ✅ Pydantic-Schema repariert (legacy Feldnamen-Mapping)
+- ✅ Bildverteilung: 128 Rot, 136 Weiß, 29 Rosé, 20 Schaumwein
+
+**D/A/CH Weindaten bereinigt (943 Weine):**
+- ✅ Deutschland: 85 → 10 saubere Regionen
+- ✅ Österreich: 18 → 16 Regionen, ungültige Appellationen entfernt
+- ✅ Schweiz: 145 → 13 Regionen (keine Sub-Regionen mehr)
+- ✅ Tippfehler korrigiert (Wuejrttemberg → Württemberg, etc.)
+
+**URL-Parameter bei Seitenladung:**
+- ✅ `/sommelier-kompass?country=Argentinien` → Argentinien vorselektiert
+- ✅ `/wine-database?country=Deutschland` → Deutsche Weine gefiltert
+
+### Frühere Änderungen (18.12.2025 - Version 1.1):
 - **Große Datenbereinigung** aller Weinländer
 - Region/Appellation Filter sauber getrennt
 - Duplikate und Schreibfehler korrigiert

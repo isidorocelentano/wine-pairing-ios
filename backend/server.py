@@ -2410,9 +2410,15 @@ async def check_users_health():
 async def repair_all_users():
     """
     ADMIN: Repariert alle User mit fehlenden Feldern.
+    Setzt temporäres Passwort wenn password_hash fehlt.
     """
     users = await db.users.find({}).to_list(1000)
     repaired = 0
+    password_reset = []
+    
+    # Temporäres Passwort für User ohne password_hash
+    temp_password = "WeinPairing2025!"
+    temp_hash = hash_password(temp_password)
     
     for user in users:
         updates = {}
@@ -2437,6 +2443,11 @@ async def repair_all_users():
         if not user.get('name') and user.get('email'):
             updates['name'] = user['email'].split('@')[0]
         
+        # KRITISCH: Fix missing password_hash
+        if not user.get('password_hash'):
+            updates['password_hash'] = temp_hash
+            password_reset.append(user.get('email', 'unknown'))
+        
         if updates:
             await db.users.update_one(
                 {"_id": user["_id"]},
@@ -2447,7 +2458,9 @@ async def repair_all_users():
     return {
         "total_users": len(users),
         "repaired": repaired,
-        "message": f"{repaired} User repariert"
+        "password_reset_users": password_reset,
+        "temp_password": temp_password if password_reset else None,
+        "message": f"{repaired} User repariert, {len(password_reset)} Passwörter zurückgesetzt"
     }
 
 @api_router.post("/admin/grapes/normalize")

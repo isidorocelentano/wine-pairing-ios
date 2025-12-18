@@ -46,6 +46,15 @@ JWT_SECRET = os.environ.get('JWT_SECRET')
 JWT_ALGORITHM = "HS256"
 JWT_EXPIRY_DAYS = 7
 
+# Resend Email Configuration
+RESEND_API_KEY = os.environ.get('RESEND_API_KEY', '')
+SENDER_EMAIL = os.environ.get('SENDER_EMAIL', 'noreply@wine-pairing.online')
+FRONTEND_URL = os.environ.get('FRONTEND_URL', 'https://wine-pairing.online')
+
+# Initialize Resend
+if RESEND_API_KEY:
+    resend.api_key = RESEND_API_KEY
+
 # Backup Manager (wird beim Startup initialisiert)
 backup_manager: BackupManager = None
 

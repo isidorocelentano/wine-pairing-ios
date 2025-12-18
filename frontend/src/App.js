@@ -81,6 +81,8 @@ function App() {
                   <Route path="/datenschutz" element={<><DatenschutzPage /><Navigation /></>} />
                   {/* Auth & Subscription Routes */}
                   <Route path="/login" element={<LoginPage />} />
+                  <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+                  <Route path="/reset-password" element={<ResetPasswordPage />} />
                   <Route path="/subscription" element={<><SubscriptionPage /><Navigation /></>} />
                   <Route path="/subscription/success" element={<SubscriptionSuccessPage />} />
                   <Route path="/subscription/cancel" element={<><SubscriptionPage /><Navigation /></>} />

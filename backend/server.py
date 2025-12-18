@@ -2362,6 +2362,94 @@ async def get_grape_variety(slug: str):
     if isinstance(grape.get('created_at'), str):
         grape['created_at'] = datetime.fromisoformat(grape['created_at'])
     return grape
+@api_router.get("/admin/users/health")
+async def check_users_health():
+    """
+    ADMIN: Überprüft die Gesundheit aller User-Dokumente.
+    Findet und repariert fehlende Felder.
+    """
+    users = await db.users.find({}, {"_id": 0, "password_hash": 0}).to_list(1000)
+    
+    total = len(users)
+    healthy = 0
+    issues = []
+    
+    required_fields = ['user_id', 'email', 'plan']
+    
+    for user in users:
+        user_issues = []
+        
+        # Check required fields
+        for field in required_fields:
+            if not user.get(field):
+                user_issues.append(f"Feld '{field}' fehlt")
+        
+        # Check plan value
+        if user.get('plan') not in ['basic', 'pro', None]:
+            user_issues.append(f"Ungültiger Plan: {user.get('plan')}")
+        
+        if user_issues:
+            issues.append({
+                "email": user.get('email', 'UNBEKANNT'),
+                "user_id": user.get('user_id', 'FEHLT'),
+                "issues": user_issues
+            })
+        else:
+            healthy += 1
+    
+    return {
+        "total_users": total,
+        "healthy_users": healthy,
+        "users_with_issues": len(issues),
+        "issues": issues[:50],  # Limit to 50 for response size
+        "pro_users": len([u for u in users if u.get('plan') == 'pro']),
+        "basic_users": len([u for u in users if u.get('plan') == 'basic'])
+    }
+
+@api_router.post("/admin/users/repair-all")
+async def repair_all_users():
+    """
+    ADMIN: Repariert alle User mit fehlenden Feldern.
+    """
+    users = await db.users.find({}).to_list(1000)
+    repaired = 0
+    
+    for user in users:
+        updates = {}
+        
+        # Fix missing user_id
+        if not user.get('user_id'):
+            updates['user_id'] = f"user_{uuid.uuid4().hex[:12]}"
+        
+        # Fix missing plan
+        if not user.get('plan'):
+            updates['plan'] = 'basic'
+        
+        # Fix missing usage
+        if not user.get('usage'):
+            updates['usage'] = {
+                "pairing_requests_today": 0,
+                "chat_messages_today": 0,
+                "last_usage_date": None
+            }
+        
+        # Fix missing name
+        if not user.get('name') and user.get('email'):
+            updates['name'] = user['email'].split('@')[0]
+        
+        if updates:
+            await db.users.update_one(
+                {"_id": user["_id"]},
+                {"$set": updates}
+            )
+            repaired += 1
+    
+    return {
+        "total_users": len(users),
+        "repaired": repaired,
+        "message": f"{repaired} User repariert"
+    }
+
 @api_router.post("/admin/grapes/normalize")
 async def normalize_grape_varieties():
     """Normalize grape variety fields for search/filter usage.

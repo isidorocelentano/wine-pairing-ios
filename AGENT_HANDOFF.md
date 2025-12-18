@@ -120,15 +120,45 @@ Der Benutzer kommuniziert auf **DEUTSCH**. Alle Antworten auf Deutsch!
 
 ## 📈 LETZTE ÄNDERUNGEN
 
-### 18.12.2025:
-- **🇫🇷 Französische Weindaten bereinigt:**
-  - 1.861 französische Weine standardisiert
-  - Alle Weine haben jetzt korrekte Region (0 ohne Region)
-  - Appellation-Namen normalisiert (Duplikate, Akzente korrigiert)
-  - Saint-Émilion, Châteauneuf-du-Pape, Médoc Varianten vereinheitlicht
-  - Champagner-Häuser (Dom Pérignon, Krug, etc.) korrekt zugeordnet
-  - Unique Appellationen: von 156 auf 122 reduziert (bereinigt)
-  - Script erstellt: `/app/backend/scripts/cleanup_french_wines.py`
+### 18.12.2025 (Große Datenbereinigung):
+
+#### 🔧 Filter-System verbessert:
+- **Region/Appellation Trennung**: Regionen und Appellationen werden jetzt sauber getrennt in separaten Dropdowns angezeigt
+- Code-Änderung in `/app/backend/server.py` (Zeilen 3797-3810):
+  - Länder mit sauberen Regionen: Frankreich, Deutschland, Österreich, Schweiz, Spanien, Italien
+  - Diese zeigen NUR echte Regionen im Region-Dropdown
+  - Appellationen werden separat im Appellation-Dropdown angezeigt
+- **Appellation-Filter korrigiert**: Verwendet jetzt korrekten MongoDB `$regex` Operator
+
+#### 🇫🇷 Frankreich (1.861 Weine):
+- 74 Non-Breaking Spaces (NBSP) korrigiert
+- Alle Duplikate entfernt (Saint-Emilion → Saint-Émilion, etc.)
+- **10 saubere Regionen**: Bordeaux, Burgund, Champagne, Rhône, Elsass, Loire, Beaujolais, Provence, Languedoc-Roussillon, Südwest-Frankreich
+- **107 Appellationen** (z.B. Bordeaux → 33 Appellationen wie Pauillac, Saint-Émilion, Margaux)
+- Script: `/app/backend/scripts/cleanup_french_wines.py`
+
+#### 🇮🇹 Italien (1.551 Weine):
+- 459 Weine korrigiert
+- Regionen vereinheitlicht: Piemonte → Piemont, Toscana → Toskana, Venetien → Veneto
+- Appellationen als Region korrigiert (Barolo, Barbaresco → Region Piemont)
+- **17 saubere Regionen**: Piemont, Toskana, Veneto, Campania, Lombardia, etc.
+- **70 Appellationen** (z.B. Piemont → Barolo, Barbaresco, Barbera)
+
+#### 🇪🇸 Spanien (1.209 Weine):
+- penedes → Penedès, Rias Baixas → Rías Baixas
+- **24 Regionen**, 0 ohne Region
+
+#### 🇩🇪 Deutschland (678 Weine):
+- Sub-Regionen vereinfacht (Pfalz - Deidesheim → Pfalz)
+- 108 Weine korrigiert
+- **14 Hauptregionen**: Franken, Rheingau, Mosel, Pfalz, Nahe, etc.
+
+#### 🇦🇹 Österreich (678 Weine):
+- Duplikate vereinfacht
+- **17 Regionen**: Wachau, Kamptal, Weinviertel, Kremstal, etc.
+
+#### 🇦🇺 Australien:
+- LANGHORNE CREEK → Langhorne Creek
 
 ### 17.12.2025:
 - Smart Merge: 7,066 Weine importiert (aus Weindatenbank.xlsx)

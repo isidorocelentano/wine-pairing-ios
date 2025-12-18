@@ -2858,16 +2858,21 @@ def main():
     """Main test execution"""
     import sys
     
-    # Check if we should run only backup tests
-    if len(sys.argv) > 1 and sys.argv[1] == "backup":
-        tester = WinePairingAPITester()
-        success = tester.run_backup_verification_tests()
-        return 0 if success else 1
-    else:
-        tester = WinePairingAPITester()
-        # Run FINAL DEPLOYMENT TEST v4 as specified in review request
-        success = tester.run_final_deployment_v4_tests()
-        return 0 if success else 1
+    # Check command line arguments for specific test suites
+    if len(sys.argv) > 1:
+        if sys.argv[1] == "backup":
+            tester = WinePairingAPITester()
+            success = tester.run_backup_verification_tests()
+            return 0 if success else 1
+        elif sys.argv[1] == "chinese":
+            tester = WinePairingAPITester()
+            success = tester.run_chinese_kompass_tests_only()
+            return 0 if success else 1
+    
+    # Default: Run FINAL DEPLOYMENT TEST v4 as specified in review request
+    tester = WinePairingAPITester()
+    success = tester.run_final_deployment_v4_tests()
+    return 0 if success else 1
 
 if __name__ == "__main__":
     sys.exit(main())

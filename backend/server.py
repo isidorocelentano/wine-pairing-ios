@@ -2404,6 +2404,49 @@ async def repair_users_get():
         "next_step": "Loggen Sie sich jetzt mit dem temporären Passwort ein und ändern Sie es!"
     }
 
+@api_router.get("/admin/reset-owner-password")
+async def reset_owner_password():
+    """
+    EINMALIG: Setzt das Passwort für den Hauptbesitzer zurück.
+    URL: /api/admin/reset-owner-password
+    
+    ⚠️ WICHTIG: Diesen Endpoint nach erfolgreicher Verwendung deaktivieren!
+    """
+    owner_email = "isicel@bluewin.ch"
+    temp_password = "WeinPairing2025!"
+    
+    # Find owner
+    user = await db.users.find_one({"email": owner_email})
+    if not user:
+        return {"status": "error", "message": f"User {owner_email} nicht gefunden"}
+    
+    # Reset password
+    new_hash = hash_password(temp_password)
+    
+    result = await db.users.update_one(
+        {"email": owner_email},
+        {"$set": {
+            "password_hash": new_hash,
+            "plan": "pro",
+            "subscription_status": "active"
+        }}
+    )
+    
+    if result.modified_count > 0:
+        return {
+            "status": "success",
+            "message": f"✅ Passwort für {owner_email} wurde zurückgesetzt!",
+            "email": owner_email,
+            "new_password": temp_password,
+            "plan": "pro",
+            "next_step": "Bitte loggen Sie sich ein und ändern Sie das Passwort!"
+        }
+    else:
+        return {
+            "status": "warning", 
+            "message": "Keine Änderung vorgenommen (Passwort war möglicherweise bereits gesetzt)"
+        }
+
 @api_router.get("/admin/users/health")
 async def check_users_health():
     """

@@ -409,14 +409,29 @@ class WineDatabaseEntry(BaseModel):
     region: Optional[str] = ""
     appellation: Optional[str] = None
     
-    # Support both field naming conventions (grape_variety/grape, wine_color/color)
+    # Standardized field names (migration completed 18.12.2025)
     grape_variety: Optional[str] = None
-    grape: Optional[str] = None  # Alternative field name from import
     wine_color: Optional[str] = None
-    color: Optional[str] = None  # Alternative field name from import
     
     year: Optional[int] = None
     vintage: Optional[int] = None  # Alternative field name
+    
+    # Validator for backwards compatibility with old field names
+    @model_validator(mode='before')
+    @classmethod
+    def migrate_old_fields(cls, data):
+        if isinstance(data, dict):
+            # Migrate grape -> grape_variety
+            if 'grape' in data and data.get('grape') and not data.get('grape_variety'):
+                data['grape_variety'] = data.pop('grape')
+            elif 'grape' in data:
+                data.pop('grape', None)
+            # Migrate color -> wine_color
+            if 'color' in data and data.get('color') and not data.get('wine_color'):
+                data['wine_color'] = data.pop('color')
+            elif 'color' in data:
+                data.pop('color', None)
+        return data
 
     # Multilingual descriptions
     description_de: Optional[str] = ""

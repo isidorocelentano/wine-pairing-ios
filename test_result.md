@@ -8,6 +8,28 @@ critical_bugfix_applied: true
 bugfix_description: "Complete wine data cleanup for ALL countries - regions and appellations standardized"
 
 ## Latest Change (2025-12-18)
+
+### Prio 1 Fixes (2025-12-18) - COMPLETED ✅
+
+**Fix 1: D/A/CH Wine Filter Data Cleanup**
+- Cleaned 943 wines across Germany, Austria, and Switzerland
+- Germany: Reduced from 85 to 10 clean regions (removed sub-regions like "Pfalz - Gimmeldingen")
+- Austria: Cleaned 16 regions, removed invalid appellations (Punkte-Bewertungen, Prädikatsstufen)
+- Switzerland: Reduced from 145 to 13 clean regions
+- Removed invalid appellations: Kabinett, Spätlese, Auslese, Beerenauslese, etc.
+- Script: `/app/backend/scripts/cleanup_dach_wines.py`
+
+**Fix 2: URL Query Parameters on Initial Page Load**
+- SommelierKompassPage: Now reads country, region, search from URL params
+- WineDatabasePage: Now reads country, region, search from URL params
+- URL updates when filters change (replace mode)
+- Test: `/sommelier-kompass?country=Argentinien` → Argentina selected and dishes shown
+
+**Fix 3: Frontend Dish Count (Already Fixed)**
+- Verified that dish counts in country grid match API data
+- All 16 countries showing correct counts
+
+
 ### Chinese Sommelier Kompass Data Import Verification - COMPLETED ✅
 
 **Test Results (5/5 PASSED - 100% Success Rate)**:

@@ -12,7 +12,7 @@
 | `public_wines` | 7,078 | Öffentliche Wein-Datenbank (wächst dynamisch) |
 | `wine_database` | 494 | Erweiterte Wein-Infos |
 | `grape_varieties` | 313 | Rebsorten-Lexikon |
-| `regional_pairings` | 1,652 | Sommelier Kompass |
+| `regional_pairings` | 1,779 | Sommelier Kompass |
 | `blog_posts` | 233 | Blog-Artikel |
 | `feed_posts` | 268 | Community-Beiträge |
 | `dishes` | 40 | Gerichte für Pairing |
@@ -20,7 +20,7 @@
 | `users` | ~20 | Benutzerkonten |
 | `wines` | ~42 | Persönliche Weinkeller (user_id!) |
 | `coupons` | 100 | Gutscheine |
-| **GESAMT** | **~10,740** | |
+| **GESAMT** | **~10,870** | |
 
 ---
 
@@ -119,6 +119,16 @@ Der Benutzer kommuniziert auf **DEUTSCH**. Alle Antworten auf Deutsch!
 ---
 
 ## 📈 LETZTE ÄNDERUNGEN
+
+### 18.12.2025 (China Sommelier Kompass Import):
+
+#### 🇨🇳 China Sommelier Kompass:
+- **50 chinesische Gerichte** mit vollständigen Weinempfehlungen importiert
+- Regionen: Nordchina (Peking, Shandong), Ostchina (Shanghai), Südchina (Guangdong, Fujian), Westchina (Sichuan, Hunan, Yunnan), International
+- **Vollständige Übersetzungen** für alle Gerichte und Weinbeschreibungen (DE, EN, FR)
+- Emotionale Weinbeschreibungen erklärt WARUM jedes Pairing funktioniert
+- **Total China Gerichte jetzt: 88**
+- Skript: `/app/backend/scripts/import_china_complete.py`
 
 ### 18.12.2025 (Große Datenbereinigung):
 

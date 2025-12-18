@@ -63,7 +63,7 @@ class FrenchWineDataTester:
 
     def test_french_wine_region_bordeaux(self):
         """Test French Wine Region Filter - Bordeaux"""
-        success, response = self.make_request('GET', 'public-wines?region=Bordeaux', expected_status=200)
+        success, response = self.make_request('GET', 'public-wines?region=Bordeaux&limit=2000', expected_status=200)
         if success:
             wines = response if isinstance(response, list) else []
             

@@ -224,7 +224,7 @@ class FrenchWineDataTester:
 
     def test_french_appellation_saint_emilion(self):
         """Test French Appellation Filter - Saint-Émilion"""
-        success, response = self.make_request('GET', 'public-wines?region=Saint-Émilion', expected_status=200)
+        success, response = self.make_request('GET', 'public-wines?region=Saint-Émilion&limit=2000', expected_status=200)
         if success:
             wines = response if isinstance(response, list) else []
             

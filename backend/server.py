@@ -23,6 +23,8 @@ import asyncio
 import unicodedata
 import bcrypt
 import jwt
+import resend
+import secrets
 from backup_manager import BackupManager, create_startup_backup, stop_backup_task
 
 ROOT_DIR = Path(__file__).parent

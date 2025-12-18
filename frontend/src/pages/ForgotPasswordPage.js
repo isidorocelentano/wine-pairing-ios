@@ -60,7 +60,7 @@ const ForgotPasswordPage = () => {
     setLoading(true);
     
     try {
-      await api.post('/auth/forgot-password', { email });
+      await API.post('/auth/forgot-password', { email });
       setSent(true);
       toast.success(language === 'de' ? 'E-Mail gesendet!' : 'Email sent!');
     } catch (error) {

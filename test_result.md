@@ -1,14 +1,22 @@
 # Test Results - Wine Pairing Platform
 
 ## Test Configuration
-test_sequence: 9
+test_sequence: 10
 run_ui: true
-backend_test_completed: true
+backend_test_completed: false
 critical_bugfix_applied: true
-bugfix_description: "Multi-User Weinkeller implemented - each user now has their own private wine cellar"
+bugfix_description: "French wine data cleanup - standardized regions and appellations"
 
-## Latest Change (2025-12-17)
-### Multi-User Weinkeller Implementation
+## Latest Change (2025-12-18)
+### French Wine Data Cleanup
+- Cleaned and standardized 1,861 French wines
+- All wines now have correct region assignment (0 without region)
+- Normalized appellation names (removed duplicates, fixed accents)
+- Corrected Saint-Émilion, Châteauneuf-du-Pape, Médoc variants
+- Assigned Champagne region to all champagne houses
+- Reduced unique appellations from 156 to 122 (cleaned duplicates)
+
+### Previous: Multi-User Weinkeller Implementation (2025-12-17)
 - Added `user_id` field to Wine model
 - All wine endpoints now require authentication
 - Users can only see/modify their own wines

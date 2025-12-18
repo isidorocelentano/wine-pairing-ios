@@ -235,9 +235,9 @@ class FrenchWineDataTester:
             # Verify wines have Saint-Émilion in region OR appellation
             non_saint_emilion_wines = []
             for wine in wines:
-                region = wine.get('region', '').lower()
-                appellation = wine.get('appellation', '').lower()
-                wine_name = wine.get('name', '').lower()
+                region = (wine.get('region') or '').lower()
+                appellation = (wine.get('appellation') or '').lower()
+                wine_name = (wine.get('name') or '').lower()
                 if ('saint-émilion' not in region and 'saint-emilion' not in region and 
                     'saint-émilion' not in appellation and 'saint-emilion' not in appellation and
                     'saint-émilion' not in wine_name and 'saint-emilion' not in wine_name):

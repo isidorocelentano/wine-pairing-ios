@@ -1366,12 +1366,13 @@ class WinePairingAPITester:
                 if region in expected_regions:
                     expected_regions[region]['found'] = count
             
-            # Check if major regions have dishes
-            major_regions = ['Peking', 'Shanghai', 'Guangdong', 'Sichuan']
-            missing_major_regions = []
+            # Check if major regions have dishes (including both formats)
+            major_regions = ['Peking', 'China – Peking', 'Shanghai', 'China – Shanghai', 
+                           'China – Guangdong', 'Kanton / Hongkong', 'Sichuan', 'China – Sichuan']
+            found_major_regions = []
             for region in major_regions:
-                if expected_regions[region]['found'] == 0:
-                    missing_major_regions.append(region)
+                if region in expected_regions and expected_regions[region]['found'] > 0:
+                    found_major_regions.append(region)
             
             if missing_major_regions:
                 self.log_test("Chinese Regional Distribution", False, 

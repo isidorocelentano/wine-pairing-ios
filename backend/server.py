@@ -4573,21 +4573,48 @@ async def register_user(req: RegisterRequest, response: Response):
 
 @api_router.post("/auth/login")
 async def login_user(req: LoginRequest, response: Response):
-    """Login with email and password"""
-    # Find user
-    user = await db.users.find_one({"email": req.email.lower()})
+    """
+    Login with email and password.
+    
+    ROBUSTER ABLAUF:
+    1. Email normalisieren (lowercase, trim)
+    2. User in DB suchen
+    3. Passwort verifizieren
+    4. User reparieren falls Felder fehlen (Migration alter User)
+    5. Login-Statistik aktualisieren
+    6. JWT Token erstellen
+    7. Session Cookie setzen
+    """
+    # 1. Email normalisieren
+    email = req.email.lower().strip()
+    
+    # 2. User suchen
+    user = await db.users.find_one({"email": email})
     
     if not user:
         raise HTTPException(status_code=401, detail="E-Mail oder Passwort falsch")
     
-    # Check password
-    if not verify_password(req.password, user.get("password_hash", "")):
+    # 3. Passwort verifizieren
+    password_hash = user.get("password_hash", "")
+    if not password_hash or not verify_password(req.password, password_hash):
         raise HTTPException(status_code=401, detail="E-Mail oder Passwort falsch")
     
-    # Create JWT token
+    # 4. User reparieren falls nötig (Migration alter User)
+    user = await repair_user_if_needed(user)
+    
+    # 5. Login-Statistik aktualisieren
+    await db.users.update_one(
+        {"email": email},
+        {
+            "$set": {"last_login": datetime.now(timezone.utc)},
+            "$inc": {"login_count": 1}
+        }
+    )
+    
+    # 6. JWT Token erstellen
     token = create_jwt_token(user["user_id"], user["email"])
     
-    # Set cookie
+    # 7. Session Cookie setzen
     response.set_cookie(
         key="session_token",
         value=token,
@@ -4598,11 +4625,11 @@ async def login_user(req: LoginRequest, response: Response):
         max_age=JWT_EXPIRY_DAYS * 24 * 60 * 60
     )
     
-    # Return user (without password)
+    # Return user (ohne Passwort)
     return {
         "user_id": user["user_id"],
         "email": user["email"],
-        "name": user["name"],
+        "name": user.get("name", email.split('@')[0]),
         "picture": user.get("picture"),
         "plan": user.get("plan", "basic"),
         "usage": user.get("usage", {}),

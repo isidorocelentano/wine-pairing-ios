@@ -35,6 +35,8 @@ import KontaktPage from "@/pages/KontaktPage";
 import ImpressumPage from "@/pages/ImpressumPage";
 import DatenschutzPage from "@/pages/DatenschutzPage";
 import LoginPage from "@/pages/LoginPage";
+import ForgotPasswordPage from "@/pages/ForgotPasswordPage";
+import ResetPasswordPage from "@/pages/ResetPasswordPage";
 import SubscriptionPage from "@/pages/SubscriptionPage";
 import SubscriptionSuccessPage from "@/pages/SubscriptionSuccessPage";
 import CouponPage from "@/pages/CouponPage";

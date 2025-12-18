@@ -174,10 +174,16 @@ Jeder User hat seinen **eigenen privaten Weinkeller**. Vollständige User-Isolat
 | 🇫🇷 Frankreich | 1,861 | 10 | 107 |
 | 🇮🇹 Italien | 1,551 | 17 | 70 |
 | 🇪🇸 Spanien | 1,209 | 24 | 34 |
-| 🇨🇭 Schweiz | 751 | 144 | 24 |
-| 🇩🇪 Deutschland | 678 | 14 | 16 |
-| 🇦🇹 Österreich | 678 | 17 | 32 |
+| 🇨🇭 Schweiz | 751 | **13** (bereinigt) | 24 |
+| 🇩🇪 Deutschland | 678 | **10** (bereinigt) | 16 |
+| 🇦🇹 Österreich | 678 | **16** (bereinigt) | 32 |
 | Weitere | ~356 | - | - |
+
+**D/A/CH Bereinigung (18.12.2025):**
+- 943 Weine korrigiert
+- Tippfehler behoben (Wuejrttemberg, Rheinessen, Graubuenden)
+- Sub-Regionen zu Hauptregionen konsolidiert
+- Ungültige Appellationen entfernt (Kabinett, Spätlese, Punkte-Bewertungen)
 
 **Filter-System (verbessert):**
 - **Land**: Alle verfügbaren Weinländer

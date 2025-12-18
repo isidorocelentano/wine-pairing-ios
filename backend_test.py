@@ -1277,6 +1277,246 @@ class WinePairingAPITester:
             self.log_test("Sitemap XML", False, str(response))
         return success
 
+    # ===================== CHINESE SOMMELIER KOMPASS DATA TESTS =====================
+    
+    def test_chinese_regional_pairings_total_count(self):
+        """Test GET /api/regional-pairings?country=China - should return ~88 Chinese dishes"""
+        success, response = self.make_request('GET', 'regional-pairings?country=China', expected_status=200)
+        if success:
+            pairings = response if isinstance(response, list) else []
+            
+            # Check total count (should be approximately 88)
+            total_count = len(pairings)
+            if total_count < 80 or total_count > 100:
+                self.log_test("Chinese Regional Pairings Total Count", False, 
+                             f"Expected ~88 Chinese dishes, got {total_count}")
+                return False
+            
+            # Validate basic structure of pairings
+            if pairings:
+                pairing = pairings[0]
+                required_fields = ['dish', 'region', 'country', 'wine_name', 'wine_type']
+                missing_fields = [field for field in required_fields if field not in pairing]
+                if missing_fields:
+                    self.log_test("Chinese Regional Pairings Total Count", False, 
+                                 f"Missing required fields: {missing_fields}")
+                    return False
+                
+                # Verify country is China
+                if pairing.get('country') != 'China':
+                    self.log_test("Chinese Regional Pairings Total Count", False, 
+                                 f"Expected country=China, got {pairing.get('country')}")
+                    return False
+            
+            self.log_test("Chinese Regional Pairings Total Count", True, 
+                         f"Found {total_count} Chinese dishes (target: ~88)")
+        else:
+            self.log_test("Chinese Regional Pairings Total Count", False, str(response))
+        return success
+
+    def test_chinese_regional_distribution(self):
+        """Test Chinese dishes are properly distributed across regions"""
+        success, response = self.make_request('GET', 'regional-pairings?country=China', expected_status=200)
+        if success:
+            pairings = response if isinstance(response, list) else []
+            
+            # Count dishes by region
+            region_counts = {}
+            for pairing in pairings:
+                region = pairing.get('region', 'Unknown')
+                region_counts[region] = region_counts.get(region, 0) + 1
+            
+            # Expected regions with approximate counts
+            expected_regions = {
+                'Peking': {'min': 8, 'max': 15, 'found': 0},
+                'Shandong': {'min': 5, 'max': 15, 'found': 0},
+                'Xinjiang': {'min': 5, 'max': 15, 'found': 0},
+                'Shanghai': {'min': 8, 'max': 15, 'found': 0},
+                'Jiangsu': {'min': 5, 'max': 15, 'found': 0},
+                'Zhejiang': {'min': 5, 'max': 15, 'found': 0},
+                'Guangdong': {'min': 8, 'max': 15, 'found': 0},
+                'Fujian': {'min': 5, 'max': 15, 'found': 0},
+                'Guangxi': {'min': 5, 'max': 15, 'found': 0},
+                'Sichuan': {'min': 8, 'max': 15, 'found': 0},
+                'Hunan': {'min': 5, 'max': 15, 'found': 0},
+                'Yunnan': {'min': 5, 'max': 15, 'found': 0}
+            }
+            
+            # Update found counts
+            for region, count in region_counts.items():
+                if region in expected_regions:
+                    expected_regions[region]['found'] = count
+            
+            # Check if major regions have dishes
+            major_regions = ['Peking', 'Shanghai', 'Guangdong', 'Sichuan']
+            missing_major_regions = []
+            for region in major_regions:
+                if expected_regions[region]['found'] == 0:
+                    missing_major_regions.append(region)
+            
+            if missing_major_regions:
+                self.log_test("Chinese Regional Distribution", False, 
+                             f"Missing dishes in major regions: {missing_major_regions}")
+                return False
+            
+            # Check total regions found
+            regions_with_dishes = [r for r, data in expected_regions.items() if data['found'] > 0]
+            if len(regions_with_dishes) < 8:
+                self.log_test("Chinese Regional Distribution", False, 
+                             f"Expected dishes in 8+ regions, found in {len(regions_with_dishes)}: {regions_with_dishes}")
+                return False
+            
+            region_summary = {r: data['found'] for r, data in expected_regions.items() if data['found'] > 0}
+            self.log_test("Chinese Regional Distribution", True, 
+                         f"Dishes distributed across {len(regions_with_dishes)} regions: {region_summary}")
+        else:
+            self.log_test("Chinese Regional Distribution", False, str(response))
+        return success
+
+    def test_chinese_specific_dishes(self):
+        """Test specific Chinese dishes are present with correct regions"""
+        success, response = self.make_request('GET', 'regional-pairings?country=China', expected_status=200)
+        if success:
+            pairings = response if isinstance(response, list) else []
+            
+            # Expected specific dishes with their regions
+            expected_dishes = {
+                'Peking Ente': {'expected_region': 'Peking', 'found': False, 'actual_region': None},
+                '北京烤鸭': {'expected_region': 'Peking', 'found': False, 'actual_region': None},
+                'Xiaolongbao': {'expected_region': 'Shanghai', 'found': False, 'actual_region': None},
+                '小笼包': {'expected_region': 'Shanghai', 'found': False, 'actual_region': None},
+                'Dim Sum': {'expected_region': 'Guangdong', 'found': False, 'actual_region': None},
+                '点心': {'expected_region': 'Guangdong', 'found': False, 'actual_region': None},
+                'Kung Pao Chicken': {'expected_region': 'Sichuan', 'found': False, 'actual_region': None},
+                '宫保鸡丁': {'expected_region': 'Sichuan', 'found': False, 'actual_region': None},
+                'Mapo Tofu': {'expected_region': 'Sichuan', 'found': False, 'actual_region': None},
+                '麻婆豆腐': {'expected_region': 'Sichuan', 'found': False, 'actual_region': None}
+            }
+            
+            # Search for dishes (case-insensitive, partial match)
+            for pairing in pairings:
+                dish_name = pairing.get('dish', '').lower()
+                region = pairing.get('region', '')
+                
+                for expected_dish, dish_info in expected_dishes.items():
+                    if expected_dish.lower() in dish_name or dish_name in expected_dish.lower():
+                        dish_info['found'] = True
+                        dish_info['actual_region'] = region
+                        break
+            
+            # Check results
+            found_dishes = [dish for dish, info in expected_dishes.items() if info['found']]
+            missing_dishes = [dish for dish, info in expected_dishes.items() if not info['found']]
+            
+            if len(found_dishes) < 3:  # At least 3 of the expected dishes should be found
+                self.log_test("Chinese Specific Dishes", False, 
+                             f"Expected at least 3 specific dishes, found {len(found_dishes)}: {found_dishes}")
+                return False
+            
+            # Check region correctness for found dishes
+            region_mismatches = []
+            for dish, info in expected_dishes.items():
+                if info['found'] and info['actual_region'] != info['expected_region']:
+                    region_mismatches.append(f"{dish}: expected {info['expected_region']}, got {info['actual_region']}")
+            
+            if region_mismatches:
+                self.log_test("Chinese Specific Dishes", False, 
+                             f"Region mismatches: {region_mismatches}")
+                return False
+            
+            self.log_test("Chinese Specific Dishes", True, 
+                         f"Found {len(found_dishes)} expected dishes with correct regions: {found_dishes}")
+        else:
+            self.log_test("Chinese Specific Dishes", False, str(response))
+        return success
+
+    def test_chinese_wine_pairings_completeness(self):
+        """Test that all Chinese dishes have complete wine pairing information"""
+        success, response = self.make_request('GET', 'regional-pairings?country=China', expected_status=200)
+        if success:
+            pairings = response if isinstance(response, list) else []
+            
+            # Check each pairing for completeness
+            incomplete_pairings = []
+            missing_wine_names = 0
+            missing_wine_types = 0
+            missing_wine_descriptions = 0
+            
+            for i, pairing in enumerate(pairings):
+                issues = []
+                
+                # Check required fields
+                if not pairing.get('wine_name') or pairing.get('wine_name').strip() == '':
+                    issues.append('missing wine_name')
+                    missing_wine_names += 1
+                
+                if not pairing.get('wine_type') or pairing.get('wine_type').strip() == '':
+                    issues.append('missing wine_type')
+                    missing_wine_types += 1
+                
+                # wine_description can be optional but should be present for quality
+                if not pairing.get('wine_description'):
+                    missing_wine_descriptions += 1
+                
+                if issues:
+                    dish_name = pairing.get('dish', f'Dish #{i+1}')
+                    incomplete_pairings.append(f"{dish_name}: {', '.join(issues)}")
+            
+            # Report results
+            total_pairings = len(pairings)
+            if missing_wine_names > 0:
+                self.log_test("Chinese Wine Pairings Completeness", False, 
+                             f"{missing_wine_names}/{total_pairings} pairings missing wine_name")
+                return False
+            
+            if missing_wine_types > 0:
+                self.log_test("Chinese Wine Pairings Completeness", False, 
+                             f"{missing_wine_types}/{total_pairings} pairings missing wine_type")
+                return False
+            
+            # Wine descriptions are less critical but good to have
+            completeness_score = ((total_pairings - missing_wine_descriptions) / total_pairings) * 100 if total_pairings > 0 else 0
+            
+            self.log_test("Chinese Wine Pairings Completeness", True, 
+                         f"All {total_pairings} pairings have wine_name and wine_type. Wine descriptions: {completeness_score:.1f}% complete")
+        else:
+            self.log_test("Chinese Wine Pairings Completeness", False, str(response))
+        return success
+
+    def test_chinese_wine_types_variety(self):
+        """Test that Chinese pairings include variety of wine types"""
+        success, response = self.make_request('GET', 'regional-pairings?country=China', expected_status=200)
+        if success:
+            pairings = response if isinstance(response, list) else []
+            
+            # Count wine types
+            wine_type_counts = {}
+            for pairing in pairings:
+                wine_type = pairing.get('wine_type', 'Unknown')
+                wine_type_counts[wine_type] = wine_type_counts.get(wine_type, 0) + 1
+            
+            # Check for variety in wine types
+            unique_wine_types = len(wine_type_counts)
+            if unique_wine_types < 3:
+                self.log_test("Chinese Wine Types Variety", False, 
+                             f"Expected variety in wine types, found only {unique_wine_types}: {list(wine_type_counts.keys())}")
+                return False
+            
+            # Check for common wine types
+            expected_types = ['rot', 'weiss', 'rosé', 'schaumwein']  # German wine type names
+            found_expected_types = [wt for wt in expected_types if wt in wine_type_counts]
+            
+            if len(found_expected_types) < 2:
+                self.log_test("Chinese Wine Types Variety", False, 
+                             f"Expected common wine types (rot, weiss, etc.), found: {list(wine_type_counts.keys())}")
+                return False
+            
+            self.log_test("Chinese Wine Types Variety", True, 
+                         f"Found {unique_wine_types} wine types: {wine_type_counts}")
+        else:
+            self.log_test("Chinese Wine Types Variety", False, str(response))
+        return success
+
     # ===================== PUBLIC WINES DATABASE TESTS =====================
     
     def test_public_wines_list_basic(self):

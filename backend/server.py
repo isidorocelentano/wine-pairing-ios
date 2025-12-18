@@ -2362,6 +2362,48 @@ async def get_grape_variety(slug: str):
     if isinstance(grape.get('created_at'), str):
         grape['created_at'] = datetime.fromisoformat(grape['created_at'])
     return grape
+@api_router.get("/admin/users/repair")
+async def repair_users_get():
+    """
+    GET Version des Repair-Endpoints - kann direkt im Browser aufgerufen werden.
+    URL: /api/admin/users/repair
+    """
+    users = await db.users.find({}).to_list(1000)
+    repaired = 0
+    password_reset = []
+    
+    temp_password = "WeinPairing2025!"
+    temp_hash = hash_password(temp_password)
+    
+    for user in users:
+        updates = {}
+        
+        if not user.get('user_id'):
+            updates['user_id'] = f"user_{uuid.uuid4().hex[:12]}"
+        if not user.get('plan'):
+            updates['plan'] = 'basic'
+        if not user.get('usage'):
+            updates['usage'] = {"pairing_requests_today": 0, "chat_messages_today": 0, "last_usage_date": None}
+        if not user.get('name') and user.get('email'):
+            updates['name'] = user['email'].split('@')[0]
+        if not user.get('password_hash'):
+            updates['password_hash'] = temp_hash
+            password_reset.append(user.get('email', 'unknown'))
+        
+        if updates:
+            await db.users.update_one({"_id": user["_id"]}, {"$set": updates})
+            repaired += 1
+    
+    return {
+        "status": "success",
+        "total_users": len(users),
+        "repaired": repaired,
+        "password_reset_users": password_reset,
+        "temp_password": temp_password if password_reset else None,
+        "message": f"✅ {repaired} User repariert, {len(password_reset)} Passwörter zurückgesetzt",
+        "next_step": "Loggen Sie sich jetzt mit dem temporären Passwort ein und ändern Sie es!"
+    }
+
 @api_router.get("/admin/users/health")
 async def check_users_health():
     """

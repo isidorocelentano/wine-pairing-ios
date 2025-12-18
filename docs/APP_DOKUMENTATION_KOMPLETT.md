@@ -1,7 +1,7 @@
 # 📖 WINE PAIRING APP - Vollständige Dokumentation
 
-**Stand:** 17. Dezember 2025  
-**Version:** 1.0  
+**Stand:** 18. Dezember 2025  
+**Version:** 1.1 (Datenbereinigung)  
 **Domain:** https://wine-pairing.online
 
 ---
@@ -10,13 +10,18 @@
 
 | Metrik | Wert |
 |--------|------|
-| **Weine** | 7,066 (wächst dynamisch) |
+| **Weine** | 7,084 (wächst dynamisch) |
 | **Rebsorten** | 313 |
 | **Sommelier Kompass** | 1,652 Gerichte |
 | **Blog-Artikel** | 233 |
 | **Community Feed** | 268 Beiträge |
 | **Sprachen** | DE, EN, FR |
 | **Monetarisierung** | Freemium + Stripe |
+
+### 🆕 Letzte Änderung (18.12.2025):
+- **Große Datenbereinigung** aller Weinländer
+- Region/Appellation Filter sauber getrennt
+- Duplikate und Schreibfehler korrigiert
 
 ---
 

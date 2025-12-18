@@ -57,6 +57,21 @@ const SommelierKompassPage = () => {
     fetchPairings();
   }, [selectedCountry, selectedRegion, searchQuery]);
 
+  // Update URL when filters change (after initial load)
+  useEffect(() => {
+    if (!initialParamsApplied) {
+      setInitialParamsApplied(true);
+      return;
+    }
+    
+    const params = new URLSearchParams();
+    if (selectedCountry) params.set('country', selectedCountry);
+    if (selectedRegion) params.set('region', selectedRegion);
+    if (searchQuery) params.set('search', searchQuery);
+    
+    setSearchParams(params, { replace: true });
+  }, [selectedCountry, selectedRegion, searchQuery, initialParamsApplied, setSearchParams]);
+
   const fetchCountries = async () => {
     try {
       console.log('Fetching countries from:', `${API}/regional-pairings/countries`);

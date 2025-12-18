@@ -67,6 +67,10 @@ const FeedPage = () => {
   // Comment state
   const [commentInputs, setCommentInputs] = useState({});
   const [expandedComments, setExpandedComments] = useState({});
+  
+  // Share state
+  const [shareMenuOpen, setShareMenuOpen] = useState({});
+  const [copiedPostId, setCopiedPostId] = useState(null);
 
   const fetchPosts = useCallback(async () => {
     try {

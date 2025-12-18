@@ -43,8 +43,8 @@ const WineDatabasePage = () => {
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState(initialSearch);
   const [filters, setFilters] = useState({
-    country: 'all',
-    region: 'all',
+    country: initialCountry,
+    region: initialRegion,
     appellation: 'all',
     grape_variety: 'all',
     wine_color: 'all',

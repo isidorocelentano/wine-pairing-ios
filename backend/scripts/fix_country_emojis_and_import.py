@@ -58,7 +58,7 @@ SOUTH_AFRICA_DISHES = [
     {
         "dish": "Bobotie (Gewürzter Hackfleischauflauf)",
         "region": "Kapstadt",
-        "dish_description": "Hackfleisch mit Curry, Trockenobst, Eierguss und Brot – oft mit Reis serviert. Ein Klassiker der Cape Malay Küche.",
+        "dish_description": "Hackfleisch mit Curry, Trockenobst, Eierguss und Brot - oft mit Reis serviert. Ein Klassiker der Cape Malay Küche.",
         "wine_name": "Chenin Blanc",
         "wine_type": "weiss",
         "wine_description": "Der vielseitige südafrikanische Chenin Blanc mit seiner Honig- und Aprikosennote ist perfekt für das süß-würzige Bobotie. Die Frucht des Weins harmoniert mit den Trockenfrüchten."
@@ -74,7 +74,7 @@ SOUTH_AFRICA_DISHES = [
     {
         "dish": "Biltong (Luftgetrocknetes Fleisch)",
         "region": "Überall",
-        "dish_description": "Gewürztes, luftgetrocknetes Rind- oder Wildfleisch – ähnlich Jerky, aber weicher und aromatischer.",
+        "dish_description": "Gewürztes, luftgetrocknetes Rind- oder Wildfleisch - ähnlich Jerky, aber weicher und aromatischer.",
         "wine_name": "Merlot (Robertson)",
         "wine_type": "rot",
         "wine_description": "Ein samtiger Merlot aus Robertson mit seinen weichen Pflaumennoten ist ein überraschend guter Snack-Begleiter für das würzige Biltong."
@@ -82,7 +82,7 @@ SOUTH_AFRICA_DISHES = [
     {
         "dish": "Pap en Vleis (Maisbrei mit Fleisch)",
         "region": "Überall",
-        "dish_description": "Maisbrei (Pap) mit Fleisch-Eintopf (oft Rind oder Huhn) – ein südafrikanisches Grundnahrungsmittel.",
+        "dish_description": "Maisbrei (Pap) mit Fleisch-Eintopf (oft Rind oder Huhn) - ein südafrikanisches Grundnahrungsmittel.",
         "wine_name": "Pinotage Rosé",
         "wine_type": "rose",
         "wine_description": "Ein frischer Pinotage Rosé mit seinen roten Beerennoten und der lebendigen Säure ist ein vielseitiger Partner für dieses herzhafte Alltagsgericht."
@@ -98,7 +98,7 @@ SOUTH_AFRICA_DISHES = [
     {
         "dish": "Chakalaka (Scharfer Gemüsesalat)",
         "region": "Johannesburg",
-        "dish_description": "Gemüse (Tomaten, Karotten, Zwiebeln) mit Chili und Gewürzen – oft als Beilage zu Braai.",
+        "dish_description": "Gemüse (Tomaten, Karotten, Zwiebeln) mit Chili und Gewürzen - oft als Beilage zu Braai.",
         "wine_name": "Sauvignon Blanc (Constantia)",
         "wine_type": "weiss",
         "wine_description": "Der knackige Sauvignon Blanc aus Constantia mit seinen grasigen Noten und der lebendigen Säure ist ein erfrischender Kontrast zum feurigen Chakalaka."
@@ -106,7 +106,7 @@ SOUTH_AFRICA_DISHES = [
     {
         "dish": "Bunny Chow (Brot mit Curry)",
         "region": "Durban",
-        "dish_description": "Hohles Brot mit Curry (Huhn, Lamm, Kichererbsen) gefüllt – der legendäre Street Food-Klassiker aus Durban.",
+        "dish_description": "Hohles Brot mit Curry (Huhn, Lamm, Kichererbsen) gefüllt - der legendäre Street Food-Klassiker aus Durban.",
         "wine_name": "Viognier",
         "wine_type": "weiss",
         "wine_description": "Der opulente Viognier mit seinen Aprikosen- und Blütennoten ist ein mutiger Partner für das würzige Bunny Chow. Die Frucht des Weins zähmt die Schärfe des Currys."
@@ -114,7 +114,7 @@ SOUTH_AFRICA_DISHES = [
     {
         "dish": "Cape Malay Curry",
         "region": "Kapstadt",
-        "dish_description": "Süßer, würziger Curry mit Huhn, Lamm oder Gemüse, oft mit Reis – ein Erbe der kapmalaiischen Küche.",
+        "dish_description": "Süßer, würziger Curry mit Huhn, Lamm oder Gemüse, oft mit Reis - ein Erbe der kapmalaiischen Küche.",
         "wine_name": "Riesling (Elgin)",
         "wine_type": "weiss",
         "wine_description": "Ein eleganter Riesling aus dem kühlen Elgin mit seiner feinen Restsüße und lebendigen Säure ist der perfekte Partner für den süß-scharfen Cape Malay Curry."
@@ -122,7 +122,7 @@ SOUTH_AFRICA_DISHES = [
     {
         "dish": "Umngqusho (Mais-Bohnen-Eintopf)",
         "region": "Ostkap",
-        "dish_description": "Mais und Bohnen langsam gekocht, oft mit Speck oder Fleisch – ein traditionelles Xhosa-Gericht.",
+        "dish_description": "Mais und Bohnen langsam gekocht, oft mit Speck oder Fleisch - ein traditionelles Xhosa-Gericht.",
         "wine_name": "Cinsault",
         "wine_type": "rot",
         "wine_description": "Der leichte, fruchtige Cinsault mit seinen Erdbeernoten ist ein zugänglicher Partner für diesen erdigen Eintopf. Ein unterschätzter Wein für ein unterschätztes Gericht."
@@ -130,7 +130,7 @@ SOUTH_AFRICA_DISHES = [
     {
         "dish": "Samosas (Gefüllte Teigtaschen)",
         "region": "Durban",
-        "dish_description": "Frittierte Teigtaschen mit Fleisch, Gemüse oder Kichererbsen – indisch beeinflusst.",
+        "dish_description": "Frittierte Teigtaschen mit Fleisch, Gemüse oder Kichererbsen - indisch beeinflusst.",
         "wine_name": "Méthode Cap Classique Brut",
         "wine_type": "schaumwein",
         "wine_description": "Der elegante südafrikanische Schaumwein mit seinen feinen Perlen ist der ideale Aperitif-Partner für knusprige Samosas. Festlich und erfrischend."
@@ -146,7 +146,7 @@ SOUTH_AFRICA_DISHES = [
     {
         "dish": "Seafood Potjie (Meeresfrüchte-Eintopf)",
         "region": "Küstenregionen",
-        "dish_description": "Fisch, Garnelen, Muscheln in Eintopf mit Gemüse und Gewürzen – die Küstenversion des Potjiekos.",
+        "dish_description": "Fisch, Garnelen, Muscheln in Eintopf mit Gemüse und Gewürzen - die Küstenversion des Potjiekos.",
         "wine_name": "Chardonnay (Walker Bay)",
         "wine_type": "weiss",
         "wine_description": "Der elegante Chardonnay aus Walker Bay mit seiner cremigen Textur und mineralischen Tiefe ist der perfekte Partner für den reichhaltigen Seafood Potjie."
@@ -157,7 +157,7 @@ SOUTH_AFRICA_DISHES = [
         "dish_description": "Süßer, klebriger Pudding mit Aprikosenmarmelade, oft mit Vanillesoße serviert.",
         "wine_name": "Vin de Constance",
         "wine_type": "weiss",
-        "wine_description": "Der legendäre Vin de Constance – einst der Lieblingswein von Napoleon – mit seinen Honig- und Aprikosennoten ist ein historisches Pairing für den Malva Pudding."
+        "wine_description": "Der legendäre Vin de Constance - einst der Lieblingswein von Napoleon - mit seinen Honig- und Aprikosennoten ist ein historisches Pairing für den Malva Pudding."
     }
 ]
 
@@ -166,7 +166,7 @@ JAPAN_DISHES = [
     {
         "dish": "Nigiri Sushi (握り寿司)",
         "region": "Tokio",
-        "dish_description": "Reis mit dünn geschnittenem rohem Fisch (z.B. Thunfisch, Lachs) darauf – der Edo-Stil Klassiker.",
+        "dish_description": "Reis mit dünn geschnittenem rohem Fisch (z.B. Thunfisch, Lachs) darauf - der Edo-Stil Klassiker.",
         "wine_name": "Champagner Brut",
         "wine_type": "schaumwein",
         "wine_description": "Der elegante Champagner mit seinen feinen Perlen und der knackigen Säure ist der klassische Luxus-Partner für feinstes Nigiri Sushi. Die Mineralität des Weins spiegelt die Reinheit des Fischs."
@@ -182,7 +182,7 @@ JAPAN_DISHES = [
     {
         "dish": "Sashimi (刺身)",
         "region": "Überall",
-        "dish_description": "Dünn geschnittener roher Fisch (z.B. Thunfisch, Makrele, Aal) ohne Reis – pure Reinheit.",
+        "dish_description": "Dünn geschnittener roher Fisch (z.B. Thunfisch, Makrele, Aal) ohne Reis - pure Reinheit.",
         "wine_name": "Chablis Premier Cru",
         "wine_type": "weiss",
         "wine_description": "Der mineralische Chablis mit seiner stahligen Präzision und den Noten von Austernschalen ist der perfekte Partner für feinstes Sashimi. Reinheit trifft auf Reinheit."
@@ -190,15 +190,15 @@ JAPAN_DISHES = [
     {
         "dish": "Ramen (ラーメン)",
         "region": "Überall",
-        "dish_description": "Nudeln in Brühe (Soja, Miso, Salz, Tonkotsu) mit Fleisch, Ei, Nori – Japans Seelenfutter.",
+        "dish_description": "Nudeln in Brühe (Soja, Miso, Salz, Tonkotsu) mit Fleisch, Ei, Nori - Japans Seelenfutter.",
         "wine_name": "Beaujolais-Villages",
         "wine_type": "rot",
-        "wine_description": "Der frische, fruchtige Beaujolais mit seinen Kirschnoten ist ein überraschend guter Partner für eine dampfende Schüssel Ramen. Leicht gekühlt serviert – perfekt!"
+        "wine_description": "Der frische, fruchtige Beaujolais mit seinen Kirschnoten ist ein überraschend guter Partner für eine dampfende Schüssel Ramen. Leicht gekühlt serviert - perfekt!"
     },
     {
         "dish": "Tonkotsu Ramen (豚骨ラーメン)",
         "region": "Fukuoka",
-        "dish_description": "Reichhaltige Schweineknochen-Brühe, cremig und intensiv – der Stolz von Kyushu.",
+        "dish_description": "Reichhaltige Schweineknochen-Brühe, cremig und intensiv - der Stolz von Kyushu.",
         "wine_name": "Côtes du Rhône Rouge",
         "wine_type": "rot",
         "wine_description": "Der würzige Côtes du Rhône mit seinen erdigen Noten und weichen Tanninen ist mutig genug für die intensive Tonkotsu-Brühe."
@@ -246,7 +246,7 @@ JAPAN_DISHES = [
     {
         "dish": "Okonomiyaki (お好み焼き)",
         "region": "Osaka",
-        "dish_description": "„Wie du willst gebacken" – herzhafter Pfannkuchen mit Gemüse, Fleisch, Meeresfrüchten und spezieller Soße.",
+        "dish_description": ""Wie du willst gebacken" - herzhafter Pfannkuchen mit Gemüse, Fleisch, Meeresfrüchten und spezieller Soße.",
         "wine_name": "Lambrusco",
         "wine_type": "rot",
         "wine_description": "Der leicht perlende, fruchtige Lambrusco ist ein spielerischer Partner für den vielseitigen Okonomiyaki. Die süße Soße und der Wein tanzen zusammen."
@@ -254,7 +254,7 @@ JAPAN_DISHES = [
     {
         "dish": "Katsudon (カツ丼)",
         "region": "Überall",
-        "dish_description": "Reis mit paniertem Schweinefleisch (Tonkatsu) und Ei – Comfort Food pur.",
+        "dish_description": "Reis mit paniertem Schweinefleisch (Tonkatsu) und Ei - Comfort Food pur.",
         "wine_name": "Grauburgunder",
         "wine_type": "weiss",
         "wine_description": "Der vollmundige Grauburgunder mit seinen Birnen- und Nussnoten ist ein hervorragender Partner für das knusprige, reichhaltige Katsudon."
@@ -270,7 +270,7 @@ JAPAN_DISHES = [
     {
         "dish": "Oyakodon (親子丼)",
         "region": "Tokio",
-        "dish_description": "Reis mit Hähnchen und Ei in süß-saurer Soße – „Eltern-Kind-Gericht".",
+        "dish_description": "Reis mit Hähnchen und Ei in süß-saurer Soße - "Eltern-Kind-Gericht".",
         "wine_name": "Vouvray Demi-Sec",
         "wine_type": "weiss",
         "wine_description": "Der halbtrocken Vouvray mit seiner Honignote und lebendigen Säure ist ein eleganter Partner für die süß-herzhafte Kombination von Hähnchen und Ei."
@@ -278,7 +278,7 @@ JAPAN_DISHES = [
     {
         "dish": "Chirashizushi (ちらし寿司)",
         "region": "Osaka",
-        "dish_description": "Reis mit buntem Gemisch aus rohem Fisch, Ei, Gemüse und Soße – festlich und farbenfroh.",
+        "dish_description": "Reis mit buntem Gemisch aus rohem Fisch, Ei, Gemüse und Soße - festlich und farbenfroh.",
         "wine_name": "Rosé Champagner",
         "wine_type": "schaumwein",
         "wine_description": "Der elegante Rosé Champagner mit seinen roten Beerennoten und feinen Perlen ist ein festlicher Partner für das bunte Chirashizushi."

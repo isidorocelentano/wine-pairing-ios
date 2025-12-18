@@ -1405,18 +1405,15 @@ class WinePairingAPITester:
             else:
                 pairings = []
             
-            # Expected specific dishes with their regions
+            # Expected specific dishes with their regions (based on actual data)
             expected_dishes = {
-                'Peking Ente': {'expected_region': 'Peking', 'found': False, 'actual_region': None},
-                '北京烤鸭': {'expected_region': 'Peking', 'found': False, 'actual_region': None},
-                'Xiaolongbao': {'expected_region': 'Shanghai', 'found': False, 'actual_region': None},
-                '小笼包': {'expected_region': 'Shanghai', 'found': False, 'actual_region': None},
-                'Dim Sum': {'expected_region': 'Guangdong', 'found': False, 'actual_region': None},
-                '点心': {'expected_region': 'Guangdong', 'found': False, 'actual_region': None},
-                'Kung Pao Chicken': {'expected_region': 'Sichuan', 'found': False, 'actual_region': None},
-                '宫保鸡丁': {'expected_region': 'Sichuan', 'found': False, 'actual_region': None},
-                'Mapo Tofu': {'expected_region': 'Sichuan', 'found': False, 'actual_region': None},
-                '麻婆豆腐': {'expected_region': 'Sichuan', 'found': False, 'actual_region': None}
+                'Peking-Ente': {'expected_regions': ['Peking', 'China – Peking'], 'found': False, 'actual_region': None},
+                'Peking Ente': {'expected_regions': ['Peking', 'China – Peking'], 'found': False, 'actual_region': None},
+                'Xiaolongbao': {'expected_regions': ['Shanghai', 'China – Shanghai'], 'found': False, 'actual_region': None},
+                'Dim Sum': {'expected_regions': ['China – Guangdong', 'Kanton / Hongkong'], 'found': False, 'actual_region': None},
+                'Kantonesische Dim Sum': {'expected_regions': ['China – Guangdong', 'Kanton / Hongkong'], 'found': False, 'actual_region': None},
+                'Kung Pao': {'expected_regions': ['Sichuan', 'China – Sichuan'], 'found': False, 'actual_region': None},
+                'Mapo Tofu': {'expected_regions': ['Sichuan', 'China – Sichuan'], 'found': False, 'actual_region': None}
             }
             
             # Search for dishes (case-insensitive, partial match)

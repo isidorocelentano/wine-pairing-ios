@@ -206,8 +206,8 @@ class FrenchWineDataTester:
             # Verify wines have Pauillac in region OR appellation
             non_pauillac_wines = []
             for wine in wines:
-                region = wine.get('region', '').lower()
-                appellation = wine.get('appellation', '').lower()
+                region = (wine.get('region') or '').lower()
+                appellation = (wine.get('appellation') or '').lower()
                 if 'pauillac' not in region and 'pauillac' not in appellation:
                     non_pauillac_wines.append(f"{wine.get('name', 'Unknown')} (region: {wine.get('region')}, appellation: {wine.get('appellation')})")
             

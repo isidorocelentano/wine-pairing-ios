@@ -404,7 +404,7 @@ class FrenchWineDataTester:
             # Collect all appellations and check for duplicates (with/without trailing spaces)
             appellations = {}
             for wine in wines:
-                appellation = wine.get('appellation', '').strip()
+                appellation = (wine.get('appellation') or '').strip()
                 if appellation:
                     normalized = appellation.lower().strip()
                     if normalized not in appellations:

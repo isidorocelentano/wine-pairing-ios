@@ -4421,48 +4421,138 @@ async def verify_jwt_token(request: Request) -> dict:
     
     return user
 
+def validate_user_document(user: dict) -> tuple[bool, str]:
+    """
+    Validiert ein User-Dokument auf Vollständigkeit.
+    Returns: (is_valid, error_message)
+    """
+    required_fields = ['user_id', 'email', 'password_hash', 'plan']
+    
+    for field in required_fields:
+        if not user.get(field):
+            return False, f"Feld '{field}' fehlt oder ist leer"
+    
+    # Validate email format
+    if not re.match(r"[^@]+@[^@]+\.[^@]+", user.get('email', '')):
+        return False, "Ungültiges E-Mail-Format"
+    
+    # Validate plan
+    if user.get('plan') not in ['basic', 'pro']:
+        return False, f"Ungültiger Plan: {user.get('plan')}"
+    
+    return True, ""
+
+async def repair_user_if_needed(user: dict) -> dict:
+    """
+    Repariert einen User, falls Felder fehlen.
+    Wird bei Login aufgerufen um alte User zu migrieren.
+    """
+    updates = {}
+    
+    # Fix missing user_id
+    if not user.get('user_id'):
+        updates['user_id'] = f"user_{uuid.uuid4().hex[:12]}"
+    
+    # Fix missing plan
+    if not user.get('plan'):
+        updates['plan'] = 'basic'
+    
+    # Fix missing usage
+    if not user.get('usage'):
+        updates['usage'] = {
+            "pairing_requests_today": 0,
+            "chat_messages_today": 0,
+            "last_usage_date": None
+        }
+    
+    # Apply updates if needed
+    if updates:
+        await db.users.update_one(
+            {"email": user['email']},
+            {"$set": updates}
+        )
+        logger.info(f"🔧 User '{user['email']}' repariert: {list(updates.keys())}")
+        user.update(updates)
+    
+    return user
+
 @api_router.post("/auth/register")
 async def register_user(req: RegisterRequest, response: Response):
-    """Register a new user with email and password"""
-    # Validate email format
-    if not re.match(r"[^@]+@[^@]+\.[^@]+", req.email):
+    """
+    Register a new user with email and password.
+    
+    ROBUSTER ABLAUF FÜR TAUSENDE USER:
+    1. Email-Validierung (Format + Lowercase)
+    2. Passwort-Validierung (min 6 Zeichen)
+    3. Duplikat-Check (Email bereits registriert?)
+    4. User-ID Generierung (eindeutig, kurz, URL-safe)
+    5. Password-Hashing (bcrypt, sicher)
+    6. Vollständiges User-Dokument erstellen
+    7. Validierung des Dokuments vor Insert
+    8. Datenbank-Insert
+    9. JWT Token erstellen
+    10. Session Cookie setzen
+    """
+    # 1. Email-Validierung
+    email = req.email.lower().strip()
+    if not re.match(r"[^@]+@[^@]+\.[^@]+", email):
         raise HTTPException(status_code=400, detail="Ungültige E-Mail-Adresse")
     
-    # Check password strength
+    # 2. Passwort-Validierung
     if len(req.password) < 6:
         raise HTTPException(status_code=400, detail="Passwort muss mindestens 6 Zeichen haben")
     
-    # Check if email exists
-    existing = await db.users.find_one({"email": req.email.lower()})
+    # 3. Duplikat-Check
+    existing = await db.users.find_one({"email": email})
     if existing:
         raise HTTPException(status_code=400, detail="Diese E-Mail ist bereits registriert")
     
-    # Create user
+    # 4. User-ID generieren (eindeutig)
     user_id = f"user_{uuid.uuid4().hex[:12]}"
+    
+    # 5. Password hashen
     hashed_pw = hash_password(req.password)
     
+    # 6. Vollständiges User-Dokument
     new_user = {
         "user_id": user_id,
-        "email": req.email.lower(),
-        "name": req.name,
+        "email": email,
+        "name": req.name.strip() if req.name else email.split('@')[0],
         "password_hash": hashed_pw,
         "picture": None,
         "plan": "basic",
         "subscription_id": None,
         "subscription_status": None,
+        "subscription_end_date": None,
+        "stripe_customer_id": None,
         "usage": {
             "pairing_requests_today": 0,
             "chat_messages_today": 0,
             "last_usage_date": None
         },
-        "created_at": datetime.now(timezone.utc)
+        "created_at": datetime.now(timezone.utc),
+        "last_login": datetime.now(timezone.utc),
+        "login_count": 1
     }
-    await db.users.insert_one(new_user)
     
-    # Create JWT token
-    token = create_jwt_token(user_id, req.email.lower())
+    # 7. Validierung vor Insert
+    is_valid, error = validate_user_document(new_user)
+    if not is_valid:
+        logger.error(f"❌ User-Validierung fehlgeschlagen: {error}")
+        raise HTTPException(status_code=500, detail="Registrierung fehlgeschlagen - bitte erneut versuchen")
     
-    # Set cookie
+    # 8. Datenbank-Insert
+    try:
+        await db.users.insert_one(new_user)
+        logger.info(f"✅ Neuer User registriert: {email} (ID: {user_id})")
+    except Exception as e:
+        logger.error(f"❌ Datenbank-Fehler bei Registrierung: {e}")
+        raise HTTPException(status_code=500, detail="Registrierung fehlgeschlagen - bitte erneut versuchen")
+    
+    # 9. JWT Token erstellen
+    token = create_jwt_token(user_id, email)
+    
+    # 10. Session Cookie setzen
     response.set_cookie(
         key="session_token",
         value=token,
@@ -4473,11 +4563,10 @@ async def register_user(req: RegisterRequest, response: Response):
         max_age=JWT_EXPIRY_DAYS * 24 * 60 * 60
     )
     
-    # Return user (without password)
     return {
         "user_id": user_id,
-        "email": req.email.lower(),
-        "name": req.name,
+        "email": email,
+        "name": new_user["name"],
         "plan": "basic",
         "message": "Registrierung erfolgreich!"
     }

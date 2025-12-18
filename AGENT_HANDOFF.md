@@ -160,6 +160,19 @@ Der Benutzer kommuniziert auf **DEUTSCH**. Alle Antworten auf Deutsch!
 #### 🇦🇺 Australien:
 - LANGHORNE CREEK → Langhorne Creek
 
+#### 🔧 Pydantic-Model Standardisierung:
+- **Migration durchgeführt:**
+  - `grape` → `grape_variety` (4.311 Weine migriert)
+  - `color` → `wine_color` (4.553 Weine migriert)
+- **Alte Felder entfernt** aus der Datenbank
+- **Pydantic-Model vereinfacht** in `/app/backend/server.py`:
+  - `model_validator` hinzugefügt für Rückwärtskompatibilität
+  - Alte Feld-Definitionen entfernt
+- **Ergebnis:** 
+  - `grape_variety`: 6.219 Weine
+  - `wine_color`: 6.461 Weine
+  - Keine alten Felder mehr vorhanden
+
 ### 17.12.2025:
 - Smart Merge: 7,066 Weine importiert (aus Weindatenbank.xlsx)
 - Smart Merge: 313 Rebsorten importiert (aus REBSORTEN_PRODUKTION.csv)

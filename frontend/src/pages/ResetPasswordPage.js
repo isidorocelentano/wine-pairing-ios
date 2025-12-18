@@ -86,7 +86,7 @@ const ResetPasswordPage = () => {
       }
 
       try {
-        const response = await api.get(`/auth/verify-reset-token/${token}`);
+        const response = await API.get(`/auth/verify-reset-token/${token}`);
         setTokenValid(true);
         setMaskedEmail(response.data.email || '');
       } catch (error) {

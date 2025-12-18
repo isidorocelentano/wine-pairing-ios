@@ -58,13 +58,22 @@ const WineDatabasePage = () => {
   const [favorites, setFavorites] = useState(new Set());
   const [wishlist, setWishlist] = useState(new Set());
 
-  // Update search when URL parameter changes
+  // Update filters when URL parameters change
   useEffect(() => {
     const urlSearch = searchParams.get('search');
+    const urlCountry = searchParams.get('country');
+    const urlRegion = searchParams.get('region');
+    
     if (urlSearch && urlSearch !== searchQuery) {
       setSearchQuery(urlSearch);
     }
-  }, [searchParams, searchQuery]);
+    if (urlCountry && urlCountry !== filters.country) {
+      setFilters(prev => ({ ...prev, country: urlCountry }));
+    }
+    if (urlRegion && urlRegion !== filters.region) {
+      setFilters(prev => ({ ...prev, region: urlRegion }));
+    }
+  }, [searchParams]);
 
   // Fetch available filter options
   const fetchFilterOptions = useCallback(async () => {

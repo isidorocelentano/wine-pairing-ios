@@ -140,6 +140,19 @@ Jeder User hat seinen **eigenen privaten Weinkeller**. Vollständige User-Isolat
 **Zugriff:** 🆓 Alle  
 **Anzahl:** 313 Rebsorten
 
+**Update 18.12.2025:**
+- ✅ Alle 313 Rebsorten haben jetzt hochwertige Weinbilder
+- ✅ Alle Rebsorten sind klickbar (Slugs generiert)
+- ✅ Navigation zur Detailseite funktioniert
+
+**Bildverteilung nach Weintyp:**
+| Typ | Anzahl | Bildmotive |
+|-----|--------|------------|
+| 🍷 Rotwein | 128 | Rotweingläser, dunkle Trauben |
+| 🥂 Weißwein | 136 | Weißweingläser, helle Trauben |
+| 🌸 Rosé | 29 | Rosé-Gläser, elegante Settings |
+| 🍾 Schaumwein | 20 | Champagnergläser, Sektflaschen |
+
 **Inhalte pro Rebsorte:**
 - Beschreibung (DE/EN/FR)
 - Farbe, Körper-Typ, Säure, Tannine

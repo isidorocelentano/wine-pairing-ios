@@ -173,6 +173,17 @@ Der Benutzer kommuniziert auf **DEUTSCH**. Alle Antworten auf Deutsch!
   - `wine_color`: 6.461 Weine
   - Keine alten Felder mehr vorhanden
 
+#### 📱 Community Feed - Social Sharing:
+- **Neue Share-Funktion** in `/app/frontend/src/pages/FeedPage.js`:
+  - Facebook Share Button (öffnet Facebook Sharer)
+  - Instagram Share Button (kopiert Text und öffnet Instagram)
+  - Link kopieren Button
+- **Features:**
+  - Share-Dropdown-Menü bei jedem Post
+  - Automatisch formatierter Share-Text mit Wein, Gericht, Bewertung und Hashtags
+  - Mehrsprachig (DE/EN/FR)
+  - Mobile-optimiert (öffnet native Apps auf Mobilgeräten)
+
 ### 17.12.2025:
 - Smart Merge: 7,066 Weine importiert (aus Weindatenbank.xlsx)
 - Smart Merge: 313 Rebsorten importiert (aus REBSORTEN_PRODUKTION.csv)

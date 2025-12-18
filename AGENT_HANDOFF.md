@@ -4,7 +4,7 @@
 
 ---
 
-## 📊 AKTUELLER STAND (17.12.2025)
+## 📊 AKTUELLER STAND (18.12.2025)
 
 ### Datenbank-Statistik:
 | Collection | Anzahl | Beschreibung |

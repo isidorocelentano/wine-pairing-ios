@@ -5055,13 +5055,51 @@ async def startup_seed_data():
     """
     ROBUSTE DATENBANK-INITIALISIERUNG
     Prüft gegen das Backup-Manifest und stellt sicher, dass ALLE Daten korrekt sind.
-    Version 3.1 - Mit automatischer User-Daten-Wiederherstellung
+    Version 3.2 - Mit Datenbank-Indizes für Skalierbarkeit
     """
     global backup_manager
     
     print("\n" + "=" * 60)
     print("🚀 WINE-PAIRING.ONLINE - SERVER STARTUP")
     print("=" * 60)
+    
+    # ===================================================================
+    # DATENBANK-INDIZES FÜR SCHNELLE ABFRAGEN BEI VIELEN USERN
+    # Wird bei jedem Start geprüft (idempotent - erstellt nur wenn nicht existiert)
+    # ===================================================================
+    print("\n📊 ERSTELLE DATENBANK-INDIZES...")
+    try:
+        # Users Collection - kritisch für Login-Performance
+        await db.users.create_index("email", unique=True, background=True)
+        await db.users.create_index("user_id", unique=True, background=True)
+        await db.users.create_index("stripe_customer_id", sparse=True, background=True)
+        
+        # Wines Collection - für Weinkeller-Abfragen
+        await db.wines.create_index("user_id", background=True)
+        await db.wines.create_index([("user_id", 1), ("name", 1)], background=True)
+        
+        # Public Wines - für Wein-Datenbank Filter
+        await db.public_wines.create_index("country", background=True)
+        await db.public_wines.create_index([("country", 1), ("region", 1)], background=True)
+        
+        # Regional Pairings - für Sommelier Kompass
+        await db.regional_pairings.create_index("country", background=True)
+        await db.regional_pairings.create_index([("country", 1), ("region", 1)], background=True)
+        
+        # Grape Varieties - für Rebsorten-Lexikon
+        await db.grape_varieties.create_index("slug", unique=True, sparse=True, background=True)
+        await db.grape_varieties.create_index("name", background=True)
+        
+        # Feed Posts - für Community Feed
+        await db.feed_posts.create_index("user_id", background=True)
+        await db.feed_posts.create_index("created_at", background=True)
+        
+        # Chats - für Chat-History
+        await db.chats.create_index("user_id", background=True)
+        
+        print("   ✅ Alle Indizes erstellt/verifiziert")
+    except Exception as e:
+        print(f"   ⚠️ Index-Erstellung: {e}")
     
     # ===================================================================
     # KRITISCH: User-Daten aus Backup wiederherstellen wenn DB leer ist!

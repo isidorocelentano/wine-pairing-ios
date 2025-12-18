@@ -1389,7 +1389,13 @@ class WinePairingAPITester:
         """Test specific Chinese dishes are present with correct regions"""
         success, response = self.make_request('GET', 'regional-pairings?country=China', expected_status=200)
         if success:
-            pairings = response if isinstance(response, list) else []
+            # Handle both array response and object with pairings array
+            if isinstance(response, dict) and 'pairings' in response:
+                pairings = response['pairings']
+            elif isinstance(response, list):
+                pairings = response
+            else:
+                pairings = []
             
             # Expected specific dishes with their regions
             expected_dishes = {

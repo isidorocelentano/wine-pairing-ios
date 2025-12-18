@@ -657,25 +657,36 @@ class RegionalPairing(BaseModel):
 class GrapeVariety(BaseModel):
     model_config = ConfigDict(extra="ignore")
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
-    slug: str
+    slug: Optional[str] = None  # Made optional for backward compatibility
     name: str
-    type: str  # rot, weiss
+    type: Optional[str] = None  # rot, weiss - made optional
     
-    # Poetic descriptions (multilingual)
-    description: str
+    # Multilingual names (from import)
+    name_de: Optional[str] = None
+    name_en: Optional[str] = None
+    name_fr: Optional[str] = None
+    
+    # Poetic descriptions (multilingual) - made optional
+    description: Optional[str] = None
+    description_de: Optional[str] = None
     description_en: Optional[str] = None
     description_fr: Optional[str] = None
     
-    # Characteristics
-    synonyms: List[str] = []
-    body: str  # leicht, mittel, vollmundig
-    acidity: str  # niedrig, mittel, hoch
-    tannin: str  # niedrig, mittel, hoch
-    aging: str  # Holz, Edelstahl, etc.
+    # Characteristics - all made optional for backward compatibility
+    color: Optional[str] = None  # From imported data
+    synonyms: Union[List[str], str] = []  # Accept both string and list
+    body: Optional[str] = None  # leicht, mittel, vollmundig
+    body_type: Optional[str] = None  # From imported data
+    acidity: Optional[str] = None  # niedrig, mittel, hoch
+    acidity_level: Optional[str] = None  # From imported data
+    tannin: Optional[str] = None  # niedrig, mittel, hoch
+    tannin_level: Optional[str] = None  # From imported data
+    aging: Optional[str] = None  # Holz, Edelstahl, etc.
+    aging_style: Optional[str] = None  # From imported data
     
-    # Aromas
-    primary_aromas: List[str] = []
-    tertiary_aromas: List[str] = []
+    # Aromas - accept both string and list
+    primary_aromas: Union[List[str], str] = []
+    tertiary_aromas: Union[List[str], str] = []
     
     # Food pairings
     perfect_pairings: List[str] = []
@@ -684,11 +695,67 @@ class GrapeVariety(BaseModel):
     
     # Regions
     main_regions: List[str] = []
+    region: Optional[str] = None  # From imported data
     
     # Image
     image_url: Optional[str] = None
     
+    # Metadata
+    category: Optional[str] = None
+    source: Optional[str] = None
+    imported_at: Optional[datetime] = None
+    
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    
+    @model_validator(mode='before')
+    @classmethod
+    def map_legacy_fields(cls, data):
+        """Map legacy field names to new ones and handle string/list conversions"""
+        if isinstance(data, dict):
+            # Map slug from name if missing
+            if not data.get('slug') and data.get('name'):
+                data['slug'] = data['name'].lower().replace(' ', '-').replace('ü', 'ue').replace('ö', 'oe').replace('ä', 'ae').replace('ß', 'ss')
+            
+            # Map type from color
+            if not data.get('type') and data.get('color'):
+                color = data['color'].lower()
+                if 'rot' in color or 'red' in color:
+                    data['type'] = 'rot'
+                elif 'weiß' in color or 'weiss' in color or 'white' in color:
+                    data['type'] = 'weiss'
+                else:
+                    data['type'] = color
+            
+            # Map description from description_de
+            if not data.get('description') and data.get('description_de'):
+                data['description'] = data['description_de']
+            
+            # Map body from body_type
+            if not data.get('body') and data.get('body_type'):
+                data['body'] = data['body_type']
+            
+            # Map acidity from acidity_level
+            if not data.get('acidity') and data.get('acidity_level'):
+                data['acidity'] = data['acidity_level']
+            
+            # Map tannin from tannin_level
+            if not data.get('tannin') and data.get('tannin_level'):
+                data['tannin'] = data['tannin_level']
+            
+            # Map aging from aging_style
+            if not data.get('aging') and data.get('aging_style'):
+                data['aging'] = data['aging_style']
+            
+            # Convert string aromas to list
+            for field in ['primary_aromas', 'tertiary_aromas', 'synonyms']:
+                if isinstance(data.get(field), str):
+                    val = data[field]
+                    if val:
+                        data[field] = [x.strip() for x in val.split(',') if x.strip()]
+                    else:
+                        data[field] = []
+        
+        return data
 
 
 # ===================== DISH MODELS =====================

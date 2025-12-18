@@ -14,6 +14,7 @@ import { API_URL as BACKEND_URL, API } from '@/config/api';
 
 const SommelierKompassPage = () => {
   const { t, language } = useLanguage();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [countries, setCountries] = useState([]);
   const [regions, setRegions] = useState([]);
   const [pairings, setPairings] = useState([]);
@@ -25,10 +26,13 @@ const SommelierKompassPage = () => {
   const [hasMore, setHasMore] = useState(false);
   const ITEMS_PER_PAGE = 50;
   
-  // Filters
-  const [selectedCountry, setSelectedCountry] = useState('');
-  const [selectedRegion, setSelectedRegion] = useState('');
-  const [searchQuery, setSearchQuery] = useState('');
+  // Filters - initialize from URL params
+  const [selectedCountry, setSelectedCountry] = useState(searchParams.get('country') || '');
+  const [selectedRegion, setSelectedRegion] = useState(searchParams.get('region') || '');
+  const [searchQuery, setSearchQuery] = useState(searchParams.get('search') || '');
+  
+  // Track if initial URL params have been applied
+  const [initialParamsApplied, setInitialParamsApplied] = useState(false);
   
   // Country data (intro & image)
   const [countryData, setCountryData] = useState(null);

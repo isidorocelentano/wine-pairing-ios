@@ -195,7 +195,7 @@ class FrenchWineDataTester:
 
     def test_french_appellation_pauillac(self):
         """Test French Appellation Filter - Pauillac (region OR appellation match)"""
-        success, response = self.make_request('GET', 'public-wines?region=Pauillac', expected_status=200)
+        success, response = self.make_request('GET', 'public-wines?region=Pauillac&limit=2000', expected_status=200)
         if success:
             wines = response if isinstance(response, list) else []
             

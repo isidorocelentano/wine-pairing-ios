@@ -332,7 +332,7 @@ class FrenchWineDataTester:
             # Check for wines with empty or missing regions
             wines_without_region = []
             for wine in wines:
-                region = wine.get('region', '').strip()
+                region = (wine.get('region') or '').strip()
                 if not region or region.lower() in ['', 'null', 'none', 'unknown']:
                     wines_without_region.append(f"{wine.get('name', 'Unknown')} (region: '{region}')")
             

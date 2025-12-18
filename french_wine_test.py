@@ -256,7 +256,7 @@ class FrenchWineDataTester:
 
     def test_french_appellation_chateauneuf_du_pape(self):
         """Test French Appellation Filter - Châteauneuf-du-Pape"""
-        success, response = self.make_request('GET', 'public-wines?region=Châteauneuf-du-Pape', expected_status=200)
+        success, response = self.make_request('GET', 'public-wines?region=Châteauneuf-du-Pape&limit=2000', expected_status=200)
         if success:
             wines = response if isinstance(response, list) else []
             

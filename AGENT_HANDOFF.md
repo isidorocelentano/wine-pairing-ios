@@ -120,6 +120,15 @@ Der Benutzer kommuniziert auf **DEUTSCH**. Alle Antworten auf Deutsch!
 
 ## 📈 LETZTE ÄNDERUNGEN
 
+### 18.12.2025 (China & Griechenland Sommelier Kompass Import):
+
+#### 🇬🇷 Griechenland Sommelier Kompass:
+- **46 griechische Gerichte** mit vollständigen Weinempfehlungen importiert
+- Regionen: Überall (Klassiker), Peloponnes, Attika, Kreta, Nordgriechenland, Santorin, Küstenregionen
+- Griechische Weine: Xinomavro, Assyrtiko, Agiorgitiko, Moschofilero, Malagousia, etc.
+- **Total Griechenland Gerichte jetzt: 51**
+- Skript: `/app/backend/scripts/import_greece_complete.py`
+
 ### 18.12.2025 (China Sommelier Kompass Import):
 
 #### 🇨🇳 China Sommelier Kompass:

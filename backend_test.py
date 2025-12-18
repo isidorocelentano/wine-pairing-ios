@@ -2507,6 +2507,28 @@ class WinePairingAPITester:
         
         return self.tests_passed == self.tests_run
 
+    def run_chinese_kompass_tests_only(self):
+        """Run only Chinese Sommelier Kompass tests"""
+        print("🥢 Testing Chinese Sommelier Kompass Data Import")
+        print("=" * 50)
+        
+        # Chinese Sommelier Kompass Data Tests
+        self.test_chinese_regional_pairings_total_count()
+        self.test_chinese_regional_distribution()
+        self.test_chinese_specific_dishes()
+        self.test_chinese_wine_pairings_completeness()
+        self.test_chinese_wine_types_variety()
+        
+        # Print results
+        print("\n" + "=" * 50)
+        print(f"🥢 Chinese Sommelier Kompass Test Results")
+        print(f"Tests Run: {self.tests_run}")
+        print(f"Tests Passed: {self.tests_passed}")
+        print(f"Tests Failed: {self.tests_run - self.tests_passed}")
+        print(f"Success Rate: {(self.tests_passed/self.tests_run)*100:.1f}%")
+        
+        return self.tests_passed == self.tests_run
+
     # ===================== FINAL DEPLOYMENT TEST v4 CRITICAL ENDPOINTS =====================
     
     def test_final_deployment_v4_core_health(self):

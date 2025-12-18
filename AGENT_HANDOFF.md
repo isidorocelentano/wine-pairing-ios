@@ -120,6 +120,16 @@ Der Benutzer kommuniziert auf **DEUTSCH**. Alle Antworten auf Deutsch!
 
 ## 📈 LETZTE ÄNDERUNGEN
 
+### 18.12.2025:
+- **🇫🇷 Französische Weindaten bereinigt:**
+  - 1.861 französische Weine standardisiert
+  - Alle Weine haben jetzt korrekte Region (0 ohne Region)
+  - Appellation-Namen normalisiert (Duplikate, Akzente korrigiert)
+  - Saint-Émilion, Châteauneuf-du-Pape, Médoc Varianten vereinheitlicht
+  - Champagner-Häuser (Dom Pérignon, Krug, etc.) korrekt zugeordnet
+  - Unique Appellationen: von 156 auf 122 reduziert (bereinigt)
+  - Script erstellt: `/app/backend/scripts/cleanup_french_wines.py`
+
 ### 17.12.2025:
 - Smart Merge: 7,066 Weine importiert (aus Weindatenbank.xlsx)
 - Smart Merge: 313 Rebsorten importiert (aus REBSORTEN_PRODUKTION.csv)
@@ -142,4 +152,4 @@ Der Benutzer kommuniziert auf **DEUTSCH**. Alle Antworten auf Deutsch!
 
 ---
 
-*Letzte Aktualisierung: 18.12.2025 05:26 UTC*
+*Letzte Aktualisierung: 18.12.2025 06:00 UTC*

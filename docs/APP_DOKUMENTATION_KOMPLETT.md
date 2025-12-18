@@ -204,13 +204,34 @@ Jeder User hat seinen **eigenen privaten Weinkeller**. Vollständige User-Isolat
 ### 7. SOMMELIER KOMPASS
 **Route:** `/sommelier-kompass`  
 **Zugriff:** 🆓 Alle  
-**Anzahl:** 1,652 regionale Gerichte
+**Anzahl:** 1,895 regionale Gerichte (16 Länder)
+
+**Länder-Übersicht:**
+| Land | Gerichte |
+|------|----------|
+| 🇮🇹 Italien | 379 |
+| 🇵🇹 Portugal | 281 |
+| 🇫🇷 Frankreich | 242 |
+| 🇩🇪 Deutschland | 234 |
+| 🇪🇸 Spanien | 225 |
+| 🇨🇭 Schweiz | 139 |
+| 🇦🇹 Österreich | 113 |
+| 🇨🇳 China | 88 |
+| 🇬🇷 Griechenland | 51 |
+| 🇺🇸 USA | 45 |
+| 🇹🇭 Thailand | 22 |
+| 🇯🇵 Japan | 20 |
+| 🇦🇷 Argentinien | 20 |
+| 🌍 International | 17 |
+| 🇿🇦 Südafrika | 15 |
+| 🇹🇷 Türkei | 4 |
 
 **Features:**
 - Filter nach Land & Region
 - Volltextsuche
 - "Load More" Pagination
 - Weinempfehlungen pro Gericht
+- **URL-Parameter:** z.B. `/sommelier-kompass?country=China` (NEU)
 
 ---
 

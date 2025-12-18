@@ -130,20 +130,28 @@ Jeder User hat seinen **eigenen privaten Weinkeller**. Vollständige User-Isolat
 ### 6. WEIN-DATENBANK
 **Route:** `/wine-database`  
 **Zugriff:** 🆓 Alle  
-**Anzahl:** 7,066 Weine (wächst dynamisch!)
+**Anzahl:** 7,084 Weine (wächst dynamisch!)
 
-**Länder:**
-- Frankreich: 2,326
-- Italien: 1,850
-- Spanien: 1,252
-- Österreich: 805
-- Schweiz: 294
-- Weitere...
+**Länder (bereinigt am 18.12.2025):**
+| Land | Weine | Regionen | Appellationen |
+|------|-------|----------|---------------|
+| 🇫🇷 Frankreich | 1,861 | 10 | 107 |
+| 🇮🇹 Italien | 1,551 | 17 | 70 |
+| 🇪🇸 Spanien | 1,209 | 24 | 34 |
+| 🇨🇭 Schweiz | 751 | 144 | 24 |
+| 🇩🇪 Deutschland | 678 | 14 | 16 |
+| 🇦🇹 Österreich | 678 | 17 | 32 |
+| Weitere | ~356 | - | - |
 
-**Filter:**
-- Land, Region, Appellation
-- Rebsorte, Weinfarbe
-- Preiskategorie
+**Filter-System (verbessert):**
+- **Land**: Alle verfügbaren Weinländer
+- **Region**: Nur echte Regionen (sauber getrennt von Appellationen)
+- **Appellation**: Aktualisiert sich basierend auf Region-Auswahl
+- **Rebsorte, Weinfarbe, Preiskategorie**
+
+**Beispiel Frankreich:**
+- Region "Bordeaux" → zeigt 33 Appellationen (Pauillac, Saint-Émilion, Margaux, etc.)
+- Region "Piemont" (Italien) → zeigt 24 Appellationen (Barolo, Barbaresco, etc.)
 
 **Aktionen:**
 - Zu Favoriten hinzufügen

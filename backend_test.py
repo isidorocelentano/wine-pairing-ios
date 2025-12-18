@@ -1283,7 +1283,13 @@ class WinePairingAPITester:
         """Test GET /api/regional-pairings?country=China - should return ~88 Chinese dishes"""
         success, response = self.make_request('GET', 'regional-pairings?country=China', expected_status=200)
         if success:
-            pairings = response if isinstance(response, list) else []
+            # Handle both array response and object with pairings array
+            if isinstance(response, dict) and 'pairings' in response:
+                pairings = response['pairings']
+            elif isinstance(response, list):
+                pairings = response
+            else:
+                pairings = []
             
             # Check total count (should be approximately 88)
             total_count = len(pairings)

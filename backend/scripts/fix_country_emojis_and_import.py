@@ -246,7 +246,7 @@ JAPAN_DISHES = [
     {
         "dish": "Okonomiyaki (お好み焼き)",
         "region": "Osaka",
-        "dish_description": ""Wie du willst gebacken" - herzhafter Pfannkuchen mit Gemüse, Fleisch, Meeresfrüchten und spezieller Soße.",
+        "dish_description": "Wie du willst gebacken - herzhafter Pfannkuchen mit Gemüse, Fleisch, Meeresfruechten und spezieller Sosse.",
         "wine_name": "Lambrusco",
         "wine_type": "rot",
         "wine_description": "Der leicht perlende, fruchtige Lambrusco ist ein spielerischer Partner für den vielseitigen Okonomiyaki. Die süße Soße und der Wein tanzen zusammen."

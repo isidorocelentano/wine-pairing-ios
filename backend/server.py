@@ -2169,35 +2169,33 @@ async def get_regional_pairings(
 
 @api_router.get("/regional-pairings/countries")
 async def get_countries():
-    """Get list of all countries with pairing counts"""
+    """Get list of all countries with pairing counts - grouped only by country name"""
     pipeline = [
         {
             "$group": {
-                "_id": {
-                    "country": "$country",
-                    "country_en": "$country_en",
-                    "country_fr": "$country_fr",
-                    "country_emoji": "$country_emoji",
-                    "image_url": "$image_url"
-                },
-                "count": {"$sum": 1}
+                "_id": "$country",
+                "count": {"$sum": 1},
+                "country_emoji": {"$first": "$country_emoji"},
+                "country_en": {"$first": "$country_en"},
+                "country_fr": {"$first": "$country_fr"},
+                "image_url": {"$first": "$image_url"}
             }
         },
         {
             "$project": {
                 "_id": 0,
-                "country": "$_id.country",
-                "country_en": "$_id.country_en",
-                "country_fr": "$_id.country_fr",
-                "country_emoji": "$_id.country_emoji",
-                "image_url": "$_id.image_url",
+                "country": "$_id",
+                "country_en": 1,
+                "country_fr": 1,
+                "country_emoji": 1,
+                "image_url": 1,
                 "count": 1
             }
         },
         {"$sort": {"count": -1}}
     ]
     
-    countries = await db.regional_pairings.aggregate(pipeline).to_list(20)
+    countries = await db.regional_pairings.aggregate(pipeline).to_list(30)
     return countries
 
 

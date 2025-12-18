@@ -140,9 +140,9 @@ class FrenchWineDataTester:
             # Verify wines are from Champagne region
             non_champagne_wines = []
             for wine in wines:
-                region = wine.get('region', '').lower()
-                appellation = wine.get('appellation', '').lower()
-                wine_name = wine.get('name', '').lower()
+                region = (wine.get('region') or '').lower()
+                appellation = (wine.get('appellation') or '').lower()
+                wine_name = (wine.get('name') or '').lower()
                 if 'champagne' not in region and 'champagne' not in appellation and 'champagne' not in wine_name:
                     non_champagne_wines.append(f"{wine.get('name', 'Unknown')} (region: {wine.get('region')})")
             

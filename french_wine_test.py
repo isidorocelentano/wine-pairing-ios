@@ -366,9 +366,9 @@ class FrenchWineDataTester:
             
             found_corrections = {}
             for wine in wines:
-                appellation = wine.get('appellation', '').strip()
-                region = wine.get('region', '').strip()
-                wine_name = wine.get('name', '').strip()
+                appellation = (wine.get('appellation') or '').strip()
+                region = (wine.get('region') or '').strip()
+                wine_name = (wine.get('name') or '').strip()
                 
                 for correct_form, variations in expected_corrections.items():
                     for variation in variations:

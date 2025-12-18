@@ -1422,7 +1422,10 @@ class WinePairingAPITester:
                 region = pairing.get('region', '')
                 
                 for expected_dish, dish_info in expected_dishes.items():
-                    if expected_dish.lower() in dish_name or dish_name in expected_dish.lower():
+                    # More specific matching to avoid false positives
+                    if (expected_dish.lower() == dish_name or 
+                        (len(expected_dish) > 5 and expected_dish.lower() in dish_name and 
+                         abs(len(expected_dish) - len(dish_name)) < 5)):
                         dish_info['found'] = True
                         dish_info['actual_region'] = region
                         break

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 import { Lock, Eye, EyeOff, ArrowLeft, CheckCircle, Loader2, AlertCircle } from 'lucide-react';
-import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
-import { useLanguage } from '../contexts/LanguageContext';
-import api from '../services/api';
-import toast from 'react-hot-toast';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { API } from '@/config/api';
+import { toast } from 'sonner';
 
 const ResetPasswordPage = () => {
   const { language } = useLanguage();

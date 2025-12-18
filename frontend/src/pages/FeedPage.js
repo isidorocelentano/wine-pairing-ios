@@ -245,24 +245,27 @@ const FeedPage = () => {
   };
 
   const handleShareInstagram = (post) => {
-    // Instagram doesn't have a direct share URL, so we copy the text to clipboard
-    // and show instructions
+    // Instagram doesn't support direct share URLs - copy text and show instructions
     const text = getShareText(post);
     navigator.clipboard.writeText(text).then(() => {
       toast.success(
         language === 'de' 
-          ? '📋 Text kopiert! Öffne Instagram und füge den Text in deinen Post ein.' 
+          ? '📋 Text kopiert! Du kannst ihn jetzt in Instagram einfügen.' 
           : language === 'fr'
-          ? '📋 Texte copié! Ouvrez Instagram et collez le texte dans votre publication.'
-          : '📋 Text copied! Open Instagram and paste the text into your post.'
+          ? '📋 Texte copié! Vous pouvez maintenant le coller dans Instagram.'
+          : '📋 Text copied! You can now paste it into Instagram.'
       );
-      // Open Instagram (mobile) or web
-      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-      if (isMobile) {
-        window.open('instagram://app', '_blank');
-      } else {
-        window.open('https://www.instagram.com/', '_blank');
-      }
+      // Open Instagram website in a new tab (safer than app scheme)
+      window.open('https://www.instagram.com/', '_blank', 'noopener,noreferrer');
+    }).catch(() => {
+      // Fallback if clipboard fails
+      toast.info(
+        language === 'de'
+          ? 'Bitte kopiere den Beitrag manuell und teile ihn auf Instagram.'
+          : language === 'fr'
+          ? 'Veuillez copier manuellement le post et le partager sur Instagram.'
+          : 'Please manually copy the post and share it on Instagram.'
+      );
     });
     setShareMenuOpen({});
   };

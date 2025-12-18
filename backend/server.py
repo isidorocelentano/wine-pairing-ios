@@ -4929,6 +4929,11 @@ async def get_coupon_stats():
 # Include the router AFTER middleware
 app.include_router(api_router)
 
+# Mount exports directory for database backups
+exports_path = Path("/app/exports")
+if exports_path.exists():
+    app.mount("/api/exports", StaticFiles(directory=str(exports_path)), name="exports")
+
 @app.on_event("startup")
 async def startup_seed_data():
     """

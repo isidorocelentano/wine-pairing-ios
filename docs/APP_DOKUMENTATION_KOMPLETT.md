@@ -386,7 +386,7 @@ Upgrade auf Pro-Plan via Stripe.
 ## 🚀 TEIL 7: DEPLOYMENT
 
 ### URLs
-- **Preview:** https://dish-wine-match.preview.emergentagent.com
+- **Preview:** https://grape-encyclopedia.preview.emergentagent.com
 - **Produktion:** https://wine-pairing.online
 
 ### Tech-Stack

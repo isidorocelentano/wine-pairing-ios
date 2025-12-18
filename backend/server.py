@@ -3799,7 +3799,7 @@ async def get_public_wines_filters(country: Optional[str] = None, region: Option
     # DON'T add appellations to region dropdown - keep them separate
     # Only add appellations as region options for countries like Italy where 
     # the region field might be empty but appellation contains location info
-    countries_with_clean_regions = {'Frankreich', 'Deutschland', 'Österreich', 'Schweiz', 'Spanien'}
+    countries_with_clean_regions = {'Frankreich', 'Deutschland', 'Österreich', 'Schweiz', 'Spanien', 'Italien'}
     
     if country not in countries_with_clean_regions:
         # Add major appellations as region options (like Barbaresco, Barolo, Chianti)

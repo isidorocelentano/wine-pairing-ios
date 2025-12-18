@@ -75,8 +75,8 @@ class FrenchWineDataTester:
             # Verify wines are actually from Bordeaux region
             non_bordeaux_wines = []
             for wine in wines:
-                region = wine.get('region', '').lower()
-                appellation = wine.get('appellation', '').lower()
+                region = (wine.get('region') or '').lower()
+                appellation = (wine.get('appellation') or '').lower()
                 if 'bordeaux' not in region and 'bordeaux' not in appellation:
                     non_bordeaux_wines.append(f"{wine.get('name', 'Unknown')} (region: {wine.get('region')}, appellation: {wine.get('appellation')})")
             

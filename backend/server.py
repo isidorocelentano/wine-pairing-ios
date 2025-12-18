@@ -3772,7 +3772,8 @@ async def get_public_wines_filters(country: Optional[str] = None, region: Option
         query["country"] = country
     if region and region != 'all':
         # When filtering by simplified region (e.g., "Genf"), match all sub-regions
-        query["region"] = create_accent_insensitive_pattern(f"^{re.escape(region)}")
+        # Use proper $regex operator for MongoDB distinct() query
+        query["region"] = {"$regex": f"^{re.escape(region)}", "$options": "i"}
     
     # Get all distinct values
     countries = await db.public_wines.distinct("country", {})

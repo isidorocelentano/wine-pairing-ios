@@ -3079,10 +3079,14 @@ def main():
             tester = WinePairingAPITester()
             success = tester.run_chinese_kompass_tests_only()
             return 0 if success else 1
+        elif sys.argv[1] == "prio1":
+            tester = WinePairingAPITester()
+            success = tester.run_prio1_fixes_tests()
+            return 0 if success else 1
     
-    # Default: Run FINAL DEPLOYMENT TEST v4 as specified in review request
+    # Default: Run Prio 1 fixes tests as specified in review request
     tester = WinePairingAPITester()
-    success = tester.run_final_deployment_v4_tests()
+    success = tester.run_prio1_fixes_tests()
     return 0 if success else 1
 
 if __name__ == "__main__":

@@ -212,6 +212,72 @@ const FeedPage = () => {
     return labels[type] || type;
   };
 
+  // Share functions
+  const getShareText = (post) => {
+    const text = `🍷 ${post.wine_name} + ${getLocalizedContent(post, 'dish')} - ${post.rating}⭐\n\n${getLocalizedContent(post, 'experience') || ''}\n\n#WinePairing #Wein #Sommelier`;
+    return text;
+  };
+
+  const getShareUrl = (post) => {
+    return `https://wine-pairing.online/feed?post=${post.id}`;
+  };
+
+  const handleShareFacebook = (post) => {
+    const url = encodeURIComponent(getShareUrl(post));
+    const text = encodeURIComponent(getShareText(post));
+    window.open(
+      `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${text}`,
+      '_blank',
+      'width=600,height=400'
+    );
+    setShareMenuOpen({});
+  };
+
+  const handleShareInstagram = (post) => {
+    // Instagram doesn't have a direct share URL, so we copy the text to clipboard
+    // and show instructions
+    const text = getShareText(post);
+    navigator.clipboard.writeText(text).then(() => {
+      toast.success(
+        language === 'de' 
+          ? '📋 Text kopiert! Öffne Instagram und füge den Text in deinen Post ein.' 
+          : language === 'fr'
+          ? '📋 Texte copié! Ouvrez Instagram et collez le texte dans votre publication.'
+          : '📋 Text copied! Open Instagram and paste the text into your post.'
+      );
+      // Open Instagram (mobile) or web
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      if (isMobile) {
+        window.open('instagram://app', '_blank');
+      } else {
+        window.open('https://www.instagram.com/', '_blank');
+      }
+    });
+    setShareMenuOpen({});
+  };
+
+  const handleCopyLink = async (post) => {
+    const url = getShareUrl(post);
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopiedPostId(post.id);
+      toast.success(
+        language === 'de' ? 'Link kopiert!' : language === 'fr' ? 'Lien copié!' : 'Link copied!'
+      );
+      setTimeout(() => setCopiedPostId(null), 2000);
+    } catch (err) {
+      toast.error('Kopieren fehlgeschlagen');
+    }
+    setShareMenuOpen({});
+  };
+
+  const toggleShareMenu = (postId) => {
+    setShareMenuOpen(prev => ({
+      ...prev,
+      [postId]: !prev[postId]
+    }));
+  };
+
   const getWineTypeBadgeClass = (type) => {
     const classes = { rot: 'badge-rot', weiss: 'badge-weiss', rose: 'badge-rose', schaumwein: 'badge-schaumwein' };
     return classes[type] || 'bg-secondary';

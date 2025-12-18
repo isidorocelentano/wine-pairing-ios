@@ -11,7 +11,7 @@ from datetime import datetime
 from typing import Dict, Any, Optional
 
 class MultiUserCellarTester:
-    def __init__(self, base_url="https://wine-data-rescue.preview.emergentagent.com"):
+    def __init__(self, base_url="https://dish-wine-match.preview.emergentagent.com"):
         self.base_url = base_url
         self.api_url = f"{base_url}/api"
         self.tests_run = 0

@@ -3866,7 +3866,7 @@ if cors_origins_env == '*':
     allowed_origins = [
         "http://localhost:3000",
         "https://localhost:3000",
-        "https://wine-data-rescue.preview.emergentagent.com",
+        "https://dish-wine-match.preview.emergentagent.com",
         "https://wine-pairing.online",
         "https://www.wine-pairing.online"
     ]

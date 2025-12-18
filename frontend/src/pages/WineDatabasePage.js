@@ -20,8 +20,10 @@ const WineDatabasePage = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   
-  // Get initial search from URL
+  // Get initial values from URL
   const initialSearch = searchParams.get('search') || '';
+  const initialCountry = searchParams.get('country') || 'all';
+  const initialRegion = searchParams.get('region') || 'all';
   
   // Helper function to get description in current language
   const getDescription = (wine) => {

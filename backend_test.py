@@ -2891,6 +2891,179 @@ class WinePairingAPITester:
         
         return self.tests_passed == self.tests_run
 
+    # ===================== PRIO 1 FIXES TESTING (2025-12-18) =====================
+    
+    def test_dach_wine_filter_cleanup_germany(self):
+        """Test D/A/CH Wine Filter Data Cleanup - Germany should have exactly 10 clean regions"""
+        success, response = self.make_request('GET', 'public-wines-filters?country=Deutschland', expected_status=200)
+        if success:
+            regions = response.get('regions', [])
+            
+            # Should have exactly 10 clean regions
+            if len(regions) != 10:
+                self.log_test("DACH Filter Cleanup - Germany Regions", False, 
+                             f"Expected exactly 10 clean regions, got {len(regions)}: {regions}")
+                return False
+            
+            # Check for expected major regions
+            major_regions = ['Ahr', 'Baden', 'Franken', 'Mosel', 'Nahe', 'Pfalz', 'Rheingau']
+            found_major = [region for region in major_regions if region in regions]
+            if len(found_major) < 5:
+                self.log_test("DACH Filter Cleanup - Germany Regions", False, 
+                             f"Missing major German regions. Found: {found_major}")
+                return False
+            
+            # Check appellations don't contain invalid entries
+            appellations = response.get('appellations', [])
+            invalid_appellations = ['Kabinett', 'Spätlese', 'Auslese', 'Beerenauslese']
+            found_invalid = [app for app in invalid_appellations if app in appellations]
+            if found_invalid:
+                self.log_test("DACH Filter Cleanup - Germany Appellations", False, 
+                             f"Found invalid appellations: {found_invalid}")
+                return False
+            
+            self.log_test("DACH Filter Cleanup - Germany", True, 
+                         f"Germany has {len(regions)} clean regions and {len(appellations)} valid appellations")
+        else:
+            self.log_test("DACH Filter Cleanup - Germany", False, str(response))
+        return success
+
+    def test_dach_wine_filter_cleanup_austria(self):
+        """Test D/A/CH Wine Filter Data Cleanup - Austria should have 16 clean regions"""
+        success, response = self.make_request('GET', 'public-wines-filters?country=Österreich', expected_status=200)
+        if success:
+            regions = response.get('regions', [])
+            
+            # Should have exactly 16 clean regions
+            if len(regions) != 16:
+                self.log_test("DACH Filter Cleanup - Austria Regions", False, 
+                             f"Expected exactly 16 clean regions, got {len(regions)}: {regions}")
+                return False
+            
+            # Check that "Österreichischer Sekt" is not in regions
+            if "Österreichischer Sekt" in regions:
+                self.log_test("DACH Filter Cleanup - Austria Regions", False, 
+                             f"Found invalid region 'Österreichischer Sekt' in regions")
+                return False
+            
+            # Check appellations don't contain invalid entries
+            appellations = response.get('appellations', [])
+            invalid_appellations = ['Kabinett', 'Spätlese', 'Auslese', 'Beerenauslese', 'Punkte-Bewertungen']
+            found_invalid = [app for app in invalid_appellations if app in appellations]
+            if found_invalid:
+                self.log_test("DACH Filter Cleanup - Austria Appellations", False, 
+                             f"Found invalid appellations: {found_invalid}")
+                return False
+            
+            self.log_test("DACH Filter Cleanup - Austria", True, 
+                         f"Austria has {len(regions)} clean regions and {len(appellations)} valid appellations")
+        else:
+            self.log_test("DACH Filter Cleanup - Austria", False, str(response))
+        return success
+
+    def test_dach_wine_filter_cleanup_switzerland(self):
+        """Test D/A/CH Wine Filter Data Cleanup - Switzerland should have 13 clean regions"""
+        success, response = self.make_request('GET', 'public-wines-filters?country=Schweiz', expected_status=200)
+        if success:
+            regions = response.get('regions', [])
+            
+            # Should have exactly 13 clean regions
+            if len(regions) != 13:
+                self.log_test("DACH Filter Cleanup - Switzerland Regions", False, 
+                             f"Expected exactly 13 clean regions, got {len(regions)}: {regions}")
+                return False
+            
+            # Check that sub-regions like "Wallis - Sion" are not present
+            sub_regions = [region for region in regions if " - " in region]
+            if sub_regions:
+                self.log_test("DACH Filter Cleanup - Switzerland Regions", False, 
+                             f"Found sub-regions that should be cleaned: {sub_regions}")
+                return False
+            
+            # Check appellations don't contain invalid entries
+            appellations = response.get('appellations', [])
+            invalid_appellations = ['Kabinett', 'Spätlese', 'Auslese', 'Beerenauslese']
+            found_invalid = [app for app in invalid_appellations if app in appellations]
+            if found_invalid:
+                self.log_test("DACH Filter Cleanup - Switzerland Appellations", False, 
+                             f"Found invalid appellations: {found_invalid}")
+                return False
+            
+            self.log_test("DACH Filter Cleanup - Switzerland", True, 
+                         f"Switzerland has {len(regions)} clean regions and {len(appellations)} valid appellations")
+        else:
+            self.log_test("DACH Filter Cleanup - Switzerland", False, str(response))
+        return success
+
+    def test_sommelier_kompass_country_counts(self):
+        """Test Sommelier Kompass Country Count Verification"""
+        success, response = self.make_request('GET', 'regional-pairings/countries', expected_status=200)
+        if success:
+            countries = response if isinstance(response, list) else []
+            
+            # Expected counts based on the review request
+            expected_counts = {
+                'Italien': 379,
+                'Portugal': 281,
+                'China': 88
+            }
+            
+            # Check each expected country
+            for country_data in countries:
+                if isinstance(country_data, dict):
+                    country_name = country_data.get('country')
+                    dish_count = country_data.get('dish_count', 0)
+                    
+                    if country_name in expected_counts:
+                        expected = expected_counts[country_name]
+                        if dish_count != expected:
+                            self.log_test("Sommelier Kompass Country Counts", False, 
+                                         f"{country_name}: expected {expected} dishes, got {dish_count}")
+                            return False
+            
+            # Verify we found all expected countries
+            found_countries = [c.get('country') for c in countries if isinstance(c, dict)]
+            missing_countries = [country for country in expected_counts.keys() if country not in found_countries]
+            if missing_countries:
+                self.log_test("Sommelier Kompass Country Counts", False, 
+                             f"Missing expected countries: {missing_countries}")
+                return False
+            
+            self.log_test("Sommelier Kompass Country Counts", True, 
+                         f"All country counts verified: {expected_counts}")
+        else:
+            self.log_test("Sommelier Kompass Country Counts", False, str(response))
+        return success
+
+    def run_prio1_fixes_tests(self):
+        """Run Prio 1 fixes tests specifically"""
+        print("🔧 Starting Prio 1 Fixes Tests (2025-12-18)")
+        print("=" * 50)
+        
+        # D/A/CH Wine Filter Data Cleanup Tests
+        self.test_dach_wine_filter_cleanup_germany()
+        self.test_dach_wine_filter_cleanup_austria()
+        self.test_dach_wine_filter_cleanup_switzerland()
+        
+        # Sommelier Kompass Country Count Verification
+        self.test_sommelier_kompass_country_counts()
+        
+        # Print results
+        print("\n" + "=" * 50)
+        print(f"🔧 Prio 1 Fixes Test Results")
+        print(f"Tests Run: {self.tests_run}")
+        print(f"Tests Passed: {self.tests_passed}")
+        print(f"Tests Failed: {self.tests_run - self.tests_passed}")
+        print(f"Success Rate: {(self.tests_passed/self.tests_run)*100:.1f}%")
+        
+        if self.tests_passed == self.tests_run:
+            print("✅ All Prio 1 fixes are working correctly!")
+            return True
+        else:
+            failed = self.tests_run - self.tests_passed
+            print(f"❌ {failed} Prio 1 tests FAILED. Issues need to be addressed.")
+            return False
+
 
 def main():
     """Main test execution"""

@@ -2478,6 +2478,14 @@ class WinePairingAPITester:
         self.test_regional_pairings_italy_no_local_wines()
         self.test_regional_pairings_exotic_discovery_content()
         
+        # Chinese Sommelier Kompass Data Tests (New Import Verification)
+        print("\n🥢 Testing Chinese Sommelier Kompass Data Import...")
+        self.test_chinese_regional_pairings_total_count()
+        self.test_chinese_regional_distribution()
+        self.test_chinese_specific_dishes()
+        self.test_chinese_wine_pairings_completeness()
+        self.test_chinese_wine_types_variety()
+        
         # Backup System Verification Tests (Critical for Data Loss Prevention)
         print("\n💾 Testing Backup System Verification...")
         self.test_backup_status_api()

@@ -97,6 +97,17 @@ const FeedPage = () => {
     fetchStats();
   }, [fetchPosts, fetchStats]);
 
+  // Close share menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (!e.target.closest('[data-testid="share-btn"]') && !e.target.closest('.share-dropdown')) {
+        setShareMenuOpen({});
+      }
+    };
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, []);
+
   const handleImageUpload = (e) => {
     const file = e.target.files?.[0];
     if (file) {

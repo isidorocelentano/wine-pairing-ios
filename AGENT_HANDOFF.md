@@ -184,6 +184,15 @@ Der Benutzer kommuniziert auf **DEUTSCH**. Alle Antworten auf Deutsch!
   - Mehrsprachig (DE/EN/FR)
   - Mobile-optimiert (öffnet native Apps auf Mobilgeräten)
 
+#### 🇺🇸 USA Sommelier Kompass:
+- **45 USA-Gerichte** mit vollständigen Weinempfehlungen hinzugefügt
+- Kategorien: Fast Food, BBQ, Meeresfrüchte, Cajun, Desserts, Regionales
+- **Vollständige Übersetzungen** für alle Weinbeschreibungen:
+  - 🇩🇪 Deutsch (Originaltext)
+  - 🇬🇧 Englisch (wine_description_en)
+  - 🇫🇷 Französisch (wine_description_fr)
+- Jedes Gericht enthält: wine_name, wine_type, wine_description in 3 Sprachen
+
 ### 17.12.2025:
 - Smart Merge: 7,066 Weine importiert (aus Weindatenbank.xlsx)
 - Smart Merge: 313 Rebsorten importiert (aus REBSORTEN_PRODUKTION.csv)

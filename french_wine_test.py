@@ -267,9 +267,9 @@ class FrenchWineDataTester:
             # Verify wines have Châteauneuf-du-Pape in region OR appellation
             non_chateauneuf_wines = []
             for wine in wines:
-                region = wine.get('region', '').lower()
-                appellation = wine.get('appellation', '').lower()
-                wine_name = wine.get('name', '').lower()
+                region = (wine.get('region') or '').lower()
+                appellation = (wine.get('appellation') or '').lower()
+                wine_name = (wine.get('name') or '').lower()
                 if ('châteauneuf-du-pape' not in region and 'chateauneuf-du-pape' not in region and 
                     'châteauneuf-du-pape' not in appellation and 'chateauneuf-du-pape' not in appellation and
                     'châteauneuf-du-pape' not in wine_name and 'chateauneuf-du-pape' not in wine_name):

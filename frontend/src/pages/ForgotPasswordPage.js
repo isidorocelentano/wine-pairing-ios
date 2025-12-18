@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, ArrowLeft, CheckCircle, Loader2 } from 'lucide-react';
-import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
-import { useLanguage } from '../contexts/LanguageContext';
-import api from '../services/api';
-import toast from 'react-hot-toast';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { API } from '@/config/api';
+import { toast } from 'sonner';
 
 const ForgotPasswordPage = () => {
   const { language } = useLanguage();

@@ -4853,6 +4853,151 @@ async def logout(request: Request, response: Response):
     response.delete_cookie("session_token", path="/")
     return {"message": "Logged out"}
 
+# ===================== PASSWORD RESET =====================
+
+class PasswordResetRequest(BaseModel):
+    email: str
+
+class PasswordResetConfirm(BaseModel):
+    token: str
+    new_password: str
+
+@api_router.post("/auth/forgot-password")
+async def forgot_password(req: PasswordResetRequest):
+    """
+    Passwort vergessen - sendet Reset-Email.
+    
+    Flow:
+    1. User gibt Email ein
+    2. System generiert Reset-Token (gültig 1 Stunde)
+    3. Email mit Reset-Link wird gesendet
+    4. User klickt Link und setzt neues Passwort
+    """
+    email = req.email.lower().strip()
+    
+    # Find user
+    user = await db.users.find_one({"email": email})
+    
+    # WICHTIG: Immer gleiche Antwort geben (Security - verhindert Email-Enumeration)
+    success_message = {
+        "message": "Falls ein Account mit dieser E-Mail existiert, wurde ein Reset-Link gesendet.",
+        "message_en": "If an account with this email exists, a reset link has been sent."
+    }
+    
+    if not user:
+        return success_message
+    
+    # Generate secure reset token
+    reset_token = secrets.token_urlsafe(32)
+    reset_expiry = datetime.now(timezone.utc) + timedelta(hours=1)
+    
+    # Store token in database
+    await db.users.update_one(
+        {"email": email},
+        {"$set": {
+            "password_reset_token": reset_token,
+            "password_reset_expiry": reset_expiry
+        }}
+    )
+    
+    # Build reset URL
+    reset_url = f"{FRONTEND_URL}/reset-password?token={reset_token}"
+    
+    # Send email via Resend
+    if RESEND_API_KEY:
+        try:
+            resend.Emails.send({
+                "from": f"Wine Pairing <{SENDER_EMAIL}>",
+                "to": [email],
+                "subject": "🍷 Passwort zurücksetzen - Wine Pairing",
+                "html": f"""
+                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+                    <h1 style="color: #722F37;">🍷 Passwort zurücksetzen</h1>
+                    <p>Hallo,</p>
+                    <p>Sie haben eine Anfrage zum Zurücksetzen Ihres Passworts gestellt.</p>
+                    <p>Klicken Sie auf den folgenden Button, um ein neues Passwort zu setzen:</p>
+                    <p style="margin: 30px 0;">
+                        <a href="{reset_url}" 
+                           style="background-color: #722F37; color: white; padding: 15px 30px; 
+                                  text-decoration: none; border-radius: 5px; font-weight: bold;">
+                            Neues Passwort setzen
+                        </a>
+                    </p>
+                    <p style="color: #666; font-size: 14px;">
+                        Dieser Link ist 1 Stunde gültig.<br>
+                        Falls Sie diese Anfrage nicht gestellt haben, ignorieren Sie diese E-Mail.
+                    </p>
+                    <hr style="border: none; border-top: 1px solid #eee; margin: 30px 0;">
+                    <p style="color: #999; font-size: 12px;">
+                        Wine Pairing - Ihr persönlicher Wein-Sommelier<br>
+                        <a href="https://wine-pairing.online" style="color: #722F37;">wine-pairing.online</a>
+                    </p>
+                </div>
+                """
+            })
+            logger.info(f"✅ Password reset email sent to {email}")
+        except Exception as e:
+            logger.error(f"❌ Failed to send reset email: {e}")
+            # Still return success (don't reveal email exists)
+    
+    return success_message
+
+@api_router.post("/auth/reset-password")
+async def reset_password(req: PasswordResetConfirm):
+    """
+    Setzt das Passwort mit dem Reset-Token zurück.
+    """
+    # Validate password
+    if len(req.new_password) < 6:
+        raise HTTPException(status_code=400, detail="Passwort muss mindestens 6 Zeichen haben")
+    
+    # Find user with valid token
+    user = await db.users.find_one({
+        "password_reset_token": req.token,
+        "password_reset_expiry": {"$gt": datetime.now(timezone.utc)}
+    })
+    
+    if not user:
+        raise HTTPException(
+            status_code=400, 
+            detail="Ungültiger oder abgelaufener Reset-Link. Bitte fordern Sie einen neuen an."
+        )
+    
+    # Hash new password
+    new_hash = hash_password(req.new_password)
+    
+    # Update password and remove reset token
+    await db.users.update_one(
+        {"_id": user["_id"]},
+        {
+            "$set": {"password_hash": new_hash},
+            "$unset": {"password_reset_token": "", "password_reset_expiry": ""}
+        }
+    )
+    
+    logger.info(f"✅ Password reset successful for {user.get('email')}")
+    
+    return {
+        "message": "Passwort erfolgreich geändert! Sie können sich jetzt einloggen.",
+        "message_en": "Password changed successfully! You can now log in."
+    }
+
+@api_router.get("/auth/verify-reset-token/{token}")
+async def verify_reset_token(token: str):
+    """
+    Prüft ob ein Reset-Token gültig ist.
+    Wird vom Frontend aufgerufen bevor das Reset-Formular angezeigt wird.
+    """
+    user = await db.users.find_one({
+        "password_reset_token": token,
+        "password_reset_expiry": {"$gt": datetime.now(timezone.utc)}
+    })
+    
+    if not user:
+        raise HTTPException(status_code=400, detail="Ungültiger oder abgelaufener Link")
+    
+    return {"valid": True, "email": user.get("email", "")[:3] + "***"}
+
 # Subscription endpoints
 @api_router.post("/subscription/checkout")
 async def create_checkout_session(checkout_req: CheckoutRequest, request: Request):

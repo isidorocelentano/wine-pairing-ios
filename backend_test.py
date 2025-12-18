@@ -3009,13 +3009,15 @@ class WinePairingAPITester:
             }
             
             # Check each expected country
+            verified_counts = {}
             for country_data in countries:
                 if isinstance(country_data, dict):
                     country_name = country_data.get('country')
-                    dish_count = country_data.get('dish_count', 0)
+                    dish_count = country_data.get('count', 0)  # API uses 'count' not 'dish_count'
                     
                     if country_name in expected_counts:
                         expected = expected_counts[country_name]
+                        verified_counts[country_name] = dish_count
                         if dish_count != expected:
                             self.log_test("Sommelier Kompass Country Counts", False, 
                                          f"{country_name}: expected {expected} dishes, got {dish_count}")
@@ -3030,7 +3032,7 @@ class WinePairingAPITester:
                 return False
             
             self.log_test("Sommelier Kompass Country Counts", True, 
-                         f"All country counts verified: {expected_counts}")
+                         f"All country counts verified: {verified_counts}")
         else:
             self.log_test("Sommelier Kompass Country Counts", False, str(response))
         return success

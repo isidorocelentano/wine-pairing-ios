@@ -1439,8 +1439,8 @@ class WinePairingAPITester:
             # Check region correctness for found dishes
             region_mismatches = []
             for dish, info in expected_dishes.items():
-                if info['found'] and info['actual_region'] != info['expected_region']:
-                    region_mismatches.append(f"{dish}: expected {info['expected_region']}, got {info['actual_region']}")
+                if info['found'] and info['actual_region'] not in info['expected_regions']:
+                    region_mismatches.append(f"{dish}: expected one of {info['expected_regions']}, got {info['actual_region']}")
             
             if region_mismatches:
                 self.log_test("Chinese Specific Dishes", False, 

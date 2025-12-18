@@ -1,7 +1,7 @@
 {
   "version": "3.0",
-  "timestamp": "2025-12-18T12:00:14.792183+00:00",
-  "last_backup": "/app/backend/data/backups/backup_20251218_120014",
+  "timestamp": "2025-12-18T12:08:09.892430+00:00",
+  "last_backup": "/app/backend/data/backups/backup_20251218_120809",
   "expected": {
     "users": 20,
     "wines": 57,
@@ -13,7 +13,7 @@
     "blog_posts": 233,
     "public_wines": 7088,
     "grape_varieties": 313,
-    "regional_pairings": 1825,
+    "regional_pairings": 1863,
     "dishes": 40,
     "feed_posts": 269,
     "wine_database": 494,

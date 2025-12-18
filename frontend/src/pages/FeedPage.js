@@ -573,6 +573,51 @@ const FeedPage = () => {
                         <MessageCircle className="w-5 h-5" />
                         <span>{post.comments?.length || 0}</span>
                       </button>
+                      
+                      {/* Share Button with Dropdown */}
+                      <div className="relative ml-auto">
+                        <button
+                          onClick={() => toggleShareMenu(post.id)}
+                          className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
+                          data-testid="share-btn"
+                        >
+                          <Share2 className="w-5 h-5" />
+                          <span className="hidden sm:inline">
+                            {language === 'de' ? 'Teilen' : language === 'fr' ? 'Partager' : 'Share'}
+                          </span>
+                        </button>
+                        
+                        {/* Share Dropdown Menu */}
+                        {shareMenuOpen[post.id] && (
+                          <div className="absolute right-0 bottom-full mb-2 w-48 bg-card border border-border rounded-lg shadow-lg z-50 overflow-hidden">
+                            <button
+                              onClick={() => handleShareFacebook(post)}
+                              className="w-full flex items-center gap-3 px-4 py-3 text-sm hover:bg-secondary/50 transition-colors"
+                            >
+                              <Facebook className="w-5 h-5 text-[#1877F2]" />
+                              <span>Facebook</span>
+                            </button>
+                            <button
+                              onClick={() => handleShareInstagram(post)}
+                              className="w-full flex items-center gap-3 px-4 py-3 text-sm hover:bg-secondary/50 transition-colors"
+                            >
+                              <Instagram className="w-5 h-5 text-[#E4405F]" />
+                              <span>Instagram</span>
+                            </button>
+                            <button
+                              onClick={() => handleCopyLink(post)}
+                              className="w-full flex items-center gap-3 px-4 py-3 text-sm hover:bg-secondary/50 transition-colors border-t border-border"
+                            >
+                              {copiedPostId === post.id ? (
+                                <Check className="w-5 h-5 text-green-500" />
+                              ) : (
+                                <Copy className="w-5 h-5 text-muted-foreground" />
+                              )}
+                              <span>{language === 'de' ? 'Link kopieren' : language === 'fr' ? 'Copier le lien' : 'Copy link'}</span>
+                            </button>
+                          </div>
+                        )}
+                      </div>
                     </div>
                     
                     {/* Comments Section */}

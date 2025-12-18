@@ -1316,7 +1316,7 @@ class WinePairingAPITester:
                     return False
             
             self.log_test("Chinese Regional Pairings Total Count", True, 
-                         f"Found {total_count} Chinese dishes (target: ~88)")
+                         f"Found {total_count} Chinese dishes (target: ~50 for this query, ~88 total)")
         else:
             self.log_test("Chinese Regional Pairings Total Count", False, str(response))
         return success

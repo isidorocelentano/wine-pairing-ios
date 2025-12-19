@@ -2431,32 +2431,60 @@ async def reset_owner_password():
     if not user:
         return {"status": "error", "message": f"User {owner_email} nicht gefunden"}
     
-    # Reset password
+    # Reset password using bcrypt
     new_hash = hash_password(temp_password)
     
+    # Force update with $set to ensure it's changed
     result = await db.users.update_one(
         {"email": owner_email},
         {"$set": {
             "password_hash": new_hash,
             "plan": "pro",
-            "subscription_status": "active"
+            "subscription_status": "active",
+            "role": "admin",
+            "is_admin": True
         }}
     )
     
-    if result.modified_count > 0:
-        return {
-            "status": "success",
-            "message": f"✅ Passwort für {owner_email} wurde zurückgesetzt!",
-            "email": owner_email,
-            "new_password": temp_password,
-            "plan": "pro",
-            "next_step": "Bitte loggen Sie sich ein und ändern Sie das Passwort!"
-        }
-    else:
-        return {
-            "status": "warning", 
-            "message": "Keine Änderung vorgenommen (Passwort war möglicherweise bereits gesetzt)"
-        }
+    # Verify the change
+    updated_user = await db.users.find_one({"email": owner_email})
+    hash_preview = updated_user.get('password_hash', '')[:20] if updated_user else 'N/A'
+    
+    return {
+        "status": "success",
+        "message": f"✅ Passwort für {owner_email} wurde zurückgesetzt!",
+        "email": owner_email,
+        "new_password": temp_password,
+        "plan": "pro",
+        "hash_preview": hash_preview + "...",
+        "modified": result.modified_count,
+        "next_step": "Bitte loggen Sie sich ein und ändern Sie das Passwort!"
+    }
+
+@api_router.get("/admin/debug-user/{email}")
+async def debug_user(email: str):
+    """
+    Debug endpoint to check user status.
+    URL: /api/admin/debug-user/isicel@bluewin.ch
+    """
+    user = await db.users.find_one({"email": email})
+    if not user:
+        return {"status": "error", "message": f"User {email} nicht gefunden"}
+    
+    # Check password hash format
+    pw_hash = user.get('password_hash', '')
+    is_bcrypt = pw_hash.startswith('$2') if pw_hash else False
+    
+    return {
+        "email": user.get('email'),
+        "name": user.get('name'),
+        "plan": user.get('plan'),
+        "role": user.get('role'),
+        "has_password_hash": bool(pw_hash),
+        "hash_length": len(pw_hash) if pw_hash else 0,
+        "is_bcrypt_format": is_bcrypt,
+        "hash_preview": pw_hash[:30] + "..." if pw_hash else "NONE"
+    }
 
 @api_router.get("/admin/users/health")
 async def check_users_health():

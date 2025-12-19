@@ -5298,10 +5298,11 @@ async def create_checkout_session(
         # Create Stripe checkout session
         stripe_checkout = StripeCheckout(api_key=STRIPE_API_KEY)
         
+        frontend_url = os.environ.get('FRONTEND_URL', 'https://wine-pairing.online')
         checkout_request = CheckoutSessionRequest(
             mode="subscription",
-            success_url="http://localhost:3000/subscription/success",
-            cancel_url="http://localhost:3000/subscription/cancel",
+            success_url=f"{frontend_url}/subscription/success",
+            cancel_url=f"{frontend_url}/subscription/cancel",
             line_items=[{
                 "price_data": {
                     "currency": plan_info["currency"],

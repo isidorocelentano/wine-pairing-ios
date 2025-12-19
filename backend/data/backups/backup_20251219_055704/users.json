@@ -19,7 +19,7 @@
     "user_id": "user_6dd3cac89d32",
     "email": "isicel@bluewin.ch",
     "name": "ISICEL",
-    "password_hash": "$2b$12$Za8VFpZoRH59Dm1zTRQKS.vLuA4pKvuk1/60Tv4EXtkf10ozk/CNa",
+    "password_hash": "3dc06a827f9b8dc47b79b31ff17460b0fce229bfe362694aa81f26216c487c6d",
     "picture": null,
     "plan": "pro",
     "subscription_id": null,
@@ -31,8 +31,14 @@
     },
     "created_at": "2025-12-16T11:00:47.469000",
     "id": "1f112a0f-d31c-47d1-ac5a-eef8d61dbe8f",
-    "last_login": "2025-12-18T19:46:52.034000",
-    "login_count": 1
+    "last_login": "2025-12-18T21:45:09.865000",
+    "login_count": 2,
+    "password_reset_expiry": "2025-12-18T23:19:48.038000",
+    "password_reset_token": "lmKeqwaq-T8vYT5d9v4X8SMsB-6pMj900OrXafkLPls",
+    "is_admin": true,
+    "role": "admin",
+    "subscription_plan": "pro_yearly",
+    "updated_at": "2025-12-19T05:31:18.655111+00:00"
   },
   {
     "user_id": "user_5509d9df556d",

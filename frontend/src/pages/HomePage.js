@@ -274,6 +274,106 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Freemium Pricing Teaser */}
+      {!isPro && (
+        <section className="py-16 md:py-24 px-4 md:px-12 lg:px-24 relative overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src="https://images.unsplash.com/photo-1694147183672-57ccff109059?auto=format&fit=crop&w=1920&q=80"
+              alt="Wine Experience"
+              className="w-full h-full object-cover opacity-10"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
+          </div>
+          
+          <div className="container mx-auto relative z-10">
+            {/* Header */}
+            <div className="text-center mb-12 space-y-4">
+              <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full border border-primary/20">
+                <Crown className="w-4 h-4 text-primary" />
+                <span className="text-sm font-medium text-primary">{pricingT.tagline}</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
+                {pricingT.title}
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                {pricingT.subtitle}
+              </p>
+            </div>
+            
+            {/* Pricing Cards */}
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {/* Free Plan */}
+              <Card className="border-border/50 hover:border-border/80 transition-all p-6">
+                <div className="text-center mb-6">
+                  <h3 className="text-xl font-semibold mb-1">{pricingT.free}</h3>
+                  <p className="text-muted-foreground text-sm">{pricingT.free_desc}</p>
+                </div>
+                <ul className="space-y-3 mb-6">
+                  {pricingT.features_free?.map((feature, idx) => (
+                    <li key={idx} className="flex items-center gap-3">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
+                      <span className="text-sm">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Button 
+                  onClick={() => navigate('/pairing')}
+                  variant="outline" 
+                  className="w-full rounded-full"
+                >
+                  {pricingT.cta_free}
+                </Button>
+              </Card>
+
+              {/* Pro Plan */}
+              <Card className="border-primary/50 bg-gradient-to-b from-primary/5 to-transparent p-6 relative">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <span className="bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">
+                    BELIEBT
+                  </span>
+                </div>
+                <div className="text-center mb-6">
+                  <h3 className="text-xl font-semibold mb-1 flex items-center justify-center gap-2">
+                    <Crown className="w-5 h-5 text-primary" />
+                    {pricingT.pro}
+                  </h3>
+                  <p className="text-primary font-bold">{pricingT.pro_price}</p>
+                </div>
+                <ul className="space-y-3 mb-6">
+                  {pricingT.features_pro?.map((feature, idx) => (
+                    <li key={idx} className="flex items-center gap-3">
+                      <Infinity className="w-5 h-5 text-primary flex-shrink-0" />
+                      <span className="text-sm font-medium">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Button 
+                  onClick={() => user ? navigate('/subscription') : navigate('/login')}
+                  className="w-full rounded-full bg-primary hover:bg-primary/90 group"
+                >
+                  <Sparkles className="mr-2 h-4 w-4 group-hover:animate-pulse" />
+                  {pricingT.cta_pro}
+                </Button>
+              </Card>
+            </div>
+
+            {/* See All Link */}
+            <div className="text-center mt-8">
+              <Button 
+                variant="ghost" 
+                onClick={() => navigate('/pricing')}
+                className="group text-muted-foreground hover:text-primary"
+              >
+                {pricingT.see_all}
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* App Description Section */}
       <AppDescription />
 

@@ -88,6 +88,8 @@ function App() {
                   <Route path="/subscription/success" element={<SubscriptionSuccessPage />} />
                   <Route path="/subscription/cancel" element={<><SubscriptionPage /><Navigation /></>} />
                   <Route path="/coupon" element={<><CouponPage /><Navigation /></>} />
+                  <Route path="/pricing" element={<><PricingPage /><Navigation /></>} />
+                  <Route path="/pro" element={<><PricingPage /><Navigation /></>} />
                 </Routes>
               </BrowserRouter>
             </div>

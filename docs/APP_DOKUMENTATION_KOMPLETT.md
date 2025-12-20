@@ -100,6 +100,30 @@
 
 Elegante Landing Page mit Hero-Section und virtuellem Sommelier "Claude".
 
+**NEU in v1.3:**
+- Pricing-Teaser-Section nach den Features (nur für Nicht-Pro-Nutzer)
+- "Dein Sommelier. Immer dabei." Tagline
+- Free vs. Pro Vergleichskarten
+- Link zur vollständigen Pricing-Seite
+
+---
+
+### 1b. PRICING-SEITE (NEU)
+**Route:** `/pricing`, `/pro`  
+**Zugriff:** 🆓 Alle
+
+Dedizierte Seite für Freemium-Kommunikation.
+
+**Sections:**
+- Hero mit emotionalem Bild & Tagline
+- Plan-Vergleich (Basic vs. Pro)
+- "Warum Pro?" Benefits
+- Testimonials mit 5-Sterne-Bewertungen
+- FAQ-Bereich
+- Finaler CTA
+
+**Design:** Modern/dynamisch (nicht traditionell "staubiger Weinkeller")
+
 ---
 
 ### 2. PAIRING (Weinempfehlung)

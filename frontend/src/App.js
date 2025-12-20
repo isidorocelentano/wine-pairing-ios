@@ -40,6 +40,7 @@ import ResetPasswordPage from "@/pages/ResetPasswordPage";
 import SubscriptionPage from "@/pages/SubscriptionPage";
 import SubscriptionSuccessPage from "@/pages/SubscriptionSuccessPage";
 import CouponPage from "@/pages/CouponPage";
+import PricingPage from "@/pages/PricingPage";
 
 function App() {
   return (

@@ -1,7 +1,7 @@
 # 📖 WINE PAIRING APP - Vollständige Dokumentation
 
-**Stand:** 18. Dezember 2025  
-**Version:** 1.2 (Rebsorten-Update & D/A/CH Bereinigung)  
+**Stand:** 20. Dezember 2025  
+**Version:** 1.3 (Freemium Pricing Pages)  
 **Domain:** https://wine-pairing.online
 
 ---
@@ -18,7 +18,24 @@
 | **Sprachen** | DE, EN, FR |
 | **Monetarisierung** | Freemium + Stripe |
 
-### 🆕 Letzte Änderung (18.12.2025 - Version 1.2):
+### 🆕 Letzte Änderung (20.12.2025 - Version 1.3):
+
+**Freemium Pricing Pages - NEU:**
+- ✅ **Neue Pricing-Seite** (`/pricing`, `/pro`) mit emotionalem Design
+- ✅ **Homepage Pricing-Teaser** - Prominent platzierte Free vs. Pro Vergleichskarten
+- ✅ Modern/dynamischer Stil (hebt sich von traditionellen Wein-Apps ab)
+- ✅ Hero-Tagline: *"DEIN SOMMELIER. IMMER DABEI."*
+- ✅ Hochwertige Unsplash-Bilder integriert
+- ✅ Multi-Sprachen: DE, EN, FR
+- ✅ Testimonials & FAQ-Bereich
+- ✅ Responsive Design (Mobile optimiert)
+
+**Admin-Endpoints erweitert:**
+- ✅ `/api/admin/reset-owner-password` - Passwort-Reset für Hauptbenutzer
+- ✅ `/api/admin/debug-user/{email}` - User-Debugging
+- ✅ Stripe checkout URLs korrigiert (keine hardcoded localhost mehr)
+
+### Frühere Änderungen (18.12.2025 - Version 1.2):
 
 **Rebsorten-Lexikon komplett überarbeitet:**
 - ✅ 313 Rebsorten mit hochwertigen Weinbildern (verifizierte Unsplash-URLs)
@@ -36,11 +53,6 @@
 - ✅ `/sommelier-kompass?country=Argentinien` → Argentinien vorselektiert
 - ✅ `/wine-database?country=Deutschland` → Deutsche Weine gefiltert
 
-### Frühere Änderungen (18.12.2025 - Version 1.1):
-- **Große Datenbereinigung** aller Weinländer
-- Region/Appellation Filter sauber getrennt
-- Duplikate und Schreibfehler korrigiert
-
 ---
 
 ## 💳 TEIL 1: FREEMIUM-SYSTEM
@@ -52,6 +64,23 @@
 | **Basic** | Kostenlos | 5 | 5 | Max. 10 | Max. 10 |
 | **Pro Monatlich** | 4,99€/Monat | Unbegrenzt | Unbegrenzt | Unbegrenzt | Unbegrenzt |
 | **Pro Jährlich** | 39,99€/Jahr | Unbegrenzt | Unbegrenzt | Unbegrenzt | Unbegrenzt |
+
+### 🆕 Pricing-Seiten (NEU in v1.3)
+
+**Pricing Page (`/pricing` oder `/pro`):**
+| Section | Beschreibung |
+|---------|--------------|
+| **Hero** | Emotionaler Einstieg mit "Dein Sommelier. Immer dabei." |
+| **Plan-Vergleich** | Basic vs. Pro Karten mit Feature-Liste |
+| **Warum Pro?** | 3 Benefit-Karten (Keine Limits, Sofortige Antworten, Premium Features) |
+| **Testimonials** | 5-Sterne Bewertungen von Nutzern |
+| **FAQ** | Häufige Fragen (Kündigung, Garantie, Zahlungsmethoden) |
+| **Final CTA** | Abschließender Call-to-Action mit Weinbild-Hintergrund |
+
+**Homepage Pricing-Teaser:**
+- Erscheint nach der Features-Section (nur für Nicht-Pro-Nutzer)
+- Kompakte Free vs. Pro Vergleichskarten
+- "Alle Vorteile ansehen" Link zur /pricing Seite
 
 ### Zahlungsintegration
 - ✅ **Stripe** (aktiv)

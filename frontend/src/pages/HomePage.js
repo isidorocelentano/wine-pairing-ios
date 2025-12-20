@@ -11,6 +11,55 @@ import Footer from "@/components/Footer";
 const HomePage = () => {
   const navigate = useNavigate();
   const { t, language } = useLanguage();
+  const { user } = useAuth();
+
+  // Pricing translations
+  const pricingT = {
+    de: {
+      tagline: 'DEIN SOMMELIER. IMMER DABEI.',
+      title: 'Entdecke die volle Welt des Weins',
+      subtitle: 'Starte kostenlos – upgrade für unbegrenzte Möglichkeiten',
+      free: 'Basic',
+      free_desc: 'Kostenlos für immer',
+      pro: 'Pro',
+      pro_price: '€4.99/Monat',
+      features_free: ['5 Pairings/Tag', '5 Chat-Nachrichten/Tag', 'Max. 10 Weine im Keller'],
+      features_pro: ['Unbegrenzte Pairings', 'Unbegrenzter Chat', 'Unbegrenzter Weinkeller'],
+      cta_free: 'Jetzt starten',
+      cta_pro: 'Pro werden',
+      see_all: 'Alle Vorteile ansehen'
+    },
+    en: {
+      tagline: 'YOUR SOMMELIER. ALWAYS WITH YOU.',
+      title: 'Discover the full world of wine',
+      subtitle: 'Start for free – upgrade for unlimited possibilities',
+      free: 'Basic',
+      free_desc: 'Free forever',
+      pro: 'Pro',
+      pro_price: '€4.99/month',
+      features_free: ['5 pairings/day', '5 chat messages/day', 'Max. 10 wines in cellar'],
+      features_pro: ['Unlimited pairings', 'Unlimited chat', 'Unlimited wine cellar'],
+      cta_free: 'Get Started',
+      cta_pro: 'Go Pro',
+      see_all: 'See all benefits'
+    },
+    fr: {
+      tagline: 'VOTRE SOMMELIER. TOUJOURS AVEC VOUS.',
+      title: 'Découvrez le monde complet du vin',
+      subtitle: 'Commencez gratuitement – passez Pro pour des possibilités illimitées',
+      free: 'Basic',
+      free_desc: 'Gratuit pour toujours',
+      pro: 'Pro',
+      pro_price: '€4.99/mois',
+      features_free: ['5 accords/jour', '5 messages chat/jour', 'Max. 10 vins en cave'],
+      features_pro: ['Accords illimités', 'Chat illimité', 'Cave à vin illimitée'],
+      cta_free: 'Commencer',
+      cta_pro: 'Passer Pro',
+      see_all: 'Voir tous les avantages'
+    }
+  }[language] || {};
+
+  const isPro = user?.plan === 'pro' || user?.plan === 'pro_monthly' || user?.plan === 'pro_yearly';
 
   return (
     <div className="min-h-screen pb-20 md:pb-24" data-testid="home-page">

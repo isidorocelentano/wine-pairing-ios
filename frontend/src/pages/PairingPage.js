@@ -65,6 +65,9 @@ const PairingPage = () => {
   const [loadingWineDetail, setLoadingWineDetail] = useState(false);
   const [showUpgradePrompt, setShowUpgradePrompt] = useState(false);
   
+  // State for showing premium wines (Option 5: Smart Defaults)
+  const [showPremiumWines, setShowPremiumWines] = useState(false);
+  
   // Handle wine card click - show wine detail inline instead of navigating away
   const handleWineClick = async (wine) => {
     setLoadingWineDetail(true);

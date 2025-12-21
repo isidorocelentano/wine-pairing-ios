@@ -628,6 +628,329 @@ class WinePairingAPITester:
             self.log_test("Pairing History Serialization", False, str(response))
         return success
 
+    # ===================== PRICE-CONSCIOUS WINE PAIRING TESTS =====================
+    
+    def test_price_conscious_pairing_german_fondue(self):
+        """Test German recommendation for Swiss dish (Fondue) with price tiers"""
+        pairing_data = {
+            "dish": "Fondue",
+            "language": "de"
+        }
+        
+        success, response = self.make_request('POST', 'pairing', data=pairing_data, expected_status=200)
+        if success:
+            recommendation = response.get('recommendation', '')
+            
+            if len(recommendation) < 100:
+                self.log_test("Price-Conscious Pairing (German Fondue)", False, f"Recommendation too short: {recommendation}")
+                return False
+            
+            # Check for required price tier structure in German
+            required_patterns = [
+                "💚 **Preis-Leistung (CHF 10-20):**",
+                "💛 **Gehobene Qualität (CHF 20-40):**"
+            ]
+            
+            missing_patterns = []
+            for pattern in required_patterns:
+                if pattern not in recommendation:
+                    missing_patterns.append(pattern)
+            
+            if missing_patterns:
+                self.log_test("Price-Conscious Pairing (German Fondue)", False, 
+                             f"Missing required price tier patterns: {missing_patterns}")
+                return False
+            
+            # Check that affordable wines come first (💚 before 💛)
+            green_pos = recommendation.find("💚 **Preis-Leistung")
+            yellow_pos = recommendation.find("💛 **Gehobene Qualität")
+            
+            if green_pos == -1 or yellow_pos == -1:
+                self.log_test("Price-Conscious Pairing (German Fondue)", False, "Price tier emojis not found")
+                return False
+            
+            if green_pos > yellow_pos:
+                self.log_test("Price-Conscious Pairing (German Fondue)", False, 
+                             "Price tiers in wrong order - affordable should come first")
+                return False
+            
+            # Check for at least 2 wines in the Preis-Leistung category
+            preis_leistung_section = recommendation[green_pos:yellow_pos]
+            wine_count = preis_leistung_section.count('**') // 2  # Each wine has **name**
+            
+            if wine_count < 2:
+                self.log_test("Price-Conscious Pairing (German Fondue)", False, 
+                             f"Expected at least 2 wines in Preis-Leistung category, found {wine_count}")
+                return False
+            
+            # Check for CHF price ranges
+            if "CHF" not in recommendation:
+                self.log_test("Price-Conscious Pairing (German Fondue)", False, "CHF price ranges not visible")
+                return False
+            
+            self.log_test("Price-Conscious Pairing (German Fondue)", True, 
+                         f"German Fondue pairing with proper price structure - {wine_count} affordable wines")
+        else:
+            self.log_test("Price-Conscious Pairing (German Fondue)", False, str(response))
+        return success
+
+    def test_price_conscious_pairing_german_meat(self):
+        """Test German recommendation for meat dish with price tiers"""
+        pairing_data = {
+            "dish": "Rindsfilet mit Rotweinsauce",
+            "language": "de"
+        }
+        
+        success, response = self.make_request('POST', 'pairing', data=pairing_data, expected_status=200)
+        if success:
+            recommendation = response.get('recommendation', '')
+            
+            if len(recommendation) < 100:
+                self.log_test("Price-Conscious Pairing (German Meat)", False, f"Recommendation too short: {recommendation}")
+                return False
+            
+            # Check for price-tiered red wine recommendations
+            required_patterns = [
+                "💚 **Preis-Leistung (CHF 10-20):**",
+                "💛 **Gehobene Qualität (CHF 20-40):**"
+            ]
+            
+            missing_patterns = []
+            for pattern in required_patterns:
+                if pattern not in recommendation:
+                    missing_patterns.append(pattern)
+            
+            if missing_patterns:
+                self.log_test("Price-Conscious Pairing (German Meat)", False, 
+                             f"Missing required price tier patterns: {missing_patterns}")
+                return False
+            
+            # For meat dishes, should recommend red wine
+            red_wine_indicators = ['rotwein', 'cabernet', 'merlot', 'pinot noir', 'bordeaux', 'barolo']
+            has_red_wine = any(indicator in recommendation.lower() for indicator in red_wine_indicators)
+            
+            if not has_red_wine:
+                self.log_test("Price-Conscious Pairing (German Meat)", False, 
+                             "Expected red wine recommendation for meat dish")
+                return False
+            
+            # Check for CHF price ranges
+            if "CHF" not in recommendation:
+                self.log_test("Price-Conscious Pairing (German Meat)", False, "CHF price ranges not visible")
+                return False
+            
+            self.log_test("Price-Conscious Pairing (German Meat)", True, 
+                         "German meat dish pairing with proper price structure and red wine focus")
+        else:
+            self.log_test("Price-Conscious Pairing (German Meat)", False, str(response))
+        return success
+
+    def test_price_conscious_pairing_english(self):
+        """Test English recommendation with price tiers"""
+        pairing_data = {
+            "dish": "Grilled Salmon",
+            "language": "en"
+        }
+        
+        success, response = self.make_request('POST', 'pairing', data=pairing_data, expected_status=200)
+        if success:
+            recommendation = response.get('recommendation', '')
+            
+            if len(recommendation) < 100:
+                self.log_test("Price-Conscious Pairing (English)", False, f"Recommendation too short: {recommendation}")
+                return False
+            
+            # Check for English price tier structure
+            required_patterns = [
+                "💚 **Great Value (CHF 10-20):**",
+                "💛 **Premium Quality (CHF 20-40):**"
+            ]
+            
+            missing_patterns = []
+            for pattern in required_patterns:
+                if pattern not in recommendation:
+                    missing_patterns.append(pattern)
+            
+            if missing_patterns:
+                self.log_test("Price-Conscious Pairing (English)", False, 
+                             f"Missing required English price tier patterns: {missing_patterns}")
+                return False
+            
+            # Check that affordable wines come first
+            green_pos = recommendation.find("💚 **Great Value")
+            yellow_pos = recommendation.find("💛 **Premium Quality")
+            
+            if green_pos == -1 or yellow_pos == -1:
+                self.log_test("Price-Conscious Pairing (English)", False, "Price tier emojis not found")
+                return False
+            
+            if green_pos > yellow_pos:
+                self.log_test("Price-Conscious Pairing (English)", False, 
+                             "Price tiers in wrong order - affordable should come first")
+                return False
+            
+            # Check for CHF price ranges
+            if "CHF" not in recommendation:
+                self.log_test("Price-Conscious Pairing (English)", False, "CHF price ranges not visible")
+                return False
+            
+            self.log_test("Price-Conscious Pairing (English)", True, 
+                         "English salmon pairing with proper price structure")
+        else:
+            self.log_test("Price-Conscious Pairing (English)", False, str(response))
+        return success
+
+    def test_price_conscious_pairing_french(self):
+        """Test French recommendation with price tiers"""
+        pairing_data = {
+            "dish": "Coq au Vin",
+            "language": "fr"
+        }
+        
+        success, response = self.make_request('POST', 'pairing', data=pairing_data, expected_status=200)
+        if success:
+            recommendation = response.get('recommendation', '')
+            
+            if len(recommendation) < 100:
+                self.log_test("Price-Conscious Pairing (French)", False, f"Recommendation too short: {recommendation}")
+                return False
+            
+            # Check for French price tier structure
+            required_patterns = [
+                "💚 **Excellent Rapport Qualité-Prix (CHF 10-20):**",
+                "💛 **Qualité Supérieure (CHF 20-40):**"
+            ]
+            
+            missing_patterns = []
+            for pattern in required_patterns:
+                if pattern not in recommendation:
+                    missing_patterns.append(pattern)
+            
+            if missing_patterns:
+                self.log_test("Price-Conscious Pairing (French)", False, 
+                             f"Missing required French price tier patterns: {missing_patterns}")
+                return False
+            
+            # Check that affordable wines come first
+            green_pos = recommendation.find("💚 **Excellent Rapport")
+            yellow_pos = recommendation.find("💛 **Qualité Supérieure")
+            
+            if green_pos == -1 or yellow_pos == -1:
+                self.log_test("Price-Conscious Pairing (French)", False, "Price tier emojis not found")
+                return False
+            
+            if green_pos > yellow_pos:
+                self.log_test("Price-Conscious Pairing (French)", False, 
+                             "Price tiers in wrong order - affordable should come first")
+                return False
+            
+            # Check for CHF price ranges
+            if "CHF" not in recommendation:
+                self.log_test("Price-Conscious Pairing (French)", False, "CHF price ranges not visible")
+                return False
+            
+            self.log_test("Price-Conscious Pairing (French)", True, 
+                         "French Coq au Vin pairing with proper price structure")
+        else:
+            self.log_test("Price-Conscious Pairing (French)", False, str(response))
+        return success
+
+    def test_price_conscious_structure_validation(self):
+        """Test that price-conscious structure is consistent across languages"""
+        test_cases = [
+            {"dish": "Pasta Carbonara", "language": "de", "expected_green": "💚 **Preis-Leistung"},
+            {"dish": "Fish and Chips", "language": "en", "expected_green": "💚 **Great Value"},
+            {"dish": "Ratatouille", "language": "fr", "expected_green": "💚 **Excellent Rapport"}
+        ]
+        
+        all_passed = True
+        results = []
+        
+        for case in test_cases:
+            success, response = self.make_request('POST', 'pairing', data=case, expected_status=200)
+            if success:
+                recommendation = response.get('recommendation', '')
+                
+                # Check that response starts with affordable wines first
+                if case["expected_green"] not in recommendation:
+                    all_passed = False
+                    results.append(f"{case['language']}: Missing green tier")
+                    continue
+                
+                # Check that main recommendation section comes first
+                main_rec_pos = recommendation.find("🍷 HAUPTEMPFEHLUNG") if case["language"] == "de" else \
+                              recommendation.find("🍷 TOP RECOMMENDATION") if case["language"] == "en" else \
+                              recommendation.find("🍷 RECOMMANDATION")
+                
+                green_pos = recommendation.find(case["expected_green"])
+                
+                if main_rec_pos != -1 and green_pos != -1 and main_rec_pos < green_pos:
+                    results.append(f"{case['language']}: ✓ Proper structure")
+                else:
+                    results.append(f"{case['language']}: Structure issue")
+                    all_passed = False
+            else:
+                all_passed = False
+                results.append(f"{case['language']}: API error")
+        
+        if all_passed:
+            self.log_test("Price-Conscious Structure Validation", True, 
+                         f"All languages follow proper structure: {'; '.join(results)}")
+        else:
+            self.log_test("Price-Conscious Structure Validation", False, 
+                         f"Structure issues found: {'; '.join(results)}")
+        return all_passed
+
+    def test_price_conscious_wine_count_validation(self):
+        """Test that each price tier contains appropriate number of wines"""
+        pairing_data = {
+            "dish": "Grilled Steak",
+            "language": "de"
+        }
+        
+        success, response = self.make_request('POST', 'pairing', data=pairing_data, expected_status=200)
+        if success:
+            recommendation = response.get('recommendation', '')
+            
+            # Find the Preis-Leistung section
+            green_start = recommendation.find("💚 **Preis-Leistung")
+            yellow_start = recommendation.find("💛 **Gehobene Qualität")
+            
+            if green_start == -1:
+                self.log_test("Price-Conscious Wine Count Validation", False, "Green tier not found")
+                return False
+            
+            # Extract the green tier section
+            if yellow_start != -1:
+                green_section = recommendation[green_start:yellow_start]
+            else:
+                # If no yellow tier, take next 500 characters
+                green_section = recommendation[green_start:green_start + 500]
+            
+            # Count wine recommendations (look for **Wine Name** pattern)
+            import re
+            wine_pattern = r'\*\*([^*]{10,80})\*\*'
+            wines = re.findall(wine_pattern, green_section)
+            
+            # Filter out section headers and non-wine entries
+            actual_wines = []
+            skip_keywords = ['Preis-Leistung', 'Great Value', 'Excellent', 'CHF', 'Gehobene', 'Premium']
+            
+            for wine in wines:
+                if not any(keyword in wine for keyword in skip_keywords) and len(wine) > 10:
+                    actual_wines.append(wine)
+            
+            if len(actual_wines) < 2:
+                self.log_test("Price-Conscious Wine Count Validation", False, 
+                             f"Expected at least 2 wines in green tier, found {len(actual_wines)}: {actual_wines}")
+                return False
+            
+            self.log_test("Price-Conscious Wine Count Validation", True, 
+                         f"Found {len(actual_wines)} wines in Preis-Leistung tier: {[w[:30] + '...' for w in actual_wines[:3]]}")
+        else:
+            self.log_test("Price-Conscious Wine Count Validation", False, str(response))
+        return success
+
     def test_get_favorites(self):
         """Test getting favorite wines"""
         success, response = self.make_request('GET', 'favorites', expected_status=200)

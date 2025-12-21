@@ -1,7 +1,7 @@
 # Test Results - Wine Pairing Platform
 
 ## Test Configuration
-test_sequence: 13
+test_sequence: 14
 run_ui: true
 backend_test_completed: true
 critical_bugfix_applied: true
@@ -9,7 +9,52 @@ bugfix_description: "Complete wine data cleanup for ALL countries - regions and 
 
 ## Latest Change (2025-12-20)
 
-### Pricing/Freemium Pages Testing Results (2025-12-20) - COMPLETED ✅
+### Price-Conscious Wine Pairing System Testing Results (2025-12-20) - COMPLETED ✅
+
+**Backend Testing Results (4/4 PASSED - 100% Success Rate)**:
+
+1. **German Fondue Pairing (Swiss Dish)** ✅ PASSED
+   - Request: `{"dish": "Fondue", "language": "de"}`
+   - Verified price tier structure: "💚 **Preis-Leistung (CHF 10-20):**" with 3 affordable wines
+   - Confirmed "💛 **Gehobene Qualität (CHF 20-40):**" tier present
+   - CHF price ranges visible in response
+   - Affordable wines listed first (proper structure)
+
+2. **German Meat Dish Pairing** ✅ PASSED
+   - Request: `{"dish": "Rindsfilet mit Rotweinsauce", "language": "de"}`
+   - Price-tiered red wine recommendations confirmed
+   - Proper German price tier structure maintained
+   - Red wine focus for meat dish verified (rotwein, cabernet, bordeaux indicators found)
+   - CHF price ranges displayed correctly
+
+3. **English Salmon Pairing** ✅ PASSED
+   - Request: `{"dish": "Grilled Salmon", "language": "en"}`
+   - English price tier structure verified: "💚 **Great Value (CHF 10-20):**"
+   - "💛 **Premium Quality (CHF 20-40):**" tier present
+   - Affordable wines prioritized first
+   - CHF price ranges visible in English response
+
+4. **French Coq au Vin Pairing** ✅ PASSED
+   - Request: `{"dish": "Coq au Vin", "language": "fr"}`
+   - French price tier structure confirmed: "💚 **Excellent Rapport Qualité-Prix (CHF 10-20):**"
+   - "💛 **Qualité Supérieure (CHF 20-40):**" tier present
+   - Proper French language price structure maintained
+   - CHF price ranges displayed in French context
+
+**Key Verification Results**:
+- ✅ Each response STARTS with affordable wines first (💚 category)
+- ✅ CHF price ranges visible in all language responses
+- ✅ Structure follows: Preis-Leistung → Gehobene Qualität → Besondere Anlässe
+- ✅ Multilingual support working correctly (German, English, French)
+- ✅ At least 2 wines in affordable tier for each test case
+- ✅ Price-conscious recommendations prioritize value over prestige
+
+**Price-Conscious Wine Pairing System Status**: FULLY OPERATIONAL
+**API Endpoint**: POST /api/pairing working correctly with language-specific price tiers
+**Multilingual Support**: CONFIRMED - All 3 languages (de, en, fr) working properly
+**Price Structure**: VERIFIED - Affordable wines consistently prioritized first
+
+### Previous: Pricing/Freemium Pages Testing Results (2025-12-20) - COMPLETED ✅
 
 **Frontend Testing Results (9/9 PASSED - 100% Success Rate)**:
 

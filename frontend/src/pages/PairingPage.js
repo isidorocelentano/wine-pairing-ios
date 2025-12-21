@@ -904,40 +904,6 @@ const PairingPage = () => {
                     )}
                   </div>
                 );
-
-                                  {/* Category Badge */}
-                                  {wine.category && (
-                                    <Badge variant="secondary" className="text-xs self-start">
-                                      {wine.category}
-                                    </Badge>
-                                  )}
-
-                                  {/* Compact one-line summary */}
-                                  {short && (
-                                    <p className="text-sm text-muted-foreground leading-snug line-clamp-2">
-                                      {short}
-                                    </p>
-                                  )}
-
-                                  {/* Tap hint */}
-                                  <p className="text-xs text-primary/60 mt-1 flex items-center gap-1">
-                                    <ExternalLink className="w-3 h-3" />
-                                    {language === 'de' ? '→ In Wein-Datenbank suchen' : language === 'fr' ? '→ Rechercher dans la base' : '→ Search in wine database'}
-                                  </p>
-                                </CardContent>
-                              </Card>
-                            );
-                          })}
-                        </div>
-                        
-                        {/* Divider between sections */}
-                        {sectionIdx < sections.length - 1 && (
-                          <hr className="my-6 opacity-50" />
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                );
               })()}
               
               {/* Cellar Matches */}

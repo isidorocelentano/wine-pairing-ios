@@ -103,6 +103,35 @@
 - ✅ **Stripe** (aktiv)
 - 🔜 **PayPal** (geplant)
 
+### 🆕 Preisbewusste Empfehlungen (NEU in v1.4)
+
+**Problem gelöst:** Früher empfahl die KI oft teure Premium-Weine, die sich die meisten User nicht leisten können.
+
+**Lösung:** Gestaffelte Preiskategorien in jeder Empfehlung:
+
+| Kategorie | Preisbereich | Beschreibung |
+|-----------|--------------|--------------|
+| 💚 **Preis-Leistung** | CHF 10-20 | Immer zuerst, mind. 2 Weine |
+| 💛 **Gehobene Qualität** | CHF 20-40 | Für bessere Anlässe |
+| 🧡 **Besondere Anlässe** | CHF 40+ | Optional, Luxus-Empfehlungen |
+
+**Beispiel-Output:**
+```
+1. 🍷 HAUPTEMPFEHLUNG
+
+💚 Preis-Leistung (CHF 10-20):
+- Vermentino di Sardegna – Frisch, zitrusnoten
+- Frascati Superiore – Klassischer Römer-Wein
+
+💛 Gehobene Qualität (CHF 20-40):
+- Soave Classico "Pieropan" – Komplex, cremig
+
+🧡 Für besondere Anlässe (CHF 40+):
+- Puligny-Montrachet – Burgundische Eleganz
+```
+
+**Verfügbarkeit:** Alle User (Basic + Pro)
+
 ### Gutschein-System
 - Route: `/coupon`
 - Early Adopter Codes verfügbar

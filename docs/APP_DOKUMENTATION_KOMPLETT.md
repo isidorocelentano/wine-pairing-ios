@@ -18,7 +18,24 @@
 | **Sprachen** | DE, EN, FR |
 | **Monetarisierung** | Freemium + Stripe |
 
-### 🆕 Letzte Änderung (20.12.2025 - Version 1.3):
+### 🆕 Letzte Änderung (20.12.2025 - Version 1.4):
+
+**Preisbewusste Weinempfehlungen - NEU:**
+- ✅ KI empfiehlt nun **erschwingliche Weine zuerst** (Preis-Leistung CHF 10-20)
+- ✅ **Gestaffelte Preiskategorien** in jeder Empfehlung:
+  - 💚 **Preis-Leistung (CHF 10-20)** - immer zuerst, mind. 2 Weine
+  - 💛 **Gehobene Qualität (CHF 20-40)**
+  - 🧡 **Für besondere Anlässe (CHF 40+)** - optional
+- ✅ Multi-Sprachen Support (DE/EN/FR) mit lokalisierter Preisstruktur
+- ✅ Fokus auf **CH-Markt** mit CHF-Preisangaben
+- ✅ Für **alle User** verfügbar (Basic + Pro)
+
+**Technische Änderungen:**
+- Sommelier System Prompt komplett überarbeitet
+- Preisbewusste Empfehlungslogik in allen 3 Sprachen
+- Backend API getestet und produktionsbereit
+
+### Frühere Änderung (20.12.2025 - Version 1.3):
 
 **Freemium Pricing Pages - NEU:**
 - ✅ **Neue Pricing-Seite** (`/pricing`, `/pro`) mit emotionalem Design

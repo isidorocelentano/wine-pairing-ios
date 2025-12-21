@@ -623,12 +623,20 @@ const PairingPage = () => {
               )}
 
               {(() => {
-                // Parse recommendation text into structured wine cards
+                // Parse recommendation text into structured wine cards with price tiers
                 const lines = result.recommendation.split('\n');
                 const sections = [];
                 let currentSection = null;
                 let currentIntro = '';
                 let wines = [];
+                let currentPriceTier = null; // Track current price tier
+                
+                // Price tier labels in different languages
+                const priceTierPatterns = {
+                  value: /💚.*(?:Preis-Leistung|Great Value|Excellent Rapport)/i,
+                  premium: /💛.*(?:Gehobene Qualität|Premium Quality|Qualité Supérieure)/i,
+                  luxury: /🧡.*(?:besondere Anlässe|Special Occasions|Occasions Spéciales)/i
+                };
                 
                 lines.forEach((line, idx) => {
                   const trimmedLine = line.trim();
@@ -643,6 +651,7 @@ const PairingPage = () => {
                     currentSection = { title: '🍷 Hauptempfehlung', type: 'main', intro: '', wines: [] };
                     wines = [];
                     currentIntro = '';
+                    currentPriceTier = null;
                   }
                   // Alternative Options heading
                   else if (trimmedLine.match(/Alternative.*Option|Options.*Alternative/i)) {
@@ -654,6 +663,20 @@ const PairingPage = () => {
                     currentSection = { title: '🔄 Alternative Optionen', type: 'alternatives', intro: '', wines: [] };
                     wines = [];
                     currentIntro = '';
+                    currentPriceTier = null;
+                  }
+                  // Price tier headers (NEW - Option 3 implementation)
+                  else if (priceTierPatterns.value.test(trimmedLine)) {
+                    currentPriceTier = 'value';
+                    currentIntro = trimmedLine.replace(/\*\*/g, '').replace(/💚/g, '').trim();
+                  }
+                  else if (priceTierPatterns.premium.test(trimmedLine)) {
+                    currentPriceTier = 'premium';
+                    currentIntro = trimmedLine.replace(/\*\*/g, '').replace(/💛/g, '').trim();
+                  }
+                  else if (priceTierPatterns.luxury.test(trimmedLine)) {
+                    currentPriceTier = 'luxury';
+                    currentIntro = trimmedLine.replace(/\*\*/g, '').replace(/🧡/g, '').trim();
                   }
                   // Sub-heading for wine type categories (Bester Weintyp, Schaumwein, etc.)
                   else if (trimmedLine.match(/^\*\*.*(?:Weintyp|wein|Wine Type|Vin).*:/i) || trimmedLine.match(/^\*\*(?:Schaumwein|Rotwein|Weißwein|Sparkling|Red Wine|White Wine)/i)) {
@@ -670,7 +693,8 @@ const PairingPage = () => {
                       wines.push({
                         name: wineMatch[1].trim(),
                         description: wineMatch[2].trim(),
-                        category: currentIntro
+                        category: currentIntro,
+                        priceTier: currentPriceTier // Add price tier info
                       });
                     }
                   }
@@ -687,10 +711,31 @@ const PairingPage = () => {
                   sections.push(currentSection);
                 }
                 
+                // Check if there are any premium/luxury wines
+                const hasLuxuryWines = sections.some(s => s.wines.some(w => w.priceTier === 'luxury'));
+                
+                // Filter wines based on showPremiumWines state (Option 5: Smart Defaults)
+                const filterWinesByTier = (wines) => {
+                  if (showPremiumWines) return wines;
+                  // By default, hide luxury tier wines
+                  return wines.filter(w => w.priceTier !== 'luxury');
+                };
+                
+                // Premium toggle text based on language
+                const premiumButtonText = {
+                  de: showPremiumWines ? '🧡 Premium-Weine ausblenden' : '🧡 Premium-Weine anzeigen (CHF 40+)',
+                  en: showPremiumWines ? '🧡 Hide Premium Wines' : '🧡 Show Premium Wines (CHF 40+)',
+                  fr: showPremiumWines ? '🧡 Masquer les vins premium' : '🧡 Afficher les vins premium (CHF 40+)'
+                }[language] || premiumButtonText.de;
+                
                 // Render wine cards
                 return (
                   <div className="space-y-6">
-                    {sections.map((section, sectionIdx) => (
+                    {sections.map((section, sectionIdx) => {
+                      const filteredWines = filterWinesByTier(section.wines);
+                      if (filteredWines.length === 0 && section.type !== 'main') return null;
+                      
+                      return (
                       <div key={sectionIdx}>
                         {/* Section Title */}
                         <h3 className="text-xl font-extrabold mb-3 text-primary flex items-center gap-2">
@@ -704,23 +749,161 @@ const PairingPage = () => {
                           </p>
                         )}
                         
-                        {/* Wine Cards */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                          {section.wines.map((wine, wineIdx) => {
-                            const { short, long } = splitDescription(wine.description);
-                            const fullDescription = wine.description || '';
-
-                            return (
-                              <Card
-                                key={wineIdx}
-                                className="border-2 border-border hover:border-primary hover:shadow-lg transition-all cursor-pointer group"
-                                onClick={() => handleWineClick({ ...wine, fullDescription })}
-                              >
-                                <CardContent className="p-4 flex flex-col gap-2">
-                                  {/* Wine Name - PROMINENT */}
-                                  <h4 className="font-semibold text-base md:text-lg text-primary group-hover:text-primary/80 line-clamp-2">
-                                    {wine.name}
-                                  </h4>
+                        {/* Wine Cards - grouped by price tier */}
+                        <div className="space-y-4">
+                          {/* Value Wines (💚) */}
+                          {filteredWines.filter(w => w.priceTier === 'value').length > 0 && (
+                            <div>
+                              <div className="flex items-center gap-2 mb-2">
+                                <span className="text-lg">💚</span>
+                                <span className="text-sm font-semibold text-green-600 dark:text-green-400">
+                                  {language === 'de' ? 'Preis-Leistung (CHF 10-20)' : language === 'en' ? 'Great Value (CHF 10-20)' : 'Excellent Rapport (CHF 10-20)'}
+                                </span>
+                              </div>
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                {filteredWines.filter(w => w.priceTier === 'value').map((wine, wineIdx) => {
+                                  const { short, long } = splitDescription(wine.description);
+                                  const fullDescription = wine.description || '';
+                                  return (
+                                    <Card
+                                      key={wineIdx}
+                                      className="border-2 border-green-200 dark:border-green-800 hover:border-green-400 hover:shadow-lg transition-all cursor-pointer group bg-green-50/30 dark:bg-green-950/20"
+                                      onClick={() => handleWineClick({ ...wine, fullDescription })}
+                                    >
+                                      <CardContent className="p-4 flex flex-col gap-2">
+                                        <h4 className="font-semibold text-base md:text-lg text-green-700 dark:text-green-400 group-hover:text-green-600 line-clamp-2">
+                                          {wine.name}
+                                        </h4>
+                                        <p className="text-sm text-muted-foreground line-clamp-2">{short}</p>
+                                      </CardContent>
+                                    </Card>
+                                  );
+                                })}
+                              </div>
+                            </div>
+                          )}
+                          
+                          {/* Premium Wines (💛) */}
+                          {filteredWines.filter(w => w.priceTier === 'premium').length > 0 && (
+                            <div>
+                              <div className="flex items-center gap-2 mb-2">
+                                <span className="text-lg">💛</span>
+                                <span className="text-sm font-semibold text-amber-600 dark:text-amber-400">
+                                  {language === 'de' ? 'Gehobene Qualität (CHF 20-40)' : language === 'en' ? 'Premium Quality (CHF 20-40)' : 'Qualité Supérieure (CHF 20-40)'}
+                                </span>
+                              </div>
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                {filteredWines.filter(w => w.priceTier === 'premium').map((wine, wineIdx) => {
+                                  const { short, long } = splitDescription(wine.description);
+                                  const fullDescription = wine.description || '';
+                                  return (
+                                    <Card
+                                      key={wineIdx}
+                                      className="border-2 border-amber-200 dark:border-amber-800 hover:border-amber-400 hover:shadow-lg transition-all cursor-pointer group bg-amber-50/30 dark:bg-amber-950/20"
+                                      onClick={() => handleWineClick({ ...wine, fullDescription })}
+                                    >
+                                      <CardContent className="p-4 flex flex-col gap-2">
+                                        <h4 className="font-semibold text-base md:text-lg text-amber-700 dark:text-amber-400 group-hover:text-amber-600 line-clamp-2">
+                                          {wine.name}
+                                        </h4>
+                                        <p className="text-sm text-muted-foreground line-clamp-2">{short}</p>
+                                      </CardContent>
+                                    </Card>
+                                  );
+                                })}
+                              </div>
+                            </div>
+                          )}
+                          
+                          {/* Luxury Wines (🧡) - Only shown when toggled */}
+                          {showPremiumWines && filteredWines.filter(w => w.priceTier === 'luxury').length > 0 && (
+                            <div>
+                              <div className="flex items-center gap-2 mb-2">
+                                <span className="text-lg">🧡</span>
+                                <span className="text-sm font-semibold text-orange-600 dark:text-orange-400">
+                                  {language === 'de' ? 'Für besondere Anlässe (CHF 40+)' : language === 'en' ? 'For Special Occasions (CHF 40+)' : 'Pour Occasions Spéciales (CHF 40+)'}
+                                </span>
+                              </div>
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                {filteredWines.filter(w => w.priceTier === 'luxury').map((wine, wineIdx) => {
+                                  const { short, long } = splitDescription(wine.description);
+                                  const fullDescription = wine.description || '';
+                                  return (
+                                    <Card
+                                      key={wineIdx}
+                                      className="border-2 border-orange-200 dark:border-orange-800 hover:border-orange-400 hover:shadow-lg transition-all cursor-pointer group bg-orange-50/30 dark:bg-orange-950/20"
+                                      onClick={() => handleWineClick({ ...wine, fullDescription })}
+                                    >
+                                      <CardContent className="p-4 flex flex-col gap-2">
+                                        <div className="flex items-center gap-2">
+                                          <Crown className="w-4 h-4 text-orange-500" />
+                                          <h4 className="font-semibold text-base md:text-lg text-orange-700 dark:text-orange-400 group-hover:text-orange-600 line-clamp-2">
+                                            {wine.name}
+                                          </h4>
+                                        </div>
+                                        <p className="text-sm text-muted-foreground line-clamp-2">{short}</p>
+                                      </CardContent>
+                                    </Card>
+                                  );
+                                })}
+                              </div>
+                            </div>
+                          )}
+                          
+                          {/* Wines without price tier (fallback for alternatives, etc.) */}
+                          {filteredWines.filter(w => !w.priceTier).length > 0 && (
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                              {filteredWines.filter(w => !w.priceTier).map((wine, wineIdx) => {
+                                const { short, long } = splitDescription(wine.description);
+                                const fullDescription = wine.description || '';
+                                return (
+                                  <Card
+                                    key={wineIdx}
+                                    className="border-2 border-border hover:border-primary hover:shadow-lg transition-all cursor-pointer group"
+                                    onClick={() => handleWineClick({ ...wine, fullDescription })}
+                                  >
+                                    <CardContent className="p-4 flex flex-col gap-2">
+                                      <h4 className="font-semibold text-base md:text-lg text-primary group-hover:text-primary/80 line-clamp-2">
+                                        {wine.name}
+                                      </h4>
+                                      {wine.category && (
+                                        <Badge variant="outline" className="w-fit text-xs">{wine.category}</Badge>
+                                      )}
+                                      <p className="text-sm text-muted-foreground line-clamp-2">{short}</p>
+                                    </CardContent>
+                                  </Card>
+                                );
+                              })}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    )})}
+                    
+                    {/* Premium Toggle Button (Option 5: Smart Defaults) */}
+                    {hasLuxuryWines && (
+                      <div className="flex justify-center pt-4">
+                        <Button
+                          variant={showPremiumWines ? "secondary" : "outline"}
+                          onClick={() => setShowPremiumWines(!showPremiumWines)}
+                          className="gap-2"
+                        >
+                          {showPremiumWines ? (
+                            <>
+                              <span>🧡</span>
+                              {language === 'de' ? 'Premium ausblenden' : language === 'en' ? 'Hide Premium' : 'Masquer Premium'}
+                            </>
+                          ) : (
+                            <>
+                              <Crown className="w-4 h-4 text-orange-500" />
+                              {language === 'de' ? 'Premium-Weine anzeigen (CHF 40+)' : language === 'en' ? 'Show Premium Wines (CHF 40+)' : 'Afficher vins premium (CHF 40+)'}
+                            </>
+                          )}
+                        </Button>
+                      </div>
+                    )}
+                  </div>
+                );
 
                                   {/* Category Badge */}
                                   {wine.category && (

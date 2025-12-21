@@ -2793,6 +2793,14 @@ class WinePairingAPITester:
         self.test_pairing_null_4d_values()
         self.test_pairing_history_serialization()
         
+        # Price-conscious wine pairing tests (NEW)
+        self.test_price_conscious_pairing_german_fondue()
+        self.test_price_conscious_pairing_german_meat()
+        self.test_price_conscious_pairing_english()
+        self.test_price_conscious_pairing_french()
+        self.test_price_conscious_structure_validation()
+        self.test_price_conscious_wine_count_validation()
+        
         # Sommelier chat
         self.test_sommelier_chat()
         self.test_chat_history()

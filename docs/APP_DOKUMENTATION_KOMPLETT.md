@@ -1,7 +1,7 @@
 # 📖 WINE PAIRING APP - Vollständige Dokumentation
 
 **Stand:** 20. Dezember 2025  
-**Version:** 1.3 (Freemium Pricing Pages)  
+**Version:** 1.4 (Preisbewusste Empfehlungen)  
 **Domain:** https://wine-pairing.online
 
 ---

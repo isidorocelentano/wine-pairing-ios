@@ -228,6 +228,7 @@ const CellarPage = () => {
         grape: editingWine.grape || null,
         notes: editingWine.notes || null,
         quantity: typeof editingWine.quantity === 'number' ? editingWine.quantity : parseInt(editingWine.quantity || '1', 10),
+        price_category: editingWine.price_category || null,
       });
       toast.success('Wein erfolgreich aktualisiert!');
       setShowEditDialog(false);

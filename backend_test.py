@@ -3184,6 +3184,28 @@ class WinePairingAPITester:
         
         return self.tests_passed == self.tests_run
 
+    def run_unified_format_tests_only(self):
+        """Run only Unified €/🍷 Format Wine Pairing tests"""
+        print("💰 Testing Unified €/🍷 Format Wine Pairing System")
+        print("=" * 50)
+        
+        # Unified €/🍷 Format Wine Pairing Tests
+        self.test_unified_format_german_spaghetti_bolognese()
+        self.test_unified_format_english_grilled_steak()
+        self.test_unified_format_french_coq_au_vin()
+        self.test_unified_format_structure_validation()
+        self.test_unified_format_wine_availability_check()
+        
+        # Print results
+        print("\n" + "=" * 50)
+        print(f"💰 Unified €/🍷 Format Test Results")
+        print(f"Tests Run: {self.tests_run}")
+        print(f"Tests Passed: {self.tests_passed}")
+        print(f"Tests Failed: {self.tests_run - self.tests_passed}")
+        print(f"Success Rate: {(self.tests_passed/self.tests_run)*100:.1f}%")
+        
+        return self.tests_passed == self.tests_run
+
     def run_chinese_kompass_tests_only(self):
         """Run only Chinese Sommelier Kompass tests"""
         print("🥢 Testing Chinese Sommelier Kompass Data Import")

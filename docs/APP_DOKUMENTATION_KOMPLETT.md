@@ -267,10 +267,16 @@ Jeder User hat seinen **eigenen privaten Weinkeller**. Vollständige User-Isolat
 - Mengenverwaltung (+/-)
 - Favoriten markieren
 - Filter nach Typ & Verfügbarkeit
-- Statistik-Dashboard
+- **🆕 Preiskategorie-System (v1.7):**
+  - 🍷 **Alltags-Genuss** (bis €20)
+  - 🍷🍷 **Gehobener Anlass** (€20-50)
+  - 🍷🍷🍷 **Besonderer Moment** (ab €50)
+- **🆕 Preisfilter:** Filter nach Preiskategorie
+- Statistik-Dashboard (mit Preisaufschlüsselung)
 
 **Technisch:**
 - `user_id` Verknüpfung pro Wein
+- `price_category` Feld ('1', '2', '3' oder null)
 - Datenbank-Index für Skalierung (1000+ User)
 
 ---

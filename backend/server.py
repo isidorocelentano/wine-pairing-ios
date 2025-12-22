@@ -381,6 +381,7 @@ class Wine(BaseModel):
     image_base64: Optional[str] = None
     quantity: int = 1
     is_favorite: bool = False
+    price_category: Optional[str] = None  # 🍷 (bis €20), 🍷🍷 (€20-50), 🍷🍷🍷 (ab €50)
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 class WineCreate(BaseModel):

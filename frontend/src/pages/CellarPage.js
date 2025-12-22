@@ -213,6 +213,7 @@ const CellarPage = () => {
       description: wine.description || '',  // Include description field
       notes: wine.notes || '',
       quantity: typeof wine.quantity === 'number' ? wine.quantity : 1,
+      price_category: wine.price_category || '',
     });
     setShowEditDialog(true);
   };

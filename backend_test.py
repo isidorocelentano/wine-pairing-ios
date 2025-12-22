@@ -3436,6 +3436,18 @@ class WinePairingAPITester:
         # Favorites
         self.test_get_favorites()
         
+        # Price Tags Feature Tests (New Feature)
+        print("\n🏷️ Testing Price Tags Feature for Wine Cellar...")
+        self.test_price_tags_register_and_login()
+        self.test_price_tags_create_wines_with_categories()
+        self.test_price_tags_get_all_wines_with_categories()
+        self.test_price_tags_filter_by_category_1()
+        self.test_price_tags_filter_by_category_2()
+        self.test_price_tags_filter_by_category_3()
+        self.test_price_tags_update_wine_category()
+        self.test_price_tags_invalid_category_values()
+        self.test_price_tags_null_category_handling()
+        
         # Public Wines Database Tests (New Feature)
         print("\n🍷 Testing Public Wines Database Endpoints...")
         self.test_public_wines_list_basic()

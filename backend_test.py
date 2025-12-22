@@ -684,8 +684,8 @@ class WinePairingAPITester:
                 return False
             
             # Check for at least 2 wines in Alltags-Genuss section
-            alltags_start = recommendation.find("🍷 Alltags-Genuss (unter €12):")
-            guter_anlass_start = recommendation.find("🍷🍷 Guter Anlass (€12-25):")
+            alltags_start = recommendation.find("🍷 Alltags-Genuss (unter €12)")
+            guter_anlass_start = recommendation.find("🍷🍷 Guter Anlass (€12-25)")
             
             if alltags_start != -1 and guter_anlass_start != -1:
                 alltags_section = recommendation[alltags_start:guter_anlass_start]

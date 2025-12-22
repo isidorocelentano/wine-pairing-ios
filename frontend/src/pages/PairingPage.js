@@ -761,22 +761,22 @@ const PairingPage = () => {
                   return wines.filter(w => w.priceTier !== 'luxury');
                 };
                 
-                // Price tier labels with € (unified 🍷 system)
+                // Price tier labels with € (unified 🍷 system for wine enthusiasts)
                 const tierLabels = {
                   value: {
-                    de: '🍷 Alltags-Genuss (unter €12)',
-                    en: '🍷 Everyday Enjoyment (under €12)',
-                    fr: '🍷 Plaisir Quotidien (moins de €12)'
+                    de: '🍷 Alltags-Genuss (bis €20)',
+                    en: '🍷 Everyday Enjoyment (up to €20)',
+                    fr: '🍷 Plaisir Quotidien (jusqu\'à €20)'
                   },
                   premium: {
-                    de: '🍷🍷 Guter Anlass (€12-25)',
-                    en: '🍷🍷 Good Occasion (€12-25)',
-                    fr: '🍷🍷 Belle Occasion (€12-25)'
+                    de: '🍷🍷 Gehobener Anlass (€20-50)',
+                    en: '🍷🍷 Special Occasion (€20-50)',
+                    fr: '🍷🍷 Belle Occasion (€20-50)'
                   },
                   luxury: {
-                    de: '🍷🍷🍷 Besonderer Moment (über €25)',
-                    en: '🍷🍷🍷 Special Moment (over €25)',
-                    fr: '🍷🍷🍷 Moment Spécial (plus de €25)'
+                    de: '🍷🍷🍷 Besonderer Moment (ab €50)',
+                    en: '🍷🍷🍷 Exceptional Moment (€50+)',
+                    fr: '🍷🍷🍷 Moment d\'Exception (à partir de €50)'
                   }
                 };
                 

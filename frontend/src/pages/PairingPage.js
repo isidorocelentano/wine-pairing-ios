@@ -631,24 +631,65 @@ const PairingPage = () => {
                 let wines = [];
                 let currentPriceTier = null; // Track current price tier
                 
-                // Price tier labels in different languages
+                // Price tier labels - NEW unified 🍷🍷🍷 system with €
                 const priceTierPatterns = {
+                  value: /🍷\s*\*\*(?:Alltags-Genuss|Everyday Enjoyment|Plaisir Quotidien)/i,
+                  premium: /🍷🍷\s*\*\*(?:Guter Anlass|Good Occasion|Belle Occasion)/i,
+                  luxury: /🍷🍷🍷\s*\*\*(?:Besonderer Moment|Special Moment|Moment Spécial)/i
+                };
+                
+                // Also match old patterns for backward compatibility
+                const oldPriceTierPatterns = {
                   value: /💚.*(?:Preis-Leistung|Great Value|Excellent Rapport)/i,
                   premium: /💛.*(?:Gehobene Qualität|Premium Quality|Qualité Supérieure)/i,
                   luxury: /🧡.*(?:besondere Anlässe|Special Occasions|Occasions Spéciales)/i
                 };
                 
+                // Check for style/why sections (new format)
+                let styleSection = null;
+                let whySection = null;
+                let insiderTip = null;
+                
                 lines.forEach((line, idx) => {
                   const trimmedLine = line.trim();
                   
-                  // Main heading - more flexible regex to catch various formats
-                  // Matches: "1. **🍷 HAUPTEMPFEHLUNG**", "1. **HAUPTEMPFEHLUNG**", "**🍷 HAUPTEMPFEHLUNG**", etc.
-                  if (trimmedLine.match(/HAUPTEMPFEHLUNG|TOP RECOMMENDATION|RECOMMANDATION PRINCIPALE/i)) {
+                  // Style section (new format)
+                  if (trimmedLine.match(/\*\*🍷\s*DER STIL|THE STYLE|LE STYLE\*\*/i)) {
+                    styleSection = { title: '🍷 Der Stil', content: '' };
+                    return;
+                  }
+                  
+                  // Why section (new format)
+                  if (trimmedLine.match(/\*\*💡\s*DAS WARUM|THE WHY|LE POURQUOI\*\*/i)) {
+                    whySection = { title: '💡 Das Warum', content: '' };
+                    return;
+                  }
+                  
+                  // Insider tip section (new format)
+                  if (trimmedLine.match(/\*\*💎\s*GEHEIMTIPP|INSIDER TIP|BON PLAN\*\*/i)) {
+                    insiderTip = { title: '💎 Geheimtipp', content: '' };
+                    return;
+                  }
+                  
+                  // Capture content for style/why sections
+                  if (styleSection && !styleSection.content && trimmedLine && !trimmedLine.startsWith('**')) {
+                    styleSection.content = trimmedLine;
+                  }
+                  if (whySection && !whySection.content && trimmedLine && !trimmedLine.startsWith('**')) {
+                    whySection.content = trimmedLine;
+                  }
+                  if (insiderTip && !insiderTip.content && trimmedLine && !trimmedLine.startsWith('**')) {
+                    insiderTip.content = trimmedLine;
+                  }
+                  
+                  // Main recommendation heading
+                  if (trimmedLine.match(/🍷\s*EMPFEHLUNGEN|RECOMMENDATIONS|RECOMMANDATIONS/i) || 
+                      trimmedLine.match(/HAUPTEMPFEHLUNG|TOP RECOMMENDATION|RECOMMANDATION PRINCIPALE/i)) {
                     if (currentSection) {
                       currentSection.wines = wines;
                       sections.push(currentSection);
                     }
-                    currentSection = { title: '🍷 Hauptempfehlung', type: 'main', intro: '', wines: [] };
+                    currentSection = { title: '🍷 Empfehlungen', type: 'main', intro: '', wines: [] };
                     wines = [];
                     currentIntro = '';
                     currentPriceTier = null;
@@ -665,22 +706,21 @@ const PairingPage = () => {
                     currentIntro = '';
                     currentPriceTier = null;
                   }
-                  // Price tier headers (NEW - Option 3 implementation)
-                  else if (priceTierPatterns.value.test(trimmedLine)) {
+                  // Price tier headers - NEW unified format
+                  else if (priceTierPatterns.value.test(trimmedLine) || oldPriceTierPatterns.value.test(trimmedLine)) {
                     currentPriceTier = 'value';
-                    currentIntro = trimmedLine.replace(/\*\*/g, '').replace(/💚/g, '').trim();
+                    currentIntro = trimmedLine.replace(/\*\*/g, '').replace(/[💚🍷]/g, '').trim();
                   }
-                  else if (priceTierPatterns.premium.test(trimmedLine)) {
+                  else if (priceTierPatterns.premium.test(trimmedLine) || oldPriceTierPatterns.premium.test(trimmedLine)) {
                     currentPriceTier = 'premium';
-                    currentIntro = trimmedLine.replace(/\*\*/g, '').replace(/💛/g, '').trim();
+                    currentIntro = trimmedLine.replace(/\*\*/g, '').replace(/[💛🍷]/g, '').trim();
                   }
-                  else if (priceTierPatterns.luxury.test(trimmedLine)) {
+                  else if (priceTierPatterns.luxury.test(trimmedLine) || oldPriceTierPatterns.luxury.test(trimmedLine)) {
                     currentPriceTier = 'luxury';
-                    currentIntro = trimmedLine.replace(/\*\*/g, '').replace(/🧡/g, '').trim();
+                    currentIntro = trimmedLine.replace(/\*\*/g, '').replace(/[🧡🍷]/g, '').trim();
                   }
-                  // Sub-heading for wine type categories (Bester Weintyp, Schaumwein, etc.)
+                  // Sub-heading for wine type categories
                   else if (trimmedLine.match(/^\*\*.*(?:Weintyp|wein|Wine Type|Vin).*:/i) || trimmedLine.match(/^\*\*(?:Schaumwein|Rotwein|Weißwein|Sparkling|Red Wine|White Wine)/i)) {
-                    // Extract category name
                     const categoryMatch = trimmedLine.match(/\*\*([^*]+)\*\*/);
                     if (categoryMatch) {
                       currentIntro = categoryMatch[1].replace(/:/g, '').trim();
@@ -694,11 +734,11 @@ const PairingPage = () => {
                         name: wineMatch[1].trim(),
                         description: wineMatch[2].trim(),
                         category: currentIntro,
-                        priceTier: currentPriceTier // Add price tier info
+                        priceTier: currentPriceTier
                       });
                     }
                   }
-                  // Introduction text (not a wine, not a heading, not "Bester Weintyp")
+                  // Introduction text
                   else if (trimmedLine && !trimmedLine.match(/^[-*#\d]/) && !trimmedLine.match(/^---/) && !trimmedLine.match(/^\*\*/) && currentSection && wines.length === 0) {
                     currentIntro += (currentIntro ? ' ' : '') + trimmedLine;
                   }

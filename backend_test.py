@@ -649,8 +649,8 @@ class WinePairingAPITester:
             required_sections = [
                 "🍷 DER STIL",
                 "💡 DAS WARUM", 
-                "🍷 Alltags-Genuss (unter €12):",
-                "🍷🍷 Guter Anlass (€12-25):",
+                "🍷 Alltags-Genuss (unter €12)",
+                "🍷🍷 Guter Anlass (€12-25)",
                 "💎 GEHEIMTIPP"
             ]
             

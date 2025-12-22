@@ -53,8 +53,13 @@ const CellarPage = () => {
       acc[type] = (acc[type] || 0) + (wine.quantity || 0);
       return acc;
     }, {});
+    const byPrice = wines.reduce((acc, wine) => {
+      const price = wine.price_category || 'none';
+      acc[price] = (acc[price] || 0) + (wine.quantity || 0);
+      return acc;
+    }, {});
     const uniqueWines = wines.length;
-    return { totalBottles, byType, uniqueWines };
+    return { totalBottles, byType, byPrice, uniqueWines };
   }, [wines]);
 
   const fetchWines = useCallback(async () => {

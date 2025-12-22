@@ -478,6 +478,9 @@ class PairingRequest(BaseModel):
     wine_type_filter: Optional[str] = None
     language: str = "de"  # de, en, fr
     dish_id: Optional[str] = None  # optional structured dish from DB
+    
+    # Restaurant-Modus: User gibt verfügbare Weine von der Karte ein
+    available_wines: Optional[str] = None  # Weine von der Weinkarte
 
     # 4D Profi-Modus Werte (0-10 Skala)
     richness: Optional[int] = None

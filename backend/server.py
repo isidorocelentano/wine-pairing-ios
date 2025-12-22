@@ -1238,11 +1238,12 @@ async def get_wine_pairing(request: PairingRequest, http_request: Request):
         if not allowed:
             raise HTTPException(status_code=429, detail=message)
         
-        # Check cache first (only for requests without cellar, dish_id, or 4D parameters)
+        # Check cache first (only for requests without cellar, dish_id, available_wines, or 4D parameters)
         # These are "simple" requests that can be cached
         is_cacheable = (
             not request.use_cellar and 
             not request.dish_id and
+            not request.available_wines and  # Restaurant-Modus nicht cachen
             request.richness is None and
             request.freshness is None and
             request.sweetness is None and
@@ -1250,13 +1251,12 @@ async def get_wine_pairing(request: PairingRequest, http_request: Request):
         )
         
         cache_key = None
-        # WICHTIG: use_cellar Anfragen sollten NICHT gecacht werden, da sie dynamische Keller-Inhalte haben
-        # Stattdessen: Separate Cache-Keys für use_cellar und non-use_cellar
-        if is_cacheable and not request.use_cellar:
+        # WICHTIG: use_cellar und available_wines Anfragen sollten NICHT gecacht werden
+        if is_cacheable and not request.use_cellar and not request.available_wines:
             cache_key = get_cache_key(request.dish, request.language, request.wine_type_filter, request.use_cellar)
             cached_result = get_cached_pairing(cache_key)
             if cached_result:
-                # Return cached result immediately (nur für non-cellar Anfragen)
+                # Return cached result immediately (nur für simple Anfragen)
                 return PairingResponse(
                     dish=request.dish,
                     recommendation=cached_result['recommendation'],
@@ -1265,8 +1265,13 @@ async def get_wine_pairing(request: PairingRequest, http_request: Request):
                 )
         
         # No cache hit - make LLM call
-        # Get language-specific system message
-        system_message = get_sommelier_system(request.language)
+        # Check if this is "Restaurant Mode" with available wines
+        if request.available_wines and request.available_wines.strip():
+            # Use special Restaurant Mode system message
+            system_message = get_restaurant_mode_system(request.language)
+        else:
+            # Get standard language-specific system message
+            system_message = get_sommelier_system(request.language)
         
         chat = LlmChat(
             api_key=EMERGENT_LLM_KEY,
@@ -1277,6 +1282,16 @@ async def get_wine_pairing(request: PairingRequest, http_request: Request):
         # Get cellar wines if requested
         cellar_matches = None
         cellar_context = ""
+        
+        # Restaurant-Modus: Verfügbare Weine von der Karte
+        restaurant_context = ""
+        if request.available_wines and request.available_wines.strip():
+            if request.language == "en":
+                restaurant_context = f"\n\n🍷 WINE LIST SELECTION:\nThe customer is at a restaurant and has these wines available on the menu:\n{request.available_wines}\n\nPlease recommend THE BEST wine from this list for the dish. Explain WHY this specific wine is the best choice."
+            elif request.language == "fr":
+                restaurant_context = f"\n\n🍷 SÉLECTION DE LA CARTE DES VINS:\nLe client est au restaurant et a ces vins disponibles sur la carte:\n{request.available_wines}\n\nVeuillez recommander LE MEILLEUR vin de cette liste pour le plat. Expliquez POURQUOI ce vin spécifique est le meilleur choix."
+            else:
+                restaurant_context = f"\n\n🍷 WEINKARTEN-AUSWAHL:\nDer Kunde sitzt im Restaurant und hat folgende Weine auf der Karte zur Auswahl:\n{request.available_wines}\n\nBitte empfehle DEN BESTEN Wein aus dieser Liste zum Gericht. Erkläre WARUM genau dieser Wein die beste Wahl ist."
         
         if request.use_cellar:
             # User muss eingeloggt sein für Keller-Empfehlungen

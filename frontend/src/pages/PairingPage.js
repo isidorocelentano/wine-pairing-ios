@@ -68,6 +68,10 @@ const PairingPage = () => {
   // State for showing premium wines (Option 5: Smart Defaults)
   const [showPremiumWines, setShowPremiumWines] = useState(false);
   
+  // Restaurant-Modus: Verfügbare Weine von der Weinkarte
+  const [availableWines, setAvailableWines] = useState('');
+  const [showRestaurantMode, setShowRestaurantMode] = useState(false);
+  
   // Handle wine card click - show wine detail inline instead of navigating away
   const handleWineClick = async (wine) => {
     setLoadingWineDetail(true);

@@ -1455,18 +1455,29 @@ async def get_wine_pairing(request: PairingRequest, http_request: Request):
             four_d_context += f"- Würze (Spice): {request.spice if request.spice is not None else '-'} auf einer Skala von 0-10\n"
             four_d_context += "\nNutze diese vier Dimensionen, um im Anschluss eine kompakte Erklärung zu geben, WARUM deine Empfehlung harmoniert. Erkläre vor allem die BRÜCKE zwischen Gericht und Wein."
 
-        # Translate main prompt based on language
-        if request.language == "en":
-            base_prompt = f"I would like to eat {request.dish}. Which wine do you recommend?{cellar_context}{dish_context}{four_d_context}"
-            explanation_instruction = "\n\nAfter your recommendation, add a short section titled 'Why this pairing works' that explains in 3-5 sentences WHY your recommendation harmonises with the dish based on the four dimensions (richness, freshness, sweetness, spice) and the bridge between food and wine. Mark this section clearly with 'WHY_SECTION_START' and 'WHY_SECTION_END'."
-        elif request.language == "fr":
-            base_prompt = f"Je voudrais manger {request.dish}. Quel vin recommandez-vous?{cellar_context}{dish_context}{four_d_context}"
-            explanation_instruction = "\n\nAprès votre recommandation, ajoutez une courte section intitulée 'Pourquoi cet accord fonctionne' qui explique en 3-5 phrases POURQUOI votre recommandation s'harmonise avec le plat sur la base des quatre dimensions (richesse, fraîcheur, douceur, épice) et du pont entre mets et vin. Marquez clairement cette section avec 'WHY_SECTION_START' et 'WHY_SECTION_END'."
+        # Restaurant-Modus: Keine Standard-Empfehlungen, nur aus der Liste
+        if request.available_wines and request.available_wines.strip():
+            # Restaurant Mode - simple prompt with wine list
+            if request.language == "en":
+                prompt = f"I would like to eat {request.dish}.{restaurant_context}"
+            elif request.language == "fr":
+                prompt = f"Je voudrais manger {request.dish}.{restaurant_context}"
+            else:
+                prompt = f"Ich möchte {request.dish} essen.{restaurant_context}"
         else:
-            base_prompt = f"Ich möchte {request.dish} essen. Welchen Wein empfiehlst du dazu?{cellar_context}{dish_context}{four_d_context}"
-            explanation_instruction = "\n\nGib nach deiner Empfehlung einen kurzen Abschnitt mit der Überschrift 'Warum dieses Pairing funktioniert' aus. Erkläre in 3-5 Sätzen, WARUM deine Empfehlung mit dem Gericht harmoniert – entlang der vier Dimensionen (Reichhaltigkeit, Frische, Süße, Würze) und der BRÜCKE zwischen Speise und Wein. Kennzeichne diesen Abschnitt klar mit 'WHY_SECTION_START' und 'WHY_SECTION_END'."
+            # Standard mode with full recommendations
+            # Translate main prompt based on language
+            if request.language == "en":
+                base_prompt = f"I would like to eat {request.dish}. Which wine do you recommend?{cellar_context}{dish_context}{four_d_context}"
+                explanation_instruction = "\n\nAfter your recommendation, add a short section titled 'Why this pairing works' that explains in 3-5 sentences WHY your recommendation harmonises with the dish based on the four dimensions (richness, freshness, sweetness, spice) and the bridge between food and wine. Mark this section clearly with 'WHY_SECTION_START' and 'WHY_SECTION_END'."
+            elif request.language == "fr":
+                base_prompt = f"Je voudrais manger {request.dish}. Quel vin recommandez-vous?{cellar_context}{dish_context}{four_d_context}"
+                explanation_instruction = "\n\nAprès votre recommandation, ajoutez une courte section intitulée 'Pourquoi cet accord fonctionne' qui explique en 3-5 phrases POURQUOI votre recommandation s'harmonise avec le plat sur la base des quatre dimensions (richesse, fraîcheur, douceur, épice) et du pont entre mets et vin. Marquez clairement cette section avec 'WHY_SECTION_START' et 'WHY_SECTION_END'."
+            else:
+                base_prompt = f"Ich möchte {request.dish} essen. Welchen Wein empfiehlst du dazu?{cellar_context}{dish_context}{four_d_context}"
+                explanation_instruction = "\n\nGib nach deiner Empfehlung einen kurzen Abschnitt mit der Überschrift 'Warum dieses Pairing funktioniert' aus. Erkläre in 3-5 Sätzen, WARUM deine Empfehlung mit dem Gericht harmoniert – entlang der vier Dimensionen (Reichhaltigkeit, Frische, Süße, Würze) und der BRÜCKE zwischen Speise und Wein. Kennzeichne diesen Abschnitt klar mit 'WHY_SECTION_START' und 'WHY_SECTION_END'."
 
-        prompt = base_prompt + explanation_instruction
+            prompt = base_prompt + explanation_instruction
         
         user_message = UserMessage(text=prompt)
         response = await chat.send_message(user_message)

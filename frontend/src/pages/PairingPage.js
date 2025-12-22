@@ -672,6 +672,131 @@ const PairingPage = () => {
               )}
 
               {(() => {
+                // Check if this is a Restaurant Mode recommendation
+                const isRestaurantMode = result.recommendation.includes('MEINE EMPFEHLUNG') || 
+                                          result.recommendation.includes('MY RECOMMENDATION') || 
+                                          result.recommendation.includes('MA RECOMMANDATION');
+                
+                // Restaurant Mode: Simple display without complex parsing
+                if (isRestaurantMode) {
+                  // Parse Restaurant Mode response
+                  const lines = result.recommendation.split('\n');
+                  let mainRecommendation = null;
+                  let whySection = null;
+                  let alternativeSection = null;
+                  let avoidSection = null;
+                  let currentSection = null;
+                  
+                  lines.forEach((line) => {
+                    const trimmed = line.trim();
+                    
+                    // Main recommendation
+                    if (trimmed.match(/\*\*🍷\s*MEINE EMPFEHLUNG|MY RECOMMENDATION|MA RECOMMANDATION\*\*/i)) {
+                      currentSection = 'main';
+                      mainRecommendation = { title: language === 'de' ? '🍷 Meine Empfehlung' : language === 'en' ? '🍷 My Recommendation' : '🍷 Ma Recommandation', content: '' };
+                      return;
+                    }
+                    // Just the wine name after header
+                    if (currentSection === 'main' && trimmed && !trimmed.startsWith('**') && !mainRecommendation.content) {
+                      mainRecommendation.content = trimmed;
+                      return;
+                    }
+                    
+                    // Why section
+                    if (trimmed.match(/\*\*💡\s*WARUM|WHY|POURQUOI/i)) {
+                      currentSection = 'why';
+                      whySection = { title: language === 'de' ? '💡 Warum dieser Wein?' : language === 'en' ? '💡 Why This Wine?' : '💡 Pourquoi Ce Vin?', content: '' };
+                      return;
+                    }
+                    if (currentSection === 'why' && trimmed && !trimmed.startsWith('**')) {
+                      whySection.content += (whySection.content ? ' ' : '') + trimmed;
+                    }
+                    
+                    // Alternative
+                    if (trimmed.match(/\*\*🔄\s*ALTERNATIVE/i)) {
+                      currentSection = 'alt';
+                      alternativeSection = { title: language === 'de' ? '🔄 Alternative' : '🔄 Alternative', content: '' };
+                      return;
+                    }
+                    if (currentSection === 'alt' && trimmed && !trimmed.startsWith('**')) {
+                      alternativeSection.content += (alternativeSection.content ? ' ' : '') + trimmed;
+                    }
+                    
+                    // Avoid
+                    if (trimmed.match(/\*\*⚠️\s*VERMEIDE|AVOID|À ÉVITER/i)) {
+                      currentSection = 'avoid';
+                      avoidSection = { title: language === 'de' ? '⚠️ Vermeide' : language === 'en' ? '⚠️ Avoid' : '⚠️ À Éviter', content: '' };
+                      return;
+                    }
+                    if (currentSection === 'avoid' && trimmed && !trimmed.startsWith('**')) {
+                      avoidSection.content += (avoidSection.content ? ' ' : '') + trimmed;
+                    }
+                  });
+                  
+                  return (
+                    <div className="space-y-6">
+                      {/* Restaurant Mode Badge */}
+                      <div className="flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-lg border border-primary/30">
+                        <span className="text-lg">🍽️</span>
+                        <span className="text-sm font-medium text-primary">
+                          {language === 'de' ? 'Restaurant-Modus: Empfehlung aus deiner Weinkarte' : 
+                           language === 'en' ? 'Restaurant Mode: Recommendation from your wine list' : 
+                           'Mode Restaurant: Recommandation de votre carte'}
+                        </span>
+                      </div>
+                      
+                      {/* Main Recommendation - Big and prominent */}
+                      {mainRecommendation && mainRecommendation.content && (
+                        <Card className="border-2 border-primary bg-gradient-to-r from-primary/10 to-primary/5">
+                          <CardContent className="p-6 text-center">
+                            <p className="text-sm text-primary font-medium mb-2">{mainRecommendation.title}</p>
+                            <h3 className="text-2xl md:text-3xl font-bold text-primary">
+                              {mainRecommendation.content}
+                            </h3>
+                          </CardContent>
+                        </Card>
+                      )}
+                      
+                      {/* Why Section */}
+                      {whySection && whySection.content && (
+                        <Card className="bg-amber-50/50 dark:bg-amber-950/20 border-amber-200 dark:border-amber-800">
+                          <CardContent className="p-5">
+                            <h4 className="font-semibold text-amber-700 dark:text-amber-400 mb-2 flex items-center gap-2">
+                              <span>💡</span> {whySection.title.replace('💡 ', '')}
+                            </h4>
+                            <p className="text-muted-foreground leading-relaxed">{whySection.content}</p>
+                          </CardContent>
+                        </Card>
+                      )}
+                      
+                      {/* Alternative Section */}
+                      {alternativeSection && alternativeSection.content && (
+                        <Card className="bg-blue-50/50 dark:bg-blue-950/20 border-blue-200 dark:border-blue-800">
+                          <CardContent className="p-5">
+                            <h4 className="font-semibold text-blue-700 dark:text-blue-400 mb-2 flex items-center gap-2">
+                              <span>🔄</span> {alternativeSection.title.replace('🔄 ', '')}
+                            </h4>
+                            <p className="text-muted-foreground leading-relaxed">{alternativeSection.content}</p>
+                          </CardContent>
+                        </Card>
+                      )}
+                      
+                      {/* Avoid Section */}
+                      {avoidSection && avoidSection.content && (
+                        <Card className="bg-red-50/50 dark:bg-red-950/20 border-red-200 dark:border-red-800">
+                          <CardContent className="p-5">
+                            <h4 className="font-semibold text-red-700 dark:text-red-400 mb-2 flex items-center gap-2">
+                              <span>⚠️</span> {avoidSection.title.replace('⚠️ ', '')}
+                            </h4>
+                            <p className="text-muted-foreground leading-relaxed">{avoidSection.content}</p>
+                          </CardContent>
+                        </Card>
+                      )}
+                    </div>
+                  );
+                }
+                
+                // Standard Mode: Full parsing with price tiers
                 // Parse recommendation text into structured wine cards with price tiers
                 const lines = result.recommendation.split('\n');
                 const sections = [];

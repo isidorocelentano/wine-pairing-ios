@@ -1,7 +1,7 @@
 # 📖 WINE PAIRING APP - Vollständige Dokumentation
 
-**Stand:** 20. Dezember 2025  
-**Version:** 1.4 (Preisbewusste Empfehlungen)  
+**Stand:** 22. Dezember 2025  
+**Version:** 1.6 (Restaurant-Modus & Style-First)  
 **Domain:** https://wine-pairing.online
 
 ---
@@ -17,58 +17,77 @@
 | **Community Feed** | 269 Beiträge |
 | **Sprachen** | DE, EN, FR |
 | **Monetarisierung** | Freemium + Stripe |
+| **Zielmarkt** | Deutschland (€-Preise) |
 
-### 🆕 Letzte Änderung (20.12.2025 - Version 1.4):
+---
 
-**Preisbewusste Weinempfehlungen - NEU:**
-- ✅ KI empfiehlt nun **erschwingliche Weine zuerst** (Preis-Leistung CHF 10-20)
-- ✅ **Gestaffelte Preiskategorien** in jeder Empfehlung:
-  - 💚 **Preis-Leistung (CHF 10-20)** - immer zuerst, mind. 2 Weine
-  - 💛 **Gehobene Qualität (CHF 20-40)**
-  - 🧡 **Für besondere Anlässe (CHF 40+)** - optional
-- ✅ Multi-Sprachen Support (DE/EN/FR) mit lokalisierter Preisstruktur
-- ✅ Fokus auf **CH-Markt** mit CHF-Preisangaben
-- ✅ Für **alle User** verfügbar (Basic + Pro)
+## 🆕 ÄNDERUNGSHISTORIE
 
-**Technische Änderungen:**
-- Sommelier System Prompt komplett überarbeitet
-- Preisbewusste Empfehlungslogik in allen 3 Sprachen
-- Backend API getestet und produktionsbereit
+### Version 1.6 (22.12.2025) - Restaurant-Modus & Style-First
 
-### Frühere Änderung (20.12.2025 - Version 1.3):
+**🍽️ Restaurant-Modus - NEU:**
+- ✅ Neues Feature: **"Im Restaurant? Weinkarte eingeben"**
+- ✅ User gibt Weine von der Karte ein → KI empfiehlt konkret aus dieser Liste
+- ✅ Spezielle Antwort-Struktur:
+  - 🍷 **MEINE EMPFEHLUNG** - DER beste Wein aus der Liste
+  - 💡 **WARUM GENAU DIESER WEIN?** - Detaillierte Begründung
+  - 🔄 **ALTERNATIVE** - Zweite Option aus der Liste
+  - ⚠️ **VERMEIDE** - Welchen Wein NICHT wählen
+- ✅ 3-sprachig: DE/EN/FR
+- ✅ Prominente Anzeige mit Restaurant-Badge
 
-**Freemium Pricing Pages - NEU:**
-- ✅ **Neue Pricing-Seite** (`/pricing`, `/pro`) mit emotionalem Design
-- ✅ **Homepage Pricing-Teaser** - Prominent platzierte Free vs. Pro Vergleichskarten
-- ✅ Modern/dynamischer Stil (hebt sich von traditionellen Wein-Apps ab)
-- ✅ Hero-Tagline: *"DEIN SOMMELIER. IMMER DABEI."*
-- ✅ Hochwertige Unsplash-Bilder integriert
-- ✅ Multi-Sprachen: DE, EN, FR
-- ✅ Testimonials & FAQ-Bereich
-- ✅ Responsive Design (Mobile optimiert)
+**🍷 Style-First Ansatz - NEU:**
+- ✅ Neue Struktur für Standard-Empfehlungen:
+  - **🍷 DER STIL** - Erklärt den passenden Weinstil
+  - **💡 DAS WARUM** - Wissenschaftliche Balance zum Gericht
+  - **🍷 EMPFEHLUNGEN** - Gestaffelt nach Preiskategorie
+  - **💎 GEHEIMTIPP** - Günstigere Alternative aus weniger bekannter Region
 
-**Admin-Endpoints erweitert:**
-- ✅ `/api/admin/reset-owner-password` - Passwort-Reset für Hauptbenutzer
-- ✅ `/api/admin/debug-user/{email}` - User-Debugging
-- ✅ Stripe checkout URLs korrigiert (keine hardcoded localhost mehr)
+**💶 Preisskala für Weinliebhaber (DE-Markt):**
+- ✅ Umstellung von CHF auf **€** (Deutscher Markt größer)
+- ✅ Einheitliche **🍷-Symbole** (statt 💚💛🧡)
+- ✅ Neue Preisstufen für Fachhandel-Qualität:
+  - 🍷 **Alltags-Genuss** (bis €20)
+  - 🍷🍷 **Gehobener Anlass** (€20-50)
+  - 🍷🍷🍷 **Besonderer Moment** (ab €50)
+- ✅ Fokus auf konkrete Weingüter (Dönnhoff, Keller, Antinori, Gaja, etc.)
 
-### Frühere Änderungen (18.12.2025 - Version 1.2):
+---
 
-**Rebsorten-Lexikon komplett überarbeitet:**
-- ✅ 313 Rebsorten mit hochwertigen Weinbildern (verifizierte Unsplash-URLs)
-- ✅ 173 fehlende URL-Slugs generiert (Navigation funktioniert jetzt)
-- ✅ Pydantic-Schema repariert (legacy Feldnamen-Mapping)
-- ✅ Bildverteilung: 128 Rot, 136 Weiß, 29 Rosé, 20 Schaumwein
+### Version 1.5 (20.12.2025) - € und 🍷-System
 
-**D/A/CH Weindaten bereinigt (943 Weine):**
-- ✅ Deutschland: 85 → 10 saubere Regionen
-- ✅ Österreich: 18 → 16 Regionen, ungültige Appellationen entfernt
-- ✅ Schweiz: 145 → 13 Regionen (keine Sub-Regionen mehr)
-- ✅ Tippfehler korrigiert (Wuejrttemberg → Württemberg, etc.)
+**Einheitliches Preissystem:**
+- Wechsel von CHF auf € für deutschen Markt
+- Einheitliche 🍷-Symbole statt Farbcodierung
+- Style-First Ansatz implementiert
+- Geheimtipp-Section hinzugefügt
 
-**URL-Parameter bei Seitenladung:**
-- ✅ `/sommelier-kompass?country=Argentinien` → Argentinien vorselektiert
-- ✅ `/wine-database?country=Deutschland` → Deutsche Weine gefiltert
+---
+
+### Version 1.4 (20.12.2025) - Preisbewusste Empfehlungen
+
+**Gestaffelte Preiskategorien:**
+- KI empfiehlt erschwingliche Weine zuerst
+- 3 Preisstufen mit farbcodierten Karten
+- "Premium anzeigen" Button für Luxus-Weine
+
+---
+
+### Version 1.3 (20.12.2025) - Freemium Pricing Pages
+
+**Neue Seiten:**
+- `/pricing` und `/pro` - Dedizierte Pricing-Seite
+- Homepage Pricing-Teaser für Nicht-Pro-User
+- Emotionales Design mit Unsplash-Bildern
+
+---
+
+### Version 1.2 (18.12.2025) - Rebsorten & D/A/CH
+
+**Datenbereinigung:**
+- 313 Rebsorten mit Bildern
+- D/A/CH Weinfilter bereinigt
+- URL-Parameter für Deep-Linking
 
 ---
 

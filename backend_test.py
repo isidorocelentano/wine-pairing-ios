@@ -1260,6 +1260,318 @@ class WinePairingAPITester:
             self.log_test("Get Favorites", False, str(response))
         return success
 
+    # ===================== PRICE TAGS FEATURE TESTS =====================
+    
+    def test_price_tags_register_and_login(self):
+        """Test user registration and login for price tags testing"""
+        import time
+        timestamp = int(time.time())
+        
+        # Register test user
+        register_data = {
+            "email": f"pricetest_{timestamp}@test.com",
+            "password": "testpass123",
+            "name": "Price Test User"
+        }
+        
+        success_register, register_response = self.make_request('POST', 'auth/register', data=register_data, expected_status=200)
+        if not success_register:
+            self.log_test("Price Tags - Register User", False, f"Registration failed: {register_response}")
+            return False
+        
+        if 'user_id' not in register_response:
+            self.log_test("Price Tags - Register User", False, f"Registration missing user_id: {register_response}")
+            return False
+        
+        # Test user login
+        login_data = {
+            "email": register_data["email"],
+            "password": register_data["password"]
+        }
+        
+        success_login, login_response = self.make_request('POST', 'auth/login', data=login_data, expected_status=200)
+        if not success_login:
+            self.log_test("Price Tags - Login User", False, f"Login failed: {login_response}")
+            return False
+        
+        if 'user_id' not in login_response:
+            self.log_test("Price Tags - Login User", False, f"Login missing user_id: {login_response}")
+            return False
+        
+        self.log_test("Price Tags - Register and Login", True, 
+                     f"User registered and logged in: {register_data['email']}")
+        return True
+
+    def test_price_tags_create_wines_with_categories(self):
+        """Test creating wines with different price categories"""
+        test_wines = [
+            {
+                "name": "Budget Bordeaux 2021",
+                "type": "rot",
+                "region": "Bordeaux",
+                "year": 2021,
+                "grape": "Merlot",
+                "price_category": "1",  # 🍷 (bis €20)
+                "notes": "Test wine with price category 1"
+            },
+            {
+                "name": "Premium Burgundy 2020",
+                "type": "rot", 
+                "region": "Burgund",
+                "year": 2020,
+                "grape": "Pinot Noir",
+                "price_category": "2",  # 🍷🍷 (€20-50)
+                "notes": "Test wine with price category 2"
+            },
+            {
+                "name": "Luxury Champagne 2018",
+                "type": "schaumwein",
+                "region": "Champagne", 
+                "year": 2018,
+                "grape": "Chardonnay",
+                "price_category": "3",  # 🍷🍷🍷 (ab €50)
+                "notes": "Test wine with price category 3"
+            },
+            {
+                "name": "No Price Category Wine 2022",
+                "type": "weiss",
+                "region": "Mosel",
+                "year": 2022,
+                "grape": "Riesling",
+                "notes": "Test wine without price category"
+                # price_category intentionally omitted (should be null)
+            }
+        ]
+        
+        created_wine_ids = []
+        
+        for i, wine_data in enumerate(test_wines):
+            success, response = self.make_request('POST', 'wines', data=wine_data, expected_status=200)
+            if success and 'id' in response:
+                created_wine_ids.append(response['id'])
+                
+                # Verify price_category is returned correctly
+                returned_price_category = response.get('price_category')
+                expected_price_category = wine_data.get('price_category')
+                
+                if returned_price_category != expected_price_category:
+                    self.log_test(f"Price Tags - Create Wine {i+1}", False, 
+                                 f"Price category mismatch: expected {expected_price_category}, got {returned_price_category}")
+                    return False
+                
+                self.log_test(f"Price Tags - Create Wine {i+1}", True, 
+                             f"Created {wine_data['name']} with price_category: {returned_price_category}")
+            else:
+                self.log_test(f"Price Tags - Create Wine {i+1}", False, str(response))
+                return False
+        
+        # Store wine IDs for later tests
+        self.price_test_wine_ids = created_wine_ids
+        return True
+
+    def test_price_tags_get_all_wines_with_categories(self):
+        """Test GET /api/wines returns price_category field"""
+        success, response = self.make_request('GET', 'wines', expected_status=200)
+        if not success:
+            self.log_test("Price Tags - Get All Wines", False, str(response))
+            return False
+        
+        wines = response if isinstance(response, list) else []
+        if len(wines) == 0:
+            self.log_test("Price Tags - Get All Wines", False, "No wines found in cellar")
+            return False
+        
+        # Check that price_category field is present in all wines
+        wines_with_price_category = 0
+        wines_without_price_category = 0
+        
+        for wine in wines:
+            if 'price_category' not in wine:
+                self.log_test("Price Tags - Get All Wines", False, 
+                             f"Wine {wine.get('name', 'Unknown')} missing price_category field")
+                return False
+            
+            if wine['price_category'] is not None:
+                wines_with_price_category += 1
+            else:
+                wines_without_price_category += 1
+        
+        self.log_test("Price Tags - Get All Wines", True, 
+                     f"Found {len(wines)} wines, {wines_with_price_category} with price categories, {wines_without_price_category} without")
+        return True
+
+    def test_price_tags_filter_by_category_1(self):
+        """Test filtering wines by price_category=1 (🍷)"""
+        success, response = self.make_request('GET', 'wines?price_category_filter=1', expected_status=200)
+        if not success:
+            self.log_test("Price Tags - Filter Category 1", False, str(response))
+            return False
+        
+        wines = response if isinstance(response, list) else []
+        
+        # Verify all returned wines have price_category=1
+        for wine in wines:
+            if wine.get('price_category') != '1':
+                self.log_test("Price Tags - Filter Category 1", False, 
+                             f"Wine {wine.get('name')} has wrong price_category: {wine.get('price_category')}")
+                return False
+        
+        # Should find at least 1 wine (the Budget Bordeaux we created)
+        if len(wines) == 0:
+            self.log_test("Price Tags - Filter Category 1", False, "No wines found with price_category=1")
+            return False
+        
+        self.log_test("Price Tags - Filter Category 1", True, 
+                     f"Found {len(wines)} wines with price_category=1 (🍷)")
+        return True
+
+    def test_price_tags_filter_by_category_2(self):
+        """Test filtering wines by price_category=2 (🍷🍷)"""
+        success, response = self.make_request('GET', 'wines?price_category_filter=2', expected_status=200)
+        if not success:
+            self.log_test("Price Tags - Filter Category 2", False, str(response))
+            return False
+        
+        wines = response if isinstance(response, list) else []
+        
+        # Verify all returned wines have price_category=2
+        for wine in wines:
+            if wine.get('price_category') != '2':
+                self.log_test("Price Tags - Filter Category 2", False, 
+                             f"Wine {wine.get('name')} has wrong price_category: {wine.get('price_category')}")
+                return False
+        
+        # Should find at least 1 wine (the Premium Burgundy we created)
+        if len(wines) == 0:
+            self.log_test("Price Tags - Filter Category 2", False, "No wines found with price_category=2")
+            return False
+        
+        self.log_test("Price Tags - Filter Category 2", True, 
+                     f"Found {len(wines)} wines with price_category=2 (🍷🍷)")
+        return True
+
+    def test_price_tags_filter_by_category_3(self):
+        """Test filtering wines by price_category=3 (🍷🍷🍷)"""
+        success, response = self.make_request('GET', 'wines?price_category_filter=3', expected_status=200)
+        if not success:
+            self.log_test("Price Tags - Filter Category 3", False, str(response))
+            return False
+        
+        wines = response if isinstance(response, list) else []
+        
+        # Verify all returned wines have price_category=3
+        for wine in wines:
+            if wine.get('price_category') != '3':
+                self.log_test("Price Tags - Filter Category 3", False, 
+                             f"Wine {wine.get('name')} has wrong price_category: {wine.get('price_category')}")
+                return False
+        
+        # Should find at least 1 wine (the Luxury Champagne we created)
+        if len(wines) == 0:
+            self.log_test("Price Tags - Filter Category 3", False, "No wines found with price_category=3")
+            return False
+        
+        self.log_test("Price Tags - Filter Category 3", True, 
+                     f"Found {len(wines)} wines with price_category=3 (🍷🍷🍷)")
+        return True
+
+    def test_price_tags_update_wine_category(self):
+        """Test updating a wine's price_category"""
+        if not hasattr(self, 'price_test_wine_ids') or len(self.price_test_wine_ids) == 0:
+            self.log_test("Price Tags - Update Wine Category", False, "No test wine IDs available")
+            return False
+        
+        wine_id = self.price_test_wine_ids[0]  # Use first wine (Budget Bordeaux)
+        
+        # Update price_category from '1' to '2'
+        update_data = {
+            "price_category": "2"
+        }
+        
+        success, response = self.make_request('PUT', f'wines/{wine_id}', data=update_data, expected_status=200)
+        if not success:
+            self.log_test("Price Tags - Update Wine Category", False, str(response))
+            return False
+        
+        # Verify the update
+        updated_price_category = response.get('price_category')
+        if updated_price_category != '2':
+            self.log_test("Price Tags - Update Wine Category", False, 
+                         f"Price category not updated: expected '2', got {updated_price_category}")
+            return False
+        
+        # Verify by getting the wine again
+        success_get, get_response = self.make_request('GET', f'wines/{wine_id}', expected_status=200)
+        if not success_get:
+            self.log_test("Price Tags - Update Wine Category", False, f"Failed to get updated wine: {get_response}")
+            return False
+        
+        final_price_category = get_response.get('price_category')
+        if final_price_category != '2':
+            self.log_test("Price Tags - Update Wine Category", False, 
+                         f"Price category not persisted: expected '2', got {final_price_category}")
+            return False
+        
+        self.log_test("Price Tags - Update Wine Category", True, 
+                     f"Successfully updated wine price_category from '1' to '2'")
+        return True
+
+    def test_price_tags_invalid_category_values(self):
+        """Test creating wine with invalid price_category values"""
+        invalid_wine_data = {
+            "name": "Invalid Price Category Wine",
+            "type": "rot",
+            "region": "Test Region",
+            "year": 2022,
+            "price_category": "4"  # Invalid: should be 1, 2, 3, or null
+        }
+        
+        success, response = self.make_request('POST', 'wines', data=invalid_wine_data, expected_status=200)
+        if success:
+            # Backend might accept invalid values - check what was stored
+            stored_price_category = response.get('price_category')
+            if stored_price_category == "4":
+                self.log_test("Price Tags - Invalid Category Values", True, 
+                             "Backend accepts invalid price_category values (flexible validation)")
+            else:
+                self.log_test("Price Tags - Invalid Category Values", True, 
+                             f"Backend handled invalid value: stored as {stored_price_category}")
+        else:
+            # If backend rejects invalid values, that's also acceptable
+            if response.get('status_code') in [400, 422]:
+                self.log_test("Price Tags - Invalid Category Values", True, 
+                             "Backend correctly rejects invalid price_category values")
+            else:
+                self.log_test("Price Tags - Invalid Category Values", False, str(response))
+                return False
+        
+        return True
+
+    def test_price_tags_null_category_handling(self):
+        """Test handling of null/None price_category values"""
+        null_wine_data = {
+            "name": "Null Price Category Wine",
+            "type": "weiss",
+            "region": "Test Region",
+            "year": 2022,
+            "price_category": None  # Explicitly null
+        }
+        
+        success, response = self.make_request('POST', 'wines', data=null_wine_data, expected_status=200)
+        if not success:
+            self.log_test("Price Tags - Null Category Handling", False, str(response))
+            return False
+        
+        stored_price_category = response.get('price_category')
+        if stored_price_category is not None:
+            self.log_test("Price Tags - Null Category Handling", False, 
+                         f"Expected null price_category, got {stored_price_category}")
+            return False
+        
+        self.log_test("Price Tags - Null Category Handling", True, 
+                     "Successfully handled null price_category value")
+        return True
+
     # ===================== DATA EXPANSION TESTS (846 -> 1671+ wines) =====================
     
     def test_public_wines_total_count_expansion(self):

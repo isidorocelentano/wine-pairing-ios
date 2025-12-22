@@ -761,16 +761,44 @@ const PairingPage = () => {
                   return wines.filter(w => w.priceTier !== 'luxury');
                 };
                 
-                // Premium toggle text based on language
-                const premiumButtonText = {
-                  de: showPremiumWines ? '🧡 Premium-Weine ausblenden' : '🧡 Premium-Weine anzeigen (CHF 40+)',
-                  en: showPremiumWines ? '🧡 Hide Premium Wines' : '🧡 Show Premium Wines (CHF 40+)',
-                  fr: showPremiumWines ? '🧡 Masquer les vins premium' : '🧡 Afficher les vins premium (CHF 40+)'
-                }[language] || premiumButtonText.de;
+                // Price tier labels with € (unified 🍷 system)
+                const tierLabels = {
+                  value: {
+                    de: '🍷 Alltags-Genuss (unter €12)',
+                    en: '🍷 Everyday Enjoyment (under €12)',
+                    fr: '🍷 Plaisir Quotidien (moins de €12)'
+                  },
+                  premium: {
+                    de: '🍷🍷 Guter Anlass (€12-25)',
+                    en: '🍷🍷 Good Occasion (€12-25)',
+                    fr: '🍷🍷 Belle Occasion (€12-25)'
+                  },
+                  luxury: {
+                    de: '🍷🍷🍷 Besonderer Moment (über €25)',
+                    en: '🍷🍷🍷 Special Moment (over €25)',
+                    fr: '🍷🍷🍷 Moment Spécial (plus de €25)'
+                  }
+                };
                 
                 // Render wine cards
                 return (
                   <div className="space-y-6">
+                    {/* Style Section (new format) */}
+                    {styleSection && styleSection.content && (
+                      <div className="bg-primary/5 rounded-lg p-4 border border-primary/20">
+                        <h3 className="text-lg font-semibold mb-2 text-primary">{styleSection.title}</h3>
+                        <p className="text-muted-foreground">{styleSection.content}</p>
+                      </div>
+                    )}
+                    
+                    {/* Why Section (new format) */}
+                    {whySection && whySection.content && (
+                      <div className="bg-amber-50/50 dark:bg-amber-950/20 rounded-lg p-4 border border-amber-200 dark:border-amber-800">
+                        <h3 className="text-lg font-semibold mb-2 text-amber-700 dark:text-amber-400">{whySection.title}</h3>
+                        <p className="text-muted-foreground">{whySection.content}</p>
+                      </div>
+                    )}
+                    
                     {sections.map((section, sectionIdx) => {
                       const filteredWines = filterWinesByTier(section.wines);
                       if (filteredWines.length === 0 && section.type !== 'main') return null;
@@ -791,13 +819,12 @@ const PairingPage = () => {
                         
                         {/* Wine Cards - grouped by price tier */}
                         <div className="space-y-4">
-                          {/* Value Wines (💚) */}
+                          {/* Value Wines (🍷) */}
                           {filteredWines.filter(w => w.priceTier === 'value').length > 0 && (
                             <div>
                               <div className="flex items-center gap-2 mb-2">
-                                <span className="text-lg">💚</span>
                                 <span className="text-sm font-semibold text-green-600 dark:text-green-400">
-                                  {language === 'de' ? 'Preis-Leistung (CHF 10-20)' : language === 'en' ? 'Great Value (CHF 10-20)' : 'Excellent Rapport (CHF 10-20)'}
+                                  {tierLabels.value[language] || tierLabels.value.de}
                                 </span>
                               </div>
                               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">

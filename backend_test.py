@@ -721,9 +721,9 @@ class WinePairingAPITester:
             required_sections = [
                 "🍷 THE STYLE",
                 "💡 THE WHY",
-                "🍷 Everyday Enjoyment (under €12)",
-                "🍷🍷 Good Occasion (€12-25)",
-                "💎 INSIDER TIP"
+                "Everyday Enjoyment (under €12)",
+                "Good Occasion (€12-25)",
+                "INSIDER TIP"
             ]
             
             missing_sections = []

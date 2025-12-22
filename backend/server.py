@@ -408,6 +408,7 @@ class WineUpdate(BaseModel):
     image_base64: Optional[str] = None
     is_favorite: Optional[bool] = None
     quantity: Optional[int] = None
+    price_category: Optional[str] = None  # 🍷 (bis €20), 🍷🍷 (€20-50), 🍷🍷🍷 (ab €50)
 
 # ===================== WINE DATABASE MODELS =====================
 from pydantic import field_validator

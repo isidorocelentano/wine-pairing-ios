@@ -3092,7 +3092,16 @@ class WinePairingAPITester:
         self.test_pairing_null_4d_values()
         self.test_pairing_history_serialization()
         
-        # Price-conscious wine pairing tests (NEW)
+        # Unified €/🍷 Format Wine Pairing Tests (NEW)
+        print("\n💰 Testing Unified €/🍷 Format Wine Pairing System...")
+        self.test_unified_format_german_spaghetti_bolognese()
+        self.test_unified_format_english_grilled_steak()
+        self.test_unified_format_french_coq_au_vin()
+        self.test_unified_format_structure_validation()
+        self.test_unified_format_wine_availability_check()
+        
+        # Price-conscious wine pairing tests (OLD FORMAT - for regression)
+        print("\n💚 Testing Price-Conscious Wine Pairing System (Old Format)...")
         self.test_price_conscious_pairing_german_fondue()
         self.test_price_conscious_pairing_german_meat()
         self.test_price_conscious_pairing_english()

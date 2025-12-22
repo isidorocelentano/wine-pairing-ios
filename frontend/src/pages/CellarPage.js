@@ -26,16 +26,24 @@ const CellarPage = () => {
   const [wines, setWines] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('all');
+  const [priceFilter, setPriceFilter] = useState('all');
   const [inStockOnly, setInStockOnly] = useState(false);
   const [showAddDialog, setShowAddDialog] = useState(false);
   const [showScanDialog, setShowScanDialog] = useState(false);
   const [showEditDialog, setShowEditDialog] = useState(false);
   const [editingWine, setEditingWine] = useState(null);
-  const [newWine, setNewWine] = useState({ name: '', type: 'rot', region: '', year: '', grape: '', description: '', notes: '', image_base64: '', quantity: 1 });
+  const [newWine, setNewWine] = useState({ name: '', type: 'rot', region: '', year: '', grape: '', description: '', notes: '', image_base64: '', quantity: 1, price_category: '' });
   const [scanning, setScanning] = useState(false);
   const [updatingQuantity, setUpdatingQuantity] = useState(null); // Track which wine is being updated
   const fileInputRef = useRef(null);
   const scanInputRef = useRef(null);
+
+  // Price category labels
+  const priceCategoryLabels = {
+    '1': { emoji: '🍷', label: language === 'de' ? 'bis €20' : language === 'en' ? 'up to €20' : 'jusqu\'à €20' },
+    '2': { emoji: '🍷🍷', label: language === 'de' ? '€20-50' : '€20-50' },
+    '3': { emoji: '🍷🍷🍷', label: language === 'de' ? 'ab €50' : language === 'en' ? '€50+' : 'à partir de €50' }
+  };
 
   // Calculate cellar statistics
   const cellarStats = useMemo(() => {

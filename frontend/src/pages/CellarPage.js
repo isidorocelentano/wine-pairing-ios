@@ -566,7 +566,21 @@ const CellarPage = () => {
                 )}
                 <CardContent className="p-3 md:p-4">
                   <div className="flex items-start justify-between mb-2">
-                    <Badge className={`${getWineTypeBadgeClass(wine.type)} border-0 text-xs`}>{getWineTypeLabel(wine.type)}</Badge>
+                    <div className="flex flex-wrap gap-1">
+                      <Badge className={`${getWineTypeBadgeClass(wine.type)} border-0 text-xs`}>{getWineTypeLabel(wine.type)}</Badge>
+                      {wine.price_category && (
+                        <Badge 
+                          variant="outline" 
+                          className={`text-xs border-0 ${
+                            wine.price_category === '1' ? 'bg-green-100 text-green-700 dark:bg-green-950/50 dark:text-green-400' 
+                              : wine.price_category === '2' ? 'bg-amber-100 text-amber-700 dark:bg-amber-950/50 dark:text-amber-400'
+                              : 'bg-orange-100 text-orange-700 dark:bg-orange-950/50 dark:text-orange-400'
+                          }`}
+                        >
+                          {priceCategoryLabels[wine.price_category]?.emoji}
+                        </Badge>
+                      )}
+                    </div>
                     <button onClick={() => handleToggleFavorite(wine.id)} className="text-muted-foreground hover:text-primary transition-colors" data-testid="favorite-btn">
                       <Star className={`h-4 md:h-5 w-4 md:w-5 ${wine.is_favorite ? 'fill-accent text-accent' : ''}`} />
                     </button>

@@ -381,6 +381,20 @@ const CellarPage = () => {
                         <Badge variant="outline" className="text-xs badge-schaumwein border-0">{cellarStats.byType.schaumwein}x Schaum</Badge>
                       )}
                     </div>
+                    {/* Mini breakdown by price */}
+                    {(cellarStats.byPrice['1'] > 0 || cellarStats.byPrice['2'] > 0 || cellarStats.byPrice['3'] > 0) && (
+                      <div className="flex flex-wrap justify-center gap-2 mt-2 pt-2 border-t border-border/30">
+                        {cellarStats.byPrice['1'] > 0 && (
+                          <Badge variant="outline" className="text-xs bg-green-100 text-green-700 dark:bg-green-950/50 dark:text-green-400 border-0">{cellarStats.byPrice['1']}x 🍷</Badge>
+                        )}
+                        {cellarStats.byPrice['2'] > 0 && (
+                          <Badge variant="outline" className="text-xs bg-amber-100 text-amber-700 dark:bg-amber-950/50 dark:text-amber-400 border-0">{cellarStats.byPrice['2']}x 🍷🍷</Badge>
+                        )}
+                        {cellarStats.byPrice['3'] > 0 && (
+                          <Badge variant="outline" className="text-xs bg-orange-100 text-orange-700 dark:bg-orange-950/50 dark:text-orange-400 border-0">{cellarStats.byPrice['3']}x 🍷🍷🍷</Badge>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </CardContent>
               </Card>

@@ -122,34 +122,70 @@
 - ✅ **Stripe** (aktiv)
 - 🔜 **PayPal** (geplant)
 
-### 🆕 Preisbewusste Empfehlungen (NEU in v1.4)
+### 🆕 Preisstufen für Weinliebhaber (v1.6)
 
-**Problem gelöst:** Früher empfahl die KI oft teure Premium-Weine, die sich die meisten User nicht leisten können.
-
-**Lösung:** Gestaffelte Preiskategorien in jeder Empfehlung:
+**Zielgruppe:** Weinliebhaber die im Fachhandel kaufen (nicht nur Supermarkt)
 
 | Kategorie | Preisbereich | Beschreibung |
 |-----------|--------------|--------------|
-| 💚 **Preis-Leistung** | CHF 10-20 | Immer zuerst, mind. 2 Weine |
-| 💛 **Gehobene Qualität** | CHF 20-40 | Für bessere Anlässe |
-| 🧡 **Besondere Anlässe** | CHF 40+ | Optional, Luxus-Empfehlungen |
+| 🍷 **Alltags-Genuss** | bis €20 | Täglicher Genuss, gute Qualität |
+| 🍷🍷 **Gehobener Anlass** | €20-50 | Dinner, Gäste, besondere Mahlzeiten |
+| 🍷🍷🍷 **Besonderer Moment** | ab €50 | Luxus, Feiern, Sammlerstücke |
 
-**Beispiel-Output:**
+**Empfohlene Weingüter:** Dönnhoff, Keller, Trimbach, Antinori, Gaja, Guigal, Torres
+
+**Beispiel-Output (Standard-Modus):**
 ```
-1. 🍷 HAUPTEMPFEHLUNG
+🍷 DER STIL
+Frischer, trockener Weißwein mit lebendiger Säure und mineralischen Noten.
 
-💚 Preis-Leistung (CHF 10-20):
-- Vermentino di Sardegna – Frisch, zitrusnoten
-- Frascati Superiore – Klassischer Römer-Wein
+💡 DAS WARUM
+Die Säure schneidet durch das Fett der Panade und erfrischt den Gaumen.
 
-💛 Gehobene Qualität (CHF 20-40):
-- Soave Classico "Pieropan" – Komplex, cremig
+🍷 EMPFEHLUNGEN
 
-🧡 Für besondere Anlässe (CHF 40+):
-- Puligny-Montrachet – Burgundische Eleganz
+🍷 Alltags-Genuss (bis €20):
+- Dönnhoff Riesling trocken, Nahe
+- Trimbach Riesling, Elsass
+
+🍷🍷 Gehobener Anlass (€20-50):
+- Franz Hirtzberger Grüner Veltliner Smaragd
+
+💎 GEHEIMTIPP
+Côtes de Gascogne Blanc - gleiche Frische für unter €10!
 ```
 
-**Verfügbarkeit:** Alle User (Basic + Pro)
+---
+
+### 🍽️ Restaurant-Modus (NEU in v1.6)
+
+**Situation:** User sitzt im Restaurant und hat die Weinkarte vor sich.
+
+**Funktionsweise:**
+1. User gibt Gericht ein (z.B. "Entrecôte")
+2. User klickt "Im Restaurant? Weinkarte eingeben"
+3. User gibt verfügbare Weine ein (z.B. "Bordeaux 2019, Barolo, Grüner Veltliner")
+4. KI empfiehlt DEN BESTEN Wein aus dieser Liste
+
+**Antwort-Struktur:**
+```
+🍷 MEINE EMPFEHLUNG
+Barolo Riserva 2018
+
+💡 WARUM GENAU DIESER WEIN?
+Der Barolo bringt kraftvolle Tannine und dunkle Frucht, die perfekt
+zum saftigen Entrecôte passen. Seine Struktur greift das Fett auf...
+
+🔄 ALTERNATIVE AUS DER LISTE
+Bordeaux 2019 - funktioniert auch gut, etwas weicher im Tannin.
+
+⚠️ VERMEIDE
+Grüner Veltliner - zu leicht und säurebetont für rotes Fleisch.
+```
+
+**UI-Element:** Ausklappbares Textfeld unter dem Weintyp-Selektor
+
+---
 
 ### Gutschein-System
 - Route: `/coupon`

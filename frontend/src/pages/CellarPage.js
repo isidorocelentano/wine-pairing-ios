@@ -142,10 +142,11 @@ const CellarPage = () => {
         ...newWine,
         year: newWine.year ? parseInt(newWine.year) : null,
         quantity: newWine.quantity ? parseInt(newWine.quantity, 10) : 1,
+        price_category: newWine.price_category || null,
       });
       toast.success(t('success_wine_added'));
       setShowAddDialog(false);
-      setNewWine({ name: '', type: 'rot', region: '', year: '', grape: '', description: '', notes: '', image_base64: '', quantity: 1 });
+      setNewWine({ name: '', type: 'rot', region: '', year: '', grape: '', description: '', notes: '', image_base64: '', quantity: 1, price_category: '' });
       fetchWines();
     } catch (error) {
       toast.error(t('error_general'));

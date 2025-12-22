@@ -406,6 +406,19 @@ const CellarPage = () => {
               </SelectContent>
             </Select>
             
+            {/* Price Category Filter */}
+            <Select value={priceFilter} onValueChange={setPriceFilter}>
+              <SelectTrigger className="w-[140px] md:w-[160px]" data-testid="cellar-price-filter">
+                <SelectValue placeholder={language === 'de' ? 'Preis' : 'Price'} />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">{language === 'de' ? 'Alle Preise' : language === 'en' ? 'All Prices' : 'Tous les Prix'}</SelectItem>
+                <SelectItem value="1">🍷 {language === 'de' ? 'bis €20' : language === 'en' ? 'up to €20' : 'jusqu\'à €20'}</SelectItem>
+                <SelectItem value="2">🍷🍷 €20-50</SelectItem>
+                <SelectItem value="3">🍷🍷🍷 {language === 'de' ? 'ab €50' : language === 'en' ? '€50+' : 'à partir de €50'}</SelectItem>
+              </SelectContent>
+            </Select>
+            
             <Dialog open={showScanDialog} onOpenChange={setShowScanDialog}>
               <DialogTrigger asChild>
                 <Button variant="outline" className="rounded-full text-sm" data-testid="scan-label-btn">

@@ -1,350 +1,199 @@
 <analysis>**original_problem_statement:**
-The user's initial request was to fix several high-priority issues before moving on to new features. The session began by addressing three outstanding problems: an incorrect dish count in the UI, inconsistent wine filter data for German-speaking countries, and URL parameters being ignored on page load.
+The user initially wanted to fix the password reset feature, which was blocked by DNS verification for Resend. However, this task was abandoned due to user frustration. The user then reported being unable to log into the live production site (), which became the top priority bug.
 
-However, the session quickly evolved into a series of reactive bug fixes reported by the user. These included a completely broken grape variety encyclopedia, which required fixing the underlying data model, adding missing data slugs, and repeatedly fixing broken image links. Further issues arose with the Instagram sharing feature, login failures for the user's pro account after deployment, and a request for a more robust user management system, culminating in the implementation of a password reset feature using Resend.
+Following this, the user initiated a series of major feature requests that were implemented in the preview environment:
+1.  **Freemium Visibility:** Create a dedicated  page and add a pricing teaser section to the homepage to make the Free vs Pro tiers obvious.
+2.  **Price-Conscious AI Recommendations:** Overhaul the AI pairing logic to provide tiered wine recommendations based on price. This feature went through several iterations:
+    *   Initial implementation with CHF price tiers (Budget, Mid-range, Premium).
+    *   Addition of a Show Premium button to hide expensive options by default.
+    *   Complete switch to Euro (€) and a 🍷/🍷🍷/🍷🍷🍷 emoji system.
+    *   Addition of a Geheimtipp (insider tip) for a budget-friendly alternative.
+    *   Adjustment of price tiers to cater to wine enthusiasts (up to €20, €20-€50, €50+).
+3.  **Restaurant Mode:** Add an optional input field on the pairing page allowing users to enter a list of wines from a restaurant menu. The AI then recommends the best option from that specific list.
+4.  **Price Tags for Database/Cellar:** The user proposed adding the 🍷/🍷🍷/🍷🍷🍷 price tag system to the wine database and user's wine cellar. Work on this has not yet started.
 
 **User's preferred language**: German
 
 **what currently exists?**
-The application is in a stable state in the preview environment. All initial priority-1 issues have been resolved. The Sommelier Kompass and Wine Database pages now correctly apply filters from URL parameters. The wine filters for Germany, Austria, and Switzerland have been cleaned up. The Grape Variety encyclopedia is fully functional with correct navigation and images for all 313 varieties. The Instagram sharing feature is fixed. A robust user management system is in place with self-healing logic and admin endpoints to repair inconsistent user data.
+The application is stable in the preview environment but the live production environment is broken for the user. A fix for the live login issue has been implemented in  but requires deployment to take effect.
 
-A Password Reset feature using Resend has been fully implemented in the code (backend and frontend) but is not yet functional because it is blocked on a required user action.
+The preview environment contains several major new features that have been implemented and tested by the agent but are awaiting user verification and deployment:
+- A new  page and an updated homepage to showcase the freemium model.
+- A completely overhauled AI pairing system that provides price-tiered recommendations in Euro, uses a 🍷 emoji system, and includes an insider tip.
+- A Restaurant Mode feature that allows the AI to choose the best wine from a user-provided list.
+- The password reset feature remains implemented but non-functional, as the Resend domain verification is still incomplete.
 
 **Last working item**:
-    - Last item agent was working: The agent was actively guiding the user through the process of verifying their domain () with Resend. This is a mandatory step to allow the application to send password reset emails. The implementation is complete, but testing and functionality are blocked by this external configuration step.
-    - Status: BLOCKED
-    - Agent Testing Done: N
-    - Which testing method agent to use? manual testing. After the user confirms domain verification, the agent must:
-        1. Use  to call the  endpoint with a test email.
-        2. Check backend logs (==> /var/log/supervisor/backend.err.log <==
-2025-12-18 20:25:17,753 - backup_manager - INFO - 🗑️ Altes Backup gelöscht: backup_20251218_194452
-2025-12-18 20:25:17,753 - backup_manager - INFO - 🗑️ 1 alte Backups gelöscht
-2025-12-18 20:25:17,753 - backup_manager - INFO - ⏰ Automatisches Backup gestartet (alle 6 Stunden)
-INFO:     Application startup complete.
-WARNING:  WatchFiles detected changes in 'server.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-2025-12-18 20:25:56,550 - backup_manager - INFO - ⏰ Automatisches Backup wurde gestoppt
-2025-12-18 20:25:56,550 - backup_manager - INFO - ⏰ Backup-Task gestoppt
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2196]
-INFO:     Started server process [2319]
-INFO:     Waiting for application startup.
-2025-12-18 20:25:59,223 - backup_manager - INFO - 📦 Erstelle Backup: /app/backend/data/backups/backup_20251218_202559
-2025-12-18 20:25:59,224 - backup_manager - INFO -    🔒 users: 20 Dokumente
-2025-12-18 20:25:59,244 - backup_manager - INFO -    🔒 wines: 58 Dokumente
-2025-12-18 20:25:59,251 - backup_manager - INFO -    🔒 pairings: 173 Dokumente
-2025-12-18 20:25:59,253 - backup_manager - INFO -    🔒 chats: 23 Dokumente
-2025-12-18 20:25:59,254 - backup_manager - INFO -    🔒 wine_favorites: 1 Dokumente
-2025-12-18 20:25:59,254 - backup_manager - INFO -    🔒 user_sessions: 0 Dokumente
-2025-12-18 20:25:59,255 - backup_manager - INFO -    🔒 payment_transactions: 3 Dokumente
-2025-12-18 20:25:59,343 - backup_manager - INFO -    📄 blog_posts: 233 Dokumente
-2025-12-18 20:25:59,534 - backup_manager - INFO -    📄 public_wines: 7090 Dokumente
-2025-12-18 20:25:59,561 - backup_manager - INFO -    📄 grape_varieties: 313 Dokumente
-2025-12-18 20:25:59,599 - backup_manager - INFO -    📄 regional_pairings: 1895 Dokumente
-2025-12-18 20:25:59,603 - backup_manager - INFO -    📄 dishes: 40 Dokumente
-2025-12-18 20:25:59,640 - backup_manager - INFO -    📄 feed_posts: 269 Dokumente
-2025-12-18 20:25:59,655 - backup_manager - INFO -    📄 wine_database: 494 Dokumente
-2025-12-18 20:25:59,682 - backup_manager - INFO -    📄 seo_pairings: 500 Dokumente
-2025-12-18 20:25:59,685 - backup_manager - INFO -    📄 coupons: 100 Dokumente
-2025-12-18 20:25:59,685 - backup_manager - INFO - ✅ Automatisches Startup-Backup erstellt
-2025-12-18 20:25:59,687 - backup_manager - INFO - 🗑️ Altes Backup gelöscht: backup_20251218_194506
-2025-12-18 20:25:59,687 - backup_manager - INFO - 🗑️ 1 alte Backups gelöscht
-2025-12-18 20:25:59,688 - backup_manager - INFO - ⏰ Automatisches Backup gestartet (alle 6 Stunden)
-INFO:     Application startup complete.
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-2025-12-18 20:28:15,792 - backup_manager - INFO - ⏰ Automatisches Backup wurde gestoppt
-2025-12-18 20:28:15,792 - backup_manager - INFO - ⏰ Backup-Task gestoppt
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2319]
-INFO:     Stopping reloader process [1069]
-INFO:     Will watch for changes in these directories: ['/app/backend']
-INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
-INFO:     Started reloader process [2678] using WatchFiles
-INFO:     Started server process [2680]
-INFO:     Waiting for application startup.
-2025-12-18 20:28:18,998 - backup_manager - INFO - 📦 Erstelle Backup: /app/backend/data/backups/backup_20251218_202818
-2025-12-18 20:28:18,999 - backup_manager - INFO -    🔒 users: 20 Dokumente
-2025-12-18 20:28:19,019 - backup_manager - INFO -    🔒 wines: 58 Dokumente
-2025-12-18 20:28:19,026 - backup_manager - INFO -    🔒 pairings: 173 Dokumente
-2025-12-18 20:28:19,027 - backup_manager - INFO -    🔒 chats: 23 Dokumente
-2025-12-18 20:28:19,028 - backup_manager - INFO -    🔒 wine_favorites: 1 Dokumente
-2025-12-18 20:28:19,029 - backup_manager - INFO -    🔒 user_sessions: 0 Dokumente
-2025-12-18 20:28:19,029 - backup_manager - INFO -    🔒 payment_transactions: 3 Dokumente
-2025-12-18 20:28:19,116 - backup_manager - INFO -    📄 blog_posts: 233 Dokumente
-2025-12-18 20:28:19,310 - backup_manager - INFO -    📄 public_wines: 7090 Dokumente
-2025-12-18 20:28:19,329 - backup_manager - INFO -    📄 grape_varieties: 313 Dokumente
-2025-12-18 20:28:19,371 - backup_manager - INFO -    📄 regional_pairings: 1895 Dokumente
-2025-12-18 20:28:19,376 - backup_manager - INFO -    📄 dishes: 40 Dokumente
-2025-12-18 20:28:19,412 - backup_manager - INFO -    📄 feed_posts: 269 Dokumente
-2025-12-18 20:28:19,424 - backup_manager - INFO -    📄 wine_database: 494 Dokumente
-2025-12-18 20:28:19,452 - backup_manager - INFO -    📄 seo_pairings: 500 Dokumente
-2025-12-18 20:28:19,454 - backup_manager - INFO -    📄 coupons: 100 Dokumente
-2025-12-18 20:28:19,455 - backup_manager - INFO - ✅ Automatisches Startup-Backup erstellt
-2025-12-18 20:28:19,462 - backup_manager - INFO - 🗑️ Altes Backup gelöscht: backup_20251218_194548
-2025-12-18 20:28:19,462 - backup_manager - INFO - 🗑️ 1 alte Backups gelöscht
-2025-12-18 20:28:19,462 - backup_manager - INFO - ⏰ Automatisches Backup gestartet (alle 6 Stunden)
-INFO:     Application startup complete.
-2025-12-18 20:31:58,313 - server - ERROR - ❌ Failed to send reset email: The wine-pairing.online domain is not verified. Please, add and verify your domain on https://resend.com/domains
-INFO:     Will watch for changes in these directories: ['/app/backend']
-INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
-INFO:     Started reloader process [28] using WatchFiles
-INFO:     Started server process [73]
-INFO:     Waiting for application startup.
-2025-12-18 21:43:51,853 - backup_manager - INFO - 📦 Erstelle Backup: /app/backend/data/backups/backup_20251218_214351
-2025-12-18 21:43:51,854 - backup_manager - INFO -    🔒 users: 20 Dokumente
-2025-12-18 21:43:51,873 - backup_manager - INFO -    🔒 wines: 58 Dokumente
-2025-12-18 21:43:51,880 - backup_manager - INFO -    🔒 pairings: 173 Dokumente
-2025-12-18 21:43:51,881 - backup_manager - INFO -    🔒 chats: 23 Dokumente
-2025-12-18 21:43:51,882 - backup_manager - INFO -    🔒 wine_favorites: 1 Dokumente
-2025-12-18 21:43:51,882 - backup_manager - INFO -    🔒 user_sessions: 0 Dokumente
-2025-12-18 21:43:51,883 - backup_manager - INFO -    🔒 payment_transactions: 3 Dokumente
-2025-12-18 21:43:52,045 - backup_manager - INFO -    📄 blog_posts: 233 Dokumente
-2025-12-18 21:43:52,514 - backup_manager - INFO -    📄 public_wines: 7090 Dokumente
-2025-12-18 21:43:52,532 - backup_manager - INFO -    📄 grape_varieties: 313 Dokumente
-2025-12-18 21:43:52,568 - backup_manager - INFO -    📄 regional_pairings: 1895 Dokumente
-2025-12-18 21:43:52,577 - backup_manager - INFO -    📄 dishes: 40 Dokumente
-2025-12-18 21:43:52,640 - backup_manager - INFO -    📄 feed_posts: 269 Dokumente
-2025-12-18 21:43:52,662 - backup_manager - INFO -    📄 wine_database: 494 Dokumente
-2025-12-18 21:43:52,693 - backup_manager - INFO -    📄 seo_pairings: 500 Dokumente
-2025-12-18 21:43:52,702 - backup_manager - INFO -    📄 coupons: 100 Dokumente
-2025-12-18 21:43:52,702 - backup_manager - INFO - ✅ Automatisches Startup-Backup erstellt
-2025-12-18 21:43:52,703 - backup_manager - INFO - 🗑️ Altes Backup gelöscht: backup_20251218_194618
-2025-12-18 21:43:52,703 - backup_manager - INFO - 🗑️ 1 alte Backups gelöscht
-2025-12-18 21:43:52,703 - backup_manager - INFO - ⏰ Automatisches Backup gestartet (alle 6 Stunden)
-INFO:     Application startup complete.
-INFO:     Will watch for changes in these directories: ['/app/backend']
-INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
-INFO:     Started reloader process [29] using WatchFiles
-
-==> /var/log/supervisor/backend.out.log <==
-   ✅ payment_transactions: 3 Einträge vorhanden
-   ✅ regional_pairings: 1895 Einträge vorhanden
-
-📦 Backup-Manager initialisiert (Auto-Backup alle 6 Stunden)
-
-🔧 ERSTELLE DATENBANK-INDIZES...
-   ✅ Index 'user_id' auf 'wines' Collection erstellt
-   ✅ Index 'user_id' und 'email' auf 'users' Collection erstellt
-📋 Manifest Version: 3.0
-   Erstellt: 2025-12-18T20:28:18.998074+00:00
-
-🔍 DATENBANK-PRÜFUNG:
-   ✅ blog_posts: 233/233
-   ✅ public_wines: 7090/7090
-   ✅ grape_varieties: 313/313
-   ✅ regional_pairings: 1895/1895
-   ✅ dishes: 40/40
-   ✅ feed_posts: 269/269
-   ✅ wine_database: 494/494
-   ✅ seo_pairings: 500/500
-   🔒 wines (User-Keller): 58 Flaschen
-   🔒 users (Benutzerkonten): 20 Konten
-
-✅ Alle Daten sind korrekt - kein Seeding nötig
-
-============================================================
-📊 FINALE VERIFIZIERUNG:
-   Blogs: 233 (Regionen: 84)
-   Regional Pairings: 1895
-   Rebsorten: 313
-   Weine (DB): 7090
-   Weinkeller: 58
-   SEO Pairings: 500
-
-   📋 AGENT_HANDOFF.md aktualisiert
-============================================================
-🍷 SERVER BEREIT!
-============================================================
-
-INFO:     10.64.135.149:47714 - "GET /api/auth/me HTTP/1.1" 401 Unauthorized
-INFO:     10.64.143.90:50428 - "GET /api/auth/me HTTP/1.1" 401 Unauthorized
-INFO:     10.64.156.99:41314 - "GET /api/auth/me HTTP/1.1" 401 Unauthorized
-INFO:     10.64.156.96:40810 - "GET /api/auth/me HTTP/1.1" 401 Unauthorized
-INFO:     10.64.139.201:42200 - "POST /api/auth/forgot-password HTTP/1.1" 200 OK
-INFO:     10.64.156.96:46260 - "GET /api/auth/me HTTP/1.1" 200 OK
-INFO:     10.64.156.96:46270 - "GET /api/auth/me HTTP/1.1" 200 OK
-
-============================================================
-🚀 WINE-PAIRING.ONLINE - SERVER STARTUP
-============================================================
-
-📊 ERSTELLE DATENBANK-INDIZES...
-   ⚠️ Index-Erstellung: Index build failed: 2032392f-b61d-4cca-8769-1d5ab561e2d4: Collection test_database.grape_varieties ( 8488fecf-9dd2-425b-9716-d8973bf3ed18 ) :: caused by :: E11000 duplicate key error collection: test_database.grape_varieties index: slug_1 dup key: { slug: "alvarinho" }, full error: {'ok': 0.0, 'errmsg': 'Index build failed: 2032392f-b61d-4cca-8769-1d5ab561e2d4: Collection test_database.grape_varieties ( 8488fecf-9dd2-425b-9716-d8973bf3ed18 ) :: caused by :: E11000 duplicate key error collection: test_database.grape_varieties index: slug_1 dup key: { slug: "alvarinho" }', 'code': 11000, 'codeName': 'DuplicateKey', 'keyPattern': {'slug': 1}, 'keyValue': {'slug': 'alvarinho'}}
-
-🔐 PRÜFE USER-DATEN...
-   ✅ users: 20 Einträge vorhanden
-   ✅ wines: 58 Einträge vorhanden
-   ✅ pairings: 173 Einträge vorhanden
-   ✅ chats: 23 Einträge vorhanden
-   ✅ wine_favorites: 1 Einträge vorhanden
-   ✅ payment_transactions: 3 Einträge vorhanden
-   ✅ regional_pairings: 1895 Einträge vorhanden
-
-📦 Backup-Manager initialisiert (Auto-Backup alle 6 Stunden)
-
-🔧 ERSTELLE DATENBANK-INDIZES...
-   ✅ Index 'user_id' auf 'wines' Collection erstellt
-   ✅ Index 'user_id' und 'email' auf 'users' Collection erstellt
-📋 Manifest Version: 3.0
-   Erstellt: 2025-12-18T21:43:51.853432+00:00
-
-🔍 DATENBANK-PRÜFUNG:
-   ✅ blog_posts: 233/233
-   ✅ public_wines: 7090/7090
-   ✅ grape_varieties: 313/313
-   ✅ regional_pairings: 1895/1895
-   ✅ dishes: 40/40
-   ✅ feed_posts: 269/269
-   ✅ wine_database: 494/494
-   ✅ seo_pairings: 500/500
-   🔒 wines (User-Keller): 58 Flaschen
-   🔒 users (Benutzerkonten): 20 Konten
-
-✅ Alle Daten sind korrekt - kein Seeding nötig
-
-============================================================
-📊 FINALE VERIFIZIERUNG:
-   Blogs: 233 (Regionen: 84)
-   Regional Pairings: 1895
-   Rebsorten: 313
-   Weine (DB): 7090
-   Weinkeller: 58
-   SEO Pairings: 500
-
-   📋 AGENT_HANDOFF.md aktualisiert
-============================================================
-🍷 SERVER BEREIT!
-============================================================
-
-INFO:     10.64.129.10:33842 - "POST /api/auth/login HTTP/1.1" 200 OK) to confirm the email was sent successfully and the domain not verified error is gone.
-        3. Ask the user to perform the end-to-end test: request a reset link for their own email, click the link received, and successfully set a new password.
+    - Last item agent was working: The user reported that the newly implemented Restaurant Mode was not displaying the AI's recommendation correctly. The agent identified a frontend parsing error in  and implemented a fix. The agent has just verified with screenshots that the fix is working and the UI now correctly displays the recommendation from the user's wine list. The user has been informed of the success and has requested documentation and backups.
+    - Status: USER VERIFICATION PENDING
+    - Agent Testing Done: Y
+    - Which testing method agent to use? manual testing by user
     - User Testing Done: N
 
 **All Pending/In progress Issue list**:
-  - No pending issues. The work is blocked on an in-progress task.
+  - Issue 1: Live Production Login Failure (P0)
+  - Issue 2: Password Reset Feature Blocked (P1)
+  
+  Issues Detail:
+  - Issue 1: 
+     - Attempted fixes: An admin debug endpoint () was created in  to diagnose and fix potential user data corruption on the live server. This fix has been coded but **not deployed**.
+     - Next debug checklist: 
+        1. Instruct the user to **deploy** the application.
+        2. After deployment, ask the user to first visit  to ensure the password is set correctly.
+        3. Ask the user to attempt to log in at .
+        4. If it still fails, use the debug endpoint:  to investigate the user document on the live database.
+     - Why fix this issue and what will be achieved with the fix? The user is completely blocked from using the live application. Fixing this is critical for user trust and continued development.
+     - Status:  IN PROGRESS
+     - Is recurring issue? Y
+     - Should Test frontend/backend/both after fix? Both
+     - Blocked on other issue: In progress Task 1: Deploy recent changes
+  - Issue 2: 
+     - Attempted fixes: The agent guided the user through adding DNS records (TXT for SPF and DKIM) at Infomaniak. The process was confusing for the user and was not fully completed. The last attempt left the main SPF record for the domain un-edited.
+     - Next debug checklist: 
+        1. Re-engage with the user on this task when they are ready.
+        2. Guide the user to **edit** the existing SPF TXT record for  to include . The final value should be .
+        3. Ask the user to click Verify on the Resend dashboard.
+     - Why fix this issue and what will be achieved with the fix? This will unblock the self-service password reset functionality, a key feature for user management.
+     - Status:  BLOCKED (by user priority change)
+     - Is recurring issue? N
+     - Should Test frontend/backend/both after fix? Both
+     - Blocked on other issue: No
 
 **In progress Task List**:
-  - **Task 1: Complete Password Reset Feature Verification (P0)**
-     - Where to resume: The user has their Resend and Infomaniak (domain provider) dashboards open. The agent needs to guide them to copy the DNS records (SPF, DKIM) from Resend and paste them into the correct fields in the Infomaniak DNS Zone editor. After the user adds the records, the agent must instruct them to click Verify on the Resend dashboard and wait for propagation.
-     - What will be achieved with this? Users will be able to reset their own passwords, a critical feature for a scalable application.
-     - Status:  BLOCKED (Waiting on user to add DNS records at Infomaniak).
+  - Task 1:  Deploy recent changes (P0)
+  - Task 2:  Implement Price Tags in Wine Cellar (P1)
+
+ Task Detail:
+  - Task 1: 
+     - Where to resume: The agent has completed multiple feature implementations, documentation, and backups. The next step is to instruct and guide the user to click the Deploy button.
+     - What will be achieved with this? This will push the live login fix and all new features (Pricing Pages, Price-Conscious AI, Restaurant Mode) to the production environment.
+     - Status:  NOT STARTED
      - Should Test frontend/backend/both after fix? Both
-     - Blocked on something: User action (DNS configuration).
+     - Blocked on something: User action (clicking Deploy).
+  - Task 2: 
+     - Where to resume: This is Phase 1 of the user's price tags feature. The plan is to modify the Add to Cellar functionality.
+        1.  In , add a UI element (e.g., three 🍷 icons) to the add wine modal, allowing the user to select a price category.
+        2.  Update the user's  data structure in the database to store this price category.
+        3.  Add a filter UI to  to allow filtering the cellar view by price category.
+     - What will be achieved with this? Users will be able to categorize their personal wine cellar by price and filter accordingly.
+     - Status:  NOT STARTED
+     - Should Test frontend/backend/both after fix? Frontend
+     - Blocked on something: No
 
 **Upcoming and Future Tasks**
 *   **Upcoming Tasks:**
-    *   **(P1) PayPal Integration:** Implement PayPal as a payment option.
-    *   **(P1) Google Login:** Implement Google Social Login (the user chose password reset first, but this is the next auth improvement).
-    *   **(P2) Finalize Community Feed Feature:** Clarify with the user if the existing share functionality fulfills their vision for sharing experiences.
+    *   **(P1) Price Tags for Wine Database:** Implement Phase 2 of the price tag feature, where the main wine database shows an estimated price category for each wine.
+    *   **(P2) PayPal Integration:** Implement PayPal as a payment option.
+    *   **(P2) Google Login:** Implement Google Social Login.
 *   **Future Tasks:**
-    *   **(P2) Complete App Documentation:** Perform a final review of  to ensure all new features are documented.
-    *   **(P2) Pairing Science - Phase 2:** Evolve the data model with scientific attributes and a Match-Score.
-    *   **(P3) Pairing Science - Phase 3:** Add UI visualizations (e.g., Radar Charts).
+    *   **(P3) Finalize Community Feed Feature:** Clarify with the user if the existing share functionality fulfills their vision.
+    *   **(P3) Complete App Documentation:** Perform a final review of .
+    *   **(P3) Pairing Science - Phase 2 & 3:** Evolve the data model with scientific attributes and add UI visualizations.
 
 **Completed work in this session**
-- **Resolved Initial Prio-1 Issues:**
-  - **D/A/CH Wine Filter Cleanup:** Cleaned and standardized filter data for 943 wines from Germany, Austria, and Switzerland.
-  - **URL Parameter Loading:** Fixed  and  to correctly apply filters from URL query parameters on initial load.
-  - **Dish Count Discrepancy:** Verified the fix from the previous session was working correctly.
-- **Fixed User-Reported Regressions & Bugs:**
-  - **Grape Variety Encyclopedia:** Fixed a critical Pydantic schema mismatch, added missing  fields to enable navigation, and iteratively updated all 313 grape varieties with valid, high-quality images.
-  - **Instagram Share Error:** Resolved a COOP error by changing the share logic to copy text and open Instagram in a new tab.
-  - **Pro User Login Failure:** Diagnosed and fixed a corrupted user document in the database and created a robust, self-healing user management system with admin endpoints (, ) to prevent future issues and assist with post-deployment fixes.
-- **New Feature Implementation (In Progress):**
-  - **Password Reset Flow:** Implemented the full-stack logic for a password reset feature using Resend, including backend APIs and new frontend pages.
+- **New Feature: Freemium/Pricing Pages:**
+  - Created a new  page ().
+  - Updated the homepage () with a pricing teaser section.
+- **New Feature: Price-Conscious AI Recommendations:**
+  - Heavily modified the AI system prompt in  to generate tiered recommendations.
+  - Implemented logic for a Geheimtipp (insider tip).
+  - Switched currency from CHF to EUR and unified the UI to a 🍷/🍷🍷/🍷🍷🍷 emoji system.
+  - Refactored  to parse and display the new complex recommendation format, including a Show Premium button.
+- **New Feature: Restaurant Mode:**
+  - Added an optional input field to  for users to enter wines from a menu.
+  - Updated the  model and AI logic in  to handle this new context and provide a recommendation from the user's list.
+  - Fixed a frontend parsing bug to correctly display the restaurant mode result.
+- **Bug Fix (In Progress): Live Login Failure:**
+  - Created a new admin debug endpoint () in  to help diagnose the issue post-deployment.
 - **Documentation & Backups:**
-  - Updated  with details of all changes.
-  - Provided the user with a full database backup in  format, delivered via a temporary download endpoint.
+  - Continuously updated  with all new features.
+  - Created multiple, versioned, full-project backups throughout the session.
 
 **Earlier issues found/mentioned but not fixed**
-   - None. All issues from the previous handoff were addressed.
+   - None. All issues were either addressed or added to the pending list.
 
 **Known issue recurrence from previous fork**
   - **Issue recurrence in previous fork:** Data management and integrity issues.
-  - **Recurrence count:** 3
-  - **Status:** IN PROGRESS. This session heavily focused on fixing data inconsistencies in  and , and corrupted documents in the  collection. The agent built robust tooling () to mitigate future data integrity problems.
+  - **Recurrence count:** 4
+  - **Status:** IN PROGRESS. The current Live Login Failure is likely another instance of this, where data/schema divergence between preview and production databases causes problems. The creation of the  and  endpoints are attempts to mitigate this.
 
 **Code Architecture**
 
 
 **Key Technical Concepts**
-- **Data Cleanup & Migration:** Extensive use of  scripts to normalize wine data, add missing  and  fields to grapes, and repair corrupted user documents.
-- **Pydantic Model Validation:** Fixed a schema mismatch for  using a  to map database fields to model fields.
-- **React State & URL Sync:** Used  to synchronize component state with URL query parameters for deep linking.
-- **Third-Party API Integration (Resend):** Integrated the Resend API for password reset emails, including SDK installation, API key management, and creating trigger endpoints.
-- **DNS Configuration:** Guided the user on adding TXT (SPF) and CNAME (DKIM) records to their domain provider's DNS settings to verify their domain for the email service.
+- **Iterative Feature Development:** Rapidly building, testing, and refining features based on immediate user feedback (e.g., the multiple versions of the price recommendation system).
+- **Advanced Frontend Parsing:** The  now contains complex logic to parse different markdown structures from the AI response (standard tiered recommendations vs. restaurant mode recommendations) and render them into appropriate UI components.
+- **Conditional AI Prompting:** The backend  now uses different system prompts and user message contexts depending on whether the user has activated Restaurant Mode.
+- **DNS Configuration:** Guiding a non-technical user through complex DNS settings (SPF, DKIM) for a third-party service (Resend).
+- **Live vs. Preview Debugging:** Creating dedicated admin endpoints (, ) to manage and diagnose data issues on a live production server.
 
 **key DB schema**
-  - ****: Schema is now validated on startup with indexes on  and . A repair endpoint () was created to enforce schema integrity (uid=0(root) gid=0(root) groups=0(root), , etc.).
-  - ****: Schema fixed. The Pydantic model now correctly maps database fields, and all documents now contain a  and a valid .
-  - ****:  and  fields were cleaned for German-speaking countries.
+  - No direct schema changes were made, but the application logic now expects new, optional data:
+    - **Pairing Request**: The API call to  can now include an optional  field.
 
 **changes in tech stack**
-  - **Resend:** Added for transactional emails. The  Python package was installed.
+  - None.
 
 **All files of reference**
-- : Contains all new backend logic for user management, password reset, and bug fixes.
-- : New page for the password reset flow.
-- : New page for the password reset flow.
-- : Modified to include the Forgot Password link.
-- : Script used to clean D/A/CH wine data.
-- : The updated documentation file.
+- : The core of all new features and bug fixes.
+- : The most heavily modified frontend file, containing the UI for all new pairing features.
+- : The new landing page for subscriptions.
+- : Modified to include the pricing teaser.
+- : Modified to add the new route.
+- : The living document tracking all changes.
 
 **Areas that need refactoring**:
-- The  directory contains numerous single-use scripts for data fixing (especially for images) that should be cleaned up or consolidated.
--  has grown significantly and remains a monolith. The auth and user management logic should be moved into a dedicated router.
+- **:** This component has become a monolith responsible for multiple complex UI states and parsing logics (standard pairing, 4D pairing, restaurant mode, tiered pricing display, premium button). It urgently needs to be broken down into smaller, more manageable sub-components.
+- **:** Continues to grow. The AI prompt generation logic is becoming very large and could be moved to a separate module.
 
 **key api endpoints**
-- : **NEW**. Initiates the password reset flow by sending an email.
-- : **NEW**. Completes the password reset process using a token from the email.
-- : **NEW**. A specific endpoint to allow the user to easily reset their own account password on the live server after deployment.
-- : **NEW**. Endpoint to fix data integrity issues across all user documents.
-- : **NEW**. A temporary endpoint created to allow the user to download database backup files.
+- ****: **MODIFIED**. The request body () now accepts an optional  string to trigger Restaurant Mode. The response structure from the AI is also significantly different.
+- ****: **NEW**. An endpoint to diagnose a specific user account on the live server. Not yet deployed.
+- ****: Endpoint used to fix the user's login issue on the live server.
 
 **Critical Info for New Agent**
-- **Language is German.**
-- **Password Reset is BLOCKED:** The immediate priority is to guide the user to complete the Resend domain verification by adding DNS records at Infomaniak. The feature is unusable until this is done.
-- **Live vs. Preview Environments:** The user has been confused by the fact that the live and preview environments have separate databases. Password changes or data fixes in preview do NOT affect live. Communicate clearly that deployment is necessary, and specific admin endpoints (like ) must be run *after* deployment to apply changes to the live database.
-- **User Frustration:** The user has expressed frustration with bugs being introduced during fixes. Be extra careful, test thoroughly, and clearly explain what was changed and why. Acknowledge their concerns and proceed methodically.
+- **User is the Project Manager:** The user dictates the roadmap and priorities, often changing them mid-task. Be prepared to be flexible and pivot quickly.
+- **DEPLOYMENT IS THE #1 BLOCKER:** The user cannot log into the live app. All new features are useless until the app is deployed. Your first goal should be to guide the user to deploy the application and then verify the login fix.
+- **Password Reset is Still Incomplete:** The original task of this entire job fork is still pending. Do not forget about it, but wait for the user to be ready to tackle the DNS configuration again.
+- **Language is German.** All communication must be in German.
+- **Test Before Finishing:** The user is sensitive to bugs. Thoroughly test every change, especially on the frontend, as the  component is very complex.
 
 **documents and test_reports created in this job**
-  -  (updated)
   - 
-  - Several temporary scripts in  for image updates.
-  - Database backup files created in .
+  - Multiple backup directories under , with the latest being  and a final one created at the end.
 
 **Last 10 User Messages and any pending HUMAN messages**
-- User provides a screenshot of the Resend DNS records page.
-- wo genau kann ich den SPFwert eintragen (where exactly can I enter the SPF value?)
-- 1, 2 uns 3 OK (confirming deploy started, resend page open, infomaniak page open)
-- ich bin bei infomania (I'm with Infomaniak)
-- dAS LOg in hatte über mehrere Wochen funktioniert. du hast alles zerstört. Wie viele von deinen Vorgängern. Ja - führe mich schritt für schritt durch (The login worked for weeks. You destroyed everything, like many of your predecessors. Yes - guide me step-by-step)
-- Nein, mit resend einrichten (No, set it up with resend)
-- Lieber mit option 2 starten (Prefer to start with option 2 [Password reset])
-- Was bedeutet das für die Zukunft. Gibt es professionellere Konzerne für die User Verwaltung (What does this mean for the future? Are there more professional concepts for user management?)
-- Muss ich deloyen wegen Passwort oder in der Live Version (Do I have to deploy because of the password or in the live version)
-- Liebe- sauber mit Option 1 (Preferably clean with option 1 [Deploy and use admin endpoint])
+- Bitte alles dokumentieren und Backups machen
+- Speise eingegeben. Es wird kein Wein angezeigt (+ screenshots showing the bug)
+- Erweitere die pairing Startseite mit einem weiteren Eingabefeld: welche Weine stehen zur Auswahl: Situation: user sitzt im Restaurant und hat die Weinkarte vor sich. Er kann sich nicht entscheiden und gibt im Eingabefeld die zur Verfügung stehenden weine ein. Claude macht dann eine konkrete Empfehlung. Wenn nichts eingegeben wird dann normale Empfehlung abgeben. Logik verstanden?
+- Passe die Preisskala etwas an. 1Glas: 20 Euro. 2 Glas bis 50 Euro. 3 Glas ab 50 Euro. Der Liebhaber gibt schon etwas geld aus im Fachhandel
+- Zu1: wechsle auf Euro um, da der deutsche Markt vie grösser ist. Zu2: Emojis vereinheitlichen. Zu3: deln Vorschlag ist super. Zu 4: ja
+- Jetzt wäre es gut, auch die weindatenbank und Weinkeller mit einfachen Preistags zu versehen...
+- Ich vermisse deinen Vorschlag: Meine Empfehlung...
+- Schreib alles in der Dokumentation und mache back ups aller Dateien. Dann werde Ich deployen
+- Die wine Pairing App steht in den Grundzügen. Wenn die KI den passenden Wein vorstellt, dann werden meistens die besten und teuersten Weine vorgeschlagen...
+- Der User erkennt nicht die freemium Möglichkeiten auf der App. Diese müssen prominent auf der Startseite sowie auf einer landing page aufgeführt sein...
 
 **Project Health Check:**
-- **Broken:** The login on the live production server is not working for the user. This requires a deployment and then running the newly created repair endpoint. The preview environment is fully functional.
-- **Mocked:** No
+- **Broken:** The user's login on the live production server () is broken.
+- **Mocked:** None
 
 **3rd Party Integrations**
-- **OpenAI Claude:** Used for AI pairing and generating descriptions. Uses Emergent LLM Key.
+- **OpenAI Claude:** Used for AI pairing. Heavily modified prompts. Uses Emergent LLM Key.
 - **Stripe:** Integrated for payments. Requires User API Key.
-- **Resend:** **NEW**. Added for password reset emails. Requires User API Key and is currently blocked on domain verification.
+- **Resend:** Added for password reset emails. Requires User API Key and is **still blocked on domain verification.**
 
 **Testing status**
-  - Testing agent used after significant changes: NO (Agent attempted but it failed, so agent fell back to manual testing with screenshots and curl.)
+  - Testing agent used after significant changes: YES (for the pricing pages and backend changes).
   - Troubleshoot agent used after agent stuck in loop: NO
   - Test files created: None
-  - Known regressions: A major regression on the  page was introduced and subsequently fixed. The user's login on the live server is currently broken, pending a new deployment and user action.
+  - Known regressions: The user's login on the live server is broken.
 
 **Credentials to test flow:**
 - User's primary account: 
-- New password for **preview environment**:  (This password needs to be set on the live environment via the admin endpoint after deployment).
+- Password for **live environment** (after deployment and running the admin endpoint): 
+- Password for **preview environment**: 
 
 **What agent forgot to execute**
-- The agent successfully addressed all user requests and did not overlook any tasks. The session was highly reactive to user-reported issues, which delayed progress on planned upcoming features.</analysis>
+- The agent initially forgot to implement the Show Premium button as requested by the user, but this was corrected in a subsequent step.
+- The primary task of completing the Resend DNS verification remains unfinished due to the user changing priorities.</analysis>

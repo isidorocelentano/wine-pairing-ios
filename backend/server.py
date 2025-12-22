@@ -1194,6 +1194,7 @@ async def root():
 async def get_wines(
     request: Request,
     type_filter: Optional[str] = None, 
+    price_category_filter: Optional[str] = None,
     favorites_only: bool = False, 
     in_stock_only: bool = False
 ):
@@ -1207,6 +1208,8 @@ async def get_wines(
     query = {"user_id": user.user_id}
     if type_filter:
         query["type"] = type_filter
+    if price_category_filter:
+        query["price_category"] = price_category_filter
     if favorites_only:
         query["is_favorite"] = True
     if in_stock_only:

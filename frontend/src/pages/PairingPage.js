@@ -388,6 +388,50 @@ const PairingPage = () => {
               </Select>
             </div>
 
+            {/* Restaurant-Modus: Weine von der Karte */}
+            <div className="space-y-3">
+              <button
+                type="button"
+                onClick={() => setShowRestaurantMode(!showRestaurantMode)}
+                className="flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+              >
+                <span className="text-lg">🍽️</span>
+                {language === 'de' ? 'Im Restaurant? Weinkarte eingeben' : 
+                 language === 'en' ? 'At a restaurant? Enter wine list' : 
+                 'Au restaurant? Entrez la carte des vins'}
+                <span className={`transition-transform ${showRestaurantMode ? 'rotate-180' : ''}`}>▾</span>
+              </button>
+              
+              {showRestaurantMode && (
+                <div className="space-y-2 animate-in slide-in-from-top-2 duration-200">
+                  <label className="text-sm text-muted-foreground block">
+                    {language === 'de' ? 'Welche Weine stehen auf der Karte? (z.B. "Bordeaux 2019, Chianti Classico, Grüner Veltliner")' : 
+                     language === 'en' ? 'What wines are on the menu? (e.g., "Bordeaux 2019, Chianti Classico, Grüner Veltliner")' : 
+                     'Quels vins sont sur la carte? (ex: "Bordeaux 2019, Chianti Classico, Grüner Veltliner")'}
+                  </label>
+                  <textarea
+                    value={availableWines}
+                    onChange={(e) => setAvailableWines(e.target.value)}
+                    placeholder={language === 'de' ? 'Weine von der Karte eingeben...' : 
+                                 language === 'en' ? 'Enter wines from the menu...' : 
+                                 'Entrez les vins de la carte...'}
+                    className="w-full min-h-[80px] p-3 text-sm rounded-lg border border-primary/30 bg-primary/5 focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-muted-foreground/50 resize-none"
+                    data-testid="available-wines-input"
+                  />
+                  {availableWines.trim() && (
+                    <div className="flex items-center gap-2 text-xs text-primary bg-primary/10 px-3 py-2 rounded-lg">
+                      <span>🍷</span>
+                      <span>
+                        {language === 'de' ? 'Restaurant-Modus aktiv: Du erhältst eine konkrete Empfehlung aus deiner Weinkarte!' : 
+                         language === 'en' ? 'Restaurant mode active: You\'ll get a specific recommendation from your wine list!' : 
+                         'Mode restaurant actif: Vous recevrez une recommandation spécifique de votre carte!'}
+                      </span>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+
             {/* Profi-Modus 4D Gaumen-Übersetzer */}
             <details className="group">
               <summary className="flex items-center justify-between cursor-pointer select-none mb-2">

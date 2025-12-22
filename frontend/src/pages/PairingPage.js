@@ -850,13 +850,12 @@ const PairingPage = () => {
                             </div>
                           )}
                           
-                          {/* Premium Wines (💛) */}
+                          {/* Premium Wines (🍷🍷) */}
                           {filteredWines.filter(w => w.priceTier === 'premium').length > 0 && (
                             <div>
                               <div className="flex items-center gap-2 mb-2">
-                                <span className="text-lg">💛</span>
                                 <span className="text-sm font-semibold text-amber-600 dark:text-amber-400">
-                                  {language === 'de' ? 'Gehobene Qualität (CHF 20-40)' : language === 'en' ? 'Premium Quality (CHF 20-40)' : 'Qualité Supérieure (CHF 20-40)'}
+                                  {tierLabels.premium[language] || tierLabels.premium.de}
                                 </span>
                               </div>
                               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -882,13 +881,12 @@ const PairingPage = () => {
                             </div>
                           )}
                           
-                          {/* Luxury Wines (🧡) - Only shown when toggled */}
+                          {/* Luxury Wines (🍷🍷🍷) - Only shown when toggled */}
                           {showPremiumWines && filteredWines.filter(w => w.priceTier === 'luxury').length > 0 && (
                             <div>
                               <div className="flex items-center gap-2 mb-2">
-                                <span className="text-lg">🧡</span>
                                 <span className="text-sm font-semibold text-orange-600 dark:text-orange-400">
-                                  {language === 'de' ? 'Für besondere Anlässe (CHF 40+)' : language === 'en' ? 'For Special Occasions (CHF 40+)' : 'Pour Occasions Spéciales (CHF 40+)'}
+                                  {tierLabels.luxury[language] || tierLabels.luxury.de}
                                 </span>
                               </div>
                               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -946,6 +944,16 @@ const PairingPage = () => {
                         </div>
                       </div>
                     )})}
+                    
+                    {/* Insider Tip Section (new format) */}
+                    {insiderTip && insiderTip.content && (
+                      <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950/30 dark:to-pink-950/30 rounded-lg p-4 border border-purple-200 dark:border-purple-800">
+                        <h3 className="text-lg font-semibold mb-2 text-purple-700 dark:text-purple-400 flex items-center gap-2">
+                          💎 {language === 'de' ? 'Geheimtipp' : language === 'en' ? 'Insider Tip' : 'Bon Plan'}
+                        </h3>
+                        <p className="text-muted-foreground">{insiderTip.content}</p>
+                      </div>
+                    )}
                     
                     {/* Premium Toggle Button (Option 5: Smart Defaults) */}
                     {hasLuxuryWines && (

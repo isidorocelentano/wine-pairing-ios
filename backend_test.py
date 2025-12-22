@@ -628,7 +628,306 @@ class WinePairingAPITester:
             self.log_test("Pairing History Serialization", False, str(response))
         return success
 
-    # ===================== PRICE-CONSCIOUS WINE PAIRING TESTS =====================
+    # ===================== UNIFIED €/🍷 FORMAT WINE PAIRING TESTS =====================
+    
+    def test_unified_format_german_spaghetti_bolognese(self):
+        """Test German recommendation with new unified €/🍷 format for Spaghetti Bolognese"""
+        pairing_data = {
+            "dish": "Spaghetti Bolognese",
+            "language": "de"
+        }
+        
+        success, response = self.make_request('POST', 'pairing', data=pairing_data, expected_status=200)
+        if success:
+            recommendation = response.get('recommendation', '')
+            
+            if len(recommendation) < 100:
+                self.log_test("Unified Format German (Spaghetti Bolognese)", False, f"Recommendation too short: {recommendation}")
+                return False
+            
+            # Check for required sections in new unified format
+            required_sections = [
+                "🍷 DER STIL",
+                "💡 DAS WARUM", 
+                "🍷 Alltags-Genuss (unter €12):",
+                "🍷🍷 Guter Anlass (€12-25):",
+                "💎 GEHEIMTIPP"
+            ]
+            
+            missing_sections = []
+            for section in required_sections:
+                if section not in recommendation:
+                    missing_sections.append(section)
+            
+            if missing_sections:
+                self.log_test("Unified Format German (Spaghetti Bolognese)", False, 
+                             f"Missing required sections: {missing_sections}")
+                return False
+            
+            # Check that prices are in € (not CHF)
+            if "CHF" in recommendation:
+                self.log_test("Unified Format German (Spaghetti Bolognese)", False, 
+                             "Found CHF currency - should be € in new format")
+                return False
+            
+            if "€" not in recommendation:
+                self.log_test("Unified Format German (Spaghetti Bolognese)", False, 
+                             "€ currency not found in recommendation")
+                return False
+            
+            # Check that price tiers use 🍷 symbols (not 💚💛🧡)
+            old_symbols = ["💚", "💛", "🧡"]
+            found_old_symbols = [symbol for symbol in old_symbols if symbol in recommendation]
+            if found_old_symbols:
+                self.log_test("Unified Format German (Spaghetti Bolognese)", False, 
+                             f"Found old color symbols {found_old_symbols} - should use 🍷 symbols")
+                return False
+            
+            # Check for at least 2 wines in Alltags-Genuss section
+            alltags_start = recommendation.find("🍷 Alltags-Genuss (unter €12):")
+            guter_anlass_start = recommendation.find("🍷🍷 Guter Anlass (€12-25):")
+            
+            if alltags_start != -1 and guter_anlass_start != -1:
+                alltags_section = recommendation[alltags_start:guter_anlass_start]
+                wine_count = alltags_section.count('**') // 2  # Each wine has **name**
+                
+                if wine_count < 2:
+                    self.log_test("Unified Format German (Spaghetti Bolognese)", False, 
+                                 f"Expected at least 2 wines in Alltags-Genuss, found {wine_count}")
+                    return False
+            
+            self.log_test("Unified Format German (Spaghetti Bolognese)", True, 
+                         "German Spaghetti Bolognese pairing with new unified €/🍷 format")
+        else:
+            self.log_test("Unified Format German (Spaghetti Bolognese)", False, str(response))
+        return success
+
+    def test_unified_format_english_grilled_steak(self):
+        """Test English recommendation with new unified €/🍷 format for Grilled Steak"""
+        pairing_data = {
+            "dish": "Grilled Steak",
+            "language": "en"
+        }
+        
+        success, response = self.make_request('POST', 'pairing', data=pairing_data, expected_status=200)
+        if success:
+            recommendation = response.get('recommendation', '')
+            
+            if len(recommendation) < 100:
+                self.log_test("Unified Format English (Grilled Steak)", False, f"Recommendation too short: {recommendation}")
+                return False
+            
+            # Check for required sections in English unified format
+            required_sections = [
+                "🍷 THE STYLE",
+                "💡 THE WHY",
+                "🍷 Everyday Enjoyment (under €12):",
+                "🍷🍷 Good Occasion (€12-25):",
+                "💎 INSIDER TIP"
+            ]
+            
+            missing_sections = []
+            for section in required_sections:
+                if section not in recommendation:
+                    missing_sections.append(section)
+            
+            if missing_sections:
+                self.log_test("Unified Format English (Grilled Steak)", False, 
+                             f"Missing required sections: {missing_sections}")
+                return False
+            
+            # Check that prices are in € (not CHF)
+            if "CHF" in recommendation:
+                self.log_test("Unified Format English (Grilled Steak)", False, 
+                             "Found CHF currency - should be € in new format")
+                return False
+            
+            if "€" not in recommendation:
+                self.log_test("Unified Format English (Grilled Steak)", False, 
+                             "€ currency not found in recommendation")
+                return False
+            
+            # Check that price tiers use 🍷 symbols (not color symbols)
+            old_symbols = ["💚", "💛", "🧡"]
+            found_old_symbols = [symbol for symbol in old_symbols if symbol in recommendation]
+            if found_old_symbols:
+                self.log_test("Unified Format English (Grilled Steak)", False, 
+                             f"Found old color symbols {found_old_symbols} - should use 🍷 symbols")
+                return False
+            
+            self.log_test("Unified Format English (Grilled Steak)", True, 
+                         "English Grilled Steak pairing with new unified €/🍷 format")
+        else:
+            self.log_test("Unified Format English (Grilled Steak)", False, str(response))
+        return success
+
+    def test_unified_format_french_coq_au_vin(self):
+        """Test French recommendation with new unified €/🍷 format for Coq au Vin"""
+        pairing_data = {
+            "dish": "Coq au Vin",
+            "language": "fr"
+        }
+        
+        success, response = self.make_request('POST', 'pairing', data=pairing_data, expected_status=200)
+        if success:
+            recommendation = response.get('recommendation', '')
+            
+            if len(recommendation) < 100:
+                self.log_test("Unified Format French (Coq au Vin)", False, f"Recommendation too short: {recommendation}")
+                return False
+            
+            # Check for required sections in French unified format
+            required_sections = [
+                "🍷 LE STYLE",
+                "💡 LE POURQUOI",
+                "🍷 Plaisir Quotidien (moins de €12):",
+                "🍷🍷 Belle Occasion (€12-25):",
+                "💎 BON PLAN"
+            ]
+            
+            missing_sections = []
+            for section in required_sections:
+                if section not in recommendation:
+                    missing_sections.append(section)
+            
+            if missing_sections:
+                self.log_test("Unified Format French (Coq au Vin)", False, 
+                             f"Missing required sections: {missing_sections}")
+                return False
+            
+            # Check that prices are in € (not CHF)
+            if "CHF" in recommendation:
+                self.log_test("Unified Format French (Coq au Vin)", False, 
+                             "Found CHF currency - should be € in new format")
+                return False
+            
+            if "€" not in recommendation:
+                self.log_test("Unified Format French (Coq au Vin)", False, 
+                             "€ currency not found in recommendation")
+                return False
+            
+            # Check that price tiers use 🍷 symbols (not color symbols)
+            old_symbols = ["💚", "💛", "🧡"]
+            found_old_symbols = [symbol for symbol in old_symbols if symbol in recommendation]
+            if found_old_symbols:
+                self.log_test("Unified Format French (Coq au Vin)", False, 
+                             f"Found old color symbols {found_old_symbols} - should use 🍷 symbols")
+                return False
+            
+            self.log_test("Unified Format French (Coq au Vin)", True, 
+                         "French Coq au Vin pairing with new unified €/🍷 format")
+        else:
+            self.log_test("Unified Format French (Coq au Vin)", False, str(response))
+        return success
+
+    def test_unified_format_structure_validation(self):
+        """Test that unified €/🍷 format structure is consistent across all languages"""
+        test_cases = [
+            {
+                "dish": "Pasta Carbonara", 
+                "language": "de", 
+                "expected_style": "🍷 DER STIL",
+                "expected_why": "💡 DAS WARUM",
+                "expected_tip": "💎 GEHEIMTIPP"
+            },
+            {
+                "dish": "Fish and Chips", 
+                "language": "en", 
+                "expected_style": "🍷 THE STYLE",
+                "expected_why": "💡 THE WHY", 
+                "expected_tip": "💎 INSIDER TIP"
+            },
+            {
+                "dish": "Ratatouille", 
+                "language": "fr", 
+                "expected_style": "🍷 LE STYLE",
+                "expected_why": "💡 LE POURQUOI",
+                "expected_tip": "💎 BON PLAN"
+            }
+        ]
+        
+        all_passed = True
+        results = []
+        
+        for case in test_cases:
+            success, response = self.make_request('POST', 'pairing', data=case, expected_status=200)
+            if success:
+                recommendation = response.get('recommendation', '')
+                
+                # Check required sections
+                required_sections = [case["expected_style"], case["expected_why"], case["expected_tip"]]
+                missing_sections = [section for section in required_sections if section not in recommendation]
+                
+                if missing_sections:
+                    all_passed = False
+                    results.append(f"{case['language']}: Missing {missing_sections}")
+                    continue
+                
+                # Check € currency (not CHF)
+                if "CHF" in recommendation:
+                    all_passed = False
+                    results.append(f"{case['language']}: Found CHF instead of €")
+                    continue
+                
+                if "€" not in recommendation:
+                    all_passed = False
+                    results.append(f"{case['language']}: Missing € currency")
+                    continue
+                
+                # Check 🍷 symbols (not color symbols)
+                old_symbols = ["💚", "💛", "🧡"]
+                found_old_symbols = [symbol for symbol in old_symbols if symbol in recommendation]
+                if found_old_symbols:
+                    all_passed = False
+                    results.append(f"{case['language']}: Found old symbols {found_old_symbols}")
+                    continue
+                
+                results.append(f"{case['language']}: ✓ Unified format")
+            else:
+                all_passed = False
+                results.append(f"{case['language']}: API error")
+        
+        if all_passed:
+            self.log_test("Unified Format Structure Validation", True, 
+                         f"All languages follow unified €/🍷 format: {'; '.join(results)}")
+        else:
+            self.log_test("Unified Format Structure Validation", False, 
+                         f"Format issues found: {'; '.join(results)}")
+        return all_passed
+
+    def test_unified_format_wine_availability_check(self):
+        """Test that recommended wineries are available in good supermarkets"""
+        pairing_data = {
+            "dish": "Grilled Salmon",
+            "language": "de"
+        }
+        
+        success, response = self.make_request('POST', 'pairing', data=pairing_data, expected_status=200)
+        if success:
+            recommendation = response.get('recommendation', '')
+            
+            # Check for well-known, widely available wineries/brands
+            available_wineries = [
+                "antinori", "torres", "dr. loosen", "kendermann", "deinhard", 
+                "blue nun", "black tower", "liebfraumilch", "riesling", "gewürztraminer",
+                "château", "domaine", "weingut", "cave", "bodega"
+            ]
+            
+            recommendation_lower = recommendation.lower()
+            found_available = [winery for winery in available_wineries if winery in recommendation_lower]
+            
+            if len(found_available) == 0:
+                self.log_test("Unified Format Wine Availability", False, 
+                             "No widely available wineries found in recommendation")
+                return False
+            
+            self.log_test("Unified Format Wine Availability", True, 
+                         f"Found available wineries: {found_available[:3]}")
+        else:
+            self.log_test("Unified Format Wine Availability", False, str(response))
+        return success
+
+    # ===================== PRICE-CONSCIOUS WINE PAIRING TESTS (OLD FORMAT) =====================
     
     def test_price_conscious_pairing_german_fondue(self):
         """Test German recommendation for Swiss dish (Fondue) with price tiers"""

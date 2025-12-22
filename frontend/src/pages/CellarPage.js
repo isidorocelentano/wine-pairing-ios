@@ -678,6 +678,32 @@ const CellarPage = () => {
                     placeholder="z.B. Cabernet Sauvignon"
                   />
                 </div>
+                
+                {/* Price Category Selector in Edit Dialog */}
+                <div className="space-y-2">
+                  <label className="text-sm font-medium">
+                    {language === 'de' ? 'Preiskategorie' : language === 'en' ? 'Price Category' : 'Catégorie de Prix'}
+                  </label>
+                  <div className="flex gap-2">
+                    {['1', '2', '3'].map((cat) => (
+                      <button
+                        key={cat}
+                        type="button"
+                        onClick={() => setEditingWine({ ...editingWine, price_category: editingWine.price_category === cat ? '' : cat })}
+                        className={`flex-1 p-3 rounded-lg border-2 transition-all text-center ${
+                          editingWine.price_category === cat
+                            ? cat === '1' ? 'border-green-500 bg-green-50 dark:bg-green-950/30' 
+                              : cat === '2' ? 'border-amber-500 bg-amber-50 dark:bg-amber-950/30'
+                              : 'border-orange-500 bg-orange-50 dark:bg-orange-950/30'
+                            : 'border-border hover:border-primary/50'
+                        }`}
+                      >
+                        <div className="text-lg mb-1">{priceCategoryLabels[cat].emoji}</div>
+                        <div className="text-xs text-muted-foreground">{priceCategoryLabels[cat].label}</div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
                 {editingWine.description && (
                   <div className="bg-secondary/30 p-4 rounded-md border border-border">
                     <label className="text-sm font-medium mb-2 block">Beschreibung</label>

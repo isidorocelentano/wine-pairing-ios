@@ -965,13 +965,13 @@ const PairingPage = () => {
                         >
                           {showPremiumWines ? (
                             <>
-                              <span>🧡</span>
+                              <span>🍷🍷🍷</span>
                               {language === 'de' ? 'Premium ausblenden' : language === 'en' ? 'Hide Premium' : 'Masquer Premium'}
                             </>
                           ) : (
                             <>
                               <Crown className="w-4 h-4 text-orange-500" />
-                              {language === 'de' ? 'Premium-Weine anzeigen (CHF 40+)' : language === 'en' ? 'Show Premium Wines (CHF 40+)' : 'Afficher vins premium (CHF 40+)'}
+                              {language === 'de' ? 'Premium-Weine anzeigen (über €25)' : language === 'en' ? 'Show Premium Wines (over €25)' : 'Afficher vins premium (plus de €25)'}
                             </>
                           )}
                         </Button>

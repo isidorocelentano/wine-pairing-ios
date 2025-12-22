@@ -3742,14 +3742,18 @@ def main():
             tester = WinePairingAPITester()
             success = tester.run_chinese_kompass_tests_only()
             return 0 if success else 1
+        elif sys.argv[1] == "unified":
+            tester = WinePairingAPITester()
+            success = tester.run_unified_format_tests_only()
+            return 0 if success else 1
         elif sys.argv[1] == "prio1":
             tester = WinePairingAPITester()
             success = tester.run_prio1_fixes_tests()
             return 0 if success else 1
     
-    # Default: Run Prio 1 fixes tests as specified in review request
+    # Default: Run unified format tests as specified in review request
     tester = WinePairingAPITester()
-    success = tester.run_prio1_fixes_tests()
+    success = tester.run_unified_format_tests_only()
     return 0 if success else 1
 
 if __name__ == "__main__":

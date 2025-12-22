@@ -4101,10 +4101,14 @@ def main():
             tester = WinePairingAPITester()
             success = tester.run_prio1_fixes_tests()
             return 0 if success else 1
+        elif sys.argv[1] == "price-tags":
+            tester = WinePairingAPITester()
+            success = tester.run_price_tags_tests_only()
+            return 0 if success else 1
     
-    # Default: Run unified format tests as specified in review request
+    # Default: Run price tags tests as specified in review request
     tester = WinePairingAPITester()
-    success = tester.run_unified_format_tests_only()
+    success = tester.run_price_tags_tests_only()
     return 0 if success else 1
 
 if __name__ == "__main__":

@@ -69,6 +69,9 @@ const CellarPage = () => {
       if (filter !== 'all') {
         params.push(`type_filter=${filter}`);
       }
+      if (priceFilter !== 'all') {
+        params.push(`price_category_filter=${priceFilter}`);
+      }
       if (inStockOnly) {
         params.push('in_stock_only=true');
       }
@@ -84,7 +87,7 @@ const CellarPage = () => {
     } finally {
       setLoading(false);
     }
-  }, [filter, inStockOnly, t, isAuthenticated]);
+  }, [filter, priceFilter, inStockOnly, t, isAuthenticated]);
 
 
   useEffect(() => {

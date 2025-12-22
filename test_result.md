@@ -1,13 +1,39 @@
 # Test Results - Wine Pairing Platform
 
 ## Test Configuration
-test_sequence: 15
+test_sequence: 16
 run_ui: true
-backend_test_completed: true
-critical_bugfix_applied: true
-bugfix_description: "Complete wine data cleanup for ALL countries - regions and appellations standardized"
+backend_test_completed: false
+critical_bugfix_applied: false
+bugfix_description: "Price tags feature for wine cellar - 🍷/🍷🍷/🍷🍷🍷 system"
 
 ## Latest Change (2025-12-22)
+
+### Price Tags for Wine Cellar Feature (2025-12-22) - IN PROGRESS
+
+**Changes Made:**
+1. **Backend (`server.py`):**
+   - Added `price_category` field to `Wine`, `WineCreate`, `WineUpdate` models
+   - Added `price_category_filter` parameter to `GET /api/wines` endpoint
+   - Values: '1' (🍷 bis €20), '2' (🍷🍷 €20-50), '3' (🍷🍷🍷 ab €50)
+
+2. **Frontend (`CellarPage.js`):**
+   - Added price category selector (3 clickable buttons) in Add Wine dialog
+   - Added price category selector in Edit Wine dialog
+   - Added price filter dropdown in header
+   - Added price badges on wine cards
+   - Added price statistics in cellar stats card
+
+**Tests Required:**
+1. Add wine with price category
+2. Edit wine price category
+3. Filter wines by price category
+4. Verify price badges display correctly
+5. Verify statistics show price breakdown
+
+---
+
+## Previous Testing (2025-12-22)
 
 ### Unified €/🍷 Format Wine Pairing System Testing Results (2025-12-22) - COMPLETED ✅
 

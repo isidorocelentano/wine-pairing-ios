@@ -394,6 +394,7 @@ class WineCreate(BaseModel):
     notes: Optional[str] = None  # Personal user notes
     image_base64: Optional[str] = None
     quantity: Optional[int] = 1
+    price_category: Optional[str] = None  # 🍷 (bis €20), 🍷🍷 (€20-50), 🍷🍷🍷 (ab €50)
     # user_id wird vom Backend gesetzt, nicht vom Client
 
 class WineUpdate(BaseModel):

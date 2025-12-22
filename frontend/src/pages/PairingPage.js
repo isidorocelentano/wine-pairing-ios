@@ -971,7 +971,7 @@ const PairingPage = () => {
                           ) : (
                             <>
                               <Crown className="w-4 h-4 text-orange-500" />
-                              {language === 'de' ? 'Premium-Weine anzeigen (über €25)' : language === 'en' ? 'Show Premium Wines (over €25)' : 'Afficher vins premium (plus de €25)'}
+                              {language === 'de' ? 'Premium-Weine anzeigen (ab €50)' : language === 'en' ? 'Show Premium Wines (€50+)' : 'Afficher vins premium (€50+)'}
                             </>
                           )}
                         </Button>

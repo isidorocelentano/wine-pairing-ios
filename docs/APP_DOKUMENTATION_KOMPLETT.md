@@ -1,7 +1,7 @@
 # 📖 WINE PAIRING APP - Vollständige Dokumentation
 
 **Stand:** 22. Dezember 2025  
-**Version:** 1.6 (Restaurant-Modus & Style-First)  
+**Version:** 1.7 (Preistags für Weinkeller)  
 **Domain:** https://wine-pairing.online
 
 ---
@@ -22,6 +22,26 @@
 ---
 
 ## 🆕 ÄNDERUNGSHISTORIE
+
+### Version 1.7 (22.12.2025) - Preistags für Weinkeller
+
+**🍷 Preiskategorien im Weinkeller - NEU:**
+- ✅ Einheitliches **🍷-System** für den persönlichen Weinkeller:
+  - 🍷 **Alltags-Genuss** (bis €20) - grünes Styling
+  - 🍷🍷 **Gehobener Anlass** (€20-50) - amber Styling
+  - 🍷🍷🍷 **Besonderer Moment** (ab €50) - orange Styling
+- ✅ **Preiskategorie-Auswahl** beim Hinzufügen von Weinen (3 klickbare Buttons)
+- ✅ **Preiskategorie bearbeiten** im Edit-Dialog
+- ✅ **Preisfilter-Dropdown** in der Weinkeller-Übersicht
+- ✅ **Preisbadges** auf jeder Weinkarte
+- ✅ **Preisstatistiken** in der Keller-Statistikkarte
+
+**Technische Änderungen:**
+- Backend: `price_category` Feld zu Wine-Model hinzugefügt
+- Backend: `price_category_filter` Parameter für GET /api/wines
+- Frontend: Neue UI-Komponenten in CellarPage.js
+
+---
 
 ### Version 1.6 (22.12.2025) - Restaurant-Modus & Style-First
 

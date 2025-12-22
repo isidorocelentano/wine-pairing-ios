@@ -19,6 +19,7 @@ class WinePairingAPITester:
         self.tests_passed = 0
         self.test_wine_id = None
         self.session_id = None
+        self.session = requests.Session()  # Use session to maintain cookies
 
     def log_test(self, name: str, success: bool, details: str = ""):
         """Log test result"""

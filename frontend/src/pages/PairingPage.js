@@ -279,6 +279,7 @@ const PairingPage = () => {
         wine_type_filter: wineTypeFilter || null,
         language: language,
         dish_id: selectedDishId,
+        available_wines: availableWines.trim() || null,  // Restaurant-Modus
         richness,
         freshness,
         sweetness,
@@ -287,7 +288,7 @@ const PairingPage = () => {
       setResult(response.data);
       setShowUpgradePrompt(false);
       fetchHistory();
-      toast.success(t('success_recommendation'));
+      toast.success(availableWines.trim() ? t('success_restaurant_mode') || '🍷 Restaurant-Empfehlung erhalten!' : t('success_recommendation'));
     } catch (error) {
       // Check if it's a limit error (429)
       if (error.response?.status === 429 || error.response?.data?.detail?.includes('Tageslimit')) {

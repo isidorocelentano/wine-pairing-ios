@@ -5133,7 +5133,145 @@ async def logout(request: Request, response: Response):
         await db.user_sessions.delete_many({"user_id": user.user_id})
     
     response.delete_cookie("session_token", path="/")
+    # Auch localStorage-Token löschen (Frontend kümmert sich darum)
     return {"message": "Logged out"}
+
+
+# ===================== GOOGLE OAUTH =====================
+
+class GoogleSessionRequest(BaseModel):
+    session_id: str
+
+@api_router.post("/auth/google/session")
+async def process_google_session(req: GoogleSessionRequest, response: Response):
+    """
+    Verarbeitet Google OAuth Session von Emergent Auth.
+    
+    Flow:
+    1. Frontend erhält session_id von auth.emergentagent.com
+    2. Frontend sendet session_id an diesen Endpoint
+    3. Backend tauscht session_id gegen User-Daten
+    4. Backend erstellt/aktualisiert User in DB
+    5. Backend setzt Session-Cookie + gibt Token zurück
+    """
+    import httpx
+    
+    try:
+        # Session-Daten von Emergent Auth abrufen
+        async with httpx.AsyncClient() as client:
+            auth_response = await client.get(
+                "https://demobackend.emergentagent.com/auth/v1/env/oauth/session-data",
+                headers={"X-Session-ID": req.session_id},
+                timeout=10.0
+            )
+            
+            if auth_response.status_code != 200:
+                logger.error(f"Google Auth failed: {auth_response.status_code}")
+                raise HTTPException(status_code=401, detail="Google-Anmeldung fehlgeschlagen")
+            
+            auth_data = auth_response.json()
+    except httpx.RequestError as e:
+        logger.error(f"Google Auth request error: {e}")
+        raise HTTPException(status_code=500, detail="Verbindungsfehler bei Google-Anmeldung")
+    
+    # User-Daten extrahieren
+    google_id = auth_data.get("id")
+    email = auth_data.get("email", "").lower().strip()
+    name = auth_data.get("name", "")
+    picture = auth_data.get("picture")
+    emergent_session_token = auth_data.get("session_token")
+    
+    if not email:
+        raise HTTPException(status_code=400, detail="Keine E-Mail von Google erhalten")
+    
+    # Prüfen ob User existiert (per Email)
+    existing_user = await db.users.find_one({"email": email}, {"_id": 0})
+    
+    if existing_user:
+        # User existiert - aktualisieren
+        user_id = existing_user.get("user_id")
+        await db.users.update_one(
+            {"email": email},
+            {
+                "$set": {
+                    "google_id": google_id,
+                    "picture": picture or existing_user.get("picture"),
+                    "name": name or existing_user.get("name"),
+                    "last_login": datetime.now(timezone.utc),
+                    "auth_provider": "google"
+                },
+                "$inc": {"login_count": 1}
+            }
+        )
+        plan = existing_user.get("plan", "basic")
+        usage = existing_user.get("usage", {})
+        logger.info(f"Google login: existing user {email}")
+    else:
+        # Neuer User erstellen
+        user_id = f"user_{uuid.uuid4().hex[:12]}"
+        new_user = {
+            "user_id": user_id,
+            "email": email,
+            "name": name or email.split('@')[0],
+            "picture": picture,
+            "google_id": google_id,
+            "auth_provider": "google",
+            "plan": "basic",
+            "subscription_status": "active",
+            "usage": {
+                "pairing_requests_today": 0,
+                "chat_messages_today": 0,
+                "last_usage_date": datetime.now(timezone.utc).date().isoformat()
+            },
+            "created_at": datetime.now(timezone.utc),
+            "last_login": datetime.now(timezone.utc),
+            "login_count": 1
+        }
+        await db.users.insert_one(new_user)
+        plan = "basic"
+        usage = new_user["usage"]
+        logger.info(f"Google login: new user created {email}")
+    
+    # JWT Token erstellen
+    token = create_jwt_token(user_id, email)
+    
+    # Session-Cookie setzen
+    response.set_cookie(
+        key="session_token",
+        value=token,
+        httponly=True,
+        secure=True,
+        samesite="none",
+        path="/",
+        max_age=JWT_EXPIRY_DAYS * 24 * 60 * 60
+    )
+    
+    # Emergent Session speichern (optional, für spätere Verwendung)
+    if emergent_session_token:
+        await db.user_sessions.update_one(
+            {"user_id": user_id},
+            {
+                "$set": {
+                    "session_token": emergent_session_token,
+                    "expires_at": datetime.now(timezone.utc) + timedelta(days=7),
+                    "updated_at": datetime.now(timezone.utc)
+                }
+            },
+            upsert=True
+        )
+    
+    return {
+        "user_id": user_id,
+        "email": email,
+        "name": name,
+        "picture": picture,
+        "plan": plan,
+        "usage": usage,
+        "token": token,  # Für localStorage (Safari/iOS)
+        "auth_provider": "google",
+        "message": "Google-Anmeldung erfolgreich!"
+    }
+
 
 # ===================== PASSWORD RESET =====================
 

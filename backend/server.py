@@ -5091,7 +5091,7 @@ async def login_user(req: LoginRequest, response: Response):
     # 6. JWT Token erstellen
     token = create_jwt_token(user["user_id"], user["email"])
     
-    # 7. Session Cookie setzen
+    # 7. Session Cookie setzen (für Browser die Cookies unterstützen)
     response.set_cookie(
         key="session_token",
         value=token,
@@ -5102,7 +5102,7 @@ async def login_user(req: LoginRequest, response: Response):
         max_age=JWT_EXPIRY_DAYS * 24 * 60 * 60
     )
     
-    # Return user (ohne Passwort)
+    # Return user (ohne Passwort) + Token für localStorage (Safari/iOS-kompatibel)
     return {
         "user_id": user["user_id"],
         "email": user["email"],
@@ -5110,6 +5110,7 @@ async def login_user(req: LoginRequest, response: Response):
         "picture": user.get("picture"),
         "plan": user.get("plan", "basic"),
         "usage": user.get("usage", {}),
+        "token": token,  # Token für localStorage (Safari/iOS)
         "message": "Anmeldung erfolgreich!"
     }
 

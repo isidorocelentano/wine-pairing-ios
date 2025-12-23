@@ -1538,6 +1538,27 @@ class WinePairingAPITester:
                      f"All categories have wines: {category_counts}")
         return True
 
+    def test_admin_estimate_wine_prices_endpoint(self):
+        """Test POST /api/admin/estimate-wine-prices endpoint"""
+        success, response = self.make_request('POST', 'admin/estimate-wine-prices', expected_status=200)
+        if success:
+            if 'status' not in response or response.get('status') != 'success':
+                self.log_test("Admin Estimate Wine Prices", False, f"Unexpected response format: {response}")
+                return False
+            
+            message = response.get('message', '')
+            details = response.get('details', {})
+            
+            # The endpoint should return success even if no wines were updated (all already have categories)
+            total_processed = details.get('total_processed', 0)
+            updated = details.get('updated', 0)
+            
+            self.log_test("Admin Estimate Wine Prices", True, 
+                         f"Processed {total_processed} wines, updated {updated} with price categories")
+        else:
+            self.log_test("Admin Estimate Wine Prices", False, str(response))
+        return success
+
     def test_get_favorites(self):
         """Test getting favorite wines"""
         success, response = self.make_request('GET', 'favorites', expected_status=200)

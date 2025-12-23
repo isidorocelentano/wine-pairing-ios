@@ -153,10 +153,10 @@ const LoginPage = () => {
             </TabsList>
 
             {/* Error Alert */}
-            {error && (
+            {(error || authError) && (
               <Alert variant="destructive" className="mb-4">
                 <AlertCircle className="h-4 w-4" />
-                <AlertDescription>{error}</AlertDescription>
+                <AlertDescription>{error || authError}</AlertDescription>
               </Alert>
             )}
 
@@ -167,6 +167,23 @@ const LoginPage = () => {
                 <AlertDescription>{success}</AlertDescription>
               </Alert>
             )}
+
+            {/* Google Login Button */}
+            <div className="mb-6">
+              <GoogleLoginButton redirectPath="/pairing" />
+              
+              {/* Divider */}
+              <div className="relative my-6">
+                <div className="absolute inset-0 flex items-center">
+                  <span className="w-full border-t" />
+                </div>
+                <div className="relative flex justify-center text-xs uppercase">
+                  <span className="bg-card px-2 text-muted-foreground">
+                    {lang === 'de' ? 'oder mit E-Mail' : lang === 'fr' ? 'ou par e-mail' : 'or with email'}
+                  </span>
+                </div>
+              </div>
+            </div>
 
             {/* Login Tab */}
             <TabsContent value="login">

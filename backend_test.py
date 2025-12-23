@@ -3816,6 +3816,33 @@ class WinePairingAPITester:
         
         return self.tests_passed == self.tests_run
 
+    def run_public_wine_price_tags_tests_only(self):
+        """Run only Public Wine Database Price Tags feature tests"""
+        print("🍷 Testing Public Wine Database Price Tags Feature")
+        print("=" * 50)
+        
+        # Public Wine Database Price Tags Tests
+        self.test_public_wines_basic_endpoint()
+        self.test_public_wines_price_category_filter_1()
+        self.test_public_wines_price_category_filter_2()
+        self.test_public_wines_price_category_filter_3()
+        self.test_public_wines_filters_endpoint()
+        self.test_public_wines_premium_wine_verification()
+        self.test_public_wines_midrange_wine_verification()
+        self.test_public_wines_filter_combination_french_premium()
+        self.test_public_wines_filter_combination_red_midrange()
+        self.test_public_wines_price_category_distribution()
+        
+        # Print results
+        print("\n" + "=" * 50)
+        print(f"🍷 Public Wine Database Price Tags Test Results")
+        print(f"Tests Run: {self.tests_run}")
+        print(f"Tests Passed: {self.tests_passed}")
+        print(f"Tests Failed: {self.tests_run - self.tests_passed}")
+        print(f"Success Rate: {(self.tests_passed/self.tests_run)*100:.1f}%")
+        
+        return self.tests_passed == self.tests_run
+
     def run_unified_format_tests_only(self):
         """Run only Unified €/🍷 Format Wine Pairing tests"""
         print("💰 Testing Unified €/🍷 Format Wine Pairing System")

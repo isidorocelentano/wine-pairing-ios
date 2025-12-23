@@ -840,19 +840,22 @@ const PairingPage = () => {
                   }
                   
                   // Insider tip section (new format)
-                  if (trimmedLine.match(/\*\*💎\s*GEHEIMTIPP|INSIDER TIP|BON PLAN\*\*/i)) {
+                  if (trimmedLine.match(/\*\*💎\s*(GEHEIMTIPP|INSIDER TIP|BON PLAN)\*\*/i) || 
+                      trimmedLine.match(/💎\s*(GEHEIMTIPP|INSIDER TIP|BON PLAN)/i)) {
                     insiderTip = { title: '💎 Geheimtipp', content: '' };
                     return;
                   }
                   
                   // Capture content for style/why sections
-                  if (styleSection && !styleSection.content && trimmedLine && !trimmedLine.startsWith('**')) {
-                    styleSection.content = trimmedLine;
+                  if (styleSection && !styleSection.content && trimmedLine && !trimmedLine.startsWith('**🍷') && !trimmedLine.startsWith('**💡')) {
+                    styleSection.content = trimmedLine.replace(/^\*\*/, '').replace(/\*\*$/, '');
                   }
-                  if (whySection && !whySection.content && trimmedLine && !trimmedLine.startsWith('**')) {
-                    whySection.content = trimmedLine;
+                  if (whySection && !whySection.content && trimmedLine && !trimmedLine.startsWith('**🍷') && !trimmedLine.startsWith('**💡')) {
+                    whySection.content = trimmedLine.replace(/^\*\*/, '').replace(/\*\*$/, '');
                   }
-                  if (insiderTip && !insiderTip.content && trimmedLine && !trimmedLine.startsWith('**')) {
+                  // Geheimtipp content - capture even if it starts with ** (wine name is bold)
+                  if (insiderTip && !insiderTip.content && trimmedLine && 
+                      !trimmedLine.match(/💎|GEHEIMTIPP|INSIDER|---/i)) {
                     insiderTip.content = trimmedLine;
                   }
                   

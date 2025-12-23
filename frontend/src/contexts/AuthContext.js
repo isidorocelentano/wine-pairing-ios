@@ -95,6 +95,11 @@ export const AuthProvider = ({ children }) => {
         throw new Error(data.detail || 'Registrierung fehlgeschlagen');
       }
       
+      // Token im localStorage speichern (Safari/iOS-kompatibel)
+      if (data.token) {
+        setStoredToken(data.token);
+      }
+      
       setUser(data);
       return { success: true };
     } catch (err) {
@@ -123,6 +128,11 @@ export const AuthProvider = ({ children }) => {
         throw new Error(data.detail || 'Anmeldung fehlgeschlagen');
       }
       
+      // Token im localStorage speichern (Safari/iOS-kompatibel)
+      if (data.token) {
+        setStoredToken(data.token);
+      }
+      
       setUser(data);
       return { success: true };
     } catch (err) {
@@ -135,13 +145,16 @@ export const AuthProvider = ({ children }) => {
 
   const logout = useCallback(async () => {
     try {
+      const token = getStoredToken();
       await fetch(`${API_URL}/api/auth/logout`, {
         method: 'POST',
-        credentials: 'include'
+        credentials: 'include',
+        headers: token ? { 'Authorization': `Bearer ${token}` } : {}
       });
     } catch (err) {
       console.error('Logout error:', err);
     } finally {
+      clearStoredToken();
       setUser(null);
     }
   }, []);

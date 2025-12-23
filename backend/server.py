@@ -5045,6 +5045,7 @@ async def register_user(req: RegisterRequest, response: Response):
         "email": email,
         "name": new_user["name"],
         "plan": "basic",
+        "token": token,  # Token für localStorage (Safari/iOS)
         "message": "Registrierung erfolgreich!"
     }
 

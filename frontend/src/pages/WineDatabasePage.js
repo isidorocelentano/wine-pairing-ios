@@ -403,10 +403,9 @@ const WineDatabasePage = () => {
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="all">Alle Preise</SelectItem>
-                        <SelectItem value="budget">Budget</SelectItem>
-                        <SelectItem value="mid-range">Mittelklasse</SelectItem>
-                        <SelectItem value="premium">Premium</SelectItem>
-                        <SelectItem value="luxury">Luxus</SelectItem>
+                        <SelectItem value="1">🍷 bis €20</SelectItem>
+                        <SelectItem value="2">🍷🍷 €20-50</SelectItem>
+                        <SelectItem value="3">🍷🍷🍷 ab €50</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>

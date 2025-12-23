@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
@@ -9,10 +9,12 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Wine, Loader2, Eye, EyeOff, CheckCircle, AlertCircle } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
+import GoogleLoginButton from '@/components/GoogleLoginButton';
 
 const LoginPage = () => {
   const navigate = useNavigate();
-  const { login, register, error, clearError } = useAuth();
+  const location = useLocation();
+  const { login, register, error, clearError, isAuthenticated } = useAuth();
   const { language } = useLanguage();
   const lang = language || 'de';
   
@@ -20,6 +22,7 @@ const LoginPage = () => {
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [success, setSuccess] = useState('');
+  const [authError, setAuthError] = useState('');
   
   // Login form
   const [loginEmail, setLoginEmail] = useState('');
@@ -31,15 +34,30 @@ const LoginPage = () => {
   const [registerPassword, setRegisterPassword] = useState('');
   const [registerPassword2, setRegisterPassword2] = useState('');
 
+  // Redirect if already logged in
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate('/pairing');
+    }
+  }, [isAuthenticated, navigate]);
+
+  // Check for error from OAuth callback
+  useEffect(() => {
+    if (location.state?.error) {
+      setAuthError(location.state.error);
+    }
+  }, [location.state]);
+
   const handleLogin = async (e) => {
     e.preventDefault();
     clearError();
+    setAuthError('');
     setLoading(true);
     
     const result = await login(loginEmail, loginPassword);
     
     if (result.success) {
-      navigate('/');
+      navigate('/pairing');
     }
     setLoading(false);
   };
@@ -47,6 +65,7 @@ const LoginPage = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     clearError();
+    setAuthError('');
     setSuccess('');
     
     if (registerPassword !== registerPassword2) {
@@ -58,7 +77,7 @@ const LoginPage = () => {
     
     if (result.success) {
       setSuccess(lang === 'de' ? 'Registrierung erfolgreich!' : 'Registration successful!');
-      setTimeout(() => navigate('/'), 1500);
+      setTimeout(() => navigate('/pairing'), 1500);
     }
     setLoading(false);
   };

@@ -149,10 +149,10 @@ const LoginPage = () => {
             </TabsList>
 
             {/* Error Alert */}
-            {(error || authError) && (
+            {(error || authError || oauthError) && (
               <Alert variant="destructive" className="mb-4">
                 <AlertCircle className="h-4 w-4" />
-                <AlertDescription>{error || authError}</AlertDescription>
+                <AlertDescription>{error || authError || oauthError}</AlertDescription>
               </Alert>
             )}
 

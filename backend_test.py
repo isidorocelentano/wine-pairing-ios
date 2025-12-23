@@ -4413,10 +4413,14 @@ def main():
             tester = WinePairingAPITester()
             success = tester.run_price_tags_tests_only()
             return 0 if success else 1
+        elif sys.argv[1] == "public-price-tags":
+            tester = WinePairingAPITester()
+            success = tester.run_public_wine_price_tags_tests_only()
+            return 0 if success else 1
     
-    # Default: Run price tags tests as specified in review request
+    # Default: Run public wine database price tags tests as specified in review request
     tester = WinePairingAPITester()
-    success = tester.run_price_tags_tests_only()
+    success = tester.run_public_wine_price_tags_tests_only()
     return 0 if success else 1
 
 if __name__ == "__main__":

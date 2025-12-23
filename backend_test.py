@@ -3867,6 +3867,7 @@ class WinePairingAPITester:
         self.test_public_wines_price_category_filter_2()
         self.test_public_wines_price_category_filter_3()
         self.test_public_wines_filters_endpoint()
+        self.test_admin_estimate_wine_prices_endpoint()
         self.test_public_wines_premium_wine_verification()
         self.test_public_wines_midrange_wine_verification()
         self.test_public_wines_filter_combination_french_premium()

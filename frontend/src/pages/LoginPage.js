@@ -41,12 +41,8 @@ const LoginPage = () => {
     }
   }, [isAuthenticated, navigate]);
 
-  // Check for error from OAuth callback
-  useEffect(() => {
-    if (location.state?.error) {
-      setAuthError(location.state.error);
-    }
-  }, [location.state]);
+  // Check for error from OAuth callback - use location.state directly in render
+  const oauthError = location.state?.error;
 
   const handleLogin = async (e) => {
     e.preventDefault();

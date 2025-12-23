@@ -46,10 +46,25 @@
 - ✅ **Preisbadge im Detail-Modal**
 - ✅ **Kombinierte Filter** (Land + Preiskategorie)
 
+**🔐 Authentifizierung verbessert - NEU:**
+- ✅ **Google OAuth** - 1-Klick-Anmeldung über Google
+- ✅ **localStorage-Token** - Löst Safari/iOS Cookie-Probleme
+- ✅ **Beide Methoden parallel** - Cookie + Bearer Token
+
+**🐛 Bug Fix: Weinart-Präferenz:**
+- ✅ **KI respektiert jetzt die Weinart-Auswahl** des Benutzers
+- ✅ Wenn "Rotwein" gewählt wird, empfiehlt die KI nur Rotweine (auch zu Fisch!)
+- ✅ Klare Anweisung an die KI: "Der Kunde wünscht ausdrücklich [Weinart]"
+
 **Technische Änderungen:**
 - Backend: `price_category` Feld zu Wine-Models hinzugefügt
 - Backend: `POST /api/admin/estimate-wine-prices` für automatische Schätzung
+- Backend: `POST /api/auth/google/session` für Google OAuth
+- Backend: Token wird jetzt in Login/Register-Response zurückgegeben
+- Backend: Weinart-Präferenz wird an KI-Prompt weitergegeben
 - Frontend: Neue UI-Komponenten in CellarPage.js und WineDatabasePage.js
+- Frontend: GoogleLoginButton.js und AuthCallback.js für Google OAuth
+- Frontend: localStorage-Token-Support in AuthContext.js
 
 ---
 

@@ -473,14 +473,23 @@ const WineDatabasePage = () => {
                           {getDescription(wine)}
                         </p>
                         
-                        {/* Price Category */}
+                        {/* Price Category Badge */}
                         {wine.price_category && (
                           <div className="mb-4">
-                            <span className="text-xs px-2 py-1 rounded-full bg-secondary text-secondary-foreground">
-                              {wine.price_category === 'budget' && '€'}
-                              {wine.price_category === 'mid-range' && '€€'}
-                              {wine.price_category === 'premium' && '€€€'}
-                              {wine.price_category === 'luxury' && '€€€€'}
+                            <span className={`text-xs px-2.5 py-1 rounded-full inline-flex items-center gap-1 ${
+                              wine.price_category === '1' ? 'bg-green-100 text-green-700 dark:bg-green-950/50 dark:text-green-400' :
+                              wine.price_category === '2' ? 'bg-amber-100 text-amber-700 dark:bg-amber-950/50 dark:text-amber-400' :
+                              wine.price_category === '3' ? 'bg-orange-100 text-orange-700 dark:bg-orange-950/50 dark:text-orange-400' :
+                              'bg-secondary text-secondary-foreground'
+                            }`}>
+                              {wine.price_category === '1' && '🍷 bis €20'}
+                              {wine.price_category === '2' && '🍷🍷 €20-50'}
+                              {wine.price_category === '3' && '🍷🍷🍷 ab €50'}
+                              {/* Legacy support for old categories */}
+                              {wine.price_category === 'budget' && '🍷 Budget'}
+                              {wine.price_category === 'mid-range' && '🍷🍷 Mittelklasse'}
+                              {wine.price_category === 'premium' && '🍷🍷🍷 Premium'}
+                              {wine.price_category === 'luxury' && '🍷🍷🍷 Luxus'}
                             </span>
                           </div>
                         )}

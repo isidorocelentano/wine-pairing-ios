@@ -23,7 +23,7 @@
 
 ## 🆕 ÄNDERUNGSHISTORIE
 
-### Version 1.7 (22.12.2025) - Preistags für Weinkeller
+### Version 1.7 (22.12.2025) - Preistags für Weinkeller & Weindatenbank
 
 **🍷 Preiskategorien im Weinkeller - NEU:**
 - ✅ Einheitliches **🍷-System** für den persönlichen Weinkeller:
@@ -36,10 +36,20 @@
 - ✅ **Preisbadges** auf jeder Weinkarte
 - ✅ **Preisstatistiken** in der Keller-Statistikkarte
 
+**🍷 Preiskategorien in der Weindatenbank - NEU:**
+- ✅ **Automatische Preisschätzung** für 5181+ Weine basierend auf:
+  - Region/Appellation (Grand Cru, Premier Cru → 🍷🍷🍷)
+  - Berühmte Weingüter (Château Margaux, Romanée-Conti → 🍷🍷🍷)
+  - Qualitätsstufen (Chablis, Châteauneuf-du-Pape → 🍷🍷)
+- ✅ **Preisfilter** im Filter-Panel der Weindatenbank
+- ✅ **Preisbadges** auf allen Weinkarten mit Farbcodierung
+- ✅ **Preisbadge im Detail-Modal**
+- ✅ **Kombinierte Filter** (Land + Preiskategorie)
+
 **Technische Änderungen:**
-- Backend: `price_category` Feld zu Wine-Model hinzugefügt
-- Backend: `price_category_filter` Parameter für GET /api/wines
-- Frontend: Neue UI-Komponenten in CellarPage.js
+- Backend: `price_category` Feld zu Wine-Models hinzugefügt
+- Backend: `POST /api/admin/estimate-wine-prices` für automatische Schätzung
+- Frontend: Neue UI-Komponenten in CellarPage.js und WineDatabasePage.js
 
 ---
 

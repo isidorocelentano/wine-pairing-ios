@@ -608,6 +608,25 @@ const WineDatabasePage = () => {
                     <p className="font-medium">{selectedWine.appellation}</p>
                   </div>
                 )}
+                {selectedWine.price_category && (
+                  <div>
+                    <p className="text-muted-foreground">{language === 'de' ? 'Preiskategorie' : 'Price Category'}</p>
+                    <span className={`text-xs px-2.5 py-1 rounded-full inline-flex items-center gap-1 ${
+                      selectedWine.price_category === '1' ? 'bg-green-100 text-green-700 dark:bg-green-950/50 dark:text-green-400' :
+                      selectedWine.price_category === '2' ? 'bg-amber-100 text-amber-700 dark:bg-amber-950/50 dark:text-amber-400' :
+                      selectedWine.price_category === '3' ? 'bg-orange-100 text-orange-700 dark:bg-orange-950/50 dark:text-orange-400' :
+                      'bg-secondary text-secondary-foreground'
+                    }`}>
+                      {selectedWine.price_category === '1' && '🍷 bis €20'}
+                      {selectedWine.price_category === '2' && '🍷🍷 €20-50'}
+                      {selectedWine.price_category === '3' && '🍷🍷🍷 ab €50'}
+                      {selectedWine.price_category === 'budget' && '🍷 Budget'}
+                      {selectedWine.price_category === 'mid-range' && '🍷🍷 Mittelklasse'}
+                      {selectedWine.price_category === 'premium' && '🍷🍷🍷 Premium'}
+                      {selectedWine.price_category === 'luxury' && '🍷🍷🍷 Luxus'}
+                    </span>
+                  </div>
+                )}
               </div>
 
               {/* Description */}

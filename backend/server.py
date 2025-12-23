@@ -4203,6 +4203,89 @@ def simplify_region(region: str) -> str:
     return region
 
 
+@api_router.post("/admin/estimate-wine-prices")
+async def estimate_wine_prices():
+    """
+    Admin endpoint to estimate price categories for public wines based on heuristics.
+    Uses region, appellation, and wine type to estimate prices.
+    
+    Categories:
+    - '1' = 🍷 bis €20 (everyday wines)
+    - '2' = 🍷🍷 €20-50 (mid-range)
+    - '3' = 🍷🍷🍷 ab €50 (premium/luxury)
+    """
+    
+    # Premium regions/appellations that typically cost €50+
+    luxury_indicators = [
+        'romanée', 'montrachet', 'chambertin', 'musigny', 'richebourg',
+        'la tâche', 'petrus', 'margaux', 'pauillac', 'saint-julien',
+        'saint-estèphe', 'pessac-léognan', 'pomerol', 'saint-émilion grand cru',
+        'barolo', 'barbaresco', 'brunello', 'amarone', 'sassicaia',
+        'tignanello', 'ornellaia', 'masseto', 'dom pérignon', 'krug',
+        'cristal', 'château', 'grand cru', 'premier cru'
+    ]
+    
+    # Mid-range regions/appellations typically €20-50
+    midrange_indicators = [
+        'chablis', 'meursault', 'puligny', 'chassagne', 'gevrey',
+        'nuits-saint-georges', 'beaune', 'côte de beaune', 'côte de nuits',
+        'saint-joseph', 'crozes-hermitage', 'gigondas', 'vacqueyras',
+        'châteauneuf-du-pape', 'hermitage', 'côte-rôtie',
+        'chianti classico', 'valpolicella ripasso', 'langhe', 'montalcino',
+        'rioja reserva', 'ribera del duero', 'priorat',
+        'mosel', 'rheingau', 'pfalz', 'nahe', 'spätlese', 'auslese',
+        'grüner veltliner smaragd', 'wachau'
+    ]
+    
+    updated_count = 0
+    wines_without_category = await db.public_wines.find(
+        {"$or": [{"price_category": None}, {"price_category": {"$exists": False}}, {"price_category": ""}]}
+    ).to_list(10000)
+    
+    logger.info(f"Found {len(wines_without_category)} wines without price category")
+    
+    for wine in wines_without_category:
+        # Build search string from wine attributes
+        search_text = ' '.join([
+            str(wine.get('name', '')),
+            str(wine.get('region', '')),
+            str(wine.get('appellation', '')),
+            str(wine.get('winery', ''))
+        ]).lower()
+        
+        # Determine category based on indicators
+        category = '1'  # Default: everyday wine
+        
+        # Check for luxury indicators
+        for indicator in luxury_indicators:
+            if indicator in search_text:
+                category = '3'
+                break
+        
+        # If not luxury, check for mid-range
+        if category == '1':
+            for indicator in midrange_indicators:
+                if indicator in search_text:
+                    category = '2'
+                    break
+        
+        # Update wine
+        await db.public_wines.update_one(
+            {"id": wine['id']},
+            {"$set": {"price_category": category}}
+        )
+        updated_count += 1
+    
+    return {
+        "status": "success",
+        "message": f"Updated {updated_count} wines with estimated price categories",
+        "details": {
+            "total_processed": len(wines_without_category),
+            "updated": updated_count
+        }
+    }
+
+
 @api_router.get("/public-wines-filters")
 async def get_public_wines_filters(country: Optional[str] = None, region: Optional[str] = None):
     """

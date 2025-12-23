@@ -358,6 +358,13 @@ Jeder User hat seinen **eigenen privaten Weinkeller**. Vollständige User-Isolat
 **Zugriff:** 🆓 Alle  
 **Anzahl:** 7,084 Weine (wächst dynamisch!)
 
+**🆕 Preiskategorien (v1.7):**
+- 🍷 **Alltags-Genuss** (bis €20) - grünes Badge
+- 🍷🍷 **Gehobener Anlass** (€20-50) - amber Badge
+- 🍷🍷🍷 **Besonderer Moment** (ab €50) - orange Badge
+- Automatische Schätzung basierend auf Region/Appellation
+- 5181+ Weine mit Preiskategorien versehen
+
 **Länder (bereinigt am 18.12.2025):**
 | Land | Weine | Regionen | Appellationen |
 |------|-------|----------|---------------|
@@ -379,7 +386,8 @@ Jeder User hat seinen **eigenen privaten Weinkeller**. Vollständige User-Isolat
 - **Land**: Alle verfügbaren Weinländer
 - **Region**: Nur echte Regionen (sauber getrennt von Appellationen)
 - **Appellation**: Aktualisiert sich basierend auf Region-Auswahl
-- **Rebsorte, Weinfarbe, Preiskategorie**
+- **Rebsorte, Weinfarbe**
+- **🆕 Preiskategorie**: Filter nach 🍷/🍷🍷/🍷🍷🍷
 
 **Beispiel Frankreich:**
 - Region "Bordeaux" → zeigt 33 Appellationen (Pauillac, Saint-Émilion, Margaux, etc.)

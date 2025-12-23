@@ -1251,6 +1251,274 @@ class WinePairingAPITester:
             self.log_test("Price-Conscious Wine Count Validation", False, str(response))
         return success
 
+    # ===================== PUBLIC WINE DATABASE PRICE TAGS TESTS =====================
+    
+    def test_public_wines_basic_endpoint(self):
+        """Test basic GET /api/public-wines endpoint"""
+        success, response = self.make_request('GET', 'public-wines?limit=10', expected_status=200)
+        if success:
+            wines = response if isinstance(response, list) else []
+            if len(wines) == 0:
+                self.log_test("Public Wines Basic Endpoint", False, "No wines found in public database")
+                return False
+            
+            # Check that wines have price_category field
+            wines_with_price_category = [w for w in wines if 'price_category' in w]
+            if len(wines_with_price_category) == 0:
+                self.log_test("Public Wines Basic Endpoint", False, "No wines have price_category field")
+                return False
+            
+            self.log_test("Public Wines Basic Endpoint", True, 
+                         f"Found {len(wines)} wines, {len(wines_with_price_category)} have price_category")
+        else:
+            self.log_test("Public Wines Basic Endpoint", False, str(response))
+        return success
+
+    def test_public_wines_price_category_filter_1(self):
+        """Test GET /api/public-wines?price_category=1 (🍷 everyday wines)"""
+        success, response = self.make_request('GET', 'public-wines?price_category=1&limit=20', expected_status=200)
+        if success:
+            wines = response if isinstance(response, list) else []
+            if len(wines) == 0:
+                self.log_test("Public Wines Price Filter (Category 1)", False, "No category 1 wines found")
+                return False
+            
+            # Verify all wines have price_category='1'
+            wrong_category_wines = [w for w in wines if w.get('price_category') != '1']
+            if wrong_category_wines:
+                self.log_test("Public Wines Price Filter (Category 1)", False, 
+                             f"Found {len(wrong_category_wines)} wines with wrong category")
+                return False
+            
+            self.log_test("Public Wines Price Filter (Category 1)", True, 
+                         f"Found {len(wines)} 🍷 everyday wines (bis €20)")
+        else:
+            self.log_test("Public Wines Price Filter (Category 1)", False, str(response))
+        return success
+
+    def test_public_wines_price_category_filter_2(self):
+        """Test GET /api/public-wines?price_category=2 (🍷🍷 mid-range wines)"""
+        success, response = self.make_request('GET', 'public-wines?price_category=2&limit=20', expected_status=200)
+        if success:
+            wines = response if isinstance(response, list) else []
+            if len(wines) == 0:
+                self.log_test("Public Wines Price Filter (Category 2)", False, "No category 2 wines found")
+                return False
+            
+            # Verify all wines have price_category='2'
+            wrong_category_wines = [w for w in wines if w.get('price_category') != '2']
+            if wrong_category_wines:
+                self.log_test("Public Wines Price Filter (Category 2)", False, 
+                             f"Found {len(wrong_category_wines)} wines with wrong category")
+                return False
+            
+            self.log_test("Public Wines Price Filter (Category 2)", True, 
+                         f"Found {len(wines)} 🍷🍷 mid-range wines (€20-50)")
+        else:
+            self.log_test("Public Wines Price Filter (Category 2)", False, str(response))
+        return success
+
+    def test_public_wines_price_category_filter_3(self):
+        """Test GET /api/public-wines?price_category=3 (🍷🍷🍷 premium wines)"""
+        success, response = self.make_request('GET', 'public-wines?price_category=3&limit=20', expected_status=200)
+        if success:
+            wines = response if isinstance(response, list) else []
+            if len(wines) == 0:
+                self.log_test("Public Wines Price Filter (Category 3)", False, "No category 3 wines found")
+                return False
+            
+            # Verify all wines have price_category='3'
+            wrong_category_wines = [w for w in wines if w.get('price_category') != '3']
+            if wrong_category_wines:
+                self.log_test("Public Wines Price Filter (Category 3)", False, 
+                             f"Found {len(wrong_category_wines)} wines with wrong category")
+                return False
+            
+            self.log_test("Public Wines Price Filter (Category 3)", True, 
+                         f"Found {len(wines)} 🍷🍷🍷 premium wines (ab €50)")
+        else:
+            self.log_test("Public Wines Price Filter (Category 3)", False, str(response))
+        return success
+
+    def test_public_wines_filters_endpoint(self):
+        """Test GET /api/public-wines-filters returns price_categories"""
+        success, response = self.make_request('GET', 'public-wines-filters', expected_status=200)
+        if success:
+            if 'price_categories' not in response:
+                self.log_test("Public Wines Filters Endpoint", False, "Missing price_categories in response")
+                return False
+            
+            price_categories = response.get('price_categories', [])
+            expected_categories = ['1', '2', '3']
+            
+            # Check if all expected categories are present
+            missing_categories = [cat for cat in expected_categories if cat not in price_categories]
+            if missing_categories:
+                self.log_test("Public Wines Filters Endpoint", False, 
+                             f"Missing price categories: {missing_categories}")
+                return False
+            
+            self.log_test("Public Wines Filters Endpoint", True, 
+                         f"Found price categories: {price_categories}")
+        else:
+            self.log_test("Public Wines Filters Endpoint", False, str(response))
+        return success
+
+    def test_public_wines_premium_wine_verification(self):
+        """Test that known premium wines have category '3'"""
+        premium_wine_searches = [
+            "Château Margaux",
+            "Romanée-Conti", 
+            "Dom Pérignon",
+            "Barolo",
+            "Sassicaia"
+        ]
+        
+        found_premium_wines = 0
+        correctly_categorized = 0
+        
+        for search_term in premium_wine_searches:
+            success, response = self.make_request('GET', f'public-wines?search={search_term}&limit=5', expected_status=200)
+            if success:
+                wines = response if isinstance(response, list) else []
+                for wine in wines:
+                    found_premium_wines += 1
+                    if wine.get('price_category') == '3':
+                        correctly_categorized += 1
+                    else:
+                        print(f"   Warning: {wine.get('name')} has category {wine.get('price_category')}, expected '3'")
+        
+        if found_premium_wines == 0:
+            self.log_test("Premium Wine Verification", False, "No premium wines found in database")
+            return False
+        
+        accuracy = correctly_categorized / found_premium_wines
+        if accuracy < 0.7:  # At least 70% should be correctly categorized
+            self.log_test("Premium Wine Verification", False, 
+                         f"Only {accuracy:.1%} of premium wines correctly categorized as '3'")
+            return False
+        
+        self.log_test("Premium Wine Verification", True, 
+                     f"{correctly_categorized}/{found_premium_wines} premium wines correctly categorized as '3' ({accuracy:.1%})")
+        return True
+
+    def test_public_wines_midrange_wine_verification(self):
+        """Test that known mid-range wines have category '2'"""
+        midrange_wine_searches = [
+            "Chablis",
+            "Chianti Classico",
+            "Châteauneuf-du-Pape",
+            "Rioja Reserva"
+        ]
+        
+        found_midrange_wines = 0
+        correctly_categorized = 0
+        
+        for search_term in midrange_wine_searches:
+            success, response = self.make_request('GET', f'public-wines?search={search_term}&limit=5', expected_status=200)
+            if success:
+                wines = response if isinstance(response, list) else []
+                for wine in wines:
+                    found_midrange_wines += 1
+                    if wine.get('price_category') == '2':
+                        correctly_categorized += 1
+                    else:
+                        print(f"   Info: {wine.get('name')} has category {wine.get('price_category')}, expected '2'")
+        
+        if found_midrange_wines == 0:
+            self.log_test("Mid-range Wine Verification", False, "No mid-range wines found in database")
+            return False
+        
+        accuracy = correctly_categorized / found_midrange_wines
+        if accuracy < 0.5:  # At least 50% should be correctly categorized (more lenient for mid-range)
+            self.log_test("Mid-range Wine Verification", False, 
+                         f"Only {accuracy:.1%} of mid-range wines correctly categorized as '2'")
+            return False
+        
+        self.log_test("Mid-range Wine Verification", True, 
+                     f"{correctly_categorized}/{found_midrange_wines} mid-range wines correctly categorized as '2' ({accuracy:.1%})")
+        return True
+
+    def test_public_wines_filter_combination_french_premium(self):
+        """Test GET /api/public-wines?country=Frankreich&price_category=3 (premium French wines)"""
+        success, response = self.make_request('GET', 'public-wines?country=Frankreich&price_category=3&limit=20', expected_status=200)
+        if success:
+            wines = response if isinstance(response, list) else []
+            if len(wines) == 0:
+                self.log_test("Filter Combination (French Premium)", False, "No premium French wines found")
+                return False
+            
+            # Verify all wines are French and premium
+            wrong_wines = []
+            for wine in wines:
+                if wine.get('country') != 'Frankreich':
+                    wrong_wines.append(f"{wine.get('name')} - wrong country: {wine.get('country')}")
+                if wine.get('price_category') != '3':
+                    wrong_wines.append(f"{wine.get('name')} - wrong category: {wine.get('price_category')}")
+            
+            if wrong_wines:
+                self.log_test("Filter Combination (French Premium)", False, 
+                             f"Found incorrectly filtered wines: {wrong_wines[:3]}")
+                return False
+            
+            self.log_test("Filter Combination (French Premium)", True, 
+                         f"Found {len(wines)} premium French wines")
+        else:
+            self.log_test("Filter Combination (French Premium)", False, str(response))
+        return success
+
+    def test_public_wines_filter_combination_red_midrange(self):
+        """Test GET /api/public-wines?wine_color=rot&price_category=2 (mid-range red wines)"""
+        success, response = self.make_request('GET', 'public-wines?wine_color=rot&price_category=2&limit=20', expected_status=200)
+        if success:
+            wines = response if isinstance(response, list) else []
+            if len(wines) == 0:
+                self.log_test("Filter Combination (Red Mid-range)", False, "No mid-range red wines found")
+                return False
+            
+            # Verify all wines are red and mid-range
+            wrong_wines = []
+            for wine in wines:
+                if wine.get('wine_color') != 'rot':
+                    wrong_wines.append(f"{wine.get('name')} - wrong color: {wine.get('wine_color')}")
+                if wine.get('price_category') != '2':
+                    wrong_wines.append(f"{wine.get('name')} - wrong category: {wine.get('price_category')}")
+            
+            if wrong_wines:
+                self.log_test("Filter Combination (Red Mid-range)", False, 
+                             f"Found incorrectly filtered wines: {wrong_wines[:3]}")
+                return False
+            
+            self.log_test("Filter Combination (Red Mid-range)", True, 
+                         f"Found {len(wines)} mid-range red wines")
+        else:
+            self.log_test("Filter Combination (Red Mid-range)", False, str(response))
+        return success
+
+    def test_public_wines_price_category_distribution(self):
+        """Test that wines are distributed across all price categories"""
+        category_counts = {}
+        
+        for category in ['1', '2', '3']:
+            success, response = self.make_request('GET', f'public-wines?price_category={category}&limit=1', expected_status=200)
+            if success:
+                wines = response if isinstance(response, list) else []
+                category_counts[category] = len(wines)
+            else:
+                self.log_test("Price Category Distribution", False, f"Failed to get category {category} wines")
+                return False
+        
+        # Check that all categories have at least some wines
+        empty_categories = [cat for cat, count in category_counts.items() if count == 0]
+        if empty_categories:
+            self.log_test("Price Category Distribution", False, 
+                         f"Empty price categories: {empty_categories}")
+            return False
+        
+        self.log_test("Price Category Distribution", True, 
+                     f"All categories have wines: {category_counts}")
+        return True
+
     def test_get_favorites(self):
         """Test getting favorite wines"""
         success, response = self.make_request('GET', 'favorites', expected_status=200)

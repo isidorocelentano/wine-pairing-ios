@@ -2556,6 +2556,34 @@ async def repair_users_get():
         "next_step": "Loggen Sie sich jetzt mit dem temporären Passwort ein und ändern Sie es!"
     }
 
+@api_router.get("/admin/reset-owner-simple")
+async def reset_owner_simple():
+    """
+    Setzt das Passwort auf ein einfaches Passwort: Test1234!
+    URL: /api/admin/reset-owner-simple
+    """
+    owner_email = "isicel@bluewin.ch"
+    simple_password = "Test1234!"
+    
+    user = await db.users.find_one({"email": owner_email})
+    if not user:
+        return {"status": "error", "message": f"User {owner_email} nicht gefunden"}
+    
+    new_hash = hash_password(simple_password)
+    result = await db.users.update_one(
+        {"email": owner_email},
+        {"$set": {"password_hash": new_hash}}
+    )
+    
+    return {
+        "status": "success",
+        "message": f"✅ Einfaches Passwort gesetzt!",
+        "email": owner_email,
+        "new_password": simple_password,
+        "modified": result.modified_count
+    }
+
+
 @api_router.get("/admin/reset-owner-password")
 async def reset_owner_password():
     """

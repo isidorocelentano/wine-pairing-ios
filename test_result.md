@@ -9,7 +9,32 @@ bugfix_description: "Price tags feature for wine cellar - 🍷/🍷🍷/🍷🍷
 
 ## Latest Change (2025-12-22)
 
-### Price Tags for Wine Cellar Feature (2025-12-22) - COMPLETED ✅
+### Price Tags for Wine Database Feature (2025-12-22) - IN PROGRESS
+
+**Changes Made:**
+1. **Backend (`server.py`):**
+   - Added `POST /api/admin/estimate-wine-prices` endpoint
+   - Estimates price categories based on region/appellation heuristics:
+     - Luxury indicators: Grand Cru, Premier Cru, famous châteaux → 🍷🍷🍷
+     - Mid-range indicators: Chablis, Châteauneuf-du-Pape, Rioja Reserva → 🍷🍷
+     - Default: everyday wines → 🍷
+   - 5181 wines updated with estimated prices
+
+2. **Frontend (`WineDatabasePage.js`):**
+   - Updated price filter dropdown with 🍷 system
+   - Updated price badges on wine cards with color coding
+   - Added price badge in wine detail modal
+   - Legacy support for old categories (budget, mid-range, premium, luxury)
+
+**Tests Required:**
+1. Verify price badges display on wine cards
+2. Test price filter functionality
+3. Verify price badge in wine detail modal
+4. Check color coding (green/amber/orange)
+
+---
+
+### Price Tags for Wine Cellar Feature (2025-12-22) - COMPLETE
 
 **Changes Made:**
 1. **Backend (`server.py`):**

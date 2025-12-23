@@ -4,6 +4,43 @@ export const AuthContext = createContext(null);
 
 import { API_URL } from '../config/api';
 
+// Token-Helfer für localStorage (Safari/iOS-kompatibel)
+const TOKEN_KEY = 'wine_auth_token';
+
+const getStoredToken = () => {
+  try {
+    return localStorage.getItem(TOKEN_KEY);
+  } catch {
+    return null;
+  }
+};
+
+const setStoredToken = (token) => {
+  try {
+    if (token) {
+      localStorage.setItem(TOKEN_KEY, token);
+    } else {
+      localStorage.removeItem(TOKEN_KEY);
+    }
+  } catch {
+    // localStorage nicht verfügbar
+  }
+};
+
+const clearStoredToken = () => {
+  try {
+    localStorage.removeItem(TOKEN_KEY);
+  } catch {
+    // Ignore
+  }
+};
+
+// Auth-Header für API-Aufrufe
+export const getAuthHeaders = () => {
+  const token = getStoredToken();
+  return token ? { 'Authorization': `Bearer ${token}` } : {};
+};
+
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -16,8 +53,12 @@ export const AuthProvider = ({ children }) => {
 
   const checkAuth = async () => {
     try {
+      const token = getStoredToken();
+      const headers = token ? { 'Authorization': `Bearer ${token}` } : {};
+      
       const response = await fetch(`${API_URL}/api/auth/me`, {
-        credentials: 'include'
+        credentials: 'include',
+        headers
       });
       
       if (response.ok) {
@@ -25,10 +66,12 @@ export const AuthProvider = ({ children }) => {
         setUser(userData);
       } else {
         setUser(null);
+        clearStoredToken();
       }
     } catch (err) {
       console.error('Auth check failed:', err);
       setUser(null);
+      clearStoredToken();
     } finally {
       setLoading(false);
     }

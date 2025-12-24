@@ -3683,6 +3683,256 @@ class WinePairingAPITester:
             print(f"❌ {failed_count} tests failed. Please review and fix issues.")
             return False
 
+    # ===================== WEEKLY TIPS TESTS =====================
+    
+    def test_weekly_tips_latest_4(self):
+        """Test GET /api/weekly-tips?limit=4 - Should return the latest 4 weekly tips"""
+        success, response = self.make_request('GET', 'weekly-tips?limit=4', expected_status=200)
+        if success:
+            tips = response if isinstance(response, list) else []
+            
+            if len(tips) == 0:
+                self.log_test("Weekly Tips - Latest 4", False, "No weekly tips found")
+                return False
+            
+            # Verify response structure for each tip
+            for i, tip in enumerate(tips):
+                required_fields = ['id', 'week_number', 'year', 'dish', 'dish_emoji', 'wine', 'wine_type', 'why', 'created_at']
+                missing_fields = [field for field in required_fields if field not in tip]
+                
+                if missing_fields:
+                    self.log_test("Weekly Tips - Latest 4", False, 
+                                 f"Tip {i}: Missing required fields: {missing_fields}")
+                    return False
+                
+                # Validate data types and ranges
+                if not isinstance(tip['week_number'], int) or not (1 <= tip['week_number'] <= 52):
+                    self.log_test("Weekly Tips - Latest 4", False, 
+                                 f"Tip {i}: Invalid week_number: {tip['week_number']}")
+                    return False
+                
+                if not isinstance(tip['year'], int) or tip['year'] < 2020:
+                    self.log_test("Weekly Tips - Latest 4", False, 
+                                 f"Tip {i}: Invalid year: {tip['year']}")
+                    return False
+                
+                valid_wine_types = ['rot', 'weiss', 'rose', 'schaumwein']
+                if tip['wine_type'] not in valid_wine_types:
+                    self.log_test("Weekly Tips - Latest 4", False, 
+                                 f"Tip {i}: Invalid wine_type: {tip['wine_type']}")
+                    return False
+            
+            # Check if tips are sorted by created_at (newest first)
+            if len(tips) > 1:
+                for i in range(len(tips) - 1):
+                    current_date = tips[i]['created_at']
+                    next_date = tips[i + 1]['created_at']
+                    if current_date < next_date:
+                        self.log_test("Weekly Tips - Latest 4", False, 
+                                     "Tips not sorted by created_at (newest first)")
+                        return False
+            
+            self.log_test("Weekly Tips - Latest 4", True, 
+                         f"Found {len(tips)} tips with correct structure and sorting")
+        else:
+            self.log_test("Weekly Tips - Latest 4", False, str(response))
+        return success
+
+    def test_weekly_tips_archive_pagination(self):
+        """Test GET /api/weekly-tips/archive?page=1&per_page=12 - Should return archived tips with pagination"""
+        success, response = self.make_request('GET', 'weekly-tips/archive?page=1&per_page=12', expected_status=200)
+        if success:
+            # Verify response structure
+            required_fields = ['tips', 'total', 'page', 'per_page', 'total_pages']
+            missing_fields = [field for field in required_fields if field not in response]
+            
+            if missing_fields:
+                self.log_test("Weekly Tips - Archive Pagination", False, 
+                             f"Missing required fields: {missing_fields}")
+                return False
+            
+            tips = response['tips']
+            total = response['total']
+            page = response['page']
+            per_page = response['per_page']
+            total_pages = response['total_pages']
+            
+            # Validate pagination data
+            if not isinstance(tips, list):
+                self.log_test("Weekly Tips - Archive Pagination", False, "Tips should be a list")
+                return False
+            
+            if not isinstance(total, int) or total < 0:
+                self.log_test("Weekly Tips - Archive Pagination", False, f"Invalid total: {total}")
+                return False
+            
+            if page != 1:
+                self.log_test("Weekly Tips - Archive Pagination", False, f"Expected page=1, got {page}")
+                return False
+            
+            if per_page != 12:
+                self.log_test("Weekly Tips - Archive Pagination", False, f"Expected per_page=12, got {per_page}")
+                return False
+            
+            expected_total_pages = (total + per_page - 1) // per_page if total > 0 else 0
+            if total_pages != expected_total_pages:
+                self.log_test("Weekly Tips - Archive Pagination", False, 
+                             f"Expected total_pages={expected_total_pages}, got {total_pages}")
+                return False
+            
+            # Verify tip structure if any tips exist
+            if len(tips) > 0:
+                tip = tips[0]
+                required_tip_fields = ['id', 'week_number', 'year', 'dish', 'wine', 'wine_type', 'why']
+                missing_tip_fields = [field for field in required_tip_fields if field not in tip]
+                
+                if missing_tip_fields:
+                    self.log_test("Weekly Tips - Archive Pagination", False, 
+                                 f"Tip missing fields: {missing_tip_fields}")
+                    return False
+            
+            self.log_test("Weekly Tips - Archive Pagination", True, 
+                         f"Archive pagination working: {len(tips)} tips, total={total}, pages={total_pages}")
+        else:
+            self.log_test("Weekly Tips - Archive Pagination", False, str(response))
+        return success
+
+    def test_weekly_tips_data_structure(self):
+        """Test that weekly tips have all required fields with correct data types"""
+        success, response = self.make_request('GET', 'weekly-tips?limit=1', expected_status=200)
+        if success:
+            tips = response if isinstance(response, list) else []
+            
+            if len(tips) == 0:
+                self.log_test("Weekly Tips - Data Structure", True, "No tips to validate (empty database)")
+                return True
+            
+            tip = tips[0]
+            
+            # Test all required fields
+            field_validations = {
+                'id': (str, lambda x: len(x) > 0),
+                'week_number': (int, lambda x: 1 <= x <= 52),
+                'year': (int, lambda x: x >= 2020),
+                'dish': (str, lambda x: len(x) > 0),
+                'dish_emoji': (str, lambda x: len(x) > 0),
+                'wine': (str, lambda x: len(x) > 0),
+                'wine_type': (str, lambda x: x in ['rot', 'weiss', 'rose', 'schaumwein']),
+                'why': (str, lambda x: len(x) > 10),
+                'created_at': (str, lambda x: len(x) > 0)
+            }
+            
+            # Test optional fields
+            optional_fields = ['region', 'fun_fact']
+            
+            validation_errors = []
+            
+            for field, (expected_type, validator) in field_validations.items():
+                if field not in tip:
+                    validation_errors.append(f"Missing required field: {field}")
+                    continue
+                
+                value = tip[field]
+                if not isinstance(value, expected_type):
+                    validation_errors.append(f"Field {field} wrong type: expected {expected_type.__name__}, got {type(value).__name__}")
+                    continue
+                
+                if not validator(value):
+                    validation_errors.append(f"Field {field} validation failed: {value}")
+            
+            # Check optional fields if present
+            for field in optional_fields:
+                if field in tip and tip[field] is not None:
+                    if not isinstance(tip[field], str):
+                        validation_errors.append(f"Optional field {field} should be string or null, got {type(tip[field]).__name__}")
+            
+            if validation_errors:
+                self.log_test("Weekly Tips - Data Structure", False, "; ".join(validation_errors))
+                return False
+            
+            self.log_test("Weekly Tips - Data Structure", True, 
+                         f"Tip data structure valid: {tip['dish']} + {tip['wine']} ({tip['wine_type']})")
+        else:
+            self.log_test("Weekly Tips - Data Structure", False, str(response))
+        return success
+
+    def test_weekly_tips_sorting_newest_first(self):
+        """Test that weekly tips are sorted by created_at (newest first)"""
+        success, response = self.make_request('GET', 'weekly-tips?limit=10', expected_status=200)
+        if success:
+            tips = response if isinstance(response, list) else []
+            
+            if len(tips) < 2:
+                self.log_test("Weekly Tips - Sorting", True, f"Only {len(tips)} tips found, sorting test not applicable")
+                return True
+            
+            # Check sorting order
+            for i in range(len(tips) - 1):
+                current_date = tips[i]['created_at']
+                next_date = tips[i + 1]['created_at']
+                
+                # Convert to comparable format if needed
+                if current_date < next_date:
+                    self.log_test("Weekly Tips - Sorting", False, 
+                                 f"Tips not sorted correctly: tip {i} ({current_date}) is older than tip {i+1} ({next_date})")
+                    return False
+            
+            self.log_test("Weekly Tips - Sorting", True, 
+                         f"All {len(tips)} tips correctly sorted by created_at (newest first)")
+        else:
+            self.log_test("Weekly Tips - Sorting", False, str(response))
+        return success
+
+    def test_weekly_tips_week_year_validation(self):
+        """Test that week_number is between 1-52 and year is valid"""
+        success, response = self.make_request('GET', 'weekly-tips?limit=20', expected_status=200)
+        if success:
+            tips = response if isinstance(response, list) else []
+            
+            if len(tips) == 0:
+                self.log_test("Weekly Tips - Week/Year Validation", True, "No tips to validate")
+                return True
+            
+            validation_errors = []
+            
+            for i, tip in enumerate(tips):
+                week_number = tip.get('week_number')
+                year = tip.get('year')
+                
+                if not isinstance(week_number, int) or not (1 <= week_number <= 52):
+                    validation_errors.append(f"Tip {i}: Invalid week_number {week_number}")
+                
+                if not isinstance(year, int) or year < 2020 or year > 2030:
+                    validation_errors.append(f"Tip {i}: Invalid year {year}")
+            
+            if validation_errors:
+                self.log_test("Weekly Tips - Week/Year Validation", False, "; ".join(validation_errors[:3]))
+                return False
+            
+            self.log_test("Weekly Tips - Week/Year Validation", True, 
+                         f"All {len(tips)} tips have valid week_number (1-52) and year (2020+)")
+        else:
+            self.log_test("Weekly Tips - Week/Year Validation", False, str(response))
+        return success
+
+    def run_weekly_tips_tests(self):
+        """Run all weekly tips tests"""
+        print("\n🍷 Testing Weekly Tips Feature")
+        print("=" * 40)
+        
+        tests = [
+            self.test_weekly_tips_latest_4,
+            self.test_weekly_tips_archive_pagination,
+            self.test_weekly_tips_data_structure,
+            self.test_weekly_tips_sorting_newest_first,
+            self.test_weekly_tips_week_year_validation
+        ]
+        
+        for test in tests:
+            test()
+        
+        return self.tests_passed == self.tests_run
+
     def run_all_tests(self):
         """Run all API tests"""
         print("🍷 Starting Wine Pairing API Tests")

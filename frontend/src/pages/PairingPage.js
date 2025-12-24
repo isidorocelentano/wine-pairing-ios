@@ -48,6 +48,7 @@ const PairingPage = () => {
   const [wineTypeFilter, setWineTypeFilter] = useState('all');
   const [dishCountryFilter, setDishCountryFilter] = useState('');
   const [dishTrendFilter, setDishTrendFilter] = useState('');
+  const [showPhilosophy, setShowPhilosophy] = useState(true);
   const [dishBestsellerFilter, setDishBestsellerFilter] = useState('');
   const [dishes, setDishes] = useState([]);
   const [filteredDishSuggestions, setFilteredDishSuggestions] = useState([]);

@@ -6171,8 +6171,8 @@ async def startup_seed_data():
     # ===================================================================
     print("\n💡 PRÜFE WOCHEN-TIPPS...")
     try:
-        from datetime import date
-        today = date.today()
+        from datetime import date as dt_date
+        today = dt_date.today()
         current_week = today.isocalendar()[1]
         current_year = today.year
         
@@ -6187,7 +6187,7 @@ async def startup_seed_data():
         if tip_count == 0:
             # Keine Tipps vorhanden - Seed initial tips
             print("   📝 Keine Tipps vorhanden - erstelle initiale Tipps...")
-            # Import hier um zirkuläre Imports zu vermeiden
+            now = datetime.now(timezone.utc)
             initial_tips = [
                 {
                     "id": str(uuid.uuid4()),
@@ -6202,7 +6202,7 @@ async def startup_seed_data():
                     "year": current_year,
                     "language": "de",
                     "is_active": True,
-                    "created_at": datetime.now(timezone.utc)
+                    "created_at": now
                 },
                 {
                     "id": str(uuid.uuid4()),
@@ -6217,7 +6217,7 @@ async def startup_seed_data():
                     "year": current_year if current_week > 1 else current_year - 1,
                     "language": "de",
                     "is_active": True,
-                    "created_at": datetime.now(timezone.utc) - timedelta(days=7)
+                    "created_at": now - timedelta(days=7)
                 },
                 {
                     "id": str(uuid.uuid4()),
@@ -6232,7 +6232,7 @@ async def startup_seed_data():
                     "year": current_year if current_week > 2 else current_year - 1,
                     "language": "de",
                     "is_active": True,
-                    "created_at": datetime.now(timezone.utc) - timedelta(days=14)
+                    "created_at": now - timedelta(days=14)
                 },
                 {
                     "id": str(uuid.uuid4()),
@@ -6247,7 +6247,7 @@ async def startup_seed_data():
                     "year": current_year if current_week > 3 else current_year - 1,
                     "language": "de",
                     "is_active": True,
-                    "created_at": datetime.now(timezone.utc) - timedelta(days=21)
+                    "created_at": now - timedelta(days=21)
                 }
             ]
             await db.weekly_tips.insert_many(initial_tips)

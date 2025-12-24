@@ -1,7 +1,7 @@
 # 📖 WINE PAIRING APP - Vollständige Dokumentation
 
-**Stand:** 22. Dezember 2025  
-**Version:** 1.7 (Preistags für Weinkeller)  
+**Stand:** 24. Dezember 2025  
+**Version:** 1.7.1 (Genuss-Philosophie & Auth-Update)  
 **Domain:** https://wine-pairing.online
 
 ---
@@ -22,6 +22,35 @@
 ---
 
 ## 🆕 ÄNDERUNGSHISTORIE
+
+### Version 1.7.1 (24.12.2025) - Genuss-Philosophie & UI-Optimierungen
+
+**🏠 Neue Homepage "Genuss-First" Hero-Section:**
+- ✅ **Emotionale Headline:** "Dein Wein. Dein Essen. Dein Moment."
+- ✅ **Subtitle:** "Wissenschaftlich fundierte Empfehlungen – ganz ohne Dogmen."
+- ✅ **4 Philosophie-Punkte mit Emojis:**
+  - ✨ Kein Richtig oder Falsch
+  - 👅 Dein Geschmack weist den Weg
+  - 🍞 Einfach ausprobieren
+  - 🎉 Hab einfach Spaß
+- ✅ **CTA-Button:** "🍷 Jetzt mein perfektes Pairing finden"
+- ✅ **Vertrauens-Element:** "Powered by KI & Sommelier-Expertise"
+- ✅ **Quick-Navigation:** Separate Sektion mit Buttons zu allen Features
+
+**🍷 Neue Pairing-Seite "Genuss-Philosophie" Einleitung:**
+- ✅ **Zuklappbare Sektion:** "✨ Deine Weinreise, deine Regeln"
+- ✅ **3 Schritte mit Icons:**
+  - 🔍 Entdecke (Lupe, lila)
+  - ❤️ Probiere (Herz, rosa)
+  - 💧 Neutralisiere (Wasserglas, blau)
+- ✅ **Footer:** "Lass dich von deinem Geschmack leiten..."
+- ✅ **Responsive:** Desktop und Mobile optimiert
+
+**🐛 Bug Fixes:**
+- ✅ **Geheimtipp-Anzeige:** Parser akzeptiert jetzt fettgedruckte Weinnamen
+- ✅ **Weinart-Präferenz:** KI respektiert jetzt die Benutzer-Auswahl (Rotwein zu Fisch möglich)
+
+---
 
 ### Version 1.7 (22.12.2025) - Preistags für Weinkeller & Weindatenbank
 
@@ -51,11 +80,6 @@
 - ✅ **localStorage-Token** - Löst Safari/iOS Cookie-Probleme
 - ✅ **Beide Methoden parallel** - Cookie + Bearer Token
 
-**🐛 Bug Fix: Weinart-Präferenz:**
-- ✅ **KI respektiert jetzt die Weinart-Auswahl** des Benutzers
-- ✅ Wenn "Rotwein" gewählt wird, empfiehlt die KI nur Rotweine (auch zu Fisch!)
-- ✅ Klare Anweisung an die KI: "Der Kunde wünscht ausdrücklich [Weinart]"
-
 **Technische Änderungen:**
 - Backend: `price_category` Feld zu Wine-Models hinzugefügt
 - Backend: `POST /api/admin/estimate-wine-prices` für automatische Schätzung
@@ -65,6 +89,8 @@
 - Frontend: Neue UI-Komponenten in CellarPage.js und WineDatabasePage.js
 - Frontend: GoogleLoginButton.js und AuthCallback.js für Google OAuth
 - Frontend: localStorage-Token-Support in AuthContext.js
+- Frontend: Neue Hero-Section in HomePage.js
+- Frontend: Genuss-Philosophie-Sektion in PairingPage.js
 
 ---
 

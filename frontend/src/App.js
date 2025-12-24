@@ -42,6 +42,7 @@ import SubscriptionPage from "@/pages/SubscriptionPage";
 import SubscriptionSuccessPage from "@/pages/SubscriptionSuccessPage";
 import CouponPage from "@/pages/CouponPage";
 import PricingPage from "@/pages/PricingPage";
+import TippDerWochePage from "@/pages/TippDerWochePage";
 
 /**
  * AppRouter - Handles Google OAuth callback detection

@@ -314,6 +314,106 @@ const PairingPage = () => {
           </p>
         </header>
 
+        {/* Genuss-Philosophie Section */}
+        <Card className="bg-gradient-to-br from-primary/5 via-accent/5 to-primary/10 border-primary/20 mb-6 md:mb-8 overflow-hidden">
+          <button 
+            onClick={() => setShowPhilosophy(!showPhilosophy)}
+            className="w-full p-4 md:p-6 flex items-center justify-between hover:bg-primary/5 transition-colors"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                <Sparkles className="w-5 h-5 text-primary" />
+              </div>
+              <div className="text-left">
+                <h2 className="text-lg md:text-xl font-semibold">
+                  {language === 'de' ? '✨ Deine Weinreise, deine Regeln' : 
+                   language === 'en' ? '✨ Your Wine Journey, Your Rules' : 
+                   '✨ Votre voyage vinicole, vos règles'}
+                </h2>
+                <p className="text-sm text-muted-foreground">
+                  {language === 'de' ? 'Unsere Genuss-Philosophie' : 
+                   language === 'en' ? 'Our Philosophy of Enjoyment' : 
+                   'Notre philosophie du plaisir'}
+                </p>
+              </div>
+            </div>
+            {showPhilosophy ? <ChevronUp className="w-5 h-5 text-muted-foreground" /> : <ChevronDown className="w-5 h-5 text-muted-foreground" />}
+          </button>
+          
+          {showPhilosophy && (
+            <CardContent className="px-4 md:px-6 pb-6 pt-0">
+              <p className="text-muted-foreground mb-6 text-sm md:text-base leading-relaxed">
+                {language === 'de' ? 'Wir glauben, dass die perfekte Kombination diejenige ist, bei der du lächelst. Deshalb sind unsere Analysen lediglich Wegweiser für deine Entdeckungsreise.' : 
+                 language === 'en' ? 'We believe that the perfect pairing is the one that makes you smile. That\'s why our analyses are simply guides for your journey of discovery.' : 
+                 'Nous croyons que l\'accord parfait est celui qui vous fait sourire. C\'est pourquoi nos analyses ne sont que des guides pour votre voyage de découverte.'}
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {/* Entdecke */}
+                <div className="flex items-start gap-3 p-4 rounded-lg bg-background/50 border border-border/50">
+                  <div className="w-10 h-10 rounded-full bg-purple-500/10 flex items-center justify-center flex-shrink-0">
+                    <Search className="w-5 h-5 text-purple-500" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-sm mb-1">
+                      {language === 'de' ? '1. Entdecke' : language === 'en' ? '1. Discover' : '1. Découvrez'}
+                    </h3>
+                    <p className="text-xs text-muted-foreground">
+                      {language === 'de' ? 'Nutze unsere wissenschaftlichen Empfehlungen als Startpunkt.' : 
+                       language === 'en' ? 'Use our scientific recommendations as a starting point.' : 
+                       'Utilisez nos recommandations scientifiques comme point de départ.'}
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Probiere */}
+                <div className="flex items-start gap-3 p-4 rounded-lg bg-background/50 border border-border/50">
+                  <div className="w-10 h-10 rounded-full bg-rose-500/10 flex items-center justify-center flex-shrink-0">
+                    <Heart className="w-5 h-5 text-rose-500" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-sm mb-1">
+                      {language === 'de' ? '2. Probiere' : language === 'en' ? '2. Taste' : '2. Goûtez'}
+                    </h3>
+                    <p className="text-xs text-muted-foreground">
+                      {language === 'de' ? 'Schmeckt es dir? Dann ist es perfekt.' : 
+                       language === 'en' ? 'Does it taste good? Then it\'s perfect.' : 
+                       'C\'est bon? Alors c\'est parfait.'}
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Neutralisiere */}
+                <div className="flex items-start gap-3 p-4 rounded-lg bg-background/50 border border-border/50">
+                  <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center flex-shrink-0">
+                    <GlassWater className="w-5 h-5 text-blue-500" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-sm mb-1">
+                      {language === 'de' ? '3. Neutralisiere' : language === 'en' ? '3. Neutralize' : '3. Neutralisez'}
+                    </h3>
+                    <p className="text-xs text-muted-foreground">
+                      {language === 'de' ? 'Mit Wasser oder Brot schaffst du jederzeit Platz für neue Eindrücke.' : 
+                       language === 'en' ? 'With water or bread, you can always make room for new impressions.' : 
+                       'Avec de l\'eau ou du pain, vous pouvez toujours faire place à de nouvelles impressions.'}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Footer message */}
+              <div className="mt-6 pt-4 border-t border-border/50 flex items-center justify-center gap-2 text-center">
+                <Smile className="w-4 h-4 text-amber-500" />
+                <p className="text-sm text-muted-foreground italic">
+                  {language === 'de' ? 'Lass dich von deinem Geschmack leiten – wir kümmern uns um den Rest.' : 
+                   language === 'en' ? 'Let your taste guide you – we\'ll take care of the rest.' : 
+                   'Laissez-vous guider par votre goût – nous nous occupons du reste.'}
+                </p>
+              </div>
+            </CardContent>
+          )}
+        </Card>
+
         <Card className="bg-card/50 backdrop-blur-sm border-border/50 mb-6 md:mb-8">
           <CardContent className="p-4 md:p-8 space-y-4 md:space-y-6">
             <div>

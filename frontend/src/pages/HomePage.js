@@ -197,9 +197,9 @@ const HomePage = () => {
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-card/60 backdrop-blur-sm border border-border/30">
                 <Sparkles className="h-4 w-4 text-amber-500" />
                 <span className="text-xs text-muted-foreground">
-                  {language === 'de' ? 'Powered by GPT-5.1 & Sommelier-Expertise' : 
-                   language === 'en' ? 'Powered by GPT-5.1 & Sommelier Expertise' : 
-                   'Propulsé par GPT-5.1 & Expertise Sommelier'}
+                  {language === 'de' ? 'Powered by KI & Sommelier-Expertise' : 
+                   language === 'en' ? 'Powered by AI & Sommelier Expertise' : 
+                   'Propulsé par IA & Expertise Sommelier'}
                 </span>
               </div>
             </div>

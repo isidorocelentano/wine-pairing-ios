@@ -280,7 +280,33 @@ Elegante Landing Page mit Hero-Section und virtuellem Sommelier "Claude".
 
 ---
 
-### 1b. PRICING-SEITE (NEU)
+### 1b. HOMEPAGE - GENUSS-FIRST HERO (v1.7.1)
+**Route:** `/`  
+**Zugriff:** 🆓 Alle
+
+**Neue Hero-Section mit emotionaler Ansprache:**
+
+| Element | Inhalt |
+|---------|--------|
+| **Tagline** | "WEIN-PAIRING NEU GEDACHT" |
+| **Headline** | "Dein Wein. Dein Essen. Dein Moment." |
+| **Subtitle** | "Wissenschaftlich fundierte Empfehlungen – ganz ohne Dogmen." |
+
+**4 Philosophie-Punkte:**
+- ✨ **Kein Richtig oder Falsch** - Beim Wein-Pairing geht es nur um Genuss
+- 👅 **Dein Geschmack weist den Weg** - Unsere Vorschläge sind Inspirationen
+- 🍞 **Einfach ausprobieren** - Mit Wasser oder Brot neutralisieren
+- 🎉 **Hab einfach Spaß** - Entdecke neue Welten, ohne Stress
+
+**CTA:** "🍷 Jetzt mein perfektes Pairing finden" (Kostenlos, ohne Registrierung)
+
+**Vertrauens-Element:** "Powered by KI & Sommelier-Expertise"
+
+**Quick-Navigation:** Buttons zu Sommelier Kompass, Weindatenbank, Weinkeller, etc.
+
+---
+
+### 1c. PRICING-SEITE (NEU)
 **Route:** `/pricing`, `/pro`  
 **Zugriff:** 🆓 Alle
 
@@ -302,6 +328,11 @@ Dedizierte Seite für Freemium-Kommunikation.
 **Route:** `/pairing`, `/pairing/:slug`  
 **Zugriff:** 🆓 Basic: 5/Tag | 👑 Pro: Unbegrenzt
 
+**🆕 Genuss-Philosophie Einleitung (v1.7.1):**
+- Zuklappbare Sektion: "✨ Deine Weinreise, deine Regeln"
+- 3 Schritte: Entdecke → Probiere → Neutralisiere
+- Footer: "Lass dich von deinem Geschmack leiten..."
+
 **Funktionsweise:**
 1. User gibt Gericht ein
 2. KI empfiehlt passende Weine
@@ -312,7 +343,7 @@ Dedizierte Seite für Freemium-Kommunikation.
 - Perfekt für: "Was trinke ich heute zu meinem Abendessen?"
 
 **Filter:**
-- Weintyp (Rot/Weiss/Rosé/Schaumwein)
+- Weintyp (Rot/Weiss/Rosé/Schaumwein) - **KI respektiert Auswahl!**
 - Land des Gerichts
 - Trend-Gerichte / Bestseller
 - Profi-Modus (4D-Werte)

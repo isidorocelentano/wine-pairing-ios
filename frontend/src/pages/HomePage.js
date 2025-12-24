@@ -242,6 +242,14 @@ const HomePage = () => {
             </Button>
             <Button
               variant="outline"
+              onClick={() => navigate('/tipp-der-woche')}
+              className="rounded-full px-5 py-5 text-sm font-medium border-primary/30 hover:bg-primary/5"
+            >
+              <Lightbulb className="mr-2 h-4 w-4" />
+              {language === 'de' ? 'Tipp der Woche' : language === 'en' ? 'Tip of the Week' : 'Conseil de la Semaine'}
+            </Button>
+            <Button
+              variant="outline"
               onClick={() => navigate('/wie-wir-pairen')}
               className="rounded-full px-5 py-5 text-sm font-medium border-primary/30 hover:bg-primary/5"
             >

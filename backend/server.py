@@ -6167,6 +6167,106 @@ async def startup_seed_data():
     print("📦 Backup-Manager initialisiert (Auto-Backup alle 6 Stunden)")
     
     # ===================================================================
+    # WEEKLY TIP: Prüfe und generiere wöchentlichen Tipp
+    # ===================================================================
+    print("\n💡 PRÜFE WOCHEN-TIPPS...")
+    try:
+        from datetime import date
+        today = date.today()
+        current_week = today.isocalendar()[1]
+        current_year = today.year
+        
+        # Prüfe ob diese Woche schon ein Tipp existiert
+        tip_exists = await db.weekly_tips.find_one({
+            "week_number": current_week,
+            "year": current_year
+        })
+        
+        tip_count = await db.weekly_tips.count_documents({})
+        
+        if tip_count == 0:
+            # Keine Tipps vorhanden - Seed initial tips
+            print("   📝 Keine Tipps vorhanden - erstelle initiale Tipps...")
+            # Import hier um zirkuläre Imports zu vermeiden
+            initial_tips = [
+                {
+                    "id": str(uuid.uuid4()),
+                    "dish": "Scharfes Thai-Curry",
+                    "dish_emoji": "🍛",
+                    "wine": "Gewürztraminer Spätlese",
+                    "wine_type": "weiss",
+                    "region": "Elsass, Frankreich",
+                    "why": "Die exotische Süße zähmt die Schärfe perfekt – ein echtes Aha-Erlebnis!",
+                    "fun_fact": "Der Gewürztraminer hat seinen Namen von den intensiven Gewürzaromen wie Litschi und Rose.",
+                    "week_number": current_week,
+                    "year": current_year,
+                    "language": "de",
+                    "is_active": True,
+                    "created_at": datetime.now(timezone.utc)
+                },
+                {
+                    "id": str(uuid.uuid4()),
+                    "dish": "Pasta Carbonara",
+                    "dish_emoji": "🍝",
+                    "wine": "Pinot Grigio",
+                    "wine_type": "weiss",
+                    "region": "Friaul, Italien",
+                    "why": "Frische trifft auf Cremigkeit – die knackige Säure schneidet durch die reichhaltige Sauce.",
+                    "fun_fact": "In Italien wird Carbonara traditionell NUR mit Guanciale (Schweinebacke) und Pecorino gemacht.",
+                    "week_number": current_week - 1 if current_week > 1 else 52,
+                    "year": current_year if current_week > 1 else current_year - 1,
+                    "language": "de",
+                    "is_active": True,
+                    "created_at": datetime.now(timezone.utc) - timedelta(days=7)
+                },
+                {
+                    "id": str(uuid.uuid4()),
+                    "dish": "Dunkle Schokolade",
+                    "dish_emoji": "🍫",
+                    "wine": "Kräftiger Syrah",
+                    "wine_type": "rot",
+                    "region": "Rhône-Tal, Frankreich",
+                    "why": "Ein Dessert-Traum – die dunklen Beerenaromen des Syrah umarmen die Bitterkeit der Schokolade.",
+                    "fun_fact": "Syrah und Shiraz sind derselbe Wein! In Frankreich heißt er Syrah, in Australien Shiraz.",
+                    "week_number": current_week - 2 if current_week > 2 else 52 - (2 - current_week),
+                    "year": current_year if current_week > 2 else current_year - 1,
+                    "language": "de",
+                    "is_active": True,
+                    "created_at": datetime.now(timezone.utc) - timedelta(days=14)
+                },
+                {
+                    "id": str(uuid.uuid4()),
+                    "dish": "BBQ Spare Ribs",
+                    "dish_emoji": "🍖",
+                    "wine": "Zinfandel",
+                    "wine_type": "rot",
+                    "region": "Kalifornien, USA",
+                    "why": "Rauch trifft Rauch – die würzigen Brombeer-Noten ergänzen die süß-rauchige BBQ-Sauce perfekt.",
+                    "fun_fact": "Zinfandel ist genetisch identisch mit der italienischen Primitivo-Traube!",
+                    "week_number": current_week - 3 if current_week > 3 else 52 - (3 - current_week),
+                    "year": current_year if current_week > 3 else current_year - 1,
+                    "language": "de",
+                    "is_active": True,
+                    "created_at": datetime.now(timezone.utc) - timedelta(days=21)
+                }
+            ]
+            await db.weekly_tips.insert_many(initial_tips)
+            print(f"   ✅ {len(initial_tips)} initiale Wochen-Tipps erstellt")
+        elif tip_exists:
+            print(f"   ✅ Wochen-Tipp für KW {current_week}/{current_year} existiert bereits")
+            print(f"   📊 Gesamt: {tip_count} Tipps im Archiv")
+        else:
+            print(f"   ⚠️ Kein Tipp für KW {current_week}/{current_year} - wird bei nächstem API-Call generiert")
+            print(f"   📊 Gesamt: {tip_count} Tipps im Archiv")
+            
+        # Index für Weekly Tips
+        await db.weekly_tips.create_index([("week_number", -1), ("year", -1)])
+        await db.weekly_tips.create_index("created_at")
+        
+    except Exception as e:
+        print(f"   ⚠️ Weekly Tip Check: {e}")
+    
+    # ===================================================================
     # WICHTIG: Datenbank-Indizes für Performance erstellen
     # ===================================================================
     print("\n🔧 ERSTELLE DATENBANK-INDIZES...")

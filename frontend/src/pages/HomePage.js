@@ -251,37 +251,6 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-              <Button
-                variant="outline"
-                onClick={() => navigate('/favorites')}
-                className="rounded-full px-6 md:px-8 py-5 md:py-6 text-sm font-medium tracking-wide border-primary/30 hover:bg-primary/5"
-                data-testid="cta-favorites"
-              >
-                <Heart className="mr-2 h-4 w-4" />
-                {t('nav_favorites') || 'Favoriten'}
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => navigate('/blog')}
-                className="rounded-full px-6 md:px-8 py-5 md:py-6 text-sm font-medium tracking-wide border-primary/30 hover:bg-primary/5"
-                data-testid="cta-blog"
-              >
-                <BookOpen className="mr-2 h-4 w-4" />
-                Blog
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => navigate('/feed')}
-                className="rounded-full px-6 md:px-8 py-5 md:py-6 text-sm font-medium tracking-wide border-primary/30 hover:bg-primary/5"
-                data-testid="cta-feed"
-              >
-                <Users className="mr-2 h-4 w-4" />
-                {t('nav_feed') || 'Community'}
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Pairing Science Highlight Card */}
       <section className="py-8 md:py-12 px-4 md:px-12 lg:px-24">

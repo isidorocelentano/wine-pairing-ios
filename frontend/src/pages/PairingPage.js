@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from "axios";
 import { toast } from 'sonner';
-import { Wine, Loader2, Search, ExternalLink, Beaker, ArrowLeft, MapPin, Grape, Crown, Sparkles } from 'lucide-react';
+import { Wine, Loader2, Search, ExternalLink, Beaker, ArrowLeft, MapPin, Grape, Crown, Sparkles, Heart, GlassWater, Smile, ChevronDown, ChevronUp } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";

@@ -1,7 +1,7 @@
 # 📖 WINE PAIRING APP - Vollständige Dokumentation
 
-**Stand:** 22. Dezember 2025  
-**Version:** 1.7 (Preistags für Weinkeller)  
+**Stand:** 24. Dezember 2025  
+**Version:** 1.7.1 (Genuss-Philosophie & Auth-Update)  
 **Domain:** https://wine-pairing.online
 
 ---
@@ -22,6 +22,35 @@
 ---
 
 ## 🆕 ÄNDERUNGSHISTORIE
+
+### Version 1.7.1 (24.12.2025) - Genuss-Philosophie & UI-Optimierungen
+
+**🏠 Neue Homepage "Genuss-First" Hero-Section:**
+- ✅ **Emotionale Headline:** "Dein Wein. Dein Essen. Dein Moment."
+- ✅ **Subtitle:** "Wissenschaftlich fundierte Empfehlungen – ganz ohne Dogmen."
+- ✅ **4 Philosophie-Punkte mit Emojis:**
+  - ✨ Kein Richtig oder Falsch
+  - 👅 Dein Geschmack weist den Weg
+  - 🍞 Einfach ausprobieren
+  - 🎉 Hab einfach Spaß
+- ✅ **CTA-Button:** "🍷 Jetzt mein perfektes Pairing finden"
+- ✅ **Vertrauens-Element:** "Powered by KI & Sommelier-Expertise"
+- ✅ **Quick-Navigation:** Separate Sektion mit Buttons zu allen Features
+
+**🍷 Neue Pairing-Seite "Genuss-Philosophie" Einleitung:**
+- ✅ **Zuklappbare Sektion:** "✨ Deine Weinreise, deine Regeln"
+- ✅ **3 Schritte mit Icons:**
+  - 🔍 Entdecke (Lupe, lila)
+  - ❤️ Probiere (Herz, rosa)
+  - 💧 Neutralisiere (Wasserglas, blau)
+- ✅ **Footer:** "Lass dich von deinem Geschmack leiten..."
+- ✅ **Responsive:** Desktop und Mobile optimiert
+
+**🐛 Bug Fixes:**
+- ✅ **Geheimtipp-Anzeige:** Parser akzeptiert jetzt fettgedruckte Weinnamen
+- ✅ **Weinart-Präferenz:** KI respektiert jetzt die Benutzer-Auswahl (Rotwein zu Fisch möglich)
+
+---
 
 ### Version 1.7 (22.12.2025) - Preistags für Weinkeller & Weindatenbank
 
@@ -51,11 +80,6 @@
 - ✅ **localStorage-Token** - Löst Safari/iOS Cookie-Probleme
 - ✅ **Beide Methoden parallel** - Cookie + Bearer Token
 
-**🐛 Bug Fix: Weinart-Präferenz:**
-- ✅ **KI respektiert jetzt die Weinart-Auswahl** des Benutzers
-- ✅ Wenn "Rotwein" gewählt wird, empfiehlt die KI nur Rotweine (auch zu Fisch!)
-- ✅ Klare Anweisung an die KI: "Der Kunde wünscht ausdrücklich [Weinart]"
-
 **Technische Änderungen:**
 - Backend: `price_category` Feld zu Wine-Models hinzugefügt
 - Backend: `POST /api/admin/estimate-wine-prices` für automatische Schätzung
@@ -65,6 +89,8 @@
 - Frontend: Neue UI-Komponenten in CellarPage.js und WineDatabasePage.js
 - Frontend: GoogleLoginButton.js und AuthCallback.js für Google OAuth
 - Frontend: localStorage-Token-Support in AuthContext.js
+- Frontend: Neue Hero-Section in HomePage.js
+- Frontend: Genuss-Philosophie-Sektion in PairingPage.js
 
 ---
 
@@ -254,7 +280,33 @@ Elegante Landing Page mit Hero-Section und virtuellem Sommelier "Claude".
 
 ---
 
-### 1b. PRICING-SEITE (NEU)
+### 1b. HOMEPAGE - GENUSS-FIRST HERO (v1.7.1)
+**Route:** `/`  
+**Zugriff:** 🆓 Alle
+
+**Neue Hero-Section mit emotionaler Ansprache:**
+
+| Element | Inhalt |
+|---------|--------|
+| **Tagline** | "WEIN-PAIRING NEU GEDACHT" |
+| **Headline** | "Dein Wein. Dein Essen. Dein Moment." |
+| **Subtitle** | "Wissenschaftlich fundierte Empfehlungen – ganz ohne Dogmen." |
+
+**4 Philosophie-Punkte:**
+- ✨ **Kein Richtig oder Falsch** - Beim Wein-Pairing geht es nur um Genuss
+- 👅 **Dein Geschmack weist den Weg** - Unsere Vorschläge sind Inspirationen
+- 🍞 **Einfach ausprobieren** - Mit Wasser oder Brot neutralisieren
+- 🎉 **Hab einfach Spaß** - Entdecke neue Welten, ohne Stress
+
+**CTA:** "🍷 Jetzt mein perfektes Pairing finden" (Kostenlos, ohne Registrierung)
+
+**Vertrauens-Element:** "Powered by KI & Sommelier-Expertise"
+
+**Quick-Navigation:** Buttons zu Sommelier Kompass, Weindatenbank, Weinkeller, etc.
+
+---
+
+### 1c. PRICING-SEITE (NEU)
 **Route:** `/pricing`, `/pro`  
 **Zugriff:** 🆓 Alle
 
@@ -276,6 +328,11 @@ Dedizierte Seite für Freemium-Kommunikation.
 **Route:** `/pairing`, `/pairing/:slug`  
 **Zugriff:** 🆓 Basic: 5/Tag | 👑 Pro: Unbegrenzt
 
+**🆕 Genuss-Philosophie Einleitung (v1.7.1):**
+- Zuklappbare Sektion: "✨ Deine Weinreise, deine Regeln"
+- 3 Schritte: Entdecke → Probiere → Neutralisiere
+- Footer: "Lass dich von deinem Geschmack leiten..."
+
 **Funktionsweise:**
 1. User gibt Gericht ein
 2. KI empfiehlt passende Weine
@@ -286,7 +343,7 @@ Dedizierte Seite für Freemium-Kommunikation.
 - Perfekt für: "Was trinke ich heute zu meinem Abendessen?"
 
 **Filter:**
-- Weintyp (Rot/Weiss/Rosé/Schaumwein)
+- Weintyp (Rot/Weiss/Rosé/Schaumwein) - **KI respektiert Auswahl!**
 - Land des Gerichts
 - Trend-Gerichte / Bestseller
 - Profi-Modus (4D-Werte)

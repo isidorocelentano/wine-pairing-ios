@@ -63,81 +63,194 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen pb-20 md:pb-24" data-testid="home-page">
-      {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center">
+      {/* NEW: Genuss-First Hero Section */}
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+        {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1666475877071-1cc8b7c33f3a?crop=entropy&cs=srgb&fm=jpg&q=85&w=1920"
             alt="Wine Pour"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/60" />
         </div>
         
-        <div className="relative z-10 container mx-auto px-4 md:px-12 lg:px-24">
-          <div className="max-w-2xl space-y-6 md:space-y-8 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
-            <p className="text-accent font-accent text-base md:text-lg tracking-widest uppercase">{t('hero_tagline')}</p>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold leading-tight tracking-tight">
-              {t('hero_title')}
-            </h1>
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-              {t('hero_description')}
-            </p>
-            <div className="flex items-center gap-4 pt-2">
-              <img
-                src="https://customer-assets.emergentagent.com/job_e57eae36-225b-4e20-a944-048ef9749606/artifacts/w9w52bm4_CLAUDE%20SOMMELIER%2001%20%284%29.png"
-                alt="Claude, virtueller Sommelier"
-                className="w-16 h-16 rounded-full shadow-md border border-border/60 object-cover"
-              />
-              <p className="text-sm md:text-base text-muted-foreground leading-snug">
-                {t('claude_intro_short')}
+        <div className="relative z-10 container mx-auto px-4 md:px-12 lg:px-24 py-12">
+          <div className="max-w-3xl space-y-8 md:space-y-10">
+            
+            {/* 1. Headline - Die emotionale Botschaft */}
+            <div className="space-y-4 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}>
+              <p className="text-accent font-accent text-sm md:text-base tracking-widest uppercase">
+                {language === 'de' ? 'WEIN-PAIRING NEU GEDACHT' : 
+                 language === 'en' ? 'WINE PAIRING REIMAGINED' : 
+                 'L\'ACCORD METS-VINS RÉINVENTÉ'}
+              </p>
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold leading-tight tracking-tight">
+                {language === 'de' ? (
+                  <>Dein Wein. Dein Essen.<br /><span className="text-primary">Dein Moment.</span></>
+                ) : language === 'en' ? (
+                  <>Your Wine. Your Food.<br /><span className="text-primary">Your Moment.</span></>
+                ) : (
+                  <>Votre Vin. Votre Repas.<br /><span className="text-primary">Votre Moment.</span></>
+                )}
+              </h1>
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
+                {language === 'de' ? 'Wissenschaftlich fundierte Empfehlungen – ganz ohne Dogmen.' : 
+                 language === 'en' ? 'Scientifically founded recommendations – without dogma.' : 
+                 'Des recommandations scientifiques – sans dogmes.'}
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 md:pt-4">
+
+            {/* 2. Die Philosophie - 4 Punkte mit Icons */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}>
+              {/* Kein Richtig oder Falsch */}
+              <div className="flex items-start gap-3 p-4 rounded-xl bg-card/40 backdrop-blur-sm border border-border/30 hover:bg-card/60 transition-colors">
+                <span className="text-2xl">✨</span>
+                <div>
+                  <h3 className="font-semibold text-sm mb-1">
+                    {language === 'de' ? 'Kein Richtig oder Falsch' : 
+                     language === 'en' ? 'No Right or Wrong' : 
+                     'Pas de bon ou mauvais'}
+                  </h3>
+                  <p className="text-xs text-muted-foreground">
+                    {language === 'de' ? 'Beim Wein-Pairing geht es nur um eines: Deinen Genuss.' : 
+                     language === 'en' ? 'Wine pairing is about one thing only: Your enjoyment.' : 
+                     'L\'accord mets-vins ne vise qu\'une chose : votre plaisir.'}
+                  </p>
+                </div>
+              </div>
+              
+              {/* Dein Geschmack weist den Weg */}
+              <div className="flex items-start gap-3 p-4 rounded-xl bg-card/40 backdrop-blur-sm border border-border/30 hover:bg-card/60 transition-colors">
+                <span className="text-2xl">👅</span>
+                <div>
+                  <h3 className="font-semibold text-sm mb-1">
+                    {language === 'de' ? 'Dein Geschmack weist den Weg' : 
+                     language === 'en' ? 'Your Taste Leads the Way' : 
+                     'Votre goût vous guide'}
+                  </h3>
+                  <p className="text-xs text-muted-foreground">
+                    {language === 'de' ? 'Unsere Vorschläge sind Inspirationen, dein Gaumen ist der Chef.' : 
+                     language === 'en' ? 'Our suggestions are inspiration, your palate is the boss.' : 
+                     'Nos suggestions sont des inspirations, votre palais décide.'}
+                  </p>
+                </div>
+              </div>
+              
+              {/* Einfach ausprobieren */}
+              <div className="flex items-start gap-3 p-4 rounded-xl bg-card/40 backdrop-blur-sm border border-border/30 hover:bg-card/60 transition-colors">
+                <span className="text-2xl">🍞</span>
+                <div>
+                  <h3 className="font-semibold text-sm mb-1">
+                    {language === 'de' ? 'Einfach ausprobieren' : 
+                     language === 'en' ? 'Just Try It' : 
+                     'Essayez simplement'}
+                  </h3>
+                  <p className="text-xs text-muted-foreground">
+                    {language === 'de' ? 'Neutralisiere kurz mit Wasser oder Brot und weiter geht\'s.' : 
+                     language === 'en' ? 'Neutralize briefly with water or bread and continue.' : 
+                     'Neutralisez avec de l\'eau ou du pain et continuez.'}
+                  </p>
+                </div>
+              </div>
+              
+              {/* Hab einfach Spaß */}
+              <div className="flex items-start gap-3 p-4 rounded-xl bg-card/40 backdrop-blur-sm border border-border/30 hover:bg-card/60 transition-colors">
+                <span className="text-2xl">🎉</span>
+                <div>
+                  <h3 className="font-semibold text-sm mb-1">
+                    {language === 'de' ? 'Hab einfach Spaß' : 
+                     language === 'en' ? 'Just Have Fun' : 
+                     'Amusez-vous'}
+                  </h3>
+                  <p className="text-xs text-muted-foreground">
+                    {language === 'de' ? 'Entdecke neue Welten, ganz ohne Stress.' : 
+                     language === 'en' ? 'Discover new worlds, completely stress-free.' : 
+                     'Découvrez de nouveaux mondes, sans stress.'}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* 3. Call-to-Action */}
+            <div className="space-y-4 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}>
               <Button
                 onClick={() => navigate('/pairing')}
-                className="rounded-full px-6 md:px-8 py-5 md:py-6 text-sm font-medium tracking-wide transition-elegant hover:scale-105 active:scale-95"
-                data-testid="cta-pairing"
+                size="lg"
+                className="rounded-full px-8 py-6 text-base font-semibold tracking-wide bg-primary hover:bg-primary/90 transition-all hover:scale-105 active:scale-95 shadow-lg shadow-primary/25"
+                data-testid="cta-pairing-hero"
               >
-                <Utensils className="mr-2 h-4 w-4" />
-                {t('cta_pairing')}
+                <Wine className="mr-2 h-5 w-5" />
+                {language === 'de' ? '🍷 Jetzt mein perfektes Pairing finden' : 
+                 language === 'en' ? '🍷 Find My Perfect Pairing Now' : 
+                 '🍷 Trouver mon accord parfait'}
               </Button>
-              <Button
-                variant="outline"
-                onClick={() => navigate('/cellar')}
-                className="rounded-full px-6 md:px-8 py-5 md:py-6 text-sm font-medium tracking-wide border-primary/30 hover:bg-primary/5"
-                data-testid="cta-cellar"
-              >
-                <Wine className="mr-2 h-4 w-4" />
-                {t('cta_cellar')}
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => navigate('/sommelier-kompass')}
-                className="rounded-full px-6 md:px-8 py-5 md:py-6 text-sm font-medium tracking-wide border-primary/30 hover:bg-primary/5"
-                data-testid="cta-kompass"
-              >
-                <Map className="mr-2 h-4 w-4" />
-                {t('regional_nav') || 'Sommelier Kompass'}
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => navigate('/wie-wir-pairen')}
-                className="rounded-full px-6 md:px-8 py-5 md:py-6 text-sm font-medium tracking-wide border-primary/30 hover:bg-primary/5"
-                data-testid="cta-science"
-              >
-                <Beaker className="mr-2 h-4 w-4" />
-                {language === 'de' ? 'Wie wir pairen' : language === 'en' ? 'How We Pair' : 'Notre Méthode'}
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => navigate('/wine-database')}
-                className="rounded-full px-6 md:px-8 py-5 md:py-6 text-sm font-medium tracking-wide border-primary/30 hover:bg-primary/5"
-                data-testid="cta-wine-database"
-              >
-                <Database className="mr-2 h-4 w-4" />
-                {t('nav_wine_database') || 'Weindatenbank'}
-              </Button>
+              <p className="text-sm text-muted-foreground">
+                {language === 'de' ? 'Kostenlos testen – ohne Registrierung' : 
+                 language === 'en' ? 'Try for free – no registration required' : 
+                 'Essai gratuit – sans inscription'}
+              </p>
+            </div>
+
+            {/* 4. Vertrauens-Element */}
+            <div className="flex items-center gap-3 pt-4 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.7s', animationFillMode: 'forwards' }}>
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-card/60 backdrop-blur-sm border border-border/30">
+                <Sparkles className="h-4 w-4 text-amber-500" />
+                <span className="text-xs text-muted-foreground">
+                  {language === 'de' ? 'Powered by GPT-5.1 & Sommelier-Expertise' : 
+                   language === 'en' ? 'Powered by GPT-5.1 & Sommelier Expertise' : 
+                   'Propulsé par GPT-5.1 & Expertise Sommelier'}
+                </span>
+              </div>
+            </div>
+            <p className="text-xs text-muted-foreground/70 max-w-lg opacity-0 animate-fade-in-up" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
+              {language === 'de' ? 'Wissenschaftliche Analyse trifft auf puren Genuss.' : 
+               language === 'en' ? 'Scientific analysis meets pure enjoyment.' : 
+               'L\'analyse scientifique rencontre le pur plaisir.'}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Navigation Buttons */}
+      <section className="py-8 px-4 md:px-12 lg:px-24 bg-muted/30">
+        <div className="container mx-auto">
+          <div className="flex flex-wrap justify-center gap-3">
+            <Button
+              variant="outline"
+              onClick={() => navigate('/sommelier-kompass')}
+              className="rounded-full px-5 py-5 text-sm font-medium border-primary/30 hover:bg-primary/5"
+            >
+              <Map className="mr-2 h-4 w-4" />
+              {t('regional_nav') || 'Sommelier Kompass'}
+            </Button>
+            <Button
+              variant="outline"
+              onClick={() => navigate('/wine-database')}
+              className="rounded-full px-5 py-5 text-sm font-medium border-primary/30 hover:bg-primary/5"
+            >
+              <Database className="mr-2 h-4 w-4" />
+              {t('nav_wine_database') || 'Weindatenbank'}
+            </Button>
+            <Button
+              variant="outline"
+              onClick={() => navigate('/cellar')}
+              className="rounded-full px-5 py-5 text-sm font-medium border-primary/30 hover:bg-primary/5"
+            >
+              <Wine className="mr-2 h-4 w-4" />
+              {t('cta_cellar')}
+            </Button>
+            <Button
+              variant="outline"
+              onClick={() => navigate('/wie-wir-pairen')}
+              className="rounded-full px-5 py-5 text-sm font-medium border-primary/30 hover:bg-primary/5"
+            >
+              <Beaker className="mr-2 h-4 w-4" />
+              {language === 'de' ? 'Wie wir pairen' : language === 'en' ? 'How We Pair' : 'Notre Méthode'}
+            </Button>
+          </div>
+        </div>
+      </section>
               <Button
                 variant="outline"
                 onClick={() => navigate('/favorites')}

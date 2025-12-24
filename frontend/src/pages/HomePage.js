@@ -252,6 +252,171 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Mission Section - "Über uns" */}
+      <section className="py-12 md:py-20 px-4 md:px-12 lg:px-24 bg-gradient-to-b from-background to-muted/30">
+        <div className="container mx-auto max-w-5xl">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <p className="text-accent font-accent text-sm tracking-widest uppercase mb-3">
+              {language === 'de' ? 'ÜBER UNS' : language === 'en' ? 'ABOUT US' : 'À PROPOS'}
+            </p>
+            <h2 className="text-2xl md:text-4xl font-semibold tracking-tight mb-4">
+              {language === 'de' ? 'Unsere Mission: Genuss für alle' : 
+               language === 'en' ? 'Our Mission: Enjoyment for Everyone' : 
+               'Notre Mission: Le plaisir pour tous'}
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              {language === 'de' ? 'Ohne Komplexität. Ohne Dogmen.' : 
+               language === 'en' ? 'Without complexity. Without dogma.' : 
+               'Sans complexité. Sans dogmes.'}
+            </p>
+          </div>
+
+          {/* Who we are */}
+          <Card className="bg-card/50 backdrop-blur-sm border-border/50 mb-8">
+            <CardContent className="p-6 md:p-8">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Heart className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-3">
+                    {language === 'de' ? 'Wer wir sind' : language === 'en' ? 'Who We Are' : 'Qui nous sommes'}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {language === 'de' 
+                      ? 'Hinter wine-pairing.online steht die Überzeugung, dass man kein Sommelier-Studium braucht, um das perfekte Weinerlebnis zu genießen. Wir haben diese Plattform geschaffen, um die Brücke zwischen wissenschaftlicher Aromen-Analyse und dem echten Leben zu schlagen.'
+                      : language === 'en'
+                      ? 'Behind wine-pairing.online is the conviction that you don\'t need a sommelier degree to enjoy the perfect wine experience. We created this platform to bridge the gap between scientific aroma analysis and real life.'
+                      : 'Derrière wine-pairing.online, il y a la conviction qu\'il n\'est pas nécessaire d\'être sommelier pour profiter de l\'expérience vinicole parfaite. Nous avons créé cette plateforme pour faire le pont entre l\'analyse scientifique des arômes et la vie réelle.'}
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Science meets Joy */}
+          <Card className="bg-gradient-to-r from-primary/5 via-accent/5 to-primary/10 border-primary/20 mb-8">
+            <CardContent className="p-6 md:p-8">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-amber-500/10 flex items-center justify-center flex-shrink-0">
+                  <Beaker className="w-6 h-6 text-amber-500" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-3">
+                    {language === 'de' ? 'Wissenschaft trifft Lebensfreude' : 
+                     language === 'en' ? 'Science Meets Joy' : 
+                     'La science rencontre la joie de vivre'}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed mb-4">
+                    {language === 'de' 
+                      ? 'Warum passt ein Wein zu einem Gericht? Die Antwort liegt oft in der Chemie – in der Balance von Säuren, Fetten und Aromen. Unsere App nutzt modernste KI-Technologie, um diese komplexen Verbindungen in Sekunden zu entschlüsseln.'
+                      : language === 'en'
+                      ? 'Why does a wine pair well with a dish? The answer often lies in chemistry – in the balance of acids, fats, and aromas. Our app uses cutting-edge AI technology to decode these complex connections in seconds.'
+                      : 'Pourquoi un vin s\'accorde-t-il bien avec un plat ? La réponse réside souvent dans la chimie – dans l\'équilibre des acides, des graisses et des arômes. Notre application utilise la technologie IA de pointe pour décoder ces connexions complexes en quelques secondes.'}
+                  </p>
+                  <p className="text-primary font-medium italic">
+                    {language === 'de' ? 'Aber: Die Wissenschaft ist nur der Wegweiser, nicht das Ziel.' : 
+                     language === 'en' ? 'But: Science is only the guide, not the destination.' : 
+                     'Mais : La science n\'est que le guide, pas la destination.'}
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Philosophy in 3 Points */}
+          <div className="mb-8">
+            <h3 className="text-lg font-semibold mb-6 text-center">
+              {language === 'de' ? 'Unsere Philosophie in drei Sätzen:' : 
+               language === 'en' ? 'Our Philosophy in Three Sentences:' : 
+               'Notre philosophie en trois phrases :'}
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {/* 1. Technik für den Menschen */}
+              <Card className="bg-card/50 border-border/50 hover:border-primary/30 transition-colors">
+                <CardContent className="p-5">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500 font-bold text-sm">1</span>
+                    <h4 className="font-semibold text-sm">
+                      {language === 'de' ? 'Technik für den Menschen' : 
+                       language === 'en' ? 'Technology for People' : 
+                       'La technologie au service de l\'homme'}
+                    </h4>
+                  </div>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    {language === 'de' 
+                      ? 'Wir nutzen Daten, um dir Vorschläge zu machen, die wirklich funktionieren – auch wenn du deinen Wein im Supermarkt um die Ecke kaufst.'
+                      : language === 'en'
+                      ? 'We use data to give you suggestions that really work – even if you buy your wine at the supermarket around the corner.'
+                      : 'Nous utilisons les données pour vous faire des suggestions qui fonctionnent vraiment – même si vous achetez votre vin au supermarché du coin.'}
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* 2. Dein Geschmack ist das Gesetz */}
+              <Card className="bg-card/50 border-border/50 hover:border-primary/30 transition-colors">
+                <CardContent className="p-5">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="w-8 h-8 rounded-full bg-rose-500/10 flex items-center justify-center text-rose-500 font-bold text-sm">2</span>
+                    <h4 className="font-semibold text-sm">
+                      {language === 'de' ? 'Dein Geschmack ist das Gesetz' : 
+                       language === 'en' ? 'Your Taste is the Law' : 
+                       'Votre goût fait loi'}
+                    </h4>
+                  </div>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    {language === 'de' 
+                      ? 'Wenn dir ein Pairing schmeckt, das in keinem Lehrbuch steht, dann hast du alles richtig gemacht.'
+                      : language === 'en'
+                      ? 'If you like a pairing that\'s not in any textbook, then you\'ve done everything right.'
+                      : 'Si vous aimez un accord qui ne figure dans aucun manuel, alors vous avez tout fait correctement.'}
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* 3. Barrierefreier Genuss */}
+              <Card className="bg-card/50 border-border/50 hover:border-primary/30 transition-colors">
+                <CardContent className="p-5">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="w-8 h-8 rounded-full bg-green-500/10 flex items-center justify-center text-green-500 font-bold text-sm">3</span>
+                    <h4 className="font-semibold text-sm">
+                      {language === 'de' ? 'Barrierefreier Genuss' : 
+                       language === 'en' ? 'Accessible Enjoyment' : 
+                       'Plaisir accessible'}
+                    </h4>
+                  </div>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    {language === 'de' 
+                      ? 'Wir machen Schluss mit elitärer Weinsprache. Wir reden über Geschmack, Freude und den perfekten Moment am Esstisch.'
+                      : language === 'en'
+                      ? 'We\'re done with elitist wine language. We talk about taste, joy, and the perfect moment at the dinner table.'
+                      : 'Nous en avons fini avec le langage élitiste du vin. Nous parlons de goût, de joie et du moment parfait à table.'}
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* Quote */}
+          <Card className="bg-primary/5 border-primary/20">
+            <CardContent className="p-6 md:p-8 text-center">
+              <blockquote className="text-lg md:text-xl italic text-foreground/90 leading-relaxed">
+                {language === 'de' 
+                  ? '"Wir liefern die Daten, du lieferst den Gaumen. Gemeinsam machen wir aus einem einfachen Abendessen ein unvergessliches Erlebnis."'
+                  : language === 'en'
+                  ? '"We provide the data, you provide the palate. Together, we turn a simple dinner into an unforgettable experience."'
+                  : '"Nous fournissons les données, vous fournissez le palais. Ensemble, nous transformons un simple dîner en une expérience inoubliable."'}
+              </blockquote>
+              <div className="mt-4 flex items-center justify-center gap-2">
+                <Wine className="w-5 h-5 text-primary" />
+                <span className="text-sm text-muted-foreground">wine-pairing.online</span>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {/* Pairing Science Highlight Card */}
       <section className="py-8 md:py-12 px-4 md:px-12 lg:px-24">
         <div className="container mx-auto max-w-4xl">

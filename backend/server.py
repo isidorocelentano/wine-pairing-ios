@@ -6171,8 +6171,8 @@ async def startup_seed_data():
     # ===================================================================
     print("\n💡 PRÜFE WOCHEN-TIPPS...")
     try:
-        from datetime import date as dt_date
-        today = dt_date.today()
+        import datetime as dt_module
+        today = dt_module.date.today()
         current_week = today.isocalendar()[1]
         current_year = today.year
         
@@ -6187,7 +6187,7 @@ async def startup_seed_data():
         if tip_count == 0:
             # Keine Tipps vorhanden - Seed initial tips
             print("   📝 Keine Tipps vorhanden - erstelle initiale Tipps...")
-            now = datetime.now(timezone.utc)
+            now = dt_module.datetime.now(timezone.utc)
             initial_tips = [
                 {
                     "id": str(uuid.uuid4()),

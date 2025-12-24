@@ -499,6 +499,25 @@ class PairingResponse(BaseModel):
     cellar_matches: Optional[List[dict]] = None
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
+# ===================== WEEKLY TIP MODEL =====================
+
+class WeeklyTip(BaseModel):
+    """Wöchentlicher Pairing-Tipp von der KI generiert"""
+    model_config = ConfigDict(extra="ignore")
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    dish: str  # z.B. "Scharfes Thai-Curry"
+    dish_emoji: str = "🍽️"  # Emoji für das Gericht
+    wine: str  # z.B. "Gewürztraminer Spätlese"
+    wine_type: str = "weiss"  # rot, weiss, rose, schaumwein
+    region: Optional[str] = None  # z.B. "Elsass, Frankreich"
+    why: str  # Kurze Begründung
+    fun_fact: Optional[str] = None  # Interessanter Fakt
+    week_number: int  # Kalenderwoche
+    year: int  # Jahr
+    language: str = "de"
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    is_active: bool = True
+
 class ChatMessage(BaseModel):
     role: str  # user or assistant
     content: str

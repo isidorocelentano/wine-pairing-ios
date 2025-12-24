@@ -346,10 +346,10 @@ const HomePage = () => {
                   </div>
                   <p className="text-xs text-muted-foreground leading-relaxed">
                     {language === 'de' 
-                      ? 'Wir nutzen Daten, um dir Vorschläge zu machen, die wirklich funktionieren – auch wenn du deinen Wein im Supermarkt um die Ecke kaufst.'
+                      ? 'Wir nutzen Daten, um dir Vorschläge zu machen, die wirklich funktionieren – egal welcher Wein du kaufst oder trinkst.'
                       : language === 'en'
-                      ? 'We use data to give you suggestions that really work – even if you buy your wine at the supermarket around the corner.'
-                      : 'Nous utilisons les données pour vous faire des suggestions qui fonctionnent vraiment – même si vous achetez votre vin au supermarché du coin.'}
+                      ? 'We use data to give you suggestions that really work – no matter which wine you buy or drink.'
+                      : 'Nous utilisons les données pour vous faire des suggestions qui fonctionnent vraiment – quel que soit le vin que vous achetez ou buvez.'}
                   </p>
                 </CardContent>
               </Card>

@@ -3727,6 +3727,227 @@ async def check_favorite_status(wine_id: str):
         }
     return {"is_favorite": False, "is_wishlist": False}
 
+# ===================== WEEKLY TIP ENDPOINTS =====================
+
+@api_router.get("/weekly-tips")
+async def get_weekly_tips(limit: int = 4, include_archived: bool = False):
+    """
+    Hole die neuesten Wochen-Tipps.
+    - limit: Anzahl der Tipps (Standard: 4)
+    - include_archived: Auch inaktive Tipps laden (für Archiv)
+    """
+    query = {} if include_archived else {"is_active": True}
+    tips = await db.weekly_tips.find(query, {"_id": 0}).sort("created_at", -1).to_list(limit)
+    return tips
+
+
+@api_router.get("/weekly-tips/archive")
+async def get_weekly_tips_archive(page: int = 1, per_page: int = 12):
+    """
+    Hole alle Tipps für das Archiv (paginiert).
+    """
+    skip = (page - 1) * per_page
+    total = await db.weekly_tips.count_documents({})
+    tips = await db.weekly_tips.find({}, {"_id": 0}).sort("created_at", -1).skip(skip).limit(per_page).to_list(per_page)
+    
+    return {
+        "tips": tips,
+        "total": total,
+        "page": page,
+        "per_page": per_page,
+        "total_pages": (total + per_page - 1) // per_page
+    }
+
+
+@api_router.get("/weekly-tips/{tip_id}")
+async def get_weekly_tip(tip_id: str):
+    """Hole einen einzelnen Tipp nach ID."""
+    tip = await db.weekly_tips.find_one({"id": tip_id}, {"_id": 0})
+    if not tip:
+        raise HTTPException(status_code=404, detail="Tipp nicht gefunden")
+    return tip
+
+
+@api_router.post("/admin/generate-weekly-tip")
+async def generate_weekly_tip(language: str = "de"):
+    """
+    Generiert einen neuen Wochen-Tipp mit KI.
+    Wird vom Cron-Job oder manuell aufgerufen.
+    """
+    from datetime import date
+    import calendar
+    
+    # Aktuelle Kalenderwoche ermitteln
+    today = date.today()
+    week_number = today.isocalendar()[1]
+    year = today.year
+    
+    # Prüfen ob diese Woche schon ein Tipp existiert
+    existing = await db.weekly_tips.find_one({
+        "week_number": week_number,
+        "year": year,
+        "language": language
+    })
+    
+    if existing:
+        return {
+            "status": "exists",
+            "message": f"Tipp für KW {week_number}/{year} existiert bereits",
+            "tip": {k: v for k, v in existing.items() if k != "_id"}
+        }
+    
+    # KI-Prompt für kreative Tipp-Generierung
+    prompt = f"""Du bist ein kreativer Sommelier. Generiere einen überraschenden, aber gut funktionierenden Wein-Pairing-Tipp der Woche.
+
+WICHTIG: Wähle eine UNGEWÖHNLICHE aber FUNKTIONIERENDE Kombination, die ein "Aha-Erlebnis" auslöst.
+
+Antworte NUR im folgenden JSON-Format (keine Markdown-Codeblocks):
+{{
+    "dish": "Name des Gerichts (kurz)",
+    "dish_emoji": "passendes Emoji",
+    "wine": "Konkreter Weinname mit Region",
+    "wine_type": "rot|weiss|rose|schaumwein",
+    "region": "Weinregion, Land",
+    "why": "Kurze, emotionale Begründung (max 2 Sätze) warum das funktioniert",
+    "fun_fact": "Ein interessanter Fakt über diese Kombination (optional)"
+}}
+
+Beispiele für gute Tipps:
+- Scharfes Thai-Curry + Gewürztraminer Spätlese → "Die exotische Süße zähmt die Schärfe perfekt"
+- Pasta Carbonara + Pinot Grigio → "Frische trifft auf Cremigkeit"
+- Dunkle Schokolade + Syrah → "Fruchtbomben-Harmonie"
+- BBQ Ribs + Zinfandel → "Rauch trifft Rauch"
+
+Sei kreativ! Vermeide langweilige Standard-Pairings."""
+
+    try:
+        # KI aufrufen
+        from emergentintegrations.llm.chat import LlmChat, UserMessage
+        
+        chat = LlmChat(
+            api_key=EMERGENT_API_KEY,
+            model="claude-sonnet-4-20250514",
+            system_prompt="Du bist ein kreativer Sommelier, der überraschende Wein-Pairings empfiehlt."
+        )
+        
+        response = await chat.send_message(UserMessage(text=prompt))
+        response_text = response.message.text.strip()
+        
+        # JSON parsen
+        import json
+        # Entferne mögliche Markdown-Codeblocks
+        if response_text.startswith("```"):
+            response_text = response_text.split("```")[1]
+            if response_text.startswith("json"):
+                response_text = response_text[4:]
+        response_text = response_text.strip()
+        
+        tip_data = json.loads(response_text)
+        
+        # Neuen Tipp erstellen
+        new_tip = WeeklyTip(
+            dish=tip_data.get("dish", "Unbekannt"),
+            dish_emoji=tip_data.get("dish_emoji", "🍽️"),
+            wine=tip_data.get("wine", "Unbekannt"),
+            wine_type=tip_data.get("wine_type", "weiss"),
+            region=tip_data.get("region"),
+            why=tip_data.get("why", ""),
+            fun_fact=tip_data.get("fun_fact"),
+            week_number=week_number,
+            year=year,
+            language=language
+        )
+        
+        # In Datenbank speichern
+        await db.weekly_tips.insert_one(new_tip.model_dump())
+        
+        logger.info(f"Neuer Wochen-Tipp generiert: {new_tip.dish} + {new_tip.wine}")
+        
+        return {
+            "status": "created",
+            "message": f"Neuer Tipp für KW {week_number}/{year} erstellt",
+            "tip": new_tip.model_dump()
+        }
+        
+    except json.JSONDecodeError as e:
+        logger.error(f"JSON Parse Error bei Tipp-Generierung: {e}")
+        raise HTTPException(status_code=500, detail=f"KI-Antwort konnte nicht geparst werden: {str(e)}")
+    except Exception as e:
+        logger.error(f"Fehler bei Tipp-Generierung: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@api_router.post("/admin/seed-initial-tips")
+async def seed_initial_tips():
+    """
+    Erstellt initiale Tipps für den Start (einmalig).
+    """
+    initial_tips = [
+        {
+            "dish": "Scharfes Thai-Curry",
+            "dish_emoji": "🍛",
+            "wine": "Gewürztraminer Spätlese",
+            "wine_type": "weiss",
+            "region": "Elsass, Frankreich",
+            "why": "Die exotische Süße zähmt die Schärfe perfekt – ein echtes Aha-Erlebnis!",
+            "fun_fact": "Der Gewürztraminer hat seinen Namen von den intensiven Gewürzaromen wie Litschi und Rose.",
+            "week_number": 51,
+            "year": 2025
+        },
+        {
+            "dish": "Pasta Carbonara",
+            "dish_emoji": "🍝",
+            "wine": "Pinot Grigio",
+            "wine_type": "weiss",
+            "region": "Friaul, Italien",
+            "why": "Frische trifft auf Cremigkeit – die knackige Säure schneidet durch die reichhaltige Sauce.",
+            "fun_fact": "In Italien wird Carbonara traditionell NUR mit Guanciale (Schweinebacke) und Pecorino gemacht.",
+            "week_number": 50,
+            "year": 2025
+        },
+        {
+            "dish": "Dunkle Schokolade",
+            "dish_emoji": "🍫",
+            "wine": "Kräftiger Syrah",
+            "wine_type": "rot",
+            "region": "Rhône-Tal, Frankreich",
+            "why": "Ein Dessert-Traum – die dunklen Beerenaromen des Syrah umarmen die Bitterkeit der Schokolade.",
+            "fun_fact": "Syrah und Shiraz sind derselbe Wein! In Frankreich heißt er Syrah, in Australien Shiraz.",
+            "week_number": 49,
+            "year": 2025
+        },
+        {
+            "dish": "BBQ Spare Ribs",
+            "dish_emoji": "🍖",
+            "wine": "Zinfandel",
+            "wine_type": "rot",
+            "region": "Kalifornien, USA",
+            "why": "Rauch trifft Rauch – die würzigen Brombeer-Noten ergänzen die süß-rauchige BBQ-Sauce perfekt.",
+            "fun_fact": "Zinfandel ist genetisch identisch mit der italienischen Primitivo-Traube!",
+            "week_number": 48,
+            "year": 2025
+        }
+    ]
+    
+    inserted = 0
+    for tip_data in initial_tips:
+        # Prüfen ob Tipp schon existiert
+        existing = await db.weekly_tips.find_one({
+            "week_number": tip_data["week_number"],
+            "year": tip_data["year"]
+        })
+        if not existing:
+            tip = WeeklyTip(**tip_data, language="de")
+            await db.weekly_tips.insert_one(tip.model_dump())
+            inserted += 1
+    
+    return {
+        "status": "success",
+        "message": f"{inserted} initiale Tipps erstellt",
+        "total_tips": await db.weekly_tips.count_documents({})
+    }
+
+
 # ===================== BLOG ENDPOINTS =====================
 
 @api_router.get("/blog", response_model=List[BlogPost])

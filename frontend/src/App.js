@@ -64,14 +64,14 @@ function AppRouter() {
       <LanguageSelector />
       <Routes>
         <Route path="/" element={<><SEO /><HomePage /><Navigation /></>} />
-        <Route path="/pairing" element={<><PairingPage /><Navigation /></>} />
+        <Route path="/pairing" element={<><SEO page="pairing" /><PairingPage /><Navigation /></>} />
         <Route path="/pairing/:slug" element={<><DynamicPairingPage /><Navigation /></>} />
         <Route path="/grapes" element={<><GrapesPage /><Navigation /></>} />
         <Route path="/grapes/:slug" element={<><GrapeDetailPage /><Navigation /></>} />
         <Route path="/wine-database" element={<><WineDatabasePage /><Navigation /></>} />
         <Route path="/favorites" element={<><FavoritesPage /><Navigation /></>} />
-        <Route path="/cellar" element={<><CellarPage /><Navigation /></>} />
-        <Route path="/weinkeller" element={<><CellarPage /><Navigation /></>} />
+        <Route path="/cellar" element={<><SEO page="cellar" /><CellarPage /><Navigation /></>} />
+        <Route path="/weinkeller" element={<><SEO page="cellar" /><CellarPage /><Navigation /></>} />
         <Route path="/admin/grapes" element={<><GrapeAdminPage /><Navigation /></>} />
         <Route path="/admin/dishes" element={<><DishAdminPage /><Navigation /></>} />
         <Route path="/seo/pairings" element={<><SeoPairingExplorerPage /><Navigation /></>} />
@@ -96,8 +96,8 @@ function AppRouter() {
         <Route path="/pricing" element={<><PricingPage /><Navigation /></>} />
         <Route path="/pro" element={<><PricingPage /><Navigation /></>} />
         {/* Weekly Tip */}
-        <Route path="/tipp-der-woche" element={<><TippDerWochePage /><Navigation /></>} />
-        <Route path="/weekly-tip" element={<><TippDerWochePage /><Navigation /></>} />
+        <Route path="/tipp-der-woche" element={<><SEO page="weeklyTip" /><TippDerWochePage /><Navigation /></>} />
+        <Route path="/weekly-tip" element={<><SEO page="weeklyTip" /><TippDerWochePage /><Navigation /></>} />
       </Routes>
     </>
   );

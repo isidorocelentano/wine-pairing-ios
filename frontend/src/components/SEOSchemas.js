@@ -252,10 +252,10 @@ export const SommelierServiceSchema = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "wine-pairing.online - Virtueller Sommelier",
-    "description": "KI-gestützter Sommelier-Service für perfekte Weinempfehlungen. Über 1.700 kuratierte Weine, 84 Weinregionen und personalisierte Pairings.",
+    "name": "wine-pairing.online - KI Sommelier",
+    "description": "Wein-Pairing leicht gemacht – Genuss ohne Regeln. KI-gestützter Sommelier-Service für perfekte Weinempfehlungen. Über 7.000 Weine, 1.900+ regionale Pairings. Welcher Wein passt zu deinem Essen? Finde es heraus!",
     "url": "https://wine-pairing.online",
-    "serviceType": "Wine Consulting",
+    "serviceType": ["Wine Consulting", "KI Weinberatung", "Digitaler Sommelier", "Online Weinberater"],
     "areaServed": {
       "@type": "GeoCircle",
       "geoMidpoint": {

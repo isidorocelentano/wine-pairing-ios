@@ -49,9 +49,9 @@ export const WebSiteSchema = () => {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "wine-pairing.online",
-    "alternateName": "Wine Pairing - Ihr virtueller Sommelier",
+    "alternateName": ["Wein-Pairing App", "KI Sommelier", "Digitaler Weinberater", "Online Sommelier-Beratung"],
     "url": "https://wine-pairing.online",
-    "description": "KI-gestützte Weinempfehlungen, virtueller Sommelier-Chat und über 1.700 kuratierte Weine. Perfekte Pairings für jeden Anlass.",
+    "description": "Genuss steht an erster Stelle. Entdecke spannende Wein-Kombinationen zu deinem Lieblingsessen. KI-gestützte Weinempfehlungen – einfach, intuitiv und kostenlos. Über 7.000 Weine, 1.900+ regionale Pairings.",
     "inLanguage": ["de", "en", "fr"],
     "potentialAction": {
       "@type": "SearchAction",

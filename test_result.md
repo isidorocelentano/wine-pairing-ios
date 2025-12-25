@@ -562,7 +562,7 @@ bugfix_description: "Weekly Tips (Tipp der Woche) feature testing - COMPLETED"
 
 ## Agent Communication
 - agent: "main"
-  message: "CRITICAL BUGFIX APPLIED: The data loss bug has been fixed. The 'users' collection was missing from the protected user_collections list in startup_seed_data() function. Now users, wines, pairings, chats, wine_favorites, user_sessions, and payment_transactions are all protected from being overwritten on server restart. Please run comprehensive tests to verify: 1) User login works 2) User data persists after restart 3) Coupon system works 4) Wine cellar works. Test URL: https://grape-encyclopedia.preview.emergentagent.com"
+  message: "CRITICAL BUGFIX APPLIED: The data loss bug has been fixed. The 'users' collection was missing from the protected user_collections list in startup_seed_data() function. Now users, wines, pairings, chats, wine_favorites, user_sessions, and payment_transactions are all protected from being overwritten on server restart. Please run comprehensive tests to verify: 1) User login works 2) User data persists after restart 3) Coupon system works 4) Wine cellar works. Test URL: https://cellar-login-fix.preview.emergentagent.com"
 
 - agent: "testing"
   message: "CRITICAL BUGFIX VERIFICATION COMPLETED: All tests PASSED. The data loss bug is confirmed FIXED. Code review shows 'users' collection is now properly protected in user_collections list. All core data collections (wines: 1815+, grapes: 140, blog: 233, regional_pairings: 44, feed: 268) are intact and accessible. User registration system works, coupon system functional, wine pairing system operational. No data loss detected. System is READY FOR PRODUCTION."
@@ -642,7 +642,7 @@ bugfix_description: "Weekly Tips (Tipp der Woche) feature testing - COMPLETED"
 
 ### Test Configuration
 - **Test Date**: 2025-12-16 23:43:00 UTC
-- **Test URL**: https://grape-encyclopedia.preview.emergentagent.com/pairing
+- **Test URL**: https://cellar-login-fix.preview.emergentagent.com/pairing
 - **Test Dish**: "Rinderfilet"
 - **Cellar Option**: Enabled ("Aus meinem Keller empfehlen")
 
@@ -702,7 +702,7 @@ bugfix_description: "Weekly Tips (Tipp der Woche) feature testing - COMPLETED"
 
 ### Test Configuration
 - **Test Date**: 2025-12-17 16:47:00 UTC
-- **Test URL**: https://grape-encyclopedia.preview.emergentagent.com
+- **Test URL**: https://cellar-login-fix.preview.emergentagent.com
 - **Test Users**: multitest_a_1765990822@test.com / multitest_b_1765990822@test.com
 - **Test Focus**: Multi-User Wine Cellar Isolation and Authentication
 
@@ -773,7 +773,7 @@ The Multi-User Wine Cellar implementation has passed all critical tests and is r
   message: "PRICE TAGS UI FEATURE TESTING COMPLETED (2025-12-22): Frontend implementation verified through code analysis and partial UI testing. Key findings: 1) ✅ PRICE CATEGORY BUTTONS: All 3 buttons (🍷/🍷🍷/🍷🍷🍷) implemented in Add Wine dialog with correct styling (green/amber/orange borders and backgrounds) 2) ✅ PRICE FILTER DROPDOWN: Complete implementation with options 'Alle Preise', '🍷 bis €20', '🍷🍷 €20-50', '🍷🍷🍷 ab €50' 3) ✅ PRICE BADGES ON CARDS: Wine cards display price badges with correct emoji and color styling 4) ✅ EDIT DIALOG: Price category buttons included in edit wine dialog 5) ✅ CELLAR STATISTICS: Price breakdown shown in stats card 6) ⚠️ AUTHENTICATION LIMITATION: UI testing limited by authentication flow in test environment, but code implementation is complete and correct. The Price Tags UI feature is PRODUCTION READY with full frontend implementation matching backend capabilities."
 
 - agent: "testing"
-  message: "WINE DATABASE PRICE TAGS UI TESTING COMPLETED (2025-12-23): ALL REQUIREMENTS PASSED (100% success rate). Comprehensive UI testing verified the Price Tags feature is fully functional. Key results: 1) ✅ NAVIGATION: Wine Database page loads correctly at https://wine-price-tiers.preview.emergentagent.com/wine-database 2) ✅ PRICE BADGES ON CARDS: Found 50 wine cards with price badges using 🍷 emoji system (legacy format 'Mittelklasse' working) 3) ✅ FILTER PANEL: 'Filter' button expands panel successfully, 'Preiskategorie' dropdown with all required options ('Alle Preise', '🍷 bis €20', '🍷🍷 €20-50', '🍷🍷🍷 ab €50') 4) ✅ PREMIUM FILTER: Selecting '🍷🍷🍷 ab €50' filters wines correctly, showing premium badges 5) ✅ WINE DETAIL MODAL: Modal displays price badges correctly ('🍷🍷 Mittelklasse' verified) 6) ✅ COMBINED FILTERS: Country (Frankreich) + Price (Premium) filtering works, found 50 French premium wines with verified badges 7) ✅ COLOR CODING: Price badges have appropriate styling (green/amber/orange system implemented). The Wine Database Price Tags UI feature is PRODUCTION READY and meets all test scenario requirements."
+  message: "WINE DATABASE PRICE TAGS UI TESTING COMPLETED (2025-12-23): ALL REQUIREMENTS PASSED (100% success rate). Comprehensive UI testing verified the Price Tags feature is fully functional. Key results: 1) ✅ NAVIGATION: Wine Database page loads correctly at https://cellar-login-fix.preview.emergentagent.com/wine-database 2) ✅ PRICE BADGES ON CARDS: Found 50 wine cards with price badges using 🍷 emoji system (legacy format 'Mittelklasse' working) 3) ✅ FILTER PANEL: 'Filter' button expands panel successfully, 'Preiskategorie' dropdown with all required options ('Alle Preise', '🍷 bis €20', '🍷🍷 €20-50', '🍷🍷🍷 ab €50') 4) ✅ PREMIUM FILTER: Selecting '🍷🍷🍷 ab €50' filters wines correctly, showing premium badges 5) ✅ WINE DETAIL MODAL: Modal displays price badges correctly ('🍷🍷 Mittelklasse' verified) 6) ✅ COMBINED FILTERS: Country (Frankreich) + Price (Premium) filtering works, found 50 French premium wines with verified badges 7) ✅ COLOR CODING: Price badges have appropriate styling (green/amber/orange system implemented). The Wine Database Price Tags UI feature is PRODUCTION READY and meets all test scenario requirements."
 
 - agent: "testing"
   message: "CELLAR FEATURE TEST COMPLETED: Backend API working correctly with proper cellar wine matching and recommendations. Frontend successfully sends use_cellar parameter and receives cellar-specific data. ISSUE IDENTIFIED: Frontend display not fully showing cellar context - missing 'Aus deinem Keller' text and cellar_matches badges. Cellar wines are being recommended but not clearly marked as coming from user's cellar. Recommend improving frontend rendering of cellar-specific content for better UX."

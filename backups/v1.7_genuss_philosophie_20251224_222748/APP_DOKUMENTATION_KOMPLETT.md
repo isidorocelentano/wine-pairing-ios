@@ -656,7 +656,7 @@ Upgrade auf Pro-Plan via Stripe.
 ## 🚀 TEIL 7: DEPLOYMENT
 
 ### URLs
-- **Preview:** https://wine-price-tiers.preview.emergentagent.com
+- **Preview:** https://cellar-login-fix.preview.emergentagent.com
 - **Produktion:** https://wine-pairing.online
 
 ### Tech-Stack

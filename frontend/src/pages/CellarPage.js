@@ -108,6 +108,15 @@ const CellarPage = () => {
     fetchWines();
   }, [fetchWines]);
 
+  // Wenn der AddDialog geöffnet wird und gescannte Daten vorhanden sind, setze sie
+  useEffect(() => {
+    if (showAddDialog && scannedDataRef.current) {
+      console.log('Dialog opened, applying scanned data from ref:', scannedDataRef.current);
+      setNewWine(scannedDataRef.current);
+      scannedDataRef.current = null;
+    }
+  }, [showAddDialog]);
+
   // Komprimiert ein Bild auf eine maximale Größe
   const compressImage = (file, maxWidth = 1200, quality = 0.7) => {
     return new Promise((resolve, reject) => {

@@ -45,6 +45,7 @@ const CellarPage = () => {
   const [updatingQuantity, setUpdatingQuantity] = useState(null); // Track which wine is being updated
   const fileInputRef = useRef(null);
   const scanInputRef = useRef(null);
+  const scannedDataRef = useRef(null); // Speichert gescannte Daten für Dialog
 
   // Price category labels
   const priceCategoryLabels = {

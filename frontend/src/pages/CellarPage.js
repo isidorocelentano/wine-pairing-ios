@@ -183,7 +183,7 @@ const CellarPage = () => {
 
   const handleScanLabel = async (fullDataUrl, base64Only) => {
     console.log('handleScanLabel called, base64 length:', base64Only?.length);
-    setScanning(true);
+    // setScanning wird bereits in handleImageUpload gesetzt
     
     try {
       console.log('Sending scan request to API...');

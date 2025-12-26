@@ -182,16 +182,31 @@ const CellarPage = () => {
       const response = await authAxios.post(`${API}/scan-label`, { image_base64: imageBase64 });
       
       console.log('Scan response:', response.data);
+      const data = response.data;
       
-      setNewWine((prev) => ({
-        ...prev,
-        ...response.data,
-        year: response.data.year?.toString() || '',
+      // Erstelle das komplette neue Wine-Objekt
+      const scannedWine = {
+        name: data.name || '',
+        type: data.type || 'rot',
+        region: data.region || '',
+        year: data.year ? String(data.year) : '',
+        grape: data.grape || '',
+        description: '',
+        notes: data.notes || '',
         image_base64: imageBase64,
-        quantity: typeof prev.quantity === 'number' ? prev.quantity : 1,
-      }));
+        quantity: 1,
+        price_category: ''
+      };
+      
+      console.log('Setting scanned wine:', scannedWine);
+      
+      // Zuerst Scan-Dialog schließen
       setShowScanDialog(false);
+      // Dann den neuen Wine-State setzen
+      setNewWine(scannedWine);
+      // Dann Add-Dialog öffnen
       setShowAddDialog(true);
+      
       toast.success(t('success_label_scanned'));
     } catch (error) {
       console.error('Scan error:', error.response?.data || error.message);

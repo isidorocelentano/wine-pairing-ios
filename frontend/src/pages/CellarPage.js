@@ -145,14 +145,6 @@ const CellarPage = () => {
       setScanning(false);
     }
   };
-      
-    } catch (error) {
-      console.error('Scan error:', error.response?.data || error.message);
-      toast.error(error.response?.data?.detail || t('error_general'));
-    } finally {
-      setScanning(false);
-    }
-  };
 
   const handleAddWine = async () => {
     if (!newWine.name.trim()) {

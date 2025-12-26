@@ -368,5 +368,23 @@
     "created_at": "2025-12-23T07:51:23.067000",
     "last_login": "2025-12-23T07:51:23.067000",
     "login_count": 1
+  },
+  {
+    "user_id": "user_520cf54600c0",
+    "email": "isidoro.celentano@gmail.com",
+    "name": "Isidoro Celentano",
+    "picture": "https://lh3.googleusercontent.com/a/ACg8ocJJnb6bRZHSxKWw8lLfOHQ3kcJj09posOm7lc_ilX8ACjtZG_M8CA=s96-c",
+    "google_id": "106811324554623973715",
+    "auth_provider": "google",
+    "plan": "basic",
+    "subscription_status": "active",
+    "usage": {
+      "pairing_requests_today": 0,
+      "chat_messages_today": 0,
+      "last_usage_date": "2025-12-26"
+    },
+    "created_at": "2025-12-26T15:39:58.550000",
+    "last_login": "2025-12-26T15:40:22.492000",
+    "login_count": 2
   }
 ]

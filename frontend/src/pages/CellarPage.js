@@ -109,13 +109,37 @@ const CellarPage = () => {
 
   const handleImageUpload = (e, isScan = false) => {
     const file = e.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
+    console.log('handleImageUpload called, file:', file?.name, file?.type, file?.size);
+    
+    if (!file) {
+      console.log('No file selected');
+      return;
+    }
+    
+    // Prüfe Dateigröße (max 10MB)
+    if (file.size > 10 * 1024 * 1024) {
+      toast.error('Das Bild ist zu groß. Bitte verwenden Sie ein Bild unter 10MB.');
+      return;
+    }
+    
+    const reader = new FileReader();
+    
+    reader.onloadend = () => {
+      console.log('FileReader onloadend, result length:', reader.result?.length);
+      try {
         // reader.result enthält das vollständige Data-URL (z.B. "data:image/jpeg;base64,...")
         const fullDataUrl = reader.result;
+        
+        if (!fullDataUrl || typeof fullDataUrl !== 'string') {
+          console.error('Invalid FileReader result');
+          toast.error('Fehler beim Lesen des Bildes');
+          return;
+        }
+        
         // Nur der Base64-Teil ohne Prefix für die Speicherung
         const base64Only = fullDataUrl.split(',')[1];
+        
+        console.log('Base64 extracted, length:', base64Only?.length);
         
         if (isScan) {
           // Für den Scan brauchen wir das vollständige Data-URL für die KI-Analyse
@@ -123,9 +147,18 @@ const CellarPage = () => {
         } else {
           setNewWine({ ...newWine, image_base64: base64Only });
         }
-      };
-      reader.readAsDataURL(file);
-    }
+      } catch (err) {
+        console.error('Error processing image:', err);
+        toast.error('Fehler beim Verarbeiten des Bildes');
+      }
+    };
+    
+    reader.onerror = (error) => {
+      console.error('FileReader error:', error);
+      toast.error('Fehler beim Lesen des Bildes');
+    };
+    
+    reader.readAsDataURL(file);
   };
 
   const handleScanLabel = async (fullDataUrl, base64Only) => {

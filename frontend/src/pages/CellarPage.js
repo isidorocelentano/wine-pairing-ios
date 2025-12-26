@@ -107,127 +107,44 @@ const CellarPage = () => {
     fetchWines();
   }, [fetchWines]);
 
-  // Wenn der AddDialog geöffnet wird und gescannte Daten vorhanden sind, setze sie
-  useEffect(() => {
-    if (showAddDialog && scannedDataRef.current) {
-      console.log('Dialog opened, applying scanned data from ref:', scannedDataRef.current);
-      setNewWine(scannedDataRef.current);
-      scannedDataRef.current = null;
-    }
-  }, [showAddDialog]);
-
-  // Komprimiert ein Bild auf eine maximale Größe
-  const compressImage = (file, maxWidth = 1200, quality = 0.7) => {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        const img = new Image();
-        img.onload = () => {
-          const canvas = document.createElement('canvas');
-          let { width, height } = img;
-          
-          // Skaliere das Bild, wenn es zu groß ist
-          if (width > maxWidth) {
-            height = (height * maxWidth) / width;
-            width = maxWidth;
-          }
-          
-          canvas.width = width;
-          canvas.height = height;
-          
-          const ctx = canvas.getContext('2d');
-          ctx.drawImage(img, 0, 0, width, height);
-          
-          // Komprimiere als JPEG - gibt Data URL zurück
-          const compressedDataUrl = canvas.toDataURL('image/jpeg', quality);
-          // Extrahiere nur den Base64-Teil
-          const base64Only = compressedDataUrl.split(',')[1];
-          
-          console.log(`Image compressed: ${file.size} bytes -> ~${Math.round(base64Only.length * 0.75)} bytes`);
-          
-          resolve(base64Only);
-        };
-        img.onerror = () => reject(new Error('Image load failed'));
-        img.src = e.target.result;
-      };
-      reader.onerror = () => reject(new Error('FileReader failed'));
-      reader.readAsDataURL(file);
-    });
-  };
-
-  const handleImageUpload = async (e, isScan = false) => {
+  // ALTE FUNKTIONIERENDE VERSION - Einfacher Bildupload
+  const handleImageUpload = (e, isScan = false) => {
     const file = e.target.files?.[0];
-    if (!file) return;
-    
-    console.log('File selected:', file.name, file.type, file.size, 'bytes');
-    
-    if (isScan) {
-      setScanning(true);
-    }
-    
-    try {
-      // Komprimiere das Bild
-      const base64 = await compressImage(file, 1200, 0.7);
-      console.log('Compressed base64 length:', base64.length);
-      
-      if (isScan) {
-        handleScanLabel(base64);
-      } else {
-        setNewWine({ ...newWine, image_base64: base64 });
-      }
-    } catch (err) {
-      console.error('Image processing error:', err);
-      toast.error('Fehler beim Verarbeiten des Bildes');
-      if (isScan) setScanning(false);
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const base64 = reader.result.split(',')[1];
+        if (isScan) {
+          handleScanLabel(base64);
+        } else {
+          setNewWine({ ...newWine, image_base64: base64 });
+        }
+      };
+      reader.readAsDataURL(file);
     }
   };
 
+  // ALTE FUNKTIONIERENDE VERSION - Einfacher Scan
   const handleScanLabel = async (imageBase64) => {
-    // setScanning ist bereits true
+    setScanning(true);
     try {
-      console.log('Sending to /api/scan-label, base64 length:', imageBase64.length);
-      
-      // Sende NUR den reinen Base64-String (ohne data:image Prefix!)
       const response = await authAxios.post(`${API}/scan-label`, { image_base64: imageBase64 });
-      
-      console.log('Scan response:', response.data);
-      const data = response.data;
-      
-      // Erstelle das komplette neue Wine-Objekt
-      const scannedWine = {
-        name: data.name || '',
-        type: data.type || 'rot',
-        region: data.region || '',
-        year: data.year ? String(data.year) : '',
-        grape: data.grape || '',
-        description: '',
-        notes: data.notes || '',
+      setNewWine((prev) => ({
+        ...prev,
+        ...response.data,
+        year: response.data.year?.toString() || '',
         image_base64: imageBase64,
-        quantity: 1,
-        price_category: ''
-      };
-      
-      console.log('Setting scanned wine:', scannedWine);
-      
-      // Speichere in Ref für sofortigen Zugriff
-      scannedDataRef.current = scannedWine;
-      
-      // Schließe Scan-Dialog
+        quantity: typeof prev.quantity === 'number' ? prev.quantity : 1,
+      }));
       setShowScanDialog(false);
-      
-      // Setze State und öffne Dialog mit Verzögerung für State-Update
-      setNewWine(scannedWine);
-      
-      // Warte kurz, damit React den State committen kann
-      setTimeout(() => {
-        // Falls State noch nicht aktualisiert, verwende Ref
-        if (scannedDataRef.current) {
-          setNewWine(scannedDataRef.current);
-        }
-        setShowAddDialog(true);
-        toast.success(t('success_label_scanned'));
-        scannedDataRef.current = null;
-      }, 100);
+      setShowAddDialog(true);
+      toast.success(t('success_label_scanned'));
+    } catch (error) {
+      toast.error(t('error_general'));
+    } finally {
+      setScanning(false);
+    }
+  };
       
     } catch (error) {
       console.error('Scan error:', error.response?.data || error.message);

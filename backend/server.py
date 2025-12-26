@@ -1818,7 +1818,8 @@ async def scan_wine_label(request: LabelScanRequest, http_request: Request):
             system_message="Du bist ein Experte für Weinetiketten. Analysiere das Bild und extrahiere die Weininformationen. Antworte NUR im JSON-Format."
         ).with_model("openai", "gpt-5.1")
         
-        image_content = ImageContent(image_base64=request.image_base64)
+        # WICHTIG: ImageContent benötigt den reinen Base64-String OHNE data:image/... Prefix
+        image_content = ImageContent(image_base64=image_data)
         
         prompt = """Analysiere dieses Weinetikett und extrahiere folgende Informationen im JSON-Format:
 {

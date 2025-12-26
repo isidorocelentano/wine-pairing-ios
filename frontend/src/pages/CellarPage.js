@@ -104,32 +104,40 @@ const CellarPage = () => {
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        const base64 = reader.result.split(',')[1];
+        // reader.result enthält das vollständige Data-URL (z.B. "data:image/jpeg;base64,...")
+        const fullDataUrl = reader.result;
+        // Nur der Base64-Teil ohne Prefix für die Speicherung
+        const base64Only = fullDataUrl.split(',')[1];
+        
         if (isScan) {
-          handleScanLabel(base64);
+          // Für den Scan brauchen wir das vollständige Data-URL für die KI-Analyse
+          handleScanLabel(fullDataUrl, base64Only);
         } else {
-          setNewWine({ ...newWine, image_base64: base64 });
+          setNewWine({ ...newWine, image_base64: base64Only });
         }
       };
       reader.readAsDataURL(file);
     }
   };
 
-  const handleScanLabel = async (imageBase64) => {
+  const handleScanLabel = async (fullDataUrl, base64Only) => {
     setScanning(true);
     try {
-      const response = await authAxios.post(`${API}/scan-label`, { image_base64: imageBase64 });
+      // Sende das vollständige Data-URL für die KI-Bildanalyse
+      const response = await authAxios.post(`${API}/scan-label`, { image_base64: fullDataUrl });
       setNewWine((prev) => ({
         ...prev,
         ...response.data,
         year: response.data.year?.toString() || '',
-        image_base64: imageBase64,
+        // Speichere nur den Base64-Teil ohne Prefix
+        image_base64: base64Only,
         quantity: typeof prev.quantity === 'number' ? prev.quantity : 1,
       }));
       setShowScanDialog(false);
       setShowAddDialog(true);
       toast.success(t('success_label_scanned'));
     } catch (error) {
+      console.error('Scan error:', error);
       toast.error(t('error_general'));
     } finally {
       setScanning(false);

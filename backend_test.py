@@ -4082,6 +4082,24 @@ class WinePairingAPITester:
         
         return self.tests_passed == self.tests_run
 
+    def run_wine_label_scan_tests(self):
+        """Run wine label scan specific tests"""
+        print("\n📷 Testing Wine Label Scanner Authentication & Features...")
+        
+        # Test authentication requirements
+        self.test_label_scan_without_auth()
+        
+        # Test with authentication
+        self.test_label_scan_with_auth_valid_image()
+        self.test_label_scan_with_auth_empty_image()
+        self.test_label_scan_with_auth_invalid_base64()
+        
+        # Test data URL format
+        self.test_label_scan_with_data_url_prefix()
+        
+        # Test response structure
+        self.test_label_scan_response_structure()
+
     def run_all_tests(self):
         """Run all API tests"""
         print("🍷 Starting Wine Pairing API Tests")

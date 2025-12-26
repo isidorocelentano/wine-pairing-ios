@@ -162,15 +162,25 @@ const CellarPage = () => {
   };
 
   const handleScanLabel = async (fullDataUrl, base64Only) => {
+    console.log('handleScanLabel called, base64 length:', base64Only?.length);
     setScanning(true);
+    
     try {
+      console.log('Sending scan request to API...');
+      
       // Sende das vollständige Data-URL für die KI-Bildanalyse
       const response = await authAxios.post(`${API}/scan-label`, { image_base64: fullDataUrl });
       
-      // Debug: Log response to see what we're getting
-      console.log('Scan API Response:', response.data);
+      console.log('Scan API Response status:', response.status);
+      console.log('Scan API Response data:', response.data);
       
       const scanData = response.data;
+      
+      if (!scanData) {
+        console.error('No scan data received');
+        toast.error('Keine Daten vom Scanner erhalten');
+        return;
+      }
       
       // Erstelle neuen State mit allen Scan-Daten
       const updatedWine = {
@@ -197,8 +207,17 @@ const CellarPage = () => {
       toast.success(t('success_label_scanned'));
       
     } catch (error) {
-      console.error('Scan error:', error);
-      toast.error(t('error_general'));
+      console.error('Scan error details:', {
+        message: error.message,
+        response: error.response?.data,
+        status: error.response?.status
+      });
+      
+      if (error.response?.status === 401) {
+        toast.error('Bitte melden Sie sich erneut an');
+      } else {
+        toast.error(t('error_general') + ': ' + (error.response?.data?.detail || error.message));
+      }
     } finally {
       setScanning(false);
     }

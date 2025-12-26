@@ -1868,6 +1868,7 @@ WICHTIG:
                 if wine_type.lower() not in valid_types:
                     wine_type = 'rot'
                 
+                logger.info(f"Label scan: Returning LabelScanResponse - name={name}, type={wine_type}, region={data.get('region')}, year={data.get('year')}")
                 return LabelScanResponse(
                     name=str(name),
                     type=wine_type.lower(),

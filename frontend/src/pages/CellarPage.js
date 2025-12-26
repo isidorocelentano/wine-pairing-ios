@@ -107,7 +107,45 @@ const CellarPage = () => {
     fetchWines();
   }, [fetchWines]);
 
-  const handleImageUpload = (e, isScan = false) => {
+  // Komprimiert ein Bild auf eine maximale Größe
+  const compressImage = (file, maxWidth = 1200, quality = 0.7) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const img = new Image();
+        img.onload = () => {
+          const canvas = document.createElement('canvas');
+          let { width, height } = img;
+          
+          // Skaliere das Bild, wenn es zu groß ist
+          if (width > maxWidth) {
+            height = (height * maxWidth) / width;
+            width = maxWidth;
+          }
+          
+          canvas.width = width;
+          canvas.height = height;
+          
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, width, height);
+          
+          // Komprimiere als JPEG
+          const compressedDataUrl = canvas.toDataURL('image/jpeg', quality);
+          const base64Only = compressedDataUrl.split(',')[1];
+          
+          console.log(`Image compressed: ${file.size} bytes -> ~${Math.round(base64Only.length * 0.75)} bytes`);
+          
+          resolve({ fullDataUrl: compressedDataUrl, base64Only });
+        };
+        img.onerror = reject;
+        img.src = e.target.result;
+      };
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  };
+
+  const handleImageUpload = async (e, isScan = false) => {
     const file = e.target.files?.[0];
     console.log('handleImageUpload called, file:', file?.name, file?.type, file?.size);
     
@@ -116,49 +154,31 @@ const CellarPage = () => {
       return;
     }
     
-    // Prüfe Dateigröße (max 10MB)
-    if (file.size > 10 * 1024 * 1024) {
-      toast.error('Das Bild ist zu groß. Bitte verwenden Sie ein Bild unter 10MB.');
-      return;
+    // Zeige Lade-Indikator für Scan
+    if (isScan) {
+      setScanning(true);
     }
     
-    const reader = new FileReader();
-    
-    reader.onloadend = () => {
-      console.log('FileReader onloadend, result length:', reader.result?.length);
-      try {
-        // reader.result enthält das vollständige Data-URL (z.B. "data:image/jpeg;base64,...")
-        const fullDataUrl = reader.result;
-        
-        if (!fullDataUrl || typeof fullDataUrl !== 'string') {
-          console.error('Invalid FileReader result');
-          toast.error('Fehler beim Lesen des Bildes');
-          return;
-        }
-        
-        // Nur der Base64-Teil ohne Prefix für die Speicherung
-        const base64Only = fullDataUrl.split(',')[1];
-        
-        console.log('Base64 extracted, length:', base64Only?.length);
-        
-        if (isScan) {
-          // Für den Scan brauchen wir das vollständige Data-URL für die KI-Analyse
-          handleScanLabel(fullDataUrl, base64Only);
-        } else {
-          setNewWine({ ...newWine, image_base64: base64Only });
-        }
-      } catch (err) {
-        console.error('Error processing image:', err);
-        toast.error('Fehler beim Verarbeiten des Bildes');
+    try {
+      // Komprimiere das Bild (max 1200px Breite, 70% Qualität)
+      console.log('Compressing image...');
+      const { fullDataUrl, base64Only } = await compressImage(file, 1200, 0.7);
+      
+      console.log('Image compressed, base64 length:', base64Only.length);
+      
+      if (isScan) {
+        // Für den Scan brauchen wir das vollständige Data-URL für die KI-Analyse
+        await handleScanLabel(fullDataUrl, base64Only);
+      } else {
+        setNewWine({ ...newWine, image_base64: base64Only });
       }
-    };
-    
-    reader.onerror = (error) => {
-      console.error('FileReader error:', error);
-      toast.error('Fehler beim Lesen des Bildes');
-    };
-    
-    reader.readAsDataURL(file);
+    } catch (err) {
+      console.error('Error processing image:', err);
+      toast.error('Fehler beim Verarbeiten des Bildes');
+      if (isScan) {
+        setScanning(false);
+      }
+    }
   };
 
   const handleScanLabel = async (fullDataUrl, base64Only) => {

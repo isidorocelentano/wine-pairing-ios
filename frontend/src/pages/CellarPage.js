@@ -118,7 +118,9 @@ const CellarPage = () => {
   const handleScanLabel = async (imageBase64) => {
     setScanning(true);
     try {
+      console.log('Scan starting, base64 length:', imageBase64?.length);
       const response = await authAxios.post(`${API}/scan-label`, { image_base64: imageBase64 });
+      console.log('Scan response:', response.data);
       setNewWine((prev) => ({
         ...prev,
         ...response.data,
@@ -130,7 +132,19 @@ const CellarPage = () => {
       setShowAddDialog(true);
       toast.success(t('success_label_scanned'));
     } catch (error) {
-      toast.error(t('error_general'));
+      console.error('Scan error:', error);
+      // Zeige spezifische Fehlermeldung
+      const errorMsg = error.response?.status === 401 
+        ? 'Bitte erneut anmelden' 
+        : error.response?.data?.detail || error.message || t('error_general');
+      toast.error(errorMsg);
+      
+      // Bei 401 trotzdem Dialog öffnen mit dem Bild
+      if (error.response?.status === 401) {
+        setNewWine((prev) => ({ ...prev, image_base64: imageBase64 }));
+        setShowScanDialog(false);
+        setShowAddDialog(true);
+      }
     } finally {
       setScanning(false);
     }

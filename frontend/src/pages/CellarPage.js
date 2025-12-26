@@ -42,10 +42,9 @@ const CellarPage = () => {
   const [editingWine, setEditingWine] = useState(null);
   const [newWine, setNewWine] = useState({ name: '', type: 'rot', region: '', year: '', grape: '', description: '', notes: '', image_base64: '', quantity: 1, price_category: '' });
   const [scanning, setScanning] = useState(false);
-  const [updatingQuantity, setUpdatingQuantity] = useState(null); // Track which wine is being updated
+  const [updatingQuantity, setUpdatingQuantity] = useState(null);
   const fileInputRef = useRef(null);
   const scanInputRef = useRef(null);
-  const scannedDataRef = useRef(null); // Speichert gescannte Daten für Dialog
 
   // Price category labels
   const priceCategoryLabels = {

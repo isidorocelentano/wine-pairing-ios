@@ -380,6 +380,155 @@ class WinePairingAPITester:
             self.log_test("Label Scanner (Response Structure)", False, str(response))
         return success
 
+    # ===================== WINE LABEL SCAN AUTHENTICATION TESTS =====================
+    
+    def test_label_scan_without_auth(self):
+        """Test wine label scan without authentication - should return 401"""
+        # Create a simple test image (1x1 pixel PNG in base64)
+        test_image_base64 = "data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
+        
+        scan_data = {
+            "image_base64": test_image_base64
+        }
+        
+        # Clear any existing session cookies
+        self.session.cookies.clear()
+        
+        success, response = self.make_request('POST', 'scan-label', data=scan_data, expected_status=401)
+        if success:
+            self.log_test("Label Scanner (No Auth)", True, "Correctly returned 401 Unauthorized")
+        else:
+            # If it doesn't return 401, check if it's working without auth (which would be unexpected)
+            if response.get('status_code') == 200:
+                self.log_test("Label Scanner (No Auth)", False, "Endpoint allows access without authentication")
+                return False
+            else:
+                self.log_test("Label Scanner (No Auth)", False, f"Unexpected status code: {response.get('status_code')}")
+        return success
+
+    def test_label_scan_with_auth_valid_image(self):
+        """Test wine label scan with authentication and valid image"""
+        # First register and login a test user
+        test_email = f"scantest_{int(datetime.now().timestamp())}@test.com"
+        test_password = "testpass123"
+        
+        # Register user
+        register_data = {
+            "email": test_email,
+            "password": test_password,
+            "name": "Scan Test User"
+        }
+        
+        reg_success, reg_response = self.make_request('POST', 'auth/register', data=register_data, expected_status=200)
+        if not reg_success:
+            self.log_test("Label Scanner (Auth + Valid Image)", False, f"Failed to register user: {reg_response}")
+            return False
+        
+        # Now test label scan with authentication
+        test_image_base64 = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwA/wA=="
+        
+        scan_data = {
+            "image_base64": test_image_base64
+        }
+        
+        success, response = self.make_request('POST', 'scan-label', data=scan_data, expected_status=200)
+        if success:
+            # Validate response structure matches LabelScanResponse model
+            required_fields = ['name', 'type']
+            optional_fields = ['region', 'year', 'grape', 'notes']
+            
+            missing_fields = [field for field in required_fields if field not in response]
+            if missing_fields:
+                self.log_test("Label Scanner (Auth + Valid Image)", False, f"Missing required fields: {missing_fields}")
+                return False
+            
+            # Validate wine type is one of the allowed values
+            valid_types = ['rot', 'weiss', 'rose', 'schaumwein']
+            wine_type = response.get('type')
+            if wine_type not in valid_types:
+                self.log_test("Label Scanner (Auth + Valid Image)", False, f"Invalid wine type: {wine_type}, expected one of {valid_types}")
+                return False
+            
+            wine_name = response.get('name', 'Unknown')
+            self.log_test("Label Scanner (Auth + Valid Image)", True, f"Authenticated scan successful: {wine_name} ({wine_type})")
+        else:
+            self.log_test("Label Scanner (Auth + Valid Image)", False, str(response))
+        return success
+
+    def test_label_scan_with_auth_empty_image(self):
+        """Test wine label scan with authentication but empty image - should return fallback"""
+        scan_data = {
+            "image_base64": ""
+        }
+        
+        success, response = self.make_request('POST', 'scan-label', data=scan_data, expected_status=200)
+        if success:
+            wine_name = response.get('name', '')
+            wine_type = response.get('type', '')
+            
+            # Should return fallback response with name "Kein Bild"
+            if wine_name == "Kein Bild":
+                self.log_test("Label Scanner (Auth + Empty Image)", True, f"Correctly handled empty image: {wine_name}")
+            else:
+                self.log_test("Label Scanner (Auth + Empty Image)", False, f"Expected 'Kein Bild', got: {wine_name}")
+                return False
+        else:
+            self.log_test("Label Scanner (Auth + Empty Image)", False, str(response))
+        return success
+
+    def test_label_scan_with_auth_invalid_base64(self):
+        """Test wine label scan with authentication but invalid base64 - should return fallback"""
+        scan_data = {
+            "image_base64": "invalid_base64_string_here"
+        }
+        
+        success, response = self.make_request('POST', 'scan-label', data=scan_data, expected_status=200)
+        if success:
+            wine_name = response.get('name', '')
+            wine_type = response.get('type', '')
+            
+            # Should return fallback response with name "Ungültiges Bild"
+            if wine_name == "Ungültiges Bild":
+                self.log_test("Label Scanner (Auth + Invalid Base64)", True, f"Correctly handled invalid base64: {wine_name}")
+            else:
+                self.log_test("Label Scanner (Auth + Invalid Base64)", False, f"Expected 'Ungültiges Bild', got: {wine_name}")
+                return False
+        else:
+            self.log_test("Label Scanner (Auth + Invalid Base64)", False, str(response))
+        return success
+
+    def test_label_scan_with_data_url_prefix(self):
+        """Test wine label scan with full data URL prefix"""
+        # Test with proper data URL format including prefix
+        test_image_base64 = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwA/wA=="
+        
+        scan_data = {
+            "image_base64": test_image_base64
+        }
+        
+        success, response = self.make_request('POST', 'scan-label', data=scan_data, expected_status=200)
+        if success:
+            # Validate response structure
+            required_fields = ['name', 'type']
+            missing_fields = [field for field in required_fields if field not in response]
+            
+            if missing_fields:
+                self.log_test("Label Scanner (Data URL Prefix)", False, f"Missing required fields: {missing_fields}")
+                return False
+            
+            # Validate wine type
+            valid_types = ['rot', 'weiss', 'rose', 'schaumwein']
+            wine_type = response.get('type')
+            if wine_type not in valid_types:
+                self.log_test("Label Scanner (Data URL Prefix)", False, f"Invalid wine type: {wine_type}")
+                return False
+            
+            wine_name = response.get('name', 'Unknown')
+            self.log_test("Label Scanner (Data URL Prefix)", True, f"Processed data URL with prefix: {wine_name} ({wine_type})")
+        else:
+            self.log_test("Label Scanner (Data URL Prefix)", False, str(response))
+        return success
+
     def test_pairing_basic_flow_no_4d(self):
         """Test basic pairing flow without 4D values (Profi-Modus regression)"""
         pairing_data = {

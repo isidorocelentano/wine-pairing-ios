@@ -13,10 +13,18 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useAuth } from "@/contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { API_URL, API } from "@/config/api";
+import { getAuthHeaders } from "@/contexts/AuthContext";
 
 // Axios instance mit credentials für auth
 const authAxios = axios.create({
   withCredentials: true
+});
+
+// Interceptor um den Token-Header bei jedem Request hinzuzufügen
+authAxios.interceptors.request.use((config) => {
+  const authHeaders = getAuthHeaders();
+  config.headers = { ...config.headers, ...authHeaders };
+  return config;
 });
 
 const CellarPage = () => {
@@ -26,16 +34,24 @@ const CellarPage = () => {
   const [wines, setWines] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('all');
+  const [priceFilter, setPriceFilter] = useState('all');
   const [inStockOnly, setInStockOnly] = useState(false);
   const [showAddDialog, setShowAddDialog] = useState(false);
   const [showScanDialog, setShowScanDialog] = useState(false);
   const [showEditDialog, setShowEditDialog] = useState(false);
   const [editingWine, setEditingWine] = useState(null);
-  const [newWine, setNewWine] = useState({ name: '', type: 'rot', region: '', year: '', grape: '', description: '', notes: '', image_base64: '', quantity: 1 });
+  const [newWine, setNewWine] = useState({ name: '', type: 'rot', region: '', year: '', grape: '', description: '', notes: '', image_base64: '', quantity: 1, price_category: '' });
   const [scanning, setScanning] = useState(false);
-  const [updatingQuantity, setUpdatingQuantity] = useState(null); // Track which wine is being updated
+  const [updatingQuantity, setUpdatingQuantity] = useState(null);
   const fileInputRef = useRef(null);
   const scanInputRef = useRef(null);
+
+  // Price category labels
+  const priceCategoryLabels = {
+    '1': { emoji: '🍷', label: language === 'de' ? 'bis €20' : language === 'en' ? 'up to €20' : 'jusqu\'à €20' },
+    '2': { emoji: '🍷🍷', label: language === 'de' ? '€20-50' : '€20-50' },
+    '3': { emoji: '🍷🍷🍷', label: language === 'de' ? 'ab €50' : language === 'en' ? '€50+' : 'à partir de €50' }
+  };
 
   // Calculate cellar statistics
   const cellarStats = useMemo(() => {
@@ -45,8 +61,13 @@ const CellarPage = () => {
       acc[type] = (acc[type] || 0) + (wine.quantity || 0);
       return acc;
     }, {});
+    const byPrice = wines.reduce((acc, wine) => {
+      const price = wine.price_category || 'none';
+      acc[price] = (acc[price] || 0) + (wine.quantity || 0);
+      return acc;
+    }, {});
     const uniqueWines = wines.length;
-    return { totalBottles, byType, uniqueWines };
+    return { totalBottles, byType, byPrice, uniqueWines };
   }, [wines]);
 
   const fetchWines = useCallback(async () => {
@@ -60,6 +81,9 @@ const CellarPage = () => {
       const params = [];
       if (filter !== 'all') {
         params.push(`type_filter=${filter}`);
+      }
+      if (priceFilter !== 'all') {
+        params.push(`price_category_filter=${priceFilter}`);
       }
       if (inStockOnly) {
         params.push('in_stock_only=true');
@@ -76,13 +100,14 @@ const CellarPage = () => {
     } finally {
       setLoading(false);
     }
-  }, [filter, inStockOnly, t, isAuthenticated]);
+  }, [filter, priceFilter, inStockOnly, t, isAuthenticated]);
 
 
   useEffect(() => {
     fetchWines();
   }, [fetchWines]);
 
+  // ALTE FUNKTIONIERENDE VERSION - Einfacher Bildupload
   const handleImageUpload = (e, isScan = false) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -99,6 +124,7 @@ const CellarPage = () => {
     }
   };
 
+  // ALTE FUNKTIONIERENDE VERSION - Einfacher Scan
   const handleScanLabel = async (imageBase64) => {
     setScanning(true);
     try {
@@ -131,10 +157,11 @@ const CellarPage = () => {
         ...newWine,
         year: newWine.year ? parseInt(newWine.year) : null,
         quantity: newWine.quantity ? parseInt(newWine.quantity, 10) : 1,
+        price_category: newWine.price_category || null,
       });
       toast.success(t('success_wine_added'));
       setShowAddDialog(false);
-      setNewWine({ name: '', type: 'rot', region: '', year: '', grape: '', description: '', notes: '', image_base64: '', quantity: 1 });
+      setNewWine({ name: '', type: 'rot', region: '', year: '', grape: '', description: '', notes: '', image_base64: '', quantity: 1, price_category: '' });
       fetchWines();
     } catch (error) {
       toast.error(t('error_general'));
@@ -201,6 +228,7 @@ const CellarPage = () => {
       description: wine.description || '',  // Include description field
       notes: wine.notes || '',
       quantity: typeof wine.quantity === 'number' ? wine.quantity : 1,
+      price_category: wine.price_category || '',
     });
     setShowEditDialog(true);
   };
@@ -215,6 +243,7 @@ const CellarPage = () => {
         grape: editingWine.grape || null,
         notes: editingWine.notes || null,
         quantity: typeof editingWine.quantity === 'number' ? editingWine.quantity : parseInt(editingWine.quantity || '1', 10),
+        price_category: editingWine.price_category || null,
       });
       toast.success('Wein erfolgreich aktualisiert!');
       setShowEditDialog(false);
@@ -362,6 +391,20 @@ const CellarPage = () => {
                         <Badge variant="outline" className="text-xs badge-schaumwein border-0">{cellarStats.byType.schaumwein}x Schaum</Badge>
                       )}
                     </div>
+                    {/* Mini breakdown by price */}
+                    {(cellarStats.byPrice['1'] > 0 || cellarStats.byPrice['2'] > 0 || cellarStats.byPrice['3'] > 0) && (
+                      <div className="flex flex-wrap justify-center gap-2 mt-2 pt-2 border-t border-border/30">
+                        {cellarStats.byPrice['1'] > 0 && (
+                          <Badge variant="outline" className="text-xs bg-green-100 text-green-700 dark:bg-green-950/50 dark:text-green-400 border-0">{cellarStats.byPrice['1']}x 🍷</Badge>
+                        )}
+                        {cellarStats.byPrice['2'] > 0 && (
+                          <Badge variant="outline" className="text-xs bg-amber-100 text-amber-700 dark:bg-amber-950/50 dark:text-amber-400 border-0">{cellarStats.byPrice['2']}x 🍷🍷</Badge>
+                        )}
+                        {cellarStats.byPrice['3'] > 0 && (
+                          <Badge variant="outline" className="text-xs bg-orange-100 text-orange-700 dark:bg-orange-950/50 dark:text-orange-400 border-0">{cellarStats.byPrice['3']}x 🍷🍷🍷</Badge>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </CardContent>
               </Card>
@@ -392,6 +435,19 @@ const CellarPage = () => {
               </SelectContent>
             </Select>
             
+            {/* Price Category Filter */}
+            <Select value={priceFilter} onValueChange={setPriceFilter}>
+              <SelectTrigger className="w-[140px] md:w-[160px]" data-testid="cellar-price-filter">
+                <SelectValue placeholder={language === 'de' ? 'Preis' : 'Price'} />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">{language === 'de' ? 'Alle Preise' : language === 'en' ? 'All Prices' : 'Tous les Prix'}</SelectItem>
+                <SelectItem value="1">🍷 {language === 'de' ? 'bis €20' : language === 'en' ? 'up to €20' : 'jusqu\'à €20'}</SelectItem>
+                <SelectItem value="2">🍷🍷 €20-50</SelectItem>
+                <SelectItem value="3">🍷🍷🍷 {language === 'de' ? 'ab €50' : language === 'en' ? '€50+' : 'à partir de €50'}</SelectItem>
+              </SelectContent>
+            </Select>
+            
             <Dialog open={showScanDialog} onOpenChange={setShowScanDialog}>
               <DialogTrigger asChild>
                 <Button variant="outline" className="rounded-full text-sm" data-testid="scan-label-btn">
@@ -419,7 +475,14 @@ const CellarPage = () => {
                     </>
                   )}
                 </div>
-                <input ref={scanInputRef} type="file" accept="image/*" capture="environment" className="hidden" onChange={(e) => handleImageUpload(e, true)} />
+                <input 
+                  ref={scanInputRef} 
+                  type="file" 
+                  accept="image/jpeg,image/png,image/heic,image/heif,image/*" 
+                  capture="environment" 
+                  className="hidden" 
+                  onChange={(e) => handleImageUpload(e, true)} 
+                />
               </DialogContent>
             </Dialog>
 
@@ -454,6 +517,32 @@ const CellarPage = () => {
                     <Input placeholder={t('cellar_quantity')} type="number" min={0} value={newWine.quantity} onChange={(e) => setNewWine({ ...newWine, quantity: e.target.value })} />
                   </div>
                   <Input placeholder={t('cellar_grape')} value={newWine.grape} onChange={(e) => setNewWine({ ...newWine, grape: e.target.value })} />
+                  
+                  {/* Price Category Selector */}
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium">
+                      {language === 'de' ? 'Preiskategorie' : language === 'en' ? 'Price Category' : 'Catégorie de Prix'}
+                    </label>
+                    <div className="flex gap-2">
+                      {['1', '2', '3'].map((cat) => (
+                        <button
+                          key={cat}
+                          type="button"
+                          onClick={() => setNewWine({ ...newWine, price_category: newWine.price_category === cat ? '' : cat })}
+                          className={`flex-1 p-3 rounded-lg border-2 transition-all text-center ${
+                            newWine.price_category === cat
+                              ? cat === '1' ? 'border-green-500 bg-green-50 dark:bg-green-950/30' 
+                                : cat === '2' ? 'border-amber-500 bg-amber-50 dark:bg-amber-950/30'
+                                : 'border-orange-500 bg-orange-50 dark:bg-orange-950/30'
+                              : 'border-border hover:border-primary/50'
+                          }`}
+                        >
+                          <div className="text-lg mb-1">{priceCategoryLabels[cat].emoji}</div>
+                          <div className="text-xs text-muted-foreground">{priceCategoryLabels[cat].label}</div>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
                   {newWine.description && (
                     <div className="bg-secondary/30 p-4 rounded-md border border-border">
                       <label className="text-sm font-medium mb-2 block">Beschreibung</label>
@@ -513,7 +602,21 @@ const CellarPage = () => {
                 )}
                 <CardContent className="p-3 md:p-4">
                   <div className="flex items-start justify-between mb-2">
-                    <Badge className={`${getWineTypeBadgeClass(wine.type)} border-0 text-xs`}>{getWineTypeLabel(wine.type)}</Badge>
+                    <div className="flex flex-wrap gap-1">
+                      <Badge className={`${getWineTypeBadgeClass(wine.type)} border-0 text-xs`}>{getWineTypeLabel(wine.type)}</Badge>
+                      {wine.price_category && (
+                        <Badge 
+                          variant="outline" 
+                          className={`text-xs border-0 ${
+                            wine.price_category === '1' ? 'bg-green-100 text-green-700 dark:bg-green-950/50 dark:text-green-400' 
+                              : wine.price_category === '2' ? 'bg-amber-100 text-amber-700 dark:bg-amber-950/50 dark:text-amber-400'
+                              : 'bg-orange-100 text-orange-700 dark:bg-orange-950/50 dark:text-orange-400'
+                          }`}
+                        >
+                          {priceCategoryLabels[wine.price_category]?.emoji}
+                        </Badge>
+                      )}
+                    </div>
                     <button onClick={() => handleToggleFavorite(wine.id)} className="text-muted-foreground hover:text-primary transition-colors" data-testid="favorite-btn">
                       <Star className={`h-4 md:h-5 w-4 md:w-5 ${wine.is_favorite ? 'fill-accent text-accent' : ''}`} />
                     </button>
@@ -637,6 +740,32 @@ const CellarPage = () => {
                     onChange={(e) => setEditingWine({ ...editingWine, grape: e.target.value })}
                     placeholder="z.B. Cabernet Sauvignon"
                   />
+                </div>
+                
+                {/* Price Category Selector in Edit Dialog */}
+                <div className="space-y-2">
+                  <label className="text-sm font-medium">
+                    {language === 'de' ? 'Preiskategorie' : language === 'en' ? 'Price Category' : 'Catégorie de Prix'}
+                  </label>
+                  <div className="flex gap-2">
+                    {['1', '2', '3'].map((cat) => (
+                      <button
+                        key={cat}
+                        type="button"
+                        onClick={() => setEditingWine({ ...editingWine, price_category: editingWine.price_category === cat ? '' : cat })}
+                        className={`flex-1 p-3 rounded-lg border-2 transition-all text-center ${
+                          editingWine.price_category === cat
+                            ? cat === '1' ? 'border-green-500 bg-green-50 dark:bg-green-950/30' 
+                              : cat === '2' ? 'border-amber-500 bg-amber-50 dark:bg-amber-950/30'
+                              : 'border-orange-500 bg-orange-50 dark:bg-orange-950/30'
+                            : 'border-border hover:border-primary/50'
+                        }`}
+                      >
+                        <div className="text-lg mb-1">{priceCategoryLabels[cat].emoji}</div>
+                        <div className="text-xs text-muted-foreground">{priceCategoryLabels[cat].label}</div>
+                      </button>
+                    ))}
+                  </div>
                 </div>
                 {editingWine.description && (
                   <div className="bg-secondary/30 p-4 rounded-md border border-border">

@@ -190,6 +190,7 @@ export const AuthProvider = ({ children }) => {
     login,
     logout,
     refreshUser,
+    refreshAuth: refreshUser, // Alias für AuthCallback
     getRemainingUsage,
     clearError: () => setError(null)
   };

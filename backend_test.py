@@ -4879,9 +4879,9 @@ def main():
             success = tester.run_public_wine_price_tags_tests_only()
             return 0 if success else 1
     
-    # Default: Run public wine database price tags tests as specified in review request
+    # Default: Run wine label scan tests as specified in review request
     tester = WinePairingAPITester()
-    success = tester.run_public_wine_price_tags_tests_only()
+    success = tester.run_wine_label_scan_tests()
     return 0 if success else 1
 
 if __name__ == "__main__":

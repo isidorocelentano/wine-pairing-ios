@@ -129,115 +129,73 @@ const CellarPage = () => {
           const ctx = canvas.getContext('2d');
           ctx.drawImage(img, 0, 0, width, height);
           
-          // Komprimiere als JPEG
+          // Komprimiere als JPEG - gibt Data URL zurück
           const compressedDataUrl = canvas.toDataURL('image/jpeg', quality);
+          // Extrahiere nur den Base64-Teil
           const base64Only = compressedDataUrl.split(',')[1];
           
           console.log(`Image compressed: ${file.size} bytes -> ~${Math.round(base64Only.length * 0.75)} bytes`);
           
-          resolve({ fullDataUrl: compressedDataUrl, base64Only });
+          resolve(base64Only);
         };
-        img.onerror = reject;
+        img.onerror = () => reject(new Error('Image load failed'));
         img.src = e.target.result;
       };
-      reader.onerror = reject;
+      reader.onerror = () => reject(new Error('FileReader failed'));
       reader.readAsDataURL(file);
     });
   };
 
   const handleImageUpload = async (e, isScan = false) => {
     const file = e.target.files?.[0];
-    console.log('handleImageUpload called, file:', file?.name, file?.type, file?.size);
+    if (!file) return;
     
-    if (!file) {
-      console.log('No file selected');
-      return;
-    }
+    console.log('File selected:', file.name, file.type, file.size, 'bytes');
     
-    // Zeige Lade-Indikator für Scan
     if (isScan) {
       setScanning(true);
     }
     
     try {
-      // Komprimiere das Bild (max 1200px Breite, 70% Qualität)
-      console.log('Compressing image...');
-      const { fullDataUrl, base64Only } = await compressImage(file, 1200, 0.7);
-      
-      console.log('Image compressed, base64 length:', base64Only.length);
+      // Komprimiere das Bild
+      const base64 = await compressImage(file, 1200, 0.7);
+      console.log('Compressed base64 length:', base64.length);
       
       if (isScan) {
-        // Für den Scan brauchen wir das vollständige Data-URL für die KI-Analyse
-        await handleScanLabel(fullDataUrl, base64Only);
+        handleScanLabel(base64);
       } else {
-        setNewWine({ ...newWine, image_base64: base64Only });
+        setNewWine({ ...newWine, image_base64: base64 });
       }
     } catch (err) {
-      console.error('Error processing image:', err);
+      console.error('Image processing error:', err);
       toast.error('Fehler beim Verarbeiten des Bildes');
-      if (isScan) {
-        setScanning(false);
-      }
+      if (isScan) setScanning(false);
     }
   };
 
-  const handleScanLabel = async (fullDataUrl, base64Only) => {
-    console.log('handleScanLabel called, base64 length:', base64Only?.length);
-    // setScanning wird bereits in handleImageUpload gesetzt
-    
+  const handleScanLabel = async (imageBase64) => {
+    // setScanning ist bereits true
     try {
-      console.log('Sending scan request to API...');
+      console.log('Sending to /api/scan-label, base64 length:', imageBase64.length);
       
-      // Sende das vollständige Data-URL für die KI-Bildanalyse
-      const response = await authAxios.post(`${API}/scan-label`, { image_base64: fullDataUrl });
+      // Sende NUR den reinen Base64-String (ohne data:image Prefix!)
+      const response = await authAxios.post(`${API}/scan-label`, { image_base64: imageBase64 });
       
-      console.log('Scan API Response status:', response.status);
-      console.log('Scan API Response data:', response.data);
+      console.log('Scan response:', response.data);
       
-      const scanData = response.data;
-      
-      if (!scanData) {
-        console.error('No scan data received');
-        toast.error('Keine Daten vom Scanner erhalten');
-        return;
-      }
-      
-      // Erstelle neuen State mit allen Scan-Daten
-      const updatedWine = {
-        name: scanData.name || '',
-        type: scanData.type || 'rot',
-        region: scanData.region || '',
-        year: scanData.year ? String(scanData.year) : '',
-        grape: scanData.grape || '',
-        description: '',
-        notes: scanData.notes || '',
-        image_base64: base64Only,
-        quantity: 1,
-        price_category: ''
-      };
-      
-      console.log('Setting newWine to:', updatedWine);
-      
-      // Zuerst Dialog schließen
+      setNewWine((prev) => ({
+        ...prev,
+        ...response.data,
+        year: response.data.year?.toString() || '',
+        image_base64: imageBase64,
+        quantity: typeof prev.quantity === 'number' ? prev.quantity : 1,
+      }));
       setShowScanDialog(false);
-      
-      // Dann State aktualisieren und Dialog öffnen im gleichen Batch
-      setNewWine(updatedWine);
       setShowAddDialog(true);
       toast.success(t('success_label_scanned'));
-      
     } catch (error) {
-      console.error('Scan error details:', {
-        message: error.message,
-        response: error.response?.data,
-        status: error.response?.status
-      });
-      
-      if (error.response?.status === 401) {
-        toast.error('Bitte melden Sie sich erneut an');
-      } else {
-        toast.error(t('error_general') + ': ' + (error.response?.data?.detail || error.message));
-      }
+      console.error('Scan error:', error.response?.data || error.message);
+      toast.error(error.response?.data?.detail || t('error_general'));
     } finally {
       setScanning(false);
     }

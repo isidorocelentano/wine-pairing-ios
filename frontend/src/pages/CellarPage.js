@@ -133,14 +133,26 @@ const CellarPage = () => {
     try {
       // Sende das vollständige Data-URL für die KI-Bildanalyse
       const response = await authAxios.post(`${API}/scan-label`, { image_base64: fullDataUrl });
-      setNewWine((prev) => ({
-        ...prev,
-        ...response.data,
-        year: response.data.year?.toString() || '',
-        // Speichere nur den Base64-Teil ohne Prefix
-        image_base64: base64Only,
-        quantity: typeof prev.quantity === 'number' ? prev.quantity : 1,
-      }));
+      
+      // Debug: Log response to see what we're getting
+      console.log('Scan API Response:', response.data);
+      
+      const scanData = response.data;
+      setNewWine((prev) => {
+        const updated = {
+          ...prev,
+          name: scanData.name || prev.name || '',
+          type: scanData.type || prev.type || 'rot',
+          region: scanData.region || prev.region || '',
+          year: scanData.year ? String(scanData.year) : prev.year || '',
+          grape: scanData.grape || prev.grape || '',
+          notes: scanData.notes || prev.notes || '',
+          image_base64: base64Only,
+          quantity: typeof prev.quantity === 'number' ? prev.quantity : 1,
+        };
+        console.log('Updated newWine state:', updated);
+        return updated;
+      });
       setShowScanDialog(false);
       setShowAddDialog(true);
       toast.success(t('success_label_scanned'));

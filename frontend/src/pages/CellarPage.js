@@ -201,14 +201,26 @@ const CellarPage = () => {
       
       console.log('Setting scanned wine:', scannedWine);
       
-      // Zuerst Scan-Dialog schließen
-      setShowScanDialog(false);
-      // Dann den neuen Wine-State setzen
-      setNewWine(scannedWine);
-      // Dann Add-Dialog öffnen
-      setShowAddDialog(true);
+      // Speichere in Ref für sofortigen Zugriff
+      scannedDataRef.current = scannedWine;
       
-      toast.success(t('success_label_scanned'));
+      // Schließe Scan-Dialog
+      setShowScanDialog(false);
+      
+      // Setze State und öffne Dialog mit Verzögerung für State-Update
+      setNewWine(scannedWine);
+      
+      // Warte kurz, damit React den State committen kann
+      setTimeout(() => {
+        // Falls State noch nicht aktualisiert, verwende Ref
+        if (scannedDataRef.current) {
+          setNewWine(scannedDataRef.current);
+        }
+        setShowAddDialog(true);
+        toast.success(t('success_label_scanned'));
+        scannedDataRef.current = null;
+      }, 100);
+      
     } catch (error) {
       console.error('Scan error:', error.response?.data || error.message);
       toast.error(error.response?.data?.detail || t('error_general'));

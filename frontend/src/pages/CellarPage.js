@@ -533,7 +533,14 @@ const CellarPage = () => {
                     </>
                   )}
                 </div>
-                <input ref={scanInputRef} type="file" accept="image/*" capture="environment" className="hidden" onChange={(e) => handleImageUpload(e, true)} />
+                <input 
+                  ref={scanInputRef} 
+                  type="file" 
+                  accept="image/jpeg,image/png,image/heic,image/heif,image/*" 
+                  capture="environment" 
+                  className="hidden" 
+                  onChange={(e) => handleImageUpload(e, true)} 
+                />
               </DialogContent>
             </Dialog>
 

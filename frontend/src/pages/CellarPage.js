@@ -101,50 +101,91 @@ const CellarPage = () => {
 
   const handleImageUpload = (e, isScan = false) => {
     const file = e.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        const base64 = reader.result.split(',')[1];
-        if (isScan) {
-          handleScanLabel(base64);
-        } else {
-          setNewWine({ ...newWine, image_base64: base64 });
-        }
-      };
-      reader.readAsDataURL(file);
+    if (!file) {
+      console.log('No file selected');
+      return;
     }
+    
+    console.log('File selected:', file.name, file.size);
+    
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      const base64 = reader.result.split(',')[1];
+      console.log('Base64 ready, length:', base64?.length);
+      
+      if (isScan) {
+        handleScanLabel(base64);
+      } else {
+        setNewWine({ ...newWine, image_base64: base64 });
+      }
+    };
+    reader.onerror = (err) => {
+      console.error('FileReader error:', err);
+      toast.error('Fehler beim Lesen der Datei');
+    };
+    reader.readAsDataURL(file);
   };
 
   const handleScanLabel = async (imageBase64) => {
+    console.log('handleScanLabel called');
     setScanning(true);
+    
+    // Zeige sofort das Bild im Dialog
+    setNewWine(prev => ({ ...prev, image_base64: imageBase64 }));
+    
     try {
-      console.log('Scan starting, base64 length:', imageBase64?.length);
-      const response = await authAxios.post(`${API}/scan-label`, { image_base64: imageBase64 });
-      console.log('Scan response:', response.data);
-      setNewWine((prev) => ({
+      // Hole Token direkt aus localStorage
+      const token = localStorage.getItem('wine_auth_token');
+      console.log('Token available:', !!token);
+      
+      const headers = {
+        'Content-Type': 'application/json',
+        ...(token ? { 'Authorization': `Bearer ${token}` } : {})
+      };
+      
+      console.log('Sending scan request...');
+      const response = await fetch(`${API}/scan-label`, {
+        method: 'POST',
+        headers,
+        credentials: 'include',
+        body: JSON.stringify({ image_base64: imageBase64 })
+      });
+      
+      console.log('Response status:', response.status);
+      
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error('Scan failed:', response.status, errorText);
+        toast.error(`Scan fehlgeschlagen: ${response.status}`);
+        setShowScanDialog(false);
+        setShowAddDialog(true);
+        return;
+      }
+      
+      const data = await response.json();
+      console.log('Scan data:', data);
+      
+      setNewWine(prev => ({
         ...prev,
-        ...response.data,
-        year: response.data.year?.toString() || '',
+        name: data.name || '',
+        type: data.type || 'rot',
+        region: data.region || '',
+        year: data.year?.toString() || '',
+        grape: data.grape || '',
+        notes: data.notes || '',
         image_base64: imageBase64,
-        quantity: typeof prev.quantity === 'number' ? prev.quantity : 1,
+        quantity: prev.quantity || 1,
       }));
+      
       setShowScanDialog(false);
       setShowAddDialog(true);
       toast.success(t('success_label_scanned'));
+      
     } catch (error) {
       console.error('Scan error:', error);
-      // Zeige spezifische Fehlermeldung
-      const errorMsg = error.response?.status === 401 
-        ? 'Bitte erneut anmelden' 
-        : error.response?.data?.detail || error.message || t('error_general');
-      toast.error(errorMsg);
-      
-      // Bei 401 trotzdem Dialog öffnen mit dem Bild
-      if (error.response?.status === 401) {
-        setNewWine((prev) => ({ ...prev, image_base64: imageBase64 }));
-        setShowScanDialog(false);
-        setShowAddDialog(true);
-      }
+      toast.error('Scan fehlgeschlagen: ' + error.message);
+      setShowScanDialog(false);
+      setShowAddDialog(true);
     } finally {
       setScanning(false);
     }

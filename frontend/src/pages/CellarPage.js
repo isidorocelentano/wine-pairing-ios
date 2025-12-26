@@ -13,10 +13,18 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useAuth } from "@/contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { API_URL, API } from "@/config/api";
+import { getAuthHeaders } from "@/contexts/AuthContext";
 
 // Axios instance mit credentials für auth
 const authAxios = axios.create({
   withCredentials: true
+});
+
+// Interceptor um den Token-Header bei jedem Request hinzuzufügen
+authAxios.interceptors.request.use((config) => {
+  const authHeaders = getAuthHeaders();
+  config.headers = { ...config.headers, ...authHeaders };
+  return config;
 });
 
 const CellarPage = () => {

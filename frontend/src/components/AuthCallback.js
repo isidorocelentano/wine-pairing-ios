@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Loader2 } from 'lucide-react';
 import { API_URL } from '@/config/api';
+import { useAuth } from '@/contexts/AuthContext';
 
 /**
  * AuthCallback Component
@@ -13,8 +14,8 @@ import { API_URL } from '@/config/api';
  */
 const AuthCallback = () => {
   const navigate = useNavigate();
-  const location = useLocation();
   const hasProcessed = useRef(false);
+  const { refreshAuth } = useAuth();
 
   useEffect(() => {
     // Prevent double processing (StrictMode)
@@ -61,23 +62,19 @@ const AuthCallback = () => {
         if (userData.token) {
           try {
             localStorage.setItem('wine_auth_token', userData.token);
+            console.log('Token stored in localStorage');
           } catch (e) {
             console.warn('Could not store token in localStorage');
           }
         }
 
-        // Clear the hash from URL and redirect to dashboard/pairing
-        // Extract the intended redirect path from the current URL (before the hash)
-        const currentPath = window.location.pathname;
-        const redirectTo = currentPath !== '/' && currentPath !== '/login' && currentPath !== '/auth/callback' 
-          ? currentPath 
-          : '/pairing';
+        // Refresh auth context to pick up the new token
+        if (refreshAuth) {
+          await refreshAuth();
+        }
 
-        // Navigate with user data to prevent unnecessary auth check
-        navigate(redirectTo, { 
-          replace: true,
-          state: { user: userData }
-        });
+        // Navigate to cellar or pairing page
+        navigate('/pairing', { replace: true });
 
       } catch (error) {
         console.error('Auth callback error:', error);
@@ -89,7 +86,7 @@ const AuthCallback = () => {
     };
 
     processAuth();
-  }, [navigate]);
+  }, [navigate, refreshAuth]);
 
   return (
     <div className="min-h-screen flex items-center justify-center">

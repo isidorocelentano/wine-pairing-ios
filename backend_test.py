@@ -4108,6 +4108,9 @@ class WinePairingAPITester:
         # Basic API tests
         self.test_root_endpoint()
         
+        # Test wine label scanning (focus of this test run)
+        self.run_wine_label_scan_tests()
+        
         # Wine CRUD operations
         self.test_get_wines_empty()
         self.test_create_wine()

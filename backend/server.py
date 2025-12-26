@@ -1778,8 +1778,13 @@ async def sitemap_kompass():
 # ===================== LABEL SCANNER =====================
 
 @api_router.post("/scan-label", response_model=LabelScanResponse)
-async def scan_wine_label(request: LabelScanRequest):
-    """Scan a wine label image and extract information"""
+async def scan_wine_label(request: LabelScanRequest, http_request: Request):
+    """Scan a wine label image and extract information (requires authentication)"""
+    # Authentication check - must be logged in to use scan feature
+    user = await get_current_user(http_request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Bitte melden Sie sich an, um die Scan-Funktion zu nutzen")
+    
     try:
         # Validate base64 image data first
         if not request.image_base64 or not request.image_base64.strip():

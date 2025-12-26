@@ -138,24 +138,35 @@ const CellarPage = () => {
       console.log('Scan API Response:', response.data);
       
       const scanData = response.data;
-      setNewWine((prev) => {
-        const updated = {
-          ...prev,
-          name: scanData.name || prev.name || '',
-          type: scanData.type || prev.type || 'rot',
-          region: scanData.region || prev.region || '',
-          year: scanData.year ? String(scanData.year) : prev.year || '',
-          grape: scanData.grape || prev.grape || '',
-          notes: scanData.notes || prev.notes || '',
-          image_base64: base64Only,
-          quantity: typeof prev.quantity === 'number' ? prev.quantity : 1,
-        };
-        console.log('Updated newWine state:', updated);
-        return updated;
-      });
+      
+      // Erstelle neuen State mit allen Scan-Daten
+      const updatedWine = {
+        name: scanData.name || '',
+        type: scanData.type || 'rot',
+        region: scanData.region || '',
+        year: scanData.year ? String(scanData.year) : '',
+        grape: scanData.grape || '',
+        description: '',
+        notes: scanData.notes || '',
+        image_base64: base64Only,
+        quantity: 1,
+        price_category: ''
+      };
+      
+      console.log('Setting newWine to:', updatedWine);
+      
+      // Zuerst Dialog schließen
       setShowScanDialog(false);
-      setShowAddDialog(true);
-      toast.success(t('success_label_scanned'));
+      
+      // Dann State aktualisieren
+      setNewWine(updatedWine);
+      
+      // Dann Add Dialog öffnen (mit kleiner Verzögerung für State-Update)
+      setTimeout(() => {
+        setShowAddDialog(true);
+        toast.success(t('success_label_scanned'));
+      }, 100);
+      
     } catch (error) {
       console.error('Scan error:', error);
       toast.error(t('error_general'));

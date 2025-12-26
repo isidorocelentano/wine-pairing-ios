@@ -1839,6 +1839,8 @@ WICHTIG:
         user_message = UserMessage(text=prompt, file_contents=[image_content])
         response = await chat.send_message(user_message)
         
+        logger.info(f"Label scan: AI response received, length: {len(response) if response else 0}")
+        
         # Check if response is None or empty
         if not response or not response.strip():
             logger.warning("Label scan: Received empty or None response from AI")
@@ -1851,9 +1853,12 @@ WICHTIG:
         # Extract JSON from response - try multiple patterns
         json_match = re.search(r'\{[^{}]*\}', response, re.DOTALL)
         
+        logger.info(f"Label scan: JSON found: {bool(json_match)}")
+        
         if json_match:
             try:
                 data = json.loads(json_match.group())
+                logger.info(f"Label scan: Parsed data: {data}")
                 # Ensure required fields have valid defaults
                 name = data.get('name') or 'Unbekannter Wein'
                 wine_type = data.get('type') or 'rot'

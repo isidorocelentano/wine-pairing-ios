@@ -158,14 +158,10 @@ const CellarPage = () => {
       // Zuerst Dialog schließen
       setShowScanDialog(false);
       
-      // Dann State aktualisieren
+      // Dann State aktualisieren und Dialog öffnen im gleichen Batch
       setNewWine(updatedWine);
-      
-      // Dann Add Dialog öffnen (mit kleiner Verzögerung für State-Update)
-      setTimeout(() => {
-        setShowAddDialog(true);
-        toast.success(t('success_label_scanned'));
-      }, 100);
+      setShowAddDialog(true);
+      toast.success(t('success_label_scanned'));
       
     } catch (error) {
       console.error('Scan error:', error);

@@ -826,7 +826,7 @@ const PairingPage = () => {
                     // Avoid
                     if (trimmed.match(/\*\*⚠️\s*VERMEIDE|AVOID|À ÉVITER/i)) {
                       currentSection = 'avoid';
-                      avoidSection = { title: language === 'de' ? '⚠️ Vermeide' : language === 'en' ? '⚠️ Avoid' : '⚠️ À Éviter', content: '' };
+                      avoidSection = { title: language === 'de' ? '💡 Eher weniger geeignet' : language === 'en' ? '💡 Less Suitable' : '💡 Moins Adapté', content: '' };
                       return;
                     }
                     if (currentSection === 'avoid' && trimmed && !trimmed.startsWith('**')) {

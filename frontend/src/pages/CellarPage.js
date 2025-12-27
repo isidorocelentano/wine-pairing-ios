@@ -162,6 +162,9 @@ const CellarPage = () => {
 
   const handleScanLabel = async (imageBase64) => {
     // setScanning bereits in handleImageUpload gesetzt
+    // Setze Bild SOFORT, damit es im Dialog sichtbar ist
+    setNewWine((prev) => ({ ...prev, image_base64: imageBase64 }));
+    
     try {
       const response = await authAxios.post(`${API}/scan-label`, { image_base64: imageBase64 });
       setNewWine((prev) => ({

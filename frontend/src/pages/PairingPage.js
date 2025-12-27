@@ -890,6 +890,13 @@ const PairingPage = () => {
                               <span>💡</span> {avoidSection.title.replace('💡 ', '')}
                             </h4>
                             <p className="text-muted-foreground leading-relaxed">{avoidSection.content}</p>
+                            <p className="text-sm text-amber-600/80 dark:text-amber-400/70 mt-3 italic">
+                              {language === 'de' 
+                                ? '💧 Tipp: Ein Schluck Wasser oder ein Stück Brot zwischendurch neutralisiert den Gaumen – so schmeckt jeder Wein wieder frisch!'
+                                : language === 'en'
+                                ? '💧 Tip: A sip of water or a piece of bread in between neutralizes the palate – so every wine tastes fresh again!'
+                                : '💧 Astuce: Une gorgée d\'eau ou un morceau de pain entre les deux neutralise le palais – ainsi chaque vin a de nouveau un goût frais!'}
+                            </p>
                           </CardContent>
                         </Card>
                       )}

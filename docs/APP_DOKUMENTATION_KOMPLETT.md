@@ -394,10 +394,28 @@ Jeder User hat seinen **eigenen privaten Weinkeller**. Vollständige User-Isolat
 
 **Features:**
 - Weine manuell hinzufügen
-- **Etiketten-Scan** (KI erkennt Wein aus Foto)
+- **Etiketten-Scan** (KI erkennt Wein aus Foto) - **NEU in v1.8: iOS Safari Fix!**
 - Bearbeiten & Löschen
 - Mengenverwaltung (+/-)
 - Favoriten markieren
+
+**🆕 Etiketten-Scan Technische Details (v1.8.0):**
+```
+Problem: iOS Safari blockiert still große fetch() Anfragen (>1-2MB)
+Lösung:  Bildkomprimierung vor Upload
+
+Komprimierung:
+- Max. Größe: 800x800 Pixel
+- JPEG Qualität: 50%
+- Ergebnis: ~50-150KB statt 4-11MB
+
+Code-Flow:
+1. User wählt Foto → FileReader.readAsDataURL()
+2. Image in Canvas laden → skalieren
+3. canvas.toDataURL('image/jpeg', 0.5)
+4. fetch() mit komprimiertem Base64
+5. Response → Form-Felder ausfüllen
+```
 - Filter nach Typ & Verfügbarkeit
 - **🆕 Preiskategorie-System (v1.7):**
   - 🍷 **Alltags-Genuss** (bis €20)

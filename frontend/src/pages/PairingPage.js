@@ -504,28 +504,35 @@ const PairingPage = () => {
               </button>
               
               {showRestaurantMode && (
-                <div className="space-y-2 animate-in slide-in-from-top-2 duration-200">
-                  <label className="text-sm text-muted-foreground block">
-                    {language === 'de' ? 'Welche Weine stehen auf der Karte? (z.B. "Bordeaux 2019, Chianti Classico, Grüner Veltliner")' : 
-                     language === 'en' ? 'What wines are on the menu? (e.g., "Bordeaux 2019, Chianti Classico, Grüner Veltliner")' : 
-                     'Quels vins sont sur la carte? (ex: "Bordeaux 2019, Chianti Classico, Grüner Veltliner")'}
+                <div className="space-y-3 animate-in slide-in-from-top-2 duration-200 p-4 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl border-2 border-primary/30 shadow-sm">
+                  <p className="text-sm text-muted-foreground">
+                    {language === 'de' 
+                      ? 'Such dir einfach 3-5 Weine aus der Karte aus, die dich preislich und stilistisch ansprechen – den Rest übernehme ich! 🍷' 
+                      : language === 'en' 
+                      ? 'Just pick 3-5 wines from the menu that appeal to you in price and style – I\'ll take care of the rest! 🍷' 
+                      : 'Choisissez simplement 3-5 vins de la carte qui vous plaisent en termes de prix et de style – je m\'occupe du reste! 🍷'}
+                  </p>
+                  <label className="text-xs font-medium text-primary/80 block uppercase tracking-wide">
+                    {language === 'de' ? 'Deine Weinauswahl:' : 
+                     language === 'en' ? 'Your wine selection:' : 
+                     'Votre sélection de vins:'}
                   </label>
                   <textarea
                     value={availableWines}
                     onChange={(e) => setAvailableWines(e.target.value)}
-                    placeholder={language === 'de' ? 'Weine von der Karte eingeben...' : 
-                                 language === 'en' ? 'Enter wines from the menu...' : 
-                                 'Entrez les vins de la carte...'}
-                    className="w-full min-h-[80px] p-3 text-sm rounded-lg border border-primary/30 bg-primary/5 focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-muted-foreground/50 resize-none"
+                    placeholder={language === 'de' ? 'z.B. Bordeaux 2019, Chianti Classico, Grüner Veltliner...' : 
+                                 language === 'en' ? 'e.g., Bordeaux 2019, Chianti Classico, Grüner Veltliner...' : 
+                                 'ex: Bordeaux 2019, Chianti Classico, Grüner Veltliner...'}
+                    className="w-full min-h-[100px] p-4 text-base rounded-xl border-2 border-primary/40 bg-white dark:bg-background focus:border-primary focus:ring-2 focus:ring-primary/30 placeholder:text-muted-foreground/50 resize-none shadow-inner"
                     data-testid="available-wines-input"
                   />
                   {availableWines.trim() && (
-                    <div className="flex items-center gap-2 text-xs text-primary bg-primary/10 px-3 py-2 rounded-lg">
-                      <span>🍷</span>
+                    <div className="flex items-center gap-2 text-sm text-primary font-medium bg-primary/15 px-4 py-3 rounded-lg">
+                      <span>✨</span>
                       <span>
-                        {language === 'de' ? 'Restaurant-Modus aktiv: Du erhältst eine konkrete Empfehlung aus deiner Weinkarte!' : 
-                         language === 'en' ? 'Restaurant mode active: You\'ll get a specific recommendation from your wine list!' : 
-                         'Mode restaurant actif: Vous recevrez une recommandation spécifique de votre carte!'}
+                        {language === 'de' ? 'Perfekt! Du erhältst jetzt eine persönliche Empfehlung aus deiner Auswahl.' : 
+                         language === 'en' ? 'Perfect! You\'ll now receive a personal recommendation from your selection.' : 
+                         'Parfait! Vous recevrez maintenant une recommandation personnelle de votre sélection.'}
                       </span>
                     </div>
                   )}

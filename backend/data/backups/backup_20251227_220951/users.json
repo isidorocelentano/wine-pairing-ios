@@ -381,11 +381,11 @@
     "usage": {
       "pairing_requests_today": 0,
       "chat_messages_today": 0,
-      "last_usage_date": "2025-12-26"
+      "last_usage_date": "2025-12-27"
     },
     "created_at": "2025-12-26T15:39:58.550000",
-    "last_login": "2025-12-26T15:40:22.492000",
-    "login_count": 2
+    "last_login": "2025-12-27T06:11:29.308000",
+    "login_count": 9
   },
   {
     "user_id": "user_6ea5a65056b1",
@@ -406,5 +406,25 @@
     "created_at": "2025-12-26T16:29:44.283000",
     "last_login": "2025-12-26T16:29:44.283000",
     "login_count": 1
+  },
+  {
+    "user_id": "user_e3a1204f1f28",
+    "email": "scantest@test.com",
+    "name": "ScanTest",
+    "password_hash": "$2b$12$GI8220aE.T7WI1fMIHnzR.rOXo2cJfZzRF4utYjmjY/LMsULsDkvK",
+    "picture": null,
+    "plan": "basic",
+    "subscription_id": null,
+    "subscription_status": null,
+    "subscription_end_date": null,
+    "stripe_customer_id": null,
+    "usage": {
+      "pairing_requests_today": 0,
+      "chat_messages_today": 0,
+      "last_usage_date": null
+    },
+    "created_at": "2025-12-26T17:54:35.278000",
+    "last_login": "2025-12-26T23:27:54.435000",
+    "login_count": 9
   }
 ]

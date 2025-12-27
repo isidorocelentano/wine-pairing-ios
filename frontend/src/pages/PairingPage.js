@@ -884,9 +884,9 @@ const PairingPage = () => {
                       
                       {/* Avoid Section */}
                       {avoidSection && avoidSection.content && (
-                        <Card className="bg-red-50/50 dark:bg-red-950/20 border-red-200 dark:border-red-800">
+                        <Card className="bg-amber-50/50 dark:bg-amber-950/20 border-amber-200 dark:border-amber-800">
                           <CardContent className="p-5">
-                            <h4 className="font-semibold text-red-700 dark:text-red-400 mb-2 flex items-center gap-2">
+                            <h4 className="font-semibold text-amber-700 dark:text-amber-400 mb-2 flex items-center gap-2">
                               <span>💡</span> {avoidSection.title.replace('💡 ', '')}
                             </h4>
                             <p className="text-muted-foreground leading-relaxed">{avoidSection.content}</p>

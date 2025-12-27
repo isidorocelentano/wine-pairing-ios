@@ -23,6 +23,21 @@
 
 ## 🆕 ÄNDERUNGSHISTORIE
 
+### Version 1.8.1 (27.12.2025) - Restaurant-Modus UI & UX-Verbesserungen
+
+**🍽️ Restaurant-Modus verbessert:**
+- ✅ **Neuer Einleitungstext:** "Such dir einfach 3-5 Weine aus der Karte aus, die dich preislich und stilistisch ansprechen – den Rest übernehme ich!"
+- ✅ **Hervorgehobenes Design:** Gradient-Box mit stärkerem Rahmen
+- ✅ **Größeres Eingabefeld:** 100px Höhe, bessere Lesbarkeit
+- ✅ **Weißer Hintergrund:** Im Textfeld für besseren Kontrast
+- ✅ **Verbesserte Bestätigung:** "Perfekt! Du erhältst jetzt eine persönliche Empfehlung aus deiner Auswahl."
+
+**💡 "Weniger geeignet" Sektion verbessert:**
+- ✅ **Freundlicherer Titel:** "Eher weniger geeignet" statt "Vermeide"
+- ✅ **Sanftere Farben:** Amber statt Rot (weniger warnend)
+- ✅ **Glühbirne-Emoji:** 💡 statt ⚠️ (Tipp statt Warnung)
+- ✅ **Neutralisierungs-Tipp:** "Ein Schluck Wasser oder ein Stück Brot zwischendurch neutralisiert den Gaumen – so schmeckt jeder Wein wieder frisch!"
+
 ### Version 1.8.0 (27.12.2025) - Scan-Fix & SEO-Optimierung
 
 **📱 Etiketten-Scan Fix für iOS Safari:**

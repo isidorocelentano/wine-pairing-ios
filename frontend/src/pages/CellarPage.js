@@ -99,92 +99,82 @@ const CellarPage = () => {
     fetchWines();
   }, [fetchWines]);
 
-  // Komprimiert Bild für iOS Safari (max 1024x1024, 60% Qualität)
-  const compressImage = (file) => {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        const img = new Image();
-        img.onload = () => {
-          const canvas = document.createElement('canvas');
-          const MAX_SIZE = 1024;
-          let { width, height } = img;
-          
-          // Skaliere auf max 1024x1024
-          if (width > height && width > MAX_SIZE) {
-            height = (height * MAX_SIZE) / width;
-            width = MAX_SIZE;
-          } else if (height > MAX_SIZE) {
-            width = (width * MAX_SIZE) / height;
-            height = MAX_SIZE;
-          }
-          
-          canvas.width = width;
-          canvas.height = height;
-          const ctx = canvas.getContext('2d');
-          ctx.drawImage(img, 0, 0, width, height);
-          
-          // 60% JPEG Qualität für kleine Dateigröße
-          const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.6);
-          const base64 = compressedDataUrl.split(',')[1];
-          resolve(base64);
-        };
-        img.onerror = () => reject(new Error('Bild konnte nicht geladen werden'));
-        img.src = e.target.result;
+  // Einfache Bildkomprimierung für iOS Safari
+  const compressImageSimple = (dataUrl) => {
+    return new Promise((resolve) => {
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        const MAX = 800;
+        let w = img.width;
+        let h = img.height;
+        if (w > h && w > MAX) { h = h * MAX / w; w = MAX; }
+        else if (h > MAX) { w = w * MAX / h; h = MAX; }
+        canvas.width = w;
+        canvas.height = h;
+        canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+        resolve(canvas.toDataURL('image/jpeg', 0.5).split(',')[1]);
       };
-      reader.onerror = () => reject(new Error('Datei konnte nicht gelesen werden'));
-      reader.readAsDataURL(file);
+      img.src = dataUrl;
     });
   };
 
-  const handleImageUpload = async (e, isScan = false) => {
+  const handleImageUpload = (e, isScan = false) => {
     const file = e.target.files?.[0];
     if (!file) return;
     
-    try {
-      if (isScan) {
-        setScanning(true);
+    const reader = new FileReader();
+    reader.onload = async (event) => {
+      try {
+        const base64 = await compressImageSimple(event.target.result);
+        
+        if (isScan) {
+          // Setze Bild sofort
+          setNewWine(prev => ({ ...prev, image_base64: base64 }));
+          setScanning(true);
+          
+          // API Call
+          try {
+            const token = localStorage.getItem('wine_auth_token');
+            const resp = await fetch(`${API}/scan-label`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                ...(token ? { 'Authorization': `Bearer ${token}` } : {})
+              },
+              body: JSON.stringify({ image_base64: base64 })
+            });
+            
+            if (resp.ok) {
+              const data = await resp.json();
+              setNewWine(prev => ({
+                ...prev,
+                name: data.name || '',
+                type: data.type || 'rot',
+                region: data.region || '',
+                year: data.year?.toString() || '',
+                grape: data.grape || '',
+                notes: data.notes || '',
+              }));
+              toast.success(t('success_label_scanned'));
+            } else {
+              toast.error('Scan fehlgeschlagen');
+            }
+          } catch (err) {
+            toast.error('Scan fehlgeschlagen');
+          }
+          
+          setScanning(false);
+          setShowScanDialog(false);
+          setShowAddDialog(true);
+        } else {
+          setNewWine(prev => ({ ...prev, image_base64: base64 }));
+        }
+      } catch (err) {
+        toast.error('Fehler beim Verarbeiten');
       }
-      
-      // Komprimiere Bild für iOS Safari
-      const base64 = await compressImage(file);
-      
-      if (isScan) {
-        handleScanLabel(base64);
-      } else {
-        setNewWine({ ...newWine, image_base64: base64 });
-      }
-    } catch (err) {
-      toast.error('Fehler beim Verarbeiten des Bildes');
-      if (isScan) setScanning(false);
-    }
-  };
-
-  const handleScanLabel = async (imageBase64) => {
-    // setScanning bereits in handleImageUpload gesetzt
-    // Setze Bild SOFORT, damit es im Dialog sichtbar ist
-    setNewWine((prev) => ({ ...prev, image_base64: imageBase64 }));
-    
-    try {
-      const response = await authAxios.post(`${API}/scan-label`, { image_base64: imageBase64 });
-      setNewWine((prev) => ({
-        ...prev,
-        ...response.data,
-        year: response.data.year?.toString() || '',
-        image_base64: imageBase64,
-        quantity: typeof prev.quantity === 'number' ? prev.quantity : 1,
-      }));
-      setShowScanDialog(false);
-      setShowAddDialog(true);
-      toast.success(t('success_label_scanned'));
-    } catch (error) {
-      // Bei Fehler trotzdem Dialog öffnen mit dem Bild
-      setShowScanDialog(false);
-      setShowAddDialog(true);
-      toast.error('Scan fehlgeschlagen - bitte Daten manuell eingeben');
-    } finally {
-      setScanning(false);
-    }
+    };
+    reader.readAsDataURL(file);
   };
 
   const handleAddWine = async () => {

@@ -178,7 +178,10 @@ const CellarPage = () => {
       setShowAddDialog(true);
       toast.success(t('success_label_scanned'));
     } catch (error) {
-      toast.error(t('error_general'));
+      // Bei Fehler trotzdem Dialog öffnen mit dem Bild
+      setShowScanDialog(false);
+      setShowAddDialog(true);
+      toast.error('Scan fehlgeschlagen - bitte Daten manuell eingeben');
     } finally {
       setScanning(false);
     }

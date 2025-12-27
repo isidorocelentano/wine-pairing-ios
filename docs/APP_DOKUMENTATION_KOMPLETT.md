@@ -1,7 +1,7 @@
 # 📖 WINE PAIRING APP - Vollständige Dokumentation
 
-**Stand:** 24. Dezember 2025  
-**Version:** 1.7.1 (Genuss-Philosophie & Auth-Update)  
+**Stand:** 27. Dezember 2025  
+**Version:** 1.8.0 (Scan-Fix & SEO-Optimierung)  
 **Domain:** https://wine-pairing.online
 
 ---
@@ -22,6 +22,36 @@
 ---
 
 ## 🆕 ÄNDERUNGSHISTORIE
+
+### Version 1.8.0 (27.12.2025) - Scan-Fix & SEO-Optimierung
+
+**📱 Etiketten-Scan Fix für iOS Safari:**
+- ✅ **Problem gelöst:** iOS Safari blockierte große Bild-Uploads still
+- ✅ **Bildkomprimierung:** Max 800x800 Pixel, 50% JPEG Qualität
+- ✅ **Vereinfachter Code:** Keine komplexen async-Funktionen mehr
+- ✅ **Sofortige Bild-Anzeige:** Bild wird vor API-Call angezeigt
+- ✅ **Fehlerbehandlung:** Toast-Nachrichten bei Erfolg/Fehler
+
+**🔍 SEO-Optimierung für Google & KI-Suchmaschinen:**
+- ✅ **Neuer Title:** "Wein-Pairing leicht gemacht – Genuss ohne Regeln"
+- ✅ **Neue Meta-Description:** "Genuss steht an erster Stelle. Entdecke spannende Wein-Kombinationen zu deinem Lieblingsessen."
+- ✅ **Haupt-Keywords:** Wein-Pairing, Wein zu Essen, welcher Wein passt, Wein-Empfehlung KI
+- ✅ **Neben-Keywords:** Geschmacks-Balance, KI Sommelier, digitaler Sommelier, Online Weinberater
+- ✅ **KI-Suchmaschinen-Optimierung:**
+  - FAQ-Schema (Welcher Wein passt zu Pasta/Fisch?)
+  - HowTo-Schema (3 Schritte zum perfekten Pairing)
+  - Abstract Meta-Tag für Perplexity, ChatGPT Search, Google SGE
+- ✅ **Seitenspezifische SEO:** Pairing, Cellar, Wein-DB, Tipp der Woche
+
+**💡 Tipp der Woche Feature:**
+- ✅ **Backend:** Automatische Generierung von 4 Wochen-Tipps beim Start
+- ✅ **Frontend:** Neue Seite /tipp-der-woche mit Archiv
+- ✅ **API:** GET /api/weekly-tips, GET /api/weekly-tips/archive
+
+**🔐 Auth-Verbesserungen:**
+- ✅ **Google Login Fix:** refreshAuth() nach Google OAuth
+- ✅ **AuthContext:** Neuer refreshAuth Alias für AuthCallback
+- ✅ **Token-Handling:** Bessere localStorage Integration
 
 ### Version 1.7.1 (24.12.2025) - Genuss-Philosophie & UI-Optimierungen
 

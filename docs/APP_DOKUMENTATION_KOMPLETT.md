@@ -773,3 +773,33 @@ Upgrade auf Pro-Plan via Stripe.
 
 *Dokumentation erstellt: 17.12.2025*  
 *Letzte Aktualisierung: 17.12.2025*
+
+### Version 1.8.2 (28.12.2025) - Wine Save Bug Fix
+
+**🐛 Critical Bug Fix - Wine Save auf iOS Safari:**
+- ✅ **Problem gelöst:** "Ein Fehler ist aufgetreten" beim Speichern nach Scan
+- ✅ **Root Cause:** `authAxios` Interceptor funktionierte nicht zuverlässig auf iOS Safari
+- ✅ **Lösung:** Native `fetch` API für alle Weinkeller-Operationen
+- ✅ **Verbesserte Fehlerbehandlung:** Spezifische Fehlermeldungen statt generischer Fehler
+- ✅ **Entfernte Abhängigkeit:** Axios aus CellarPage.js entfernt
+
+**Geänderte Funktionen in CellarPage.js:**
+- `handleAddWine()` - Wein hinzufügen
+- `fetchWines()` - Weine laden
+- `handleQuickQuantityChange()` - Menge ändern
+- `handleToggleFavorite()` - Favorit umschalten
+- `handleDeleteWine()` - Wein löschen
+- `handleUpdateWine()` - Wein bearbeiten
+
+**Technische Details:**
+```
+Vorher: authAxios.post(`${API}/wines`, data)
+Nachher: fetch(`${API}/wines`, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${localStorage.getItem('wine_auth_token')}`
+  },
+  body: JSON.stringify(data)
+})
+```

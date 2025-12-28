@@ -5137,6 +5137,9 @@ class WinePairingAPITester:
         
         user1_wine_id = response.get('id')
         
+        # Create a separate session for the second user to avoid cookie contamination
+        second_user_session = requests.Session()
+        
         # Register and login a second user
         timestamp = int(datetime.now().timestamp())
         user2_email = f"winetest2_{timestamp}@test.com"
@@ -5148,46 +5151,52 @@ class WinePairingAPITester:
             "name": "Wine Test User 2"
         }
         
-        reg_success, reg_response = self.make_request('POST', 'auth/register', data=register_data, expected_status=200)
-        if not reg_success:
-            self.log_test("Wine User Isolation", False, f"Failed to register second user: {reg_response}")
+        # Use the separate session for second user registration
+        url = f"{self.api_url}/auth/register"
+        headers = {'Content-Type': 'application/json'}
+        
+        try:
+            response = second_user_session.post(url, json=register_data, headers=headers, timeout=30)
+            if response.status_code != 200:
+                self.log_test("Wine User Isolation", False, f"Failed to register second user: {response.text}")
+                return False
+            
+            reg_response = response.json()
+            user2_token = reg_response.get('token')
+            if not user2_token:
+                self.log_test("Wine User Isolation", False, "No token received for second user")
+                return False
+        except Exception as e:
+            self.log_test("Wine User Isolation", False, f"Exception during second user registration: {e}")
             return False
         
-        user2_token = reg_response.get('token')
-        if not user2_token:
-            self.log_test("Wine User Isolation", False, "No token received for second user")
-            return False
+        # Try to access first user's wine with second user's token - should fail
+        headers = {
+            'Content-Type': 'application/json',
+            'Authorization': f'Bearer {user2_token}'
+        }
         
-        # Temporarily switch to second user's token
-        original_token = self.auth_token
-        self.auth_token = user2_token
-        
-        # Try to access first user's wine - should fail
-        get_success, get_response = self.make_request('GET', f'wines/{user1_wine_id}', expected_status=404, use_auth=True)
-        if get_success:
-            self.log_test("Wine User Isolation", False, "Second user can access first user's wine")
-            self.auth_token = original_token
-            return False
-        elif get_response.get('status_code') == 404:
-            # Check that second user's wine list is empty
-            list_success, list_response = self.make_request('GET', 'wines', expected_status=200, use_auth=True)
-            if list_success:
-                wines = list_response if isinstance(list_response, list) else []
-                if len(wines) == 0:
-                    self.log_test("Wine User Isolation", True, "Wines properly isolated between users")
-                    self.auth_token = original_token
-                    return True
+        try:
+            response = second_user_session.get(f"{self.api_url}/wines/{user1_wine_id}", headers=headers, timeout=30)
+            if response.status_code == 404:
+                # Check that second user's wine list is empty
+                response = second_user_session.get(f"{self.api_url}/wines", headers=headers, timeout=30)
+                if response.status_code == 200:
+                    wines = response.json()
+                    if len(wines) == 0:
+                        self.log_test("Wine User Isolation", True, "Wines properly isolated between users")
+                        return True
+                    else:
+                        self.log_test("Wine User Isolation", False, f"Second user sees {len(wines)} wines, expected 0")
+                        return False
                 else:
-                    self.log_test("Wine User Isolation", False, f"Second user sees {len(wines)} wines, expected 0")
-                    self.auth_token = original_token
+                    self.log_test("Wine User Isolation", False, f"Failed to get wine list for second user: {response.text}")
                     return False
             else:
-                self.log_test("Wine User Isolation", False, f"Failed to get wine list for second user: {list_response}")
-                self.auth_token = original_token
+                self.log_test("Wine User Isolation", False, f"Second user can access first user's wine (status: {response.status_code})")
                 return False
-        else:
-            self.log_test("Wine User Isolation", False, f"Unexpected response when accessing other user's wine: {get_response}")
-            self.auth_token = original_token
+        except Exception as e:
+            self.log_test("Wine User Isolation", False, f"Exception during isolation test: {e}")
             return False
 
     def test_wine_error_messages(self):

@@ -377,7 +377,17 @@ const PricingPage = () => {
       
       final_cta_title: 'Prêt pour l\'expérience vin complète?',
       final_cta_subtitle: 'Commencez gratuitement ou passez Pro directement.',
-      final_cta_button: 'Passer Pro Maintenant'
+      final_cta_button: 'Passer Pro Maintenant',
+      
+      // Coupon translations
+      coupon_banner_title: '🎁 Avez-vous un code promo?',
+      coupon_banner_subtitle: 'Utilisez votre code Early Adopter et obtenez 1 an Pro gratuit!',
+      coupon_banner_button: 'Utiliser le coupon',
+      coupon_placeholder: 'ex. WINE-XXXX-XXXX-XXXX',
+      coupon_redeem: 'Utiliser',
+      coupon_success: 'Coupon utilisé avec succès!',
+      coupon_pro_until: 'Votre plan Pro est valide jusqu\'au:',
+      coupon_already_pro: 'Vous avez déjà l\'accès Pro!',
     }
   }[language] || {};
 

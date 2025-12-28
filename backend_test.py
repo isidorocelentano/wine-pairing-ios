@@ -35,6 +35,47 @@ class WinePairingAPITester:
         if details:
             print(f"   Details: {details}")
 
+    def register_test_user(self):
+        """Register a test user for authentication tests"""
+        timestamp = int(datetime.now().timestamp())
+        self.test_user_email = f"winetest_{timestamp}@test.com"
+        test_password = "TestPass123!"
+        
+        register_data = {
+            "email": self.test_user_email,
+            "password": test_password,
+            "name": "Wine Test User"
+        }
+        
+        success, response = self.make_request('POST', 'auth/register', data=register_data, expected_status=200)
+        if success and 'token' in response:
+            self.auth_token = response['token']
+            self.log_test("User Registration", True, f"Registered user: {self.test_user_email}")
+            return True
+        else:
+            self.log_test("User Registration", False, str(response))
+            return False
+
+    def login_test_user(self):
+        """Login with test user credentials"""
+        if not self.test_user_email:
+            self.log_test("User Login", False, "No test user email available")
+            return False
+            
+        login_data = {
+            "email": self.test_user_email,
+            "password": "TestPass123!"
+        }
+        
+        success, response = self.make_request('POST', 'auth/login', data=login_data, expected_status=200)
+        if success and 'token' in response:
+            self.auth_token = response['token']
+            self.log_test("User Login", True, f"Logged in user: {self.test_user_email}")
+            return True
+        else:
+            self.log_test("User Login", False, str(response))
+            return False
+
     def make_request(self, method: str, endpoint: str, data: Optional[Dict] = None, expected_status: int = 200, use_auth: bool = False) -> tuple[bool, Dict]:
         """Make HTTP request and validate response"""
         url = f"{self.api_url}/{endpoint}"

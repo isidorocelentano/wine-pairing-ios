@@ -803,3 +803,30 @@ Nachher: fetch(`${API}/wines`, {
   body: JSON.stringify(data)
 })
 ```
+
+### Version 1.8.3 (28.12.2025) - Gutschein-Funktion verbessert
+
+**🎁 Gutschein-Banner auf der Pricing-Seite:**
+- ✅ **Prominenter Gutschein-Banner** direkt unter den Pricing-Karten
+- ✅ **Auffälliges Design:** Amber/Orange Gradient mit gestricheltem Rahmen
+- ✅ **Geschenk-Icon:** Visueller Hinweis auf Gutschein-Option
+- ✅ **Ein-Klick-Eingabe:** Button öffnet Eingabefeld direkt auf der Seite
+- ✅ **Keine separate Seite nötig:** Gutschein kann direkt auf /pricing eingelöst werden
+- ✅ **Mehrsprachig:** DE/EN/FR unterstützt
+- ✅ **Erfolgsmeldung:** Zeigt Gültigkeitsdatum nach Einlösung
+
+**Technische Details:**
+- Gutschein-Eingabe via `fetch` API (iOS Safari kompatibel)
+- Token-basierte Authentifizierung
+- Inline-Feedback für Erfolg/Fehler
+- Automatisches Refresh des User-Status nach Einlösung
+
+**Neue Texte (DE):**
+- "🎁 Gutschein-Code?"
+- "Löse deinen Early Adopter Code ein und erhalte 1 Jahr Pro kostenlos!"
+- "Gutschein einlösen" / "Einlösen"
+
+**Gutschein-Statistik:**
+- 99 unbenutzte Early Adopter Codes verfügbar
+- Format: WINE-XXXX-XXXX-XXXX
+- Wert: 1 Jahr Pro-Zugang (€39.99)

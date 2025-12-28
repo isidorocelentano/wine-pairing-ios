@@ -4899,23 +4899,25 @@ class WinePairingAPITester:
     
     def test_wine_crud_without_auth(self):
         """Test wine CRUD operations without authentication - should return 401"""
-        # Clear any existing auth token and cookies
-        self.auth_token = None
-        self.session.cookies.clear()
+        # Create a completely fresh session for this test to avoid any cookie contamination
+        fresh_session = requests.Session()
         
-        # Test GET wines without auth
-        success, response = self.make_request('GET', 'wines', expected_status=401)
-        if not success:
-            if response.get('status_code') == 401:
+        # Test GET wines without auth using fresh session
+        url = f"{self.api_url}/wines"
+        headers = {'Content-Type': 'application/json'}
+        
+        try:
+            response = fresh_session.get(url, headers=headers, timeout=30)
+            if response.status_code == 401:
                 self.log_test("Wine GET (No Auth)", True, "Correctly returned 401 Unauthorized")
             else:
-                self.log_test("Wine GET (No Auth)", False, f"Expected 401, got {response.get('status_code')}")
+                self.log_test("Wine GET (No Auth)", False, f"Expected 401, got {response.status_code}")
                 return False
-        else:
-            self.log_test("Wine GET (No Auth)", False, "Endpoint allows access without authentication")
+        except Exception as e:
+            self.log_test("Wine GET (No Auth)", False, f"Exception: {e}")
             return False
         
-        # Test POST wine without auth
+        # Test POST wine without auth using fresh session
         wine_data = {
             "name": "Grattamacco Bolgheri Superiore",
             "type": "rot",
@@ -4928,15 +4930,15 @@ class WinePairingAPITester:
             "price_category": ""
         }
         
-        success, response = self.make_request('POST', 'wines', data=wine_data, expected_status=401)
-        if not success:
-            if response.get('status_code') == 401:
+        try:
+            response = fresh_session.post(url, json=wine_data, headers=headers, timeout=30)
+            if response.status_code == 401:
                 self.log_test("Wine POST (No Auth)", True, "Correctly returned 401 Unauthorized")
             else:
-                self.log_test("Wine POST (No Auth)", False, f"Expected 401, got {response.get('status_code')}")
+                self.log_test("Wine POST (No Auth)", False, f"Expected 401, got {response.status_code}")
                 return False
-        else:
-            self.log_test("Wine POST (No Auth)", False, "Endpoint allows access without authentication")
+        except Exception as e:
+            self.log_test("Wine POST (No Auth)", False, f"Exception: {e}")
             return False
         
         return True

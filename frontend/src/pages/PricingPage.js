@@ -161,7 +161,17 @@ const PricingPage = () => {
       
       final_cta_title: 'Bereit für das volle Wein-Erlebnis?',
       final_cta_subtitle: 'Starte jetzt kostenlos oder werde direkt Pro.',
-      final_cta_button: 'Jetzt Pro werden'
+      final_cta_button: 'Jetzt Pro werden',
+      
+      // Coupon translations
+      coupon_banner_title: '🎁 Gutschein-Code?',
+      coupon_banner_subtitle: 'Löse deinen Early Adopter Code ein und erhalte 1 Jahr Pro kostenlos!',
+      coupon_banner_button: 'Gutschein einlösen',
+      coupon_placeholder: 'z.B. WINE-XXXX-XXXX-XXXX',
+      coupon_redeem: 'Einlösen',
+      coupon_success: 'Gutschein erfolgreich eingelöst!',
+      coupon_pro_until: 'Dein Pro-Plan ist gültig bis:',
+      coupon_already_pro: 'Du hast bereits Pro-Zugang!',
     },
     en: {
       hero_tagline: 'YOUR SOMMELIER. ALWAYS WITH YOU.',

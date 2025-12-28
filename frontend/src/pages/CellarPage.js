@@ -73,6 +73,12 @@ const CellarPage = () => {
     }
     
     try {
+      const token = localStorage.getItem('wine_auth_token');
+      if (!token) {
+        setLoading(false);
+        return;
+      }
+      
       const params = [];
       if (filter !== 'all') {
         params.push(`type_filter=${filter}`);
@@ -81,14 +87,22 @@ const CellarPage = () => {
         params.push('in_stock_only=true');
       }
       const query = params.length ? `?${params.join('&')}` : '';
-      const response = await authAxios.get(`${API}/wines${query}`);
-      setWines(response.data);
-    } catch (error) {
-      if (error.response?.status === 401) {
+      
+      const response = await fetch(`${API}/wines${query}`, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+      
+      if (response.ok) {
+        const data = await response.json();
+        setWines(data);
+      } else if (response.status === 401) {
         toast.error(t('error_login_required') || 'Bitte melden Sie sich an');
-      } else {
-        toast.error(t('error_general'));
       }
+    } catch (error) {
+      console.error('Fetch wines error:', error);
+      toast.error(t('error_general'));
     } finally {
       setLoading(false);
     }

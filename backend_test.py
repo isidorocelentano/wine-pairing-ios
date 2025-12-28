@@ -12,7 +12,7 @@ from datetime import datetime
 from typing import Dict, Any, Optional
 
 class WinePairingAPITester:
-    def __init__(self, base_url="https://cellar-login-fix.preview.emergentagent.com"):
+    def __init__(self, base_url="https://winetrak.preview.emergentagent.com"):
         self.base_url = base_url
         self.api_url = f"{base_url}/api"
         self.tests_run = 0
@@ -20,6 +20,8 @@ class WinePairingAPITester:
         self.test_wine_id = None
         self.session_id = None
         self.session = requests.Session()  # Use session to maintain cookies
+        self.auth_token = None
+        self.test_user_email = None
 
     def log_test(self, name: str, success: bool, details: str = ""):
         """Log test result"""

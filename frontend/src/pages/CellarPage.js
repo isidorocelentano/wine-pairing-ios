@@ -247,20 +247,37 @@ const CellarPage = () => {
     setUpdatingQuantity(wineId);
     
     try {
-      await authAxios.put(`${API}/wines/${wineId}`, {
-        ...wine,
-        quantity: newQuantity,
+      const token = localStorage.getItem('wine_auth_token');
+      if (!token) {
+        toast.error(language === 'de' ? 'Bitte melden Sie sich erneut an' : 'Please log in again');
+        return;
+      }
+      
+      const response = await fetch(`${API}/wines/${wineId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({ ...wine, quantity: newQuantity })
       });
-      // Optimistic update
-      setWines(prev => prev.map(w => 
-        w.id === wineId ? { ...w, quantity: newQuantity } : w
-      ));
-      if (delta > 0) {
-        toast.success(`+${delta} Flasche${delta > 1 ? 'n' : ''} hinzugefügt`);
+      
+      if (response.ok) {
+        // Optimistic update
+        setWines(prev => prev.map(w => 
+          w.id === wineId ? { ...w, quantity: newQuantity } : w
+        ));
+        if (delta > 0) {
+          toast.success(`+${delta} Flasche${delta > 1 ? 'n' : ''} hinzugefügt`);
+        } else {
+          toast.success(`${Math.abs(delta)} Flasche${Math.abs(delta) > 1 ? 'n' : ''} entfernt`);
+        }
       } else {
-        toast.success(`${Math.abs(delta)} Flasche${Math.abs(delta) > 1 ? 'n' : ''} entfernt`);
+        toast.error(t('error_general'));
+        fetchWines();
       }
     } catch (error) {
+      console.error('Quantity update error:', error);
       toast.error(t('error_general'));
       fetchWines(); // Revert on error
     } finally {
@@ -270,8 +287,19 @@ const CellarPage = () => {
 
   const handleToggleFavorite = async (wineId) => {
     try {
-      await authAxios.post(`${API}/wines/${wineId}/favorite`);
-      fetchWines();
+      const token = localStorage.getItem('wine_auth_token');
+      if (!token) return;
+      
+      const response = await fetch(`${API}/wines/${wineId}/favorite`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+      
+      if (response.ok) {
+        fetchWines();
+      }
     } catch (error) {
       toast.error(t('error_general'));
     }
@@ -279,9 +307,22 @@ const CellarPage = () => {
 
   const handleDeleteWine = async (wineId) => {
     try {
-      await authAxios.delete(`${API}/wines/${wineId}`);
-      toast.success(t('success_wine_deleted'));
-      fetchWines();
+      const token = localStorage.getItem('wine_auth_token');
+      if (!token) return;
+      
+      const response = await fetch(`${API}/wines/${wineId}`, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+      
+      if (response.ok) {
+        toast.success(t('success_wine_deleted'));
+        fetchWines();
+      } else {
+        toast.error(t('error_general'));
+      }
     } catch (error) {
       toast.error(t('error_general'));
     }

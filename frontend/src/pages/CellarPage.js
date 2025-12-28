@@ -345,20 +345,40 @@ const CellarPage = () => {
 
   const handleUpdateWine = async () => {
     try {
-      await authAxios.put(`${API}/wines/${editingWine.id}`, {
-        name: editingWine.name,
-        type: editingWine.type,
-        region: editingWine.region || null,
-        year: editingWine.year ? parseInt(editingWine.year) : null,
-        grape: editingWine.grape || null,
-        notes: editingWine.notes || null,
-        quantity: typeof editingWine.quantity === 'number' ? editingWine.quantity : parseInt(editingWine.quantity || '1', 10),
+      const token = localStorage.getItem('wine_auth_token');
+      if (!token) {
+        toast.error(language === 'de' ? 'Bitte melden Sie sich erneut an' : 'Please log in again');
+        return;
+      }
+      
+      const response = await fetch(`${API}/wines/${editingWine.id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({
+          name: editingWine.name,
+          type: editingWine.type,
+          region: editingWine.region || null,
+          year: editingWine.year ? parseInt(editingWine.year) : null,
+          grape: editingWine.grape || null,
+          notes: editingWine.notes || null,
+          quantity: typeof editingWine.quantity === 'number' ? editingWine.quantity : parseInt(editingWine.quantity || '1', 10),
+        })
       });
-      toast.success('Wein erfolgreich aktualisiert!');
-      setShowEditDialog(false);
-      setEditingWine(null);
-      fetchWines();
+      
+      if (response.ok) {
+        toast.success('Wein erfolgreich aktualisiert!');
+        setShowEditDialog(false);
+        setEditingWine(null);
+        fetchWines();
+      } else {
+        const errorData = await response.json().catch(() => ({}));
+        toast.error(errorData.detail || t('error_general'));
+      }
     } catch (error) {
+      console.error('Update wine error:', error);
       toast.error(t('error_general'));
     }
   };

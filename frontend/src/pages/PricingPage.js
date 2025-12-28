@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Check, X, Wine, Sparkles, Crown, Zap, Star, ArrowRight, Shield, Clock, Infinity } from 'lucide-react';
+import { Check, X, Wine, Sparkles, Crown, Zap, Star, ArrowRight, Shield, Clock, Infinity, Gift, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useAuth } from '@/contexts/AuthContext';
+import { API_URL } from '@/config/api';
+import { toast } from 'sonner';
 import Footer from '@/components/Footer';
 
 const PricingPage = () => {

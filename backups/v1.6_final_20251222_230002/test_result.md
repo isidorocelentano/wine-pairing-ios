@@ -371,7 +371,7 @@ bugfix_description: "Complete wine data cleanup for ALL countries - regions and 
 
 ## Agent Communication
 - agent: "main"
-  message: "CRITICAL BUGFIX APPLIED: The data loss bug has been fixed. The 'users' collection was missing from the protected user_collections list in startup_seed_data() function. Now users, wines, pairings, chats, wine_favorites, user_sessions, and payment_transactions are all protected from being overwritten on server restart. Please run comprehensive tests to verify: 1) User login works 2) User data persists after restart 3) Coupon system works 4) Wine cellar works. Test URL: https://cellar-login-fix.preview.emergentagent.com"
+  message: "CRITICAL BUGFIX APPLIED: The data loss bug has been fixed. The 'users' collection was missing from the protected user_collections list in startup_seed_data() function. Now users, wines, pairings, chats, wine_favorites, user_sessions, and payment_transactions are all protected from being overwritten on server restart. Please run comprehensive tests to verify: 1) User login works 2) User data persists after restart 3) Coupon system works 4) Wine cellar works. Test URL: https://winetrak.preview.emergentagent.com"
 
 - agent: "testing"
   message: "CRITICAL BUGFIX VERIFICATION COMPLETED: All tests PASSED. The data loss bug is confirmed FIXED. Code review shows 'users' collection is now properly protected in user_collections list. All core data collections (wines: 1815+, grapes: 140, blog: 233, regional_pairings: 44, feed: 268) are intact and accessible. User registration system works, coupon system functional, wine pairing system operational. No data loss detected. System is READY FOR PRODUCTION."
@@ -451,7 +451,7 @@ bugfix_description: "Complete wine data cleanup for ALL countries - regions and 
 
 ### Test Configuration
 - **Test Date**: 2025-12-16 23:43:00 UTC
-- **Test URL**: https://cellar-login-fix.preview.emergentagent.com/pairing
+- **Test URL**: https://winetrak.preview.emergentagent.com/pairing
 - **Test Dish**: "Rinderfilet"
 - **Cellar Option**: Enabled ("Aus meinem Keller empfehlen")
 
@@ -511,7 +511,7 @@ bugfix_description: "Complete wine data cleanup for ALL countries - regions and 
 
 ### Test Configuration
 - **Test Date**: 2025-12-17 16:47:00 UTC
-- **Test URL**: https://cellar-login-fix.preview.emergentagent.com
+- **Test URL**: https://winetrak.preview.emergentagent.com
 - **Test Users**: multitest_a_1765990822@test.com / multitest_b_1765990822@test.com
 - **Test Focus**: Multi-User Wine Cellar Isolation and Authentication
 

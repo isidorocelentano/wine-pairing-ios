@@ -4895,6 +4895,384 @@ class WinePairingAPITester:
             return False
 
 
+    # ===================== WINE CRUD AUTHENTICATION TESTS =====================
+    
+    def test_wine_crud_without_auth(self):
+        """Test wine CRUD operations without authentication - should return 401"""
+        # Clear any existing auth token
+        self.auth_token = None
+        
+        # Test GET wines without auth
+        success, response = self.make_request('GET', 'wines', expected_status=401)
+        if not success:
+            if response.get('status_code') == 401:
+                self.log_test("Wine GET (No Auth)", True, "Correctly returned 401 Unauthorized")
+            else:
+                self.log_test("Wine GET (No Auth)", False, f"Expected 401, got {response.get('status_code')}")
+                return False
+        else:
+            self.log_test("Wine GET (No Auth)", False, "Endpoint allows access without authentication")
+            return False
+        
+        # Test POST wine without auth
+        wine_data = {
+            "name": "Grattamacco Bolgheri Superiore",
+            "type": "rot",
+            "region": "Bolgheri Sup",
+            "year": 2022,
+            "grape": "Merlot",
+            "description": "Italienischer Rotwein aus Bolgheri Superiore (DOC), 40th Anniversary Edition",
+            "notes": "",
+            "quantity": 1,
+            "price_category": ""
+        }
+        
+        success, response = self.make_request('POST', 'wines', data=wine_data, expected_status=401)
+        if not success:
+            if response.get('status_code') == 401:
+                self.log_test("Wine POST (No Auth)", True, "Correctly returned 401 Unauthorized")
+            else:
+                self.log_test("Wine POST (No Auth)", False, f"Expected 401, got {response.get('status_code')}")
+                return False
+        else:
+            self.log_test("Wine POST (No Auth)", False, "Endpoint allows access without authentication")
+            return False
+        
+        return True
+
+    def test_wine_create_with_auth(self):
+        """Test creating a wine with authentication using the test data from review request"""
+        if not self.auth_token:
+            self.log_test("Wine Create (With Auth)", False, "No auth token available")
+            return False
+        
+        wine_data = {
+            "name": "Grattamacco Bolgheri Superiore",
+            "type": "rot",
+            "region": "Bolgheri Sup",
+            "year": 2022,
+            "grape": "Merlot",
+            "description": "Italienischer Rotwein aus Bolgheri Superiore (DOC), 40th Anniversary Edition",
+            "notes": "",
+            "quantity": 1,
+            "price_category": ""
+        }
+        
+        success, response = self.make_request('POST', 'wines', data=wine_data, expected_status=200, use_auth=True)
+        if success and 'id' in response:
+            self.test_wine_id = response['id']
+            
+            # Verify wine data was saved correctly
+            if response.get('name') != wine_data['name']:
+                self.log_test("Wine Create (With Auth)", False, f"Name mismatch: expected {wine_data['name']}, got {response.get('name')}")
+                return False
+            
+            if response.get('type') != wine_data['type']:
+                self.log_test("Wine Create (With Auth)", False, f"Type mismatch: expected {wine_data['type']}, got {response.get('type')}")
+                return False
+            
+            if response.get('year') != wine_data['year']:
+                self.log_test("Wine Create (With Auth)", False, f"Year mismatch: expected {wine_data['year']}, got {response.get('year')}")
+                return False
+            
+            # Verify user_id is set (wine belongs to authenticated user)
+            if 'user_id' not in response:
+                self.log_test("Wine Create (With Auth)", False, "user_id not set in response")
+                return False
+            
+            self.log_test("Wine Create (With Auth)", True, f"Created wine with ID: {self.test_wine_id}")
+            return True
+        else:
+            self.log_test("Wine Create (With Auth)", False, str(response))
+            return False
+
+    def test_wine_get_with_auth(self):
+        """Test getting wines with authentication"""
+        if not self.auth_token:
+            self.log_test("Wine GET (With Auth)", False, "No auth token available")
+            return False
+        
+        success, response = self.make_request('GET', 'wines', expected_status=200, use_auth=True)
+        if success:
+            wines = response if isinstance(response, list) else []
+            
+            # Should find the wine we just created
+            found_test_wine = False
+            for wine in wines:
+                if wine.get('id') == self.test_wine_id:
+                    found_test_wine = True
+                    break
+            
+            if not found_test_wine and self.test_wine_id:
+                self.log_test("Wine GET (With Auth)", False, f"Test wine {self.test_wine_id} not found in user's wines")
+                return False
+            
+            self.log_test("Wine GET (With Auth)", True, f"Retrieved {len(wines)} wines from user's cellar")
+            return True
+        else:
+            self.log_test("Wine GET (With Auth)", False, str(response))
+            return False
+
+    def test_wine_get_by_id_with_auth(self):
+        """Test getting a specific wine by ID with authentication"""
+        if not self.auth_token or not self.test_wine_id:
+            self.log_test("Wine GET by ID (With Auth)", False, "No auth token or wine ID available")
+            return False
+        
+        success, response = self.make_request('GET', f'wines/{self.test_wine_id}', expected_status=200, use_auth=True)
+        if success:
+            # Verify it's the correct wine
+            if response.get('id') != self.test_wine_id:
+                self.log_test("Wine GET by ID (With Auth)", False, f"ID mismatch: expected {self.test_wine_id}, got {response.get('id')}")
+                return False
+            
+            if response.get('name') != "Grattamacco Bolgheri Superiore":
+                self.log_test("Wine GET by ID (With Auth)", False, f"Name mismatch: expected Grattamacco Bolgheri Superiore, got {response.get('name')}")
+                return False
+            
+            self.log_test("Wine GET by ID (With Auth)", True, f"Retrieved wine: {response.get('name')}")
+            return True
+        else:
+            self.log_test("Wine GET by ID (With Auth)", False, str(response))
+            return False
+
+    def test_wine_update_with_auth(self):
+        """Test updating a wine with authentication"""
+        if not self.auth_token or not self.test_wine_id:
+            self.log_test("Wine UPDATE (With Auth)", False, "No auth token or wine ID available")
+            return False
+        
+        update_data = {
+            "notes": "Updated notes - tested iOS Safari compatibility",
+            "quantity": 2,
+            "is_favorite": True
+        }
+        
+        success, response = self.make_request('PUT', f'wines/{self.test_wine_id}', data=update_data, expected_status=200, use_auth=True)
+        if success:
+            # Verify updates were applied
+            if response.get('notes') != update_data['notes']:
+                self.log_test("Wine UPDATE (With Auth)", False, f"Notes not updated: expected {update_data['notes']}, got {response.get('notes')}")
+                return False
+            
+            if response.get('quantity') != update_data['quantity']:
+                self.log_test("Wine UPDATE (With Auth)", False, f"Quantity not updated: expected {update_data['quantity']}, got {response.get('quantity')}")
+                return False
+            
+            if response.get('is_favorite') != update_data['is_favorite']:
+                self.log_test("Wine UPDATE (With Auth)", False, f"Favorite status not updated: expected {update_data['is_favorite']}, got {response.get('is_favorite')}")
+                return False
+            
+            self.log_test("Wine UPDATE (With Auth)", True, f"Updated wine: notes, quantity, and favorite status")
+            return True
+        else:
+            self.log_test("Wine UPDATE (With Auth)", False, str(response))
+            return False
+
+    def test_wine_favorite_toggle_with_auth(self):
+        """Test toggling wine favorite status with authentication"""
+        if not self.auth_token or not self.test_wine_id:
+            self.log_test("Wine Favorite Toggle (With Auth)", False, "No auth token or wine ID available")
+            return False
+        
+        success, response = self.make_request('POST', f'wines/{self.test_wine_id}/favorite', expected_status=200, use_auth=True)
+        if success:
+            # Should toggle from True (set in previous test) to False
+            if 'is_favorite' not in response:
+                self.log_test("Wine Favorite Toggle (With Auth)", False, "is_favorite not in response")
+                return False
+            
+            is_favorite = response.get('is_favorite')
+            self.log_test("Wine Favorite Toggle (With Auth)", True, f"Toggled favorite status to: {is_favorite}")
+            return True
+        else:
+            self.log_test("Wine Favorite Toggle (With Auth)", False, str(response))
+            return False
+
+    def test_wine_delete_with_auth(self):
+        """Test deleting a wine with authentication"""
+        if not self.auth_token or not self.test_wine_id:
+            self.log_test("Wine DELETE (With Auth)", False, "No auth token or wine ID available")
+            return False
+        
+        success, response = self.make_request('DELETE', f'wines/{self.test_wine_id}', expected_status=200, use_auth=True)
+        if success:
+            # Verify wine was deleted by trying to get it
+            get_success, get_response = self.make_request('GET', f'wines/{self.test_wine_id}', expected_status=404, use_auth=True)
+            if get_success:
+                self.log_test("Wine DELETE (With Auth)", True, "Wine successfully deleted and no longer accessible")
+                return True
+            else:
+                if get_response.get('status_code') == 404:
+                    self.log_test("Wine DELETE (With Auth)", True, "Wine successfully deleted (404 on subsequent GET)")
+                    return True
+                else:
+                    self.log_test("Wine DELETE (With Auth)", False, f"Wine still accessible after deletion: {get_response}")
+                    return False
+        else:
+            self.log_test("Wine DELETE (With Auth)", False, str(response))
+            return False
+
+    def test_wine_isolation_between_users(self):
+        """Test that wines are properly isolated between different users"""
+        if not self.auth_token:
+            self.log_test("Wine User Isolation", False, "No auth token available")
+            return False
+        
+        # Create a wine with first user
+        wine_data = {
+            "name": "User1 Test Wine",
+            "type": "weiss",
+            "region": "Test Region",
+            "year": 2023,
+            "grape": "Test Grape",
+            "quantity": 1
+        }
+        
+        success, response = self.make_request('POST', 'wines', data=wine_data, expected_status=200, use_auth=True)
+        if not success:
+            self.log_test("Wine User Isolation", False, f"Failed to create wine for first user: {response}")
+            return False
+        
+        user1_wine_id = response.get('id')
+        
+        # Register and login a second user
+        timestamp = int(datetime.now().timestamp())
+        user2_email = f"winetest2_{timestamp}@test.com"
+        user2_password = "TestPass123!"
+        
+        register_data = {
+            "email": user2_email,
+            "password": user2_password,
+            "name": "Wine Test User 2"
+        }
+        
+        reg_success, reg_response = self.make_request('POST', 'auth/register', data=register_data, expected_status=200)
+        if not reg_success:
+            self.log_test("Wine User Isolation", False, f"Failed to register second user: {reg_response}")
+            return False
+        
+        user2_token = reg_response.get('token')
+        if not user2_token:
+            self.log_test("Wine User Isolation", False, "No token received for second user")
+            return False
+        
+        # Temporarily switch to second user's token
+        original_token = self.auth_token
+        self.auth_token = user2_token
+        
+        # Try to access first user's wine - should fail
+        get_success, get_response = self.make_request('GET', f'wines/{user1_wine_id}', expected_status=404, use_auth=True)
+        if get_success:
+            self.log_test("Wine User Isolation", False, "Second user can access first user's wine")
+            self.auth_token = original_token
+            return False
+        elif get_response.get('status_code') == 404:
+            # Check that second user's wine list is empty
+            list_success, list_response = self.make_request('GET', 'wines', expected_status=200, use_auth=True)
+            if list_success:
+                wines = list_response if isinstance(list_response, list) else []
+                if len(wines) == 0:
+                    self.log_test("Wine User Isolation", True, "Wines properly isolated between users")
+                    self.auth_token = original_token
+                    return True
+                else:
+                    self.log_test("Wine User Isolation", False, f"Second user sees {len(wines)} wines, expected 0")
+                    self.auth_token = original_token
+                    return False
+            else:
+                self.log_test("Wine User Isolation", False, f"Failed to get wine list for second user: {list_response}")
+                self.auth_token = original_token
+                return False
+        else:
+            self.log_test("Wine User Isolation", False, f"Unexpected response when accessing other user's wine: {get_response}")
+            self.auth_token = original_token
+            return False
+
+    def test_wine_error_messages(self):
+        """Test that wine operations return specific error messages, not generic ones"""
+        if not self.auth_token:
+            self.log_test("Wine Error Messages", False, "No auth token available")
+            return False
+        
+        # Test creating wine with invalid data
+        invalid_wine_data = {
+            "name": "",  # Empty name should cause validation error
+            "type": "invalid_type",  # Invalid wine type
+            "year": "not_a_number"  # Invalid year type
+        }
+        
+        success, response = self.make_request('POST', 'wines', data=invalid_wine_data, expected_status=422, use_auth=True)
+        if success:
+            # Should get specific validation error, not generic "Ein Fehler ist aufgetreten"
+            error_detail = response.get('detail', '')
+            if isinstance(error_detail, str):
+                if "Ein Fehler ist aufgetreten" in error_detail:
+                    self.log_test("Wine Error Messages", False, "Got generic error message instead of specific validation error")
+                    return False
+                else:
+                    self.log_test("Wine Error Messages", True, f"Got specific error message: {error_detail[:100]}")
+                    return True
+            elif isinstance(error_detail, list) and len(error_detail) > 0:
+                # Pydantic validation errors are usually in list format
+                self.log_test("Wine Error Messages", True, f"Got specific validation errors: {len(error_detail)} errors")
+                return True
+            else:
+                self.log_test("Wine Error Messages", False, f"Unexpected error format: {response}")
+                return False
+        else:
+            # If it doesn't return 422, check what it returns
+            if response.get('status_code') == 200:
+                self.log_test("Wine Error Messages", False, "Invalid data was accepted (should have been rejected)")
+                return False
+            else:
+                # Some other error code is also acceptable
+                self.log_test("Wine Error Messages", True, f"Got error response (status {response.get('status_code')})")
+                return True
+
+    def run_wine_crud_auth_tests(self):
+        """Run all wine CRUD authentication tests"""
+        print("🍷 Running Wine CRUD Authentication Tests...")
+        print("=" * 60)
+        
+        # Test without authentication first
+        self.test_wine_crud_without_auth()
+        
+        # Register and login a test user
+        if not self.register_test_user():
+            print("❌ Failed to register test user - cannot continue with auth tests")
+            return False
+        
+        # Run authenticated tests in sequence
+        tests = [
+            self.test_wine_create_with_auth,
+            self.test_wine_get_with_auth,
+            self.test_wine_get_by_id_with_auth,
+            self.test_wine_update_with_auth,
+            self.test_wine_favorite_toggle_with_auth,
+            self.test_wine_delete_with_auth,
+            self.test_wine_isolation_between_users,
+            self.test_wine_error_messages
+        ]
+        
+        for test in tests:
+            test()
+        
+        print("=" * 60)
+        print(f"Tests Run: {self.tests_run}")
+        print(f"Tests Passed: {self.tests_passed}")
+        print(f"Tests Failed: {self.tests_run - self.tests_passed}")
+        print(f"Success Rate: {(self.tests_passed/self.tests_run)*100:.1f}%")
+        
+        if self.tests_passed == self.tests_run:
+            print("✅ All Wine CRUD Authentication tests passed!")
+            return True
+        else:
+            failed = self.tests_run - self.tests_passed
+            print(f"❌ {failed} Wine CRUD Authentication tests FAILED.")
+            return False
+
+
 def main():
     """Main test execution"""
     import sys

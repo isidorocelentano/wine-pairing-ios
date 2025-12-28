@@ -527,6 +527,95 @@ const PricingPage = () => {
               </CardContent>
             </Card>
           </div>
+          
+          {/* Coupon Section - Prominent Banner */}
+          <div className="mt-12">
+            <Card className="border-2 border-dashed border-amber-400/50 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-950/20 dark:to-orange-950/20 overflow-hidden">
+              <CardContent className="p-6 md:p-8">
+                {user?.plan === 'pro' ? (
+                  <div className="flex items-center justify-center gap-3 text-green-700 dark:text-green-400">
+                    <CheckCircle className="h-6 w-6" />
+                    <span className="text-lg font-medium">{t.coupon_already_pro}</span>
+                  </div>
+                ) : (
+                  <>
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                      <div className="flex items-center gap-4 text-center md:text-left">
+                        <div className="hidden md:flex w-16 h-16 rounded-full bg-amber-400/20 items-center justify-center flex-shrink-0">
+                          <Gift className="w-8 h-8 text-amber-600" />
+                        </div>
+                        <div>
+                          <h3 className="text-xl md:text-2xl font-bold text-amber-900 dark:text-amber-100">
+                            {t.coupon_banner_title}
+                          </h3>
+                          <p className="text-amber-700 dark:text-amber-300 mt-1">
+                            {t.coupon_banner_subtitle}
+                          </p>
+                        </div>
+                      </div>
+                      
+                      {!showCouponInput ? (
+                        <Button 
+                          onClick={() => setShowCouponInput(true)}
+                          className="bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-full whitespace-nowrap"
+                        >
+                          <Gift className="mr-2 h-4 w-4" />
+                          {t.coupon_banner_button}
+                        </Button>
+                      ) : (
+                        <form onSubmit={handleRedeemCoupon} className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+                          <Input
+                            type="text"
+                            placeholder={t.coupon_placeholder}
+                            value={couponCode}
+                            onChange={(e) => setCouponCode(e.target.value.toUpperCase())}
+                            className="text-center font-mono text-lg bg-white dark:bg-gray-900 border-amber-300 min-w-[240px]"
+                            disabled={couponLoading}
+                          />
+                          <Button 
+                            type="submit"
+                            disabled={couponLoading || !couponCode.trim()}
+                            className="bg-amber-500 hover:bg-amber-600 text-white px-6 rounded-full whitespace-nowrap"
+                          >
+                            {couponLoading ? (
+                              <Loader2 className="h-4 w-4 animate-spin" />
+                            ) : (
+                              t.coupon_redeem
+                            )}
+                          </Button>
+                        </form>
+                      )}
+                    </div>
+                    
+                    {/* Coupon Result */}
+                    {couponResult && (
+                      <div className={`mt-4 p-4 rounded-lg ${
+                        couponResult.success 
+                          ? 'bg-green-100 dark:bg-green-900/30 border border-green-300' 
+                          : 'bg-red-100 dark:bg-red-900/30 border border-red-300'
+                      }`}>
+                        <div className={`flex items-center gap-2 ${
+                          couponResult.success ? 'text-green-700 dark:text-green-400' : 'text-red-700 dark:text-red-400'
+                        }`}>
+                          {couponResult.success ? (
+                            <CheckCircle className="h-5 w-5" />
+                          ) : (
+                            <AlertCircle className="h-5 w-5" />
+                          )}
+                          <span className="font-medium">{couponResult.message}</span>
+                        </div>
+                        {couponResult.success && couponResult.expires_at && (
+                          <p className="text-green-600 dark:text-green-400 text-sm mt-2 ml-7">
+                            {t.coupon_pro_until} {new Date(couponResult.expires_at).toLocaleDateString(language === 'de' ? 'de-DE' : language === 'fr' ? 'fr-FR' : 'en-US')}
+                          </p>
+                        )}
+                      </div>
+                    )}
+                  </>
+                )}
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 

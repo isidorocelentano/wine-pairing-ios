@@ -1,7 +1,7 @@
 {
   "version": "3.0",
-  "timestamp": "2025-12-28T17:53:32.126689+00:00",
-  "last_backup": "/app/backend/data/backups/backup_20251228_175332",
+  "timestamp": "2025-12-28T17:57:15.883452+00:00",
+  "last_backup": "/app/backend/data/backups/backup_20251228_175715",
   "expected": {
     "users": 25,
     "wines": 71,

@@ -35,10 +35,14 @@ class WinePairingAPITester:
         if details:
             print(f"   Details: {details}")
 
-    def make_request(self, method: str, endpoint: str, data: Optional[Dict] = None, expected_status: int = 200) -> tuple[bool, Dict]:
+    def make_request(self, method: str, endpoint: str, data: Optional[Dict] = None, expected_status: int = 200, use_auth: bool = False) -> tuple[bool, Dict]:
         """Make HTTP request and validate response"""
         url = f"{self.api_url}/{endpoint}"
         headers = {'Content-Type': 'application/json'}
+        
+        # Add authorization header if auth token is available and requested
+        if use_auth and self.auth_token:
+            headers['Authorization'] = f'Bearer {self.auth_token}'
         
         try:
             if method == 'GET':

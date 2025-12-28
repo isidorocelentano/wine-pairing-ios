@@ -184,17 +184,43 @@ const CellarPage = () => {
     }
 
     try {
-      await authAxios.post(`${API}/wines`, {
+      // Explizit Token aus localStorage holen (iOS Safari kompatibel)
+      const token = localStorage.getItem('wine_auth_token');
+      
+      if (!token) {
+        toast.error(language === 'de' ? 'Bitte melden Sie sich erneut an' : 'Please log in again');
+        return;
+      }
+      
+      const wineData = {
         ...newWine,
         year: newWine.year ? parseInt(newWine.year) : null,
         quantity: newWine.quantity ? parseInt(newWine.quantity, 10) : 1,
+      };
+      
+      // Fetch statt axios für bessere iOS Safari Kompatibilität
+      const response = await fetch(`${API}/wines`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(wineData)
       });
-      toast.success(t('success_wine_added'));
-      setShowAddDialog(false);
-      setNewWine({ name: '', type: 'rot', region: '', year: '', grape: '', description: '', notes: '', image_base64: '', quantity: 1 });
-      fetchWines();
+      
+      if (response.ok) {
+        toast.success(t('success_wine_added'));
+        setShowAddDialog(false);
+        setNewWine({ name: '', type: 'rot', region: '', year: '', grape: '', description: '', notes: '', image_base64: '', quantity: 1 });
+        fetchWines();
+      } else {
+        const errorData = await response.json().catch(() => ({}));
+        const errorMsg = errorData.detail || (language === 'de' ? 'Fehler beim Speichern' : 'Error saving wine');
+        toast.error(errorMsg);
+      }
     } catch (error) {
-      toast.error(t('error_general'));
+      console.error('Wine save error:', error);
+      toast.error(language === 'de' ? 'Verbindungsfehler - bitte erneut versuchen' : 'Connection error - please try again');
     }
   };
 

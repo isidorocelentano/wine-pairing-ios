@@ -13,7 +13,56 @@ import Footer from '@/components/Footer';
 const PricingPage = () => {
   const navigate = useNavigate();
   const { language } = useLanguage();
-  const { user } = useAuth();
+  const { user, refreshUser } = useAuth();
+  
+  // Coupon state
+  const [couponCode, setCouponCode] = useState('');
+  const [couponLoading, setCouponLoading] = useState(false);
+  const [couponResult, setCouponResult] = useState(null);
+  const [showCouponInput, setShowCouponInput] = useState(false);
+
+  // Handle coupon redemption
+  const handleRedeemCoupon = async (e) => {
+    e.preventDefault();
+    
+    if (!user) {
+      toast.error(language === 'de' ? 'Bitte melden Sie sich zuerst an' : 'Please log in first');
+      navigate('/login');
+      return;
+    }
+
+    setCouponLoading(true);
+    setCouponResult(null);
+
+    try {
+      const token = localStorage.getItem('wine_auth_token');
+      const response = await fetch(`${API_URL}/api/coupon/redeem`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          ...(token ? { 'Authorization': `Bearer ${token}` } : {})
+        },
+        credentials: 'include',
+        body: JSON.stringify({ code: couponCode.trim() }),
+      });
+
+      const data = await response.json();
+      setCouponResult(data);
+
+      if (data.success) {
+        await refreshUser();
+        setCouponCode('');
+        toast.success(language === 'de' ? '🎉 Gutschein erfolgreich eingelöst!' : '🎉 Coupon redeemed successfully!');
+      }
+    } catch (error) {
+      setCouponResult({
+        success: false,
+        message: language === 'de' ? 'Fehler beim Einlösen des Gutscheins' : 'Error redeeming coupon'
+      });
+    } finally {
+      setCouponLoading(false);
+    }
+  };
 
   const t = {
     de: {

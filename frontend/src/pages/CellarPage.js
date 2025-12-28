@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
-import axios from "axios";
 import { toast } from 'sonner';
 import { Wine, Camera, Upload, X, Loader2, Plus, Trash2, Star, Edit, Minus, LogIn } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -13,19 +12,6 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useAuth } from "@/contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { API_URL, API } from "@/config/api";
-import { getAuthHeaders } from "@/contexts/AuthContext";
-
-// Axios instance mit credentials für auth
-const authAxios = axios.create({
-  withCredentials: true
-});
-
-// Interceptor für Bearer Token (notwendig für iOS/Safari)
-authAxios.interceptors.request.use((config) => {
-  const authHeaders = getAuthHeaders();
-  config.headers = { ...config.headers, ...authHeaders };
-  return config;
-});
 
 const CellarPage = () => {
   const { t, language } = useLanguage();

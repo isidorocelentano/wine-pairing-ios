@@ -269,7 +269,17 @@ const PricingPage = () => {
       
       final_cta_title: 'Ready for the full wine experience?',
       final_cta_subtitle: 'Start for free or go Pro directly.',
-      final_cta_button: 'Go Pro Now'
+      final_cta_button: 'Go Pro Now',
+      
+      // Coupon translations
+      coupon_banner_title: '🎁 Have a Coupon Code?',
+      coupon_banner_subtitle: 'Redeem your Early Adopter code and get 1 year Pro for free!',
+      coupon_banner_button: 'Redeem Coupon',
+      coupon_placeholder: 'e.g. WINE-XXXX-XXXX-XXXX',
+      coupon_redeem: 'Redeem',
+      coupon_success: 'Coupon redeemed successfully!',
+      coupon_pro_until: 'Your Pro plan is valid until:',
+      coupon_already_pro: 'You already have Pro access!',
     },
     fr: {
       hero_tagline: 'VOTRE SOMMELIER. TOUJOURS AVEC VOUS.',

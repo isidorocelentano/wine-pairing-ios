@@ -4899,8 +4899,9 @@ class WinePairingAPITester:
     
     def test_wine_crud_without_auth(self):
         """Test wine CRUD operations without authentication - should return 401"""
-        # Clear any existing auth token
+        # Clear any existing auth token and cookies
         self.auth_token = None
+        self.session.cookies.clear()
         
         # Test GET wines without auth
         success, response = self.make_request('GET', 'wines', expected_status=401)

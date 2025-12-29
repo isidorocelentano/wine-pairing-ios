@@ -319,6 +319,44 @@ logger = logging.getLogger(__name__)
 # ===================== MODELS =====================
 
 # ===================== AUTH & USER MODELS =====================
+
+# Wine Profile Model for personalized recommendations
+class WineProfile(BaseModel):
+    """User's wine taste profile for personalized AI recommendations"""
+    model_config = ConfigDict(extra="ignore")
+    
+    # Rotwein-Stilistik
+    red_wine_style: Optional[str] = None  # "kraftig_wurzig", "fruchtig_elegant", "beides"
+    
+    # Weißwein-Charakter
+    white_wine_style: Optional[str] = None  # "mineralisch_frisch", "cremig_textur", "aromatisch_verspielt", "beides"
+    
+    # Struktur-Präferenzen
+    acidity_tolerance: Optional[str] = None  # "niedrig", "mittel", "hoch"
+    tannin_preference: Optional[str] = None  # "weich_seidig", "mittel", "markant_griffig"
+    
+    # Süßegrad
+    sweetness_preference: Optional[str] = None  # "knochentrocken", "trocken", "halbtrocken", "lieblich", "edelsuss"
+    
+    # Regionale Vorlieben (Liste von Regionen)
+    favorite_regions: List[str] = Field(default_factory=list)
+    
+    # Budget-Rahmen
+    budget_everyday: Optional[str] = None  # "unter_10", "10_20", "20_35", "35_50", "ueber_50"
+    budget_restaurant: Optional[str] = None  # "unter_30", "30_50", "50_80", "80_120", "ueber_120"
+    
+    # Abneigungen (No-Gos)
+    no_gos: List[str] = Field(default_factory=list)  # ["barrique", "schwefel", "chardonnay", etc.]
+    
+    # Kulinarischer Kontext
+    dietary_preferences: List[str] = Field(default_factory=list)  # ["vegetarisch", "vegan", "fleisch", "fisch", "asiatisch", "scharf"]
+    
+    # Abenteuer-Faktor
+    adventure_level: Optional[str] = None  # "klassiker", "ausgewogen", "abenteuerlich"
+    
+    # Metadata
+    updated_at: Optional[datetime] = None
+
 class User(BaseModel):
     model_config = ConfigDict(extra="ignore")
     user_id: str

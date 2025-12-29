@@ -15,9 +15,9 @@
     "duration_months": 12,
     "description": "1 Jahr kostenloses Pro-Abo für Early Adopters",
     "created_at": "2025-12-16T14:42:18.406997+00:00",
-    "used": false,
-    "used_by": null,
-    "used_at": null
+    "used": true,
+    "used_by": "coupon_test_1766963772@test.com",
+    "used_at": "2025-12-28T23:16:13.074933+00:00"
   },
   {
     "code": "WINE-JZH7-76MW-9X07",

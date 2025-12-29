@@ -1087,5 +1087,53 @@
     "is_favorite": false,
     "price_category": null,
     "created_at": "2025-12-28T18:06:16.158141+00:00"
+  },
+  {
+    "id": "2f956cb6-cf26-4aeb-80cb-c76358e17e8b",
+    "user_id": "user_38a436249c2a",
+    "name": "User1 Test Wine",
+    "type": "weiss",
+    "region": "Test Region",
+    "year": 2023,
+    "grape": "Test Grape",
+    "description": null,
+    "notes": null,
+    "image_base64": null,
+    "quantity": 1,
+    "is_favorite": false,
+    "price_category": null,
+    "created_at": "2025-12-28T18:10:17.547375+00:00"
+  },
+  {
+    "id": "d9f9554e-0ff8-46de-a408-3023e574def5",
+    "user_id": "user_7723268b54c0",
+    "name": "User1 Test Wine",
+    "type": "weiss",
+    "region": "Test Region",
+    "year": 2023,
+    "grape": "Test Grape",
+    "description": null,
+    "notes": null,
+    "image_base64": null,
+    "quantity": 1,
+    "is_favorite": false,
+    "price_category": null,
+    "created_at": "2025-12-28T18:12:08.597180+00:00"
+  },
+  {
+    "id": "c2e8c150-18f8-42e5-92f3-774c4375f6ed",
+    "user_id": "user_210e6ec82b82",
+    "name": "User1 Test Wine",
+    "type": "weiss",
+    "region": "Test Region",
+    "year": 2023,
+    "grape": "Test Grape",
+    "description": null,
+    "notes": null,
+    "image_base64": null,
+    "quantity": 1,
+    "is_favorite": false,
+    "price_category": null,
+    "created_at": "2025-12-28T18:12:51.996713+00:00"
   }
 ]

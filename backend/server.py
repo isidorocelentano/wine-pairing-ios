@@ -5445,6 +5445,225 @@ async def logout(request: Request, response: Response):
     return {"message": "Logged out"}
 
 
+# ===================== WINE PROFILE API =====================
+
+class WineProfileUpdate(BaseModel):
+    """Request model for updating wine profile"""
+    red_wine_style: Optional[str] = None
+    white_wine_style: Optional[str] = None
+    acidity_tolerance: Optional[str] = None
+    tannin_preference: Optional[str] = None
+    sweetness_preference: Optional[str] = None
+    favorite_regions: Optional[List[str]] = None
+    budget_everyday: Optional[str] = None
+    budget_restaurant: Optional[str] = None
+    no_gos: Optional[List[str]] = None
+    dietary_preferences: Optional[List[str]] = None
+    adventure_level: Optional[str] = None
+
+@api_router.get("/profile/wine")
+async def get_wine_profile(request: Request):
+    """Get user's wine taste profile (Pro feature)"""
+    user = await get_current_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Nicht angemeldet")
+    
+    # Check if user is Pro
+    if user.plan != "pro":
+        raise HTTPException(status_code=403, detail="Diese Funktion ist nur für Pro-Mitglieder verfügbar")
+    
+    # Get profile from database
+    profile = await db.wine_profiles.find_one({"user_id": user.user_id}, {"_id": 0})
+    
+    if not profile:
+        # Return default empty profile
+        return {
+            "user_id": user.user_id,
+            "red_wine_style": None,
+            "white_wine_style": None,
+            "acidity_tolerance": None,
+            "tannin_preference": None,
+            "sweetness_preference": None,
+            "favorite_regions": [],
+            "budget_everyday": None,
+            "budget_restaurant": None,
+            "no_gos": [],
+            "dietary_preferences": [],
+            "adventure_level": None,
+            "updated_at": None
+        }
+    
+    return profile
+
+@api_router.put("/profile/wine")
+async def update_wine_profile(request: Request, profile_update: WineProfileUpdate):
+    """Update user's wine taste profile (Pro feature)"""
+    user = await get_current_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Nicht angemeldet")
+    
+    # Check if user is Pro
+    if user.plan != "pro":
+        raise HTTPException(status_code=403, detail="Diese Funktion ist nur für Pro-Mitglieder verfügbar")
+    
+    # Prepare update data
+    update_data = {
+        "user_id": user.user_id,
+        "updated_at": datetime.now(timezone.utc).isoformat()
+    }
+    
+    # Only update fields that are provided
+    for field, value in profile_update.model_dump().items():
+        if value is not None:
+            update_data[field] = value
+    
+    # Upsert profile
+    await db.wine_profiles.update_one(
+        {"user_id": user.user_id},
+        {"$set": update_data},
+        upsert=True
+    )
+    
+    # Return updated profile
+    profile = await db.wine_profiles.find_one({"user_id": user.user_id}, {"_id": 0})
+    logger.info(f"🍷 Wine profile updated for user {user.user_id}")
+    
+    return {
+        "success": True,
+        "message": "Weinprofil erfolgreich aktualisiert",
+        "profile": profile
+    }
+
+@api_router.delete("/profile/wine")
+async def reset_wine_profile(request: Request):
+    """Reset user's wine taste profile to defaults (Pro feature)"""
+    user = await get_current_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Nicht angemeldet")
+    
+    if user.plan != "pro":
+        raise HTTPException(status_code=403, detail="Diese Funktion ist nur für Pro-Mitglieder verfügbar")
+    
+    await db.wine_profiles.delete_one({"user_id": user.user_id})
+    logger.info(f"🍷 Wine profile reset for user {user.user_id}")
+    
+    return {"success": True, "message": "Weinprofil zurückgesetzt"}
+
+
+def get_profile_context_for_ai(profile: dict, language: str = "de") -> str:
+    """Generate AI context from user's wine profile"""
+    if not profile:
+        return ""
+    
+    context_parts = []
+    
+    # Red wine style
+    if profile.get("red_wine_style"):
+        styles = {
+            "kraftig_wurzig": {"de": "kräftige, würzige Rotweine (Bordeaux, Rhône-Stil)", "en": "bold, spicy red wines (Bordeaux, Rhône style)"},
+            "fruchtig_elegant": {"de": "fruchtige, elegante Rotweine (Burgunder-Stil)", "en": "fruity, elegant red wines (Burgundy style)"},
+            "beides": {"de": "sowohl kräftige als auch elegante Rotweine", "en": "both bold and elegant red wines"}
+        }
+        if profile["red_wine_style"] in styles:
+            context_parts.append(f"Bevorzugt bei Rotwein: {styles[profile['red_wine_style']].get(language, styles[profile['red_wine_style']]['de'])}")
+    
+    # White wine style
+    if profile.get("white_wine_style"):
+        styles = {
+            "mineralisch_frisch": {"de": "mineralische, frische Weißweine (Chablis-Stil)", "en": "mineral, fresh white wines (Chablis style)"},
+            "cremig_textur": {"de": "cremige Weißweine mit Textur (Meursault-Stil)", "en": "creamy white wines with texture (Meursault style)"},
+            "aromatisch_verspielt": {"de": "aromatische, verspielte Weißweine (Riesling-Stil)", "en": "aromatic, playful white wines (Riesling style)"},
+            "beides": {"de": "verschiedene Weißwein-Stile", "en": "various white wine styles"}
+        }
+        if profile["white_wine_style"] in styles:
+            context_parts.append(f"Bevorzugt bei Weißwein: {styles[profile['white_wine_style']].get(language, styles[profile['white_wine_style']]['de'])}")
+    
+    # Acidity tolerance
+    if profile.get("acidity_tolerance"):
+        tolerances = {
+            "niedrig": {"de": "Mag keine säurebetonten Weine", "en": "Doesn't like high-acid wines"},
+            "mittel": {"de": "Moderate Säure ist akzeptabel", "en": "Moderate acidity is acceptable"},
+            "hoch": {"de": "Liebt säurebetonte, frische Weine", "en": "Loves high-acid, fresh wines"}
+        }
+        if profile["acidity_tolerance"] in tolerances:
+            context_parts.append(tolerances[profile["acidity_tolerance"]].get(language, tolerances[profile["acidity_tolerance"]]["de"]))
+    
+    # Tannin preference
+    if profile.get("tannin_preference"):
+        prefs = {
+            "weich_seidig": {"de": "Bevorzugt weiche, seidige Tannine – keine harten Gerbstoffe", "en": "Prefers soft, silky tannins – no harsh tannins"},
+            "mittel": {"de": "Mittlere Tannine sind akzeptabel", "en": "Medium tannins are acceptable"},
+            "markant_griffig": {"de": "Mag markante, griffige Tannine", "en": "Likes bold, grippy tannins"}
+        }
+        if profile["tannin_preference"] in prefs:
+            context_parts.append(prefs[profile["tannin_preference"]].get(language, prefs[profile["tannin_preference"]]["de"]))
+    
+    # Sweetness
+    if profile.get("sweetness_preference"):
+        prefs = {
+            "knochentrocken": {"de": "Nur knochentrockene Weine", "en": "Only bone-dry wines"},
+            "trocken": {"de": "Bevorzugt trockene Weine", "en": "Prefers dry wines"},
+            "halbtrocken": {"de": "Halbtrockene Weine sind willkommen", "en": "Off-dry wines are welcome"},
+            "lieblich": {"de": "Mag auch liebliche Weine", "en": "Also likes sweet wines"},
+            "edelsuss": {"de": "Liebt edelsüße Weine", "en": "Loves noble sweet wines"}
+        }
+        if profile["sweetness_preference"] in prefs:
+            context_parts.append(prefs[profile["sweetness_preference"]].get(language, prefs[profile["sweetness_preference"]]["de"]))
+    
+    # Favorite regions
+    if profile.get("favorite_regions") and len(profile["favorite_regions"]) > 0:
+        regions = ", ".join(profile["favorite_regions"])
+        context_parts.append(f"Lieblingsregionen: {regions}")
+    
+    # Budget
+    if profile.get("budget_everyday"):
+        budgets = {
+            "unter_10": "unter 10€",
+            "10_20": "10-20€",
+            "20_35": "20-35€",
+            "35_50": "35-50€",
+            "ueber_50": "über 50€"
+        }
+        if profile["budget_everyday"] in budgets:
+            context_parts.append(f"Budget für Alltag: {budgets[profile['budget_everyday']]}")
+    
+    if profile.get("budget_restaurant"):
+        budgets = {
+            "unter_30": "unter 30€",
+            "30_50": "30-50€",
+            "50_80": "50-80€",
+            "80_120": "80-120€",
+            "ueber_120": "über 120€"
+        }
+        if profile["budget_restaurant"] in budgets:
+            context_parts.append(f"Budget im Restaurant: {budgets[profile['budget_restaurant']]}")
+    
+    # No-gos
+    if profile.get("no_gos") and len(profile["no_gos"]) > 0:
+        no_gos = ", ".join(profile["no_gos"])
+        context_parts.append(f"⚠️ WICHTIG - KEINE Empfehlungen für: {no_gos}")
+    
+    # Dietary preferences
+    if profile.get("dietary_preferences") and len(profile["dietary_preferences"]) > 0:
+        prefs = ", ".join(profile["dietary_preferences"])
+        context_parts.append(f"Kulinarische Vorlieben: {prefs}")
+    
+    # Adventure level
+    if profile.get("adventure_level"):
+        levels = {
+            "klassiker": {"de": "Bevorzugt klassische, bekannte Weine – keine exotischen Empfehlungen", "en": "Prefers classic, well-known wines – no exotic recommendations"},
+            "ausgewogen": {"de": "Mix aus Klassikern und neuen Entdeckungen", "en": "Mix of classics and new discoveries"},
+            "abenteuerlich": {"de": "Liebt mutige Wildcard-Empfehlungen und unbekannte Regionen", "en": "Loves bold wildcard recommendations and unknown regions"}
+        }
+        if profile["adventure_level"] in levels:
+            context_parts.append(levels[profile["adventure_level"]].get(language, levels[profile["adventure_level"]]["de"]))
+    
+    if context_parts:
+        return "\n\n🍷 BENUTZERPROFIL (Bitte bei der Empfehlung berücksichtigen):\n" + "\n".join(f"• {part}" for part in context_parts)
+    
+    return ""
+
+
 # ===================== GOOGLE OAUTH =====================
 
 class GoogleSessionRequest(BaseModel):

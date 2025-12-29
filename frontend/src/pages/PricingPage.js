@@ -377,19 +377,28 @@ const PricingPage = () => {
         }
       ],
       
-      faq_title: 'Questions Fréquentes',
+      faq_title: '🛡️ Votre Sécurité à Table',
+      faq_subtitle: 'Réponses aux questions les plus importantes',
       faqs: [
         {
-          q: 'Puis-je annuler à tout moment?',
-          a: 'Oui, vous pouvez annuler votre abonnement Pro à tout moment. Il continuera jusqu\'à la fin de la période payée.'
+          q: 'Comment l\'IA sait-elle ce qu\'il y a dans la bouteille sans la goûter?',
+          a: 'Notre moteur est basé sur des profils chimiques et des milliers de données de sommeliers. Il analyse le cépage, la région et le millésime. Un Chassagne-Montrachet 2014 a un ADN spécifique d\'acidité et de texture – l\'IA reconnaît cette structure et la fait correspondre mathématiquement aux arômes de votre plat.'
         },
         {
-          q: 'Y a-t-il une garantie de remboursement?',
-          a: 'Oui, nous offrons une garantie de remboursement de 14 jours si vous n\'êtes pas satisfait.'
+          q: 'Et si mon goût personnel est complètement différent?',
+          a: 'Vous êtes la dernière instance. Dans la version Pro, vous pouvez personnaliser votre profil (ex: « Je n\'aime pas les tanins forts »). L\'application apprend à chaque accord et filtre les suggestions pour qu\'elles correspondent non seulement à votre repas, mais surtout à vous.'
         },
         {
-          q: 'Quels modes de paiement sont acceptés?',
-          a: 'Nous acceptons toutes les cartes de crédit principales via notre fournisseur de paiement sécurisé Stripe.'
+          q: 'Le scanner photo est-il fiable même avec une faible luminosité au restaurant?',
+          a: 'Oui. Notre technologie OCR est optimisée pour lire même les menus manuscrits ou les caves sombres. Si un nom est extrêmement illisible, l\'IA aide par le "Fuzzy Matching" à identifier correctement le vin le plus probable.'
+        },
+        {
+          q: 'L\'application recommande-t-elle toujours les vins les plus chers?',
+          a: 'Au contraire. L\'application est neutre et n\'est pas impliquée dans le chiffre d\'affaires du restaurant. Vous pouvez définir votre budget (ex: « moins de 50€ »). L\'IA recherche alors le « Best Value » – le vin qui offre le meilleur résultat d\'accord dans votre gamme de prix.'
+        },
+        {
+          q: 'Puis-je vraiment gérer facilement toute ma cave à vin?',
+          a: 'Oui. Vous pouvez scanner vos bouteilles et les stocker numériquement. Quand vous cuisinez une recette, l\'application vous montre immédiatement quel trésor de votre collection garantit la meilleure expérience aujourd\'hui. Fini les recherches, fini les devinettes.'
         }
       ],
       

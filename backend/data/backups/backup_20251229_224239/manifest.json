@@ -1,15 +1,15 @@
 {
   "version": "3.0",
-  "timestamp": "2025-12-28T17:53:32.126689+00:00",
-  "backup_dir": "/app/backend/data/backups/backup_20251228_175332",
+  "timestamp": "2025-12-29T22:42:39.213019+00:00",
+  "backup_dir": "/app/backend/data/backups/backup_20251229_224239",
   "collections": {
     "users": {
-      "count": 25,
+      "count": 36,
       "file": "users.json",
       "is_user_data": true
     },
     "wines": {
-      "count": 71,
+      "count": 76,
       "file": "wines.json",
       "is_user_data": true
     },

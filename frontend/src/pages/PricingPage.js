@@ -689,18 +689,36 @@ const PricingPage = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 px-4 md:px-12 lg:px-24">
-        <div className="container mx-auto max-w-3xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">{t.faq_title}</h2>
+      {/* FAQ Section - Enhanced Design */}
+      <section className="py-20 px-4 md:px-12 lg:px-24 bg-gradient-to-b from-secondary/10 to-background">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3">{t.faq_title}</h2>
+            {t.faq_subtitle && (
+              <p className="text-muted-foreground text-lg">{t.faq_subtitle}</p>
+            )}
+          </div>
           
           <div className="space-y-4">
             {t.faqs?.map((faq, idx) => (
-              <Card key={idx} className="p-6">
-                <h3 className="font-semibold text-lg mb-2">{faq.q}</h3>
-                <p className="text-muted-foreground">{faq.a}</p>
+              <Card key={idx} className="p-6 hover:shadow-lg transition-shadow border-l-4 border-l-primary/50 hover:border-l-primary">
+                <h3 className="font-semibold text-lg mb-3 flex items-start gap-3">
+                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-sm">
+                    {idx + 1}
+                  </span>
+                  <span>{faq.q}</span>
+                </h3>
+                <p className="text-muted-foreground leading-relaxed ml-11">{faq.a}</p>
               </Card>
             ))}
+          </div>
+          
+          {/* Trust Badge */}
+          <div className="mt-12 text-center">
+            <div className="inline-flex items-center gap-2 bg-green-50 dark:bg-green-950/30 text-green-700 dark:text-green-400 px-6 py-3 rounded-full border border-green-200 dark:border-green-800">
+              <Shield className="w-5 h-5" />
+              <span className="font-medium">Transparent • Neutral • Datenschutz-konform</span>
+            </div>
           </div>
         </div>
       </section>

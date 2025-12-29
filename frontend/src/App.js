@@ -96,6 +96,9 @@ function AppRouter() {
         <Route path="/coupon" element={<><CouponPage /><Navigation /></>} />
         <Route path="/pricing" element={<><PricingPage /><Navigation /></>} />
         <Route path="/pro" element={<><PricingPage /><Navigation /></>} />
+        {/* Wine Profile (Pro Feature) */}
+        <Route path="/profile" element={<><WineProfilePage /><Navigation /></>} />
+        <Route path="/weinprofil" element={<><WineProfilePage /><Navigation /></>} />
         {/* Weekly Tip */}
         <Route path="/tipp-der-woche" element={<><SEO page="weeklyTip" /><TippDerWochePage /><Navigation /></>} />
         <Route path="/weekly-tip" element={<><SEO page="weeklyTip" /><TippDerWochePage /><Navigation /></>} />

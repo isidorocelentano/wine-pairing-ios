@@ -143,19 +143,28 @@ const PricingPage = () => {
         }
       ],
       
-      faq_title: 'Häufige Fragen',
+      faq_title: '🛡️ Deine Sicherheit am Tisch',
+      faq_subtitle: 'Antworten auf die wichtigsten Fragen',
       faqs: [
         {
-          q: 'Kann ich jederzeit kündigen?',
-          a: 'Ja, du kannst dein Pro-Abo jederzeit kündigen. Es läuft dann bis zum Ende der bezahlten Periode weiter.'
+          q: 'Woher weiß die KI, was in der Flasche ist, ohne sie zu probieren?',
+          a: 'Unsere Engine basiert auf chemischen Profilen und tausenden Sommelier-Daten. Sie analysiert die Rebsorte, die Region und den Jahrgang. Ein 2014er Chassagne-Montrachet hat eine spezifische DNA aus Säure und Textur – die KI erkennt diese Struktur und matcht sie mathematisch mit den Aromen deines Gerichts.'
         },
         {
-          q: 'Gibt es eine Geld-zurück-Garantie?',
-          a: 'Ja, wir bieten eine 14-tägige Geld-zurück-Garantie, wenn du nicht zufrieden bist.'
+          q: 'Was ist, wenn mein persönlicher Geschmack ganz anders ist?',
+          a: 'Du bist die letzte Instanz. In der Pro-Version kannst du dein Profil personalisieren (z.B. „Ich mag keine herben Tannine"). Die App lernt mit jedem Pairing dazu und filtert die Vorschläge so, dass sie nicht nur zum Essen, sondern vor allem zu dir passen.'
         },
         {
-          q: 'Welche Zahlungsmethoden werden akzeptiert?',
-          a: 'Wir akzeptieren alle gängigen Kreditkarten über unseren sicheren Zahlungsanbieter Stripe.'
+          q: 'Ist der Foto-Scanner auch bei schlechtem Licht im Restaurant zuverlässig?',
+          a: 'Ja. Unsere OCR-Technologie ist darauf optimiert, auch handschriftliche Karten oder dunkle Weinkeller zu lesen. Sollte ein Name extrem unleserlich sein, hilft die KI durch „Fuzzy Matching", den wahrscheinlichsten Wein trotzdem korrekt zu identifizieren.'
+        },
+        {
+          q: 'Empfiehlt die App immer nur die teuersten Weine?',
+          a: 'Im Gegenteil. Die App ist neutral und nicht am Umsatz des Restaurants beteiligt. Du kannst dein Budget festlegen (z.B. „unter 50 €"). Die KI sucht dann den „Best Value" – also den Wein, der das beste Pairing-Ergebnis in deiner Preisklasse liefert.'
+        },
+        {
+          q: 'Kann ich meinen kompletten Weinkeller wirklich einfach verwalten?',
+          a: 'Ja. Du kannst deine Flaschen scannen und digital hinterlegen. Wenn du dann ein Rezept kochst, zeigt dir die App sofort an, welcher Schatz aus deinem Bestand heute das beste Erlebnis garantiert. Kein Suchen, kein Rätselraten mehr.'
         }
       ],
       

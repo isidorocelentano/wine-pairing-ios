@@ -144,3 +144,54 @@ await fetch(`${API}/wines`, {
 
 ### Geänderte Dateien
 - `frontend/src/pages/PricingPage.js`
+
+---
+
+## Version 1.8.5 (29.12.2025) - Personalisiertes Weinprofil
+
+### 🍷 Neues Pro-Feature: Weinprofil
+
+Personalisierte Weinempfehlungen basierend auf individuellem Geschmacksprofil.
+
+### Profil-Kategorien
+
+| Kategorie | Optionen |
+|-----------|----------|
+| **Rotwein-Stilistik** | Kräftig & Würzig, Fruchtig & Elegant, Beides |
+| **Weißwein-Charakter** | Mineralisch, Cremig, Aromatisch, Alle |
+| **Säure-Toleranz** | Niedrig, Mittel, Hoch |
+| **Tannin-Vorliebe** | Weich & Seidig, Mittel, Markant & Griffig |
+| **Süßegrad** | Knochentrocken bis Edelsüß |
+| **Lieblingsregionen** | 25+ Regionen wählbar |
+| **Budget Alltag** | Unter 10€ bis Über 50€ |
+| **Budget Restaurant** | Unter 30€ bis Über 120€ |
+| **No-Gos** | Barrique, Schwefel, bestimmte Rebsorten, etc. |
+| **Kulinarischer Kontext** | Vegetarisch, Vegan, Fleisch, Asiatisch, etc. |
+| **Abenteuer-Faktor** | Klassiker, Ausgewogen, Abenteuerlich |
+
+### API-Endpunkte
+
+| Methode | Endpoint | Beschreibung |
+|---------|----------|--------------|
+| GET | `/api/profile/wine` | Profil laden |
+| PUT | `/api/profile/wine` | Profil speichern |
+| DELETE | `/api/profile/wine` | Profil zurücksetzen |
+
+### Frontend-Routes
+
+- `/profile` - Englische Route
+- `/weinprofil` - Deutsche Route
+
+### Integration in Pairing-Engine
+
+Das Benutzerprofil wird automatisch in die AI-Empfehlungen integriert:
+- Bevorzugte Weinstile werden berücksichtigt
+- No-Gos werden ausgeschlossen
+- Budget-Rahmen wird eingehalten
+- Abenteuer-Level beeinflusst Empfehlungsvielfalt
+
+### Geänderte Dateien
+
+- `backend/server.py` - WineProfile Model + API
+- `frontend/src/pages/WineProfilePage.js` - NEU
+- `frontend/src/App.js` - Routes hinzugefügt

@@ -1518,6 +1518,16 @@ async def get_wine_pairing(request: PairingRequest, http_request: Request):
             four_d_context += f"- Würze (Spice): {request.spice if request.spice is not None else '-'} auf einer Skala von 0-10\n"
             four_d_context += "\nNutze diese vier Dimensionen, um im Anschluss eine kompakte Erklärung zu geben, WARUM deine Empfehlung harmoniert. Erkläre vor allem die BRÜCKE zwischen Gericht und Wein."
 
+        # Pro User: Get personalized wine profile context
+        profile_context = ""
+        if user and user.plan == "pro":
+            try:
+                user_profile = await db.wine_profiles.find_one({"user_id": user.user_id}, {"_id": 0})
+                if user_profile:
+                    profile_context = get_profile_context_for_ai(user_profile, request.language or "de")
+            except Exception as profile_error:
+                logger.warning(f"Could not load wine profile: {profile_error}")
+
         # Weinart-Präferenz des Benutzers
         wine_type_preference = ""
         if request.wine_type_filter and request.wine_type_filter != "all":

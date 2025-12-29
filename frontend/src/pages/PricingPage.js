@@ -260,19 +260,28 @@ const PricingPage = () => {
         }
       ],
       
-      faq_title: 'Frequently Asked Questions',
+      faq_title: '🛡️ Your Safety at the Table',
+      faq_subtitle: 'Answers to the most important questions',
       faqs: [
         {
-          q: 'Can I cancel anytime?',
-          a: 'Yes, you can cancel your Pro subscription anytime. It will continue until the end of the paid period.'
+          q: 'How does the AI know what\'s in the bottle without tasting it?',
+          a: 'Our engine is based on chemical profiles and thousands of sommelier data points. It analyzes the grape variety, region, and vintage. A 2014 Chassagne-Montrachet has a specific DNA of acidity and texture – the AI recognizes this structure and mathematically matches it with the aromas of your dish.'
         },
         {
-          q: 'Is there a money-back guarantee?',
-          a: "Yes, we offer a 14-day money-back guarantee if you're not satisfied."
+          q: 'What if my personal taste is completely different?',
+          a: 'You are the final authority. In the Pro version, you can personalize your profile (e.g., "I don\'t like harsh tannins"). The app learns with each pairing and filters suggestions so they fit not just your food, but especially you.'
         },
         {
-          q: 'What payment methods are accepted?',
-          a: 'We accept all major credit cards through our secure payment provider Stripe.'
+          q: 'Is the photo scanner reliable even in low light at the restaurant?',
+          a: 'Yes. Our OCR technology is optimized to read even handwritten menus or dark wine cellars. If a name is extremely illegible, the AI helps through "Fuzzy Matching" to correctly identify the most likely wine anyway.'
+        },
+        {
+          q: 'Does the app always recommend only the most expensive wines?',
+          a: 'On the contrary. The app is neutral and not involved in restaurant revenue. You can set your budget (e.g., "under €50"). The AI then searches for "Best Value" – the wine that delivers the best pairing result in your price range.'
+        },
+        {
+          q: 'Can I really manage my entire wine cellar easily?',
+          a: 'Yes. You can scan your bottles and store them digitally. When you cook a recipe, the app immediately shows you which treasure from your collection guarantees the best experience today. No more searching, no more guessing.'
         }
       ],
       

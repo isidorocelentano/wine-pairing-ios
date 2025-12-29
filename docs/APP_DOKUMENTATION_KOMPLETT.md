@@ -830,3 +830,30 @@ Nachher: fetch(`${API}/wines`, {
 - 99 unbenutzte Early Adopter Codes verfügbar
 - Format: WINE-XXXX-XXXX-XXXX
 - Wert: 1 Jahr Pro-Zugang (€39.99)
+
+### Version 1.8.4 (29.12.2025) - FAQ Einwandbehandlung
+
+**🛡️ Neue FAQ-Sektion "Deine Sicherheit am Tisch":**
+
+5 strategisch formulierte Fragen zur Einwandbehandlung:
+
+| # | Frage | Zweck |
+|---|-------|-------|
+| 1 | Woher weiß die KI, was in der Flasche ist? | Transparenz durch Technik-Erklärung |
+| 2 | Was ist, wenn mein Geschmack anders ist? | Kontrolle zurückgeben |
+| 3 | Ist der Scanner bei schlechtem Licht zuverlässig? | Technische Bedenken entkräften |
+| 4 | Empfiehlt die App nur teure Weine? | Neutralität betonen |
+| 5 | Kann ich meinen Weinkeller einfach verwalten? | Nutzwert demonstrieren |
+
+**Design-Verbesserungen:**
+- ✅ Nummerierte Fragen mit primärfarbenen Kreisen
+- ✅ Hover-Effekt mit Schatten und Rahmen-Akzent
+- ✅ Trust-Badge: "Transparent • Neutral • Datenschutz-konform"
+- ✅ Gradient-Hintergrund für visuelle Hierarchie
+
+**Mehrsprachig:** DE/EN/FR
+
+**Psychologische Wirkung:**
+- Transparenz schafft Vertrauen in die Logik
+- Kontrolle über Budget und Geschmack entlastet
+- Zeit- und Geldersparnis als Hauptnutzen

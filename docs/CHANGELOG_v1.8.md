@@ -124,3 +124,23 @@ await fetch(`${API}/wines`, {
 - **Endpoint:** `POST /api/coupon/redeem`
 - **Body:** `{"code": "WINE-XXXX-XXXX-XXXX"}`
 - **Auth:** Bearer Token erforderlich
+
+---
+
+## Version 1.8.4 (29.12.2025) - FAQ Einwandbehandlung
+
+### 🛡️ Neue Features
+- **FAQ-Sektion komplett überarbeitet** für bessere Einwandbehandlung
+- Titel geändert zu "Deine Sicherheit am Tisch"
+- 5 strategische Fragen mit überzeugenden Antworten
+- Trust-Badge am Ende der FAQ-Sektion
+
+### Design-Verbesserungen
+- Nummerierte Fragen mit primärfarbenen Kreisen
+- Hover-Effekt mit Schatten
+- Linker Rand-Akzent (border-left)
+- Gradient-Hintergrund
+- Mehr Whitespace für bessere Lesbarkeit
+
+### Geänderte Dateien
+- `frontend/src/pages/PricingPage.js`

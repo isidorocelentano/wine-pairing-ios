@@ -12,6 +12,7 @@ const translations = {
     nav_feed: 'Community',
     nav_grapes: 'Rebsorten',
     nav_wine_database: 'Wein-DB',
+    nav_profile: 'Profil',
     
     // Wine Database Modal Labels
     wine_country: 'Land',

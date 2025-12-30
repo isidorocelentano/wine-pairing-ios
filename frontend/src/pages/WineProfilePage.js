@@ -12,7 +12,7 @@ import { Badge } from '@/components/ui/badge';
 import { Slider } from '@/components/ui/slider';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useAuth } from '@/contexts/AuthContext';
-import { API_URL } from '@/config/api';
+import { API } from '@/config/api';
 
 const WineProfilePage = () => {
   const navigate = useNavigate();

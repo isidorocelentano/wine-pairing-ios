@@ -195,3 +195,37 @@ Das Benutzerprofil wird automatisch in die AI-Empfehlungen integriert:
 - `backend/server.py` - WineProfile Model + API
 - `frontend/src/pages/WineProfilePage.js` - NEU
 - `frontend/src/App.js` - Routes hinzugefügt
+
+---
+
+## Version 1.8.6 (30.12.2025) - Weinprofil UI-Fixes
+
+### 🔧 Bug Fixes
+
+**Speichern-Button nicht sichtbar:**
+- Problem: Button wurde von der Navigation überdeckt
+- Lösung: `bottom-20` statt `bottom-0` für mobile Geräte
+- Padding am Seitenende erhöht (`pb-40`)
+
+**API-URL Fix:**
+- `API_URL` → `API` in WineProfilePage.js
+- Korrekter Pfad: `/api/profile/wine`
+
+### ✨ Neue Features
+
+**Navigation:**
+- "Profil" Icon in der Navigation (nur für Pro-User)
+- Icon: UserCog
+
+**Benutzer-Menü:**
+- "Mein Weinprofil" Link hinzugefügt
+- Dreisprachig: DE/EN/FR
+
+### Geänderte Dateien
+- `frontend/src/pages/WineProfilePage.js`
+- `frontend/src/components/Navigation.js`
+- `frontend/src/components/UserMenu.js`
+- `frontend/src/contexts/LanguageContext.js`
+
+### Übersetzungen hinzugefügt
+- `nav_profile`: "Profil" / "Profile" / "Profil"

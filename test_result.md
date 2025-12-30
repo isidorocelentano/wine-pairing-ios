@@ -1,53 +1,41 @@
 # Test Results - Wine Pairing Platform
 
 ## Test Configuration
-test_sequence: 20
+test_sequence: 25
 run_ui: true
-backend_test_completed: true
-critical_bugfix_applied: true
-bugfix_description: "Wine Save functionality fixed - iOS Safari compatibility improved"
+backend_test_completed: false
+frontend_test_completed: false
 
-## Latest Change (2025-12-28)
+## Latest Changes (v1.8.6 - 30.12.2025)
 
-### Wine Save Feature Fix (2025-12-28) - COMPLETED ✅
+### Changes to Test:
+1. **Wine Profile Feature (Pro)**
+   - GET /api/profile/wine - Load profile
+   - PUT /api/profile/wine - Save profile
+   - DELETE /api/profile/wine - Reset profile
+   
+2. **Navigation Updates**
+   - Profile icon in navigation (Pro users only)
+   - "Mein Weinprofil" in UserMenu
+   
+3. **UI Fixes**
+   - Save button visibility (bottom-20 instead of bottom-0)
+   - Page padding increased (pb-40)
 
-**Issue Reported:**
-- User reported "Ein Fehler ist aufgetreten" when trying to save wine after successful scan
-- Scan works correctly, but save fails on iOS Safari
+4. **Previous Fixes Still Working:**
+   - Wine Save (iOS Safari)
+   - Coupon Banner on Pricing
+   - FAQ Section
+   - Google Auth
 
-**Root Cause Analysis:**
-- The `authAxios` interceptor was using a pattern that may not work reliably on iOS Safari
-- Token handling was inconsistent between scan and save operations
-- Error messages were too generic, hiding actual failure reasons
-
-**Fix Applied:**
-- Replaced all `authAxios` calls with native `fetch` API for better iOS Safari compatibility
-- Explicit token retrieval from `localStorage` for each API call
-- Better error handling with specific error messages
-- Removed axios dependency from CellarPage.js
-
-**Files Modified:**
-- `/app/frontend/src/pages/CellarPage.js`: Complete refactor of API calls
-
-**Backend Testing Results (11/11 PASSED - 100% Success Rate):**
-
-1. ✅ POST /api/wines - Create new wine (primary fix)
-2. ✅ GET /api/wines - Get user's wine list
-3. ✅ PUT /api/wines/{id} - Update wine
-4. ✅ DELETE /api/wines/{id} - Delete wine
-5. ✅ POST /api/wines/{id}/favorite - Toggle favorite
-6. ✅ Authentication flow with JWT tokens
-7. ✅ User isolation (users can only access their own wines)
-8. ✅ Proper error messages (not generic "Ein Fehler ist aufgetreten")
-9. ✅ Token validation
-10. ✅ Wine data structure validation
-11. ✅ CORS and headers correct
-
-**Wine Save Feature Status**: FIXED ✅
-**Backend Implementation**: VERIFIED WORKING
-**Frontend Implementation**: UPDATED with native fetch API
-**Error Handling**: IMPROVED with specific messages
+## Test Credentials
+- Email: isicel@bluewin.ch
+- Password (Preview): WeinAdmin2025!
+- Password (Live): WeinPairing2025!
+- Plan: Pro
 
 ## Incorporate User Feedback
-- User should test on their iPhone (iOS Safari) after deployment
-- Full scan-to-save flow should be tested on live site
+- Test on mobile viewport (iPhone)
+- Verify save button is visible above navigation
+- Test all profile categories can be saved
+- Verify profile integrates with pairing recommendations

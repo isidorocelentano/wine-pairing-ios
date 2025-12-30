@@ -251,7 +251,7 @@ const WineProfilePage = () => {
 
       try {
         const token = localStorage.getItem('wine_auth_token');
-        const response = await fetch(`${API_URL}/api/profile/wine`, {
+        const response = await fetch(`${API}/profile/wine`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -276,7 +276,7 @@ const WineProfilePage = () => {
     setSaving(true);
     try {
       const token = localStorage.getItem('wine_auth_token');
-      const response = await fetch(`${API_URL}/api/profile/wine`, {
+      const response = await fetch(`${API}/profile/wine`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -302,7 +302,7 @@ const WineProfilePage = () => {
   const handleReset = async () => {
     try {
       const token = localStorage.getItem('wine_auth_token');
-      await fetch(`${API_URL}/api/profile/wine`, {
+      await fetch(`${API}/profile/wine`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`

@@ -5697,34 +5697,60 @@ class WinePairingAPITester:
         if not self.register_test_user():
             print("❌ Failed to register test user - cannot continue with auth tests")
             return False
-        
-        # Run authenticated tests in sequence
-        tests = [
-            self.test_wine_create_with_auth,
-            self.test_wine_get_with_auth,
-            self.test_wine_get_by_id_with_auth,
-            self.test_wine_update_with_auth,
-            self.test_wine_favorite_toggle_with_auth,
-            self.test_wine_delete_with_auth,
-            self.test_wine_isolation_between_users,
-            self.test_wine_error_messages
-        ]
-        
-        for test in tests:
-            test()
-        
+    def run_wine_profile_comprehensive_tests(self):
+        """Run comprehensive Wine Profile tests as specified in review request"""
+        print("🍷 Running Comprehensive Wine Profile Platform Tests")
         print("=" * 60)
+        print("Preview URL: https://winetrak.preview.emergentagent.com")
+        print("Test Credentials: isicel@bluewin.ch / WeinAdmin2025!")
+        print("=" * 60)
+        
+        # Health Check
+        self.test_health_check()
+        
+        # Authentication Tests
+        print("\n🔐 Testing Authentication...")
+        self.test_login_with_test_credentials()
+        self.test_get_current_user()
+        
+        # Wine Profile API Tests (NEW - CRITICAL)
+        print("\n👤 Testing Wine Profile Feature (Pro)...")
+        self.test_get_wine_profile_empty()
+        self.test_save_wine_profile()
+        self.test_get_wine_profile_saved()
+        self.test_pairing_with_profile_context()
+        self.test_reset_wine_profile()
+        self.test_get_wine_profile_after_reset()
+        
+        # Wine Cellar API Tests
+        print("\n🍷 Testing Wine Cellar API (iOS Fix Verification)...")
+        self.test_create_wine_authenticated()
+        self.test_get_wines_authenticated()
+        self.test_update_wine_authenticated()
+        self.test_delete_wine_authenticated()
+        
+        # Pairing API Tests with Profile Integration
+        print("\n🤖 Testing Pairing API with Profile Integration...")
+        self.test_wine_pairing_basic()
+        self.test_wine_pairing_with_cellar()
+        self.test_pairing_history()
+        
+        # Coupon API Tests
+        print("\n🎫 Testing Coupon API...")
+        self.test_redeem_invalid_coupon()
+        
+        print("\n" + "=" * 60)
         print(f"Tests Run: {self.tests_run}")
         print(f"Tests Passed: {self.tests_passed}")
         print(f"Tests Failed: {self.tests_run - self.tests_passed}")
         print(f"Success Rate: {(self.tests_passed/self.tests_run)*100:.1f}%")
         
         if self.tests_passed == self.tests_run:
-            print("✅ All Wine CRUD Authentication tests passed!")
+            print("✅ All Wine Profile Platform tests passed!")
             return True
         else:
             failed = self.tests_run - self.tests_passed
-            print(f"❌ {failed} Wine CRUD Authentication tests FAILED.")
+            print(f"❌ {failed} Wine Profile Platform tests FAILED.")
             return False
 
 

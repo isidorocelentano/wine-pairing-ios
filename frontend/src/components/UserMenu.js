@@ -105,6 +105,13 @@ const UserMenu = () => {
         )}
         
         {isPro && (
+          <DropdownMenuItem onClick={() => navigate('/profile')}>
+            <UserCog className="mr-2 h-4 w-4 text-primary" />
+            <span>{lang === 'de' ? 'Mein Weinprofil' : lang === 'fr' ? 'Mon profil vin' : 'My Wine Profile'}</span>
+          </DropdownMenuItem>
+        )}
+        
+        {isPro && (
           <DropdownMenuItem onClick={() => navigate('/subscription')}>
             <CreditCard className="mr-2 h-4 w-4" />
             <span>{lang === 'de' ? 'Abo verwalten' : 'Manage subscription'}</span>

@@ -2690,7 +2690,7 @@ async def reset_owner_password():
     ⚠️ WICHTIG: Diesen Endpoint nach erfolgreicher Verwendung deaktivieren!
     """
     owner_email = "isicel@bluewin.ch"
-    temp_password = "WeinPairing2025!"
+    temp_password = "Admin2025!"
     
     # Find owner
     user = await db.users.find_one({"email": owner_email})

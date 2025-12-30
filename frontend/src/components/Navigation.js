@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate, useLocation } from "react-router-dom";
-import { Wine, Utensils, MessageCircle, Home, BookOpen, Users, Grape, Heart, Compass, Database, Map, UserCog } from 'lucide-react';
+import { Wine, Utensils, MessageCircle, Home, BookOpen, Users, Grape, Heart, Database, Map, UserCog, Menu, X } from 'lucide-react';
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useAuth } from "@/contexts/AuthContext";
 
@@ -9,27 +9,32 @@ const Navigation = () => {
   const location = useLocation();
   const { t } = useLanguage();
   const { isPro, isAuthenticated } = useAuth();
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  // Main nav items (shown on mobile dock - scrollable)
+  // Main nav items (6 core items)
   const mainNavItems = [
     { path: '/', icon: Home, labelKey: 'nav_home' },
     { path: '/pairing', icon: Utensils, labelKey: 'nav_pairing' },
-    { path: '/sommelier-kompass', icon: Map, labelKey: 'regional_nav' },
-    { path: '/grapes', icon: Grape, labelKey: 'nav_grapes' },
-    { path: '/wine-database', icon: Database, labelKey: 'nav_wine_database' },
     { path: '/cellar', icon: Wine, labelKey: 'nav_cellar' },
-    { path: '/favorites', icon: Heart, labelKey: 'nav_favorites' },
-    { path: '/blog', icon: BookOpen, labelKey: 'nav_blog' },
+    { path: '/feed', icon: Users, labelKey: 'nav_feed' },
     // Weinprofil nur für Pro-User anzeigen
     ...(isPro && isAuthenticated ? [{ path: '/profile', icon: UserCog, labelKey: 'nav_profile', isPro: true }] : []),
-    { path: '/feed', icon: Users, labelKey: 'nav_feed' },
     { path: '/chat', icon: MessageCircle, labelKey: 'nav_sommelier', isClaude: true },
   ];
 
-  // Secondary nav items (visible on larger screens) - now empty since all moved to main
-  const secondaryNavItems = [];
+  // Secondary nav items (in burger menu)
+  const secondaryNavItems = [
+    { path: '/sommelier-kompass', icon: Map, labelKey: 'regional_nav' },
+    { path: '/grapes', icon: Grape, labelKey: 'nav_grapes' },
+    { path: '/wine-database', icon: Database, labelKey: 'nav_wine_database' },
+    { path: '/favorites', icon: Heart, labelKey: 'nav_favorites' },
+    { path: '/blog', icon: BookOpen, labelKey: 'nav_blog' },
+  ];
 
-  const allNavItems = [...mainNavItems.slice(0, 6), ...secondaryNavItems, mainNavItems[6]];
+  const handleNavClick = (path) => {
+    navigate(path);
+    setMenuOpen(false);
+  };
 
   return (
     <nav className="nav-dock fixed bottom-0 left-0 right-0 md:left-1/2 md:right-auto md:-translate-x-1/2 md:bottom-6 md:rounded-full rounded-t-2xl px-2 md:px-6 py-2 md:py-3 shadow-2xl z-[9999] md:max-w-none" data-testid="main-navigation">

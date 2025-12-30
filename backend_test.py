@@ -4566,23 +4566,52 @@ class WinePairingAPITester:
         print("🍷 Starting Wine Pairing API Tests")
         print("=" * 50)
         
+        # Health Check
+        self.test_health_check()
+        
+        # Authentication Tests
+        print("\n🔐 Testing Authentication...")
+        self.test_login_with_test_credentials()
+        self.test_get_current_user()
+        
+        # Wine Profile API Tests (NEW - CRITICAL)
+        print("\n👤 Testing Wine Profile Feature (Pro)...")
+        self.test_get_wine_profile_empty()
+        self.test_save_wine_profile()
+        self.test_get_wine_profile_saved()
+        self.test_pairing_with_profile_context()
+        self.test_reset_wine_profile()
+        self.test_get_wine_profile_after_reset()
+        
+        # Wine Cellar API Tests
+        print("\n🍷 Testing Wine Cellar API...")
+        self.test_create_wine_authenticated()
+        self.test_get_wines_authenticated()
+        self.test_update_wine_authenticated()
+        self.test_delete_wine_authenticated()
+        
+        # Pairing API Tests
+        print("\n🤖 Testing Pairing API...")
+        self.test_wine_pairing_basic()
+        self.test_wine_pairing_with_cellar()
+        self.test_pairing_history()
+        
+        # Coupon API Tests
+        print("\n🎫 Testing Coupon API...")
+        self.test_redeem_invalid_coupon()
+        
         # Basic API tests
         self.test_root_endpoint()
         
         # Test wine label scanning (focus of this test run)
         self.run_wine_label_scan_tests()
         
-        # Wine CRUD operations
+        # Wine CRUD operations (legacy tests)
         self.test_get_wines_empty()
         self.test_create_wine()
         self.test_get_wine_by_id()
         self.test_get_wines_with_data()
         self.test_toggle_favorite()
-        
-        # AI-powered features
-        self.test_wine_pairing_basic()
-        self.test_wine_pairing_with_cellar()
-        self.test_pairing_history()
         
         # Profi-Modus 4D Pairing Tests (New Feature)
         print("\n🎯 Testing Profi-Modus 4D Pairing Features...")

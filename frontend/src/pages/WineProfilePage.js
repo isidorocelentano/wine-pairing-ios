@@ -739,8 +739,8 @@ const WineProfilePage = () => {
           </Card>
         </div>
 
-        {/* Fixed Save Button */}
-        <div className="fixed bottom-0 left-0 right-0 bg-background/95 backdrop-blur border-t p-4 z-50">
+        {/* Fixed Save Button - positioned above navigation */}
+        <div className="fixed bottom-20 md:bottom-24 left-0 right-0 bg-background/95 backdrop-blur border-t p-4 z-40">
           <div className="container mx-auto max-w-3xl flex gap-3">
             <Button
               variant="outline"
@@ -753,7 +753,7 @@ const WineProfilePage = () => {
             <Button
               onClick={handleSave}
               disabled={saving}
-              className="flex-1"
+              className="flex-1 bg-primary"
             >
               {saving ? (
                 <Loader2 className="w-4 h-4 mr-2 animate-spin" />

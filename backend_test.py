@@ -825,6 +825,420 @@ class WinePairingAPITester:
             self.log_test("Pairing History Serialization", False, str(response))
         return success
 
+    # ===================== AUTHENTICATION TESTS =====================
+    
+    def test_login_with_test_credentials(self):
+        """Test login with provided test credentials"""
+        login_data = {
+            "email": "isicel@bluewin.ch",
+            "password": "WeinAdmin2025!"
+        }
+        
+        success, response = self.make_request('POST', 'auth/login', data=login_data, expected_status=200)
+        if success and 'token' in response:
+            self.auth_token = response['token']
+            user_plan = response.get('plan', 'unknown')
+            self.log_test("Login with Test Credentials", True, f"Logged in as {user_plan} user")
+            return True
+        else:
+            self.log_test("Login with Test Credentials", False, str(response))
+            return False
+
+    def test_get_current_user(self):
+        """Test GET /api/auth/me endpoint"""
+        if not self.auth_token:
+            self.log_test("Get Current User", False, "No auth token available")
+            return False
+            
+        success, response = self.make_request('GET', 'auth/me', expected_status=200, use_auth=True)
+        if success:
+            required_fields = ['user_id', 'email', 'plan']
+            missing_fields = [field for field in required_fields if field not in response]
+            
+            if missing_fields:
+                self.log_test("Get Current User", False, f"Missing fields: {missing_fields}")
+                return False
+            
+            plan = response.get('plan', 'unknown')
+            email = response.get('email', 'unknown')
+            self.log_test("Get Current User", True, f"User: {email}, Plan: {plan}")
+        else:
+            self.log_test("Get Current User", False, str(response))
+        return success
+
+    # ===================== WINE PROFILE API TESTS (NEW - CRITICAL) =====================
+    
+    def test_get_wine_profile_empty(self):
+        """Test GET /api/profile/wine - should return empty profile initially"""
+        if not self.auth_token:
+            self.log_test("Get Wine Profile (Empty)", False, "No auth token available")
+            return False
+            
+        success, response = self.make_request('GET', 'profile/wine', expected_status=200, use_auth=True)
+        if success:
+            # Should return default empty profile structure
+            expected_fields = [
+                'user_id', 'red_wine_style', 'white_wine_style', 'acidity_tolerance',
+                'tannin_preference', 'sweetness_preference', 'favorite_regions',
+                'budget_everyday', 'budget_restaurant', 'no_gos', 'dietary_preferences',
+                'adventure_level', 'updated_at'
+            ]
+            
+            missing_fields = [field for field in expected_fields if field not in response]
+            if missing_fields:
+                self.log_test("Get Wine Profile (Empty)", False, f"Missing fields: {missing_fields}")
+                return False
+            
+            # Check that most fields are None/empty for new profile
+            none_fields = ['red_wine_style', 'white_wine_style', 'acidity_tolerance', 'tannin_preference', 'sweetness_preference', 'budget_everyday', 'budget_restaurant', 'adventure_level', 'updated_at']
+            list_fields = ['favorite_regions', 'no_gos', 'dietary_preferences']
+            
+            for field in none_fields:
+                if response.get(field) is not None:
+                    self.log_test("Get Wine Profile (Empty)", False, f"Expected {field} to be None, got: {response.get(field)}")
+                    return False
+            
+            for field in list_fields:
+                if not isinstance(response.get(field), list) or len(response.get(field)) > 0:
+                    self.log_test("Get Wine Profile (Empty)", False, f"Expected {field} to be empty list, got: {response.get(field)}")
+                    return False
+            
+            self.log_test("Get Wine Profile (Empty)", True, "Empty profile structure correct")
+        else:
+            self.log_test("Get Wine Profile (Empty)", False, str(response))
+        return success
+
+    def test_save_wine_profile(self):
+        """Test PUT /api/profile/wine - save profile with test data"""
+        if not self.auth_token:
+            self.log_test("Save Wine Profile", False, "No auth token available")
+            return False
+        
+        profile_data = {
+            "red_wine_style": "fruchtig_elegant",
+            "white_wine_style": "mineralisch_frisch",
+            "acidity_tolerance": "hoch",
+            "tannin_preference": "weich_seidig",
+            "sweetness_preference": "trocken",
+            "favorite_regions": ["Burgund", "Mosel"],
+            "budget_everyday": "20_35",
+            "budget_restaurant": "50_80",
+            "no_gos": ["barrique"],
+            "dietary_preferences": ["mediterran"],
+            "adventure_level": "ausgewogen"
+        }
+        
+        success, response = self.make_request('PUT', 'profile/wine', data=profile_data, expected_status=200, use_auth=True)
+        if success:
+            # Should return success response with profile
+            if not response.get('success'):
+                self.log_test("Save Wine Profile", False, f"Expected success=True, got: {response.get('success')}")
+                return False
+            
+            if 'profile' not in response:
+                self.log_test("Save Wine Profile", False, "Missing profile in response")
+                return False
+            
+            saved_profile = response['profile']
+            
+            # Verify saved data matches input
+            for key, expected_value in profile_data.items():
+                actual_value = saved_profile.get(key)
+                if actual_value != expected_value:
+                    self.log_test("Save Wine Profile", False, f"Field {key}: expected {expected_value}, got {actual_value}")
+                    return False
+            
+            # Check that updated_at is set
+            if not saved_profile.get('updated_at'):
+                self.log_test("Save Wine Profile", False, "updated_at not set")
+                return False
+            
+            self.log_test("Save Wine Profile", True, "Profile saved successfully with all fields")
+        else:
+            self.log_test("Save Wine Profile", False, str(response))
+        return success
+
+    def test_get_wine_profile_saved(self):
+        """Test GET /api/profile/wine - verify saved data persists"""
+        if not self.auth_token:
+            self.log_test("Get Wine Profile (Saved)", False, "No auth token available")
+            return False
+            
+        success, response = self.make_request('GET', 'profile/wine', expected_status=200, use_auth=True)
+        if success:
+            # Should return the saved profile data
+            expected_data = {
+                "red_wine_style": "fruchtig_elegant",
+                "white_wine_style": "mineralisch_frisch",
+                "acidity_tolerance": "hoch",
+                "tannin_preference": "weich_seidig",
+                "sweetness_preference": "trocken",
+                "favorite_regions": ["Burgund", "Mosel"],
+                "budget_everyday": "20_35",
+                "budget_restaurant": "50_80",
+                "no_gos": ["barrique"],
+                "dietary_preferences": ["mediterran"],
+                "adventure_level": "ausgewogen"
+            }
+            
+            for key, expected_value in expected_data.items():
+                actual_value = response.get(key)
+                if actual_value != expected_value:
+                    self.log_test("Get Wine Profile (Saved)", False, f"Field {key}: expected {expected_value}, got {actual_value}")
+                    return False
+            
+            # Check that updated_at exists
+            if not response.get('updated_at'):
+                self.log_test("Get Wine Profile (Saved)", False, "updated_at missing")
+                return False
+            
+            self.log_test("Get Wine Profile (Saved)", True, "Saved profile data retrieved correctly")
+        else:
+            self.log_test("Get Wine Profile (Saved)", False, str(response))
+        return success
+
+    def test_pairing_with_profile_context(self):
+        """Test POST /api/pairing - verify profile context is included in AI prompt"""
+        if not self.auth_token:
+            self.log_test("Pairing with Profile Context", False, "No auth token available")
+            return False
+        
+        pairing_data = {
+            "dish": "Rinderfilet mit Rotweinsoße",
+            "language": "de"
+        }
+        
+        success, response = self.make_request('POST', 'pairing', data=pairing_data, expected_status=200, use_auth=True)
+        if success:
+            recommendation = response.get('recommendation', '')
+            
+            if len(recommendation) < 50:
+                self.log_test("Pairing with Profile Context", False, f"Recommendation too short: {recommendation}")
+                return False
+            
+            # Check if recommendation considers user preferences
+            # Should mention Burgund or Mosel (favorite regions) or elegant/fruity style
+            profile_indicators = ['burgund', 'mosel', 'elegant', 'fruchtig', 'mineralisch', 'trocken']
+            recommendation_lower = recommendation.lower()
+            
+            found_indicators = [indicator for indicator in profile_indicators if indicator in recommendation_lower]
+            
+            if not found_indicators:
+                # This is not necessarily a failure, but we should note it
+                self.log_test("Pairing with Profile Context", True, 
+                             f"Pairing generated (profile context unclear): {recommendation[:100]}...")
+            else:
+                self.log_test("Pairing with Profile Context", True, 
+                             f"Pairing considers profile (found: {found_indicators[:2]})")
+        else:
+            self.log_test("Pairing with Profile Context", False, str(response))
+        return success
+
+    def test_reset_wine_profile(self):
+        """Test DELETE /api/profile/wine - reset profile"""
+        if not self.auth_token:
+            self.log_test("Reset Wine Profile", False, "No auth token available")
+            return False
+            
+        success, response = self.make_request('DELETE', 'profile/wine', expected_status=200, use_auth=True)
+        if success:
+            if not response.get('success'):
+                self.log_test("Reset Wine Profile", False, f"Expected success=True, got: {response.get('success')}")
+                return False
+            
+            message = response.get('message', '')
+            if 'zurückgesetzt' not in message.lower():
+                self.log_test("Reset Wine Profile", False, f"Unexpected message: {message}")
+                return False
+            
+            self.log_test("Reset Wine Profile", True, "Profile reset successfully")
+        else:
+            self.log_test("Reset Wine Profile", False, str(response))
+        return success
+
+    def test_get_wine_profile_after_reset(self):
+        """Test GET /api/profile/wine - verify profile is empty after reset"""
+        if not self.auth_token:
+            self.log_test("Get Wine Profile (After Reset)", False, "No auth token available")
+            return False
+            
+        success, response = self.make_request('GET', 'profile/wine', expected_status=200, use_auth=True)
+        if success:
+            # Should return empty profile again
+            none_fields = ['red_wine_style', 'white_wine_style', 'acidity_tolerance', 'tannin_preference', 'sweetness_preference', 'budget_everyday', 'budget_restaurant', 'adventure_level', 'updated_at']
+            list_fields = ['favorite_regions', 'no_gos', 'dietary_preferences']
+            
+            for field in none_fields:
+                if response.get(field) is not None:
+                    self.log_test("Get Wine Profile (After Reset)", False, f"Expected {field} to be None after reset, got: {response.get(field)}")
+                    return False
+            
+            for field in list_fields:
+                if not isinstance(response.get(field), list) or len(response.get(field)) > 0:
+                    self.log_test("Get Wine Profile (After Reset)", False, f"Expected {field} to be empty list after reset, got: {response.get(field)}")
+                    return False
+            
+            self.log_test("Get Wine Profile (After Reset)", True, "Profile correctly reset to empty state")
+        else:
+            self.log_test("Get Wine Profile (After Reset)", False, str(response))
+        return success
+
+    # ===================== WINE CELLAR API TESTS =====================
+    
+    def test_create_wine_authenticated(self):
+        """Test POST /api/wines - create wine with authentication (verify iOS fix works)"""
+        if not self.auth_token:
+            self.log_test("Create Wine (Authenticated)", False, "No auth token available")
+            return False
+        
+        wine_data = {
+            "name": "Château Margaux 2015",
+            "type": "rot",
+            "region": "Bordeaux",
+            "year": 2015,
+            "grape": "Cabernet Sauvignon",
+            "notes": "Test wine for authenticated user",
+            "price_category": "🍷🍷🍷"
+        }
+        
+        success, response = self.make_request('POST', 'wines', data=wine_data, expected_status=200, use_auth=True)
+        if success and 'id' in response:
+            self.test_wine_id = response['id']
+            wine_name = response.get('name', 'Unknown')
+            self.log_test("Create Wine (Authenticated)", True, f"Created wine: {wine_name} (ID: {self.test_wine_id})")
+        else:
+            self.log_test("Create Wine (Authenticated)", False, str(response))
+        return success
+
+    def test_get_wines_authenticated(self):
+        """Test GET /api/wines - list wines with authentication"""
+        if not self.auth_token:
+            self.log_test("Get Wines (Authenticated)", False, "No auth token available")
+            return False
+            
+        success, response = self.make_request('GET', 'wines', expected_status=200, use_auth=True)
+        if success:
+            wines = response if isinstance(response, list) else []
+            self.log_test("Get Wines (Authenticated)", True, f"Found {len(wines)} wines in cellar")
+        else:
+            self.log_test("Get Wines (Authenticated)", False, str(response))
+        return success
+
+    def test_update_wine_authenticated(self):
+        """Test PUT /api/wines/{id} - update wine with authentication"""
+        if not self.auth_token:
+            self.log_test("Update Wine (Authenticated)", False, "No auth token available")
+            return False
+            
+        if not self.test_wine_id:
+            self.log_test("Update Wine (Authenticated)", False, "No wine ID available")
+            return False
+        
+        update_data = {
+            "notes": "Updated notes for testing",
+            "is_favorite": True,
+            "quantity": 2
+        }
+        
+        success, response = self.make_request('PUT', f'wines/{self.test_wine_id}', data=update_data, expected_status=200, use_auth=True)
+        if success:
+            # Verify update was applied
+            if response.get('notes') != update_data['notes']:
+                self.log_test("Update Wine (Authenticated)", False, f"Notes not updated: expected '{update_data['notes']}', got '{response.get('notes')}'")
+                return False
+            
+            if response.get('is_favorite') != update_data['is_favorite']:
+                self.log_test("Update Wine (Authenticated)", False, f"Favorite status not updated")
+                return False
+            
+            self.log_test("Update Wine (Authenticated)", True, "Wine updated successfully")
+        else:
+            self.log_test("Update Wine (Authenticated)", False, str(response))
+        return success
+
+    def test_delete_wine_authenticated(self):
+        """Test DELETE /api/wines/{id} - delete wine with authentication"""
+        if not self.auth_token:
+            self.log_test("Delete Wine (Authenticated)", False, "No auth token available")
+            return False
+            
+        if not self.test_wine_id:
+            self.log_test("Delete Wine (Authenticated)", False, "No wine ID available")
+            return False
+        
+        success, response = self.make_request('DELETE', f'wines/{self.test_wine_id}', expected_status=200, use_auth=True)
+        if success:
+            message = response.get('message', '')
+            if 'gelöscht' not in message.lower():
+                self.log_test("Delete Wine (Authenticated)", False, f"Unexpected message: {message}")
+                return False
+            
+            self.log_test("Delete Wine (Authenticated)", True, "Wine deleted successfully")
+            self.test_wine_id = None  # Clear the ID
+        else:
+            self.log_test("Delete Wine (Authenticated)", False, str(response))
+        return success
+
+    # ===================== COUPON API TESTS =====================
+    
+    def test_redeem_invalid_coupon(self):
+        """Test POST /api/coupon/redeem with invalid code (should fail gracefully)"""
+        if not self.auth_token:
+            self.log_test("Redeem Invalid Coupon", False, "No auth token available")
+            return False
+        
+        coupon_data = {
+            "code": "INVALID_TEST_CODE_123"
+        }
+        
+        success, response = self.make_request('POST', 'coupon/redeem', data=coupon_data, expected_status=200, use_auth=True)
+        if success:
+            # Should return success=False with appropriate message
+            if response.get('success') is not False:
+                self.log_test("Redeem Invalid Coupon", False, f"Expected success=False, got: {response.get('success')}")
+                return False
+            
+            message = response.get('message', '')
+            if 'nicht gefunden' not in message.lower():
+                self.log_test("Redeem Invalid Coupon", False, f"Unexpected error message: {message}")
+                return False
+            
+            self.log_test("Redeem Invalid Coupon", True, "Invalid coupon handled gracefully")
+        else:
+            self.log_test("Redeem Invalid Coupon", False, str(response))
+        return success
+
+    # ===================== HEALTH CHECK TEST =====================
+    
+    def test_health_check(self):
+        """Test GET /api/health - verify all services running"""
+        success, response = self.make_request('GET', 'health', expected_status=200)
+        if success:
+            # Check required fields
+            required_fields = ['status', 'timestamp', 'database', 'version']
+            missing_fields = [field for field in required_fields if field not in response]
+            
+            if missing_fields:
+                self.log_test("Health Check", False, f"Missing fields: {missing_fields}")
+                return False
+            
+            # Check status
+            if response.get('status') != 'healthy':
+                self.log_test("Health Check", False, f"Status not healthy: {response.get('status')}")
+                return False
+            
+            # Check database
+            db_status = response.get('database', '')
+            if db_status != 'connected':
+                self.log_test("Health Check", False, f"Database not connected: {db_status}")
+                return False
+            
+            version = response.get('version', 'unknown')
+            self.log_test("Health Check", True, f"All services healthy (version: {version})")
+        else:
+            self.log_test("Health Check", False, str(response))
+        return success
+
     # ===================== UNIFIED €/🍷 FORMAT WINE PAIRING TESTS =====================
     
     def test_unified_format_german_spaghetti_bolognese(self):

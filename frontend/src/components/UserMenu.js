@@ -12,7 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { User, LogOut, Crown, CreditCard } from 'lucide-react';
+import { User, LogOut, Crown, CreditCard, UserCog } from 'lucide-react';
 
 const UserMenu = () => {
   const { user, isAuthenticated, isPro, logout, getRemainingUsage } = useAuth();

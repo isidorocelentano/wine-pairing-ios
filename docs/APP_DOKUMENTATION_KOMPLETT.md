@@ -857,3 +857,32 @@ Nachher: fetch(`${API}/wines`, {
 - Transparenz schafft Vertrauen in die Logik
 - Kontrolle über Budget und Geschmack entlastet
 - Zeit- und Geldersparnis als Hauptnutzen
+
+---
+
+## Navigation Redesign (v1.8.7 - 30.12.2025)
+
+### Haupt-Navigation
+Die Navigation wurde für bessere Benutzerfreundlichkeit komplett überarbeitet:
+
+**Direkt sichtbare Items:**
+1. ☰ Burger-Menü
+2. 🏠 Home
+3. 🍽️ Pairing
+4. 🍷 Keller
+5. 👥 Community
+6. 👤 Profil (nur Pro)
+7. 🤖 Claude AI
+
+**Im Burger-Menü:**
+- Sommelier-Kompass
+- Rebsorten
+- Wein-Datenbank
+- Favoriten
+- Blog
+
+### Design-Entscheidungen
+- **6 Kern-Items** für schnellen Zugriff
+- **Burger-Menü** für sekundäre Funktionen
+- **Profil** nur für Pro-User sichtbar
+- **Animiertes Overlay** beim Öffnen des Menüs

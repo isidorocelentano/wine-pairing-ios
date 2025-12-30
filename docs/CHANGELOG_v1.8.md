@@ -229,3 +229,44 @@ Das Benutzerprofil wird automatisch in die AI-Empfehlungen integriert:
 
 ### Übersetzungen hinzugefügt
 - `nav_profile`: "Profil" / "Profile" / "Profil"
+
+---
+
+## Version 1.8.7 (30.12.2025) - Navigation Redesign
+
+### 🎨 Navigation komplett überarbeitet
+
+**Neue Haupt-Navigation (6-7 Items):**
+| Position | Icon | Funktion |
+|----------|------|----------|
+| 1 | ☰ | Burger-Menü |
+| 2 | 🏠 | Home |
+| 3 | 🍽️ | Pairing |
+| 4 | 🍷 | Keller |
+| 5 | 👥 | Community |
+| 6 | 👤 | Profil (nur Pro-User) |
+| 7 | 🤖 | Claude |
+
+**Burger-Menü enthält:**
+| Icon | Funktion |
+|------|----------|
+| 🗺️ | Sommelier-Kompass |
+| 🍇 | Rebsorten |
+| 📊 | Wein-DB |
+| ❤️ | Favoriten |
+| 📖 | Blog |
+
+### Technische Details
+- Burger-Menü mit Overlay und Animation
+- Responsive Design für Mobile und Desktop
+- Pro-User sehen zusätzliches Profil-Icon
+- Sekundäre Items im 3-Spalten-Grid
+
+### Geänderte Dateien
+- `frontend/src/components/Navigation.js` - Komplettes Redesign
+
+### Vorteile
+- Übersichtlichere Navigation (6 statt 11 Items)
+- Wichtigste Funktionen direkt erreichbar
+- Sekundäre Funktionen im Burger-Menü
+- Bessere Mobile-UX

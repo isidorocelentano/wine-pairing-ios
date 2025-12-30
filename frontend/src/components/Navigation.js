@@ -17,18 +17,17 @@ const Navigation = () => {
     { path: '/sommelier-kompass', icon: Map, labelKey: 'regional_nav' },
     { path: '/grapes', icon: Grape, labelKey: 'nav_grapes' },
     { path: '/wine-database', icon: Database, labelKey: 'nav_wine_database' },
+    { path: '/cellar', icon: Wine, labelKey: 'nav_cellar' },
     { path: '/favorites', icon: Heart, labelKey: 'nav_favorites' },
+    { path: '/blog', icon: BookOpen, labelKey: 'nav_blog' },
     // Weinprofil nur für Pro-User anzeigen
     ...(isPro && isAuthenticated ? [{ path: '/profile', icon: UserCog, labelKey: 'nav_profile', isPro: true }] : []),
     { path: '/feed', icon: Users, labelKey: 'nav_feed' },
     { path: '/chat', icon: MessageCircle, labelKey: 'nav_sommelier', isClaude: true },
   ];
 
-  // Secondary nav items (visible on larger screens)
-  const secondaryNavItems = [
-    { path: '/cellar', icon: Wine, labelKey: 'nav_cellar' },
-    { path: '/blog', icon: BookOpen, labelKey: 'nav_blog' },
-  ];
+  // Secondary nav items (visible on larger screens) - now empty since all moved to main
+  const secondaryNavItems = [];
 
   const allNavItems = [...mainNavItems.slice(0, 6), ...secondaryNavItems, mainNavItems[6]];
 

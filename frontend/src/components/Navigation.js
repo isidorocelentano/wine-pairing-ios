@@ -1,12 +1,14 @@
 import React from 'react';
 import { useNavigate, useLocation } from "react-router-dom";
-import { Wine, Utensils, MessageCircle, Home, BookOpen, Users, Grape, Heart, Compass, Database, Map } from 'lucide-react';
+import { Wine, Utensils, MessageCircle, Home, BookOpen, Users, Grape, Heart, Compass, Database, Map, UserCog } from 'lucide-react';
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useAuth } from "@/contexts/AuthContext";
 
 const Navigation = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { t } = useLanguage();
+  const { isPro, isAuthenticated } = useAuth();
 
   // Main nav items (shown on mobile dock - scrollable)
   const mainNavItems = [
@@ -16,6 +18,8 @@ const Navigation = () => {
     { path: '/grapes', icon: Grape, labelKey: 'nav_grapes' },
     { path: '/wine-database', icon: Database, labelKey: 'nav_wine_database' },
     { path: '/favorites', icon: Heart, labelKey: 'nav_favorites' },
+    // Weinprofil nur für Pro-User anzeigen
+    ...(isPro && isAuthenticated ? [{ path: '/profile', icon: UserCog, labelKey: 'nav_profile', isPro: true }] : []),
     { path: '/feed', icon: Users, labelKey: 'nav_feed' },
     { path: '/chat', icon: MessageCircle, labelKey: 'nav_sommelier', isClaude: true },
   ];

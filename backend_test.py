@@ -5762,10 +5762,15 @@ def main():
             tester = WinePairingAPITester()
             success = tester.run_wine_crud_auth_tests()
             return 0 if success else 1
+        elif sys.argv[1] == "wine-profile":
+            # Run comprehensive Wine Profile tests as specified in review request
+            tester = WinePairingAPITester()
+            success = tester.run_wine_profile_comprehensive_tests()
+            return 0 if success else 1
     
-    # Default: Run wine CRUD authentication tests as specified in review request
+    # Default: Run comprehensive Wine Profile tests as specified in review request
     tester = WinePairingAPITester()
-    success = tester.run_wine_crud_auth_tests()
+    success = tester.run_wine_profile_comprehensive_tests()
     return 0 if success else 1
 
 if __name__ == "__main__":

@@ -80,7 +80,3 @@ android-sdk/
 
 # Node modules cache files (auto-generated)
 frontend/node_modules/.cache/default-development/*.pack
--e 
-# Environment files
-*.env
-*.env.*

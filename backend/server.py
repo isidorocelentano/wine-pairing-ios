@@ -1513,8 +1513,8 @@ async def enrich_wine(wine_id: str, request: Request):
             {"$inc": {"usage_count": 1}}
         )
     else:
-        # Call Claude for enrichment
-        logger.info(f"🍷 Wine knowledge cache miss, calling Claude: {search_key}")
+        # Call Claude for enrichment using LlmChat (same as pairing/chat)
+        logger.info(f"🍷 Wine knowledge cache miss, calling AI: {search_key}")
         
         try:
             prompt = WINE_ENRICHMENT_PROMPT.format(
@@ -1523,17 +1523,15 @@ async def enrich_wine(wine_id: str, request: Request):
                 region=wine.get("region", "Unbekannt")
             )
             
-            response = client.chat.completions.create(
-                model="gpt-4o",
-                messages=[
-                    {"role": "system", "content": "Du bist ein Wein-Experte. Antworte NUR mit validem JSON."},
-                    {"role": "user", "content": prompt}
-                ],
-                temperature=0.7,
-                max_tokens=1500
-            )
+            # Use LlmChat from emergentintegrations (consistent with rest of app)
+            chat = LlmChat(
+                api_key=EMERGENT_LLM_KEY,
+                session_id=f"enrich_{wine_id}_{uuid.uuid4().hex[:8]}",
+                system_message="Du bist ein Wein-Experte. Antworte NUR mit validem JSON, keine Erklärungen."
+            ).with_model("openai", "gpt-5.1")
             
-            response_text = response.choices[0].message.content.strip()
+            response_text = await chat.send_message(UserMessage(text=prompt))
+            response_text = response_text.strip()
             
             # Clean response - remove markdown code blocks if present
             if response_text.startswith("```"):

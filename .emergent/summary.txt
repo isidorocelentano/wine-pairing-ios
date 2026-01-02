@@ -1,167 +1,167 @@
 <analysis>**original_problem_statement:**
-The user's primary goal was to fix a long-standing and frustrating bug where the wine label scan feature was not working on their iPhone. Alongside this critical fix, the user requested several other features and improvements, including:
-1.  **SEO Optimization:** Improve the website's Google ranking by optimizing meta tags and keywords.
-2.  **UI/UX Enhancements:**
-    *   Rephrase the negative Vermeide (Avoid) wine recommendation to be more positive and helpful.
-    *   Improve the Restaurant Mode UI to make it more intuitive.
-3.  **Finalize and Verify Features:** Ensure the Tipp der Woche feature was working correctly.
-4.  **Deployment:** The overarching goal was to get all recent fixes and features, especially the scan fix, deployed to the live production application.
+The user's initial request was to fix a bug where saving a scanned wine failed on their iPhone. This expanded to include a series of significant feature additions and UI/UX improvements:
+1.  **Bug Fix:** Solve the wine saving issue after a successful scan.
+2.  **Coupon Feature:** Make the voucher/coupon redemption feature more visible and user-friendly.
+3.  **FAQ Enhancement:** Implement a new, more persuasive FAQ section on the pricing page to address user concerns.
+4.  **Personalized Wine Profile:** Create a new Pro feature allowing users to define their taste preferences (wine styles, tannins, budget, etc.) to get more personalized recommendations.
+5.  **Navigation Redesign:** Optimize the cluttered mobile navigation to be more user-friendly.
+6.  **Wine Enrichment AI Feature:** Design and begin implementing a feature where an AI (Claude) enriches scanned wine data with detailed descriptions, tasting notes, and food pairings.
 
 **User's preferred language**: German
 
 **what currently exists?**
-The preview environment is stable and contains numerous features and fixes that are ready for deployment. The live production application is running on an older version and is missing all recent updates.
-
-**Completed in this session:**
-*   **Wine Label Scan Fix:** A complex frontend bug on  was resolved. The final issue was a user-flow misunderstanding (using the Add dialog instead of the Scan dialog), but the investigation led to crucial improvements:
-    *   **Image Compression:** The  library was added to handle large photos from mobile devices, a critical fix for iOS Safari.
-    *   **Authentication Fix:** A bug in the Google login flow was fixed in  to ensure the user's authentication state is correctly updated in the React Context, which was preventing authenticated API calls.
-*   **SEO Overhaul:** The  and  in  were updated with user-provided content. Keywords and structured data schemas were enhanced in  and .
-*   **UI/UX Improvements:**
-    *   On , the Vermeide section was re-titled to Eine andere Perspektive and now includes a helpful tip about using bread or water to neutralize the palate.
-    *   The Restaurant Mode on  has an improved design and more explicit instructions.
-*   **System Maintenance:**
-    *   A full backup () was created.
-    *   The  was updated with all the latest changes.
-    *   Multiple deployment health checks were successfully run.
+The application is a full-stack React/FastAPI/MongoDB platform. Major progress has been made:
+*   The initial wine save bug was fixed by refactoring the API calls in  to handle authentication headers consistently.
+*   The  has been significantly enhanced with a prominent coupon banner and a new, detailed FAQ section.
+*   A new Personalized Wine Profile feature has been implemented, including the backend API () and a new frontend page ().
+*   The mobile navigation has been completely redesigned, moving less critical items into a clean burger menu (☰) to reduce clutter.
+*   The technical plan for a new AI Wine Enrichment feature has been approved by the user, and the initial backend/frontend scaffolding is in place.
 
 **Last working item**:
-    - Last item agent was working: Investigating a new bug reported by the user. After the scan feature was fixed in the preview, the user tested it on the **live application** and received a generic Ein Fehler ist aufgetreten (An error has occurred) message when trying to **save** the scanned wine. The agent correctly identified that the live app is running old code, which is the cause of the error. The immediate solution is to deploy the new, fixed version from the preview environment.
-    - Status: BLOCKED
-    - Agent Testing Done: Y (The scan-and-save flow works perfectly in the preview environment).
-    - Which testing method agent to use? Manual testing by the user on the **live site after deployment**.
-    - User Testing Done: N (User has not yet tested the fixed version. The failure was on the old, unfixed live version).
+    - Last item agent was working: Implementing the AI Wine Enrichment feature. The agent has laid the groundwork by creating the backend  model and the  endpoint in . On the frontend, the agent has added the Enrich Wine button and a detail modal to . The next step is to implement the core AI and database logic.
+    - Status: IN PROGRESS
+    - Agent Testing Done: N
+    - Which testing method agent to use? Both. Use the backend testing agent for the  endpoint (testing the Claude API call and database logic) and the frontend testing agent for the UI flow (button click, loading state, viewing enriched data).
+    - User Testing Done: N
 
 **All Pending/In progress Issue list**:
-  - Issue 1:  Fehler beim Speichern (Error on Save) on Live Application (P0)
+  - Issue 1:  Login/Password confusion between Live and Preview environments (P0)
   
   Issues Detail:
   - Issue 1: 
-     - Attempted fixes: The fix has been implemented and tested in the preview environment. The error persists on the live site because it has not been deployed yet.
-     - Next debug checklist: 
-        1. Instruct the user to **Deploy** the application to push all recent fixes to the live server.
-        2. Ask the user to perform a hard refresh on their browser on the live site.
-        3. Ask the user to re-test the entire scan-and-save flow on their iPhone on the live site.
-     - Why fix this issue and what will be achieved with the fix? This is the final blocker preventing a key feature from working for the user on their live application.
-     - Status:  USER VERIFICATION PENDING
-     - Is recurring issue? Y (The scan feature has had multiple related issues).
-     - Should Test frontend/backend/both after fix? Both (Full end-to-end user flow).
-     - Blocked on other issue: In progress Task 1: Deploy recent changes
+     - Attempted fixes: The agent has repeatedly reset passwords for the user on both environments and explained the credential differences ( for live,  for preview). An admin password-reset endpoint was used as a temporary fix.
+     - Next debug checklist: The permanent solution is to enable the self-service Forgot Password feature. To do this, the agent must guide the user to add the necessary  and  DNS records for the  integration into their  domain management panel.
+     - Why fix this issue and what will be achieved with the fix? This is a critical, recurring issue that causes major user frustration. Fixing it will empower all users to manage their own passwords and eliminate the need for manual admin intervention.
+     - Status:  BLOCKED (on user action for DNS)
+     - Is recurring issue? Y
+     - Should Test frontend/backend/both after fix? Backend (by testing the  flow end-to-end).
+     - Blocked on other issue: None.
 
 **In progress Task List**:
-  - Task 1:  Deploy recent changes (P0)
+  - Task 1:  Complete AI Wine Enrichment Feature (P0)
 
  Task Detail:
   - Task 1: 
-     - Where to resume: The application has passed all deployment health checks. The next and only step is for the user to click the Deploy button in the Emergent UI.
-     - What will be achieved with this? This will release all completed work from this and previous sessions, including the critical login and scan fixes, SEO updates, and UI improvements, to the live production server.
-     - Status:  NOT STARTED (Blocked on user action).
+     - Where to resume: 
+        - **Backend ():** Implement the logic within the  endpoint. This includes: 1. Searching the  collection. 2. If not found, calling the Claude API with the emotional prompt. 3. Parsing the Claude response and saving it to the database. 4. Handling rate limits and error fallbacks.
+        - **Frontend ():** Complete the  to display all the enriched data fields. Implement the ability to enrich already-saved wines from the cellar view.
+     - What will be achieved with this? A powerful new Pro feature that provides immense value by automatically generating detailed wine profiles from a simple label scan.
+     - Status:  IN PROGRESS
      - Should Test frontend/backend/both after fix? Both
-     - Blocked on something: User action.
+     - Blocked on something: No.
 
 **Upcoming and Future Tasks**
 *   **Upcoming Tasks:**
-    *   **(P1) Finalize Tipp der Woche Feature:** Add the Archive functionality for past tips.
-    *   **(P2) Schon probiert? (Already Tried?) Section:** Implement the social proof section on the homepage.
-    *   **(P2) PayPal Integration:** Implement PayPal as a payment option.
+    *   **(P1) Finalize Resend Integration:** Guide the user to add the  and  DNS records at Infomaniak to enable the Forgot Password feature.
+    *   **(P1) Make Enriched DB Searchable:** Extend the Wein-DB page to allow users to search the  collection of AI-enriched wines.
+    - **(P2) Disable Admin Endpoint:** For security, remove or comment out the  endpoint in  once the Resend integration is confirmed working.
+    *   **(P2) Finalize Tipp der Woche Feature:** Implement the Archive functionality for past tips.
 *   **Future Tasks:**
-    *   **(P3) Finalize Community Feed Feature:** Clarify user requirements.
-    *   **(P3) Complete App Documentation:** Final review.
-    *   **(P3) Pairing Science - Phase 2 & 3:** Evolve the data model and UI.
+    *   **(P3) PayPal Integration:** Add PayPal as a payment option.
+    *   **(P3) Schon probiert? Section:** Implement the social proof section on the homepage.
+    *   **(P3) Complete App Documentation:** Perform a final review and update of all project documentation.
 
 **Completed work in this session**
-- **Bug Fix: Wine Label Scan on iOS:**
-    - Fixed user authentication flow for Google Login in .
-    - Added client-side image compression in .
-    - Guided user to the correct UI flow (Scan button vs. Add button), which was the root cause of the issue.
-- **Feature: SEO Optimization:**
-    - Implemented new meta tags and keywords in  and .
-- **Feature: UI/UX Improvements:**
-    - Rephrased pairing recommendations in .
-    - Improved the Restaurant Mode UI in .
-- **System Maintenance:**
-    - Created a new backup at .
-    - Updated documentation in .
+- **Bug Fix:** Resolved the Save Wine on iOS issue by refactoring API calls in .
+- **Feature:** Implemented a prominent coupon banner and input form on the .
+- **Feature:** Added a new, persuasive FAQ section to the .
+- **Feature:** Implemented the Personalized Wine Profile feature (backend and frontend on ).
+- **UX Improvement:** Redesigned the mobile navigation in  with a burger menu for a cleaner UI.
+- **Bug Fix:** Made the Blog link accessible in the main mobile navigation.
+- **Bug Fix:** Fixed the hidden Save Profile button on  by adjusting CSS  and  properties.
+- **System Maintenance:** Regularly created backups (up to ), updated documentation, and ran deployment health checks.
 
 **Earlier issues found/mentioned but not fixed**
-   - **Password Reset Feature Blocked:** Inherited from the previous job, still blocked on the user adding DNS records for the Resend integration.
+   - The password reset feature has been a known issue from previous forks and remains blocked on user action for DNS configuration.
 
 **Known issue recurrence from previous fork**
-  - **Issue recurrence in previous fork:** Authentication and data consistency issues between preview and production.
-  - **Recurrence count:** 5+
-  - **Status:** IN PROGRESS. The login failure and scan authentication issues were manifestations of this. The fixes are implemented but await deployment.
+  - **Issue recurrence in previous fork:** Authentication discrepancies between preview and production environments.
+  - **Recurrence count:** High (5+)
+  - **Status:** IN PROGRESS. The core issue of user confusion due to separate databases/credentials persists. The permanent fix (self-service password reset via Resend) is planned but not yet implemented.
 
 **Code Architecture**
-refreshUserrefreshUser
+
 
 **Key Technical Concepts**
-- **Client-Side Image Compression:** Implemented the  library to handle large mobile photos before they are sent to the backend, preventing silent failures on iOS Safari.
-- **React Context and Auth State:** Debugged and fixed a critical bug where the authentication state was not propagating correctly after a Google login redirect. The solution involved explicitly refreshing the user state within the  from the  component.
-- **User-Flow-Driven Debugging:** The resolution of the main bug came from understanding the user's actions (clicking the wrong button), underscoring the importance of clarifying the exact user flow when debugging.
+- **Hybrid AI/DB System:** The Wine Enrichment feature is designed as a hybrid system. It first checks a local  database (acting as a cache) and only makes a call to the Claude API if the wine is not found, balancing cost, speed, and data quality.
+- **Consistent API Authentication:** The agent fixed persistent cross-platform bugs by refactoring all API calls in a critical component () to use native  with manually attached authentication headers, moving away from a problematic  interceptor.
+- **Dynamic UI based on Auth State:** The UI conditionally renders elements based on user status (e.g., the Profile link and Enrich button are only shown to  users).
+- **Admin Endpoints for Emergency Fixes:** An admin-only endpoint () was temporarily used to resolve a critical user login issue on the live production server.
 
 **key DB schema**
-  - No changes were made to the database schema in this session.
+  - **wine_profiles (NEW):** 
+  - **wine_knowledge (PLANNED):** 
+  - **users:** Utilized  and  fields to control access to features and admin endpoints.
 
 **changes in tech stack**
-  - **New Frontend Dependency:** 
+  - None.
 
 **All files of reference**
-- : The central file for the wine label scan feature fix.
-- : Contains the fix for the Google Login authentication state.
-- : Contains the recent UI/UX improvements.
-- : The updated project documentation.
-- : The latest backup directory.
+- : Contains all new backend models and API logic.
+- : Core file for the scan and enrich user flows.
+- : The new user preferences page.
+- : Contains the new coupon and FAQ sections.
+- : Location of the redesigned navigation.
+- : The main documentation file.
+- : The latest backup.
 
 **Areas that need refactoring**:
--  has undergone many failed attempts at fixing the bug. It contains commented-out code and remnants of different approaches that should be cleaned up to improve readability and maintainability.
+-  is now over 5,000 lines long. The logic for Authentication, Pairing, Profiles, and Wine Knowledge should be split into separate files under a  or  directory to improve maintainability.
 
 **key api endpoints**
-- ****: This endpoint was extensively debugged and is confirmed to be working correctly in the preview environment.
-- ****: This endpoint is where the user experiences a failure on the **live** site. It works correctly in the preview environment. The discrepancy is due to the live site running old code.
-- ****: The end-to-end flow for this was fixed by ensuring the frontend correctly updates its auth state after the callback.
+- : (NEW) Manages the user's personalized wine profile.
+- : (NEW, IN PROGRESS) Triggers the AI-powered wine data enrichment.
+- : Exists but is non-functional pending DNS verification for Resend.
+- : A temporary endpoint used for admin fixes, which should be disabled.
+- , : Functionality was restored by fixing frontend auth logic.
 
 **Critical Info for New Agent**
-- **DEPLOYMENT IS THE #1 PRIORITY.** The user is reporting bugs from the **live application**, which is running outdated code. All development work is complete and tested in the preview. Your first action should be to guide the user to **deploy the changes**. Do not attempt to fix the live bug by changing code in the preview; the fix is already there and just needs to be deployed.
-- The Scan feature is sensitive on iOS. The root cause of the last bug was user error (clicking Add instead of Scan), but technical issues like large image sizes are real. Remember that client-side image compression is now part of the solution.
-- The user primarily tests on an iPhone. Ensure any future frontend changes are mobile-first and tested for iOS compatibility.
+- **PRIORITY 1: Resend Integration.** The user's biggest pain point is login/password issues. The permanent fix is to get the Forgot Password feature working. You must guide the user to add the  and  DNS records for  in their Infomaniak account.
+- **Environment & Credential Confusion:** The user frequently mixes up the live and preview environments. Be prepared to clarify which URL they are using and remind them of the correct password ( for live,  for preview).
+- **Follow the Plan-Confirm-Execute Workflow:** The user appreciates seeing a clear plan before you implement changes. Continue this pattern. The next major task is the Wine Enrichment feature, for which a detailed plan already exists and has been approved.
 
 **documents and test reports created in this job**
   -  (Updated)
-  -  (New backup directory)
+  -  (Created)
+  -  (Updated after major tests)
+  - Multiple backups created in , with the latest being 
 
-**Last 10 User Messages and any pending HUMAN messages**
-1.  **User:** Reports Fehler beim Speichern (Error on save) on the **live app** after a successful scan, providing a screenshot. **(Status: Addressed, pending deployment)**
-2.  **User:** Confirms the error happens during the save step. **(Status: Addressed)**
-3.  **User:** Is frustrated and asks the agent to test first. **(Status: Acknowledged)**
-4.  **User:** After guidance, confirms the scan now works (in preview). **(Status: Resolved)**
-5.  **User:** Asks for everything to be documented and backed up. **(Status: Completed)**
-6.  **User:** Asks for a deployment readiness check. **(Status: Completed)**
-7.  **User:** Requests friendlier wording for the Vermeide (Avoid) wine tip. **(Status: Completed)**
-8.  **User:** Asks to add a tip about neutralizing the palate with bread/water. **(Status: Completed)**
-9.  **User:** Reports the preview is not starting. (Agent identified it as a browser cache issue). **(Status: Resolved)**
-10. **User:** Requests UI improvements for the Restaurant Modus. **(Status: Completed)**
+**Last 10 User Messages and any pending HUMAN messages** 
+1.  **User:** Approves the Wine Enrichment plan and asks to start. (PENDING)
+2.  **User:** Asks for the navigation to be optimized after a bad fix. (DONE)
+3.  **User:** Approves the new navigation redesign plan. (DONE)
+4.  **User:** Confirms the save button fix works, asks for docs/backup. (DONE)
+5.  **User:** Reports the save button is missing on the profile page. (DONE)
+6.  **User:** Reports they cannot save profile preferences. (DONE)
+7.  **User:** Asks where to find the profile/preferences page. (DONE)
+8.  **User:** Confirms the password fix worked. (DONE)
+9.  **User:** Asks to create an admin account on the live site. (DONE)
+10. **User:** Asks for a professional solution for password resets for thousands of users. (Agent proposed Resend). (PENDING)
 
 **Project Health Check:**
-*   **Broken:** The save after scan functionality on the **live production server** is broken due to running outdated code.
+*   **Broken:** The self-service Forgot Password feature is broken pending DNS configuration.
 *   **Mocked:** None.
 
 **3rd Party Integrations**
-*   **OpenAI:** Used for AI pairing. No changes.
-*   **Stripe:** Integrated for payments. No changes.
-*   **Resend:** For password reset emails. Still blocked on user domain verification.
-*   **Emergent-managed Google Auth:** Login flow was fixed.
-*   **browser-image-compression (NEW):** Added to the frontend to handle large image uploads.
+*   **OpenAI/Claude:** Used for wine pairing and planned for the new Wine Enrichment feature.
+*   **Stripe:** Integrated for payments.
+*   **Resend:** Integrated for password reset emails, but **BLOCKED** on user domain verification. An API key () is present in the environment.
+*   **Emergent-managed Google Auth:** Functional and used for login.
 
 **Testing status**
-  - Testing agent used after significant changes: YES, but it could not fully test the authenticated UI flow.
-  - Troubleshoot agent used after agent stuck in loop: YES, helped guide the agent back to a working version of the code.
-  - Test files created: None. A temporary python script was used for testing.
-  - Known regressions: The save functionality is broken on the live site, but this is expected as it's an old version. No regressions in the preview environment.
+  - Testing agent used after significant changes: YES. Both backend and frontend testing agents ran comprehensive tests after the profile page fixes.
+  - Troubleshoot agent used after agent stuck in loop: NO
+  - Test files created: None.
+  - Known regressions: None in the preview environment.
 
 **Credentials to test flow:**
-- User's primary account: 
-- Password for **live environment** (after deployment): 
-- Password for **preview environment**: 
+- **Preview Environment:**
+    - Email: 
+    - Password: 
+- **Live Environment:**
+    - Email: 
+    - Password: 
+- **Note:** The user account  is an Admin and Pro user on both environments.
 
 **What agent forgot to execute**
-- Nothing. The agent correctly identified that all pending issues will be resolved by deploying the current version of the application and has been waiting on the user to do so.</analysis>
+- The agent initially forgot to check for side effects when modifying the navigation (hiding the community feed), but corrected this by presenting a better plan and getting user approval before implementing the final fix. The agent is currently on track.</analysis>

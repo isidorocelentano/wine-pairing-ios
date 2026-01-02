@@ -270,3 +270,66 @@ Das Benutzerprofil wird automatisch in die AI-Empfehlungen integriert:
 - Wichtigste Funktionen direkt erreichbar
 - Sekundäre Funktionen im Burger-Menü
 - Bessere Mobile-UX
+
+
+---
+
+## Version 1.8.8 (02.01.2026) - AI Wine Enrichment Feature
+
+### 🍷 Neues Pro-Feature: AI Wine Enrichment
+
+Ein leistungsstarkes Feature, das automatisch detaillierte Wein-Profile aus einem einfachen Etiketten-Scan oder manuellen Eintrag generiert.
+
+### Wie es funktioniert
+
+1. **Benutzer klickt "Anreichern" Button** (✨ amber) auf einer Weinkarte
+2. **AI (GPT-5.1) generiert** emotionale Beschreibung und Fakten
+3. **Daten werden gecacht** in der `wine_knowledge` Collection
+4. **Wein wird aktualisiert** mit allen angereicherten Informationen
+5. **Grüner Button** (🍷) erscheint für angereicherte Weine
+
+### Generierte Wein-Informationen
+
+| Feld | Beschreibung | Beispiel |
+|------|--------------|----------|
+| **emotional_description** | Poetische 3-4 Sätze im "WINE.PAIRING" Stil | "Ein Pinot Noir wie ein Bergabend in Südtirol..." |
+| **grape_varieties** | Liste der Rebsorten | ["Pinot Noir"] |
+| **appellation** | Offizielle Bezeichnung/AOC/DOC | "Alto Adige DOC / Südtirol DOC" |
+| **winery_info** | 2-3 Sätze zum Weingut | Geschichte, Philosophie |
+| **taste_profile** | Strukturierte Geschmacksnotizen | body, aromas, tannins, acidity, finish |
+| **drinking_window** | Optimales Trinkfenster | "2020-2028" |
+| **food_pairings** | Passende Gerichte | ["Gegrilltes Hähnchen", "Pilzragout"] |
+| **serving_temp** | Serviertemperatur | "14-16°C" |
+| **price_category** | Preiskategorie | "Mittel (15-40€)" |
+
+### API-Endpoint
+
+| Methode | Endpoint | Beschreibung |
+|---------|----------|--------------|
+| POST | `/api/wines/{wine_id}/enrich` | Wein mit AI anreichern |
+| GET | `/api/enrichment-stats` | Nutzungsstatistik |
+| GET | `/api/wine-knowledge` | Gecachte Wein-Wissen |
+
+### Technische Details
+
+- **Hybrid-System:** Prüft zuerst `wine_knowledge` Cache, dann AI-Aufruf
+- **Monatliches Limit:** 1000 Anreicherungen pro Monat
+- **Pro-Only:** Nur für Pro-Benutzer verfügbar
+- **AI-Modell:** OpenAI GPT-5.1 via emergentintegrations
+- **Caching:** Reduziert Kosten durch Wiederverwendung von Wein-Wissen
+
+### Frontend UI
+
+- **Amber Button (✨):** Nicht-angereicherte Weine können angereichert werden
+- **Grüner Button (🍷):** Angereicherte Weine zeigen Detail-Modal
+- **Detail-Modal:** Zeigt alle angereicherten Informationen mit schönem Design
+
+### Geänderte Dateien
+
+- `backend/server.py` - Enrich-Endpoint korrigiert (LlmChat statt client.chat)
+- `frontend/src/pages/CellarPage.js` - UI bereits vorhanden
+
+### Bug Fix
+
+- **Kritischer Fix:** `client.chat.completions.create` wurde zu `LlmChat` geändert
+- Der ursprüngliche Code nutzte fälschlicherweise den MongoDB-Client statt OpenAI

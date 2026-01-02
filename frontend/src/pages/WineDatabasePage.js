@@ -307,6 +307,128 @@ const WineDatabasePage = () => {
             </p>
           </header>
 
+          {/* Tabs for Database vs AI-Enriched */}
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="mb-8">
+            <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto">
+              <TabsTrigger value="database" className="gap-2">
+                <Wine className="h-4 w-4" />
+                Wein-Datenbank
+              </TabsTrigger>
+              <TabsTrigger value="enriched" className="gap-2">
+                <Sparkles className="h-4 w-4" />
+                AI-Weine ({enrichedTotal})
+              </TabsTrigger>
+            </TabsList>
+
+            {/* AI-Enriched Wines Tab */}
+            <TabsContent value="enriched" className="mt-6">
+              {/* Search for enriched wines */}
+              <div className="mb-6">
+                <div className="relative max-w-xl mx-auto">
+                  <Sparkles className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-amber-500" />
+                  <Input
+                    type="text"
+                    placeholder="Suchen in AI-angereicherten Weinen (Name, Region, Rebsorte)..."
+                    value={enrichedSearchQuery}
+                    onChange={(e) => setEnrichedSearchQuery(e.target.value)}
+                    className="pl-10 pr-4 h-12"
+                  />
+                </div>
+                <p className="text-center text-sm text-muted-foreground mt-2">
+                  {enrichedTotal} Weine mit detaillierten AI-Profilen verfügbar
+                </p>
+              </div>
+
+              {/* Enriched Wines Grid */}
+              {enrichedLoading ? (
+                <div className="flex items-center justify-center py-20">
+                  <Loader2 className="h-8 w-8 animate-spin text-amber-500" />
+                </div>
+              ) : enrichedWines.length === 0 ? (
+                <Card className="bg-secondary/30 border-dashed border-2 border-border">
+                  <CardContent className="py-16 text-center">
+                    <Sparkles className="h-16 w-16 mx-auto mb-4 text-amber-500" strokeWidth={1} />
+                    <h3 className="text-xl font-medium mb-2">Keine AI-angereicherten Weine gefunden</h3>
+                    <p className="text-muted-foreground mb-4">
+                      {enrichedSearchQuery 
+                        ? 'Versuchen Sie eine andere Suche' 
+                        : 'Weine werden automatisch angereichert, wenn Pro-User sie in ihrem Keller anreichern'}
+                    </p>
+                  </CardContent>
+                </Card>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {enrichedWines.map((wine) => (
+                    <Card 
+                      key={wine.search_key || wine.id}
+                      className="bg-gradient-to-br from-amber-50/50 to-orange-50/30 dark:from-amber-950/20 dark:to-orange-950/10 border-amber-200/50 dark:border-amber-800/30 hover-lift cursor-pointer overflow-hidden group"
+                      onClick={() => setSelectedEnrichedWine(wine)}
+                    >
+                      <CardContent className="p-5">
+                        {/* AI Badge & Vintage */}
+                        <div className="flex items-start justify-between mb-3">
+                          <Badge className="bg-amber-100 text-amber-800 dark:bg-amber-900/50 dark:text-amber-200">
+                            <Sparkles className="h-3 w-3 mr-1" />
+                            AI-Profil
+                          </Badge>
+                          {wine.vintage && (
+                            <span className="text-xs font-medium text-muted-foreground">{wine.vintage}</span>
+                          )}
+                        </div>
+
+                        {/* Wine Name */}
+                        <h3 className="font-bold text-lg mb-1 line-clamp-2 leading-tight">{wine.name}</h3>
+                        
+                        {/* Region */}
+                        <p className="text-sm text-muted-foreground mb-3">
+                          📍 {wine.region || 'Unbekannte Region'}
+                        </p>
+                        
+                        {/* Grape Varieties */}
+                        {wine.grape_varieties && wine.grape_varieties.length > 0 && (
+                          <div className="flex items-center gap-2 mb-3 text-xs text-muted-foreground">
+                            <Grape className="h-3 w-3" />
+                            <span className="line-clamp-1">{wine.grape_varieties.join(', ')}</span>
+                          </div>
+                        )}
+                        
+                        {/* Emotional Description Preview */}
+                        {wine.emotional_description && (
+                          <p className="text-sm text-muted-foreground line-clamp-3 mb-4 font-accent italic leading-relaxed">
+                            {wine.emotional_description}
+                          </p>
+                        )}
+
+                        {/* Quick Info Pills */}
+                        <div className="flex flex-wrap gap-2">
+                          {wine.serving_temp && (
+                            <span className="text-xs px-2 py-1 rounded-full bg-blue-50 text-blue-700 dark:bg-blue-950/50 dark:text-blue-300 flex items-center gap-1">
+                              <Thermometer className="h-3 w-3" />
+                              {wine.serving_temp}
+                            </span>
+                          )}
+                          {wine.drinking_window && (
+                            <span className="text-xs px-2 py-1 rounded-full bg-green-50 text-green-700 dark:bg-green-950/50 dark:text-green-300 flex items-center gap-1">
+                              <Calendar className="h-3 w-3" />
+                              {wine.drinking_window}
+                            </span>
+                          )}
+                          {wine.price_category && (
+                            <span className="text-xs px-2 py-1 rounded-full bg-purple-50 text-purple-700 dark:bg-purple-950/50 dark:text-purple-300">
+                              {wine.price_category}
+                            </span>
+                          )}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              )}
+            </TabsContent>
+
+            {/* Regular Wine Database Tab */}
+            <TabsContent value="database" className="mt-6">
+
           {/* Search & Filter Bar */}
           <div className="mb-8 space-y-4">
             {/* Search Input */}

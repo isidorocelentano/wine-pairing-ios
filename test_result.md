@@ -366,8 +366,7 @@ metadata:
 
 test_plan:
   current_focus:
-    - "AI Wine Enrichment API"
-    - "Wine Knowledge Cache System"
+    - "AI Wine Knowledge Database Search Feature"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"

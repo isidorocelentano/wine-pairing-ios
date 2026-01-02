@@ -710,8 +710,184 @@ const WineDatabasePage = () => {
               )}
             </>
           )}
+            </TabsContent>
+          </Tabs>
         </div>
       </div>
+
+      {/* AI-Enriched Wine Detail Modal */}
+      {selectedEnrichedWine && (
+        <Dialog open={!!selectedEnrichedWine} onOpenChange={() => setSelectedEnrichedWine(null)}>
+          <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+            {/* Zurück Button */}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setSelectedEnrichedWine(null)}
+              className="absolute left-4 top-4 rounded-full"
+            >
+              <ArrowLeft className="h-4 w-4 mr-1" />
+              Zurück
+            </Button>
+            
+            <DialogHeader className="pt-8">
+              <div className="flex items-center gap-2 mb-2">
+                <Badge className="bg-amber-100 text-amber-800 dark:bg-amber-900/50 dark:text-amber-200">
+                  <Sparkles className="h-3 w-3 mr-1" />
+                  AI-angereichert
+                </Badge>
+                {selectedEnrichedWine.vintage && (
+                  <Badge variant="outline">{selectedEnrichedWine.vintage}</Badge>
+                )}
+              </div>
+              <DialogTitle className="text-2xl">{selectedEnrichedWine.name}</DialogTitle>
+              <DialogDescription className="text-base">
+                📍 {selectedEnrichedWine.region || 'Unbekannte Region'}
+              </DialogDescription>
+            </DialogHeader>
+
+            <div className="space-y-6">
+              {/* Emotional Description */}
+              {selectedEnrichedWine.emotional_description && (
+                <div className="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-950/30 dark:to-orange-950/20 rounded-lg p-4">
+                  <p className="text-foreground font-accent italic leading-relaxed">
+                    "{selectedEnrichedWine.emotional_description}"
+                  </p>
+                </div>
+              )}
+
+              {/* Wine Details Grid */}
+              <div className="grid grid-cols-2 gap-4 text-sm">
+                {/* Grape Varieties */}
+                {selectedEnrichedWine.grape_varieties && selectedEnrichedWine.grape_varieties.length > 0 && (
+                  <div className="col-span-2">
+                    <p className="text-muted-foreground flex items-center gap-1 mb-1">
+                      <Grape className="h-4 w-4" /> Rebsorten
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedEnrichedWine.grape_varieties.map((grape, idx) => (
+                        <Badge key={idx} variant="secondary">{grape}</Badge>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Appellation */}
+                {selectedEnrichedWine.appellation && (
+                  <div>
+                    <p className="text-muted-foreground">Appellation</p>
+                    <p className="font-medium">{selectedEnrichedWine.appellation}</p>
+                  </div>
+                )}
+
+                {/* Serving Temperature */}
+                {selectedEnrichedWine.serving_temp && (
+                  <div>
+                    <p className="text-muted-foreground flex items-center gap-1">
+                      <Thermometer className="h-3 w-3" /> Serviertemperatur
+                    </p>
+                    <p className="font-medium">{selectedEnrichedWine.serving_temp}</p>
+                  </div>
+                )}
+
+                {/* Drinking Window */}
+                {selectedEnrichedWine.drinking_window && (
+                  <div>
+                    <p className="text-muted-foreground flex items-center gap-1">
+                      <Calendar className="h-3 w-3" /> Trinkreife
+                    </p>
+                    <p className="font-medium">{selectedEnrichedWine.drinking_window}</p>
+                  </div>
+                )}
+
+                {/* Price Category */}
+                {selectedEnrichedWine.price_category && (
+                  <div>
+                    <p className="text-muted-foreground">Preiskategorie</p>
+                    <p className="font-medium">{selectedEnrichedWine.price_category}</p>
+                  </div>
+                )}
+              </div>
+
+              {/* Taste Profile */}
+              {selectedEnrichedWine.taste_profile && (
+                <div>
+                  <h4 className="font-semibold mb-3">Geschmacksprofil</h4>
+                  <div className="grid grid-cols-2 gap-3 text-sm">
+                    {selectedEnrichedWine.taste_profile.body && (
+                      <div className="flex justify-between items-center p-2 bg-secondary/30 rounded">
+                        <span className="text-muted-foreground">Körper</span>
+                        <span className="font-medium">{selectedEnrichedWine.taste_profile.body}</span>
+                      </div>
+                    )}
+                    {selectedEnrichedWine.taste_profile.tannins && (
+                      <div className="flex justify-between items-center p-2 bg-secondary/30 rounded">
+                        <span className="text-muted-foreground">Tannine</span>
+                        <span className="font-medium">{selectedEnrichedWine.taste_profile.tannins}</span>
+                      </div>
+                    )}
+                    {selectedEnrichedWine.taste_profile.acidity && (
+                      <div className="flex justify-between items-center p-2 bg-secondary/30 rounded">
+                        <span className="text-muted-foreground">Säure</span>
+                        <span className="font-medium">{selectedEnrichedWine.taste_profile.acidity}</span>
+                      </div>
+                    )}
+                    {selectedEnrichedWine.taste_profile.finish && (
+                      <div className="flex justify-between items-center p-2 bg-secondary/30 rounded">
+                        <span className="text-muted-foreground">Abgang</span>
+                        <span className="font-medium">{selectedEnrichedWine.taste_profile.finish}</span>
+                      </div>
+                    )}
+                  </div>
+                  {selectedEnrichedWine.taste_profile.aromas && selectedEnrichedWine.taste_profile.aromas.length > 0 && (
+                    <div className="mt-3">
+                      <p className="text-muted-foreground text-sm mb-2">Aromen</p>
+                      <div className="flex flex-wrap gap-2">
+                        {selectedEnrichedWine.taste_profile.aromas.map((aroma, idx) => (
+                          <span key={idx} className="px-2 py-1 text-xs bg-rose-50 text-rose-700 dark:bg-rose-950/50 dark:text-rose-300 rounded-full">
+                            {aroma}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* Food Pairings */}
+              {selectedEnrichedWine.food_pairings && selectedEnrichedWine.food_pairings.length > 0 && (
+                <div>
+                  <h4 className="font-semibold mb-3 flex items-center gap-2">
+                    <UtensilsCrossed className="h-4 w-4" /> Passende Speisen
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedEnrichedWine.food_pairings.map((pairing, idx) => (
+                      <span key={idx} className="inline-block px-3 py-1.5 text-sm border border-border rounded-md bg-secondary/30">
+                        {pairing}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Winery Info */}
+              {selectedEnrichedWine.winery_info && (
+                <div>
+                  <h4 className="font-semibold mb-2">Über das Weingut</h4>
+                  <p className="text-sm text-muted-foreground">{selectedEnrichedWine.winery_info}</p>
+                </div>
+              )}
+
+              {/* Close Button */}
+              <div className="pt-4">
+                <Button variant="outline" className="w-full" onClick={() => setSelectedEnrichedWine(null)}>
+                  Schließen
+                </Button>
+              </div>
+            </div>
+          </DialogContent>
+        </Dialog>
+      )}
 
       {/* Wine Detail Modal */}
       {selectedWine && (

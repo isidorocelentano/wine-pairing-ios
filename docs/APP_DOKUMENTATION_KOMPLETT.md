@@ -886,3 +886,25 @@ Die Navigation wurde für bessere Benutzerfreundlichkeit komplett überarbeitet:
 - **Burger-Menü** für sekundäre Funktionen
 - **Profil** nur für Pro-User sichtbar
 - **Animiertes Overlay** beim Öffnen des Menüs
+
+
+---
+
+### Version 1.8.8 (02.01.2026) - AI Wine Enrichment
+
+**🍷 Neues Pro-Feature: AI Wine Enrichment:**
+- ✅ **Automatische Wein-Anreicherung:** Klick auf "Anreichern" Button generiert detaillierte Wein-Profile
+- ✅ **Emotionale Beschreibungen:** Poetischer Stil wie "Ein Pinot Noir wie ein Bergabend in Südtirol..."
+- ✅ **Vollständige Wein-Fakten:** Rebsorten, Geschmacksprofil, Appellation, Trinkreife, Speiseempfehlungen
+- ✅ **Hybrid-Caching:** Bereits bekannte Weine werden aus Datenbank geladen (kosteneffizient)
+- ✅ **Pro-Only:** Nur für Pro-Benutzer verfügbar (1000 Anreicherungen/Monat)
+
+**UI-Elemente:**
+- Amber Button (✨): Nicht-angereicherte Weine
+- Grüner Button (🍷): Angereicherte Weine mit Detail-Modal
+
+**Technische Details:**
+- Backend: `POST /api/wines/{wine_id}/enrich`
+- AI-Modell: GPT-5.1 via emergentintegrations
+- Cache-Collection: `wine_knowledge`
+

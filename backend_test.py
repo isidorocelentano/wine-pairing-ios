@@ -6089,10 +6089,15 @@ def main():
             tester = WinePairingAPITester()
             success = tester.run_wine_profile_comprehensive_tests()
             return 0 if success else 1
+        elif sys.argv[1] == "wine-enrichment":
+            # Run Wine Enrichment tests for v1.8.8
+            tester = WinePairingAPITester()
+            success = tester.run_wine_enrichment_tests()
+            return 0 if success else 1
     
-    # Default: Run comprehensive Wine Profile tests as specified in review request
+    # Default: Run Wine Enrichment tests for v1.8.8 as specified in review request
     tester = WinePairingAPITester()
-    success = tester.run_wine_profile_comprehensive_tests()
+    success = tester.run_wine_enrichment_tests()
     return 0 if success else 1
 
 if __name__ == "__main__":

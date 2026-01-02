@@ -142,6 +142,33 @@ const WineDatabasePage = () => {
     fetchWines(true);
   }, [searchQuery, filters]);
 
+  // Fetch AI-enriched wines
+  const fetchEnrichedWines = useCallback(async () => {
+    try {
+      setEnrichedLoading(true);
+      const params = new URLSearchParams();
+      if (enrichedSearchQuery) params.append('search', enrichedSearchQuery);
+      params.append('limit', '50');
+      params.append('skip', '0');
+      
+      const response = await axios.get(`${API}/wine-knowledge?${params}`);
+      setEnrichedWines(response.data.wines || []);
+      setEnrichedTotal(response.data.total || 0);
+    } catch (error) {
+      console.error('Error fetching enriched wines:', error);
+      toast.error('Fehler beim Laden der angereicherten Weine');
+    } finally {
+      setEnrichedLoading(false);
+    }
+  }, [enrichedSearchQuery]);
+
+  // Fetch enriched wines when tab changes or search changes
+  useEffect(() => {
+    if (activeTab === 'enriched') {
+      fetchEnrichedWines();
+    }
+  }, [activeTab, enrichedSearchQuery, fetchEnrichedWines]);
+
   const handleSearch = (e) => {
     setSearchQuery(e.target.value);
   };

@@ -34,6 +34,30 @@ frontend_test_completed: false
    - Wine Profile (Pro Feature)
    - Navigation Redesign (Burger Menu)
 
+### AI Wine Knowledge Database Search (NEW)
+1. **Frontend Enhancement (WineDatabasePage.js):**
+   - Added Tab navigation: "Wein-Datenbank" | "AI-Weine (count)"
+   - AI-enriched wines tab with search functionality
+   - Beautiful wine cards showing AI-generated content
+   - Detail modal with complete AI profile:
+     - Emotional description in quotes
+     - Grape varieties badges
+     - Taste profile grid (body, tannins, acidity, finish)
+     - Aromas tags
+     - Food pairings
+     - Winery info
+   - Shows serving temperature, drinking window, price category
+   - Count updates dynamically
+
+2. **API Used:**
+   - GET /api/wine-knowledge?search=&limit=50&skip=0
+
+3. **UI Features:**
+   - Amber gradient cards for AI wines
+   - Sparkles icon to indicate AI content
+   - Responsive grid layout
+   - Search within AI-enriched wines
+
 ## Backend Test Results (COMPLETED - 02.01.2026)
 
 ### Test Summary

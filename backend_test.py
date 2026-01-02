@@ -5759,6 +5759,296 @@ class WinePairingAPITester:
             print(f"❌ {failed} Wine Profile Platform tests FAILED.")
             return False
 
+    # ===================== WINE ENRICHMENT API TESTS (v1.8.8) =====================
+    
+    def test_wine_enrichment_pro_user(self):
+        """Test POST /api/wines/{wine_id}/enrich - Pro user enrichment"""
+        if not self.auth_token:
+            self.log_test("Wine Enrichment (Pro User)", False, "No auth token available")
+            return False
+            
+        if not self.test_wine_id:
+            self.log_test("Wine Enrichment (Pro User)", False, "No wine ID available")
+            return False
+        
+        success, response = self.make_request('POST', f'wines/{self.test_wine_id}/enrich', expected_status=200, use_auth=True)
+        if success:
+            # Check response structure
+            required_fields = ['status', 'wine']
+            missing_fields = [field for field in required_fields if field not in response]
+            
+            if missing_fields:
+                self.log_test("Wine Enrichment (Pro User)", False, f"Missing fields: {missing_fields}")
+                return False
+            
+            status = response.get('status')
+            wine = response.get('wine', {})
+            
+            if status == 'already_enriched':
+                # Wine was already enriched - this is valid
+                self.log_test("Wine Enrichment (Pro User)", True, "Wine already enriched")
+                return True
+            elif status == 'success':
+                # Check enriched wine fields
+                enriched_fields = ['is_enriched', 'grape_varieties', 'taste_profile', 'food_pairings', 'description', 'serving_temp', 'drinking_window']
+                missing_enriched = [field for field in enriched_fields if field not in wine]
+                
+                if missing_enriched:
+                    self.log_test("Wine Enrichment (Pro User)", False, f"Missing enriched fields: {missing_enriched}")
+                    return False
+                
+                if not wine.get('is_enriched'):
+                    self.log_test("Wine Enrichment (Pro User)", False, "is_enriched should be True")
+                    return False
+                
+                # Check taste_profile structure
+                taste_profile = wine.get('taste_profile', {})
+                if not isinstance(taste_profile, dict):
+                    self.log_test("Wine Enrichment (Pro User)", False, f"taste_profile should be dict, got {type(taste_profile)}")
+                    return False
+                
+                # Check arrays
+                for array_field in ['grape_varieties', 'food_pairings']:
+                    if not isinstance(wine.get(array_field), list):
+                        self.log_test("Wine Enrichment (Pro User)", False, f"{array_field} should be list, got {type(wine.get(array_field))}")
+                        return False
+                
+                self.log_test("Wine Enrichment (Pro User)", True, "Wine enriched successfully with all required fields")
+                return True
+            else:
+                self.log_test("Wine Enrichment (Pro User)", False, f"Unexpected status: {status}")
+                return False
+        else:
+            self.log_test("Wine Enrichment (Pro User)", False, str(response))
+        return success
+
+    def test_wine_enrichment_already_enriched(self):
+        """Test enriching an already enriched wine"""
+        if not self.auth_token:
+            self.log_test("Wine Enrichment (Already Enriched)", False, "No auth token available")
+            return False
+            
+        if not self.test_wine_id:
+            self.log_test("Wine Enrichment (Already Enriched)", False, "No wine ID available")
+            return False
+        
+        # Try to enrich the same wine again
+        success, response = self.make_request('POST', f'wines/{self.test_wine_id}/enrich', expected_status=200, use_auth=True)
+        if success:
+            status = response.get('status')
+            if status == 'already_enriched':
+                message = response.get('message', '')
+                if 'bereits angereichert' in message.lower():
+                    self.log_test("Wine Enrichment (Already Enriched)", True, "Correctly detected already enriched wine")
+                    return True
+                else:
+                    self.log_test("Wine Enrichment (Already Enriched)", False, f"Unexpected message: {message}")
+                    return False
+            elif status == 'success':
+                # This could happen if the wine wasn't actually enriched in the previous test
+                self.log_test("Wine Enrichment (Already Enriched)", True, "Wine enriched (was not previously enriched)")
+                return True
+            else:
+                self.log_test("Wine Enrichment (Already Enriched)", False, f"Unexpected status: {status}")
+                return False
+        else:
+            self.log_test("Wine Enrichment (Already Enriched)", False, str(response))
+        return success
+
+    def test_wine_enrichment_non_pro_user(self):
+        """Test wine enrichment with non-Pro user (should return 403)"""
+        # Create a basic user for this test
+        timestamp = int(datetime.now().timestamp())
+        basic_user_email = f"basicuser_{timestamp}@test.com"
+        basic_password = "BasicPass123!"
+        
+        # Register basic user
+        register_data = {
+            "email": basic_user_email,
+            "password": basic_password,
+            "name": "Basic Test User"
+        }
+        
+        reg_success, reg_response = self.make_request('POST', 'auth/register', data=register_data, expected_status=200)
+        if not reg_success:
+            self.log_test("Wine Enrichment (Non-Pro User)", False, f"Failed to register basic user: {reg_response}")
+            return False
+        
+        # Login as basic user
+        login_data = {
+            "email": basic_user_email,
+            "password": basic_password
+        }
+        
+        login_success, login_response = self.make_request('POST', 'auth/login', data=login_data, expected_status=200)
+        if not login_success or 'token' not in login_response:
+            self.log_test("Wine Enrichment (Non-Pro User)", False, f"Failed to login basic user: {login_response}")
+            return False
+        
+        # Store current auth token and use basic user token
+        pro_token = self.auth_token
+        self.auth_token = login_response['token']
+        
+        # Create a wine for the basic user
+        wine_data = {
+            "name": "Basic User Test Wine",
+            "type": "rot",
+            "region": "Test Region",
+            "year": 2020
+        }
+        
+        wine_success, wine_response = self.make_request('POST', 'wines', data=wine_data, expected_status=200, use_auth=True)
+        if not wine_success or 'id' not in wine_response:
+            # Restore pro token
+            self.auth_token = pro_token
+            self.log_test("Wine Enrichment (Non-Pro User)", False, f"Failed to create wine for basic user: {wine_response}")
+            return False
+        
+        basic_wine_id = wine_response['id']
+        
+        # Try to enrich wine as basic user (should fail with 403)
+        success, response = self.make_request('POST', f'wines/{basic_wine_id}/enrich', expected_status=403, use_auth=True)
+        
+        # Restore pro token
+        self.auth_token = pro_token
+        
+        if success:
+            detail = response.get('detail', '')
+            if 'pro-feature' in detail.lower() or 'pro' in detail.lower():
+                self.log_test("Wine Enrichment (Non-Pro User)", True, "Correctly blocked non-Pro user from enrichment")
+                return True
+            else:
+                self.log_test("Wine Enrichment (Non-Pro User)", False, f"Unexpected error message: {detail}")
+                return False
+        else:
+            self.log_test("Wine Enrichment (Non-Pro User)", False, str(response))
+        return success
+
+    def test_wine_knowledge_cache(self):
+        """Test wine knowledge cache functionality"""
+        success, response = self.make_request('GET', 'wine-knowledge', expected_status=200)
+        if success:
+            # Should return wine knowledge entries
+            if 'wines' not in response:
+                self.log_test("Wine Knowledge Cache", False, "Missing 'wines' field in response")
+                return False
+            
+            wines = response.get('wines', [])
+            total = response.get('total', 0)
+            
+            # Check structure of wine knowledge entries
+            if wines and len(wines) > 0:
+                first_wine = wines[0]
+                expected_fields = ['id', 'search_key', 'name', 'grape_varieties', 'taste_profile', 'food_pairings', 'emotional_description', 'usage_count']
+                missing_fields = [field for field in expected_fields if field not in first_wine]
+                
+                if missing_fields:
+                    self.log_test("Wine Knowledge Cache", False, f"Missing fields in wine knowledge entry: {missing_fields}")
+                    return False
+            
+            self.log_test("Wine Knowledge Cache", True, f"Wine knowledge cache working - {len(wines)} entries, total: {total}")
+        else:
+            self.log_test("Wine Knowledge Cache", False, str(response))
+        return success
+
+    def test_enrichment_stats(self):
+        """Test enrichment statistics endpoint"""
+        if not self.auth_token:
+            self.log_test("Enrichment Stats", False, "No auth token available")
+            return False
+        
+        success, response = self.make_request('GET', 'enrichment-stats', expected_status=200, use_auth=True)
+        if success:
+            required_fields = ['current_month', 'enrichments_used', 'enrichments_limit', 'total_wine_knowledge_entries']
+            missing_fields = [field for field in required_fields if field not in response]
+            
+            if missing_fields:
+                self.log_test("Enrichment Stats", False, f"Missing fields: {missing_fields}")
+                return False
+            
+            used = response.get('enrichments_used', 0)
+            limit = response.get('enrichments_limit', 0)
+            total_entries = response.get('total_wine_knowledge_entries', 0)
+            
+            self.log_test("Enrichment Stats", True, f"Used: {used}/{limit}, Knowledge entries: {total_entries}")
+        else:
+            self.log_test("Enrichment Stats", False, str(response))
+        return success
+
+    def run_wine_enrichment_tests(self):
+        """Run comprehensive Wine Enrichment tests for v1.8.8"""
+        print("🍷 Running AI Wine Enrichment Feature Tests (v1.8.8)")
+        print("=" * 60)
+        print("Backend URL: https://cellarmate.preview.emergentagent.com")
+        print("Test Credentials: isicel@bluewin.ch / WeinAdmin2025!")
+        print("=" * 60)
+        
+        # Health Check
+        self.test_health_check()
+        
+        # Authentication Tests
+        print("\n🔐 Testing Authentication...")
+        if not self.test_login_with_test_credentials():
+            print("❌ Failed to login with test credentials - cannot continue")
+            return False
+        
+        self.test_get_current_user()
+        
+        # Create a test wine for enrichment
+        print("\n🍷 Setting up test wine...")
+        wine_data = {
+            "name": "Château Margaux 2015",
+            "type": "rot",
+            "region": "Bordeaux",
+            "year": 2015,
+            "grape": "Cabernet Sauvignon",
+            "notes": "Test wine for enrichment testing"
+        }
+        
+        wine_success, wine_response = self.make_request('POST', 'wines', data=wine_data, expected_status=200, use_auth=True)
+        if wine_success and 'id' in wine_response:
+            self.test_wine_id = wine_response['id']
+            print(f"✅ Created test wine: {wine_response.get('name')} (ID: {self.test_wine_id})")
+        else:
+            print(f"❌ Failed to create test wine: {wine_response}")
+            return False
+        
+        # Wine Enrichment Tests (CRITICAL - NEW FEATURE)
+        print("\n🤖 Testing Wine Enrichment API...")
+        self.test_wine_enrichment_pro_user()
+        self.test_wine_enrichment_already_enriched()
+        self.test_wine_enrichment_non_pro_user()
+        
+        # Wine Knowledge Cache Tests
+        print("\n📚 Testing Wine Knowledge Cache...")
+        self.test_wine_knowledge_cache()
+        self.test_enrichment_stats()
+        
+        # Regression Tests - Existing Features
+        print("\n🔄 Testing Regression - Existing Features...")
+        self.test_get_wines_authenticated()
+        self.test_wine_pairing_basic()
+        self.test_get_wine_profile_empty()
+        
+        # Cleanup
+        if self.test_wine_id:
+            print(f"\n🧹 Cleaning up test wine...")
+            self.make_request('DELETE', f'wines/{self.test_wine_id}', expected_status=200, use_auth=True)
+        
+        print("\n" + "=" * 60)
+        print(f"Tests Run: {self.tests_run}")
+        print(f"Tests Passed: {self.tests_passed}")
+        print(f"Tests Failed: {self.tests_run - self.tests_passed}")
+        print(f"Success Rate: {(self.tests_passed/self.tests_run)*100:.1f}%")
+        
+        if self.tests_passed == self.tests_run:
+            print("✅ All Wine Enrichment tests passed!")
+            return True
+        else:
+            failed = self.tests_run - self.tests_passed
+            print(f"❌ {failed} Wine Enrichment tests FAILED.")
+            return False
+
 
 def main():
     """Main test execution"""

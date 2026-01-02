@@ -1,0 +1,17 @@
+Backup: v1.8.8_pre_ai_enrichment_20260102_170528
+Datum: 2026-01-02 17:05:28
+Version: 1.8.8 (vor AI Wine Enrichment)
+Agent: Fork Agent nach Navigation Redesign
+
+Enthaltene Dateien:
+- backend/server.py (Haupt-Backend mit allen Endpoints)
+- backend/requirements.txt
+- frontend/src/pages/CellarPage.js (mit Enrich-Button UI)
+- frontend/src/pages/WineProfilePage.js (Pro-Feature)
+- frontend/src/pages/PricingPage.js (mit FAQ und Coupon)
+- frontend/src/components/Navigation.js (Burger-Menü)
+- frontend/src/contexts/ (Auth + Language)
+- frontend/src/App.js (Routes)
+- docs/ (Dokumentation)
+
+Nächste Aufgabe: AI Wine Enrichment Feature implementieren

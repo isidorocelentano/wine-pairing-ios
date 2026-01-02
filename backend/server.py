@@ -420,7 +420,42 @@ class Wine(BaseModel):
     quantity: int = 1
     is_favorite: bool = False
     price_category: Optional[str] = None  # 🍷 (bis €20), 🍷🍷 (€20-50), 🍷🍷🍷 (ab €50)
+    # Enrichment fields
+    is_enriched: bool = False
+    enriched_at: Optional[datetime] = None
+    grape_varieties: Optional[List[str]] = None
+    appellation: Optional[str] = None
+    winery_info: Optional[str] = None
+    taste_profile: Optional[Dict[str, Any]] = None
+    drinking_window: Optional[str] = None
+    food_pairings: Optional[List[str]] = None
+    serving_temp: Optional[str] = None
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+# Wine Knowledge Database - shared knowledge from enrichments
+class WineKnowledge(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    search_key: str  # Normalized: "chateau-latour-2015-pauillac"
+    name: str
+    vintage: Optional[int] = None
+    region: Optional[str] = None
+    
+    # Enriched data
+    grape_varieties: List[str] = Field(default_factory=list)
+    appellation: Optional[str] = None
+    winery_info: Optional[str] = None
+    taste_profile: Dict[str, Any] = Field(default_factory=dict)
+    drinking_window: Optional[str] = None
+    food_pairings: List[str] = Field(default_factory=list)
+    serving_temp: Optional[str] = None
+    price_category: Optional[str] = None
+    emotional_description: Optional[str] = None  # Our signature style
+    
+    # Metadata
+    source: str = "claude_enrichment"
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    usage_count: int = 0  # How often this was used
 
 class WineCreate(BaseModel):
     name: str

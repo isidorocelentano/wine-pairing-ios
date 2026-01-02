@@ -316,6 +316,46 @@ const CellarPage = () => {
     }
   };
 
+  // Enrich wine with AI-generated details
+  const handleEnrichWine = async (wineId) => {
+    if (!isPro) {
+      toast.error(language === 'de' ? 'Wein-Anreicherung ist ein Pro-Feature' : 'Wine enrichment is a Pro feature');
+      return;
+    }
+    
+    setEnrichingWine(wineId);
+    
+    try {
+      const token = localStorage.getItem('wine_auth_token');
+      const response = await fetch(`${API}/wines/${wineId}/enrich`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok) {
+        if (data.status === 'already_enriched') {
+          toast.info(language === 'de' ? 'Dieser Wein wurde bereits angereichert' : 'This wine is already enriched');
+        } else {
+          toast.success(language === 'de' ? '🍷 Wein-Details erfolgreich geladen!' : '🍷 Wine details loaded successfully!');
+          fetchWines();
+        }
+        // Show detail view
+        setShowWineDetail(data.wine);
+      } else {
+        toast.error(data.detail || (language === 'de' ? 'Fehler beim Anreichern' : 'Enrichment failed'));
+      }
+    } catch (error) {
+      console.error('Enrich error:', error);
+      toast.error(language === 'de' ? 'Verbindungsfehler' : 'Connection error');
+    } finally {
+      setEnrichingWine(null);
+    }
+  };
+
   const handleEditWine = (wine) => {
     setEditingWine({
       id: wine.id,

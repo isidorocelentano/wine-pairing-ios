@@ -1405,6 +1405,259 @@ async def toggle_favorite(wine_id: str, request: Request):
     await db.wines.update_one({"id": wine_id, "user_id": user.user_id}, {"$set": {"is_favorite": new_status}})
     return {"is_favorite": new_status}
 
+
+# ===================== WINE ENRICHMENT API =====================
+
+def generate_search_key(name: str, vintage: Optional[int], region: Optional[str]) -> str:
+    """Generate normalized search key for wine knowledge lookup"""
+    import re
+    key_parts = [name.lower()]
+    if vintage:
+        key_parts.append(str(vintage))
+    if region:
+        key_parts.append(region.lower())
+    
+    key = "-".join(key_parts)
+    # Remove special chars, normalize spaces
+    key = re.sub(r'[^a-z0-9äöüß-]', '-', key)
+    key = re.sub(r'-+', '-', key)
+    return key.strip('-')
+
+
+WINE_ENRICHMENT_PROMPT = """Du bist ein leidenschaftlicher Wein-Sommelier für die App "WINE.PAIRING.ONLINE".
+
+DEIN STIL ist poetisch, emotional und einladend – wie ein guter Freund, der seine Entdeckungen teilt:
+- Verwende bildhafte Sprache: "umschmeichelt", "tanzt auf der Zunge", "verführerisch", "seidiger Schleier"
+- Beschreibe Weine wie Kunstwerke oder Erlebnisse
+- Sei enthusiastisch aber authentisch
+- Mach Wein zugänglich, nicht elitär
+- Schreibe für Menschen, die Genuss lieben
+
+BEISPIEL UNSERES STILS:
+"Der Parfümeur unter den Rebsorten – betörend wie ein orientalischer Basar, golden wie Bernstein im Sonnenuntergang. Litschi, Rosenblätter und kandierter Ingwer umschmeicheln die Nase wie ein seidener Schleier. Am Gaumen üppig und exotisch – ein Wein für Mutige, die sich in ein aromatisches Abenteuer stürzen wollen."
+
+AUFGABE: Recherchiere diesen Wein und erstelle eine Beschreibung in UNSEREM emotionalen Stil.
+
+WEIN:
+- Name: {name}
+- Jahrgang: {vintage}
+- Region: {region}
+
+LIEFERE ALS JSON (GENAU dieses Format):
+{{
+  "grape_varieties": ["Rebsorte1", "Rebsorte2"],
+  "appellation": "Offizielle Bezeichnung/AOC/DOC",
+  "winery_info": "2-3 Sätze zum Weingut - Geschichte, Philosophie, Besonderheiten",
+  "taste_profile": {{
+    "body": "Leicht/Mittelkräftig/Vollmundig",
+    "aromas": ["Aroma1", "Aroma2", "Aroma3", "Aroma4"],
+    "tannins": "Beschreibung der Gerbstoffe",
+    "acidity": "Beschreibung der Säure",
+    "finish": "Beschreibung des Abgangs"
+  }},
+  "drinking_window": "YYYY-YYYY",
+  "food_pairings": ["Gericht1", "Gericht2", "Gericht3"],
+  "serving_temp": "X-Y°C",
+  "price_category": "Budget (bis 15€) / Mittel (15-40€) / Premium (40-100€) / Luxus (über 100€)",
+  "emotional_description": "3-4 Sätze in UNSEREM poetischen Stil - mach diesen Wein zum Erlebnis!"
+}}
+
+WICHTIG:
+- NUR valides JSON zurückgeben, keine Erklärungen
+- Alle Texte auf DEUTSCH
+- Falls du den Wein nicht kennst, nutze dein Wissen über Region und Rebsorte für eine fundierte Einschätzung
+- emotional_description ist das Herzstück - hier zeigst du unseren einzigartigen Stil!
+"""
+
+
+@api_router.post("/wines/{wine_id}/enrich")
+async def enrich_wine(wine_id: str, request: Request):
+    """Enrich a wine with detailed information from AI (Pro feature)"""
+    user = await get_current_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Bitte melden Sie sich an")
+    
+    # Pro-only feature
+    if user.plan != "pro":
+        raise HTTPException(status_code=403, detail="Wein-Anreicherung ist ein Pro-Feature")
+    
+    # Check monthly limit (1000 per month)
+    current_month = datetime.now(timezone.utc).strftime("%Y-%m")
+    enrichment_count = await db.enrichment_usage.find_one({"month": current_month})
+    if enrichment_count and enrichment_count.get("count", 0) >= 1000:
+        raise HTTPException(status_code=429, detail="Monatliches Limit für Wein-Anreicherungen erreicht (1000/Monat)")
+    
+    # Find the wine
+    wine = await db.wines.find_one({"id": wine_id, "user_id": user.user_id}, {"_id": 0})
+    if not wine:
+        raise HTTPException(status_code=404, detail="Wein nicht gefunden")
+    
+    # Check if already enriched
+    if wine.get("is_enriched"):
+        return {"status": "already_enriched", "message": "Dieser Wein wurde bereits angereichert", "wine": wine}
+    
+    # Generate search key
+    search_key = generate_search_key(wine.get("name", ""), wine.get("year"), wine.get("region"))
+    
+    # Check wine_knowledge cache first
+    cached = await db.wine_knowledge.find_one({"search_key": search_key}, {"_id": 0})
+    
+    if cached:
+        # Use cached data
+        logger.info(f"🍷 Wine knowledge cache hit: {search_key}")
+        enrichment_data = cached
+        
+        # Increment usage count
+        await db.wine_knowledge.update_one(
+            {"search_key": search_key},
+            {"$inc": {"usage_count": 1}}
+        )
+    else:
+        # Call Claude for enrichment
+        logger.info(f"🍷 Wine knowledge cache miss, calling Claude: {search_key}")
+        
+        try:
+            prompt = WINE_ENRICHMENT_PROMPT.format(
+                name=wine.get("name", "Unbekannt"),
+                vintage=wine.get("year", "Unbekannt"),
+                region=wine.get("region", "Unbekannt")
+            )
+            
+            response = client.chat.completions.create(
+                model="gpt-4o",
+                messages=[
+                    {"role": "system", "content": "Du bist ein Wein-Experte. Antworte NUR mit validem JSON."},
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.7,
+                max_tokens=1500
+            )
+            
+            response_text = response.choices[0].message.content.strip()
+            
+            # Clean response - remove markdown code blocks if present
+            if response_text.startswith("```"):
+                response_text = response_text.split("```")[1]
+                if response_text.startswith("json"):
+                    response_text = response_text[4:]
+            response_text = response_text.strip()
+            
+            enrichment_data = json.loads(response_text)
+            
+            # Save to wine_knowledge for future use
+            knowledge_entry = {
+                "id": str(uuid.uuid4()),
+                "search_key": search_key,
+                "name": wine.get("name"),
+                "vintage": wine.get("year"),
+                "region": wine.get("region"),
+                **enrichment_data,
+                "source": "claude_enrichment",
+                "created_at": datetime.now(timezone.utc).isoformat(),
+                "usage_count": 1
+            }
+            
+            await db.wine_knowledge.insert_one(knowledge_entry)
+            logger.info(f"🍷 New wine knowledge saved: {search_key}")
+            
+        except json.JSONDecodeError as e:
+            logger.error(f"Failed to parse Claude response: {e}")
+            raise HTTPException(status_code=500, detail="Fehler bei der Verarbeitung der Wein-Informationen")
+        except Exception as e:
+            logger.error(f"Enrichment error: {e}")
+            raise HTTPException(status_code=500, detail="Fehler bei der Wein-Anreicherung")
+    
+    # Update the user's wine with enrichment data
+    update_data = {
+        "is_enriched": True,
+        "enriched_at": datetime.now(timezone.utc).isoformat(),
+        "grape_varieties": enrichment_data.get("grape_varieties", []),
+        "appellation": enrichment_data.get("appellation"),
+        "winery_info": enrichment_data.get("winery_info"),
+        "taste_profile": enrichment_data.get("taste_profile", {}),
+        "drinking_window": enrichment_data.get("drinking_window"),
+        "food_pairings": enrichment_data.get("food_pairings", []),
+        "serving_temp": enrichment_data.get("serving_temp"),
+        "description": enrichment_data.get("emotional_description", wine.get("description"))
+    }
+    
+    await db.wines.update_one(
+        {"id": wine_id, "user_id": user.user_id},
+        {"$set": update_data}
+    )
+    
+    # Update enrichment usage counter
+    await db.enrichment_usage.update_one(
+        {"month": current_month},
+        {"$inc": {"count": 1}},
+        upsert=True
+    )
+    
+    # Get updated wine
+    updated_wine = await db.wines.find_one({"id": wine_id, "user_id": user.user_id}, {"_id": 0})
+    
+    return {
+        "status": "success",
+        "message": "Wein erfolgreich angereichert!",
+        "wine": updated_wine,
+        "cache_hit": cached is not None
+    }
+
+
+@api_router.get("/wine-knowledge")
+async def get_wine_knowledge(
+    search: Optional[str] = None,
+    limit: int = 50,
+    skip: int = 0
+):
+    """Get public wine knowledge database entries"""
+    query = {}
+    if search:
+        query["$or"] = [
+            {"name": {"$regex": search, "$options": "i"}},
+            {"region": {"$regex": search, "$options": "i"}},
+            {"grape_varieties": {"$regex": search, "$options": "i"}}
+        ]
+    
+    wines = await db.wine_knowledge.find(query, {"_id": 0}).sort("usage_count", -1).skip(skip).limit(limit).to_list(limit)
+    total = await db.wine_knowledge.count_documents(query)
+    
+    return {
+        "wines": wines,
+        "total": total,
+        "limit": limit,
+        "skip": skip
+    }
+
+
+@api_router.get("/wine-knowledge/{search_key}")
+async def get_wine_knowledge_entry(search_key: str):
+    """Get a specific wine knowledge entry by search key"""
+    entry = await db.wine_knowledge.find_one({"search_key": search_key}, {"_id": 0})
+    if not entry:
+        raise HTTPException(status_code=404, detail="Wein nicht in der Wissensdatenbank gefunden")
+    return entry
+
+
+@api_router.get("/enrichment-stats")
+async def get_enrichment_stats(request: Request):
+    """Get enrichment usage statistics (admin)"""
+    user = await get_current_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Nicht angemeldet")
+    
+    current_month = datetime.now(timezone.utc).strftime("%Y-%m")
+    usage = await db.enrichment_usage.find_one({"month": current_month})
+    total_knowledge = await db.wine_knowledge.count_documents({})
+    
+    return {
+        "current_month": current_month,
+        "enrichments_used": usage.get("count", 0) if usage else 0,
+        "enrichments_limit": 1000,
+        "total_wine_knowledge_entries": total_knowledge
+    }
+
+
 # ===================== AI PAIRING ENDPOINTS =====================
 
 @api_router.post("/pairing", response_model=PairingResponse)

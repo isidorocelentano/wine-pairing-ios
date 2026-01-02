@@ -5979,7 +5979,7 @@ class WinePairingAPITester:
         """Run comprehensive Wine Enrichment tests for v1.8.8"""
         print("🍷 Running AI Wine Enrichment Feature Tests (v1.8.8)")
         print("=" * 60)
-        print("Backend URL: https://cellarmate.preview.emergentagent.com")
+        print("Backend URL: http://localhost:8001")
         print("Test Credentials: isicel@bluewin.ch / WeinAdmin2025!")
         print("=" * 60)
         

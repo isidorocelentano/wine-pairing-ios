@@ -751,7 +751,7 @@ const WineDatabasePage = () => {
               {selectedEnrichedWine.emotional_description && (
                 <div className="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-950/30 dark:to-orange-950/20 rounded-lg p-4">
                   <p className="text-foreground font-accent italic leading-relaxed">
-                    "{selectedEnrichedWine.emotional_description}"
+                    &ldquo;{selectedEnrichedWine.emotional_description}&rdquo;
                   </p>
                 </div>
               )}

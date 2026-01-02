@@ -58,6 +58,14 @@ const WineDatabasePage = () => {
   const [hasMore, setHasMore] = useState(true);
   const [favorites, setFavorites] = useState(new Set());
   const [wishlist, setWishlist] = useState(new Set());
+  
+  // AI-enriched wines state
+  const [activeTab, setActiveTab] = useState('database');
+  const [enrichedWines, setEnrichedWines] = useState([]);
+  const [enrichedLoading, setEnrichedLoading] = useState(false);
+  const [enrichedSearchQuery, setEnrichedSearchQuery] = useState('');
+  const [enrichedTotal, setEnrichedTotal] = useState(0);
+  const [selectedEnrichedWine, setSelectedEnrichedWine] = useState(null);
 
   // Update filters when URL parameters change
   useEffect(() => {

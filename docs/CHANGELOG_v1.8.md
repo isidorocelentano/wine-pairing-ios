@@ -333,3 +333,39 @@ Ein leistungsstarkes Feature, das automatisch detaillierte Wein-Profile aus eine
 
 - **Kritischer Fix:** `client.chat.completions.create` wurde zu `LlmChat` geändert
 - Der ursprüngliche Code nutzte fälschlicherweise den MongoDB-Client statt OpenAI
+
+---
+
+## Version 1.8.8.1 (02.01.2026) - AI Wine Knowledge Database Search
+
+### 🔍 Neues Feature: AI-angereicherte Weine durchsuchbar
+
+Die Wein-Datenbank wurde um einen neuen Tab erweitert, der alle AI-angereicherten Weine durchsuchbar macht.
+
+### Zugang
+
+Navigieren Sie zu **Wein-Datenbank** > Tab **"✨ AI-Weine"**
+
+### Funktionen
+
+| Feature | Beschreibung |
+|---------|--------------|
+| **Tab-Navigation** | Wechseln Sie zwischen "Wein-Datenbank" (normal) und "AI-Weine" (angereichert) |
+| **Live-Zähler** | Tab zeigt aktuelle Anzahl AI-angereicherter Weine: "AI-Weine (2)" |
+| **Suche** | Durchsuchen nach Name, Region oder Rebsorte |
+| **Wein-Karten** | Amber-farbene Karten mit AI-Profil Badge |
+| **Detail-Modal** | Vollständiges AI-generiertes Profil inkl. emotionaler Beschreibung |
+
+### UI-Elemente
+
+- **Amber Gradient Karten**: Visuell abgehoben von normalen Weinen
+- **✨ AI-Profil Badge**: Kennzeichnet angereicherte Weine
+- **Quick Info Pills**: Serviertemperatur, Trinkreife, Preiskategorie
+- **Emotionale Beschreibung**: In Anführungszeichen im Modal
+
+### Technische Details
+
+- **API**: `GET /api/wine-knowledge?search=&limit=50&skip=0`
+- **Datei**: `frontend/src/pages/WineDatabasePage.js`
+- **Komponenten**: Tabs aus shadcn/ui, neue Icons (Sparkles, Grape, Thermometer, Calendar)
+

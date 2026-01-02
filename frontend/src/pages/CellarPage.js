@@ -15,7 +15,7 @@ import { API_URL, API } from "@/config/api";
 
 const CellarPage = () => {
   const { t, language } = useLanguage();
-  const { user, isAuthenticated, loading: authLoading } = useAuth();
+  const { user, isAuthenticated, loading: authLoading, isPro } = useAuth();
   const navigate = useNavigate();
   const [wines, setWines] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -29,6 +29,8 @@ const CellarPage = () => {
   const [newWine, setNewWine] = useState({ name: '', type: 'rot', region: '', year: '', grape: '', description: '', notes: '', image_base64: '', quantity: 1, price_category: '' });
   const [scanning, setScanning] = useState(false);
   const [updatingQuantity, setUpdatingQuantity] = useState(null);
+  const [enrichingWine, setEnrichingWine] = useState(null);
+  const [showWineDetail, setShowWineDetail] = useState(null);
   const fileInputRef = useRef(null);
 
   // Price category labels

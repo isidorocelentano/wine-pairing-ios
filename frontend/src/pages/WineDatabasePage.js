@@ -162,7 +162,20 @@ const WineDatabasePage = () => {
     }
   }, [enrichedSearchQuery]);
 
-  // Fetch enriched wines when tab changes or search changes
+  // Fetch enriched wines count on initial load, full data when tab changes
+  useEffect(() => {
+    // Always fetch count on mount
+    const fetchCount = async () => {
+      try {
+        const response = await axios.get(`${API}/wine-knowledge?limit=1&skip=0`);
+        setEnrichedTotal(response.data.total || 0);
+      } catch (error) {
+        console.error('Error fetching enriched count:', error);
+      }
+    };
+    fetchCount();
+  }, []);
+
   useEffect(() => {
     if (activeTab === 'enriched') {
       fetchEnrichedWines();

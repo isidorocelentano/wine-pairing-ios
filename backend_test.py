@@ -5707,7 +5707,7 @@ class WinePairingAPITester:
         """Run comprehensive Wine Profile tests as specified in review request"""
         print("🍷 Running Comprehensive Wine Profile Platform Tests")
         print("=" * 60)
-        print("Preview URL: https://winetrak.preview.emergentagent.com")
+        print("Preview URL: https://cellarmate-2.preview.emergentagent.com")
         print("Test Credentials: isicel@bluewin.ch / WeinAdmin2025!")
         print("=" * 60)
         

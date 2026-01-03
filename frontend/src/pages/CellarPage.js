@@ -948,6 +948,19 @@ const CellarPage = () => {
           <DialogContent className="mx-4 max-w-lg max-h-[85vh] flex flex-col p-0 gap-0">
             {showWineDetail && (
               <>
+                {/* Back Button - Fixed at Top */}
+                <div className="absolute top-3 left-3 z-10">
+                  <Button 
+                    variant="secondary" 
+                    size="sm" 
+                    onClick={() => setShowWineDetail(null)}
+                    className="rounded-full shadow-md bg-background/90 backdrop-blur-sm hover:bg-background"
+                  >
+                    <ArrowLeft className="w-4 h-4 mr-1" />
+                    Zurück
+                  </Button>
+                </div>
+
                 {/* Wine Image - Compact at Top */}
                 {showWineDetail.image_base64 ? (
                   <div className="w-full h-48 bg-black overflow-hidden flex-shrink-0">
@@ -958,7 +971,7 @@ const CellarPage = () => {
                     />
                   </div>
                 ) : (
-                  <div className="w-full h-24 bg-gradient-to-br from-primary/10 to-primary/20 flex items-center justify-center flex-shrink-0">
+                  <div className="w-full h-24 bg-gradient-to-br from-primary/10 to-primary/20 flex items-center justify-center flex-shrink-0 pt-10">
                     <Wine className="h-12 w-12 text-primary/30" strokeWidth={1} />
                   </div>
                 )}

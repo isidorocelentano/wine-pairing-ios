@@ -444,23 +444,34 @@ const CellarPage = () => {
     setShowEditDialog(true);
   };
 
-  // Handle image upload for editing
+  // Handle image upload for editing (with compression)
   const handleEditImageUpload = async (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
     
-    // Check file size (max 5MB)
-    if (file.size > 5 * 1024 * 1024) {
-      toast.error(language === 'de' ? 'Bild zu groß (max. 5MB)' : 'Image too large (max 5MB)');
+    // Check file size (max 10MB before compression)
+    if (file.size > 10 * 1024 * 1024) {
+      toast.error(language === 'de' ? 'Bild zu groß (max. 10MB)' : 'Image too large (max 10MB)');
       return;
     }
     
     try {
       const reader = new FileReader();
-      reader.onload = () => {
-        const base64 = reader.result.split(',')[1];
-        setEditingWine(prev => ({ ...prev, image_base64: base64 }));
-        toast.success(language === 'de' ? 'Bild hinzugefügt!' : 'Image added!');
+      reader.onload = async () => {
+        try {
+          // Compress the image
+          const compressedBase64 = await compressImageSimple(reader.result);
+          setEditingWine(prev => ({ ...prev, image_base64: compressedBase64 }));
+          
+          const sizeMB = (compressedBase64.length * 0.75 / 1024 / 1024).toFixed(2);
+          toast.success(language === 'de' ? `Bild komprimiert (${sizeMB}MB)` : `Image compressed (${sizeMB}MB)`);
+        } catch (compressError) {
+          console.error('Compression error:', compressError);
+          // Fallback: use original if compression fails
+          const base64 = reader.result.split(',')[1];
+          setEditingWine(prev => ({ ...prev, image_base64: base64 }));
+          toast.success(language === 'de' ? 'Bild hinzugefügt!' : 'Image added!');
+        }
       };
       reader.readAsDataURL(file);
     } catch (error) {

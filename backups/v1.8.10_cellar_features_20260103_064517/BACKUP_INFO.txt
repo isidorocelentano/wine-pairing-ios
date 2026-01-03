@@ -1,0 +1,33 @@
+Backup: v1.8.10 - Weinkeller Erweiterungen
+Datum: 03.01.2026
+
+Neue Features:
+==============
+
+1. Volltext-Suche im Weinkeller
+   - Suchfeld mit Lupe-Icon
+   - Durchsucht alle Felder (Name, Region, Rebsorte, etc.)
+   - Kombinierbar mit Filtern
+
+2. Bild nachträglich hinzufügen
+   - Bild-Upload im Edit-Dialog
+   - Automatische Komprimierung (1200px, 70% JPEG)
+   - ~90% Größenreduktion
+
+3. Wein-Detail-Ansicht mit Bild
+   - Klick auf Weinkarte öffnet Modal
+   - Großes Bild oben
+   - Alle Wein-Infos übersichtlich
+   - "Bearbeiten" und "Pairing" Buttons
+
+Bug Fixes:
+==========
+- Bilder werden jetzt in Übersicht angezeigt
+- Edit-Dialog Speichern-Button nicht mehr überdeckt
+- Detail-Design optimiert (keine Überlappung)
+
+Geänderte Dateien:
+- backend/server.py (image_base64 in Response)
+- frontend/src/pages/CellarPage.js (Suche, Bild, Detail)
+- docs/CHANGELOG_v1.8.md
+- docs/APP_DOKUMENTATION_KOMPLETT.md

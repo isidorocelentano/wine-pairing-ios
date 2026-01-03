@@ -1052,12 +1052,64 @@ const CellarPage = () => {
         {/* Edit Wine Dialog */}
         {editingWine && (
           <Dialog open={showEditDialog} onOpenChange={setShowEditDialog}>
-            <DialogContent className="mx-4 max-w-md">
+            <DialogContent className="mx-4 max-w-md max-h-[90vh] overflow-y-auto">
               <DialogHeader>
                 <DialogTitle>Wein bearbeiten</DialogTitle>
                 <DialogDescription>Aktualisieren Sie die Informationen zu Ihrem Wein</DialogDescription>
               </DialogHeader>
               <div className="space-y-4 pt-4">
+                {/* Image Upload Section */}
+                <div>
+                  <label className="text-sm font-medium mb-2 block">Bild</label>
+                  <div className="flex items-start gap-4">
+                    {/* Image Preview */}
+                    <div className="w-24 h-24 rounded-lg border-2 border-dashed border-border overflow-hidden bg-secondary/30 flex-shrink-0">
+                      {editingWine.image_base64 ? (
+                        <img 
+                          src={`data:image/jpeg;base64,${editingWine.image_base64}`} 
+                          alt={editingWine.name}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center">
+                          <Wine className="h-8 w-8 text-muted-foreground/30" />
+                        </div>
+                      )}
+                    </div>
+                    
+                    {/* Upload Buttons */}
+                    <div className="flex-1 space-y-2">
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleEditImageUpload}
+                        className="hidden"
+                        id="edit-wine-image"
+                      />
+                      <label htmlFor="edit-wine-image">
+                        <Button variant="outline" size="sm" className="w-full cursor-pointer" asChild>
+                          <span>
+                            <Upload className="h-4 w-4 mr-2" />
+                            {editingWine.image_base64 ? 'Bild ändern' : 'Bild hinzufügen'}
+                          </span>
+                        </Button>
+                      </label>
+                      {editingWine.image_base64 && (
+                        <Button 
+                          variant="ghost" 
+                          size="sm" 
+                          className="w-full text-destructive hover:text-destructive"
+                          onClick={() => setEditingWine(prev => ({ ...prev, image_base64: '' }))}
+                        >
+                          <X className="h-4 w-4 mr-2" />
+                          Bild entfernen
+                        </Button>
+                      )}
+                      <p className="text-xs text-muted-foreground">JPG, PNG (max. 5MB)</p>
+                    </div>
+                  </div>
+                </div>
+
                 <div>
                   <label className="text-sm font-medium mb-2 block">Name</label>
                   <Input

@@ -459,21 +459,28 @@ const CellarPage = () => {
         return;
       }
       
+      const updateData = {
+        name: editingWine.name,
+        type: editingWine.type,
+        region: editingWine.region || null,
+        year: editingWine.year ? parseInt(editingWine.year) : null,
+        grape: editingWine.grape || null,
+        notes: editingWine.notes || null,
+        quantity: typeof editingWine.quantity === 'number' ? editingWine.quantity : parseInt(editingWine.quantity || '1', 10),
+      };
+      
+      // Include image if it exists
+      if (editingWine.image_base64) {
+        updateData.image_base64 = editingWine.image_base64;
+      }
+      
       const response = await fetch(`${API}/wines/${editingWine.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
         },
-        body: JSON.stringify({
-          name: editingWine.name,
-          type: editingWine.type,
-          region: editingWine.region || null,
-          year: editingWine.year ? parseInt(editingWine.year) : null,
-          grape: editingWine.grape || null,
-          notes: editingWine.notes || null,
-          quantity: typeof editingWine.quantity === 'number' ? editingWine.quantity : parseInt(editingWine.quantity || '1', 10),
-        })
+        body: JSON.stringify(updateData)
       });
       
       if (response.ok) {

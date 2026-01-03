@@ -156,20 +156,38 @@ const CellarPage = () => {
   }, [fetchWines]);
 
   // Einfache Bildkomprimierung für iOS Safari
+  // Compress image for mobile performance
   const compressImageSimple = (dataUrl) => {
     return new Promise((resolve) => {
       const img = new Image();
       img.onload = () => {
         const canvas = document.createElement('canvas');
-        const MAX = 800;
+        const MAX_SIZE = 1200; // Max dimension
         let w = img.width;
         let h = img.height;
-        if (w > h && w > MAX) { h = h * MAX / w; w = MAX; }
-        else if (h > MAX) { w = w * MAX / h; h = MAX; }
+        
+        // Calculate new dimensions
+        if (w > h && w > MAX_SIZE) { 
+          h = h * MAX_SIZE / w; 
+          w = MAX_SIZE; 
+        } else if (h > MAX_SIZE) { 
+          w = w * MAX_SIZE / h; 
+          h = MAX_SIZE; 
+        }
+        
         canvas.width = w;
         canvas.height = h;
         canvas.getContext('2d').drawImage(img, 0, 0, w, h);
-        resolve(canvas.toDataURL('image/jpeg', 0.5).split(',')[1]);
+        
+        // Compress with 70% quality JPEG
+        const compressed = canvas.toDataURL('image/jpeg', 0.7).split(',')[1];
+        
+        // Log compression results
+        const originalSize = Math.round(dataUrl.length * 0.75 / 1024);
+        const compressedSize = Math.round(compressed.length * 0.75 / 1024);
+        console.log(`📸 Bild komprimiert: ${originalSize}KB → ${compressedSize}KB (${Math.round(100 - compressedSize/originalSize*100)}% kleiner)`);
+        
+        resolve(compressed);
       };
       img.src = dataUrl;
     });

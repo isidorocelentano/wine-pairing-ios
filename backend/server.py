@@ -4680,11 +4680,17 @@ async def get_public_wines(
         accent_pattern = create_accent_insensitive_pattern(search)
         regex = {"$regex": accent_pattern, "$options": "i"}
         
+        # VOLLTEXT-SUCHE: Durchsuche alle relevanten Felder
         query["$or"] = [
             {"name": regex},
             {"winery": regex},
             {"region": regex},
             {"grape_variety": regex},
+            {"appellation": regex},      # WICHTIG: Für Sauternes, Margaux, etc.
+            {"country": regex},          # Für "Frankreich", "Italien"
+            {"anbaugebiet": regex},      # Alternative Feld
+            {"description_de": regex},   # Beschreibung durchsuchen
+            {"description_en": regex},
         ]
     
     if country:

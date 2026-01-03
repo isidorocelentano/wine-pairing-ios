@@ -940,48 +940,92 @@ const CellarPage = () => {
 
         {/* Wine Detail Modal (Enriched) */}
         <Dialog open={!!showWineDetail} onOpenChange={(open) => !open && setShowWineDetail(null)}>
-          <DialogContent className="mx-4 max-w-lg max-h-[90vh] overflow-y-auto">
+          <DialogContent className="mx-4 max-w-lg max-h-[90vh] overflow-y-auto p-0">
             {showWineDetail && (
               <>
-                <DialogHeader>
-                  <div className="flex items-center gap-2">
-                    {showWineDetail.is_enriched && (
-                      <Badge className="bg-green-100 text-green-700 border-green-300">
-                        <Sparkles className="w-3 h-3 mr-1" />
-                        Angereichert
-                      </Badge>
-                    )}
+                {/* Wine Image - Full Width at Top */}
+                {showWineDetail.image_base64 ? (
+                  <div className="w-full aspect-[4/3] bg-secondary/30 overflow-hidden">
+                    <img 
+                      src={`data:image/jpeg;base64,${showWineDetail.image_base64}`} 
+                      alt={showWineDetail.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <DialogTitle className="text-xl">{showWineDetail.name}</DialogTitle>
-                  <DialogDescription>
-                    {showWineDetail.year && `${showWineDetail.year} • `}
-                    {showWineDetail.region}
-                    {showWineDetail.appellation && ` • ${showWineDetail.appellation}`}
-                  </DialogDescription>
-                </DialogHeader>
+                ) : (
+                  <div className="w-full aspect-[3/2] bg-gradient-to-br from-primary/5 to-primary/10 flex items-center justify-center">
+                    <Wine className="h-20 w-20 text-primary/20" strokeWidth={1} />
+                  </div>
+                )}
                 
-                <div className="space-y-4 pt-4">
-                  {/* Emotional Description */}
-                  {showWineDetail.description && (
-                    <div className="bg-gradient-to-r from-primary/5 to-primary/10 p-4 rounded-lg border border-primary/20">
-                      <p className="text-sm italic leading-relaxed">{showWineDetail.description}</p>
+                <div className="p-6">
+                  <DialogHeader className="text-left">
+                    <div className="flex items-center gap-2 mb-1">
+                      <Badge className={`${getWineTypeBadgeClass(showWineDetail.type)} border-0`}>
+                        {getWineTypeLabel(showWineDetail.type)}
+                      </Badge>
+                      {showWineDetail.is_enriched && (
+                        <Badge className="bg-green-100 text-green-700 border-green-300">
+                          <Sparkles className="w-3 h-3 mr-1" />
+                          Angereichert
+                        </Badge>
+                      )}
+                      {showWineDetail.quantity > 0 && (
+                        <Badge variant="outline">{showWineDetail.quantity}x</Badge>
+                      )}
                     </div>
-                  )}
+                    <DialogTitle className="text-xl font-bold">{showWineDetail.name}</DialogTitle>
+                    <DialogDescription className="text-base">
+                      {showWineDetail.year && <span className="font-medium">{showWineDetail.year}</span>}
+                      {showWineDetail.year && showWineDetail.region && ' • '}
+                      {showWineDetail.region}
+                    </DialogDescription>
+                  </DialogHeader>
                   
-                  {/* Grape Varieties */}
-                  {showWineDetail.grape_varieties?.length > 0 && (
-                    <div>
-                      <h4 className="text-sm font-semibold flex items-center gap-2 mb-2">
-                        <Grape className="w-4 h-4 text-purple-600" />
-                        Rebsorten
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {showWineDetail.grape_varieties.map((grape, i) => (
-                          <Badge key={i} variant="outline">{grape}</Badge>
-                        ))}
-                      </div>
+                  <div className="space-y-4 pt-4">
+                    {/* Basic Wine Info Grid */}
+                    <div className="grid grid-cols-2 gap-3 text-sm">
+                      {showWineDetail.grape && (
+                        <div className="bg-secondary/30 p-3 rounded-lg">
+                          <div className="text-xs text-muted-foreground mb-1">Rebsorte</div>
+                          <div className="font-medium">{showWineDetail.grape}</div>
+                        </div>
+                      )}
+                      {showWineDetail.region && (
+                        <div className="bg-secondary/30 p-3 rounded-lg">
+                          <div className="text-xs text-muted-foreground mb-1">Region</div>
+                          <div className="font-medium">{showWineDetail.region}</div>
+                        </div>
+                      )}
+                      {showWineDetail.appellation && (
+                        <div className="bg-secondary/30 p-3 rounded-lg col-span-2">
+                          <div className="text-xs text-muted-foreground mb-1">Appellation</div>
+                          <div className="font-medium">{showWineDetail.appellation}</div>
+                        </div>
+                      )}
                     </div>
-                  )}
+
+                    {/* Emotional Description */}
+                    {showWineDetail.description && (
+                      <div className="bg-gradient-to-r from-primary/5 to-primary/10 p-4 rounded-lg border border-primary/20">
+                        <p className="text-sm italic leading-relaxed">{showWineDetail.description}</p>
+                      </div>
+                    )}
+                    
+                    {/* Grape Varieties (for enriched wines) */}
+                    {showWineDetail.grape_varieties?.length > 0 && (
+                      <div>
+                        <h4 className="text-sm font-semibold flex items-center gap-2 mb-2">
+                          <Grape className="w-4 h-4 text-purple-600" />
+                          Rebsorten
+                        </h4>
+                        <div className="flex flex-wrap gap-2">
+                          {showWineDetail.grape_varieties.map((grape, i) => (
+                            <Badge key={i} variant="outline">{grape}</Badge>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   
                   {/* Taste Profile */}
                   {showWineDetail.taste_profile && (

@@ -950,27 +950,29 @@ const CellarPage = () => {
               <>
                 {/* Wine Image - Full Width at Top */}
                 {showWineDetail.image_base64 ? (
-                  <div className="w-full aspect-[4/3] bg-secondary/30 overflow-hidden">
+                  <div className="w-full aspect-[4/3] bg-black overflow-hidden relative">
                     <img 
                       src={`data:image/jpeg;base64,${showWineDetail.image_base64}`} 
                       alt={showWineDetail.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                 ) : (
-                  <div className="w-full aspect-[3/2] bg-gradient-to-br from-primary/5 to-primary/10 flex items-center justify-center">
-                    <Wine className="h-20 w-20 text-primary/20" strokeWidth={1} />
+                  <div className="w-full h-32 bg-gradient-to-br from-primary/10 to-primary/20 flex items-center justify-center">
+                    <Wine className="h-16 w-16 text-primary/30" strokeWidth={1} />
                   </div>
                 )}
                 
-                <div className="p-6">
-                  <DialogHeader className="text-left">
-                    <div className="flex items-center gap-2 mb-1">
+                {/* Content Section - Solid Background */}
+                <div className="p-5 bg-background">
+                  {/* Header */}
+                  <div className="mb-4">
+                    <div className="flex items-center gap-2 mb-2">
                       <Badge className={`${getWineTypeBadgeClass(showWineDetail.type)} border-0`}>
                         {getWineTypeLabel(showWineDetail.type)}
                       </Badge>
                       {showWineDetail.is_enriched && (
-                        <Badge className="bg-green-100 text-green-700 border-green-300">
+                        <Badge className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">
                           <Sparkles className="w-3 h-3 mr-1" />
                           Angereichert
                         </Badge>
@@ -979,54 +981,54 @@ const CellarPage = () => {
                         <Badge variant="outline">{showWineDetail.quantity}x</Badge>
                       )}
                     </div>
-                    <DialogTitle className="text-xl font-bold">{showWineDetail.name}</DialogTitle>
-                    <DialogDescription className="text-base">
+                    <h2 className="text-xl font-bold leading-tight">{showWineDetail.name}</h2>
+                    <p className="text-muted-foreground mt-1">
                       {showWineDetail.year && <span className="font-medium">{showWineDetail.year}</span>}
                       {showWineDetail.year && showWineDetail.region && ' • '}
                       {showWineDetail.region}
-                    </DialogDescription>
-                  </DialogHeader>
+                    </p>
+                  </div>
                   
-                  <div className="space-y-4 pt-4">
-                    {/* Basic Wine Info Grid */}
-                    <div className="grid grid-cols-2 gap-3 text-sm">
-                      {showWineDetail.grape && (
-                        <div className="bg-secondary/30 p-3 rounded-lg">
-                          <div className="text-xs text-muted-foreground mb-1">Rebsorte</div>
-                          <div className="font-medium">{showWineDetail.grape}</div>
-                        </div>
-                      )}
-                      {showWineDetail.region && (
-                        <div className="bg-secondary/30 p-3 rounded-lg">
-                          <div className="text-xs text-muted-foreground mb-1">Region</div>
-                          <div className="font-medium">{showWineDetail.region}</div>
-                        </div>
-                      )}
-                      {showWineDetail.appellation && (
-                        <div className="bg-secondary/30 p-3 rounded-lg col-span-2">
-                          <div className="text-xs text-muted-foreground mb-1">Appellation</div>
-                          <div className="font-medium">{showWineDetail.appellation}</div>
-                        </div>
-                      )}
-                    </div>
+                  {/* Wine Details */}
+                  <div className="space-y-4">
+                    {/* Basic Info - Compact Grid */}
+                    {(showWineDetail.grape || showWineDetail.appellation) && (
+                      <div className="grid grid-cols-1 gap-2 text-sm">
+                        {showWineDetail.grape && (
+                          <div className="flex items-center gap-3 p-3 bg-secondary/50 rounded-lg">
+                            <Grape className="w-4 h-4 text-purple-600 flex-shrink-0" />
+                            <div>
+                              <span className="text-muted-foreground">Rebsorte: </span>
+                              <span className="font-medium">{showWineDetail.grape}</span>
+                            </div>
+                          </div>
+                        )}
+                        {showWineDetail.appellation && (
+                          <div className="flex items-center gap-3 p-3 bg-secondary/50 rounded-lg">
+                            <Wine className="w-4 h-4 text-primary flex-shrink-0" />
+                            <div>
+                              <span className="text-muted-foreground">Appellation: </span>
+                              <span className="font-medium">{showWineDetail.appellation}</span>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    )}
 
-                    {/* Emotional Description */}
+                    {/* Description */}
                     {showWineDetail.description && (
-                      <div className="bg-gradient-to-r from-primary/5 to-primary/10 p-4 rounded-lg border border-primary/20">
-                        <p className="text-sm italic leading-relaxed">{showWineDetail.description}</p>
+                      <div className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-950/30 dark:to-orange-950/20 p-4 rounded-lg border border-amber-200/50 dark:border-amber-800/30">
+                        <p className="text-sm italic leading-relaxed text-foreground">{showWineDetail.description}</p>
                       </div>
                     )}
                     
-                    {/* Grape Varieties (for enriched wines) */}
+                    {/* Grape Varieties for enriched wines */}
                     {showWineDetail.grape_varieties?.length > 0 && (
                       <div>
-                        <h4 className="text-sm font-semibold flex items-center gap-2 mb-2">
-                          <Grape className="w-4 h-4 text-purple-600" />
-                          Rebsorten
-                        </h4>
+                        <h4 className="text-sm font-semibold mb-2">Rebsorten</h4>
                         <div className="flex flex-wrap gap-2">
                           {showWineDetail.grape_varieties.map((grape, i) => (
-                            <Badge key={i} variant="outline">{grape}</Badge>
+                            <Badge key={i} variant="outline" className="text-xs">{grape}</Badge>
                           ))}
                         </div>
                       </div>

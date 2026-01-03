@@ -1298,8 +1298,21 @@ async def get_wines(
     
     # Query NUR für Weine des aktuellen Users
     query = {"user_id": user.user_id}
+    
+    # Normalize type filter to match all variations
     if type_filter:
-        query["type"] = type_filter
+        type_variations = {
+            'rot': ['rot', 'Rot', 'ROT', 'rotwein', 'red'],
+            'weiss': ['weiss', 'weiß', 'Weiss', 'Weiß', 'WEISS', 'weisswein', 'weißwein', 'white', 'blanc'],
+            'rose': ['rose', 'rosé', 'Rose', 'Rosé', 'ROSE', 'rosewein', 'roséwein'],
+            'schaumwein': ['schaumwein', 'Schaumwein', 'sparkling', 'champagne', 'sekt', 'prosecco', 'cava'],
+            'suesswein': ['suesswein', 'süsswein', 'Süsswein', 'dessert', 'sweet']
+        }
+        if type_filter in type_variations:
+            query["type"] = {"$in": type_variations[type_filter]}
+        else:
+            query["type"] = type_filter
+            
     if price_category_filter:
         query["price_category"] = price_category_filter
     if favorites_only:

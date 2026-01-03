@@ -1178,22 +1178,24 @@ const CellarPage = () => {
                   </div>
                 )}
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Notizen</label>
+                  <label className="text-sm font-medium mb-1 block">Notizen</label>
                   <Textarea
                     value={editingWine.notes}
                     onChange={(e) => setEditingWine({ ...editingWine, notes: e.target.value })}
                     placeholder="Ihre persönlichen Notizen..."
-                    rows={3}
+                    rows={2}
                   />
                 </div>
-                <div className="flex gap-3 pt-4">
-                  <Button onClick={handleUpdateWine} className="flex-1">
-                    Speichern
-                  </Button>
-                  <Button variant="outline" onClick={() => setShowEditDialog(false)} className="flex-1">
-                    Abbrechen
-                  </Button>
-                </div>
+              </div>
+              
+              {/* Fixed Footer Buttons */}
+              <div className="flex-shrink-0 flex gap-3 pt-4 border-t mt-2">
+                <Button onClick={handleUpdateWine} className="flex-1">
+                  Speichern
+                </Button>
+                <Button variant="outline" onClick={() => setShowEditDialog(false)} className="flex-1">
+                  Abbrechen
+                </Button>
               </div>
             </DialogContent>
           </Dialog>

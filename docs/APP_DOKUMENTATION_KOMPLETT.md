@@ -908,3 +908,91 @@ Die Navigation wurde für bessere Benutzerfreundlichkeit komplett überarbeitet:
 - AI-Modell: GPT-5.1 via emergentintegrations
 - Cache-Collection: `wine_knowledge`
 
+
+---
+
+### Version 1.8.9 (03.01.2026) - Weinfarben & Suche Optimierung
+
+**🎨 Weinfarben-Zuordnung korrigiert:**
+- ✅ Statistik zeigt jetzt korrekte Zahlen (17x Rot, 4x Weiß statt 6x Rot, 1x Rosé)
+- ✅ `normalizeWineType()` Funktion normalisiert alle Schreibweisen (rot/Rot/ROT, weiss/weiß/blanc)
+- ✅ Filter funktioniert jetzt für alle Varianten
+
+**🔍 Volltext-Suche optimiert:**
+- ✅ Suche durchsucht jetzt: name, winery, region, grape_variety, **appellation**, **country**, **description**
+- ✅ "Sauternes" findet jetzt Château d'Yquem
+- ✅ "Margaux", "Italien", "Champagne" funktionieren alle
+
+**🔐 Wein-Hinzufügen Auth-Fix:**
+- ✅ Bearer Token Authentifizierung statt Cookie-Auth
+- ✅ Weine aus Datenbank können jetzt zum Keller hinzugefügt werden
+
+**💬 Verbesserte Fehlermeldungen:**
+- ✅ Spezifische Meldungen mit Titel und Beschreibung
+- ✅ "Nicht angemeldet" / "Sitzung abgelaufen" / "Pro-Funktion" / Backend-Details
+- ✅ 5 Sekunden sichtbar für bessere Lesbarkeit
+
+---
+
+## API-Referenz (Wichtige Endpoints)
+
+### Authentifizierung
+| Endpoint | Methode | Beschreibung |
+|----------|---------|--------------|
+| `/api/auth/login` | POST | Login mit Email/Passwort |
+| `/api/auth/register` | POST | Neuen Account erstellen |
+| `/api/auth/me` | GET | Aktueller Benutzer |
+| `/api/auth/forgot-password` | POST | Passwort zurücksetzen (Resend) |
+
+### Weinkeller
+| Endpoint | Methode | Beschreibung |
+|----------|---------|--------------|
+| `/api/wines` | GET | Alle Weine des Users |
+| `/api/wines` | POST | Neuen Wein hinzufügen |
+| `/api/wines/{id}` | PUT | Wein aktualisieren |
+| `/api/wines/{id}` | DELETE | Wein löschen |
+| `/api/wines/{id}/enrich` | POST | Wein mit AI anreichern (Pro) |
+
+### Wein-Datenbank (öffentlich)
+| Endpoint | Methode | Beschreibung |
+|----------|---------|--------------|
+| `/api/public-wines` | GET | Öffentliche Wein-Datenbank durchsuchen |
+| `/api/public-wines-filters` | GET | Verfügbare Filter-Optionen |
+| `/api/wine-knowledge` | GET | AI-angereicherte Weine |
+
+### Pairing & Chat
+| Endpoint | Methode | Beschreibung |
+|----------|---------|--------------|
+| `/api/pairing` | POST | Wein-Pairing zu einem Gericht |
+| `/api/chat` | POST | Chat mit Claude |
+
+### Profil
+| Endpoint | Methode | Beschreibung |
+|----------|---------|--------------|
+| `/api/profile/wine` | GET/PUT | Persönliches Weinprofil (Pro) |
+
+---
+
+## Datenbank-Collections
+
+| Collection | Beschreibung |
+|------------|--------------|
+| `users` | Benutzerkonten mit Plan und Usage |
+| `wines` | Persönliche Weinkeller der Benutzer |
+| `public_wines` | Öffentliche Wein-Datenbank (7175 Weine) |
+| `wine_knowledge` | AI-angereicherte Wein-Profile |
+| `wine_profiles` | Persönliche Geschmacksprofile |
+| `pairings` | Gecachte Pairing-Ergebnisse |
+| `chats` | Chat-Verläufe |
+| `coupons` | Gutschein-Codes |
+| `feed_posts` | Community-Beiträge |
+| `blog_posts` | Blog-Artikel |
+
+---
+
+## Bekannte Einschränkungen
+
+1. **Passwort-Reset (Resend):** Wartet auf DNS-Konfiguration (SPF/DKIM bei Infomaniak)
+2. **Admin-Endpoint:** `/api/admin/reset-owner-password` sollte in Produktion deaktiviert werden
+3. **Basic-User Limits:** Max. 10 Weine im Keller, 5 Pairings/Tag, 10 Chat-Nachrichten/Tag
+

@@ -1094,13 +1094,10 @@ const CellarPage = () => {
                   {/* Food Pairings */}
                   {showWineDetail.food_pairings?.length > 0 && (
                     <div>
-                      <h4 className="text-sm font-semibold flex items-center gap-2 mb-2">
-                        <UtensilsCrossed className="w-4 h-4 text-orange-600" />
-                        Passt hervorragend zu
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
+                      <h4 className="text-sm font-semibold mb-2">Passt hervorragend zu</h4>
+                      <div className="flex flex-wrap gap-1.5">
                         {showWineDetail.food_pairings.map((food, i) => (
-                          <Badge key={i} variant="secondary">{food}</Badge>
+                          <Badge key={i} variant="secondary" className="text-xs">{food}</Badge>
                         ))}
                       </div>
                     </div>
@@ -1108,32 +1105,32 @@ const CellarPage = () => {
                   
                   {/* Winery Info */}
                   {showWineDetail.winery_info && (
-                    <div className="border-t pt-4">
-                      <h4 className="text-sm font-semibold mb-2">Über das Weingut</h4>
-                      <p className="text-sm text-muted-foreground">{showWineDetail.winery_info}</p>
+                    <div className="border-t pt-3 mt-3">
+                      <h4 className="text-sm font-semibold mb-1">Über das Weingut</h4>
+                      <p className="text-xs text-muted-foreground">{showWineDetail.winery_info}</p>
                     </div>
                   )}
                   
                   {/* Personal Notes */}
                   {showWineDetail.notes && (
-                    <div className="border-t pt-4">
-                      <h4 className="text-sm font-semibold mb-2">Ihre Notizen</h4>
-                      <p className="text-sm text-muted-foreground">{showWineDetail.notes}</p>
+                    <div className="border-t pt-3 mt-3">
+                      <h4 className="text-sm font-semibold mb-1">Ihre Notizen</h4>
+                      <p className="text-xs text-muted-foreground">{showWineDetail.notes}</p>
                     </div>
                   )}
                 </div>
+                </div>
                 
-                {/* Action Buttons */}
-                <div className="flex gap-2 pt-4 border-t">
-                  <Button variant="outline" onClick={() => { handleEditWine(showWineDetail); setShowWineDetail(null); }} className="flex-1">
+                {/* Fixed Action Buttons at Bottom */}
+                <div className="flex-shrink-0 flex gap-2 p-4 border-t bg-background">
+                  <Button variant="outline" onClick={() => { handleEditWine(showWineDetail); setShowWineDetail(null); }} className="flex-1" size="sm">
                     <Edit className="w-4 h-4 mr-2" />
                     Bearbeiten
                   </Button>
-                  <Button onClick={() => { setShowWineDetail(null); navigate(`/pairing?wine=${showWineDetail.name}`); }} className="flex-1">
+                  <Button onClick={() => { setShowWineDetail(null); navigate(`/pairing?wine=${showWineDetail.name}`); }} className="flex-1" size="sm">
                     <UtensilsCrossed className="w-4 h-4 mr-2" />
                     Pairing
                   </Button>
-                </div>
                 </div>
               </>
             )}

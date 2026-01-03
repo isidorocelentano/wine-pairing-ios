@@ -72,6 +72,37 @@ const CellarPage = () => {
     return { totalBottles, byType, uniqueWines };
   }, [wines]);
 
+  // Extract available filter options from wines
+  const availableFilters = useMemo(() => {
+    const regions = [...new Set(wines.map(w => w.region).filter(Boolean))].sort();
+    const grapes = [...new Set(wines.map(w => w.grape).filter(Boolean))].sort();
+    const years = [...new Set(wines.map(w => w.year).filter(Boolean))].sort((a, b) => b - a);
+    return { regions, grapes, years };
+  }, [wines]);
+
+  // Count active filters
+  const activeFilterCount = [
+    filter !== 'all',
+    priceFilter !== 'all',
+    regionFilter !== 'all',
+    grapeFilter !== 'all',
+    yearFilter !== 'all',
+    inStockOnly,
+    favoritesOnly
+  ].filter(Boolean).length;
+
+  // Clear all filters
+  const clearFilters = () => {
+    setFilter('all');
+    setPriceFilter('all');
+    setRegionFilter('all');
+    setGrapeFilter('all');
+    setYearFilter('all');
+    setInStockOnly(false);
+    setFavoritesOnly(false);
+    setSearchQuery('');
+  };
+
   // Filter wines by search query and filters
   const filteredWines = useMemo(() => {
     let result = wines;
@@ -103,14 +134,34 @@ const CellarPage = () => {
     if (priceFilter !== 'all') {
       result = result.filter(wine => wine.price_category === priceFilter);
     }
+
+    // Region filter
+    if (regionFilter !== 'all') {
+      result = result.filter(wine => wine.region === regionFilter);
+    }
+
+    // Grape filter
+    if (grapeFilter !== 'all') {
+      result = result.filter(wine => wine.grape === grapeFilter);
+    }
+
+    // Year filter
+    if (yearFilter !== 'all') {
+      result = result.filter(wine => wine.year === parseInt(yearFilter));
+    }
     
     // In stock filter
     if (inStockOnly) {
       result = result.filter(wine => (wine.quantity || 0) > 0);
     }
+
+    // Favorites filter
+    if (favoritesOnly) {
+      result = result.filter(wine => wine.is_favorite);
+    }
     
     return result;
-  }, [wines, searchQuery, filter, priceFilter, inStockOnly]);
+  }, [wines, searchQuery, filter, priceFilter, regionFilter, grapeFilter, yearFilter, inStockOnly, favoritesOnly]);
 
   const fetchWines = useCallback(async () => {
     // Nicht laden wenn nicht eingeloggt

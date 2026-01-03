@@ -760,9 +760,25 @@ const CellarPage = () => {
               </Button>
             </CardContent>
           </Card>
+        ) : filteredWines.length === 0 ? (
+          <Card className="bg-secondary/30 border-dashed border-2 border-border">
+            <CardContent className="py-12 md:py-16 text-center">
+              <Search className="h-12 md:h-16 w-12 md:w-16 mx-auto mb-4 text-muted-foreground" strokeWidth={1} />
+              <h3 className="text-lg md:text-xl font-medium mb-2">
+                {language === 'de' ? 'Keine Weine gefunden' : language === 'fr' ? 'Aucun vin trouvé' : 'No wines found'}
+              </h3>
+              <p className="text-muted-foreground mb-6 text-sm md:text-base">
+                {language === 'de' ? 'Versuchen Sie eine andere Suche oder Filter' : language === 'fr' ? 'Essayez une autre recherche' : 'Try a different search or filter'}
+              </p>
+              <Button variant="outline" onClick={() => { setSearchQuery(''); setFilter('all'); setPriceFilter('all'); setInStockOnly(false); }} className="rounded-full">
+                <X className="mr-2 h-4 w-4" />
+                {language === 'de' ? 'Filter zurücksetzen' : language === 'fr' ? 'Réinitialiser' : 'Reset filters'}
+              </Button>
+            </CardContent>
+          </Card>
         ) : (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6" data-testid="wine-grid">
-            {wines.map((wine) => (
+            {filteredWines.map((wine) => (
               <Card key={wine.id} className="wine-card bg-card/50 backdrop-blur-sm border-border/50 overflow-hidden group" data-testid="wine-card">
                 {wine.image_base64 ? (
                   <div className="aspect-[4/3] overflow-hidden bg-secondary/30">

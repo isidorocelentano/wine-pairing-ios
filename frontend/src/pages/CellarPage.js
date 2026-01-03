@@ -418,11 +418,37 @@ const CellarPage = () => {
       region: wine.region || '',
       year: wine.year || '',
       grape: wine.grape || '',
-      description: wine.description || '',  // Include description field
+      description: wine.description || '',
       notes: wine.notes || '',
       quantity: typeof wine.quantity === 'number' ? wine.quantity : 1,
+      image_base64: wine.image_base64 || '',
     });
     setShowEditDialog(true);
+  };
+
+  // Handle image upload for editing
+  const handleEditImageUpload = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    
+    // Check file size (max 5MB)
+    if (file.size > 5 * 1024 * 1024) {
+      toast.error(language === 'de' ? 'Bild zu groß (max. 5MB)' : 'Image too large (max 5MB)');
+      return;
+    }
+    
+    try {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const base64 = reader.result.split(',')[1];
+        setEditingWine(prev => ({ ...prev, image_base64: base64 }));
+        toast.success(language === 'de' ? 'Bild hinzugefügt!' : 'Image added!');
+      };
+      reader.readAsDataURL(file);
+    } catch (error) {
+      console.error('Image upload error:', error);
+      toast.error(language === 'de' ? 'Fehler beim Hochladen' : 'Upload error');
+    }
   };
 
   const handleUpdateWine = async () => {

@@ -945,12 +945,12 @@ const CellarPage = () => {
 
         {/* Wine Detail Modal (Enriched) */}
         <Dialog open={!!showWineDetail} onOpenChange={(open) => !open && setShowWineDetail(null)}>
-          <DialogContent className="mx-4 max-w-lg max-h-[90vh] overflow-y-auto p-0">
+          <DialogContent className="mx-4 max-w-lg max-h-[85vh] flex flex-col p-0 gap-0">
             {showWineDetail && (
               <>
-                {/* Wine Image - Full Width at Top */}
+                {/* Wine Image - Compact at Top */}
                 {showWineDetail.image_base64 ? (
-                  <div className="w-full aspect-[4/3] bg-black overflow-hidden relative">
+                  <div className="w-full h-48 bg-black overflow-hidden flex-shrink-0">
                     <img 
                       src={`data:image/jpeg;base64,${showWineDetail.image_base64}`} 
                       alt={showWineDetail.name}
@@ -958,16 +958,16 @@ const CellarPage = () => {
                     />
                   </div>
                 ) : (
-                  <div className="w-full h-32 bg-gradient-to-br from-primary/10 to-primary/20 flex items-center justify-center">
-                    <Wine className="h-16 w-16 text-primary/30" strokeWidth={1} />
+                  <div className="w-full h-24 bg-gradient-to-br from-primary/10 to-primary/20 flex items-center justify-center flex-shrink-0">
+                    <Wine className="h-12 w-12 text-primary/30" strokeWidth={1} />
                   </div>
                 )}
                 
-                {/* Content Section - Solid Background */}
-                <div className="p-5 bg-background">
-                  {/* Header */}
+                {/* Scrollable Content Section */}
+                <div className="flex-1 overflow-y-auto p-5 bg-background">
+                  {/* Header with Title and Badges */}
                   <div className="mb-4">
-                    <div className="flex items-center gap-2 mb-2">
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
                       <Badge className={`${getWineTypeBadgeClass(showWineDetail.type)} border-0`}>
                         {getWineTypeLabel(showWineDetail.type)}
                       </Badge>
@@ -981,8 +981,8 @@ const CellarPage = () => {
                         <Badge variant="outline">{showWineDetail.quantity}x</Badge>
                       )}
                     </div>
-                    <h2 className="text-xl font-bold leading-tight">{showWineDetail.name}</h2>
-                    <p className="text-muted-foreground mt-1">
+                    <h2 className="text-lg font-bold leading-tight">{showWineDetail.name}</h2>
+                    <p className="text-sm text-muted-foreground mt-1">
                       {showWineDetail.year && <span className="font-medium">{showWineDetail.year}</span>}
                       {showWineDetail.year && showWineDetail.region && ' • '}
                       {showWineDetail.region}
@@ -990,12 +990,12 @@ const CellarPage = () => {
                   </div>
                   
                   {/* Wine Details */}
-                  <div className="space-y-4">
-                    {/* Basic Info - Compact Grid */}
+                  <div className="space-y-3">
+                    {/* Basic Info */}
                     {(showWineDetail.grape || showWineDetail.appellation) && (
-                      <div className="grid grid-cols-1 gap-2 text-sm">
+                      <div className="space-y-2 text-sm">
                         {showWineDetail.grape && (
-                          <div className="flex items-center gap-3 p-3 bg-secondary/50 rounded-lg">
+                          <div className="flex items-center gap-3 p-2.5 bg-secondary/50 rounded-lg">
                             <Grape className="w-4 h-4 text-purple-600 flex-shrink-0" />
                             <div>
                               <span className="text-muted-foreground">Rebsorte: </span>
@@ -1004,7 +1004,7 @@ const CellarPage = () => {
                           </div>
                         )}
                         {showWineDetail.appellation && (
-                          <div className="flex items-center gap-3 p-3 bg-secondary/50 rounded-lg">
+                          <div className="flex items-center gap-3 p-2.5 bg-secondary/50 rounded-lg">
                             <Wine className="w-4 h-4 text-primary flex-shrink-0" />
                             <div>
                               <span className="text-muted-foreground">Appellation: </span>
@@ -1017,7 +1017,7 @@ const CellarPage = () => {
 
                     {/* Description */}
                     {showWineDetail.description && (
-                      <div className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-950/30 dark:to-orange-950/20 p-4 rounded-lg border border-amber-200/50 dark:border-amber-800/30">
+                      <div className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-950/30 dark:to-orange-950/20 p-3 rounded-lg border border-amber-200/50 dark:border-amber-800/30">
                         <p className="text-sm italic leading-relaxed text-foreground">{showWineDetail.description}</p>
                       </div>
                     )}
@@ -1026,7 +1026,7 @@ const CellarPage = () => {
                     {showWineDetail.grape_varieties?.length > 0 && (
                       <div>
                         <h4 className="text-sm font-semibold mb-2">Rebsorten</h4>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-1.5">
                           {showWineDetail.grape_varieties.map((grape, i) => (
                             <Badge key={i} variant="outline" className="text-xs">{grape}</Badge>
                           ))}

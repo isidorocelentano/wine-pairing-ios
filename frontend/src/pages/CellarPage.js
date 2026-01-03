@@ -841,10 +841,15 @@ const CellarPage = () => {
         ) : (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6" data-testid="wine-grid">
             {filteredWines.map((wine) => (
-              <Card key={wine.id} className="wine-card bg-card/50 backdrop-blur-sm border-border/50 overflow-hidden group" data-testid="wine-card">
+              <Card 
+                key={wine.id} 
+                className="wine-card bg-card/50 backdrop-blur-sm border-border/50 overflow-hidden group cursor-pointer hover:shadow-lg transition-shadow" 
+                data-testid="wine-card"
+                onClick={() => setShowWineDetail(wine)}
+              >
                 {wine.image_base64 ? (
                   <div className="aspect-[4/3] overflow-hidden bg-secondary/30">
-                    <img src={`data:image/jpeg;base64,${wine.image_base64}`} alt={wine.name} className="w-full h-full object-cover" />
+                    <img src={`data:image/jpeg;base64,${wine.image_base64}`} alt={wine.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                   </div>
                 ) : (
                   <div className="aspect-[4/3] bg-secondary/30 flex items-center justify-center">
@@ -854,7 +859,7 @@ const CellarPage = () => {
                 <CardContent className="p-3 md:p-4">
                   <div className="flex items-start justify-between mb-2">
                     <Badge className={`${getWineTypeBadgeClass(wine.type)} border-0 text-xs`}>{getWineTypeLabel(wine.type)}</Badge>
-                    <button onClick={() => handleToggleFavorite(wine.id)} className="text-muted-foreground hover:text-primary transition-colors" data-testid="favorite-btn">
+                    <button onClick={(e) => { e.stopPropagation(); handleToggleFavorite(wine.id); }} className="text-muted-foreground hover:text-primary transition-colors" data-testid="favorite-btn">
                       <Star className={`h-4 md:h-5 w-4 md:w-5 ${wine.is_favorite ? 'fill-accent text-accent' : ''}`} />
                     </button>
                   </div>

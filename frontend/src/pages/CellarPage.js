@@ -67,6 +67,46 @@ const CellarPage = () => {
     return { totalBottles, byType, uniqueWines };
   }, [wines]);
 
+  // Filter wines by search query and filters
+  const filteredWines = useMemo(() => {
+    let result = wines;
+    
+    // Text search across multiple fields
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase().trim();
+      result = result.filter(wine => {
+        const searchFields = [
+          wine.name,
+          wine.region,
+          wine.grape,
+          wine.description,
+          wine.notes,
+          wine.appellation,
+          wine.year?.toString(),
+          wine.grape_varieties?.join(' ')
+        ].filter(Boolean).join(' ').toLowerCase();
+        return searchFields.includes(query);
+      });
+    }
+    
+    // Type filter
+    if (filter !== 'all') {
+      result = result.filter(wine => normalizeWineType(wine.type) === filter);
+    }
+    
+    // Price filter
+    if (priceFilter !== 'all') {
+      result = result.filter(wine => wine.price_category === priceFilter);
+    }
+    
+    // In stock filter
+    if (inStockOnly) {
+      result = result.filter(wine => (wine.quantity || 0) > 0);
+    }
+    
+    return result;
+  }, [wines, searchQuery, filter, priceFilter, inStockOnly]);
+
   const fetchWines = useCallback(async () => {
     // Nicht laden wenn nicht eingeloggt
     if (!isAuthenticated) {

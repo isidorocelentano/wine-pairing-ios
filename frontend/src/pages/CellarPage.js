@@ -425,13 +425,15 @@ const CellarPage = () => {
   };
 
   const getWineTypeBadgeClass = (type) => {
-    const classes = { rot: 'badge-rot', weiss: 'badge-weiss', rose: 'badge-rose', schaumwein: 'badge-schaumwein' };
-    return classes[type] || 'bg-secondary';
+    const normalizedType = normalizeWineType(type);
+    const classes = { rot: 'badge-rot', weiss: 'badge-weiss', rose: 'badge-rose', schaumwein: 'badge-schaumwein', suesswein: 'badge-schaumwein' };
+    return classes[normalizedType] || 'bg-secondary';
   };
 
   const getWineTypeLabel = (type) => {
-    const labels = { rot: t('pairing_red'), weiss: t('pairing_white'), rose: t('pairing_rose'), schaumwein: t('pairing_sparkling') };
-    return labels[type] || type;
+    const normalizedType = normalizeWineType(type);
+    const labels = { rot: t('pairing_red'), weiss: t('pairing_white'), rose: t('pairing_rose'), schaumwein: t('pairing_sparkling'), suesswein: language === 'de' ? 'Süß' : 'Sweet' };
+    return labels[normalizedType] || type;
   };
 
   // Auth Loading State

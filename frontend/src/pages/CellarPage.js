@@ -620,6 +620,26 @@ const CellarPage = () => {
             <span>{t('cellar_filter_in_stock')}</span>
           </label>
 
+          {/* Search Input */}
+          <div className="relative w-full md:w-auto">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <Input
+              type="text"
+              placeholder={language === 'de' ? 'Wein suchen...' : language === 'fr' ? 'Rechercher...' : 'Search wines...'}
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="pl-9 pr-8 h-10 w-full md:w-[200px] lg:w-[250px]"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery('')}
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 text-muted-foreground hover:text-foreground"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            )}
+          </div>
+
           <div className="flex flex-wrap gap-2 md:gap-3 items-center">
             <Select value={filter} onValueChange={setFilter}>
               <SelectTrigger className="w-[140px] md:w-[160px]" data-testid="cellar-filter">

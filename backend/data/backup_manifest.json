@@ -1,14 +1,14 @@
 {
   "version": "3.0",
-  "timestamp": "2026-01-02T17:58:01.751275+00:00",
-  "last_backup": "/app/backend/data/backups/backup_20260102_175801",
+  "timestamp": "2026-01-03T05:04:28.308907+00:00",
+  "last_backup": "/app/backend/data/backups/backup_20260103_050428",
   "expected": {
     "users": 43,
     "wines": 78,
     "pairings": 208,
     "chats": 23,
     "wine_favorites": 1,
-    "user_sessions": 0,
+    "user_sessions": 1,
     "payment_transactions": 4,
     "blog_posts": 233,
     "public_wines": 7175,

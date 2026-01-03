@@ -1320,8 +1320,8 @@ async def get_wines(
     if in_stock_only:
         query["quantity"] = {"$gt": 0}
     
-    # Exclude large image_base64 field for better performance
-    wines = await db.wines.find(query, {"_id": 0, "image_base64": 0}).to_list(1000)
+    # Include image_base64 for display in cellar overview
+    wines = await db.wines.find(query, {"_id": 0}).to_list(1000)
     for wine in wines:
         if isinstance(wine.get('created_at'), str):
             wine['created_at'] = datetime.fromisoformat(wine['created_at'])

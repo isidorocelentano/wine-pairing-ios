@@ -41,11 +41,24 @@ const CellarPage = () => {
   };
   const scanInputRef = useRef(null);
 
+  // Normalize wine type for consistent display and counting
+  const normalizeWineType = (type) => {
+    if (!type) return 'other';
+    const normalized = type.toLowerCase().trim();
+    // Map all variations to standard types
+    if (normalized === 'rot' || normalized === 'rotwein' || normalized === 'red') return 'rot';
+    if (normalized === 'weiss' || normalized === 'weiß' || normalized === 'weisswein' || normalized === 'weißwein' || normalized === 'white' || normalized === 'blanc') return 'weiss';
+    if (normalized === 'rose' || normalized === 'rosé' || normalized === 'rosewein' || normalized === 'roséwein') return 'rose';
+    if (normalized === 'schaumwein' || normalized === 'sparkling' || normalized === 'champagne' || normalized === 'sekt' || normalized === 'prosecco' || normalized === 'cava') return 'schaumwein';
+    if (normalized === 'suesswein' || normalized === 'süsswein' || normalized === 'dessert' || normalized === 'sweet') return 'suesswein';
+    return 'other';
+  };
+
   // Calculate cellar statistics
   const cellarStats = useMemo(() => {
     const totalBottles = wines.reduce((sum, wine) => sum + (wine.quantity || 0), 0);
     const byType = wines.reduce((acc, wine) => {
-      const type = wine.type || 'other';
+      const type = normalizeWineType(wine.type);
       acc[type] = (acc[type] || 0) + (wine.quantity || 0);
       return acc;
     }, {});

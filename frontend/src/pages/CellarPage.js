@@ -738,40 +738,173 @@ const CellarPage = () => {
             <span>{t('cellar_filter_in_stock')}</span>
           </label>
 
-          {/* Search Input */}
-          <div className="relative w-full md:w-auto">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input
-              type="text"
-              placeholder={language === 'de' ? 'Wein suchen...' : language === 'fr' ? 'Rechercher...' : 'Search wines...'}
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-9 pr-8 h-10 w-full md:w-[200px] lg:w-[250px]"
-            />
-            {searchQuery && (
-              <button
-                onClick={() => setSearchQuery('')}
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 text-muted-foreground hover:text-foreground"
+          {/* Search and Filter Row */}
+          <div className="flex flex-col gap-3">
+            {/* Search Input */}
+            <div className="relative w-full">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Input
+                type="text"
+                placeholder={language === 'de' ? 'Wein suchen (Name, Region, Rebsorte...)' : language === 'fr' ? 'Rechercher...' : 'Search wines...'}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="pl-9 pr-8 h-11 w-full"
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              )}
+            </div>
+
+            {/* Filter Toggle Button */}
+            <div className="flex items-center justify-between gap-2">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setShowFilters(!showFilters)}
+                className="gap-2"
               >
-                <X className="h-4 w-4" />
-              </button>
+                <Filter className="h-4 w-4" />
+                Filter
+                {activeFilterCount > 0 && (
+                  <Badge variant="secondary" className="ml-1 h-5 w-5 p-0 flex items-center justify-center text-xs">
+                    {activeFilterCount}
+                  </Badge>
+                )}
+                <ChevronDown className={`h-4 w-4 transition-transform ${showFilters ? 'rotate-180' : ''}`} />
+              </Button>
+
+              {activeFilterCount > 0 && (
+                <Button variant="ghost" size="sm" onClick={clearFilters} className="text-muted-foreground">
+                  <X className="h-4 w-4 mr-1" />
+                  Zurücksetzen
+                </Button>
+              )}
+
+              {/* Quick Filters */}
+              <div className="flex gap-2 ml-auto">
+                <label className="inline-flex items-center gap-1.5 text-xs text-muted-foreground cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={inStockOnly}
+                    onChange={(e) => setInStockOnly(e.target.checked)}
+                    className="w-3.5 h-3.5 rounded border-border"
+                  />
+                  <span>Auf Lager</span>
+                </label>
+                <label className="inline-flex items-center gap-1.5 text-xs text-muted-foreground cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={favoritesOnly}
+                    onChange={(e) => setFavoritesOnly(e.target.checked)}
+                    className="w-3.5 h-3.5 rounded border-border"
+                  />
+                  <Star className="h-3 w-3" />
+                </label>
+              </div>
+            </div>
+
+            {/* Expandable Filter Panel */}
+            {showFilters && (
+              <Card className="p-4 bg-secondary/30">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+                  {/* Wine Type Filter */}
+                  <div>
+                    <label className="text-xs font-medium mb-1.5 block text-muted-foreground">Weinfarbe</label>
+                    <Select value={filter} onValueChange={setFilter}>
+                      <SelectTrigger className="h-9 text-sm">
+                        <SelectValue placeholder="Alle" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="all">Alle Farben</SelectItem>
+                        <SelectItem value="rot">{t('pairing_red')}</SelectItem>
+                        <SelectItem value="weiss">{t('pairing_white')}</SelectItem>
+                        <SelectItem value="rose">{t('pairing_rose')}</SelectItem>
+                        <SelectItem value="schaumwein">{t('pairing_sparkling')}</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  {/* Region Filter */}
+                  <div>
+                    <label className="text-xs font-medium mb-1.5 block text-muted-foreground">Region</label>
+                    <Select value={regionFilter} onValueChange={setRegionFilter}>
+                      <SelectTrigger className="h-9 text-sm">
+                        <SelectValue placeholder="Alle" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="all">Alle Regionen</SelectItem>
+                        {availableFilters.regions.map(region => (
+                          <SelectItem key={region} value={region}>{region}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  {/* Grape Filter */}
+                  <div>
+                    <label className="text-xs font-medium mb-1.5 block text-muted-foreground">Rebsorte</label>
+                    <Select value={grapeFilter} onValueChange={setGrapeFilter}>
+                      <SelectTrigger className="h-9 text-sm">
+                        <SelectValue placeholder="Alle" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="all">Alle Rebsorten</SelectItem>
+                        {availableFilters.grapes.map(grape => (
+                          <SelectItem key={grape} value={grape}>{grape}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  {/* Year Filter */}
+                  <div>
+                    <label className="text-xs font-medium mb-1.5 block text-muted-foreground">Jahrgang</label>
+                    <Select value={yearFilter} onValueChange={setYearFilter}>
+                      <SelectTrigger className="h-9 text-sm">
+                        <SelectValue placeholder="Alle" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="all">Alle Jahre</SelectItem>
+                        {availableFilters.years.map(year => (
+                          <SelectItem key={year} value={year.toString()}>{year}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  {/* Price Filter */}
+                  <div>
+                    <label className="text-xs font-medium mb-1.5 block text-muted-foreground">Preiskategorie</label>
+                    <Select value={priceFilter} onValueChange={setPriceFilter}>
+                      <SelectTrigger className="h-9 text-sm">
+                        <SelectValue placeholder="Alle" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="all">Alle Preise</SelectItem>
+                        {Object.entries(priceCategoryLabels).map(([key, { emoji, label }]) => (
+                          <SelectItem key={key} value={key}>{emoji} {label}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+              </Card>
             )}
           </div>
 
+          {/* Results Count */}
+          {(searchQuery || activeFilterCount > 0) && (
+            <p className="text-sm text-muted-foreground">
+              {filteredWines.length} von {wines.length} Weinen
+            </p>
+          )}
+
           <div className="flex flex-wrap gap-2 md:gap-3 items-center">
-            <Select value={filter} onValueChange={setFilter}>
-              <SelectTrigger className="w-[140px] md:w-[160px]" data-testid="cellar-filter">
-                <SelectValue placeholder="Filter" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">{t('cellar_filter_all')}</SelectItem>
-                <SelectItem value="rot">{t('pairing_red')}</SelectItem>
-                <SelectItem value="weiss">{t('pairing_white')}</SelectItem>
-                <SelectItem value="rose">{t('pairing_rose')}</SelectItem>
-                <SelectItem value="schaumwein">{t('pairing_sparkling')}</SelectItem>
-              </SelectContent>
-            </Select>
-            
             <Dialog open={showScanDialog} onOpenChange={setShowScanDialog}>
               <DialogTrigger asChild>
                 <Button variant="outline" className="rounded-full text-sm" data-testid="scan-label-btn">

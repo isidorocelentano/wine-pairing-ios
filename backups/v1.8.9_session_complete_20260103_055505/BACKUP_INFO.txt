@@ -1,0 +1,37 @@
+Backup: v1.8.9_session_complete_20260103_055505
+Datum: 2026-01-03 05:55:06
+Version: 1.8.9
+
+Session-Änderungen (03.01.2026):
+================================
+
+1. AI Wine Enrichment Feature (v1.8.8)
+   - Backend-Bug behoben (LlmChat statt client.chat)
+   - POST /api/wines/{id}/enrich funktioniert
+
+2. AI Wine Knowledge Database Search (v1.8.8.1)
+   - Neuer Tab "AI-Weine" in Wein-Datenbank
+   - Durchsuchbare AI-angereicherte Weine
+
+3. Weinfarben-Zuordnung korrigiert (v1.8.9)
+   - normalizeWineType() Funktion
+   - Korrekte Statistik (17x Rot, 4x Weiß)
+
+4. Volltext-Suche optimiert (v1.8.9)
+   - Suche in appellation, country, description
+   - "Sauternes" findet jetzt Château d'Yquem
+
+5. Wein-Hinzufügen Auth-Fix (v1.8.9)
+   - Bearer Token statt withCredentials
+   - Weine können aus DB hinzugefügt werden
+
+6. Verbesserte Fehlermeldungen (v1.8.9)
+   - Spezifische Titel und Beschreibungen
+   - "Nicht angemeldet", "Sitzung abgelaufen", "Pro-Funktion"
+
+Geänderte Dateien:
+- backend/server.py
+- frontend/src/pages/CellarPage.js
+- frontend/src/pages/WineDatabasePage.js
+- docs/CHANGELOG_v1.8.md
+- docs/APP_DOKUMENTATION_KOMPLETT.md

@@ -973,12 +973,35 @@ Die Navigation wurde für bessere Benutzerfreundlichkeit komplett überarbeitet:
 
 ---
 
+### Version 1.8.10 (03.01.2026) - Weinkeller Erweiterungen
+
+**🔍 Volltext-Suche im Weinkeller:**
+- ✅ Neues Suchfeld mit Lupe-Icon
+- ✅ Durchsucht: Name, Region, Rebsorte, Beschreibung, Notizen, Jahrgang
+- ✅ Sofortige Filterung während der Eingabe
+- ✅ Kombinierbar mit anderen Filtern
+
+**📸 Bild nachträglich hinzufügen:**
+- ✅ Bild-Upload im Edit-Dialog
+- ✅ Automatische Komprimierung (max. 1200px, 70% JPEG)
+- ✅ ~90% Größenreduktion für bessere Performance
+- ✅ Vorschau, Ändern, Entfernen möglich
+
+**🖼️ Wein-Detail-Ansicht:**
+- ✅ Klick auf Weinkarte öffnet Detail-Modal
+- ✅ Großes Bild oben (mit schwarzem Hintergrund)
+- ✅ Alle Wein-Infos übersichtlich angezeigt
+- ✅ Beschreibung in amber-farbenem Kasten
+- ✅ "Bearbeiten" und "Pairing" Buttons
+
+---
+
 ## Datenbank-Collections
 
 | Collection | Beschreibung |
 |------------|--------------|
 | `users` | Benutzerkonten mit Plan und Usage |
-| `wines` | Persönliche Weinkeller der Benutzer |
+| `wines` | Persönliche Weinkeller der Benutzer (inkl. Bilder) |
 | `public_wines` | Öffentliche Wein-Datenbank (7175 Weine) |
 | `wine_knowledge` | AI-angereicherte Wein-Profile |
 | `wine_profiles` | Persönliche Geschmacksprofile |
@@ -987,6 +1010,41 @@ Die Navigation wurde für bessere Benutzerfreundlichkeit komplett überarbeitet:
 | `coupons` | Gutschein-Codes |
 | `feed_posts` | Community-Beiträge |
 | `blog_posts` | Blog-Artikel |
+
+---
+
+## Weinkeller-Funktionen (CellarPage)
+
+### Suche & Filter
+
+| Funktion | Beschreibung |
+|----------|--------------|
+| Volltext-Suche | Durchsucht alle Felder (Name, Region, Rebsorte, etc.) |
+| Weinfarben-Filter | Rot, Weiß, Rosé, Schaumwein |
+| Preis-Filter | Nach Preiskategorie filtern |
+| Nur auf Lager | Zeigt nur Weine mit Bestand > 0 |
+
+### Wein-Aktionen
+
+| Aktion | Beschreibung |
+|--------|--------------|
+| Klick auf Karte | Öffnet Detail-Ansicht mit Bild |
+| ⭐ Stern | Favorit markieren |
+| ✏️ Edit | Wein bearbeiten (inkl. Bild-Upload) |
+| 🗑️ Löschen | Wein entfernen |
+| +/- Buttons | Bestand ändern |
+| ✨ Anreichern | AI-Wissen generieren (Pro) |
+
+### Bild-Komprimierung
+
+```
+Original iPhone Foto: ~3MB
+Nach Komprimierung:   ~200KB (93% kleiner)
+
+Einstellungen:
+- Max. Dimension: 1200px
+- JPEG Qualität: 70%
+```
 
 ---
 

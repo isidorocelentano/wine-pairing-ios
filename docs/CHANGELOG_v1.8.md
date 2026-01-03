@@ -492,4 +492,99 @@ await axios.post(`${API}/wines`, data, {
 | 1.8.8 | 02.01.2026 | AI Wine Enrichment Feature |
 | 1.8.8.1 | 02.01.2026 | AI Wine Knowledge Database Search |
 | 1.8.9 | 03.01.2026 | Weinfarben, Suche, Auth-Fix, Fehlermeldungen |
+| 1.8.10 | 03.01.2026 | Weinkeller-Suche, Bild-Upload, Detail-Ansicht |
 
+---
+
+## Version 1.8.10 (03.01.2026) - Weinkeller Erweiterungen
+
+### 🔍 Volltext-Suche im Weinkeller
+
+Neues Suchfeld direkt im Weinkeller für schnelles Finden von Weinen.
+
+**Features:**
+- Suchfeld mit Lupe-Icon oben im Filter-Bereich
+- Sofortige Filterung während der Eingabe
+- Durchsucht: Name, Region, Rebsorte, Beschreibung, Notizen, Appellation, Jahrgang
+- X-Button zum schnellen Löschen
+- Kombinierbar mit anderen Filtern (Weinfarbe, Preis, Auf Lager)
+- "Keine Weine gefunden" mit Reset-Button
+
+**Beispiel-Suchen:**
+- "lageder" → findet Alois Lageder
+- "champagne" → findet alle Champagner
+- "2015" → findet Weine vom Jahrgang 2015
+
+### 📸 Bild nachträglich hinzufügen/ändern
+
+Im Edit-Dialog kann jetzt ein Bild hochgeladen oder geändert werden.
+
+**Features:**
+- Bild-Sektion ganz oben im Edit-Dialog
+- Vorschau des aktuellen Bildes
+- "Hinzufügen" / "Ändern" / "Entfernen" Buttons
+- Automatische Komprimierung (max. 1200px, 70% JPEG)
+- Toast zeigt komprimierte Größe
+
+**Komprimierung:**
+```javascript
+// Max 1200px Breite/Höhe, 70% Qualität
+const MAX_SIZE = 1200;
+canvas.toDataURL('image/jpeg', 0.7);
+// Ergebnis: ~90% Größenreduktion (3MB → 200KB)
+```
+
+### 🖼️ Wein-Detail-Ansicht mit Bild
+
+Beim Klicken auf eine Weinkarte öffnet sich eine vollständige Detail-Ansicht.
+
+**Layout:**
+1. **Bild** (oben, h-48, schwarzer Hintergrund)
+2. **Header** (Badges, Name, Jahrgang, Region)
+3. **Info-Karten** (Rebsorte, Appellation mit Icons)
+4. **Beschreibung** (amber-farbener Hintergrund, kursiv)
+5. **Weitere Details** (Rebsorten, Speiseempfehlungen, Notizen)
+6. **Action-Buttons** (Bearbeiten, Pairing - fixiert unten)
+
+**UX-Verbesserungen:**
+- Gesamte Weinkarte klickbar
+- Hover-Effekt (Bild zoomt leicht)
+- Scrollbarer Content
+- Buttons immer sichtbar
+
+### 🐛 Bug Fixes
+
+**Bilder werden jetzt in Übersicht angezeigt:**
+- Problem: `image_base64` wurde beim Laden ausgeschlossen
+- Lösung: Projection geändert von `{"image_base64": 0}` zu `{}`
+
+**Edit-Dialog Speichern-Button überdeckt:**
+- Problem: Button von Navigation überdeckt
+- Lösung: Flexbox-Layout mit fixiertem Footer
+
+### Geänderte Dateien
+
+| Datei | Änderung |
+|-------|----------|
+| `frontend/src/pages/CellarPage.js` | Suchfeld, Bild-Upload, Detail-Modal, Komprimierung |
+| `backend/server.py` | `image_base64` in GET /wines Response |
+
+### Neue State-Variablen (CellarPage.js)
+
+```javascript
+const [searchQuery, setSearchQuery] = useState('');
+// + filteredWines mit useMemo für Performance
+```
+
+### Neue Funktionen (CellarPage.js)
+
+```javascript
+// Bild-Komprimierung
+const compressImageSimple = (dataUrl) => { ... }
+
+// Bild-Upload im Edit-Dialog
+const handleEditImageUpload = async (e) => { ... }
+
+// Gefilterte Weine
+const filteredWines = useMemo(() => { ... }, [wines, searchQuery, filter, ...]);
+```

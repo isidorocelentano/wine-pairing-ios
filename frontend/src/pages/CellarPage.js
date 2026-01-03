@@ -727,16 +727,6 @@ const CellarPage = () => {
               </Card>
             )}
           </div>
-          
-          <label className="inline-flex items-center gap-2 text-xs md:text-sm text-muted-foreground">
-            <input
-              type="checkbox"
-              checked={inStockOnly}
-              onChange={(e) => setInStockOnly(e.target.checked)}
-              className="w-4 h-4 rounded border-border text-primary focus:ring-primary"
-            />
-            <span>{t('cellar_filter_in_stock')}</span>
-          </label>
 
           {/* Search and Filter Row */}
           <div className="flex flex-col gap-3">

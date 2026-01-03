@@ -1106,16 +1106,27 @@ const CellarPage = () => {
                       <p className="text-sm text-muted-foreground">{showWineDetail.winery_info}</p>
                     </div>
                   )}
+                  
+                  {/* Personal Notes */}
+                  {showWineDetail.notes && (
+                    <div className="border-t pt-4">
+                      <h4 className="text-sm font-semibold mb-2">Ihre Notizen</h4>
+                      <p className="text-sm text-muted-foreground">{showWineDetail.notes}</p>
+                    </div>
+                  )}
                 </div>
                 
-                <div className="flex gap-2 pt-4">
-                  <Button variant="outline" onClick={() => setShowWineDetail(null)} className="flex-1">
-                    Schließen
+                {/* Action Buttons */}
+                <div className="flex gap-2 pt-4 border-t">
+                  <Button variant="outline" onClick={() => { handleEditWine(showWineDetail); setShowWineDetail(null); }} className="flex-1">
+                    <Edit className="w-4 h-4 mr-2" />
+                    Bearbeiten
                   </Button>
                   <Button onClick={() => { setShowWineDetail(null); navigate(`/pairing?wine=${showWineDetail.name}`); }} className="flex-1">
                     <UtensilsCrossed className="w-4 h-4 mr-2" />
-                    Pairing finden
+                    Pairing
                   </Button>
+                </div>
                 </div>
               </>
             )}

@@ -369,3 +369,127 @@ Navigieren Sie zu **Wein-Datenbank** > Tab **"✨ AI-Weine"**
 - **Datei**: `frontend/src/pages/WineDatabasePage.js`
 - **Komponenten**: Tabs aus shadcn/ui, neue Icons (Sparkles, Grape, Thermometer, Calendar)
 
+
+---
+
+## Version 1.8.9 (03.01.2026) - Weinfarben & Suche Optimierung
+
+### 🎨 Weinfarben-Zuordnung korrigiert
+
+**Problem:** Die Statistik im Weinkeller zeigte falsche Zahlen (z.B. "6x Rot, 1x Rosé" obwohl Weißweine vorhanden waren).
+
+**Ursache:** Weinfarben wurden inkonsistent gespeichert:
+- `rot`, `Rot`, `ROT` (verschiedene Schreibweisen)
+- `weiss`, `weiß`, `Weiß`, `blanc` (verschiedene Schreibweisen)
+
+**Lösung:**
+
+1. **Frontend (CellarPage.js):** Neue `normalizeWineType()` Funktion
+```javascript
+const normalizeWineType = (type) => {
+  if (!type) return 'other';
+  const normalized = type.toLowerCase().trim();
+  if (normalized === 'rot' || normalized === 'rotwein' || normalized === 'red') return 'rot';
+  if (normalized === 'weiss' || normalized === 'weiß' || normalized === 'blanc') return 'weiss';
+  if (normalized === 'rose' || normalized === 'rosé') return 'rose';
+  // ... weitere Mappings
+};
+```
+
+2. **Backend (server.py):** Filter verwendet `$in` Query mit allen Variationen
+```python
+type_variations = {
+    'rot': ['rot', 'Rot', 'ROT', 'rotwein', 'red'],
+    'weiss': ['weiss', 'weiß', 'Weiss', 'Weiß', 'blanc'],
+    # ...
+}
+query["type"] = {"$in": type_variations[type_filter]}
+```
+
+**Ergebnis:**
+- Vorher: "6x Rot, 1x Rosé" ❌
+- Nachher: "17x Rot, 4x Weiß" ✅
+
+### 🔍 Volltext-Suche optimiert
+
+**Problem:** Suche nach "Sauternes" fand keine Ergebnisse.
+
+**Ursache:** Suche durchsuchte nur: name, winery, region, grape_variety
+
+**Lösung:** Erweiterte Suche in allen relevanten Feldern:
+```python
+query["$or"] = [
+    {"name": regex},
+    {"winery": regex},
+    {"region": regex},
+    {"grape_variety": regex},
+    {"appellation": regex},      # NEU
+    {"country": regex},          # NEU
+    {"anbaugebiet": regex},      # NEU
+    {"description_de": regex},   # NEU
+    {"description_en": regex},   # NEU
+]
+```
+
+**Ergebnis:**
+- ✅ "sauternes" → findet Château d'Yquem
+- ✅ "margaux" → findet Château Margaux
+- ✅ "italien" → findet italienische Weine
+
+### 🔐 Wein-Hinzufügen Auth-Fix
+
+**Problem:** "Fehler beim Hinzufügen" beim Hinzufügen von Weinen aus der Wein-Datenbank.
+
+**Ursache:** `withCredentials: true` (Cookie-Auth) statt Bearer Token
+
+**Lösung:**
+```javascript
+// Vorher (falsch):
+await axios.post(`${API}/wines`, data, { withCredentials: true });
+
+// Nachher (korrekt):
+const token = localStorage.getItem('wine_auth_token');
+await axios.post(`${API}/wines`, data, {
+  headers: { 'Authorization': `Bearer ${token}` }
+});
+```
+
+### 💬 Verbesserte Fehlermeldungen
+
+**Problem:** Generische Fehlermeldung "Fehler beim Hinzufügen" ohne Details.
+
+**Lösung:** Spezifische Fehlermeldungen mit Titel und Beschreibung:
+
+| HTTP Status | Titel | Beschreibung |
+|-------------|-------|--------------|
+| Kein Token | **Nicht angemeldet** | Bitte melden Sie sich an, um Weine zu speichern. |
+| 401 | **Sitzung abgelaufen** | Bitte melden Sie sich erneut an. |
+| 403 | **Pro-Funktion** | Upgraden Sie auf Pro, um Weine zu speichern. |
+| Backend-Detail | **Fehler** | [Detail vom Backend] |
+| Sonstiger | **Fehler beim Hinzufügen** | Bitte versuchen Sie es später erneut. |
+
+### Geänderte Dateien
+
+| Datei | Änderung |
+|-------|----------|
+| `frontend/src/pages/CellarPage.js` | `normalizeWineType()`, `getWineTypeBadgeClass()`, `getWineTypeLabel()` |
+| `frontend/src/pages/WineDatabasePage.js` | `addToCellar()` mit Bearer Token und verbesserten Fehlermeldungen |
+| `backend/server.py` | Zeile ~1301: `type_filter` mit `$in` Query für alle Variationen |
+| `backend/server.py` | Zeile ~4677: Erweiterte Volltext-Suche in allen Feldern |
+
+---
+
+## Übersicht aller v1.8.x Änderungen
+
+| Version | Datum | Hauptänderung |
+|---------|-------|---------------|
+| 1.8.2 | 28.12.2025 | Wine Save Bug Fix (iOS Safari) |
+| 1.8.3 | 28.12.2025 | Gutschein-Funktion verbessert |
+| 1.8.4 | 29.12.2025 | FAQ-Sektion auf Pricing-Seite |
+| 1.8.5 | 29.12.2025 | Personalisiertes Weinprofil (Pro) |
+| 1.8.6 | 30.12.2025 | Navigation Redesign (Burger-Menü) |
+| 1.8.7 | 30.12.2025 | Blog-Link in Navigation |
+| 1.8.8 | 02.01.2026 | AI Wine Enrichment Feature |
+| 1.8.8.1 | 02.01.2026 | AI Wine Knowledge Database Search |
+| 1.8.9 | 03.01.2026 | Weinfarben, Suche, Auth-Fix, Fehlermeldungen |
+

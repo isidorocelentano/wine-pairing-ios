@@ -226,7 +226,13 @@ const WineDatabasePage = () => {
     try {
       const token = localStorage.getItem('wine_auth_token');
       if (!token) {
-        toast.error('Bitte melden Sie sich an, um Weine zu speichern');
+        toast.error(
+          <div>
+            <strong>Nicht angemeldet</strong>
+            <p className="text-sm mt-1">Bitte melden Sie sich an, um Weine zu speichern.</p>
+          </div>,
+          { duration: 5000 }
+        );
         return;
       }
       
@@ -246,10 +252,41 @@ const WineDatabasePage = () => {
       toast.success('Wein wurde zum Keller hinzugefügt!');
     } catch (error) {
       console.error('Error adding to cellar:', error);
-      if (error.response?.status === 401) {
-        toast.error('Bitte melden Sie sich an, um Weine zu speichern');
+      const status = error.response?.status;
+      const detail = error.response?.data?.detail;
+      
+      if (status === 401) {
+        toast.error(
+          <div>
+            <strong>Sitzung abgelaufen</strong>
+            <p className="text-sm mt-1">Bitte melden Sie sich erneut an.</p>
+          </div>,
+          { duration: 5000 }
+        );
+      } else if (status === 403) {
+        toast.error(
+          <div>
+            <strong>Pro-Funktion</strong>
+            <p className="text-sm mt-1">Upgraden Sie auf Pro, um Weine zu speichern.</p>
+          </div>,
+          { duration: 5000 }
+        );
+      } else if (detail) {
+        toast.error(
+          <div>
+            <strong>Fehler</strong>
+            <p className="text-sm mt-1">{detail}</p>
+          </div>,
+          { duration: 5000 }
+        );
       } else {
-        toast.error('Fehler beim Hinzufügen');
+        toast.error(
+          <div>
+            <strong>Fehler beim Hinzufügen</strong>
+            <p className="text-sm mt-1">Bitte versuchen Sie es später erneut.</p>
+          </div>,
+          { duration: 5000 }
+        );
       }
     }
   };

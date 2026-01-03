@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { toast } from 'sonner';
-import { Wine, Camera, Upload, X, Loader2, Plus, Trash2, Star, Edit, Minus, LogIn, Sparkles, Grape, Thermometer, UtensilsCrossed, Clock, Crown, Search, ArrowLeft } from 'lucide-react';
+import { Wine, Camera, Upload, X, Loader2, Plus, Trash2, Star, Edit, Minus, LogIn, Sparkles, Grape, Thermometer, UtensilsCrossed, Clock, Crown, Search, ArrowLeft, Filter, ChevronDown } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";

@@ -21,8 +21,13 @@ const CellarPage = () => {
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('all');
   const [priceFilter, setPriceFilter] = useState('all');
+  const [regionFilter, setRegionFilter] = useState('all');
+  const [grapeFilter, setGrapeFilter] = useState('all');
+  const [yearFilter, setYearFilter] = useState('all');
   const [inStockOnly, setInStockOnly] = useState(false);
+  const [favoritesOnly, setFavoritesOnly] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [showFilters, setShowFilters] = useState(false);
   const [showAddDialog, setShowAddDialog] = useState(false);
   const [showScanDialog, setShowScanDialog] = useState(false);
   const [showEditDialog, setShowEditDialog] = useState(false);

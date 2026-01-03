@@ -22,6 +22,7 @@ const CellarPage = () => {
   const [filter, setFilter] = useState('all');
   const [priceFilter, setPriceFilter] = useState('all');
   const [inStockOnly, setInStockOnly] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
   const [showAddDialog, setShowAddDialog] = useState(false);
   const [showScanDialog, setShowScanDialog] = useState(false);
   const [showEditDialog, setShowEditDialog] = useState(false);

@@ -87,7 +87,7 @@ const ResetPasswordPage = () => {
       }
 
       try {
-        const response = await API.get(`/auth/verify-reset-token/${token}`);
+        const response = await axios.get(`${API}/auth/verify-reset-token/${token}`);
         setTokenValid(true);
         setMaskedEmail(response.data.email || '');
       } catch (error) {

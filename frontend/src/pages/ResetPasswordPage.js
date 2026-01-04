@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { API } from '@/config/api';
 import { toast } from 'sonner';
+import axios from 'axios';
 
 const ResetPasswordPage = () => {
   const { language } = useLanguage();

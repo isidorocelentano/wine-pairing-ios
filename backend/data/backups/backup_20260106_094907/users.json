@@ -19,7 +19,7 @@
     "user_id": "user_6dd3cac89d32",
     "email": "isicel@bluewin.ch",
     "name": "ISICEL",
-    "password_hash": "$2b$12$cjpUi2bnByrN9acy0YfOSeL/ICliMzPUoQvnhSHnFafUglYckSezy",
+    "password_hash": "$2b$12$eRF30yL.J68t33nKYZmcpOC7DqgvU/JMTaFMxFJGT3TQnIKYnu5Gi",
     "picture": null,
     "plan": "pro",
     "subscription_id": null,
@@ -33,14 +33,14 @@
     "id": "1f112a0f-d31c-47d1-ac5a-eef8d61dbe8f",
     "last_login": "2026-01-03T23:03:14.546000",
     "login_count": 53,
-    "password_reset_expiry": "2026-01-04T16:45:23.677000",
-    "password_reset_token": "eKFeQRwJyPkXPE1ZP7cWPsItDaMVcP6OKMxQKDJn4b8",
     "is_admin": true,
     "role": "admin",
     "subscription_plan": "pro_yearly",
     "updated_at": "2025-12-19T05:31:18.655111+00:00",
     "subscription_end_date": "2026-12-29T23:02:30.350082+00:00",
-    "password": "$2b$12$dfNWzT6BG0.3QVmwjTxagOJngOI9lE8UuozSHZkP4dhhic.hUgtMu"
+    "password": "$2b$12$dfNWzT6BG0.3QVmwjTxagOJngOI9lE8UuozSHZkP4dhhic.hUgtMu",
+    "password_reset_expiry": "2026-01-06T10:25:57.249000",
+    "password_reset_token": "UVgw1D14kIGzGOuTIuBwYwrRa-jVJvLp7y3S32oESxU"
   },
   {
     "user_id": "user_5509d9df556d",

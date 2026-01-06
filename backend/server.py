@@ -1284,23 +1284,6 @@ async def health_check():
         "frontend_url_env": os.environ.get('FRONTEND_URL', 'not set')[:40] if os.environ.get('FRONTEND_URL') else "not set"
     }
 
-@api_router.get("/debug/test-email/{email}")
-async def test_email_send(email: str):
-    """Debug endpoint to test email sending - REMOVE IN PRODUCTION"""
-    if not RESEND_API_KEY:
-        return {"error": "RESEND_API_KEY not configured", "key_exists": False}
-    
-    try:
-        result = resend.Emails.send({
-            "from": f"Wine Pairing <{SENDER_EMAIL}>",
-            "to": [email],
-            "subject": "🍷 Test Email - Wine Pairing",
-            "html": "<p>Dies ist eine Test-E-Mail von Wine Pairing.</p>"
-        })
-        return {"success": True, "result": str(result), "sender": SENDER_EMAIL}
-    except Exception as e:
-        return {"success": False, "error": str(e), "sender": SENDER_EMAIL}
-
 
 # ===================== WINE CELLAR ENDPOINTS =====================
 

@@ -1272,7 +1272,10 @@ async def health_check():
         "status": "healthy",
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "database": db_status,
-        "version": "3.1"
+        "version": "3.1",
+        "email_configured": bool(RESEND_API_KEY),
+        "sender_email": SENDER_EMAIL[:10] + "..." if SENDER_EMAIL else "not set",
+        "frontend_url": FRONTEND_URL[:30] + "..." if FRONTEND_URL else "not set"
     }
 
 

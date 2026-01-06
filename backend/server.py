@@ -6166,8 +6166,9 @@ async def forgot_password(req: PasswordResetRequest):
         }}
     )
     
-    # Build reset URL
-    reset_url = f"{FRONTEND_URL}/reset-password?token={reset_token}"
+    # Build reset URL - always use wine-pairing.online for production
+    frontend_base = os.environ.get('FRONTEND_BASE_URL', 'https://wine-pairing.online')
+    reset_url = f"{frontend_base}/reset-password?token={reset_token}"
     
     # Send email via Resend
     if RESEND_API_KEY:

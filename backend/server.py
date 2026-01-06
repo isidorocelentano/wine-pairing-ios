@@ -1269,15 +1269,37 @@ async def health_check():
     except Exception as e:
         db_status = f"error: {str(e)}"
     
+    # Get the actual frontend URL that would be used for password reset
+    frontend_base = os.environ.get('FRONTEND_BASE_URL', 'https://wine-pairing.online')
+    
     return {
         "status": "healthy",
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "database": db_status,
-        "version": "3.1",
+        "version": "3.2",
         "email_configured": bool(RESEND_API_KEY),
-        "sender_email": SENDER_EMAIL[:10] + "..." if SENDER_EMAIL else "not set",
-        "frontend_url": FRONTEND_URL[:30] + "..." if FRONTEND_URL else "not set"
+        "resend_key_prefix": RESEND_API_KEY[:10] + "..." if RESEND_API_KEY else "not set",
+        "sender_email": SENDER_EMAIL if SENDER_EMAIL else "not set",
+        "frontend_base_url": frontend_base,
+        "frontend_url_env": os.environ.get('FRONTEND_URL', 'not set')[:40] if os.environ.get('FRONTEND_URL') else "not set"
     }
+
+@api_router.get("/debug/test-email/{email}")
+async def test_email_send(email: str):
+    """Debug endpoint to test email sending - REMOVE IN PRODUCTION"""
+    if not RESEND_API_KEY:
+        return {"error": "RESEND_API_KEY not configured", "key_exists": False}
+    
+    try:
+        result = resend.Emails.send({
+            "from": f"Wine Pairing <{SENDER_EMAIL}>",
+            "to": [email],
+            "subject": "🍷 Test Email - Wine Pairing",
+            "html": "<p>Dies ist eine Test-E-Mail von Wine Pairing.</p>"
+        })
+        return {"success": True, "result": str(result), "sender": SENDER_EMAIL}
+    except Exception as e:
+        return {"success": False, "error": str(e), "sender": SENDER_EMAIL}
 
 
 # ===================== WINE CELLAR ENDPOINTS =====================

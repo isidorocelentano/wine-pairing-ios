@@ -529,13 +529,13 @@ backend:
 
 metadata:
   created_by: "main_agent"
-  version: "1.8.8"
-  test_sequence: 30
+  version: "1.9.0"
+  test_sequence: 31
   run_ui: true
 
 test_plan:
   current_focus:
-    - "Password Reset Email Functionality"
+    - "Referral System API"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"

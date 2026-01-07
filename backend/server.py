@@ -6282,11 +6282,10 @@ async def forgot_password(req: PasswordResetRequest):
                     </p>
                 </div>
                 """
-            })
-            logger.info(f"✅ Password reset email sent to {email}")
-        except Exception as e:
-            logger.error(f"❌ Failed to send reset email: {e}")
-            # Still return success (don't reveal email exists)
+        })
+        logger.info(f"✅ Password reset email sent to {email}, result: {send_result}")
+    except Exception as e:
+        logger.error(f"❌ Failed to send reset email to {email}: {e}")
     
     return success_message
 

@@ -6467,7 +6467,7 @@ async def apply_referral_code(req: ReferralRequest, request: Request):
         raise HTTPException(status_code=400, detail="Ungültiger Empfehlungscode")
     
     # Don't allow self-referral
-    referrer_id = referrer.get("user_id") or referrer.get("id") or str(referrer.get("_id"))
+    referrer_id = referrer.get("user_id")
     if referrer_id == user_id:
         raise HTTPException(status_code=400, detail="Du kannst dich nicht selbst empfehlen")
     

@@ -786,6 +786,7 @@ Upgrade auf Pro-Plan via Stripe.
 - **Datenbank:** MongoDB
 - **KI:** Claude via Emergent LLM Key
 - **Zahlungen:** Stripe
+- **E-Mail:** Resend
 
 ### Deployment-Checkliste
 - [ ] Backup erstellen
@@ -793,6 +794,44 @@ Upgrade auf Pro-Plan via Stripe.
 - [ ] Daten-Zahlen notieren
 - [ ] Nach Deployment: Zahlen verifizieren
 - [ ] Bei Abweichung: Restore durchführen
+
+---
+
+## 📧 TEIL 7.1: E-MAIL-KONFIGURATION (RESEND)
+
+### Übersicht
+Die App verwendet **Resend** für E-Mail-Versand (Passwort-Reset, etc.)
+
+### DNS-Einträge (bei Infomaniak)
+
+| Typ | Name | Wert |
+|-----|------|------|
+| TXT | `resend._domainkey` | DKIM Key (von Resend) |
+| MX | `send` | `feedback-smtp.eu-west-1.amazonses.com` (Priorität 10) |
+| TXT | `send` | `v=spf1 include:amazonses.com ~all` |
+| TXT | `_dmarc` | `v=DMARC1;p=none` |
+
+### Environment Variables (backend/.env)
+```env
+RESEND_API_KEY=re_XXXXX...
+SENDER_EMAIL=noreply@wine-pairing.online
+```
+
+### Wichtige Regeln für E-Mail-Code
+1. ❌ `resend.api_key` **NICHT** in Funktionen setzen (nur global!)
+2. ❌ Reset-URL **NICHT** aus Environment Variable (hardcoden!)
+3. ✅ Token-Expiry manuell mit Timezone prüfen
+4. ✅ DMARC mit `p=none` (nie `p=reject`)
+
+### E-Mail-Provider Status
+| Provider | Status |
+|----------|--------|
+| Gmail | ✅ Zuverlässig |
+| Bluewin | ✅ Funktioniert |
+| Yahoo | ⚠️ Strenge Filter |
+
+### Dokumentation
+Siehe: `/app/docs/EMAIL_RESEND_COMPLETE_GUIDE.md`
 
 ---
 

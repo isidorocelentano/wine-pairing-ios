@@ -38,7 +38,9 @@
     "subscription_plan": "pro_yearly",
     "updated_at": "2025-12-19T05:31:18.655111+00:00",
     "subscription_end_date": "2026-12-29T23:02:30.350082+00:00",
-    "password": "$2b$12$dfNWzT6BG0.3QVmwjTxagOJngOI9lE8UuozSHZkP4dhhic.hUgtMu"
+    "password": "$2b$12$dfNWzT6BG0.3QVmwjTxagOJngOI9lE8UuozSHZkP4dhhic.hUgtMu",
+    "password_reset_expiry": "2026-01-06T10:25:57.249000",
+    "password_reset_token": "UVgw1D14kIGzGOuTIuBwYwrRa-jVJvLp7y3S32oESxU"
   },
   {
     "user_id": "user_5509d9df556d",

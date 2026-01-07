@@ -5975,6 +5975,168 @@ class WinePairingAPITester:
             self.log_test("Enrichment Stats", False, str(response))
         return success
 
+    # ===================== REFERRAL SYSTEM TESTS =====================
+    
+    def test_get_my_referral_code(self):
+        """Test GET /api/referral/my-code - should return referral_code, referral_link, referral_count, bonus_months_earned, reward_info"""
+        if not self.auth_token:
+            self.log_test("Get My Referral Code", False, "No auth token available")
+            return False
+        
+        success, response = self.make_request('GET', 'referral/my-code', expected_status=200, use_auth=True)
+        if success:
+            required_fields = ['referral_code', 'referral_link', 'referral_count', 'bonus_months_earned', 'reward_info']
+            missing_fields = [field for field in required_fields if field not in response]
+            
+            if missing_fields:
+                self.log_test("Get My Referral Code", False, f"Missing fields: {missing_fields}")
+                return False
+            
+            # Validate referral_code format (should be WP + 8 uppercase chars)
+            referral_code = response.get('referral_code', '')
+            if not referral_code.startswith('WP') or len(referral_code) != 10:
+                self.log_test("Get My Referral Code", False, f"Invalid referral code format: {referral_code}")
+                return False
+            
+            # Validate referral_link format
+            referral_link = response.get('referral_link', '')
+            expected_link = f"https://wine-pairing.online/register?ref={referral_code}"
+            if referral_link != expected_link:
+                self.log_test("Get My Referral Code", False, f"Invalid referral link: {referral_link}, expected: {expected_link}")
+                return False
+            
+            # Validate numeric fields
+            referral_count = response.get('referral_count', -1)
+            bonus_months = response.get('bonus_months_earned', -1)
+            if not isinstance(referral_count, int) or referral_count < 0:
+                self.log_test("Get My Referral Code", False, f"Invalid referral_count: {referral_count}")
+                return False
+            
+            if not isinstance(bonus_months, int) or bonus_months < 0:
+                self.log_test("Get My Referral Code", False, f"Invalid bonus_months_earned: {bonus_months}")
+                return False
+            
+            # Validate reward_info structure
+            reward_info = response.get('reward_info', {})
+            reward_required_fields = ['referrer_reward', 'friend_reward', 'description']
+            reward_missing_fields = [field for field in reward_required_fields if field not in reward_info]
+            
+            if reward_missing_fields:
+                self.log_test("Get My Referral Code", False, f"Missing reward_info fields: {reward_missing_fields}")
+                return False
+            
+            self.log_test("Get My Referral Code", True, 
+                         f"Code: {referral_code}, Count: {referral_count}, Bonus: {bonus_months}")
+            
+            # Store referral code for validation test
+            self.test_referral_code = referral_code
+            return True
+        else:
+            self.log_test("Get My Referral Code", False, str(response))
+            return False
+
+    def test_validate_referral_code(self):
+        """Test GET /api/referral/validate/{code} - should return valid=true, referrer_name, reward"""
+        if not hasattr(self, 'test_referral_code'):
+            self.log_test("Validate Referral Code", False, "No referral code available from previous test")
+            return False
+        
+        referral_code = self.test_referral_code
+        success, response = self.make_request('GET', f'referral/validate/{referral_code}', expected_status=200)
+        if success:
+            required_fields = ['valid', 'referrer_name', 'reward']
+            missing_fields = [field for field in required_fields if field not in response]
+            
+            if missing_fields:
+                self.log_test("Validate Referral Code", False, f"Missing fields: {missing_fields}")
+                return False
+            
+            # Validate that code is valid
+            if response.get('valid') is not True:
+                self.log_test("Validate Referral Code", False, f"Expected valid=true, got: {response.get('valid')}")
+                return False
+            
+            # Validate referrer_name is a string
+            referrer_name = response.get('referrer_name', '')
+            if not isinstance(referrer_name, str) or len(referrer_name) == 0:
+                self.log_test("Validate Referral Code", False, f"Invalid referrer_name: {referrer_name}")
+                return False
+            
+            # Validate reward is a string
+            reward = response.get('reward', '')
+            if not isinstance(reward, str) or len(reward) == 0:
+                self.log_test("Validate Referral Code", False, f"Invalid reward: {reward}")
+                return False
+            
+            self.log_test("Validate Referral Code", True, 
+                         f"Valid code, Referrer: {referrer_name}, Reward: {reward}")
+            return True
+        else:
+            self.log_test("Validate Referral Code", False, str(response))
+            return False
+
+    def test_validate_invalid_referral_code(self):
+        """Test GET /api/referral/validate/{code} with invalid code - should return valid=false"""
+        invalid_code = "INVALID123"
+        success, response = self.make_request('GET', f'referral/validate/{invalid_code}', expected_status=200)
+        if success:
+            # Should return valid=false for invalid code
+            if response.get('valid') is not False:
+                self.log_test("Validate Invalid Referral Code", False, f"Expected valid=false, got: {response.get('valid')}")
+                return False
+            
+            # Should have a message field
+            if 'message' not in response:
+                self.log_test("Validate Invalid Referral Code", False, "Missing message field for invalid code")
+                return False
+            
+            self.log_test("Validate Invalid Referral Code", True, "Invalid code correctly rejected")
+            return True
+        else:
+            self.log_test("Validate Invalid Referral Code", False, str(response))
+            return False
+
+    def run_referral_system_tests(self):
+        """Run comprehensive Referral System tests"""
+        print("🎯 Running Referral System Tests")
+        print("=" * 60)
+        print("Backend URL:", self.base_url)
+        print("Test Credentials: isicel@bluewin.ch / WeinAdmin2025!")
+        print("=" * 60)
+        
+        # Health Check
+        self.test_health_check()
+        
+        # Authentication Tests
+        print("\n🔐 Testing Authentication...")
+        if not self.test_login_with_test_credentials():
+            print("❌ Failed to login with test credentials - cannot continue")
+            return False
+        
+        self.test_get_current_user()
+        
+        # Referral System Tests
+        print("\n🎯 Testing Referral System...")
+        
+        # Test 1: Get my referral code
+        if not self.test_get_my_referral_code():
+            print("❌ Failed to get referral code - cannot continue with validation tests")
+            return False
+        
+        # Test 2: Validate referral code
+        self.test_validate_referral_code()
+        
+        # Test 3: Validate invalid referral code
+        self.test_validate_invalid_referral_code()
+        
+        # Summary
+        print(f"\n📊 Test Summary:")
+        print(f"Tests Run: {self.tests_run}")
+        print(f"Tests Passed: {self.tests_passed}")
+        print(f"Success Rate: {(self.tests_passed/self.tests_run)*100:.1f}%")
+        
+        return self.tests_passed == self.tests_run
+
     def run_wine_enrichment_tests(self):
         """Run comprehensive Wine Enrichment tests for v1.8.8"""
         print("🍷 Running AI Wine Enrichment Feature Tests (v1.8.8)")

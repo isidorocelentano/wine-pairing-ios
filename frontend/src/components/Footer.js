@@ -1,11 +1,36 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Wine } from 'lucide-react';
+import { Wine, Facebook, Linkedin, Twitter } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+
+// TikTok Icon (custom SVG)
+const TikTokIcon = ({ size = 18, className = '' }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className}>
+    <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
+  </svg>
+);
+
+// Instagram Icon
+const InstagramIcon = ({ size = 18, className = '' }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+  </svg>
+);
 
 const Footer = () => {
   const { t, language } = useLanguage();
   const currentYear = new Date().getFullYear();
+
+  // Social Media Links - UPDATE THESE WITH YOUR ACTUAL PROFILES
+  const socialLinks = [
+    { name: 'Instagram', icon: InstagramIcon, url: 'https://www.instagram.com/wine_pairing_online', color: 'hover:text-pink-500' },
+    { name: 'Facebook', icon: Facebook, url: 'https://www.facebook.com/winepairing.online', color: 'hover:text-blue-600' },
+    { name: 'LinkedIn', icon: Linkedin, url: 'https://www.linkedin.com/company/wine-pairing', color: 'hover:text-blue-700' },
+    { name: 'TikTok', icon: TikTokIcon, url: 'https://www.tiktok.com/@wine_pairing_online', color: 'hover:text-foreground' },
+    { name: 'X', icon: Twitter, url: 'https://twitter.com/winepairing_app', color: 'hover:text-sky-500' },
+  ];
 
   const marketingText = {
     de: {

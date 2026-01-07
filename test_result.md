@@ -498,6 +498,10 @@ backend:
 The original issue reported ("Password reset emails are not being sent on the live deployment") appears to be resolved. The system is functioning as expected with proper email delivery and token management.
 
 ### Agent Communication
+- **Testing Agent**: Referral System functionality tested on https://winery-upgrade.preview.emergentagent.com
+- **Status**: All critical functionality working correctly - referral code generation, validation, and UI integration operational
+- **Bug Fixes Applied**: Fixed User object access in referral endpoints (changed from dict.get() to object.attribute access)
+- **Frontend Integration**: ReferralPage.js and ReferralSection.js components fully functional with proper API integration
 - **Testing Agent**: Password reset email functionality tested on LIVE site https://wine-pairing.online
 - **Status**: All critical functionality working correctly - emails being sent, tokens saved, system operational
 - **Issue Resolution**: Original problem appears to be resolved - both debug and actual endpoints working properly

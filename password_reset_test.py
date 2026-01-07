@@ -176,17 +176,20 @@ class PasswordResetTester:
         if success:
             print(f"   Response: {json.dumps(response, indent=2)}")
             
-            token_found = response.get('token_found', False)
-            token_info = response.get('token_info')
+            has_token = response.get('has_token', False)
+            token_preview = response.get('token_preview')
+            expiry = response.get('expiry')
             
-            if token_found:
+            if has_token:
                 print(f"   ✅ Token found for {self.test_email}")
-                if token_info:
-                    print(f"   Token info: {token_info}")
+                if token_preview:
+                    print(f"   Token preview: {token_preview}")
+                if expiry:
+                    print(f"   Token expiry: {expiry}")
             else:
                 print(f"   ❌ No token found for {self.test_email}")
                 
-            self.log_test("Check Token", True, f"Token found: {token_found}")
+            self.log_test("Check Token", True, f"Token found: {has_token}")
         else:
             self.log_test("Check Token", False, str(response))
         

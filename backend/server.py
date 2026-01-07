@@ -6346,6 +6346,20 @@ async def verify_reset_token(token: str):
     
     return {"valid": True, "email": user.get("email", "")[:3] + "***"}
 
+@api_router.get("/debug/check-token/{email}")
+async def debug_check_token(email: str):
+    """DEBUG: Check what token is stored for a user"""
+    user = await db.users.find_one({"email": email.lower()}, {"password_reset_token": 1, "password_reset_expiry": 1, "email": 1, "_id": 0})
+    if not user:
+        return {"error": "User not found"}
+    return {
+        "email": user.get("email"),
+        "has_token": bool(user.get("password_reset_token")),
+        "token_preview": user.get("password_reset_token", "")[:15] + "..." if user.get("password_reset_token") else None,
+        "expiry": str(user.get("password_reset_expiry")) if user.get("password_reset_expiry") else None,
+        "now": str(datetime.now(timezone.utc))
+    }
+
 # Subscription endpoints
 @api_router.post("/subscription/checkout")
 async def create_checkout_session(checkout_req: CheckoutRequest, request: Request):

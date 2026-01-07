@@ -6299,17 +6299,25 @@ async def reset_password(req: PasswordResetConfirm):
     if len(req.new_password) < 6:
         raise HTTPException(status_code=400, detail="Passwort muss mindestens 6 Zeichen haben")
     
-    # Find user with valid token
-    user = await db.users.find_one({
-        "password_reset_token": req.token,
-        "password_reset_expiry": {"$gt": datetime.now(timezone.utc)}
-    })
+    # Find user with matching token
+    user = await db.users.find_one({"password_reset_token": req.token})
     
     if not user:
         raise HTTPException(
             status_code=400, 
             detail="Ungültiger oder abgelaufener Reset-Link. Bitte fordern Sie einen neuen an."
         )
+    
+    # Check expiry manually to handle timezone issues
+    expiry = user.get("password_reset_expiry")
+    if expiry:
+        if expiry.tzinfo is None:
+            expiry = expiry.replace(tzinfo=timezone.utc)
+        if expiry <= datetime.now(timezone.utc):
+            raise HTTPException(
+                status_code=400, 
+                detail="Ungültiger oder abgelaufener Reset-Link. Bitte fordern Sie einen neuen an."
+            )
     
     # Hash new password
     new_hash = hash_password(req.new_password)

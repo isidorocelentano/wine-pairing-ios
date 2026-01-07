@@ -6256,10 +6256,15 @@ def main():
             tester = WinePairingAPITester()
             success = tester.run_wine_enrichment_tests()
             return 0 if success else 1
+        elif sys.argv[1] == "referral":
+            # Run Referral System tests
+            tester = WinePairingAPITester("https://winery-upgrade.preview.emergentagent.com")
+            success = tester.run_referral_system_tests()
+            return 0 if success else 1
     
-    # Default: Run Wine Enrichment tests for v1.8.8 as specified in review request
-    tester = WinePairingAPITester()
-    success = tester.run_wine_enrichment_tests()
+    # Default: Run Referral System tests as specified in review request
+    tester = WinePairingAPITester("https://winery-upgrade.preview.emergentagent.com")
+    success = tester.run_referral_system_tests()
     return 0 if success else 1
 
 if __name__ == "__main__":

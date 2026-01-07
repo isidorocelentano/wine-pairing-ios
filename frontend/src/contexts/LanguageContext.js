@@ -323,6 +323,7 @@ const translations = {
     nav_grapes: 'Grapes',
     nav_wine_database: 'Wine DB',
     nav_profile: 'Profile',
+    nav_referral: 'Invite',
     
     // Wine Database Modal Labels
     wine_country: 'Country',

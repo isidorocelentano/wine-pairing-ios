@@ -13,6 +13,7 @@ const translations = {
     nav_grapes: 'Rebsorten',
     nav_wine_database: 'Wein-DB',
     nav_profile: 'Profil',
+    nav_referral: 'Einladen',
     
     // Wine Database Modal Labels
     wine_country: 'Land',

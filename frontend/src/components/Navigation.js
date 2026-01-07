@@ -29,6 +29,7 @@ const Navigation = () => {
     { path: '/wine-database', icon: Database, labelKey: 'nav_wine_database' },
     { path: '/favorites', icon: Heart, labelKey: 'nav_favorites' },
     { path: '/blog', icon: BookOpen, labelKey: 'nav_blog' },
+    { path: '/referral', icon: Gift, labelKey: 'nav_referral' },
   ];
 
   const handleNavClick = (path) => {

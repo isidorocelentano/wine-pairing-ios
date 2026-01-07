@@ -745,14 +745,23 @@ const PairingPage = () => {
         {result && !selectedWineDetail && !showUpgradePrompt && (
           <Card className="pairing-card border-border/50 mb-6 md:mb-8 animate-fade-in-up" data-testid="pairing-result">
             <CardHeader>
-              <div className="flex items-center gap-3">
-                <div className="sommelier-avatar w-10 h-10 rounded-full flex items-center justify-center">
-                  <Wine className="w-5 h-5 text-white" />
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="sommelier-avatar w-10 h-10 rounded-full flex items-center justify-center">
+                    <Wine className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-base md:text-lg">{t('pairing_result_title')}</CardTitle>
+                    <CardDescription>{t('pairing_result_for')} &bdquo;{result.dish}&ldquo;</CardDescription>
+                  </div>
                 </div>
-                <div>
-                  <CardTitle className="text-base md:text-lg">{t('pairing_result_title')}</CardTitle>
-                  <CardDescription>{t('pairing_result_for')} &bdquo;{result.dish}&ldquo;</CardDescription>
-                </div>
+                {/* Share Button */}
+                <SharePairingButton 
+                  dish={result.dish}
+                  wine={result.wines?.[0]?.name || ''}
+                  wineType={result.wines?.[0]?.type || 'Wein'}
+                  reason={result.why_explanation?.slice(0, 100) || ''}
+                />
               </div>
             </CardHeader>
             <CardContent>

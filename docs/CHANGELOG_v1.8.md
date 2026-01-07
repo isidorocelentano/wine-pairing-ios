@@ -1,5 +1,49 @@
 # Changelog - Wine Pairing App
 
+## Version 1.9.0 (07.01.2026) - E-Mail-Funktionalität komplett
+
+### 📧 E-Mail via Resend
+- **DNS-Konfiguration:** DKIM, MX, SPF, DMARC bei Infomaniak eingerichtet
+- **Resend-Integration:** Vollständig funktionsfähig und getestet
+- **Passwort-Reset:** Funktioniert zuverlässig (Gmail, Bluewin getestet)
+
+### 🔧 Technische Fixes
+- `resend.api_key` wird nur noch global gesetzt (Fix für Produktions-Bug)
+- Reset-URL ist hardcoded auf `https://wine-pairing.online`
+- Token-Expiry wird korrekt mit UTC-Timezone verglichen
+- Debug-Endpoints entfernt, Code produktionsreif
+
+### 📄 Dokumentation
+- **EMAIL_RESEND_COMPLETE_GUIDE.md:** Komplette Anleitung für E-Mail-Setup
+  - Resend Account & Domain Setup
+  - Infomaniak DNS-Konfiguration (Schritt für Schritt)
+  - Backend-Code mit allen Fallstricken
+  - Frontend-Code (React)
+  - Troubleshooting & Test-Checkliste
+
+### Geänderte Dateien
+- `backend/server.py` - Forgot-Password Endpoints bereinigt
+- `frontend/src/pages/ResetPasswordPage.js` - Axios statt API.get/post
+- `docs/EMAIL_RESEND_COMPLETE_GUIDE.md` - Neue Dokumentation
+
+---
+
+## Version 1.8.10 (03.01.2026) - Weinkeller Features
+
+### 🍷 Neue Features
+- **Volltext-Suche** im Weinkeller
+- **Erweiterte Filter** (klappbares Panel)
+- **Bild-Upload** für Weine mit Client-Side Komprimierung
+- **Detail-Ansicht** Modal mit Bild und allen Daten
+- **Back-Button** für einfachere Navigation
+
+### 🐛 Bug Fixes
+- Weinfarben-Statistik korrigiert
+- "Zur Sammlung hinzufügen" funktioniert wieder
+- Volltext-Suche in Wein-Datenbank verbessert
+
+---
+
 ## Version 1.8.3 (28.12.2025) - Gutschein-Funktion verbessert
 
 ### 🎁 Neue Features

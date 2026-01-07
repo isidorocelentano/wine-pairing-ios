@@ -6147,27 +6147,66 @@ async def debug_forgot_password(email: str):
     if not user:
         return result
     
-    # Step 2: Check Resend config
+    # Step 2: Generate token (same as real forgot-password)
+    reset_token = secrets.token_urlsafe(32)
+    reset_url = f"https://wine-pairing.online/reset-password?token={reset_token}"
+    result["reset_url"] = reset_url
+    result["steps"].append(f"2. Token generated: {reset_token[:10]}...")
+    
+    # Step 3: Check Resend config
     result["resend_configured"] = bool(RESEND_API_KEY)
     result["sender_email"] = SENDER_EMAIL
-    result["steps"].append(f"2. Resend configured: {bool(RESEND_API_KEY)}")
+    result["steps"].append(f"3. Resend configured: {bool(RESEND_API_KEY)}")
     
-    # Step 3: Try to send test email
+    # Step 4: Send REAL reset email (same HTML as forgot-password)
     if RESEND_API_KEY:
         try:
             send_result = resend.Emails.send({
                 "from": f"Wine Pairing <{SENDER_EMAIL}>",
                 "to": [email],
-                "subject": "🍷 DEBUG Test - Wine Pairing",
-                "html": f"<p>Debug test successful! Reset URL would be: https://wine-pairing.online/reset-password?token=TEST</p>"
+                "subject": "🍷 Passwort zurücksetzen - Wine Pairing",
+                "html": f"""
+                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+                    <h1 style="color: #722F37;">🍷 Passwort zurücksetzen</h1>
+                    <p>Hallo,</p>
+                    <p>Sie haben eine Anfrage zum Zurücksetzen Ihres Passworts gestellt.</p>
+                    <p>Klicken Sie auf den folgenden Button, um ein neues Passwort zu setzen:</p>
+                    <p style="margin: 30px 0;">
+                        <a href="{reset_url}" 
+                           style="background-color: #722F37; color: white; padding: 15px 30px; 
+                                  text-decoration: none; border-radius: 5px; font-weight: bold;">
+                            Neues Passwort setzen
+                        </a>
+                    </p>
+                    <p style="color: #666; font-size: 14px;">
+                        Dieser Link ist 1 Stunde gültig.<br>
+                        Falls Sie diese Anfrage nicht gestellt haben, ignorieren Sie diese E-Mail.
+                    </p>
+                    <hr style="border: none; border-top: 1px solid #eee; margin: 30px 0;">
+                    <p style="color: #999; font-size: 12px;">
+                        Wine Pairing - Ihr persönlicher Wein-Sommelier<br>
+                        <a href="https://wine-pairing.online" style="color: #722F37;">wine-pairing.online</a>
+                    </p>
+                </div>
+                """
             })
             result["email_sent"] = True
             result["send_result"] = str(send_result)
-            result["steps"].append(f"3. Email sent: SUCCESS - {send_result}")
+            result["steps"].append(f"4. Email sent: SUCCESS - {send_result}")
+            
+            # Also save token to DB so the link actually works
+            await db.users.update_one(
+                {"email": email},
+                {"$set": {
+                    "password_reset_token": reset_token,
+                    "password_reset_expiry": datetime.now(timezone.utc) + timedelta(hours=1)
+                }}
+            )
+            result["steps"].append("5. Token saved to database")
         except Exception as e:
             result["email_sent"] = False
             result["error"] = str(e)
-            result["steps"].append(f"3. Email sent: FAILED - {str(e)}")
+            result["steps"].append(f"4. Email sent: FAILED - {str(e)}")
     
     return result
 

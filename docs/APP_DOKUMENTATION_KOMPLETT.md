@@ -1,7 +1,7 @@
 # 📖 WINE PAIRING APP - Vollständige Dokumentation
 
-**Stand:** 27. Dezember 2025  
-**Version:** 1.8.1 (Restaurant-Modus UI & UX-Verbesserungen)  
+**Stand:** 07. Januar 2026  
+**Version:** 1.9.0 (E-Mail-Funktionalität komplett)  
 **Domain:** https://wine-pairing.online
 
 ---
@@ -18,10 +18,68 @@
 | **Sprachen** | DE, EN, FR |
 | **Monetarisierung** | Freemium + Stripe |
 | **Zielmarkt** | Deutschland (€-Preise) |
+| **E-Mail-Service** | Resend (verifiziert) |
 
 ---
 
 ## 🆕 ÄNDERUNGSHISTORIE
+
+### Version 1.9.0 (07.01.2026) - E-Mail-Funktionalität komplett
+
+**📧 Passwort-Reset via Resend:**
+- ✅ **DNS-Konfiguration:** DKIM, MX, SPF, DMARC bei Infomaniak eingerichtet
+- ✅ **Resend-Integration:** Vollständig funktionsfähig und getestet
+- ✅ **Code bereinigt:** Debug-Endpoints entfernt, produktionsreifer Code
+- ✅ **Timezone-Fix:** Token-Expiry wird korrekt mit UTC verglichen
+- ✅ **Hardcoded Domain:** Reset-URL zeigt immer auf wine-pairing.online
+
+**📄 Dokumentation erstellt:**
+- ✅ **EMAIL_RESEND_COMPLETE_GUIDE.md:** Komplette Schritt-für-Schritt Anleitung
+  - Resend Setup (Account, API Key, Domain)
+  - Infomaniak DNS-Konfiguration (alle 4 Einträge)
+  - Backend-Code mit allen Fallstricken erklärt
+  - Frontend-Code (React Komponenten)
+  - Die 4 goldenen Regeln für Agenten
+
+**✅ Getestete E-Mail-Provider:**
+| Provider | Status |
+|----------|--------|
+| Gmail | ✅ Funktioniert zuverlässig |
+| Bluewin | ✅ Funktioniert |
+| Yahoo | ⚠️ Strenge Filter (Spam-Ordner prüfen) |
+
+**🔧 Technische Fixes:**
+- `resend.api_key` wird nur noch global gesetzt (nicht in Funktionen)
+- Reset-URL ist hardcoded (nicht aus Environment Variable)
+- Spam-Ordner-Hinweis in Benutzerantwort eingefügt
+
+---
+
+### Version 1.8.10 (03.01.2026) - Weinkeller Features
+
+**🍷 Weinkeller-Verbesserungen:**
+- ✅ **Volltext-Suche:** Weine nach Name, Region, Rebsorte durchsuchen
+- ✅ **Erweiterte Filter:** Klappbares Filter-Panel (wie Wein-Datenbank)
+- ✅ **Bild-Upload:** Bilder für Weine hochladen und bearbeiten
+- ✅ **Client-Side Komprimierung:** Bilder werden vor Upload komprimiert
+- ✅ **Detail-Ansicht:** Neues Modal mit Bild und allen Wein-Daten
+- ✅ **Back-Button:** Einfachere Navigation in der Detail-Ansicht
+
+**🐛 Bug Fixes:**
+- Weinfarben-Statistik korrigiert (rot/Rot Normalisierung)
+- "Zur Sammlung hinzufügen" von Wein-Datenbank funktioniert wieder
+- Volltext-Suche in Wein-Datenbank (Sauternes-Problem gelöst)
+
+---
+
+### Version 1.8.3 (28.12.2025) - Gutschein-Funktion
+
+**🎁 Gutschein-Banner:**
+- Prominenter Banner auf Pricing-Seite
+- Ein-Klick-Eingabe ohne separate Seite
+- Mehrsprachig (DE/EN/FR)
+
+---
 
 ### Version 1.8.1 (27.12.2025) - Restaurant-Modus UI & UX-Verbesserungen
 

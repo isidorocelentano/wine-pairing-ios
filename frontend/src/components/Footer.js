@@ -72,6 +72,25 @@ const Footer = () => {
           >
             {text.cta}
           </Link>
+          
+          {/* Social Media Icons */}
+          <div className="mt-6 flex items-center justify-center gap-4">
+            <span className="text-xs text-muted-foreground mr-2">
+              {language === 'de' ? 'Folge uns:' : language === 'en' ? 'Follow us:' : 'Suivez-nous:'}
+            </span>
+            {socialLinks.map((social) => (
+              <a
+                key={social.name}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`text-muted-foreground ${social.color} transition-colors`}
+                title={social.name}
+              >
+                <social.icon size={20} />
+              </a>
+            ))}
+          </div>
         </div>
       </div>
 

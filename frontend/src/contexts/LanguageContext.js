@@ -621,6 +621,7 @@ const translations = {
     nav_grapes: 'Cépages',
     nav_wine_database: 'Vins DB',
     nav_profile: 'Profil',
+    nav_referral: 'Inviter',
     
     // Wine Database Modal Labels
     wine_country: 'Pays',

@@ -12,6 +12,8 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useNavigate, Link } from 'react-router-dom';
 import VoiceInputButton from "@/components/VoiceInputButton";
 
+import SharePairingButton from "@/components/SharePairingButton";
+
 import { API_URL as BACKEND_URL, API } from '@/config/api';
 
 // Helper to split wine description into compact summary and detailed part

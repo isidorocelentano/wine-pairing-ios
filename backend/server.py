@@ -374,6 +374,14 @@ class User(BaseModel):
         "last_usage_date": None
     })
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    # Referral fields
+    referral_code: Optional[str] = None
+    referred_by: Optional[str] = None  # referral_code of the person who referred them
+    referral_count: int = 0
+    referral_bonus_months: int = 0  # Free months earned from referrals
+
+class ReferralRequest(BaseModel):
+    referral_code: str
 
 class UserSession(BaseModel):
     user_id: str

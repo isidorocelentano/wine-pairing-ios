@@ -6214,29 +6214,23 @@ async def debug_forgot_password(email: str):
 async def forgot_password(req: PasswordResetRequest):
     """
     Passwort vergessen - sendet Reset-Email.
-    
-    Flow:
-    1. User gibt Email ein
-    2. System generiert Reset-Token (gültig 1 Stunde)
-    3. Email mit Reset-Link wird gesendet
-    4. User klickt Link und setzt neues Passwort
     """
     email = req.email.lower().strip()
-    debug_info = {"email": email, "steps": [], "version": "v4-debug"}
+    
+    # Standard response (security - don't reveal if email exists)
+    success_message = {
+        "message": "Falls ein Account mit dieser E-Mail existiert, wurde ein Reset-Link gesendet. Bitte prüfen Sie auch Ihren Spam-Ordner.",
+        "message_en": "If an account with this email exists, a reset link has been sent. Please also check your spam folder."
+    }
     
     # Find user
     user = await db.users.find_one({"email": email})
-    debug_info["user_found"] = bool(user)
-    debug_info["steps"].append(f"1. User lookup: {'FOUND' if user else 'NOT FOUND'}")
-    
     if not user:
-        debug_info["steps"].append("2. Returning early - user not found")
-        return debug_info  # TEMPORARY: Return debug info
+        return success_message
     
     # Generate secure reset token
     reset_token = secrets.token_urlsafe(32)
     reset_expiry = datetime.now(timezone.utc) + timedelta(hours=1)
-    debug_info["steps"].append(f"2. Token generated: {reset_token[:10]}...")
     
     # Store token in database
     await db.users.update_one(
@@ -6246,51 +6240,46 @@ async def forgot_password(req: PasswordResetRequest):
             "password_reset_expiry": reset_expiry
         }}
     )
-    debug_info["steps"].append("3. Token saved to database")
     
     # Build reset URL
     reset_url = f"https://wine-pairing.online/reset-password?token={reset_token}"
-    debug_info["reset_url"] = reset_url
     
-    # Send email via Resend (use globally initialized API key - DO NOT re-set here)
-    debug_info["resend_api_key_set"] = bool(RESEND_API_KEY)
-    debug_info["sender_email"] = SENDER_EMAIL
-    
+    # Send email via Resend
     try:
-        # IMPORTANT: Do NOT re-set resend.api_key here - causes issues in live deployment
-        send_result = resend.Emails.send({
+        resend.Emails.send({
             "from": f"Wine Pairing <{SENDER_EMAIL}>",
             "to": [email],
-            "subject": "🍷 Passwort zurücksetzen - Wine Pairing",
+            "subject": "Passwort zurücksetzen - Wine Pairing",
             "html": f"""
-            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-                <h1 style="color: #722F37;">🍷 Passwort zurücksetzen</h1>
-                <p>Hallo,</p>
-                <p>Sie haben eine Anfrage zum Zurücksetzen Ihres Passworts gestellt.</p>
-                <p>Klicken Sie auf den folgenden Button, um ein neues Passwort zu setzen:</p>
-                <p style="margin: 30px 0;">
-                    <a href="{reset_url}" 
-                       style="background-color: #722F37; color: white; padding: 15px 30px; 
-                              text-decoration: none; border-radius: 5px; font-weight: bold;">
-                        Neues Passwort setzen
-                    </a>
-                </p>
-                <p style="color: #666; font-size: 14px;">
-                    Dieser Link ist 1 Stunde gültig.<br>
-                    Falls Sie diese Anfrage nicht gestellt haben, ignorieren Sie diese E-Mail.
-                </p>
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #ffffff;">
+                <div style="text-align: center; padding: 20px 0;">
+                    <h1 style="color: #722F37; margin: 0;">Wine Pairing</h1>
+                </div>
+                <div style="padding: 30px; background-color: #f9f9f9; border-radius: 10px;">
+                    <h2 style="color: #333; margin-top: 0;">Passwort zurücksetzen</h2>
+                    <p style="color: #555; line-height: 1.6;">Guten Tag,</p>
+                    <p style="color: #555; line-height: 1.6;">Sie haben angefordert, Ihr Passwort zurückzusetzen. Klicken Sie auf den Button unten, um ein neues Passwort zu erstellen:</p>
+                    <div style="text-align: center; margin: 30px 0;">
+                        <a href="{reset_url}" 
+                           style="background-color: #722F37; color: #ffffff; padding: 15px 30px; 
+                                  text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">
+                            Neues Passwort erstellen
+                        </a>
+                    </div>
+                    <p style="color: #888; font-size: 13px; line-height: 1.5;">
+                        Dieser Link ist 1 Stunde gültig. Falls Sie diese Anfrage nicht gestellt haben, können Sie diese E-Mail ignorieren.
+                    </p>
+                </div>
+                <div style="text-align: center; padding: 20px; color: #999; font-size: 12px;">
+                    <p>Wine Pairing - Ihr persönlicher Wein-Sommelier</p>
+                    <p><a href="https://wine-pairing.online" style="color: #722F37;">wine-pairing.online</a></p>
+                </div>
             </div>
             """
         })
-        debug_info["email_sent"] = True
-        debug_info["send_result"] = str(send_result)
-        debug_info["steps"].append(f"4. Email sent: SUCCESS - {send_result}")
+        logger.info(f"Password reset email sent to {email}")
     except Exception as e:
-        debug_info["email_sent"] = False
-        debug_info["error"] = str(e)
-        debug_info["steps"].append(f"4. Email sent: FAILED - {str(e)}")
-    
-    return debug_info  # TEMPORARY: Return debug info instead of success message
+        logger.error(f"Failed to send reset email to {email}: {e}")
     
     return success_message
 

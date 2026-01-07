@@ -6384,7 +6384,7 @@ async def get_my_referral_code(request: Request):
     if not user:
         raise HTTPException(status_code=401, detail="Login required")
     
-    user_id = user.get("user_id") or user.get("id") or str(user.get("_id"))
+    user_id = user.user_id
     user_doc = await db.users.find_one({"user_id": user_id})
     
     if not user_doc:

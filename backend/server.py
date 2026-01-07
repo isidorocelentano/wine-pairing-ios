@@ -6336,13 +6336,21 @@ async def verify_reset_token(token: str):
     Prüft ob ein Reset-Token gültig ist.
     Wird vom Frontend aufgerufen bevor das Reset-Formular angezeigt wird.
     """
-    user = await db.users.find_one({
-        "password_reset_token": token,
-        "password_reset_expiry": {"$gt": datetime.now(timezone.utc)}
-    })
+    # First find user with matching token (without expiry check)
+    user = await db.users.find_one({"password_reset_token": token})
     
     if not user:
         raise HTTPException(status_code=400, detail="Ungültiger oder abgelaufener Link")
+    
+    # Check expiry manually to handle timezone issues
+    expiry = user.get("password_reset_expiry")
+    if expiry:
+        # Make expiry timezone-aware if it isn't
+        if expiry.tzinfo is None:
+            expiry = expiry.replace(tzinfo=timezone.utc)
+        
+        if expiry <= datetime.now(timezone.utc):
+            raise HTTPException(status_code=400, detail="Ungültiger oder abgelaufener Link")
     
     return {"valid": True, "email": user.get("email", "")[:3] + "***"}
 

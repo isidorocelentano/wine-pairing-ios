@@ -6369,6 +6369,148 @@ async def verify_reset_token(token: str):
     
     return {"valid": True, "email": user.get("email", "")[:3] + "***"}
 
+# ===================== REFERRAL SYSTEM =====================
+
+def generate_referral_code(user_id: str) -> str:
+    """Generate a unique referral code based on user_id"""
+    import hashlib
+    hash_obj = hashlib.md5(user_id.encode())
+    return f"WP{hash_obj.hexdigest()[:8].upper()}"
+
+@api_router.get("/referral/my-code")
+async def get_my_referral_code(request: Request):
+    """Get or create referral code for current user"""
+    user = await get_current_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    
+    user_id = user.get("user_id") or user.get("id") or str(user.get("_id"))
+    user_doc = await db.users.find_one({"user_id": user_id})
+    
+    if not user_doc:
+        raise HTTPException(status_code=404, detail="User not found")
+    
+    # Generate referral code if not exists
+    referral_code = user_doc.get("referral_code")
+    if not referral_code:
+        referral_code = generate_referral_code(user_id)
+        await db.users.update_one(
+            {"user_id": user_id},
+            {"$set": {"referral_code": referral_code}}
+        )
+    
+    # Get referral stats
+    referral_count = user_doc.get("referral_count", 0)
+    bonus_months = user_doc.get("referral_bonus_months", 0)
+    
+    # Get list of referred users
+    referred_users = await db.users.find(
+        {"referred_by": referral_code},
+        {"name": 1, "email": 1, "created_at": 1, "plan": 1, "_id": 0}
+    ).to_list(100)
+    
+    # Mask emails for privacy
+    for u in referred_users:
+        email = u.get("email", "")
+        if "@" in email:
+            parts = email.split("@")
+            u["email"] = f"{parts[0][:2]}***@{parts[1]}"
+    
+    return {
+        "referral_code": referral_code,
+        "referral_link": f"https://wine-pairing.online/register?ref={referral_code}",
+        "referral_count": referral_count,
+        "bonus_months_earned": bonus_months,
+        "referred_users": referred_users,
+        "reward_info": {
+            "referrer_reward": "1 Monat Pro gratis",
+            "friend_reward": "1 Monat Pro gratis",
+            "description": "Du und dein Freund erhalten jeweils 1 Monat Pro gratis, wenn sich dein Freund registriert und ein Pro-Abo abschließt!"
+        }
+    }
+
+@api_router.get("/referral/validate/{code}")
+async def validate_referral_code(code: str):
+    """Check if a referral code is valid"""
+    user = await db.users.find_one({"referral_code": code.upper()})
+    if not user:
+        return {"valid": False, "message": "Ungültiger Empfehlungscode"}
+    
+    return {
+        "valid": True,
+        "referrer_name": user.get("name", "Ein Freund"),
+        "reward": "1 Monat Pro gratis nach Abo-Abschluss"
+    }
+
+@api_router.post("/referral/apply")
+async def apply_referral_code(req: ReferralRequest, request: Request):
+    """Apply a referral code to current user's account"""
+    user = await get_current_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    
+    user_id = user.get("user_id") or user.get("id") or str(user.get("_id"))
+    user_doc = await db.users.find_one({"user_id": user_id})
+    
+    if not user_doc:
+        raise HTTPException(status_code=404, detail="User not found")
+    
+    # Check if user already has a referrer
+    if user_doc.get("referred_by"):
+        raise HTTPException(status_code=400, detail="Du hast bereits einen Empfehlungscode verwendet")
+    
+    # Validate the referral code
+    referral_code = req.referral_code.upper()
+    referrer = await db.users.find_one({"referral_code": referral_code})
+    
+    if not referrer:
+        raise HTTPException(status_code=400, detail="Ungültiger Empfehlungscode")
+    
+    # Don't allow self-referral
+    referrer_id = referrer.get("user_id") or referrer.get("id") or str(referrer.get("_id"))
+    if referrer_id == user_id:
+        raise HTTPException(status_code=400, detail="Du kannst dich nicht selbst empfehlen")
+    
+    # Apply the referral
+    await db.users.update_one(
+        {"user_id": user_id},
+        {"$set": {"referred_by": referral_code}}
+    )
+    
+    # Increment referrer's count
+    await db.users.update_one(
+        {"referral_code": referral_code},
+        {"$inc": {"referral_count": 1}}
+    )
+    
+    return {
+        "success": True,
+        "message": "Empfehlungscode erfolgreich angewendet! Du erhältst 1 Monat Pro gratis nach Abo-Abschluss.",
+        "referrer_name": referrer.get("name", "Dein Freund")
+    }
+
+@api_router.post("/referral/grant-bonus")
+async def grant_referral_bonus(user_id: str, months: int = 1):
+    """
+    Internal endpoint to grant referral bonus months.
+    Called after successful subscription payment.
+    """
+    # This should be called internally after payment success
+    # Grant bonus to the user
+    result = await db.users.update_one(
+        {"user_id": user_id},
+        {
+            "$inc": {"referral_bonus_months": months},
+            "$set": {
+                "plan": "pro",
+                "subscription_status": "active",
+                "subscription_end_date": datetime.now(timezone.utc) + timedelta(days=30 * months)
+            }
+        }
+    )
+    
+    return {"success": result.modified_count > 0}
+
 # Subscription endpoints
 @api_router.post("/subscription/checkout")
 async def create_checkout_session(checkout_req: CheckoutRequest, request: Request):

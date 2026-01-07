@@ -1,0 +1,35 @@
+[
+  {
+    "transaction_id": "txn_8bb56eec3940",
+    "user_id": "user_4915b0e35f5d",
+    "email": "test@winepairing.de",
+    "session_id": "cs_live_a1FNhMFrbv1SL64k5HEYNT9EBBd3JGDNoFza1Q1JhgzfXBBsy8Yd0gY6SM",
+    "plan": "pro_monthly",
+    "amount": 4.99,
+    "currency": "eur",
+    "payment_status": "pending",
+    "created_at": "2025-12-16 12:18:35.474000"
+  },
+  {
+    "transaction_id": "txn_464bc76917cd",
+    "user_id": "user_6dd3cac89d32",
+    "email": "isicel@bluewin.ch",
+    "session_id": "cs_live_a195DoI9jg3PKAb6vgXgX8v8wag5nZUwJzQRJDCyy9vwP3yYGKJvtQs0Vd",
+    "plan": "pro_monthly",
+    "amount": 4.99,
+    "currency": "eur",
+    "payment_status": "pending",
+    "created_at": "2025-12-16 15:13:26.717000"
+  },
+  {
+    "transaction_id": "txn_def7333b2511",
+    "user_id": "user_6dd3cac89d32",
+    "email": "isicel@bluewin.ch",
+    "session_id": "cs_live_a1frQQGKy0vX6NhI3Bchz6VZDIL8r9OgJUBBhXVBM7Srla5MfbgrGE1puM",
+    "plan": "pro_yearly",
+    "amount": 39.99,
+    "currency": "eur",
+    "payment_status": "pending",
+    "created_at": "2025-12-16 15:13:53.446000"
+  }
+]

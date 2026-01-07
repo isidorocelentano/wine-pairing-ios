@@ -6251,13 +6251,13 @@ async def forgot_password(req: PasswordResetRequest):
     # Build reset URL - ALWAYS use wine-pairing.online (hardcoded to avoid deployment override)
     reset_url = f"https://wine-pairing.online/reset-password?token={reset_token}"
     
-    # Send email via Resend
-    if RESEND_API_KEY:
-        try:
-            resend.Emails.send({
-                "from": f"Wine Pairing <{SENDER_EMAIL}>",
-                "to": [email],
-                "subject": "🍷 Passwort zurücksetzen - Wine Pairing",
+    # Send email via Resend - ALWAYS send, re-initialize API key to be safe
+    try:
+        resend.api_key = RESEND_API_KEY
+        send_result = resend.Emails.send({
+            "from": f"Wine Pairing <{SENDER_EMAIL}>",
+            "to": [email],
+            "subject": "🍷 Passwort zurücksetzen - Wine Pairing",
                 "html": f"""
                 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
                     <h1 style="color: #722F37;">🍷 Passwort zurücksetzen</h1>

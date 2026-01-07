@@ -1276,13 +1276,96 @@ async def health_check():
         "status": "healthy",
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "database": db_status,
-        "version": "3.2",
+        "version": "1.9.0",
         "email_configured": bool(RESEND_API_KEY),
         "resend_key_prefix": RESEND_API_KEY[:10] + "..." if RESEND_API_KEY else "not set",
         "sender_email": SENDER_EMAIL if SENDER_EMAIL else "not set",
         "frontend_base_url": frontend_base,
         "frontend_url_env": os.environ.get('FRONTEND_URL', 'not set')[:40] if os.environ.get('FRONTEND_URL') else "not set"
     }
+
+# ===================== SEO SITEMAP ENDPOINT =====================
+
+from fastapi.responses import Response
+
+@api_router.get("/sitemap.xml")
+async def dynamic_sitemap():
+    """
+    Dynamische Sitemap mit allen Blog-Artikeln, Rebsorten und Pairings.
+    """
+    base_url = "https://wine-pairing.online"
+    today = datetime.now().strftime("%Y-%m-%d")
+    
+    # Static pages
+    urls = [
+        {"loc": f"{base_url}/", "priority": "1.0", "changefreq": "weekly"},
+        {"loc": f"{base_url}/pairing", "priority": "0.95", "changefreq": "weekly"},
+        {"loc": f"{base_url}/sommelier-kompass", "priority": "0.9", "changefreq": "weekly"},
+        {"loc": f"{base_url}/grapes", "priority": "0.85", "changefreq": "monthly"},
+        {"loc": f"{base_url}/wine-database", "priority": "0.85", "changefreq": "weekly"},
+        {"loc": f"{base_url}/blog", "priority": "0.8", "changefreq": "weekly"},
+        {"loc": f"{base_url}/tipp-der-woche", "priority": "0.8", "changefreq": "weekly"},
+        {"loc": f"{base_url}/wie-wir-pairen", "priority": "0.75", "changefreq": "monthly"},
+        {"loc": f"{base_url}/pricing", "priority": "0.7", "changefreq": "monthly"},
+        {"loc": f"{base_url}/kontakt", "priority": "0.5", "changefreq": "yearly"},
+        {"loc": f"{base_url}/impressum", "priority": "0.3", "changefreq": "yearly"},
+        {"loc": f"{base_url}/datenschutz", "priority": "0.3", "changefreq": "yearly"},
+    ]
+    
+    # Add all grape pages
+    try:
+        grapes = await db.grape_varieties.find({"slug": {"$exists": True}}, {"slug": 1}).to_list(500)
+        for grape in grapes:
+            if grape.get("slug"):
+                urls.append({
+                    "loc": f"{base_url}/grapes/{grape['slug']}",
+                    "priority": "0.7",
+                    "changefreq": "monthly"
+                })
+    except:
+        pass
+    
+    # Add all blog posts
+    try:
+        posts = await db.blog_posts.find({"slug": {"$exists": True}, "published": True}, {"slug": 1}).to_list(500)
+        for post in posts:
+            if post.get("slug"):
+                urls.append({
+                    "loc": f"{base_url}/blog/{post['slug']}",
+                    "priority": "0.6",
+                    "changefreq": "monthly"
+                })
+    except:
+        pass
+    
+    # Add all pairing pages (SEO pairings)
+    try:
+        pairings = await db.seo_pairings.find({"slug": {"$exists": True}}, {"slug": 1}).to_list(1000)
+        for pairing in pairings:
+            if pairing.get("slug"):
+                urls.append({
+                    "loc": f"{base_url}/pairing/{pairing['slug']}",
+                    "priority": "0.65",
+                    "changefreq": "monthly"
+                })
+    except:
+        pass
+    
+    # Build XML
+    xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
+    xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    
+    for url in urls:
+        xml += f'  <url>\n'
+        xml += f'    <loc>{url["loc"]}</loc>\n'
+        xml += f'    <lastmod>{today}</lastmod>\n'
+        xml += f'    <changefreq>{url["changefreq"]}</changefreq>\n'
+        xml += f'    <priority>{url["priority"]}</priority>\n'
+        xml += f'  </url>\n'
+    
+    xml += '</urlset>'
+    
+    return Response(content=xml, media_type="application/xml")
 
 
 # ===================== WINE CELLAR ENDPOINTS =====================

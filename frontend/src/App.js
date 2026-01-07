@@ -44,6 +44,7 @@ import CouponPage from "@/pages/CouponPage";
 import PricingPage from "@/pages/PricingPage";
 import TippDerWochePage from "@/pages/TippDerWochePage";
 import WineProfilePage from "@/pages/WineProfilePage";
+import ReferralPage from "@/pages/ReferralPage";
 
 /**
  * AppRouter - Handles Google OAuth callback detection

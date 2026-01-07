@@ -311,8 +311,8 @@ class PasswordResetTester:
                 print("🤔 Unexpected state - actual works but debug doesn't")
         
         if token_response:
-            token_found = token_response.get('token_found', False)
-            if not token_found:
+            has_token = token_response.get('has_token', False)
+            if not has_token:
                 print("❌ ISSUE: Password reset token is not being saved to database")
             else:
                 print("✅ Password reset token is being saved correctly")

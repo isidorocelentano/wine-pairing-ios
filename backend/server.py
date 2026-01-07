@@ -6133,6 +6133,44 @@ class PasswordResetConfirm(BaseModel):
     token: str
     new_password: str
 
+@api_router.get("/debug/forgot-password-test/{email}")
+async def debug_forgot_password(email: str):
+    """DEBUG: Test forgot password flow - REMOVE AFTER DEBUGGING"""
+    email = email.lower().strip()
+    result = {"email": email, "steps": []}
+    
+    # Step 1: Find user
+    user = await db.users.find_one({"email": email})
+    result["user_found"] = bool(user)
+    result["steps"].append(f"1. User lookup: {'FOUND' if user else 'NOT FOUND'}")
+    
+    if not user:
+        return result
+    
+    # Step 2: Check Resend config
+    result["resend_configured"] = bool(RESEND_API_KEY)
+    result["sender_email"] = SENDER_EMAIL
+    result["steps"].append(f"2. Resend configured: {bool(RESEND_API_KEY)}")
+    
+    # Step 3: Try to send test email
+    if RESEND_API_KEY:
+        try:
+            send_result = resend.Emails.send({
+                "from": f"Wine Pairing <{SENDER_EMAIL}>",
+                "to": [email],
+                "subject": "🍷 DEBUG Test - Wine Pairing",
+                "html": f"<p>Debug test successful! Reset URL would be: https://wine-pairing.online/reset-password?token=TEST</p>"
+            })
+            result["email_sent"] = True
+            result["send_result"] = str(send_result)
+            result["steps"].append(f"3. Email sent: SUCCESS - {send_result}")
+        except Exception as e:
+            result["email_sent"] = False
+            result["error"] = str(e)
+            result["steps"].append(f"3. Email sent: FAILED - {str(e)}")
+    
+    return result
+
 @api_router.post("/auth/forgot-password")
 async def forgot_password(req: PasswordResetRequest):
     """

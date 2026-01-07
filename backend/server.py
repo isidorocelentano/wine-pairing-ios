@@ -6252,12 +6252,12 @@ async def forgot_password(req: PasswordResetRequest):
     reset_url = f"https://wine-pairing.online/reset-password?token={reset_token}"
     debug_info["reset_url"] = reset_url
     
-    # Send email via Resend
+    # Send email via Resend (use globally initialized API key - DO NOT re-set here)
     debug_info["resend_api_key_set"] = bool(RESEND_API_KEY)
     debug_info["sender_email"] = SENDER_EMAIL
     
     try:
-        resend.api_key = RESEND_API_KEY
+        # IMPORTANT: Do NOT re-set resend.api_key here - causes issues in live deployment
         send_result = resend.Emails.send({
             "from": f"Wine Pairing <{SENDER_EMAIL}>",
             "to": [email],

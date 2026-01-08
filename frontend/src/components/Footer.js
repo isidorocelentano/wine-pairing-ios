@@ -23,13 +23,12 @@ const Footer = () => {
   const { t, language } = useLanguage();
   const currentYear = new Date().getFullYear();
 
-  // Social Media Links - UPDATE THESE WITH YOUR ACTUAL PROFILES
+  // Social Media Links - ACTUAL PROFILES
   const socialLinks = [
-    { name: 'Instagram', icon: InstagramIcon, url: 'https://www.instagram.com/wine_pairing_online', color: 'hover:text-pink-500' },
-    { name: 'Facebook', icon: Facebook, url: 'https://www.facebook.com/winepairing.online', color: 'hover:text-blue-600' },
-    { name: 'LinkedIn', icon: Linkedin, url: 'https://www.linkedin.com/company/wine-pairing', color: 'hover:text-blue-700' },
-    { name: 'TikTok', icon: TikTokIcon, url: 'https://www.tiktok.com/@wine_pairing_online', color: 'hover:text-foreground' },
-    { name: 'X', icon: Twitter, url: 'https://twitter.com/winepairing_app', color: 'hover:text-sky-500' },
+    { name: 'Instagram', icon: InstagramIcon, url: 'https://instagram.com/winepairing.online', color: 'hover:text-pink-500' },
+    { name: 'Facebook', icon: Facebook, url: 'https://www.facebook.com/profile.php?id=61583593481374', color: 'hover:text-blue-600' },
+    { name: 'LinkedIn', icon: Linkedin, url: 'https://www.linkedin.com/company/109814701', color: 'hover:text-blue-700' },
+    { name: 'X', icon: Twitter, url: 'https://x.com/winepairing_ai', color: 'hover:text-sky-500' },
   ];
 
   const marketingText = {

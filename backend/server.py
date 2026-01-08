@@ -3052,79 +3052,92 @@ async def repair_users_get():
         "next_step": "Loggen Sie sich jetzt mit dem temporären Passwort ein und ändern Sie es!"
     }
 
-@api_router.get("/admin/reset-owner-simple")
-async def reset_owner_simple():
-    """
-    Setzt das Passwort auf ein einfaches Passwort: Test1234!
-    URL: /api/admin/reset-owner-simple
-    """
-    owner_email = "isicel@bluewin.ch"
-    simple_password = "Test1234!"
-    
-    user = await db.users.find_one({"email": owner_email})
-    if not user:
-        return {"status": "error", "message": f"User {owner_email} nicht gefunden"}
-    
-    new_hash = hash_password(simple_password)
-    result = await db.users.update_one(
-        {"email": owner_email},
-        {"$set": {"password_hash": new_hash}}
-    )
-    
-    return {
-        "status": "success",
-        "message": f"✅ Einfaches Passwort gesetzt!",
-        "email": owner_email,
-        "new_password": simple_password,
-        "modified": result.modified_count
-    }
+# ============================================================================
+# 🔒 DEAKTIVIERTE ADMIN-ENDPOINTS (Sicherheit)
+# Diese Endpoints wurden am 08.01.2026 deaktiviert, da die Passwort-Reset-
+# Funktionalität über Resend jetzt vollständig funktioniert.
+# Bei Bedarf können sie temporär reaktiviert werden.
+# ============================================================================
+
+# @api_router.get("/admin/reset-owner-simple")
+# async def reset_owner_simple():
+#     """
+#     DEAKTIVIERT - Sicherheitsrisiko!
+#     Setzt das Passwort auf ein einfaches Passwort: Test1234!
+#     URL: /api/admin/reset-owner-simple
+#     """
+#     owner_email = "isicel@bluewin.ch"
+#     simple_password = "Test1234!"
+#     
+#     user = await db.users.find_one({"email": owner_email})
+#     if not user:
+#         return {"status": "error", "message": f"User {owner_email} nicht gefunden"}
+#     
+#     new_hash = hash_password(simple_password)
+#     result = await db.users.update_one(
+#         {"email": owner_email},
+#         {"$set": {"password_hash": new_hash}}
+#     )
+#     
+#     return {
+#         "status": "success",
+#         "message": f"✅ Einfaches Passwort gesetzt!",
+#         "email": owner_email,
+#         "new_password": simple_password,
+#         "modified": result.modified_count
+#     }
 
 
-@api_router.get("/admin/reset-owner-password")
-async def reset_owner_password():
-    """
-    EINMALIG: Setzt das Passwort für den Hauptbesitzer zurück.
-    URL: /api/admin/reset-owner-password
-    
-    ⚠️ WICHTIG: Diesen Endpoint nach erfolgreicher Verwendung deaktivieren!
-    """
-    owner_email = "isicel@bluewin.ch"
-    temp_password = "Admin2025!"
-    
-    # Find owner
-    user = await db.users.find_one({"email": owner_email})
-    if not user:
-        return {"status": "error", "message": f"User {owner_email} nicht gefunden"}
-    
-    # Reset password using bcrypt
-    new_hash = hash_password(temp_password)
-    
-    # Force update with $set to ensure it's changed
-    result = await db.users.update_one(
-        {"email": owner_email},
-        {"$set": {
-            "password_hash": new_hash,
-            "plan": "pro",
-            "subscription_status": "active",
-            "role": "admin",
-            "is_admin": True
-        }}
-    )
-    
-    # Verify the change
-    updated_user = await db.users.find_one({"email": owner_email})
-    hash_preview = updated_user.get('password_hash', '')[:20] if updated_user else 'N/A'
-    
-    return {
-        "status": "success",
-        "message": f"✅ Passwort für {owner_email} wurde zurückgesetzt!",
-        "email": owner_email,
-        "new_password": temp_password,
-        "plan": "pro",
-        "hash_preview": hash_preview + "...",
-        "modified": result.modified_count,
-        "next_step": "Bitte loggen Sie sich ein und ändern Sie das Passwort!"
-    }
+# @api_router.get("/admin/reset-owner-password")
+# async def reset_owner_password():
+#     """
+#     DEAKTIVIERT - Sicherheitsrisiko!
+#     EINMALIG: Setzt das Passwort für den Hauptbesitzer zurück.
+#     URL: /api/admin/reset-owner-password
+#     
+#     ⚠️ WICHTIG: Diesen Endpoint nach erfolgreicher Verwendung deaktivieren!
+#     """
+#     owner_email = "isicel@bluewin.ch"
+#     temp_password = "Admin2025!"
+#     
+#     # Find owner
+#     user = await db.users.find_one({"email": owner_email})
+#     if not user:
+#         return {"status": "error", "message": f"User {owner_email} nicht gefunden"}
+#     
+#     # Reset password using bcrypt
+#     new_hash = hash_password(temp_password)
+#     
+#     # Force update with $set to ensure it's changed
+#     result = await db.users.update_one(
+#         {"email": owner_email},
+#         {"$set": {
+#             "password_hash": new_hash,
+#             "plan": "pro",
+#             "subscription_status": "active",
+#             "role": "admin",
+#             "is_admin": True
+#         }}
+#     )
+#     
+#     # Verify the change
+#     updated_user = await db.users.find_one({"email": owner_email})
+#     hash_preview = updated_user.get('password_hash', '')[:20] if updated_user else 'N/A'
+#     
+#     return {
+#         "status": "success",
+#         "message": f"✅ Passwort für {owner_email} wurde zurückgesetzt!",
+#         "email": owner_email,
+#         "new_password": temp_password,
+#         "plan": "pro",
+#         "hash_preview": hash_preview + "...",
+#         "modified": result.modified_count,
+#         "next_step": "Bitte loggen Sie sich ein und ändern Sie das Passwort!"
+#     }
+
+# ============================================================================
+# Ende der deaktivierten Admin-Endpoints
+# ============================================================================
 
 @api_router.get("/admin/debug-user/{email}")
 async def debug_user(email: str):

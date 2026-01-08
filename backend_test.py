@@ -6581,6 +6581,11 @@ def main():
             tester = WinePairingAPITester("https://wine-promo-suite.preview.emergentagent.com")
             success = tester.run_referral_system_tests()
             return 0 if success else 1
+        elif sys.argv[1] == "weekly-tips":
+            # Run Weekly Tips Archive tests
+            tester = WinePairingAPITester("https://wine-promo-suite.preview.emergentagent.com")
+            success = tester.run_weekly_tips_tests()
+            return 0 if success else 1
     
     # Default: Run Referral System tests as specified in review request
     tester = WinePairingAPITester("https://wine-promo-suite.preview.emergentagent.com")

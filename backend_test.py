@@ -4913,6 +4913,19 @@ class WinePairingAPITester:
         print("\n🎫 Testing Coupon API...")
         self.test_redeem_invalid_coupon()
         
+        # Weekly Tips Archive Tests (NEW - CRITICAL)
+        print("\n📅 Testing Weekly Tips Archive Feature...")
+        self.test_weekly_tips_basic_endpoint()
+        self.test_weekly_tips_archive_basic()
+        self.test_weekly_tips_archive_filter_red_wine()
+        self.test_weekly_tips_archive_filter_white_wine()
+        self.test_weekly_tips_archive_filter_rose_wine()
+        self.test_weekly_tips_archive_filter_sparkling_wine()
+        self.test_weekly_tips_archive_search_pasta()
+        self.test_weekly_tips_archive_search_lamm()
+        self.test_weekly_tips_archive_combined_filter()
+        self.test_weekly_tips_archive_search_no_results()
+        
         # Basic API tests
         self.test_root_endpoint()
         

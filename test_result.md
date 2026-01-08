@@ -531,6 +531,18 @@ backend:
         - agent: "testing"
         - comment: "Password reset functionality working correctly on LIVE site. Both debug endpoint (/api/debug/forgot-password-test/{email}) and actual endpoint (/api/auth/forgot-password) successfully send emails via Resend, generate secure tokens, and save to database. Email IDs confirmed: 2faf7116-06b1-4775-aa66-d901a6272b4b and f944012d-4260-457a-baed-436cc98bc995. Tokens properly stored in users.password_reset_token field with 1-hour expiry. System operational."
 
+  - task: "Weekly Tips Archive Feature"
+    implemented: true
+    working: true
+    file: "server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+        - agent: "testing"
+        - comment: "Weekly Tips Archive feature fully functional. All API endpoints working correctly: GET /api/weekly-tips returns 4 tips, GET /api/weekly-tips/archive returns 20 total tips with proper pagination. Wine type filters working: rot (8 tips), weiss (7 tips), rose (3 tips), schaumwein (2 tips). Full-text search working across dish, wine, region, why, fun_fact fields - 'Pasta' returns 1 tip, 'Lamm' returns 1 tip. Combined filters working: wine_type=rot&search=Beef returns 1 tip. Search with no results correctly returns 0 tips. All response structures include required fields: tips array, total count, pagination info, and filters object."
+
 metadata:
   created_by: "main_agent"
   version: "1.9.0"

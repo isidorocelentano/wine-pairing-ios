@@ -52,10 +52,20 @@ const TippDerWochePage = () => {
   }, []);
 
   // Lade Archiv
-  const loadArchive = async (page = 1) => {
+  const loadArchive = async (page = 1, resetFilters = false) => {
     setArchiveLoading(true);
     try {
-      const response = await fetch(`${API}/weekly-tips/archive?page=${page}&per_page=12`);
+      const params = new URLSearchParams({
+        page: page.toString(),
+        per_page: '12'
+      });
+      
+      if (!resetFilters) {
+        if (wineTypeFilter) params.append('wine_type', wineTypeFilter);
+        if (searchQuery.trim()) params.append('search', searchQuery.trim());
+      }
+      
+      const response = await fetch(`${API}/weekly-tips/archive?${params}`);
       if (response.ok) {
         const data = await response.json();
         setArchiveTips(data.tips);
@@ -68,6 +78,33 @@ const TippDerWochePage = () => {
       setArchiveLoading(false);
     }
   };
+
+  // Filter ändern
+  const handleFilterChange = (newWineType) => {
+    setWineTypeFilter(newWineType);
+    setArchivePage(1);
+  };
+
+  // Suche ausführen
+  const handleSearch = () => {
+    setArchivePage(1);
+    loadArchive(1);
+  };
+
+  // Filter zurücksetzen
+  const resetFilters = () => {
+    setSearchQuery('');
+    setWineTypeFilter('');
+    setArchivePage(1);
+    loadArchive(1, true);
+  };
+
+  // Effekt für Filter-Änderungen
+  useEffect(() => {
+    if (showArchive) {
+      loadArchive(1);
+    }
+  }, [wineTypeFilter]);
 
   // Weintyp Badge Farbe
   const getWineTypeBadge = (type) => {

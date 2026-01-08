@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Wine, Lightbulb, Calendar, ChevronRight, Sparkles, Archive, ArrowLeft } from 'lucide-react';
+import { Wine, Lightbulb, Calendar, ChevronRight, Sparkles, Archive, ArrowLeft, Search, Filter, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { API } from "@/config/api";
 
@@ -17,6 +18,20 @@ const TippDerWochePage = () => {
   const [archiveLoading, setArchiveLoading] = useState(false);
   const [archivePage, setArchivePage] = useState(1);
   const [archiveTotal, setArchiveTotal] = useState(0);
+  
+  // Filter & Search State
+  const [searchQuery, setSearchQuery] = useState('');
+  const [wineTypeFilter, setWineTypeFilter] = useState('');
+  const [showFilters, setShowFilters] = useState(false);
+
+  // Wine type options
+  const wineTypes = [
+    { value: '', label: language === 'de' ? 'Alle Weintypen' : 'All Wine Types' },
+    { value: 'rot', label: language === 'de' ? 'Rotwein' : 'Red Wine', color: 'bg-red-500' },
+    { value: 'weiss', label: language === 'de' ? 'Weißwein' : 'White Wine', color: 'bg-amber-400' },
+    { value: 'rose', label: 'Rosé', color: 'bg-pink-400' },
+    { value: 'schaumwein', label: language === 'de' ? 'Schaumwein' : 'Sparkling', color: 'bg-sky-400' },
+  ];
 
   // Lade die neuesten 4 Tipps
   useEffect(() => {

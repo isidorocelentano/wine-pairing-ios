@@ -4214,20 +4214,52 @@ async def get_weekly_tips(limit: int = 4, include_archived: bool = False):
 
 
 @api_router.get("/weekly-tips/archive")
-async def get_weekly_tips_archive(page: int = 1, per_page: int = 12):
+async def get_weekly_tips_archive(
+    page: int = 1, 
+    per_page: int = 12,
+    wine_type: str = None,
+    search: str = None
+):
     """
-    Hole alle Tipps für das Archiv (paginiert).
+    Hole alle Tipps für das Archiv (paginiert, filterbar, durchsuchbar).
+    
+    Parameters:
+    - wine_type: Filter nach Weintyp (rot, weiss, rose, schaumwein)
+    - search: Volltextsuche in Gericht und Wein
     """
     skip = (page - 1) * per_page
-    total = await db.weekly_tips.count_documents({})
-    tips = await db.weekly_tips.find({}, {"_id": 0}).sort("created_at", -1).skip(skip).limit(per_page).to_list(per_page)
+    
+    # Build query
+    query = {}
+    
+    # Wine type filter
+    if wine_type and wine_type in ['rot', 'weiss', 'rose', 'schaumwein']:
+        query["wine_type"] = wine_type
+    
+    # Full-text search
+    if search and search.strip():
+        search_regex = {"$regex": search.strip(), "$options": "i"}
+        query["$or"] = [
+            {"dish": search_regex},
+            {"wine": search_regex},
+            {"region": search_regex},
+            {"why": search_regex},
+            {"fun_fact": search_regex}
+        ]
+    
+    total = await db.weekly_tips.count_documents(query)
+    tips = await db.weekly_tips.find(query, {"_id": 0}).sort("created_at", -1).skip(skip).limit(per_page).to_list(per_page)
     
     return {
         "tips": tips,
         "total": total,
         "page": page,
         "per_page": per_page,
-        "total_pages": (total + per_page - 1) // per_page
+        "total_pages": (total + per_page - 1) // per_page if total > 0 else 1,
+        "filters": {
+            "wine_type": wine_type,
+            "search": search
+        }
     }
 
 

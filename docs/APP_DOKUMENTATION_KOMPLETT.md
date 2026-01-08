@@ -801,6 +801,13 @@ Upgrade auf Pro-Plan via Stripe.
 | POST | `/api/backup/create` | Backup erstellen |
 | GET | `/api/health` | Server-Status |
 
+### SEO & Marketing
+| Methode | Endpoint | Beschreibung |
+|---------|----------|--------------|
+| GET | `/api/sitemap.xml` | Dynamische Sitemap |
+| GET | `/api/referral/my-code` | Persönlicher Referral-Code |
+| GET | `/api/referral/stats` | Empfehlungs-Statistiken |
+
 ---
 
 ## 🚀 TEIL 7: DEPLOYMENT

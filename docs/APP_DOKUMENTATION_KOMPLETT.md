@@ -833,6 +833,79 @@ Upgrade auf Pro-Plan via Stripe.
 
 ---
 
+## 📢 TEIL 7.2: MARKETING-FEATURES (NEU in v1.9.1)
+
+### SEO-Optimierung
+
+**robots.txt (`/robots.txt`):**
+- Erlaubt Crawling aller wichtigen Seiten
+- Blockiert Admin, Login, Profil-Seiten
+- Referenziert Sitemap
+
+**sitemap.xml (statisch + dynamisch):**
+| URL | Priorität | Änderungsfrequenz |
+|-----|-----------|-------------------|
+| / | 1.0 | weekly |
+| /pairing | 0.95 | weekly |
+| /sommelier-kompass | 0.9 | weekly |
+| /grapes | 0.85 | monthly |
+| /wine-database | 0.85 | weekly |
+| /blog | 0.8 | weekly |
+| /tipp-der-woche | 0.8 | weekly |
+
+**Dynamische Sitemap:** `GET /api/sitemap.xml`
+- Generiert XML aus Datenbank-Inhalten
+- Enthält Blog-Artikel, Rebsorten, etc.
+
+### Social Media Sharing
+
+**Share-Buttons (ShareButtons.js):**
+| Plattform | Aktion |
+|-----------|--------|
+| Facebook | Öffnet Share-Dialog |
+| Twitter/X | Tweet mit Hashtags |
+| LinkedIn | Business-Share |
+| Instagram | Kopiert Link (keine direkte API) |
+| TikTok | Kopiert Link |
+| Link | Kopiert URL in Zwischenablage |
+
+**Pairing-Teilen (SharePairingButton.js):**
+- Spezieller Dialog für Pairing-Ergebnisse
+- Preview-Karte mit Wein und Gericht
+- Deep-Link: `/pairing?dish=Entrecôte`
+
+### Empfehlungssystem (Referral)
+
+**Funktionsweise:**
+1. User erhält persönlichen Referral-Code (z.B. `WINE-ABC123`)
+2. User teilt Link: `wine-pairing.online/register?ref=WINE-ABC123`
+3. Neuer User registriert sich über Link
+4. Beide erhalten 1 Monat Pro-Zugang
+
+**API-Endpoints:**
+| Endpoint | Beschreibung |
+|----------|--------------|
+| `GET /api/referral/my-code` | Eigener Referral-Code |
+| `GET /api/referral/stats` | Anzahl erfolgreicher Empfehlungen |
+
+**Datenbank-Felder (users Collection):**
+| Feld | Typ | Beschreibung |
+|------|-----|--------------|
+| `referral_code` | string | Eindeutiger Code (auto-generiert) |
+| `referred_by` | string | Referral-Code des Werbers |
+| `referral_count` | int | Anzahl geworbener Nutzer |
+| `pro_bonus_months` | int | Geschenkte Pro-Monate |
+
+### Social Media Profile
+
+**Im Footer integriert:**
+- 📸 Instagram: @winepairing.online
+- 📘 Facebook: wine-pairing.online
+- 💼 LinkedIn: Wine Pairing Company
+- 🐦 X/Twitter: @winepairing_ai
+
+---
+
 ## 📧 TEIL 7.1: E-MAIL-KONFIGURATION (RESEND)
 
 ### Übersicht

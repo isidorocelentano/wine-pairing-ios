@@ -1,7 +1,7 @@
 # 📖 WINE PAIRING APP - Vollständige Dokumentation
 
-**Stand:** 07. Januar 2026  
-**Version:** 1.9.0 (E-Mail-Funktionalität komplett)  
+**Stand:** 08. Januar 2026  
+**Version:** 1.9.1 (Marketing-Features)  
 **Domain:** https://wine-pairing.online
 
 ---
@@ -23,6 +23,35 @@
 ---
 
 ## 🆕 ÄNDERUNGSHISTORIE
+
+### Version 1.9.1 (08.01.2026) - Marketing-Features
+
+**🔍 SEO-Optimierung:**
+- ✅ **robots.txt:** Crawler-Steuerung für alle wichtigen Seiten
+- ✅ **sitemap.xml:** Statische Sitemap mit Prioritäten
+- ✅ **Dynamische Sitemap:** `/api/sitemap.xml` Endpoint
+- ✅ **Schema.org Metadaten:** Erweiterte strukturierte Daten
+
+**📤 Social Media Sharing:**
+- ✅ **ShareButtons.js:** Facebook, Twitter/X, LinkedIn, Instagram, TikTok
+- ✅ **SharePairingButton.js:** Pairing-Ergebnisse teilen mit Preview-Karte
+- ✅ **Deep-Linking:** `/pairing?dish=...` für geteilte Links
+
+**🎁 Empfehlungssystem (Referral):**
+- ✅ **Neue Seite:** `/referral` für Freunde einladen
+- ✅ **Backend-Endpoints:** `/api/referral/my-code`, `/api/referral/stats`
+- ✅ **Belohnungen:** 1 Monat Pro für Werber und Geworbenen
+- ✅ **Datenbank:** `referral_code`, `referred_by`, `referral_count`, `pro_bonus_months` in users Collection
+
+**🔗 Social Media Profile im Footer:**
+| Plattform | URL |
+|-----------|-----|
+| Instagram | https://instagram.com/winepairing.online |
+| Facebook | https://www.facebook.com/profile.php?id=61583593481374 |
+| LinkedIn | https://www.linkedin.com/company/109814701 |
+| X/Twitter | https://x.com/winepairing_ai |
+
+---
 
 ### Version 1.9.0 (07.01.2026) - E-Mail-Funktionalität komplett
 
@@ -772,12 +801,19 @@ Upgrade auf Pro-Plan via Stripe.
 | POST | `/api/backup/create` | Backup erstellen |
 | GET | `/api/health` | Server-Status |
 
+### SEO & Marketing
+| Methode | Endpoint | Beschreibung |
+|---------|----------|--------------|
+| GET | `/api/sitemap.xml` | Dynamische Sitemap |
+| GET | `/api/referral/my-code` | Persönlicher Referral-Code |
+| GET | `/api/referral/stats` | Empfehlungs-Statistiken |
+
 ---
 
 ## 🚀 TEIL 7: DEPLOYMENT
 
 ### URLs
-- **Preview:** https://winery-upgrade.preview.emergentagent.com
+- **Preview:** https://wine-promo-suite.preview.emergentagent.com
 - **Produktion:** https://wine-pairing.online
 
 ### Tech-Stack
@@ -794,6 +830,79 @@ Upgrade auf Pro-Plan via Stripe.
 - [ ] Daten-Zahlen notieren
 - [ ] Nach Deployment: Zahlen verifizieren
 - [ ] Bei Abweichung: Restore durchführen
+
+---
+
+## 📢 TEIL 7.2: MARKETING-FEATURES (NEU in v1.9.1)
+
+### SEO-Optimierung
+
+**robots.txt (`/robots.txt`):**
+- Erlaubt Crawling aller wichtigen Seiten
+- Blockiert Admin, Login, Profil-Seiten
+- Referenziert Sitemap
+
+**sitemap.xml (statisch + dynamisch):**
+| URL | Priorität | Änderungsfrequenz |
+|-----|-----------|-------------------|
+| / | 1.0 | weekly |
+| /pairing | 0.95 | weekly |
+| /sommelier-kompass | 0.9 | weekly |
+| /grapes | 0.85 | monthly |
+| /wine-database | 0.85 | weekly |
+| /blog | 0.8 | weekly |
+| /tipp-der-woche | 0.8 | weekly |
+
+**Dynamische Sitemap:** `GET /api/sitemap.xml`
+- Generiert XML aus Datenbank-Inhalten
+- Enthält Blog-Artikel, Rebsorten, etc.
+
+### Social Media Sharing
+
+**Share-Buttons (ShareButtons.js):**
+| Plattform | Aktion |
+|-----------|--------|
+| Facebook | Öffnet Share-Dialog |
+| Twitter/X | Tweet mit Hashtags |
+| LinkedIn | Business-Share |
+| Instagram | Kopiert Link (keine direkte API) |
+| TikTok | Kopiert Link |
+| Link | Kopiert URL in Zwischenablage |
+
+**Pairing-Teilen (SharePairingButton.js):**
+- Spezieller Dialog für Pairing-Ergebnisse
+- Preview-Karte mit Wein und Gericht
+- Deep-Link: `/pairing?dish=Entrecôte`
+
+### Empfehlungssystem (Referral)
+
+**Funktionsweise:**
+1. User erhält persönlichen Referral-Code (z.B. `WINE-ABC123`)
+2. User teilt Link: `wine-pairing.online/register?ref=WINE-ABC123`
+3. Neuer User registriert sich über Link
+4. Beide erhalten 1 Monat Pro-Zugang
+
+**API-Endpoints:**
+| Endpoint | Beschreibung |
+|----------|--------------|
+| `GET /api/referral/my-code` | Eigener Referral-Code |
+| `GET /api/referral/stats` | Anzahl erfolgreicher Empfehlungen |
+
+**Datenbank-Felder (users Collection):**
+| Feld | Typ | Beschreibung |
+|------|-----|--------------|
+| `referral_code` | string | Eindeutiger Code (auto-generiert) |
+| `referred_by` | string | Referral-Code des Werbers |
+| `referral_count` | int | Anzahl geworbener Nutzer |
+| `pro_bonus_months` | int | Geschenkte Pro-Monate |
+
+### Social Media Profile
+
+**Im Footer integriert:**
+- 📸 Instagram: @winepairing.online
+- 📘 Facebook: wine-pairing.online
+- 💼 LinkedIn: Wine Pairing Company
+- 🐦 X/Twitter: @winepairing_ai
 
 ---
 
@@ -1147,7 +1256,22 @@ Einstellungen:
 
 ## Bekannte Einschränkungen
 
-1. **Passwort-Reset (Resend):** Wartet auf DNS-Konfiguration (SPF/DKIM bei Infomaniak)
+1. ~~**Passwort-Reset (Resend):** Wartet auf DNS-Konfiguration~~ ✅ GELÖST (v1.9.0)
 2. **Admin-Endpoint:** `/api/admin/reset-owner-password` sollte in Produktion deaktiviert werden
 3. **Basic-User Limits:** Max. 10 Weine im Keller, 5 Pairings/Tag, 10 Chat-Nachrichten/Tag
+4. **TikTok-Link:** Noch nicht hinzugefügt (ausstehend vom Benutzer)
+
+---
+
+## 📅 Backup-Historie
+
+| Version | Datum | Pfad |
+|---------|-------|------|
+| v1.9.1 | 08.01.2026 | `/app/backups/v1.9.1_marketing_features_*` |
+| v1.9.0 | 07.01.2026 | `/app/backups/v1.9.0_email_complete_*` |
+
+---
+
+*Dokumentation erstellt: 17.12.2025*  
+*Letzte Aktualisierung: 08.01.2026*
 

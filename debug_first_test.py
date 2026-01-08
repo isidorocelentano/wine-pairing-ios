@@ -8,7 +8,7 @@ import json
 from datetime import datetime
 
 def debug_first_test():
-    base_url = "https://winetrak.preview.emergentagent.com"
+    base_url = "https://wine-promo-suite.preview.emergentagent.com"
     api_url = f"{base_url}/api"
     
     # Create a fresh session like the test does

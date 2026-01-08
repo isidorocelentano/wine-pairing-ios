@@ -1,6 +1,6 @@
 # 🍷 WINE PAIRING APP - Agent Handoff
 
-**Letzte Aktualisierung: 08.01.2026 12:58 UTC* 28.12.2025 23:36 UTC  
+**Letzte Aktualisierung: 08.01.2026 13:10 UTC* 28.12.2025 23:36 UTC  
 **Version:** 1.8.3
 
 ---
@@ -47,7 +47,7 @@
 | Umgebung | URL |
 |----------|-----|
 | **Live** | https://wine-pairing.online |
-| **Preview** | https://winetrak.preview.emergentagent.com |
+| **Preview** | https://wine-promo-suite.preview.emergentagent.com |
 | **Pricing** | /pricing |
 | **Gutschein** | /coupon |
 
@@ -91,4 +91,4 @@ Der Benutzer kommuniziert auf **DEUTSCH**. Alle Antworten auf Deutsch!
 
 ---
 
-*Letzte Aktualisierung: 08.01.2026 12:58 UTC*
+*Letzte Aktualisierung: 08.01.2026 13:10 UTC*

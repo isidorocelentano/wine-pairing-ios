@@ -5726,7 +5726,7 @@ class WinePairingAPITester:
         """Run comprehensive Wine Profile tests as specified in review request"""
         print("🍷 Running Comprehensive Wine Profile Platform Tests")
         print("=" * 60)
-        print("Preview URL: https://winery-upgrade.preview.emergentagent.com")
+        print("Preview URL: https://wine-promo-suite.preview.emergentagent.com")
         print("Test Credentials: isicel@bluewin.ch / WeinAdmin2025!")
         print("=" * 60)
         
@@ -6277,12 +6277,12 @@ def main():
             return 0 if success else 1
         elif sys.argv[1] == "referral":
             # Run Referral System tests
-            tester = WinePairingAPITester("https://winery-upgrade.preview.emergentagent.com")
+            tester = WinePairingAPITester("https://wine-promo-suite.preview.emergentagent.com")
             success = tester.run_referral_system_tests()
             return 0 if success else 1
     
     # Default: Run Referral System tests as specified in review request
-    tester = WinePairingAPITester("https://winery-upgrade.preview.emergentagent.com")
+    tester = WinePairingAPITester("https://wine-promo-suite.preview.emergentagent.com")
     success = tester.run_referral_system_tests()
     return 0 if success else 1
 

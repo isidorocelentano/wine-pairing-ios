@@ -1,5 +1,51 @@
 # Changelog - Wine Pairing App
 
+## Version 1.9.1 (08.01.2026) - Marketing-Features
+
+### 🔍 SEO-Optimierung
+- **robots.txt:** Crawler-Steuerung für wichtige Seiten, Ausschluss von Admin/Login-Seiten
+- **sitemap.xml (statisch):** Hauptseiten mit Prioritäten und Änderungsfrequenzen
+- **Dynamische Sitemap:** `/api/sitemap.xml` Endpoint generiert aktuelle Sitemap
+- **Schema.org Metadaten:** Erweiterte strukturierte Daten in index.html
+
+### 📤 Social Media Sharing
+- **ShareButtons.js:** Wiederverwendbare Share-Komponente
+  - Facebook, Twitter/X, LinkedIn, Instagram, TikTok
+  - "Link kopieren" Funktion mit Feedback
+  - Native Share API für Mobile
+- **SharePairingButton.js:** Spezielle Teilen-Funktion für Pairing-Ergebnisse
+  - Generiert ansprechende Preview-Karten
+  - Deep-Link zum Gericht: `/pairing?dish=...`
+
+### 🎁 Empfehlungssystem (Referral)
+- **ReferralPage.js:** Neue Seite `/referral` für Freunde einladen
+- **ReferralSection.js:** Komponente mit Referral-Code und Statistiken
+- **Backend-Endpoints:**
+  - `GET /api/referral/my-code` - Persönlicher Referral-Code
+  - `GET /api/referral/stats` - Anzahl erfolgreicher Empfehlungen
+- **Belohnungen:** 1 Monat Pro für Werber und Geworbenen
+
+### 🔗 Social Media Links im Footer
+Die folgenden Links wurden im Footer integriert:
+- **Instagram:** `https://instagram.com/winepairing.online`
+- **Facebook:** `https://www.facebook.com/profile.php?id=61583593481374`
+- **LinkedIn:** `https://www.linkedin.com/company/109814701`
+- **X/Twitter:** `https://x.com/winepairing_ai`
+
+### Geänderte/Neue Dateien
+- `frontend/public/robots.txt` - NEU
+- `frontend/public/sitemap.xml` - NEU
+- `frontend/public/index.html` - Schema.org Metadaten
+- `frontend/src/components/Footer.js` - Social Links
+- `frontend/src/components/ShareButtons.js` - NEU
+- `frontend/src/components/SharePairingButton.js` - NEU
+- `frontend/src/components/ReferralSection.js` - NEU
+- `frontend/src/pages/ReferralPage.js` - NEU
+- `frontend/src/pages/PairingPage.js` - Share-Button integriert
+- `backend/server.py` - Referral + Sitemap Endpoints
+
+---
+
 ## Version 1.9.0 (07.01.2026) - E-Mail-Funktionalität komplett
 
 ### 📧 E-Mail via Resend

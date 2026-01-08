@@ -1,10 +1,41 @@
 # Test Results - Wine Pairing Platform
 
 ## Test Configuration
-test_sequence: 30
+test_sequence: 32
 run_ui: true
 backend_test_completed: true
 frontend_test_completed: true
+
+## Latest Changes (v1.9.1 - 08.01.2026)
+
+### Weekly Tips Archive Feature COMPLETED ✅
+1. **Backend Implementation:**
+   - `GET /api/weekly-tips` endpoint working correctly (returns 4 tips)
+   - `GET /api/weekly-tips/archive` endpoint with full functionality
+   - Wine type filtering: rot (8), weiss (7), rose (3), schaumwein (2)
+   - Full-text search across dish, wine, region, why, fun_fact fields
+   - Combined filtering (wine_type + search) working correctly
+   - Proper pagination and response structure
+   
+2. **Features Tested:**
+   - Basic archive endpoint returns 20 total tips
+   - Wine type filters work correctly for all types
+   - Search functionality: "Pasta" (1 result), "Lamm" (1 result)
+   - Combined filter: wine_type=rot&search=Beef (1 result)
+   - No results handling: search=nonexistent (0 results)
+   - Response structure validation: tips, total, page, per_page, total_pages, filters
+   
+3. **API Endpoints Verified:**
+   - ✅ GET /api/weekly-tips - Returns 4 weekly tips
+   - ✅ GET /api/weekly-tips/archive - Returns 20 tips with pagination
+   - ✅ GET /api/weekly-tips/archive?wine_type=rot - Returns 8 red wine tips
+   - ✅ GET /api/weekly-tips/archive?wine_type=weiss - Returns 7 white wine tips
+   - ✅ GET /api/weekly-tips/archive?wine_type=rose - Returns 3 rosé wine tips
+   - ✅ GET /api/weekly-tips/archive?wine_type=schaumwein - Returns 2 sparkling wine tips
+   - ✅ GET /api/weekly-tips/archive?search=Pasta - Returns 1 pasta tip
+   - ✅ GET /api/weekly-tips/archive?search=Lamm - Returns 1 lamb tip
+   - ✅ GET /api/weekly-tips/archive?wine_type=rot&search=Beef - Returns 1 combined result
+   - ✅ GET /api/weekly-tips/archive?search=nonexistent - Returns 0 results correctly
 
 ## Latest Changes (v1.9.0 - 07.01.2026)
 

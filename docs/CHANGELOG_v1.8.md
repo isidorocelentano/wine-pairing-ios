@@ -32,6 +32,13 @@ Die folgenden Links wurden im Footer integriert:
 - **LinkedIn:** `https://www.linkedin.com/company/109814701`
 - **X/Twitter:** `https://x.com/winepairing_ai`
 
+### 💡 Tipp der Woche - Archiv erweitert
+- **20 Wochen-Tipps:** Vollständiges Archiv mit vielfältigen Pairings
+- **Weintyp-Filter:** Rotwein (8), Weißwein (7), Rosé (3), Schaumwein (2)
+- **Volltextsuche:** Durchsucht Gericht, Wein, Region, Begründung
+- **Kombinierte Filter:** Weintyp + Suche gleichzeitig möglich
+- **Backend:** `/api/weekly-tips/archive?wine_type=rot&search=Lamm`
+
 ### Geänderte/Neue Dateien
 - `frontend/public/robots.txt` - NEU
 - `frontend/public/sitemap.xml` - NEU

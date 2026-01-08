@@ -381,7 +381,7 @@ const TippDerWochePage = () => {
               <div className="flex justify-center py-12">
                 <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
               </div>
-            ) : (
+            ) : archiveTips.length > 0 ? (
               <>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
                   {archiveTips.map((tip) => (
@@ -414,6 +414,21 @@ const TippDerWochePage = () => {
                   </div>
                 )}
               </>
+            ) : (
+              <Card className="text-center py-12">
+                <CardContent>
+                  <Search className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+                  <p className="text-muted-foreground mb-4">
+                    {language === 'de' 
+                      ? 'Keine Tipps gefunden für diese Filterkriterien.' 
+                      : 'No tips found for these filter criteria.'}
+                  </p>
+                  <Button variant="outline" onClick={resetFilters}>
+                    <X className="w-4 h-4 mr-2" />
+                    {language === 'de' ? 'Filter zurücksetzen' : 'Reset filters'}
+                  </Button>
+                </CardContent>
+              </Card>
             )}
           </>
         )}

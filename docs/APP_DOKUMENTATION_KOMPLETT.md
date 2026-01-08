@@ -24,6 +24,35 @@
 
 ## 🆕 ÄNDERUNGSHISTORIE
 
+### Version 1.9.1 (08.01.2026) - Marketing-Features
+
+**🔍 SEO-Optimierung:**
+- ✅ **robots.txt:** Crawler-Steuerung für alle wichtigen Seiten
+- ✅ **sitemap.xml:** Statische Sitemap mit Prioritäten
+- ✅ **Dynamische Sitemap:** `/api/sitemap.xml` Endpoint
+- ✅ **Schema.org Metadaten:** Erweiterte strukturierte Daten
+
+**📤 Social Media Sharing:**
+- ✅ **ShareButtons.js:** Facebook, Twitter/X, LinkedIn, Instagram, TikTok
+- ✅ **SharePairingButton.js:** Pairing-Ergebnisse teilen mit Preview-Karte
+- ✅ **Deep-Linking:** `/pairing?dish=...` für geteilte Links
+
+**🎁 Empfehlungssystem (Referral):**
+- ✅ **Neue Seite:** `/referral` für Freunde einladen
+- ✅ **Backend-Endpoints:** `/api/referral/my-code`, `/api/referral/stats`
+- ✅ **Belohnungen:** 1 Monat Pro für Werber und Geworbenen
+- ✅ **Datenbank:** `referral_code`, `referred_by`, `referral_count`, `pro_bonus_months` in users Collection
+
+**🔗 Social Media Profile im Footer:**
+| Plattform | URL |
+|-----------|-----|
+| Instagram | https://instagram.com/winepairing.online |
+| Facebook | https://www.facebook.com/profile.php?id=61583593481374 |
+| LinkedIn | https://www.linkedin.com/company/109814701 |
+| X/Twitter | https://x.com/winepairing_ai |
+
+---
+
 ### Version 1.9.0 (07.01.2026) - E-Mail-Funktionalität komplett
 
 **📧 Passwort-Reset via Resend:**

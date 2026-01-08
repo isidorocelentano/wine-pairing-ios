@@ -1256,7 +1256,22 @@ Einstellungen:
 
 ## Bekannte Einschränkungen
 
-1. **Passwort-Reset (Resend):** Wartet auf DNS-Konfiguration (SPF/DKIM bei Infomaniak)
+1. ~~**Passwort-Reset (Resend):** Wartet auf DNS-Konfiguration~~ ✅ GELÖST (v1.9.0)
 2. **Admin-Endpoint:** `/api/admin/reset-owner-password` sollte in Produktion deaktiviert werden
 3. **Basic-User Limits:** Max. 10 Weine im Keller, 5 Pairings/Tag, 10 Chat-Nachrichten/Tag
+4. **TikTok-Link:** Noch nicht hinzugefügt (ausstehend vom Benutzer)
+
+---
+
+## 📅 Backup-Historie
+
+| Version | Datum | Pfad |
+|---------|-------|------|
+| v1.9.1 | 08.01.2026 | `/app/backups/v1.9.1_marketing_features_*` |
+| v1.9.0 | 07.01.2026 | `/app/backups/v1.9.0_email_complete_*` |
+
+---
+
+*Dokumentation erstellt: 17.12.2025*  
+*Letzte Aktualisierung: 08.01.2026*
 

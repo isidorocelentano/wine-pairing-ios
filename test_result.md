@@ -546,12 +546,12 @@ backend:
 metadata:
   created_by: "main_agent"
   version: "1.9.0"
-  test_sequence: 31
+  test_sequence: 32
   run_ui: true
 
 test_plan:
   current_focus:
-    - "Referral System API"
+    - "Weekly Tips Archive Feature"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"

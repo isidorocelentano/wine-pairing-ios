@@ -1264,6 +1264,294 @@ class WinePairingAPITester:
             self.log_test("Health Check", False, str(response))
         return success
 
+    # ===================== WEEKLY TIPS ARCHIVE TESTS =====================
+    
+    def test_weekly_tips_archive_basic(self):
+        """Test GET /api/weekly-tips/archive - Basic archive (should return 20 tips)"""
+        success, response = self.make_request('GET', 'weekly-tips/archive', expected_status=200)
+        if success:
+            # Check response structure
+            required_fields = ['tips', 'total', 'page', 'per_page', 'total_pages', 'filters']
+            missing_fields = [field for field in required_fields if field not in response]
+            
+            if missing_fields:
+                self.log_test("Weekly Tips Archive (Basic)", False, f"Missing fields: {missing_fields}")
+                return False
+            
+            tips = response.get('tips', [])
+            total = response.get('total', 0)
+            
+            # Should have 20 tips total
+            if total != 20:
+                self.log_test("Weekly Tips Archive (Basic)", False, f"Expected 20 total tips, got: {total}")
+                return False
+            
+            # Check tip structure
+            if tips:
+                tip = tips[0]
+                tip_required_fields = ['id', 'dish', 'wine', 'wine_type', 'why']
+                tip_missing_fields = [field for field in tip_required_fields if field not in tip]
+                
+                if tip_missing_fields:
+                    self.log_test("Weekly Tips Archive (Basic)", False, f"Tip missing fields: {tip_missing_fields}")
+                    return False
+            
+            self.log_test("Weekly Tips Archive (Basic)", True, f"Found {total} tips, returned {len(tips)} in page")
+        else:
+            self.log_test("Weekly Tips Archive (Basic)", False, str(response))
+        return success
+
+    def test_weekly_tips_archive_filter_red_wine(self):
+        """Test GET /api/weekly-tips/archive?wine_type=rot - Filter red wines (should return 8)"""
+        success, response = self.make_request('GET', 'weekly-tips/archive?wine_type=rot', expected_status=200)
+        if success:
+            tips = response.get('tips', [])
+            total = response.get('total', 0)
+            filters = response.get('filters', {})
+            
+            # Should have 8 red wine tips
+            if total != 8:
+                self.log_test("Weekly Tips Archive (Red Wine Filter)", False, f"Expected 8 red wine tips, got: {total}")
+                return False
+            
+            # Check filter is applied
+            if filters.get('wine_type') != 'rot':
+                self.log_test("Weekly Tips Archive (Red Wine Filter)", False, f"Filter not applied correctly: {filters}")
+                return False
+            
+            # Verify all returned tips are red wine
+            for tip in tips:
+                if tip.get('wine_type') != 'rot':
+                    self.log_test("Weekly Tips Archive (Red Wine Filter)", False, f"Non-red wine in results: {tip.get('wine_type')}")
+                    return False
+            
+            self.log_test("Weekly Tips Archive (Red Wine Filter)", True, f"Found {total} red wine tips")
+        else:
+            self.log_test("Weekly Tips Archive (Red Wine Filter)", False, str(response))
+        return success
+
+    def test_weekly_tips_archive_filter_white_wine(self):
+        """Test GET /api/weekly-tips/archive?wine_type=weiss - Filter white wines (should return 7)"""
+        success, response = self.make_request('GET', 'weekly-tips/archive?wine_type=weiss', expected_status=200)
+        if success:
+            tips = response.get('tips', [])
+            total = response.get('total', 0)
+            
+            # Should have 7 white wine tips
+            if total != 7:
+                self.log_test("Weekly Tips Archive (White Wine Filter)", False, f"Expected 7 white wine tips, got: {total}")
+                return False
+            
+            # Verify all returned tips are white wine
+            for tip in tips:
+                if tip.get('wine_type') != 'weiss':
+                    self.log_test("Weekly Tips Archive (White Wine Filter)", False, f"Non-white wine in results: {tip.get('wine_type')}")
+                    return False
+            
+            self.log_test("Weekly Tips Archive (White Wine Filter)", True, f"Found {total} white wine tips")
+        else:
+            self.log_test("Weekly Tips Archive (White Wine Filter)", False, str(response))
+        return success
+
+    def test_weekly_tips_archive_filter_rose_wine(self):
+        """Test GET /api/weekly-tips/archive?wine_type=rose - Filter rosé wines (should return 3)"""
+        success, response = self.make_request('GET', 'weekly-tips/archive?wine_type=rose', expected_status=200)
+        if success:
+            tips = response.get('tips', [])
+            total = response.get('total', 0)
+            
+            # Should have 3 rosé wine tips
+            if total != 3:
+                self.log_test("Weekly Tips Archive (Rosé Wine Filter)", False, f"Expected 3 rosé wine tips, got: {total}")
+                return False
+            
+            # Verify all returned tips are rosé wine
+            for tip in tips:
+                if tip.get('wine_type') != 'rose':
+                    self.log_test("Weekly Tips Archive (Rosé Wine Filter)", False, f"Non-rosé wine in results: {tip.get('wine_type')}")
+                    return False
+            
+            self.log_test("Weekly Tips Archive (Rosé Wine Filter)", True, f"Found {total} rosé wine tips")
+        else:
+            self.log_test("Weekly Tips Archive (Rosé Wine Filter)", False, str(response))
+        return success
+
+    def test_weekly_tips_archive_filter_sparkling_wine(self):
+        """Test GET /api/weekly-tips/archive?wine_type=schaumwein - Filter sparkling wines (should return 2)"""
+        success, response = self.make_request('GET', 'weekly-tips/archive?wine_type=schaumwein', expected_status=200)
+        if success:
+            tips = response.get('tips', [])
+            total = response.get('total', 0)
+            
+            # Should have 2 sparkling wine tips
+            if total != 2:
+                self.log_test("Weekly Tips Archive (Sparkling Wine Filter)", False, f"Expected 2 sparkling wine tips, got: {total}")
+                return False
+            
+            # Verify all returned tips are sparkling wine
+            for tip in tips:
+                if tip.get('wine_type') != 'schaumwein':
+                    self.log_test("Weekly Tips Archive (Sparkling Wine Filter)", False, f"Non-sparkling wine in results: {tip.get('wine_type')}")
+                    return False
+            
+            self.log_test("Weekly Tips Archive (Sparkling Wine Filter)", True, f"Found {total} sparkling wine tips")
+        else:
+            self.log_test("Weekly Tips Archive (Sparkling Wine Filter)", False, str(response))
+        return success
+
+    def test_weekly_tips_archive_search_pasta(self):
+        """Test GET /api/weekly-tips/archive?search=Pasta - Search for 'Pasta' (should return 1)"""
+        success, response = self.make_request('GET', 'weekly-tips/archive?search=Pasta', expected_status=200)
+        if success:
+            tips = response.get('tips', [])
+            total = response.get('total', 0)
+            filters = response.get('filters', {})
+            
+            # Should have 1 pasta tip
+            if total != 1:
+                self.log_test("Weekly Tips Archive (Search Pasta)", False, f"Expected 1 pasta tip, got: {total}")
+                return False
+            
+            # Check search filter is applied
+            if filters.get('search') != 'Pasta':
+                self.log_test("Weekly Tips Archive (Search Pasta)", False, f"Search filter not applied: {filters}")
+                return False
+            
+            # Verify the result contains pasta
+            if tips:
+                tip = tips[0]
+                dish = tip.get('dish', '').lower()
+                wine = tip.get('wine', '').lower()
+                why = tip.get('why', '').lower()
+                fun_fact = tip.get('fun_fact', '').lower()
+                region = tip.get('region', '').lower()
+                
+                if 'pasta' not in dish and 'pasta' not in wine and 'pasta' not in why and 'pasta' not in fun_fact and 'pasta' not in region:
+                    self.log_test("Weekly Tips Archive (Search Pasta)", False, f"Search result doesn't contain 'pasta': {tip.get('dish')}")
+                    return False
+            
+            self.log_test("Weekly Tips Archive (Search Pasta)", True, f"Found {total} pasta tip")
+        else:
+            self.log_test("Weekly Tips Archive (Search Pasta)", False, str(response))
+        return success
+
+    def test_weekly_tips_archive_search_lamm(self):
+        """Test GET /api/weekly-tips/archive?search=Lamm - Search for 'Lamm' (should return 1)"""
+        success, response = self.make_request('GET', 'weekly-tips/archive?search=Lamm', expected_status=200)
+        if success:
+            tips = response.get('tips', [])
+            total = response.get('total', 0)
+            
+            # Should have 1 lamb tip
+            if total != 1:
+                self.log_test("Weekly Tips Archive (Search Lamm)", False, f"Expected 1 lamb tip, got: {total}")
+                return False
+            
+            # Verify the result contains lamm
+            if tips:
+                tip = tips[0]
+                dish = tip.get('dish', '').lower()
+                wine = tip.get('wine', '').lower()
+                why = tip.get('why', '').lower()
+                fun_fact = tip.get('fun_fact', '').lower()
+                region = tip.get('region', '').lower()
+                
+                if 'lamm' not in dish and 'lamm' not in wine and 'lamm' not in why and 'lamm' not in fun_fact and 'lamm' not in region:
+                    self.log_test("Weekly Tips Archive (Search Lamm)", False, f"Search result doesn't contain 'lamm': {tip.get('dish')}")
+                    return False
+            
+            self.log_test("Weekly Tips Archive (Search Lamm)", True, f"Found {total} lamb tip")
+        else:
+            self.log_test("Weekly Tips Archive (Search Lamm)", False, str(response))
+        return success
+
+    def test_weekly_tips_archive_combined_filter(self):
+        """Test GET /api/weekly-tips/archive?wine_type=rot&search=Beef - Combined filter (should return 1)"""
+        success, response = self.make_request('GET', 'weekly-tips/archive?wine_type=rot&search=Beef', expected_status=200)
+        if success:
+            tips = response.get('tips', [])
+            total = response.get('total', 0)
+            filters = response.get('filters', {})
+            
+            # Should have 1 red wine beef tip
+            if total != 1:
+                self.log_test("Weekly Tips Archive (Combined Filter)", False, f"Expected 1 red wine beef tip, got: {total}")
+                return False
+            
+            # Check both filters are applied
+            if filters.get('wine_type') != 'rot' or filters.get('search') != 'Beef':
+                self.log_test("Weekly Tips Archive (Combined Filter)", False, f"Filters not applied correctly: {filters}")
+                return False
+            
+            # Verify the result is red wine and contains beef
+            if tips:
+                tip = tips[0]
+                if tip.get('wine_type') != 'rot':
+                    self.log_test("Weekly Tips Archive (Combined Filter)", False, f"Result is not red wine: {tip.get('wine_type')}")
+                    return False
+                
+                dish = tip.get('dish', '').lower()
+                wine = tip.get('wine', '').lower()
+                why = tip.get('why', '').lower()
+                fun_fact = tip.get('fun_fact', '').lower()
+                region = tip.get('region', '').lower()
+                
+                if 'beef' not in dish and 'beef' not in wine and 'beef' not in why and 'beef' not in fun_fact and 'beef' not in region:
+                    self.log_test("Weekly Tips Archive (Combined Filter)", False, f"Search result doesn't contain 'beef': {tip.get('dish')}")
+                    return False
+            
+            self.log_test("Weekly Tips Archive (Combined Filter)", True, f"Found {total} red wine beef tip")
+        else:
+            self.log_test("Weekly Tips Archive (Combined Filter)", False, str(response))
+        return success
+
+    def test_weekly_tips_archive_search_no_results(self):
+        """Test GET /api/weekly-tips/archive?search=nonexistent - Search with no results (should return 0)"""
+        success, response = self.make_request('GET', 'weekly-tips/archive?search=nonexistent', expected_status=200)
+        if success:
+            tips = response.get('tips', [])
+            total = response.get('total', 0)
+            
+            # Should have 0 results
+            if total != 0:
+                self.log_test("Weekly Tips Archive (No Results)", False, f"Expected 0 results for nonexistent search, got: {total}")
+                return False
+            
+            if len(tips) != 0:
+                self.log_test("Weekly Tips Archive (No Results)", False, f"Expected empty tips array, got: {len(tips)} tips")
+                return False
+            
+            self.log_test("Weekly Tips Archive (No Results)", True, "Correctly returned 0 results for nonexistent search")
+        else:
+            self.log_test("Weekly Tips Archive (No Results)", False, str(response))
+        return success
+
+    def test_weekly_tips_basic_endpoint(self):
+        """Test GET /api/weekly-tips - Basic weekly tips endpoint"""
+        success, response = self.make_request('GET', 'weekly-tips', expected_status=200)
+        if success:
+            tips = response if isinstance(response, list) else []
+            
+            # Should return up to 4 tips by default
+            if len(tips) > 4:
+                self.log_test("Weekly Tips (Basic)", False, f"Expected max 4 tips, got: {len(tips)}")
+                return False
+            
+            # Check tip structure if tips exist
+            if tips:
+                tip = tips[0]
+                required_fields = ['id', 'dish', 'wine', 'wine_type', 'why']
+                missing_fields = [field for field in required_fields if field not in tip]
+                
+                if missing_fields:
+                    self.log_test("Weekly Tips (Basic)", False, f"Tip missing fields: {missing_fields}")
+                    return False
+            
+            self.log_test("Weekly Tips (Basic)", True, f"Found {len(tips)} weekly tips")
+        else:
+            self.log_test("Weekly Tips (Basic)", False, str(response))
+        return success
+
     # ===================== UNIFIED €/🍷 FORMAT WINE PAIRING TESTS =====================
     
     def test_unified_format_german_spaghetti_bolognese(self):

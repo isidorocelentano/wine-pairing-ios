@@ -529,6 +529,11 @@ backend:
 The original issue reported ("Password reset emails are not being sent on the live deployment") appears to be resolved. The system is functioning as expected with proper email delivery and token management.
 
 ### Agent Communication
+- **Testing Agent**: Weekly Tips Archive feature tested on https://wine-promo-suite.preview.emergentagent.com
+- **Status**: All critical functionality working correctly - archive endpoint, filtering, search, and pagination operational
+- **Test Results**: 11/11 tests passed (100% success rate) - all API endpoints returning expected data counts and structures
+- **Database Verification**: Confirmed 20 weekly tips in database with correct distribution: 8 red, 7 white, 3 rosé, 2 sparkling wines
+- **Search Functionality**: Full-text search working across all fields (dish, wine, region, why, fun_fact) with case-insensitive matching
 - **Testing Agent**: Referral System functionality tested on https://wine-promo-suite.preview.emergentagent.com
 - **Status**: All critical functionality working correctly - referral code generation, validation, and UI integration operational
 - **Bug Fixes Applied**: Fixed User object access in referral endpoints (changed from dict.get() to object.attribute access)

@@ -6531,6 +6531,44 @@ class WinePairingAPITester:
             print(f"❌ {failed} Wine Enrichment tests FAILED.")
             return False
 
+    def run_weekly_tips_tests(self):
+        """Run Weekly Tips Archive tests as specified in review request"""
+        print("🍷 Running Weekly Tips Archive Tests")
+        print("=" * 60)
+        print(f"Backend URL: {self.base_url}")
+        print("=" * 60)
+        
+        # Health Check
+        self.test_health_check()
+        
+        # Weekly Tips Archive Tests (NEW - CRITICAL)
+        print("\n📅 Testing Weekly Tips Archive Feature...")
+        self.test_weekly_tips_basic_endpoint()
+        self.test_weekly_tips_archive_basic()
+        self.test_weekly_tips_archive_filter_red_wine()
+        self.test_weekly_tips_archive_filter_white_wine()
+        self.test_weekly_tips_archive_filter_rose_wine()
+        self.test_weekly_tips_archive_filter_sparkling_wine()
+        self.test_weekly_tips_archive_search_pasta()
+        self.test_weekly_tips_archive_search_lamm()
+        self.test_weekly_tips_archive_combined_filter()
+        self.test_weekly_tips_archive_search_no_results()
+        
+        # Print summary
+        print("\n" + "=" * 60)
+        print(f"Tests Run: {self.tests_run}")
+        print(f"Tests Passed: {self.tests_passed}")
+        print(f"Tests Failed: {self.tests_run - self.tests_passed}")
+        print(f"Success Rate: {(self.tests_passed/self.tests_run)*100:.1f}%")
+        
+        if self.tests_passed == self.tests_run:
+            print("✅ All Weekly Tips Archive tests passed!")
+            return True
+        else:
+            failed = self.tests_run - self.tests_passed
+            print(f"❌ {failed} Weekly Tips Archive tests FAILED.")
+            return False
+
 
 def main():
     """Main test execution"""

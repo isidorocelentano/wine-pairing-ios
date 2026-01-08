@@ -275,11 +275,14 @@ const TippDerWochePage = () => {
         {/* Archiv Ansicht */}
         {showArchive && (
           <>
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center justify-between mb-4">
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => setShowArchive(false)}
+                onClick={() => {
+                  setShowArchive(false);
+                  resetFilters();
+                }}
               >
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 {language === 'de' ? 'Zurück zu aktuellen Tipps' : 'Back to current tips'}
@@ -290,6 +293,89 @@ const TippDerWochePage = () => {
                 <Badge variant="secondary" className="ml-2">{archiveTotal}</Badge>
               </h2>
             </div>
+
+            {/* Filter & Search Section */}
+            <Card className="mb-6 border-border/50">
+              <CardContent className="p-4">
+                <div className="flex flex-col md:flex-row gap-4">
+                  {/* Search */}
+                  <div className="flex-1 relative">
+                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                    <Input
+                      placeholder={language === 'de' ? 'Suche nach Gericht oder Wein...' : 'Search for dish or wine...'}
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
+                      className="pl-10 pr-10"
+                    />
+                    {searchQuery && (
+                      <button
+                        onClick={() => {
+                          setSearchQuery('');
+                          setTimeout(() => loadArchive(1), 100);
+                        }}
+                        className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                      >
+                        <X className="w-4 h-4" />
+                      </button>
+                    )}
+                  </div>
+                  
+                  {/* Search Button */}
+                  <Button onClick={handleSearch} variant="secondary" className="md:w-auto">
+                    <Search className="w-4 h-4 mr-2" />
+                    {language === 'de' ? 'Suchen' : 'Search'}
+                  </Button>
+                </div>
+
+                {/* Wine Type Filter Pills */}
+                <div className="flex flex-wrap gap-2 mt-4">
+                  <span className="text-sm text-muted-foreground mr-2 flex items-center">
+                    <Filter className="w-4 h-4 mr-1" />
+                    {language === 'de' ? 'Weintyp:' : 'Wine type:'}
+                  </span>
+                  {wineTypes.map((type) => (
+                    <button
+                      key={type.value}
+                      onClick={() => handleFilterChange(type.value)}
+                      className={`px-3 py-1 rounded-full text-sm transition-all ${
+                        wineTypeFilter === type.value
+                          ? 'bg-primary text-primary-foreground'
+                          : 'bg-muted hover:bg-muted/80 text-muted-foreground'
+                      }`}
+                    >
+                      {type.color && (
+                        <span className={`inline-block w-2 h-2 rounded-full ${type.color} mr-1.5`} />
+                      )}
+                      {type.label}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Active Filters Summary */}
+                {(wineTypeFilter || searchQuery) && (
+                  <div className="flex items-center gap-2 mt-3 pt-3 border-t border-border/50">
+                    <span className="text-xs text-muted-foreground">
+                      {language === 'de' ? 'Aktive Filter:' : 'Active filters:'}
+                    </span>
+                    {wineTypeFilter && (
+                      <Badge variant="outline" className="text-xs">
+                        {wineTypes.find(t => t.value === wineTypeFilter)?.label}
+                      </Badge>
+                    )}
+                    {searchQuery && (
+                      <Badge variant="outline" className="text-xs">
+                        "{searchQuery}"
+                      </Badge>
+                    )}
+                    <Button variant="ghost" size="sm" onClick={resetFilters} className="text-xs h-6 px-2">
+                      <X className="w-3 h-3 mr-1" />
+                      {language === 'de' ? 'Zurücksetzen' : 'Reset'}
+                    </Button>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
 
             {archiveLoading ? (
               <div className="flex justify-center py-12">

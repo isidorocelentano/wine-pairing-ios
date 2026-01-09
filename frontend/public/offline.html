@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offline - Wine Pairing</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .container {
+      text-align: center;
+      max-width: 400px;
+    }
+    .icon {
+      font-size: 80px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 16px;
+      color: #fff;
+    }
+    p {
+      font-size: 16px;
+      color: #a0a0a0;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+    .btn {
+      display: inline-block;
+      background: #722F37;
+      color: #fff;
+      padding: 12px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #8B3A44;
+    }
+    .wine-glass {
+      animation: pour 2s ease-in-out infinite;
+    }
+    @keyframes pour {
+      0%, 100% { transform: rotate(-10deg); }
+      50% { transform: rotate(10deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon wine-glass">🍷</div>
+    <h1>Du bist offline</h1>
+    <p>
+      Keine Sorge – sobald du wieder online bist, 
+      kannst du weiter den perfekten Wein finden.
+    </p>
+    <a href="/" class="btn" onclick="window.location.reload(); return false;">
+      Erneut versuchen
+    </a>
+  </div>
+</body>
+</html>

@@ -24,6 +24,30 @@
 
 ## 🆕 ÄNDERUNGSHISTORIE
 
+### Version 1.9.2 (09.01.2026) - Analytics & Archiv-Erweiterung
+
+**📊 Google Analytics 4:**
+- ✅ **Measurement ID:** `G-6BMJH87RM3`
+- ✅ **Integration:** Asynchrones Laden im `<head>`
+- ✅ **Tracking:** Seitenaufrufe, Scroll-Tiefe, Engagement, Links
+- ✅ **Echtzeit-Berichte:** Funktioniert und getestet
+
+**🔍 Google Search Console:**
+- ✅ **DNS-Verifizierung:** TXT-Record bei Infomaniak eingerichtet
+- ✅ **Property:** wine-pairing.online registriert
+
+**💡 Tipp der Woche Archiv:**
+- ✅ **20 Tipps:** Erweitert von 4 auf 20 Wochen-Tipps
+- ✅ **Weintyp-Filter:** Rotwein (8), Weißwein (7), Rosé (3), Schaumwein (2)
+- ✅ **Volltextsuche:** Gericht, Wein, Region, Begründung, Fun Fact
+- ✅ **Kombinierte Filter:** Weintyp + Suche gleichzeitig
+- ✅ **UI:** Filter-Pills, Suchfeld, "Aktive Filter" Anzeige, Reset-Button
+
+**🔒 Sicherheit:**
+- ✅ **Admin-Endpoints deaktiviert:** Passwort-Reset-Backdoors entfernt
+
+---
+
 ### Version 1.9.1 (08.01.2026) - Marketing-Features
 
 **🔍 SEO-Optimierung:**

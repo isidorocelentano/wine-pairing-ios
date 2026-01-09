@@ -881,6 +881,36 @@ Upgrade auf Pro-Plan via Stripe.
 - Generiert XML aus Datenbank-Inhalten
 - Enthält Blog-Artikel, Rebsorten, etc.
 
+### Google Analytics 4 (NEU in v1.9.2)
+
+**Konfiguration:**
+| Einstellung | Wert |
+|-------------|------|
+| **Measurement ID** | `G-6BMJH87RM3` |
+| **Property Name** | Wine Pairing Online |
+| **Integration** | Asynchron im `<head>` |
+
+**Automatisches Tracking:**
+- ✅ Seitenaufrufe (page_view)
+- ✅ Scroll-Tiefe (scroll)
+- ✅ Ausgehende Links (click)
+- ✅ Website-Suche (view_search_results)
+- ✅ Engagement-Zeit
+- ✅ Echtzeit-Berichte
+
+**Zugang:** https://analytics.google.com → Property "Wine Pairing Online"
+
+### Google Search Console (NEU in v1.9.2)
+
+**Verifizierung:**
+- **Methode:** DNS TXT-Record
+- **Domain:** wine-pairing.online
+- **Zugang:** https://search.google.com/search-console
+
+**Eingereichte Sitemaps:**
+- `/sitemap.xml` (statisch)
+- `/api/sitemap.xml` (dynamisch)
+
 ### Social Media Sharing
 
 **Share-Buttons (ShareButtons.js):**

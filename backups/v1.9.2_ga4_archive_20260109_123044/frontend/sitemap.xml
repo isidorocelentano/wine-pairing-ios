@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://wine-pairing.online/</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://wine-pairing.online/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wine-pairing.online/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://wine-pairing.online/"/>
+  </url>
+  
+  <!-- Pairing (Hauptfunktion) -->
+  <url>
+    <loc>https://wine-pairing.online/pairing</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  
+  <!-- Sommelier Kompass -->
+  <url>
+    <loc>https://wine-pairing.online/sommelier-kompass</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Rebsorten-Übersicht -->
+  <url>
+    <loc>https://wine-pairing.online/grapes</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <!-- Wein-Datenbank -->
+  <url>
+    <loc>https://wine-pairing.online/wine-database</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <!-- Blog -->
+  <url>
+    <loc>https://wine-pairing.online/blog</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Tipp der Woche -->
+  <url>
+    <loc>https://wine-pairing.online/tipp-der-woche</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Wie wir pairen (Wissenschaft) -->
+  <url>
+    <loc>https://wine-pairing.online/wie-wir-pairen</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  
+  <!-- Pricing -->
+  <url>
+    <loc>https://wine-pairing.online/pricing</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Kontakt -->
+  <url>
+    <loc>https://wine-pairing.online/kontakt</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <!-- Impressum -->
+  <url>
+    <loc>https://wine-pairing.online/impressum</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- Datenschutz -->
+  <url>
+    <loc>https://wine-pairing.online/datenschutz</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>

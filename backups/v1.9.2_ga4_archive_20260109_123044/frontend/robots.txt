@@ -1,0 +1,41 @@
+# Wine Pairing App - robots.txt
+# https://wine-pairing.online
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://wine-pairing.online/sitemap.xml
+
+# Crawl-delay für respektvolles Crawling
+Crawl-delay: 1
+
+# Wichtige Seiten priorisieren
+Allow: /
+Allow: /pairing
+Allow: /sommelier-kompass
+Allow: /grapes
+Allow: /wine-database
+Allow: /blog
+Allow: /tipp-der-woche
+Allow: /wie-wir-pairen
+Allow: /pricing
+
+# Nicht-öffentliche Seiten ausschließen
+Disallow: /admin/*
+Disallow: /login
+Disallow: /forgot-password
+Disallow: /reset-password
+Disallow: /subscription/success
+Disallow: /subscription/cancel
+Disallow: /coupon
+Disallow: /profile
+Disallow: /weinprofil
+Disallow: /cellar
+Disallow: /weinkeller
+Disallow: /favorites
+Disallow: /chat
+Disallow: /feed
+
+# API ausschließen
+Disallow: /api/*

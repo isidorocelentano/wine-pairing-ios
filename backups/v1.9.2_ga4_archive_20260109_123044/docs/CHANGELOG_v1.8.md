@@ -1,33 +1,5 @@
 # Changelog - Wine Pairing App
 
-## Version 1.9.2 (09.01.2026) - Analytics & Archiv-Erweiterung
-
-### 📊 Google Analytics 4 Integration
-- **Measurement ID:** `G-6BMJH87RM3`
-- **Integration:** Asynchrones Laden im `<head>` von index.html
-- **Tracking:** Seitenaufrufe, Scroll-Tiefe, Engagement-Zeit, ausgehende Links
-
-### 🔍 Google Search Console
-- **DNS-Verifizierung:** TXT-Record eingerichtet
-- **Sitemap:** Dynamische und statische Sitemap verfügbar
-
-### 💡 Tipp der Woche - Archiv erweitert
-- **20 Wochen-Tipps:** Vollständiges Archiv mit vielfältigen Pairings
-- **Weintyp-Filter:** Rotwein (8), Weißwein (7), Rosé (3), Schaumwein (2)
-- **Volltextsuche:** Durchsucht Gericht, Wein, Region, Begründung
-- **Kombinierte Filter:** Weintyp + Suche gleichzeitig möglich
-- **Backend:** `/api/weekly-tips/archive?wine_type=rot&search=Lamm`
-
-### 🔒 Sicherheit
-- **Admin-Endpoints deaktiviert:** `/api/admin/reset-owner-simple` und `/api/admin/reset-owner-password` auskommentiert
-
-### Geänderte Dateien
-- `frontend/public/index.html` - GA4 Script hinzugefügt
-- `frontend/src/pages/TippDerWochePage.js` - Filter & Suche UI
-- `backend/server.py` - Archiv-Endpoint erweitert, Admin-Endpoints deaktiviert
-
----
-
 ## Version 1.9.1 (08.01.2026) - Marketing-Features
 
 ### 🔍 SEO-Optimierung

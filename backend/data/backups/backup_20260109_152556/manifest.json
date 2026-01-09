@@ -1,10 +1,10 @@
 {
   "version": "3.0",
-  "timestamp": "2026-01-08T16:33:50.289922+00:00",
-  "backup_dir": "/app/backend/data/backups/backup_20260108_163350",
+  "timestamp": "2026-01-09T15:25:56.558238+00:00",
+  "backup_dir": "/app/backend/data/backups/backup_20260109_152556",
   "collections": {
     "users": {
-      "count": 46,
+      "count": 47,
       "file": "users.json",
       "is_user_data": true
     },

@@ -297,6 +297,18 @@ async def auto_add_recommended_wines(recommendation: str, dish: str):
 # Create the main app
 app = FastAPI(title="Wine Pairing API", version="1.0.0")
 
+# ===================== KUBERNETES HEALTH CHECK =====================
+# Root-level health endpoint - MUST BE DEFINED EARLY for K8s probes
+# This endpoint is checked before the app fully loads
+@app.get("/health")
+async def kubernetes_health_check():
+    """
+    Kubernetes health check endpoint.
+    Returns 200 OK if the service is running.
+    Defined early to respond to health checks during startup.
+    """
+    return {"status": "healthy", "service": "wine-pairing-backend"}
+
 # Add CORS middleware for production deployment
 app.add_middleware(
     CORSMiddleware,

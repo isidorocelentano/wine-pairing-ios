@@ -1289,13 +1289,14 @@ Einstellungen:
 
 ## 📅 Backup-Historie
 
-| Version | Datum | Pfad |
-|---------|-------|------|
-| v1.9.1 | 08.01.2026 | `/app/backups/v1.9.1_marketing_features_*` |
-| v1.9.0 | 07.01.2026 | `/app/backups/v1.9.0_email_complete_*` |
+| Version | Datum | Pfad | Inhalt |
+|---------|-------|------|--------|
+| v1.9.2 | 09.01.2026 | `/app/backups/v1.9.2_ga4_archive_*` | GA4, Archiv-Filter, Admin-Sicherheit |
+| v1.9.1 | 08.01.2026 | `/app/backups/v1.9.1_marketing_features_*` | Marketing, SEO, Referral |
+| v1.9.0 | 07.01.2026 | `/app/backups/v1.9.0_email_complete_*` | E-Mail/Resend komplett |
 
 ---
 
 *Dokumentation erstellt: 17.12.2025*  
-*Letzte Aktualisierung: 08.01.2026*
+*Letzte Aktualisierung: 09.01.2026*
 

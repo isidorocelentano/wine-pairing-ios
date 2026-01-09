@@ -1,7 +1,7 @@
 # 📖 WINE PAIRING APP - Vollständige Dokumentation
 
-**Stand:** 08. Januar 2026  
-**Version:** 1.9.1 (Marketing-Features)  
+**Stand:** 09. Januar 2026  
+**Version:** 1.9.2 (Analytics & Archiv-Erweiterung)  
 **Domain:** https://wine-pairing.online
 
 ---
@@ -23,6 +23,30 @@
 ---
 
 ## 🆕 ÄNDERUNGSHISTORIE
+
+### Version 1.9.2 (09.01.2026) - Analytics & Archiv-Erweiterung
+
+**📊 Google Analytics 4:**
+- ✅ **Measurement ID:** `G-6BMJH87RM3`
+- ✅ **Integration:** Asynchrones Laden im `<head>`
+- ✅ **Tracking:** Seitenaufrufe, Scroll-Tiefe, Engagement, Links
+- ✅ **Echtzeit-Berichte:** Funktioniert und getestet
+
+**🔍 Google Search Console:**
+- ✅ **DNS-Verifizierung:** TXT-Record bei Infomaniak eingerichtet
+- ✅ **Property:** wine-pairing.online registriert
+
+**💡 Tipp der Woche Archiv:**
+- ✅ **20 Tipps:** Erweitert von 4 auf 20 Wochen-Tipps
+- ✅ **Weintyp-Filter:** Rotwein (8), Weißwein (7), Rosé (3), Schaumwein (2)
+- ✅ **Volltextsuche:** Gericht, Wein, Region, Begründung, Fun Fact
+- ✅ **Kombinierte Filter:** Weintyp + Suche gleichzeitig
+- ✅ **UI:** Filter-Pills, Suchfeld, "Aktive Filter" Anzeige, Reset-Button
+
+**🔒 Sicherheit:**
+- ✅ **Admin-Endpoints deaktiviert:** Passwort-Reset-Backdoors entfernt
+
+---
 
 ### Version 1.9.1 (08.01.2026) - Marketing-Features
 
@@ -857,6 +881,36 @@ Upgrade auf Pro-Plan via Stripe.
 - Generiert XML aus Datenbank-Inhalten
 - Enthält Blog-Artikel, Rebsorten, etc.
 
+### Google Analytics 4 (NEU in v1.9.2)
+
+**Konfiguration:**
+| Einstellung | Wert |
+|-------------|------|
+| **Measurement ID** | `G-6BMJH87RM3` |
+| **Property Name** | Wine Pairing Online |
+| **Integration** | Asynchron im `<head>` |
+
+**Automatisches Tracking:**
+- ✅ Seitenaufrufe (page_view)
+- ✅ Scroll-Tiefe (scroll)
+- ✅ Ausgehende Links (click)
+- ✅ Website-Suche (view_search_results)
+- ✅ Engagement-Zeit
+- ✅ Echtzeit-Berichte
+
+**Zugang:** https://analytics.google.com → Property "Wine Pairing Online"
+
+### Google Search Console (NEU in v1.9.2)
+
+**Verifizierung:**
+- **Methode:** DNS TXT-Record
+- **Domain:** wine-pairing.online
+- **Zugang:** https://search.google.com/search-console
+
+**Eingereichte Sitemaps:**
+- `/sitemap.xml` (statisch)
+- `/api/sitemap.xml` (dynamisch)
+
 ### Social Media Sharing
 
 **Share-Buttons (ShareButtons.js):**
@@ -1265,13 +1319,14 @@ Einstellungen:
 
 ## 📅 Backup-Historie
 
-| Version | Datum | Pfad |
-|---------|-------|------|
-| v1.9.1 | 08.01.2026 | `/app/backups/v1.9.1_marketing_features_*` |
-| v1.9.0 | 07.01.2026 | `/app/backups/v1.9.0_email_complete_*` |
+| Version | Datum | Pfad | Inhalt |
+|---------|-------|------|--------|
+| v1.9.2 | 09.01.2026 | `/app/backups/v1.9.2_ga4_archive_*` | GA4, Archiv-Filter, Admin-Sicherheit |
+| v1.9.1 | 08.01.2026 | `/app/backups/v1.9.1_marketing_features_*` | Marketing, SEO, Referral |
+| v1.9.0 | 07.01.2026 | `/app/backups/v1.9.0_email_complete_*` | E-Mail/Resend komplett |
 
 ---
 
 *Dokumentation erstellt: 17.12.2025*  
-*Letzte Aktualisierung: 08.01.2026*
+*Letzte Aktualisierung: 09.01.2026*
 

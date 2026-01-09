@@ -7338,3 +7338,15 @@ async def shutdown_db_client():
     await stop_backup_task()
     # Schließe MongoDB-Verbindung
     client.close()
+
+# ===================== KUBERNETES HEALTH CHECK =====================
+# Root-level health endpoint for Kubernetes liveness/readiness probes
+# This endpoint is required for deployment health checks (without /api prefix)
+@app.get("/health")
+async def kubernetes_health_check():
+    """
+    Kubernetes health check endpoint.
+    Returns 200 OK if the service is running.
+    """
+    return {"status": "healthy", "service": "wine-pairing-backend"}
+

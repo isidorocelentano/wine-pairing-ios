@@ -87,6 +87,7 @@ function AppRouter() {
         <Route path="/kontakt" element={<><KontaktPage /><Navigation /></>} />
         <Route path="/impressum" element={<><ImpressumPage /><Navigation /></>} />
         <Route path="/datenschutz" element={<><DatenschutzPage /><Navigation /></>} />
+        <Route path="/privacy" element={<><DatenschutzPage /><Navigation /></>} />
         {/* Auth & Subscription Routes */}
         <Route path="/login" element={<LoginPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />

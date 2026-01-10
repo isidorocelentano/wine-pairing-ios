@@ -8,7 +8,7 @@ import json
 from datetime import datetime
 
 def test_auth_debug():
-    base_url = "https://wine-promo-suite.preview.emergentagent.com"
+    base_url = "https://playpub-helper.preview.emergentagent.com"
     api_url = f"{base_url}/api"
     
     # Create a fresh session

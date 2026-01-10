@@ -12,7 +12,7 @@ from datetime import datetime
 from typing import Dict, Any, Optional
 
 class WinePairingAPITester:
-    def __init__(self, base_url="https://wine-promo-suite.preview.emergentagent.com"):
+    def __init__(self, base_url="https://playpub-helper.preview.emergentagent.com"):
         self.base_url = base_url
         self.api_url = f"{base_url}/api"
         self.tests_run = 0
@@ -6027,7 +6027,7 @@ class WinePairingAPITester:
         """Run comprehensive Wine Profile tests as specified in review request"""
         print("🍷 Running Comprehensive Wine Profile Platform Tests")
         print("=" * 60)
-        print("Preview URL: https://wine-promo-suite.preview.emergentagent.com")
+        print("Preview URL: https://playpub-helper.preview.emergentagent.com")
         print("Test Credentials: isicel@bluewin.ch / WeinAdmin2025!")
         print("=" * 60)
         
@@ -6616,17 +6616,17 @@ def main():
             return 0 if success else 1
         elif sys.argv[1] == "referral":
             # Run Referral System tests
-            tester = WinePairingAPITester("https://wine-promo-suite.preview.emergentagent.com")
+            tester = WinePairingAPITester("https://playpub-helper.preview.emergentagent.com")
             success = tester.run_referral_system_tests()
             return 0 if success else 1
         elif sys.argv[1] == "weekly-tips":
             # Run Weekly Tips Archive tests
-            tester = WinePairingAPITester("https://wine-promo-suite.preview.emergentagent.com")
+            tester = WinePairingAPITester("https://playpub-helper.preview.emergentagent.com")
             success = tester.run_weekly_tips_tests()
             return 0 if success else 1
     
     # Default: Run Referral System tests as specified in review request
-    tester = WinePairingAPITester("https://wine-promo-suite.preview.emergentagent.com")
+    tester = WinePairingAPITester("https://playpub-helper.preview.emergentagent.com")
     success = tester.run_referral_system_tests()
     return 0 if success else 1
 

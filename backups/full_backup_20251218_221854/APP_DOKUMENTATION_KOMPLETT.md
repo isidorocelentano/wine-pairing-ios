@@ -386,7 +386,7 @@ Upgrade auf Pro-Plan via Stripe.
 ## 🚀 TEIL 7: DEPLOYMENT
 
 ### URLs
-- **Preview:** https://wine-promo-suite.preview.emergentagent.com
+- **Preview:** https://playpub-helper.preview.emergentagent.com
 - **Produktion:** https://wine-pairing.online
 
 ### Tech-Stack

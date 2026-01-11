@@ -15,6 +15,7 @@ workflows:
         XCODE_WORKSPACE: "Wine Pairing.xcworkspace"
         XCODE_SCHEME: "Wine Pairing"
         BUNDLE_ID: "online.winepairing.app"
+        TEAM_ID: "9EXPJ92538"
       xcode: latest
       cocoapods: default
     scripts:
@@ -27,12 +28,17 @@ workflows:
           app-store-connect fetch-signing-files "$BUNDLE_ID" --type IOS_APP_STORE --create
           keychain add-certificates
           xcode-project use-profiles
+      - name: Set Team ID in project
+        script: |
+          sed -i '' 's/DEVELOPMENT_TEAM = "";/DEVELOPMENT_TEAM = 9EXPJ92538;/g' "Wine Pairing.xcodeproj/project.pbxproj"
+          sed -i '' 's/DEVELOPMENT_TEAM = .*;/DEVELOPMENT_TEAM = 9EXPJ92538;/g' "Wine Pairing.xcodeproj/project.pbxproj"
       - name: Build iOS App
         script: |
           xcodebuild -workspace "$XCODE_WORKSPACE" \
             -scheme "$XCODE_SCHEME" \
             -configuration Release \
             -archivePath build/Wine\ Pairing.xcarchive \
+            DEVELOPMENT_TEAM="9EXPJ92538" \
             archive
       - name: Create IPA
         script: |

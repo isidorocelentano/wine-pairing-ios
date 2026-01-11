@@ -3,14 +3,44 @@ workflows:
     name: iOS App Store Build
     max_build_duration: 60
     instance_type: mac_mini_m2
+    integrations:
+      app_store_connect: Codemagic
     environment:
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: online.winepairing.app
+      groups:
+        - apple_credentials
+      vars:
+        XCODE_WORKSPACE: "Wine Pairing.xcworkspace"
+        XCODE_SCHEME: "Wine Pairing"
+        BUNDLE_ID: "online.winepairing.app"
       xcode: latest
       cocoapods: default
     scripts:
-      - name: Install CocoaPods
-        script: pod install
-      - name: Build iOS
+      - name: Install CocoaPods dependencies
         script: |
-          xcodebuild build -workspace "Wine Pairing.xcworkspace" -scheme "Wine Pairing" CODE_SIGNING_ALLOWED=NO
+          pod install
+      - name: Set up code signing
+        script: |
+          keychain initialize
+          app-store-connect fetch-signing-files "$BUNDLE_ID" --type IOS_APP_STORE --create
+          keychain add-certificates
+          xcode-project use-profiles
+      - name: Build iOS App
+        script: |
+          xcodebuild -workspace "$XCODE_WORKSPACE" \
+            -scheme "$XCODE_SCHEME" \
+            -configuration Release \
+            -archivePath build/Wine\ Pairing.xcarchive \
+            archive
+      - name: Create IPA
+        script: |
+          xcode-project build-ipa --workspace "$XCODE_WORKSPACE" --scheme "$XCODE_SCHEME"
     artifacts:
       - build/ios/ipa/*.ipa
+      - build/*.xcarchive
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: true

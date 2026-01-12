@@ -3,14 +3,14 @@ workflows:
     name: iOS App Store Build
     max_build_duration: 60
     instance_type: mac_mini_m2
-    integrations:
-      app_store_connect: Codemagic
     environment:
       vars:
         XCODE_WORKSPACE: "Wine Pairing.xcworkspace"
         XCODE_SCHEME: "Wine Pairing"
         BUNDLE_ID: "online.wine-pairing"
         TEAM_ID: "9EXPJ92538"
+        CERTIFICATE_PRIVATE_KEY: "Wine Pairing Distribution"
+        PROVISIONING_PROFILE: "wine_pairing_pwa"
       xcode: latest
       cocoapods: default
     scripts:
@@ -21,9 +21,6 @@ workflows:
         script: |
           sed -i '' 's/DEVELOPMENT_TEAM = "";/DEVELOPMENT_TEAM = 9EXPJ92538;/g' "Wine Pairing.xcodeproj/project.pbxproj"
           sed -i '' 's/DEVELOPMENT_TEAM = .*;/DEVELOPMENT_TEAM = 9EXPJ92538;/g' "Wine Pairing.xcodeproj/project.pbxproj"
-      - name: Fetch signing files
-        script: |
-          app-store-connect fetch-signing-files "$BUNDLE_ID" --type IOS_APP_STORE --create
       - name: Set up keychain
         script: |
           keychain initialize
@@ -45,7 +42,3 @@ workflows:
     artifacts:
       - build/ios/ipa/*.ipa
       - build/*.xcarchive
-    publishing:
-      app_store_connect:
-        auth: integration
-        submit_to_testflight: true

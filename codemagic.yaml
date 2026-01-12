@@ -8,13 +8,11 @@ workflows:
     environment:
       ios_signing:
         distribution_type: app_store
-        bundle_identifier: online.winepairing.app
-      groups:
-        - apple_credentials
+        bundle_identifier: online.wine-pairing
       vars:
         XCODE_WORKSPACE: "Wine Pairing.xcworkspace"
         XCODE_SCHEME: "Wine Pairing"
-        BUNDLE_ID: "online.winepairing.app"
+        BUNDLE_ID: "online.wine-pairing"
         TEAM_ID: "9EXPJ92538"
       xcode: latest
       cocoapods: default
@@ -39,6 +37,7 @@ workflows:
             -configuration Release \
             -archivePath build/Wine\ Pairing.xcarchive \
             DEVELOPMENT_TEAM="9EXPJ92538" \
+            CODE_SIGN_STYLE="Manual" \
             archive
       - name: Create IPA
         script: |

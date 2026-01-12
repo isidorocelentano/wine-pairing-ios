@@ -3,8 +3,6 @@ workflows:
     name: iOS App Store Build
     max_build_duration: 60
     instance_type: mac_mini_m2
-    integrations:
-      app_store_connect: Codemagic
     environment:
       ios_signing:
         distribution_type: app_store
@@ -27,7 +25,6 @@ workflows:
       - name: Set up code signing
         script: |
           keychain initialize
-          app-store-connect fetch-signing-files "$BUNDLE_ID" --type IOS_APP_STORE --create
           keychain add-certificates
           xcode-project use-profiles
       - name: Build iOS App
@@ -44,7 +41,3 @@ workflows:
     artifacts:
       - build/ios/ipa/*.ipa
       - build/*.xcarchive
-    publishing:
-      app_store_connect:
-        auth: integration
-        submit_to_testflight: true

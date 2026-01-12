@@ -9,10 +9,12 @@ workflows:
       ios_signing:
         distribution_type: app_store
         bundle_identifier: online.wine-pairing
+        certificate: WinePairingDist
+        provisioning_profiles:
+          - WinePairingPWA
       vars:
         XCODE_WORKSPACE: "Wine Pairing.xcworkspace"
         XCODE_SCHEME: "Wine Pairing"
-        BUNDLE_ID: "online.wine-pairing"
         TEAM_ID: "9EXPJ92538"
       xcode: latest
       cocoapods: default

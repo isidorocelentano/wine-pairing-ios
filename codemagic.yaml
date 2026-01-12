@@ -6,8 +6,9 @@ workflows:
     integrations:
       app_store_connect: Codemagic
     environment:
-      groups:
-        - apple_credentials
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: online.wine-pairing
       vars:
         XCODE_WORKSPACE: "Wine Pairing.xcworkspace"
         XCODE_SCHEME: "Wine Pairing"
@@ -23,13 +24,6 @@ workflows:
         script: |
           sed -i '' 's/DEVELOPMENT_TEAM = "";/DEVELOPMENT_TEAM = 9EXPJ92538;/g' "Wine Pairing.xcodeproj/project.pbxproj"
           sed -i '' 's/DEVELOPMENT_TEAM = .*;/DEVELOPMENT_TEAM = 9EXPJ92538;/g' "Wine Pairing.xcodeproj/project.pbxproj"
-      - name: Set up keychain
-        script: |
-          keychain initialize
-          keychain add-certificates
-      - name: Set up profiles
-        script: |
-          xcode-project use-profiles
       - name: Build iOS App
         script: |
           xcodebuild -workspace "$XCODE_WORKSPACE" \

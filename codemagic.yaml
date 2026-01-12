@@ -7,11 +7,10 @@ workflows:
       app_store_connect: Codemagic
     environment:
       ios_signing:
-        distribution_type: app_store
-        bundle_identifier: online.wine-pairing
-        certificate: WinePairingDist
         provisioning_profiles:
           - WinePairingPWA
+        certificates:
+          - WinePairingDist
       vars:
         XCODE_WORKSPACE: "Wine Pairing.xcworkspace"
         XCODE_SCHEME: "Wine Pairing"

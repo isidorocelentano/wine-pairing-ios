@@ -3,14 +3,16 @@ workflows:
     name: iOS App Store Build
     max_build_duration: 60
     instance_type: mac_mini_m2
+    integrations:
+      app_store_connect: Codemagic
     environment:
+      groups:
+        - apple_credentials
       vars:
         XCODE_WORKSPACE: "Wine Pairing.xcworkspace"
         XCODE_SCHEME: "Wine Pairing"
         BUNDLE_ID: "online.wine-pairing"
         TEAM_ID: "9EXPJ92538"
-        CERTIFICATE_PRIVATE_KEY: "Wine Pairing Distribution"
-        PROVISIONING_PROFILE: "wine_pairing_pwa"
       xcode: latest
       cocoapods: default
     scripts:
@@ -42,3 +44,7 @@ workflows:
     artifacts:
       - build/ios/ipa/*.ipa
       - build/*.xcarchive
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: true

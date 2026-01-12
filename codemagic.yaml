@@ -3,7 +3,12 @@ workflows:
     name: iOS App Store Build
     max_build_duration: 60
     instance_type: mac_mini_m2
+    integrations:
+      app_store_connect: Codemagic
     environment:
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: online.wine-pairing
       vars:
         XCODE_WORKSPACE: "Wine Pairing.xcworkspace"
         XCODE_SCHEME: "Wine Pairing"
@@ -19,6 +24,12 @@ workflows:
         script: |
           sed -i '' 's/DEVELOPMENT_TEAM = "";/DEVELOPMENT_TEAM = 9EXPJ92538;/g' "Wine Pairing.xcodeproj/project.pbxproj"
           sed -i '' 's/DEVELOPMENT_TEAM = .*;/DEVELOPMENT_TEAM = 9EXPJ92538;/g' "Wine Pairing.xcodeproj/project.pbxproj"
+      - name: Set up code signing
+        script: |
+          keychain initialize
+          app-store-connect fetch-signing-files "$BUNDLE_ID" --type IOS_APP_STORE --create
+          keychain add-certificates
+          xcode-project use-profiles
       - name: Build iOS App
         script: |
           xcodebuild -workspace "$XCODE_WORKSPACE" \
@@ -26,15 +37,14 @@ workflows:
             -configuration Release \
             -archivePath build/Wine\ Pairing.xcarchive \
             DEVELOPMENT_TEAM="9EXPJ92538" \
-            CODE_SIGN_IDENTITY="-" \
-            CODE_SIGNING_REQUIRED=NO \
-            CODE_SIGNING_ALLOWED=NO \
             archive
-      - name: Create unsigned IPA
+      - name: Create IPA
         script: |
-          mkdir -p build/ios/ipa
-          cd build/Wine\ Pairing.xcarchive/Products/Applications
-          zip -r ../../../ios/ipa/WinePairing-unsigned.ipa .
+          xcode-project build-ipa --workspace "$XCODE_WORKSPACE" --scheme "$XCODE_SCHEME"
     artifacts:
       - build/ios/ipa/*.ipa
       - build/*.xcarchive
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: true

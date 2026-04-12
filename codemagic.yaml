@@ -7,40 +7,43 @@ workflows:
       app_store_connect: Codemagic
     environment:
       ios_signing:
-        provisioning_profiles:
-          - wine_pairing_pwa
-        certificates:
-          - Wine Pairing Distribution
+        distribution_type: app_store
+        bundle_identifier: online.wine-pairing
       vars:
         XCODE_WORKSPACE: "Wine Pairing.xcworkspace"
         XCODE_SCHEME: "Wine Pairing"
+        BUNDLE_ID: "online.wine-pairing"
         TEAM_ID: "9EXPJ92538"
       xcode: latest
       cocoapods: default
     scripts:
       - name: Install CocoaPods dependencies
         script: |
-          pod install
-      - name: Set Team ID in project
-        script: |
-          sed -i '' 's/DEVELOPMENT_TEAM = "";/DEVELOPMENT_TEAM = 9EXPJ92538;/g' "Wine Pairing.xcodeproj/project.pbxproj"
-          sed -i '' 's/DEVELOPMENT_TEAM = .*;/DEVELOPMENT_TEAM = 9EXPJ92538;/g' "Wine Pairing.xcodeproj/project.pbxproj"
-      - name: Set up keychain and profiles
+          cd $CM_BUILD_DIR && pod install
+      - name: Set up code signing
         script: |
           keychain initialize
+          app-store-connect fetch-signing-files "$BUNDLE_ID" --type IOS_APP_STORE --create
           keychain add-certificates
           xcode-project use-profiles
+      - name: Increment build number
+        script: |
+          cd $CM_BUILD_DIR
+          LATEST_BUILD=$(app-store-connect get-latest-testflight-build-number "$BUNDLE_ID" || echo 0)
+          agvtool new-version -all $((LATEST_BUILD + 1))
       - name: Build iOS App
         script: |
+          cd $CM_BUILD_DIR
           xcodebuild -workspace "$XCODE_WORKSPACE" \
             -scheme "$XCODE_SCHEME" \
             -configuration Release \
-            -archivePath build/Wine\ Pairing.xcarchive \
-            DEVELOPMENT_TEAM="9EXPJ92538" \
-            archive
+            -archivePath build/WinePairing.xcarchive \
+            clean archive
       - name: Create IPA
         script: |
-          xcode-project build-ipa --workspace "$XCODE_WORKSPACE" --scheme "$XCODE_SCHEME"
+          xcode-project build-ipa \
+            --workspace "$CM_BUILD_DIR/$XCODE_WORKSPACE" \
+            --scheme "$XCODE_SCHEME"
     artifacts:
       - build/ios/ipa/*.ipa
       - build/*.xcarchive

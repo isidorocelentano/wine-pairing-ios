@@ -9,6 +9,8 @@ workflows:
       ios_signing:
         distribution_type: app_store
         bundle_identifier: online.wine-pairing
+        certificates:
+          - Wine Pairing Distribution
       vars:
         XCODE_WORKSPACE: "Wine Pairing.xcworkspace"
         XCODE_SCHEME: "Wine Pairing"
@@ -26,6 +28,10 @@ workflows:
           app-store-connect fetch-signing-files "$BUNDLE_ID" --type IOS_APP_STORE --create
           keychain add-certificates
           xcode-project use-profiles
+      - name: Set Team ID in project
+        script: |
+          cd $CM_BUILD_DIR
+          sed -i '' "s/DEVELOPMENT_TEAM = .*/DEVELOPMENT_TEAM = $TEAM_ID;/g" "Wine Pairing.xcodeproj/project.pbxproj"
       - name: Increment build number
         script: |
           cd $CM_BUILD_DIR
@@ -38,6 +44,8 @@ workflows:
             -scheme "$XCODE_SCHEME" \
             -configuration Release \
             -archivePath build/WinePairing.xcarchive \
+            CODE_SIGN_STYLE="Manual" \
+            DEVELOPMENT_TEAM="$TEAM_ID" \
             clean archive
       - name: Create IPA
         script: |
@@ -51,3 +59,4 @@ workflows:
       app_store_connect:
         auth: integration
         submit_to_testflight: true
+

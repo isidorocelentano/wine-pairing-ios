@@ -10,7 +10,7 @@ workflows:
         provisioning_profiles:
           - wine_pairing_pwa
         certificates:
-          - WinePairingDist
+          - Wine Pairing Distribution
       vars:
         XCODE_WORKSPACE: "Wine Pairing.xcworkspace"
         XCODE_SCHEME: "Wine Pairing"

@@ -10,6 +10,35 @@ workflows:
         XCODE_WORKSPACE: "Wine Pairing.xcworkspace"
         XCODE_SCHEME: "Wine Pairing"
         BUNDLE_ID: "online.wine-pairing"
+        CERTIFICATE_PRIVATE_KEY: |
+          -----BEGIN PRIVATE KEY-----
+          MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDhZhV/kF53bUE/
+          Ib0p/cBEzQKCVHQFv/Kbw8hvQxDuAuQx2DoEX4i19Pcn9wk3EnIQTR6fpDkTKXRu
+          6zZ+8flj6Ga+2Y/+VguHkrLFolnGBSBXYL4XA56oI0HRU0lLnnVBZVQT9n42ZjFi
+          I8UfpmJb9qNfPv6b7r5Mqj6B4pB5XnwHAdb4Ht9xpupDIhzx4mKHfTteGGAf1Y3x
+          pqw6IAI5h7Gcd0nlOpEP6X7I4twbF1Tygb08QecnXHa3WmfXGqrZ1KJv7JqliAts
+          gsxTy0tDz7UmoqXphQ3NB6ny3R4R4Gi15XtGdD9I4lTVz5YkAIxEgkGTxhBTm1pX
+          ekIVTRA7AgMBAAECggEAZAMPY/hTqks8qb4XOOQipYSP6fN+PbTjefEf5RqNjwaS
+          aXmHmLwpJY+qAT4whRK2sPv/LBfKyXFZ/AN7PU2x+n465NEVfuWAHSpfD6mPivlo
+          Vc0T25NcGT/3quF5QsfvQFKtQWRcsVeb7u9vPrFtsF+aMx95CwiewNbDgI9eyrLo
+          Kn0UZtg/3t4fOJNCO4AiR0nh1a8e6+GIS6fU6oBWKqvHDduBY0lnAOrJvj/nbCxJ
+          G8q2DAlwr79kX8KfpZwsiCOoenxnUiAzmJ30RsbzNzEYP0QMNCnlFpqDeKZTUFC0
+          /WIuXzG8VF3cCwwoYfyFlQr4BSC+Eq3sq/7oqZ/4qQKBgQD4i8xPWW+m93YYKi+r
+          3GlJ8LHcezYBGi4UFdAGDQ5QLGXjg4jR5Xp4i8uWe81r8QojCJxVk377uWxp0eRV
+          hfmdaIh1MAYSM51F86KqKTx08t5qjRtwyXceBkRjEVjziWYGqlLIQsk3VWzlM4g0
+          P3JpG8xN0PAKO7JTNkPGDZxD8wKBgQDoKJLFwnt8OAYmSrwyUT/pKB7SZ5MfH0ku
+          QMcaAkp57wHTFVbU3lR1Mi4246J7LBwWgyFuxA1eVJik6/wOd74dGMS0K4jmsurL
+          u6dWw8wzosx4tGKIWMdTiYMKtTgWR4+r5GVrvh/QI//SnujlQtPtFU/YRF0CgJVV
+          sUR1ZXa8mQKBgQDSDnSR62htmF76dUzs1s81anMngApYTCP9XaH+OzKJl7xU2Gnd
+          2y/yiVN6zw8B1ylWCoT13j5HyKJTnMx5a01XN218fSXkZDLbV9l2Lnul600GiFNU
+          szA0898ASzz+NnU/1Ns53Rfp6AyseSz321d6db/pVFhKjcFcilQlIoOa+QKBgQCF
+          xZNFFppW6mVIvTmR+NVNwQt5i6rvfPSLDVJsfzNw7TJs8dfV0sJxwVd101b1iGYq
+          5qZmD9vwJejK5xuXLpJCa9o0Qv2giSnX+SokSbApdL5DMxWvoRBB53O1wNQvqk5z
+          6qgyHBxyr7uiHmTubcJ10xjt8f5yCauC9CERUETJyQKBgQC1HF4Ez5Vi869XbUQ2
+          6S6SkQ1BX+CqpvMI9eNRNXLrV+NEXFuX7k/oUOwqgj30xDHLo8r67rF48Xhl9wrP
+          0kPdxRPbuWT1uUDIXoN13qBCO84KGEbWUAEwxYqD8CyGIVcKiMVTbu8MDX8pamW9
+          R+xj/eR4n6V+uS7xiL5YLfoAWA==
+          -----END PRIVATE KEY-----
       xcode: latest
       cocoapods: default
     scripts:

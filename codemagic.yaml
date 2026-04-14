@@ -1,70 +1,50 @@
 workflows:
- name: iOS App Store Build
+  ios-workflow:
+    name: iOS App Store Build
     max_build_duration: 60
     instance_type: mac_mini_m2
     integrations:
       app_store_connect: Codemagic
     environment:
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: online.wine-pairing
       vars:
         XCODE_WORKSPACE: "Wine Pairing.xcworkspace"
         XCODE_SCHEME: "Wine Pairing"
         BUNDLE_ID: "online.wine-pairing"
-        TEAM_ID: "9EXPJ92538"
       xcode: latest
       cocoapods: default
     scripts:
       - name: Install CocoaPods dependencies
         script: |
           cd $CM_BUILD_DIR && pod install
-      - name: Set up code signing
+      - name: Set up keychain
+        script: keychain initialize
+      - name: Fetch signing files
         script: |
-          keychain initialize
-          app-store-connect fetch-signing-files "$BUNDLE_ID" --type IOS_APP_STORE --create
-          keychain add-certificates
-          xcode-project use-profiles
-      - name: Force signing in project
-        script: |
-          cd $CM_BUILD_DIR
-          PROFILE_UUID=$(ls ~/Library/MobileDevice/Provisioning\ Profiles/*.mobileprovision 2>/dev/null | head -1 | xargs basename | sed 's/.mobileprovision//')
-          echo "Found profile UUID: $PROFILE_UUID"
-          # Set all signing settings in project.pbxproj
-          plutil -replace buildSettings.DEVELOPMENT_TEAM -string "$TEAM_ID" "Wine Pairing.xcodeproj/project.pbxproj" 2>/dev/null || true
-          sed -i '' "s/DEVELOPMENT_TEAM = .*/DEVELOPMENT_TEAM = $TEAM_ID;/g" "Wine Pairing.xcodeproj/project.pbxproj"
-          sed -i '' "s/CODE_SIGN_STYLE = .*/CODE_SIGN_STYLE = Manual;/g" "Wine Pairing.xcodeproj/project.pbxproj"
-          sed -i '' "s/ProvisioningStyle = .*/ProvisioningStyle = Manual;/g" "Wine Pairing.xcodeproj/project.pbxproj"
-          sed -i '' "s/PROVISIONING_PROFILE_SPECIFIER = .*/PROVISIONING_PROFILE_SPECIFIER = \"\";/g" "Wine Pairing.xcodeproj/project.pbxproj"
-          # Insert PROVISIONING_PROFILE setting after every DEVELOPMENT_TEAM line
-          sed -i '' "/DEVELOPMENT_TEAM = $TEAM_ID;/{n;s/.*/				PROVISIONING_PROFILE = \"$PROFILE_UUID\";/;}" "Wine Pairing.xcodeproj/project.pbxproj"
-          echo "Signing configured with profile $PROFILE_UUID"
-          # Verify
-          grep -c "PROVISIONING_PROFILE" "Wine Pairing.xcodeproj/project.pbxproj" || echo "WARNING: No PROVISIONING_PROFILE found"
+          app-store-connect fetch-signing-files "$BUNDLE_ID" \
+            --type IOS_APP_STORE \
+            --create
+      - name: Add certificates to keychain
+        script: keychain add-certificates
+      - name: Apply code signing to project
+        script: xcode-project use-profiles
       - name: Increment build number
         script: |
           cd $CM_BUILD_DIR
           LATEST_BUILD=$(app-store-connect get-latest-testflight-build-number "$BUNDLE_ID" || echo 0)
           agvtool new-version -all $((LATEST_BUILD + 1))
-      - name: Build iOS App
-        script: |
-          cd $CM_BUILD_DIR
-          PROFILE_UUID=$(ls ~/Library/MobileDevice/Provisioning\ Profiles/*.mobileprovision 2>/dev/null | head -1 | xargs basename | sed 's/.mobileprovision//')
-          xcodebuild -workspace "$XCODE_WORKSPACE" \
-            -scheme "$XCODE_SCHEME" \
-            -configuration Release \
-            -archivePath build/WinePairing.xcarchive \
-            DEVELOPMENT_TEAM="$TEAM_ID" \
-            CODE_SIGN_STYLE="Manual" \
-            PROVISIONING_PROFILE="$PROFILE_UUID" \
-            CODE_SIGN_IDENTITY="Apple Distribution" \
-            clean archive
-      - name: Create IPA
+      - name: Build IPA
         script: |
           xcode-project build-ipa \
             --workspace "$CM_BUILD_DIR/$XCODE_WORKSPACE" \
             --scheme "$XCODE_SCHEME"
     artifacts:
       - build/ios/ipa/*.ipa
-      - build/*.xcarchive
+      - /tmp/xcodebuild_logs/*.log
     publishing:
       app_store_connect:
         auth: integration
         submit_to_testflight: true
+

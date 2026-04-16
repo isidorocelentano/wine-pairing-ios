@@ -7,19 +7,26 @@ class ViewController: UIViewController, WKNavigationDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
 
         let config = WKWebViewConfiguration()
         config.allowsInlineMediaPlayback = true
 
-        webView = WKWebView(frame: view.bounds, configuration: config)
-        webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        webView = WKWebView(frame: .zero, configuration: config)
+        webView.translatesAutoresizingMaskIntoConstraints = false
         webView.navigationDelegate = self
         webView.allowsBackForwardNavigationGestures = true
         view.addSubview(webView)
 
-        if let url = URL(string: "https://wine-pairing.online") {
-            webView.load(URLRequest(url: url))
-        }
+        NSLayoutConstraint.activate([
+            webView.topAnchor.constraint(equalTo: view.topAnchor),
+            webView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            webView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            webView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+
+        let url = URL(string: "https://www.google.com")!
+        webView.load(URLRequest(url: url))
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

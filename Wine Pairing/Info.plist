@@ -91,11 +91,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
-	<key>WKAppBoundDomains</key>
-	<array>
-		<string>wine-pairing.online</string>
-	</array>
-	<key>ITSAppUsesNonExemptEncryption</key>
+		<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
 	<array>

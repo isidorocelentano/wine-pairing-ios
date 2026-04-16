@@ -11,11 +11,15 @@ class ViewController: UIViewController, WKNavigationDelegate {
 
         let config = WKWebViewConfiguration()
         config.allowsInlineMediaPlayback = true
+        let prefs = WKWebpagePreferences()
+        prefs.allowsContentJavaScript = true
+        config.defaultWebpagePreferences = prefs
 
         webView = WKWebView(frame: .zero, configuration: config)
         webView.translatesAutoresizingMaskIntoConstraints = false
         webView.navigationDelegate = self
         webView.allowsBackForwardNavigationGestures = true
+        webView.customUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1"
         view.addSubview(webView)
 
         NSLayoutConstraint.activate([
@@ -25,7 +29,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
             webView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
 
-        let url = URL(string: "https://www.google.com")!
+        let url = URL(string: "https://wine-pairing.online")!
         webView.load(URLRequest(url: url))
     }
 

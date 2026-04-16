@@ -68,8 +68,7 @@
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>processing</string>
-		<string>remote-notification</string>
-	</array>
+			</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

@@ -36,6 +36,15 @@ class ViewController: UIViewController, WKNavigationDelegate, UIDocumentInteract
         initWebView()
         initToolbarView()
         loadRootUrl()
+        
+        // Fallback: Show webview after 10s even if page hasn't fully loaded
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
+            if !self.htmlIsLoaded {
+                print("FALLBACK: Showing webview after timeout")
+                WinePairing.webView.isHidden = false
+                self.loadingView.isHidden = true
+            }
+        }
     
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification , object: nil)
         
